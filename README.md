@@ -1,7 +1,7 @@
 <div align="center">
   <img src="public/icon.png" width="96" height="96" alt="Alpine MTB Map logo">
   <h1>Alpine MTB Map</h1>
-  <p>Mountain-bike spots across the Alps and beyond all in one KML file.</p>
+  <p>Mountain biking spots across the Alps & beyond, all in one KML file.</p>
 </div>
 
 - **Map:** [vemonet.github.io/alpine-mtb-map](https://vemonet.github.io/alpine-mtb-map)
@@ -17,7 +17,7 @@ Alpine MTB Map fixes that. The spots live in one KML you download and open in [C
 For each spot you get:
 
 - what the **trails** are like, and how many there are
-- how you **get up** and what the day pass costs, plus season dates and whether the Magic Pass covers it
+- how you **get up** and what the day pass costs, plus season dates and whether the [Magic Pass](https://www.magicpass.ch) covers it
 - an **Access** table: travel time from the city a rider would realistically start from
 - **tags** you can filter on: difficulty, winter riding, Magic Pass, price
 - **trail lines** where [OpenStreetMap](https://openstreetmap.org) has the geometry, and **extra waypoints** where they help: valley stations, mid-stations, trailheads, lift hubs
