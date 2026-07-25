@@ -1,0 +1,81 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Let a running deploy finish; queue at most one more.
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+env:
+  VITE_PLUS_VERSION: "0.2.6"
+
+jobs:
+  check:
+    name: ✅ Check
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7.0.0
+      - uses: actions/setup-node@v6.4.0
+        with:
+          node-version: 24
+          cache: npm
+
+      - name: Install Vite+
+        run: npm install -g vite-plus@${{ env.VITE_PLUS_VERSION }}
+
+      - name: Install dependencies
+        run: vp i
+
+      # Formatting, linting, and that the exports still match the KML.
+      - name: Check
+        run: vp check
+
+      - name: Verify exports are up to date
+        run: |
+          vp run convert
+          git diff --exit-code public/alpine-mtb-map.gpx public/alpine-mtb-map.geojson
+
+  deploy:
+    name: ⚡️ Deploy to GitHub Pages
+    needs: check
+    # Pull requests get the checks but must not publish.
+    if: github.event_name != 'pull_request'
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v7.0.0
+      - uses: actions/setup-node@v6.4.0
+        with:
+          node-version: 24
+          cache: npm
+      - name: Setup Pages
+        uses: actions/configure-pages@v6.0.0
+
+      - name: Install Vite+
+        run: npm install -g vite-plus@${{ env.VITE_PLUS_VERSION }}
+
+      - name: Install dependencies
+        run: vp i
+
+      - name: Build website
+        run: vp build
+
+      - uses: actions/upload-pages-artifact@v5.0.0
+        with:
+          path: dist
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v5.0.0

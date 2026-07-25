@@ -1,0 +1,670 @@
+/* The theme is always an explicit data-theme on <html>: the inline script in
+   index.html sets it from localStorage, falling back to the OS preference, so
+   the page never paints in the wrong one. */
+:root {
+  --lift: #1064d4;
+  --natural: #2f6f4e;
+  --brown: #8a4a33;
+  --locate: #7048e8;
+  color-scheme: light;
+  --bg: #fff;
+  --fg: #1a1a1a;
+  --muted: #666;
+  --line: #e0e0e0;
+  --link: #1064d4;
+}
+
+/* Pin and location colours are deliberately not themed: they are drawn on map
+   tiles, which stay light whatever the theme is. */
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --bg: #16181c;
+  --fg: #e8e8e8;
+  --muted: #9aa0a6;
+  --line: #2c2f36;
+  --link: #7aa8f0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  height: 100%;
+  font:
+    15px/1.5 system-ui,
+    -apple-system,
+    "Segoe UI",
+    sans-serif;
+  background: var(--bg);
+  color: var(--fg);
+}
+
+#app {
+  position: relative;
+  display: flex;
+  height: 100%;
+}
+
+#sidebar {
+  width: 340px;
+  flex: 0 0 340px;
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid var(--line);
+  overflow: hidden;
+  transition: flex-basis 0.2s ease;
+}
+
+#app.collapsed #sidebar {
+  flex-basis: 0;
+  border-right-width: 0;
+}
+
+/* A drawer handle on the sidebar's edge. Vertically centred so it never
+   collides with Leaflet's zoom buttons or the layer control. */
+#toggle-sidebar {
+  position: absolute;
+  z-index: 1000;
+  top: 50%;
+  left: 340px;
+  /* Only 10px of it sticks out over the map: enough to grab, small enough to
+     read as part of the sidebar edge rather than a control floating on it. */
+  width: 10px;
+  height: 52px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--line);
+  border-left: 0;
+  border-radius: 0 4px 4px 0;
+  background: var(--bg);
+  color: var(--muted);
+  cursor: pointer;
+  transform: translateY(-50%);
+  transition: left 0.2s ease;
+}
+
+#toggle-sidebar:hover {
+  color: var(--lift);
+}
+
+#toggle-sidebar svg {
+  transition: transform 0.2s ease;
+}
+
+#app.collapsed #toggle-sidebar {
+  left: 0;
+}
+
+#app.collapsed #toggle-sidebar svg {
+  transform: rotate(180deg);
+}
+
+#sidebar header {
+  position: relative;
+  padding: 16px 42px 8px 16px;
+}
+
+.header-actions {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  display: flex;
+  gap: 6px;
+}
+
+.header-actions button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  background: transparent;
+  color: var(--muted);
+  cursor: pointer;
+}
+
+.header-actions button:hover {
+  border-color: var(--lift);
+  color: var(--lift);
+}
+
+#info {
+  font:
+    600 13px/1 Georgia,
+    serif;
+}
+
+/* The button shows the theme it switches *to*: a moon while light, a sun while
+   dark. Only one icon is ever visible. */
+#theme .sun {
+  display: none;
+}
+
+:root[data-theme="dark"] #theme .sun {
+  display: block;
+}
+
+:root[data-theme="dark"] #theme .moon {
+  display: none;
+}
+
+#about {
+  max-width: 520px;
+  max-height: 80vh;
+  padding: 20px 24px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--bg);
+  color: var(--fg);
+  font-size: 14px;
+}
+
+#about::backdrop {
+  background: rgba(0, 0, 0, 0.45);
+}
+
+#about h2 {
+  margin: 0 0 10px;
+  font-size: 18px;
+}
+
+#about h3 {
+  margin: 18px 0 6px;
+  font-size: 14px;
+}
+
+#about p,
+#about li {
+  margin: 0 0 8px;
+  color: var(--muted);
+}
+
+#about ul {
+  margin: 0;
+  padding-left: 18px;
+}
+
+/* The dialog sits on the themed sidebar background, not on map tiles, so
+   unlike the pin colours this link does have to follow the theme. */
+#about a {
+  color: var(--link);
+}
+
+#about code {
+  font-size: 12.5px;
+}
+
+#about form {
+  margin-top: 16px;
+  text-align: right;
+}
+
+#about form button {
+  padding: 7px 16px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+}
+
+#about form button:hover {
+  background: color-mix(in srgb, currentColor 7%, transparent);
+}
+
+#sidebar h1 {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0;
+  font-size: 19px;
+}
+
+.logo {
+  flex: 0 0 auto;
+}
+
+#sidebar header p {
+  margin: 4px 0 0;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+#filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  padding: 10px 16px 0;
+}
+
+.filter {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  flex: 1 1 auto;
+  padding: 6px 10px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  font-size: 12.5px;
+  cursor: pointer;
+}
+
+.filter:hover {
+  background: color-mix(in srgb, currentColor 7%, transparent);
+}
+
+.filter[aria-pressed="false"] {
+  opacity: 0.45;
+  text-decoration: line-through;
+}
+
+/* Inclusion chips read the other way round: off is neutral, on is active. */
+.filter[data-mode="only"] {
+  opacity: 1;
+  text-decoration: none;
+}
+
+.filter[data-mode="only"][aria-pressed="true"] {
+  border-color: var(--lift);
+  color: var(--lift);
+  font-weight: 600;
+}
+
+.range {
+  display: flex;
+  flex: 1 1 100%;
+  align-items: center;
+  gap: 8px;
+  padding: 2px 2px 0;
+  font-size: 12px;
+  color: var(--muted);
+  white-space: nowrap;
+}
+
+.range input {
+  flex: 1;
+  min-width: 0;
+  accent-color: var(--lift);
+}
+
+.range output {
+  font-weight: 600;
+  color: var(--fg);
+}
+
+.date-filter {
+  display: flex;
+  flex: 1 1 100%;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 2px 2px 0;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.date-control {
+  position: relative;
+  min-width: 88px;
+}
+
+.date-control button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  width: 100%;
+  padding: 3px 6px;
+  border: 1px solid var(--line);
+  border-radius: 5px;
+  background: var(--bg);
+  color: var(--fg);
+  font: inherit;
+  text-align: center;
+  cursor: pointer;
+}
+
+.calendar-icon {
+  flex: 0 0 auto;
+  opacity: 0.45;
+}
+
+.date-control button:focus-visible {
+  outline: 2px solid var(--lift);
+  outline-offset: 1px;
+}
+
+.date-control input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.ico {
+  font-size: 12px;
+  line-height: 1;
+}
+
+.dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+}
+
+.dot.blue {
+  background: var(--lift);
+}
+
+.dot.green {
+  background: var(--natural);
+}
+
+.dot.brown {
+  background: var(--brown);
+}
+
+#search {
+  padding: 10px 16px;
+  border-bottom: 1px solid var(--line);
+}
+
+#spot-search {
+  width: 100%;
+  padding: 8px 10px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: var(--bg);
+  color: inherit;
+  font: inherit;
+  font-size: 13px;
+}
+
+#spot-search:focus {
+  border-color: var(--lift);
+  outline: 2px solid color-mix(in srgb, var(--lift) 20%, transparent);
+  outline-offset: 1px;
+}
+
+#locate[aria-pressed="true"] {
+  border-color: var(--locate);
+  color: var(--locate);
+  font-weight: 600;
+}
+
+#spots {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  overflow-y: auto;
+  flex: 1;
+}
+
+#spots li button {
+  display: block;
+  width: 100%;
+  text-align: left;
+  padding: 10px 16px;
+  border: 0;
+  border-bottom: 1px solid var(--line);
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+}
+
+#spots li button:hover {
+  background: color-mix(in srgb, currentColor 7%, transparent);
+}
+
+#spots .name {
+  display: block;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+#spots .meta {
+  display: block;
+  color: var(--muted);
+  font-size: 12.5px;
+}
+
+#sidebar footer {
+  padding: 10px 16px;
+  border-top: 1px solid var(--line);
+  font-size: 12px;
+  color: var(--muted);
+}
+
+#sidebar footer p {
+  margin: 0;
+}
+
+#sidebar footer a {
+  color: inherit;
+}
+
+.dl-label {
+  margin-bottom: 6px !important;
+}
+
+.dl-icon {
+  vertical-align: -3px;
+  margin-right: 4px;
+}
+
+#downloads {
+  display: flex;
+  align-items: stretch;
+  position: relative;
+  margin-bottom: 8px !important;
+}
+
+a.dl {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 600;
+  color: inherit;
+}
+
+a.dl:hover {
+  background: color-mix(in srgb, currentColor 7%, transparent);
+}
+
+.dl-primary {
+  flex: 1;
+  justify-content: center;
+  height: 34px;
+  padding: 0 10px;
+  border: 1px solid var(--line);
+  border-right: 0;
+  border-radius: 6px 0 0 6px;
+}
+
+.download-menu {
+  position: relative;
+  height: 34px;
+}
+
+.download-menu summary {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border: 1px solid var(--line);
+  border-radius: 0 6px 6px 0;
+  color: var(--fg);
+  cursor: pointer;
+  list-style: none;
+}
+
+.download-menu summary::-webkit-details-marker {
+  display: none;
+}
+
+.download-menu summary:hover,
+.download-menu[open] summary {
+  background: color-mix(in srgb, currentColor 7%, transparent);
+}
+
+.download-options {
+  position: absolute;
+  right: 0;
+  bottom: calc(100% + 5px);
+  z-index: 1001;
+  min-width: 150px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: var(--bg);
+  box-shadow: 0 5px 18px rgb(0 0 0 / 18%);
+}
+
+.download-options .dl {
+  padding: 8px 10px;
+}
+
+.download-options .dl + .dl {
+  border-top: 1px solid var(--line);
+}
+
+#map {
+  flex: 1;
+  height: 100%;
+}
+
+.leaflet-popup-content {
+  max-height: 55vh;
+  overflow-y: auto;
+  font-size: 13.5px;
+}
+
+.leaflet-popup-content h3 {
+  margin: 0 0 6px;
+  font-size: 15px;
+}
+
+.leaflet-popup-content .warn {
+  margin: 0 0 12px;
+  padding: 7px 9px;
+  border-left: 3px solid #e8590c;
+  background: rgba(232, 89, 12, 0.09);
+  border-radius: 0 4px 4px 0;
+}
+
+.leaflet-popup-content table.access {
+  border-collapse: collapse;
+  margin: 6px 0 2px;
+  font-size: 12.5px;
+}
+
+.leaflet-popup-content table.access th,
+.leaflet-popup-content table.access td {
+  border: 1px solid #ccc;
+  padding: 3px 8px;
+  text-align: left;
+}
+
+.leaflet-popup-content table.access th {
+  background: rgba(0, 0, 0, 0.05);
+  font-weight: 600;
+}
+
+.pin {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  border: 2.5px solid #fff;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.4);
+}
+
+.pin.bikepark {
+  background: var(--lift);
+}
+.pin.natural {
+  background: var(--natural);
+}
+.pin.nolift {
+  background: var(--brown);
+}
+.pin.minor {
+  background: #737373;
+  width: 10px;
+  height: 10px;
+  border-width: 2px;
+}
+
+@media (max-width: 720px) {
+  #app {
+    flex-direction: column;
+  }
+  /* Too little height to give the list its own scroller once the filters are
+     stacked, so the whole sidebar scrolls as one instead. A fixed 55% rather
+     than a max: it keeps the drawer handle below on the sidebar's edge however
+     many spots the filters leave. */
+  #sidebar {
+    width: 100%;
+    flex: 0 0 55%;
+    overflow-y: auto;
+    border-right: 0;
+    border-bottom: 1px solid var(--line);
+    transition: flex-basis 0.2s ease;
+  }
+  #app.collapsed #sidebar {
+    border-bottom-width: 0;
+  }
+  /* The handle turns into a horizontal tab under the sidebar. */
+  #toggle-sidebar {
+    top: 55%;
+    left: 50%;
+    width: 52px;
+    height: 10px;
+    border: 1px solid var(--line);
+    border-top: 0;
+    border-radius: 0 0 4px 4px;
+    transform: translateX(-50%);
+    transition: top 0.2s ease;
+  }
+  #toggle-sidebar svg {
+    transform: rotate(90deg);
+  }
+  #app.collapsed #toggle-sidebar {
+    top: 0;
+    left: 50%;
+  }
+  #app.collapsed #toggle-sidebar svg {
+    transform: rotate(270deg);
+  }
+  /* ...which would bury the download buttons under 40-odd spots, so they move
+     above the list. */
+  #sidebar footer {
+    order: 1;
+    border-top: 0;
+    border-bottom: 1px solid var(--line);
+  }
+  #spots {
+    order: 2;
+    overflow-y: visible;
+  }
+  #map {
+    flex: 1;
+  }
+}

@@ -1,0 +1,11 @@
+vp staged
+
+# Keep the GPX and GeoJSON exports in step with the KML. Only runs when the KML
+# is part of this commit. It sits outside `vp staged` on purpose: staged tasks
+# operate on the files they match, and this one writes two *other* files that
+# then have to be added to the same commit.
+if git diff --cached --name-only | grep -q '^public/alpine-mtb-map\.kml$'; then
+  echo "pre-commit: public/alpine-mtb-map.kml changed, regenerating exports"
+  vp run convert || exit 1
+  git add public/alpine-mtb-map.geojson public/alpine-mtb-map.gpx
+fi

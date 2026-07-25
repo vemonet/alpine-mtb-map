@@ -1,0 +1,87 @@
+Alpine MTB Map - licences
+=========================
+
+Copyright (c) 2026 Vincent Emonet and contributors
+
+This repository holds three different kinds of thing, and they cannot all carry
+the same licence. Which one applies depends on the file:
+
+    public/alpine-mtb-map.kml                ODbL 1.0        (section 1)
+    public/alpine-mtb-map.gpx
+    public/alpine-mtb-map.geojson
+
+    src/, scripts/, index.html,              MIT             (section 2)
+    vite.config.js, package.json, .github/
+
+Map tiles are not part of this repository. They are served by, and remain the
+property of, OpenStreetMap, OpenTopoMap (CC BY-SA) and CyclOSM.
+
+
+-------------------------------------------------------------------------------
+1. MAP DATA - Open Database License (ODbL) v1.0
+-------------------------------------------------------------------------------
+
+Covers public/alpine-mtb-map.kml, public/alpine-mtb-map.gpx and
+public/alpine-mtb-map.geojson.
+
+These files contain information derived from OpenStreetMap. The trail
+geometries (the <LineString> / LineString coordinates) were extracted from
+OpenStreetMap relations, which makes this a derivative database under the Open
+Database License. ODbL is share-alike, so the database as a whole is released
+under the same terms.
+
+    Data (c) OpenStreetMap contributors, ODbL 1.0
+    https://www.openstreetmap.org/copyright
+
+Full licence text:
+https://opendatacommons.org/licenses/odbl/1-0/
+
+You are free to:
+
+  Share  - copy, distribute and use the database
+  Create - produce works from the database
+  Adapt  - modify, transform and build upon the database
+
+As long as you:
+
+  Attribute - in any public use of the database, or works produced from it,
+    you must keep the notice above and make clear that the data is available
+    under the ODbL.
+  Share-Alike - if you publicly use any adapted version of this database, or
+    works produced from an adapted database, you must also offer that adapted
+    database under the ODbL.
+  Keep open - if you redistribute the database, or an adapted version of it,
+    you may use technological measures that restrict the work (such as DRM)
+    only if you also redistribute a version without such measures.
+
+Individual contents of the database - the descriptive text, prices, travel
+times and trail notes - are additionally made available under the Database
+Contents License (DbCL) v1.0, mirroring how OpenStreetMap separates its
+database licence from its contents licence:
+https://opendatacommons.org/licenses/dbcl/1-0/
+
+
+-------------------------------------------------------------------------------
+2. WEBSITE AND TOOLING - MIT License
+-------------------------------------------------------------------------------
+
+Covers src/, scripts/, index.html, vite.config.js, package.json and .github/.
+There is no OpenStreetMap data in any of them.
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.

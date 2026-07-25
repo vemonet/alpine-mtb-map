@@ -1,0 +1,399 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Alpine MTB Map - Bike Parks, Enduro and DH Trails Worldwide</title>
+    <meta
+      name="description"
+      content="Explore lift-served bike parks, natural enduro spots and downhill trails across the Alps and worldwide. Compare trails, lift prices, opening seasons and access, then download the map as KML, GPX or GeoJSON."
+    />
+    <meta name="robots" content="index, follow" />
+    <meta name="author" content="Alpine MTB Map contributors" />
+    <link rel="canonical" href="https://vemonet.github.io/alpine-mtb-map/" />
+    <link
+      rel="alternate"
+      type="application/vnd.google-earth.kml+xml"
+      href="https://vemonet.github.io/alpine-mtb-map/alpine-mtb-map.kml"
+      title="Alpine MTB Map KML"
+    />
+    <link
+      rel="alternate"
+      type="application/gpx+xml"
+      href="https://vemonet.github.io/alpine-mtb-map/alpine-mtb-map.gpx"
+      title="Alpine MTB Map GPX"
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Alpine MTB Map" />
+    <meta
+      property="og:title"
+      content="Alpine MTB Map - Bike Parks, Enduro and DH Trails Worldwide"
+    />
+    <meta
+      property="og:description"
+      content="Find bike parks, natural enduro spots and downhill trails, with prices, seasons, access details and downloadable GPS data."
+    />
+    <meta property="og:url" content="https://vemonet.github.io/alpine-mtb-map/" />
+    <meta property="og:image" content="https://vemonet.github.io/alpine-mtb-map/icon-512.png" />
+    <meta property="og:image:alt" content="Alpine MTB Map logo" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Alpine MTB Map - Bike Parks, Enduro and DH Trails" />
+    <meta
+      name="twitter:description"
+      content="An interactive map of bike parks and natural gravity riding spots with downloadable KML, GPX and GeoJSON data."
+    />
+    <meta name="twitter:image" content="https://vemonet.github.io/alpine-mtb-map/icon-512.png" />
+    <!-- The icon's own background, so the PWA chrome matches the mark.
+         scripts/make-icons.py prints this colour when it runs. -->
+    <meta name="theme-color" content="#073354" />
+    <link rel="apple-touch-icon" href="./apple-touch-icon.png" />
+    <link rel="icon" type="image/png" href="./icon.png" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Alpine MTB Map",
+        "url": "https://vemonet.github.io/alpine-mtb-map/",
+        "description": "Interactive map of lift-served bike parks, natural enduro spots and downhill trails across the Alps and worldwide.",
+        "applicationCategory": "TravelApplication",
+        "operatingSystem": "Any",
+        "isAccessibleForFree": true,
+        "license": "https://opendatacommons.org/licenses/odbl/1-0/",
+        "distribution": [
+          {
+            "@type": "DataDownload",
+            "encodingFormat": "application/vnd.google-earth.kml+xml",
+            "contentUrl": "https://vemonet.github.io/alpine-mtb-map/alpine-mtb-map.kml"
+          },
+          {
+            "@type": "DataDownload",
+            "encodingFormat": "application/gpx+xml",
+            "contentUrl": "https://vemonet.github.io/alpine-mtb-map/alpine-mtb-map.gpx"
+          },
+          {
+            "@type": "DataDownload",
+            "encodingFormat": "application/geo+json",
+            "contentUrl": "https://vemonet.github.io/alpine-mtb-map/alpine-mtb-map.geojson"
+          }
+        ]
+      }
+    </script>
+    <script>
+      // Runs before the first paint, so a saved dark theme never flashes white.
+      // No saved choice means follow the OS.
+      document.documentElement.dataset.theme =
+        localStorage.getItem("theme") ??
+        (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+    </script>
+  </head>
+  <body>
+    <div id="app">
+      <aside id="sidebar">
+        <header>
+          <h1><img class="logo" src="./icon.png" alt="" width="24" height="24" />Alpine MTB Map</h1>
+          <p>Mountain biking spots across the Alps & beyond</p>
+          <div class="header-actions">
+            <button
+              id="locate"
+              type="button"
+              title="Show my location"
+              aria-label="Show my location"
+              aria-pressed="false"
+            >
+              <svg
+                viewBox="0 0 16 16"
+                width="14"
+                height="14"
+                aria-hidden="true"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <circle cx="8" cy="8" r="2.2" />
+                <path d="M8 1v2M8 13v2M1 8h2M13 8h2" />
+                <circle cx="8" cy="8" r="5" />
+              </svg>
+            </button>
+            <button id="theme" type="button" title="Switch theme" aria-label="Switch theme">
+              <svg
+                class="moon"
+                viewBox="0 0 16 16"
+                width="13"
+                height="13"
+                aria-hidden="true"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M13.5 9.6A6 6 0 0 1 6.4 2.5a6 6 0 1 0 7.1 7.1Z" />
+              </svg>
+              <svg
+                class="sun"
+                viewBox="0 0 16 16"
+                width="14"
+                height="14"
+                aria-hidden="true"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <circle cx="8" cy="8" r="3" />
+                <path
+                  d="M8 1v1.6M8 13.4V15M1 8h1.6M13.4 8H15M3 3l1.2 1.2M11.8 11.8 13 13M13 3l-1.2 1.2M4.2 11.8 3 13"
+                />
+              </svg>
+            </button>
+            <button id="info" type="button" title="About this map" aria-label="About this map">
+              i
+            </button>
+          </div>
+        </header>
+        <nav id="filters">
+          <button
+            class="filter"
+            data-tag="beginner"
+            data-mode="any"
+            data-group="difficulty"
+            aria-pressed="true"
+            title="Spots with trails good for beginners"
+          >
+            <span class="ico" aria-hidden="true">🟢</span>Beginner
+          </button>
+          <button
+            class="filter"
+            data-tag="expert"
+            data-mode="any"
+            data-group="difficulty"
+            aria-pressed="true"
+            title="Spots with hard trails for riders after a challenge"
+          >
+            <span class="ico" aria-hidden="true">💀</span>Expert
+          </button>
+          <button
+            class="filter"
+            data-category="bikepark"
+            aria-pressed="true"
+            title="Purpose-built, operator-maintained bike parks"
+          >
+            <span class="dot blue"></span>Bike park
+          </button>
+          <button
+            class="filter"
+            data-category="natural"
+            aria-pressed="true"
+            title="Natural or lightly developed trails reached by lift or public transport"
+          >
+            <span class="dot green"></span>Natural
+          </button>
+          <button
+            class="filter"
+            data-category="nolift"
+            aria-pressed="true"
+            title="Natural spots where you pedal up"
+          >
+            <span class="dot brown"></span>No lift
+          </button>
+          <button
+            class="filter"
+            data-tag="magicpass"
+            data-mode="only"
+            aria-pressed="false"
+            title="Show only resorts included in the Magic Pass"
+          >
+            🎫 Magic Pass
+          </button>
+          <button
+            class="filter"
+            data-tag="season"
+            data-mode="only"
+            aria-pressed="false"
+            title="Show only spots with a published season pass price"
+          >
+            🎟️ Season pass
+          </button>
+          <label class="range" for="price-day">
+            <span>Day pass up to <output id="price-day-out">any</output></span>
+            <input id="price-day" type="range" min="0" max="75" step="5" value="75" />
+          </label>
+          <div class="date-filter">
+            <span>Open on</span>
+            <span class="date-control">
+              <button id="open-date-button" type="button" aria-label="Choose open date">
+                <output id="open-date-display"></output>
+                <svg
+                  class="calendar-icon"
+                  viewBox="0 0 16 16"
+                  width="14"
+                  height="14"
+                  aria-hidden="true"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.4"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <rect x="2" y="3.5" width="12" height="10.5" rx="2" />
+                  <path d="M5 2v3M11 2v3M2 7h12" />
+                </svg>
+              </button>
+              <input id="open-date" type="date" tabindex="-1" aria-hidden="true" />
+            </span>
+          </div>
+        </nav>
+        <div id="search">
+          <input
+            id="spot-search"
+            type="search"
+            placeholder="Search spots..."
+            aria-label="Search spots by title or description"
+            autocomplete="off"
+          />
+        </div>
+        <ul id="spots"></ul>
+        <footer>
+          <p class="dl-label">
+            Download for your GPS app, such as <a href="https://www.comaps.app/">CoMaps</a>
+          </p>
+          <div id="downloads" class="split-download">
+            <a
+              class="dl dl-primary"
+              href="https://vemonet.github.io/alpine-mtb-map/alpine-mtb-map.kml"
+              download="alpine-mtb-map.kml"
+              title="Recommended for apps like CoMaps, or OrganicMaps."
+            >
+              <svg
+                viewBox="0 0 16 16"
+                width="14"
+                height="14"
+                aria-hidden="true"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.6"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M8 1.8v7.4m0 0 3-3m-3 3-3-3" />
+                <path d="M2.2 11.6v1.3a1.3 1.3 0 0 0 1.3 1.3h9a1.3 1.3 0 0 0 1.3-1.3v-1.3" />
+              </svg>
+              <span class="dl-text">Download KML</span>
+            </a>
+            <details class="download-menu">
+              <summary title="Other download formats" aria-label="Other download formats">
+                <svg
+                  viewBox="0 0 12 12"
+                  width="12"
+                  height="12"
+                  aria-hidden="true"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="m3 4.5 3 3 3-3" />
+                </svg>
+              </summary>
+              <div class="download-options">
+                <a
+                  class="dl"
+                  href="https://vemonet.github.io/alpine-mtb-map/alpine-mtb-map.gpx"
+                  download="alpine-mtb-map.gpx"
+                  ><span class="dl-text">Download GPX</span></a
+                >
+                <a
+                  class="dl"
+                  href="https://vemonet.github.io/alpine-mtb-map/alpine-mtb-map.geojson"
+                  download="alpine-mtb-map.geojson"
+                  ><span class="dl-text">Download GeoJSON</span></a
+                >
+              </div>
+            </details>
+          </div>
+        </footer>
+      </aside>
+      <button
+        id="toggle-sidebar"
+        type="button"
+        aria-expanded="true"
+        aria-controls="sidebar"
+        title="Hide the sidebar"
+        aria-label="Hide the sidebar"
+      >
+        <svg
+          viewBox="0 0 16 16"
+          width="8"
+          height="8"
+          aria-hidden="true"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2.8"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path d="M10.5 2.5 5 8l5.5 5.5" />
+        </svg>
+      </button>
+      <main id="map"></main>
+    </div>
+    <dialog id="about">
+      <h2>About this map</h2>
+      <p>
+        Finding a good mountain-bike spot means trawling a dozen resort sites, none of which tell
+        you what you actually need to know in one place: what the trails are like, what the lift
+        costs, and how long it takes to get there. And once you have found somewhere, there is
+        rarely a KML or GPX to drop into your GPS app.
+      </p>
+      <p>
+        This map is that missing file. Every spot lives in a single KML you can download and load
+        into
+        <a href="https://www.comaps.app/">CoMaps</a>,
+        <a href="https://organicmaps.app/">Organic Maps</a> or OsmAnd; this site is just a
+        convenient way to browse and filter it without installing anything.
+      </p>
+      <h3>Where the data comes from</h3>
+      <ul>
+        <li>
+          <b>Trail geometry</b> from
+          <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>
+          MTB route relations, pulled via
+          <a href="https://overpass-turbo.eu/">Overpass</a> and simplified. Indicative only: follow
+          the signs on the ground, not the trace.
+        </li>
+        <li>
+          <b>Lift prices, opening dates and travel times</b> compiled from the operators' own sites
+          and <a href="https://www.magicpass.ch/">Magic Pass</a>, in July 2026. Where a 2026 figure
+          could not be confirmed the pin says so rather than guessing.
+        </li>
+        <li>
+          <b>Trail descriptions</b> written by an LLM, from riding and from operator trail maps.
+        </li>
+        <li><b>Base map tiles</b> from OpenStreetMap, OpenTopoMap (CC BY-SA) and CyclOSM.</li>
+      </ul>
+      <h3>Licence</h3>
+      <p>
+        Map data under
+        <a href="https://opendatacommons.org/licenses/odbl/1-0/">ODbL 1.0</a>, because it derives
+        from OpenStreetMap. Website code under MIT. Keep the attribution if you redistribute the
+        files.
+      </p>
+      <h3>Contributing</h3>
+      <p>
+        Spots are missing, and prices go stale. Add yours to
+        <code>public/alpine-mtb-map.kml</code>, check it renders with
+        <code>vp i &amp;&amp; vp dev</code>, and send a pull request. The README has a template and
+        the tag reference.
+      </p>
+      <p>
+        <a href="https://github.com/vemonet/alpine-mtb-map">github.com/vemonet/alpine-mtb-map</a>
+      </p>
+      <form method="dialog"><button>Close</button></form>
+    </dialog>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
