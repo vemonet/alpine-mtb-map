@@ -53048,6 +53048,33 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          -70.969722,
+          45.690833,
+          0
+        ]
+      },
+      "properties": {
+        "name": "Mont Sainte-Cecile (Quebec) [paid access, no lift]",
+        "description": {
+          "@type": "html",
+          "value": "<b>Mont Sainte-Cecile 895 m - pedal-access trail centre near Lac-Megantic</b><br/><br/><b>Trails</b><br/>A young purpose-built network on a forested Appalachian mountain, with about 12 km of trails open by 2025 and further expansion underway. Five descents, one climbing trail and two traverses use roughly 285 m of vertical. The lower mountain has easier family and progression terrain plus a pump track; the south summit has intermediate and difficult trails; the north summit descents are very difficult and aimed at expert riders.<br/><br/><b>Getting up / price</b><br/>No lift: climb the signed ascent under your own power. Trail access is paid, but a current mountain-bike day price could not be confirmed. Bike and e-bike rental is available. Buy access and check conditions on the <a href=\"https://montstececile.square.site/\">official Mont Sainte-Cecile site</a>.<br/><br/><b>Open season</b><br/>Open from 16 March; closed from 1 December (published 2026 tourism dates). Weather and mud closures can shorten the riding season.<br/><br/><b>Access</b><table class=\"access\"><tr><th>From</th><th>Transport</th><th>Duration</th></tr><tr><td>Lac-Megantic</td><td>Car</td><td>~20 min</td></tr><tr><td>Sherbrooke</td><td>Car</td><td>~1h20</td></tr></table><br/><br/><i>Trail information and opening dates checked for 2026; verify current access before you go.</i>"
+        },
+        "styleUrl": "#placemark-brown",
+        "icon-opacity": 1,
+        "icon-color": "#804633",
+        "icon": "https://omaps.app/placemarks/placemark-brown.png",
+        "spot": "montstececile",
+        "tags": "beginner expert bikepark",
+        "open_from": "03-16",
+        "closed_from": "12-01",
+        "kind": "nolift"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           137.84034,
           36.72835,
           0
@@ -53925,6 +53952,1020 @@
         "open_from": "06-15",
         "closed_from": "09-15",
         "kind": "bikepark"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.457418,
+          42.776188,
+          0
+        ]
+      },
+      "properties": {
+        "name": "Peyragudes-Loudenvielle Bike Park (Pyrenees) [33 EUR]",
+        "description": {
+          "@type": "html",
+          "value": "<b>Peyragudes 2400 m to Loudenvielle 950 m - lift-served Pyrenean enduro</b><br/><br/><b>Trails</b><br/>Twenty marked green-to-black downhill and enduro trails sit inside the Louron valley's much larger 420 km riding network. The full mountain combines maintained park lines, long natural enduro descents and World Cup terrain, with exceptional vertical back to the lake at Loudenvielle.<br/><br/><b>Getting up / price</b><br/>Skyvall carries bikes from Loudenvielle to 1600 m, then the Privilege chairlift reaches the high trail starts. The 2026 full-area adult day pass starts at 33 EUR; a station-only or Skyvall-only pass starts at 28 EUR.<br/><br/><b>Open season</b><br/>Open from 8 May; closed from 19 October (published 2026 span). May, June, September and October are mostly weekends and holidays; daily operation is from 4 July through 30 August, and the upper chairlifts run on selected days.<br/><br/><b>Access</b><table class=\"access\"><tr><th>From</th><th>Transport</th><th>Duration</th></tr><tr><td>Tarbes</td><td>Car</td><td>~1h10</td></tr><tr><td>Toulouse</td><td>Car</td><td>~1h50</td></tr></table><br/><i>Source: <a href=\"https://www.n-py.com/fr/peyragudes/bike-park\">official N'PY bike park page</a>; verify which lifts operate on your date.</i>"
+        },
+        "styleUrl": "#placemark-blue",
+        "icon-opacity": 1,
+        "icon-color": "#0066CC",
+        "icon": "https://omaps.app/placemarks/placemark-blue.png",
+        "spot": "loudenvielle",
+        "tags": "beginner expert bikepark",
+        "open_from": "05-08",
+        "closed_from": "10-19",
+        "price_day": "33 EUR",
+        "price_season": "230 EUR",
+        "kind": "bikepark"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.320281,
+          42.816564,
+          0
+        ]
+      },
+      "properties": {
+        "name": "Saint-Lary Bike Park (Pyrenees) [26 EUR]",
+        "description": {
+          "@type": "html",
+          "value": "<b>Bouleaux chairlift summit 2215 m - maintained riding above Pla d'Adet</b><br/><br/><b>Trails</b><br/>More than 40 km of marked green-to-black trails between 2215 m and 1700 m. Family Rider and Easy Rider provide genuine progression terrain, while Woodstock brings long flow and wood features; K-Bourre and Razorback supply the technical black riding. Ten maintained trails and an initiation zone make this one of the most complete parks in the French Pyrenees.<br/><br/><b>Getting up / price</b><br/>The detachable Bouleaux chairlift carries bikes. The 2026 adult day pass is 22.50 EUR from Pla d'Adet or 26 EUR including the cable car from Saint-Lary village.<br/><br/><b>Open season</b><br/>Open from 27 June; closed from 31 August (published 2026 dates). The opening weekend uses the Bouleaux chairlift only; daily operation runs from 4 July through 30 August.<br/><br/><b>Access</b><table class=\"access\"><tr><th>From</th><th>Transport</th><th>Duration</th></tr><tr><td>Tarbes</td><td>Car</td><td>~1h10</td></tr><tr><td>Toulouse</td><td>Car</td><td>~2h00</td></tr></table><br/><i>Source: <a href=\"https://saint-lary.altiservice.com/en/activities/bike-park/\">official Saint-Lary bike park page</a>; check weather and lift status.</i>"
+        },
+        "styleUrl": "#placemark-blue",
+        "icon-opacity": 1,
+        "icon-color": "#0066CC",
+        "icon": "https://omaps.app/placemarks/placemark-blue.png",
+        "spot": "saintlary",
+        "tags": "beginner expert bikepark",
+        "open_from": "06-27",
+        "closed_from": "08-31",
+        "price_day": "26 EUR",
+        "price_season": "231 EUR",
+        "kind": "bikepark"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.072672,
+          42.57766,
+          0
+        ]
+      },
+      "properties": {
+        "name": "Les Angles Bike Park (Pyrenees) [24.50 EUR]",
+        "description": {
+          "@type": "html",
+          "value": "<b>Roc d'Aude sector above Les Angles - 500 m of lift-served vertical</b><br/><br/><b>Trails</b><br/>About 30 km of purpose-built riding across nine descents and five difficulty levels. Long blue and red marathon lines drop through pine forest, while black tracks, jumps, a North Shore line and the separate Flow Zone cover more committed riding and skill progression.<br/><br/><b>Getting up / price</b><br/>The village gondola serves the park. The published adult day pass starts at 24.50 EUR, with four-hour and multi-day options also available.<br/><br/><b>Open season</b><br/>Open from 27 June; closed from 31 August (published 2026 dates). The park operates daily in the main window, subject to weather and the Tour de France closure on 6 July 2026.<br/><br/><b>Access</b><table class=\"access\"><tr><th>From</th><th>Transport</th><th>Duration</th></tr><tr><td>Perpignan</td><td>Car</td><td>~1h30</td></tr><tr><td>Barcelona</td><td>Car</td><td>~2h30</td></tr></table><br/><i>Sources: <a href=\"https://lesangles.com/evenement/ouverture-bike-park-les-angles/\">Les Angles 2026 opening notice</a> and official ticket shop; check lift status.</i>"
+        },
+        "styleUrl": "#placemark-blue",
+        "icon-opacity": 1,
+        "icon-color": "#0066CC",
+        "icon": "https://omaps.app/placemarks/placemark-blue.png",
+        "spot": "lesangles",
+        "tags": "beginner expert bikepark",
+        "open_from": "06-27",
+        "closed_from": "08-31",
+        "price_day": "24.50 EUR",
+        "kind": "bikepark"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.93495,
+          42.33596,
+          0
+        ]
+      },
+      "properties": {
+        "name": "La Molina Bike Park (Catalonia, ES) [31 EUR]",
+        "description": {
+          "@type": "html",
+          "value": "<b>La Tosa and Cap de Comella above La Molina - Spain's largest lift park</b><br/><br/><b>Trails</b><br/>Thirteen downhill circuits and more than 45 km of riding split between La Tosa and Comella, with freeride features, a woodpark, e-bike routes and a children's zone. The range runs from progression tracks to the 2.3 km Comella DH race course, which loses more than 400 m through technical natural and shaped sections.<br/><br/><b>Getting up / price</b><br/>The Cadi-Moixero gondola and Cap de Comella chairlift serve the park. The latest verified adult day rate is 31 EUR including insurance; check the resort for the current 2026 rate and lift schedule.<br/><br/><b>Open season</b><br/>Open from 14 June; closed from 6 October (typical window based on the latest full published season). Core daily lift operation is concentrated in July and August, with reduced schedules outside it.<br/><br/><b>Access</b><table class=\"access\"><tr><th>From</th><th>Transport</th><th>Duration</th></tr><tr><td>Barcelona</td><td>Car</td><td>~2h00</td></tr><tr><td>Barcelona</td><td>Train</td><td>~3h00</td></tr></table><br/><i>Sources: <a href=\"https://www.lamolina.cat/en/summer/resort/facilities-opening-status/\">official La Molina opening report</a> and resort prices; seasonal dates are an estimate.</i>"
+        },
+        "styleUrl": "#placemark-blue",
+        "icon-opacity": 1,
+        "icon-color": "#0066CC",
+        "icon": "https://omaps.app/placemarks/placemark-blue.png",
+        "spot": "lamolina",
+        "tags": "beginner expert bikepark",
+        "open_from": "06-14",
+        "closed_from": "10-06",
+        "price_day": "31 EUR",
+        "kind": "bikepark"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.14398,
+          42.415225,
+          0
+        ]
+      },
+      "properties": {
+        "name": "Zona Zero Pirineos (Ainsa, ES) [no lift, free trails]",
+        "description": {
+          "@type": "html",
+          "value": "<b>Ainsa 580 m - internationally known natural enduro trail centre</b><br/><br/><b>Trails</b><br/>A vast signed network built around restored historic paths through Sobrarbe's sandstone ridges, badlands, forests and abandoned villages. Routes range from approachable valley loops to long, exposed and highly technical enduro days. This is natural riding rather than a shaped park; carry navigation, water and repair equipment.<br/><br/><b>Getting up / price</b><br/>The trails themselves are free and normally climbed under pedal power. Commercial shuttles, guides, rentals and route support are available in Ainsa for riders who want uplift or local knowledge.<br/><br/><b>Open season</b><br/>Normally rideable year-round. Summer heat can be severe and high routes can hold snow in winter, so spring and autumn are the prime seasons.<br/><br/><b>Access</b><table class=\"access\"><tr><th>From</th><th>Transport</th><th>Duration</th></tr><tr><td>Huesca</td><td>Car</td><td>~1h20</td></tr><tr><td>Zaragoza</td><td>Car</td><td>~2h10</td></tr></table><br/><i>Source: <a href=\"https://zonazeropirineos.com/en/\">official Zona Zero Pirineos site</a>; respect route-specific closures and shared paths.</i>"
+        },
+        "styleUrl": "#placemark-brown",
+        "icon-opacity": 1,
+        "icon-color": "#804633",
+        "icon": "https://omaps.app/placemarks/placemark-brown.png",
+        "spot": "zonazero",
+        "tags": "beginner expert natural",
+        "open_from": "01-01",
+        "closed_from": "01-01",
+        "kind": "nolift"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.39864,
+          37.09306,
+          0
+        ]
+      },
+      "properties": {
+        "name": "Sierra Nevada Bike Park (Granada, ES) [lift price unverified]",
+        "description": {
+          "@type": "html",
+          "value": "<b>Veleta sector 3030 m to Pradollano 2150 m - high-alpine Spanish riding</b><br/><br/><b>Trails</b><br/>Six downhill circuits descend from the exposed terrain near Veleta toward Borreguiles and Pradollano, complemented by a cross-country circuit at Fuente Alta. The huge elevation, loose rock and open high-mountain character make this very different from a forest bike park; weather and trail availability can change quickly.<br/><br/><b>Getting up / price</b><br/>Summer access uses the Borreguiles gondola and Veleta chairlift. A current bike-specific 2026 day rate was not clearly published, so confirm both bicycle carriage and open bike trails before travelling.<br/><br/><b>Open season</b><br/>Open from 11 July; closed from 24 August (published 2026 summer-lift dates). Individual bike trails may have a shorter window or remain closed depending on maintenance and conditions.<br/><br/><b>Access</b><table class=\"access\"><tr><th>From</th><th>Transport</th><th>Duration</th></tr><tr><td>Granada</td><td>Car / bus</td><td>~45 min</td></tr><tr><td>Malaga</td><td>Car</td><td>~2h00</td></tr></table><br/><i>Sources: <a href=\"https://sierranevada.es/en/summer/the-resort/calendar-and-rates/\">official 2026 summer calendar</a> and Sierra Nevada bike park information; verify current trail status.</i>"
+        },
+        "styleUrl": "#placemark-blue",
+        "icon-opacity": 1,
+        "icon-color": "#0066CC",
+        "icon": "https://omaps.app/placemarks/placemark-blue.png",
+        "spot": "sierranevada",
+        "tags": "beginner expert bikepark",
+        "open_from": "07-11",
+        "closed_from": "08-24",
+        "kind": "bikepark"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.9671,
+          50.3964,
+          0
+        ]
+      },
+      "properties": {
+        "name": "Trail Park Klinovec (CZ) [lift price unverified]",
+        "description": {
+          "@type": "html",
+          "value": "<b>Klinovec 1244 m - long lift-served flow trails on the Czech-German border</b><br/><br/><b>Trails</b><br/>One of Czechia's headline bike parks, known for unusually long descents: the easy Azur flow trail is about 10 km, Rubin about 8 km and Baron about 6 km. Shorter technical enduro and downhill lines add roots, rocks and steeper sections, giving useful progression from first park laps to expert riding.<br/><br/><b>Getting up / price</b><br/>The Prima Express chairlift carries bikes from the Jachymov side. Current bike-pass prices vary by date and were not reliably exposed by the operator, so check the official ticket shop before travelling.<br/><br/><b>Open season</b><br/>Open from 1 May; closed from 1 November (typical lift-served window; check the current calendar).<br/><br/><b>Access</b><table class=\"access\"><tr><th>From</th><th>Transport</th><th>Duration</th></tr><tr><td>Prague</td><td>Car</td><td>~2h00</td></tr><tr><td>Dresden</td><td>Car</td><td>~1h45</td></tr></table><br/><i>Source: <a href=\"https://www.trailpark.cz/\">official Trail Park Klinovec site</a>; verify lift and trail status.</i>"
+        },
+        "styleUrl": "#placemark-blue",
+        "icon-opacity": 1,
+        "icon-color": "#0066CC",
+        "icon": "https://omaps.app/placemarks/placemark-blue.png",
+        "spot": "klinovec",
+        "tags": "beginner expert bikepark",
+        "open_from": "05-01",
+        "closed_from": "11-01",
+        "kind": "bikepark"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          16.8147,
+          50.1506,
+          0
+        ]
+      },
+      "properties": {
+        "name": "Trail Park Dolni Morava (CZ) [lift price unverified]",
+        "description": {
+          "@type": "html",
+          "value": "<b>Slamnik sector above Dolni Morava - lift-served trail and enduro park</b><br/><br/><b>Trails</b><br/>A modern trail park with approachable blue flow lines, longer red descents and rougher enduro options. Machine-shaped berms and rollers make it friendly for progression, while roots, rock gardens and steeper natural sections provide worthwhile riding for experienced visitors.<br/><br/><b>Getting up / price</b><br/>The Sneznik chairlift carries bikes to the upper trail network. Day bike-pass prices are dynamically presented by the resort and were not reliably verified here; check the operator before visiting.<br/><br/><b>Open season</b><br/>Open from 8 May; closed from 1 November (typical 2026 summer and autumn lift window; reduced operation outside peak season).<br/><br/><b>Access</b><table class=\"access\"><tr><th>From</th><th>Transport</th><th>Duration</th></tr><tr><td>Olomouc</td><td>Car</td><td>~1h45</td></tr><tr><td>Prague</td><td>Car</td><td>~3h00</td></tr></table><br/><i>Source: <a href=\"https://www.dolnimorava.cz/single-trails\">official Dolni Morava Trail Park page</a>; verify operating days.</i>"
+        },
+        "styleUrl": "#placemark-blue",
+        "icon-opacity": 1,
+        "icon-color": "#0066CC",
+        "icon": "https://omaps.app/placemarks/placemark-blue.png",
+        "spot": "dolnimorava",
+        "tags": "beginner expert bikepark",
+        "open_from": "05-08",
+        "closed_from": "11-01",
+        "kind": "bikepark"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          17.185899,
+          50.36687,
+          0
+        ]
+      },
+      "properties": {
+        "name": "Rychlebske Stezky (CZ) [no lift, donation supported]",
+        "description": {
+          "@type": "html",
+          "value": "<b>Cerna Voda trail centre - hand-built riding in the Rychleby Mountains</b><br/><br/><b>Trails</b><br/>A celebrated community trail network built around granite slabs, boulders, roots and old forest paths. Lower flow and skills trails offer progression, while the classic SuperFlow and rocky upper routes reward strong technical riders. Trails start and finish near the main base.<br/><br/><b>Getting up / price</b><br>No lift: all routes are pedal-accessed. Riding is donation-supported; contribute at the base to fund maintenance and use local services where possible.<br/><br/><b>Open season</b><br/>Open from 1 April; closed from 1 November (typical riding window). Do not ride during freeze-thaw, snow or official wet-weather closures.<br/><br/><b>Access</b><table class=\"access\"><tr><th>From</th><th>Transport</th><th>Duration</th></tr><tr><td>Olomouc</td><td>Car</td><td>~1h30</td></tr><tr><td>Wroclaw</td><td>Car</td><td>~2h15</td></tr></table><br/><i>Source: <a href=\"https://www.rychlebskestezky.cz/cs/traily\">official Rychlebske Stezky trail page</a>; check current closures.</i>"
+        },
+        "styleUrl": "#placemark-brown",
+        "icon-opacity": 1,
+        "icon-color": "#804633",
+        "icon": "https://omaps.app/placemarks/placemark-brown.png",
+        "spot": "rychleby",
+        "tags": "beginner expert natural",
+        "open_from": "04-01",
+        "closed_from": "11-01",
+        "kind": "nolift"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.225804,
+          53.222602,
+          0
+        ]
+      },
+      "properties": {
+        "name": "The GAP Bikepark (Dublin, IE) [shuttle price unverified]",
+        "description": {
+          "@type": "html",
+          "value": "<b>Glencullen Adventure Park - purpose-built gravity riding above Dublin</b><br/><br/><b>Trails</b><br/>A compact proper bike park with blue, red and black descents, jump lines and high-consequence expert features. The blue and red trails provide progression, but difficulty rises quickly and the hardest lines are aimed at confident gravity riders.<br/><br/><b>Getting up / price</b><br/>Five vans and bike trailers provide scheduled uplift, with pedal access also possible. Prices depend on the booked session and were not reliably verified here; reserve through the official site.<br/><br/><b>Open season</b><br>Normally open year-round on scheduled operating days; severe weather and forestry work can cause closures.<br/><br/><b>Access</b><table class=\"access\"><tr><th>From</th><th>Transport</th><th>Duration</th></tr><tr><td>Dublin centre</td><td>Car</td><td>~35 min</td></tr><tr><td>Dublin airport</td><td>Car</td><td>~40 min</td></tr></table><br/><i>Source: <a href=\"https://thegap.ie/trails/\">official GAP trail page</a>; advance booking recommended.</i>"
+        },
+        "styleUrl": "#placemark-blue",
+        "icon-opacity": 1,
+        "icon-color": "#0066CC",
+        "icon": "https://omaps.app/placemarks/placemark-blue.png",
+        "spot": "thegap",
+        "tags": "beginner expert bikepark",
+        "open_from": "01-01",
+        "closed_from": "01-01",
+        "kind": "bikepark"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.4969,
+          52.3072,
+          0
+        ]
+      },
+      "properties": {
+        "name": "Ballyhoura MTB Trails (IE) [no lift, parking fee]",
+        "description": {
+          "@type": "html",
+          "value": "<b>Ballyhoura trailhead - Ireland's largest waymarked MTB network</b><br/><br/><b>Trails</b><br/>Five purpose-built forest loops range from the 7 km Greenwood blue route to the 51 km Castlepook red. Expect long forest-road climbs linked by tight singletrack, fast descents and increasingly rocky, technical sections. The network suits beginners on the shortest loop and experienced riders on the full red circuits.<br/><br/><b>Getting up / price</b><br/>No lift: every route is a pedal-powered loop. Trail access is free, with cashless parking charged at the trailhead; rental, bike wash and showers are available.<br/><br/><b>Open season</b><br/>Open year-round, with the car park operating 08:00-22:00. Storm damage, harvesting and saturated ground can close individual sections.<br/><br/><b>Access</b><table class=\"access\"><tr><th>From</th><th>Transport</th><th>Duration</th></tr><tr><td>Limerick</td><td>Car</td><td>~50 min</td></tr><tr><td>Cork</td><td>Car</td><td>~1h10</td></tr></table><br/><i>Source: <a href=\"https://www.coillte.ie/site/ballyhoura/\">official Coillte Ballyhoura page</a>; obey live closure signs.</i>"
+        },
+        "styleUrl": "#placemark-brown",
+        "icon-opacity": 1,
+        "icon-color": "#804633",
+        "icon": "https://omaps.app/placemarks/placemark-brown.png",
+        "spot": "ballyhoura",
+        "tags": "beginner expert natural",
+        "open_from": "01-01",
+        "closed_from": "01-01",
+        "kind": "nolift"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.3778,
+          51.7187,
+          0
+        ]
+      },
+      "properties": {
+        "name": "BikePark Wales (Wales, UK) [uplift price unverified]",
+        "description": {
+          "@type": "html",
+          "value": "<b>Gethin Woods above Merthyr Tydfil - the UK's largest gravity trail network</b><br/><br/><b>Trails</b><br/>More than fifty all-weather trails cover genuine beginner progression, high-speed flow, jumps and steep technical race-style terrain. Kermit provides a long green introduction, while the red, black and pro lines make the park a destination for experienced riders as well.<br/><br/><b>Getting up / price</b><br/>Dedicated vehicles provide booked uplift, or riders can buy pedal and e-bike access. Dynamic session prices were not reliably exposed, so check the official booking calendar.<br/><br/><b>Open season</b><br/>Normally open year-round on scheduled days. Booking availability, storms and trail work can affect individual dates.<br/><br/><b>Access</b><table class=\"access\"><tr><th>From</th><th>Transport</th><th>Duration</th></tr><tr><td>Cardiff</td><td>Car</td><td>~45 min</td></tr><tr><td>Bristol</td><td>Car</td><td>~1h30</td></tr></table><br/><i>Source: <a href=\"https://www.bikeparkwales.com/\">official BikePark Wales site</a>; uplift booking is strongly recommended.</i>"
+        },
+        "styleUrl": "#placemark-blue",
+        "icon-opacity": 1,
+        "icon-color": "#0066CC",
+        "icon": "https://omaps.app/placemarks/placemark-blue.png",
+        "spot": "bikeparkwales",
+        "tags": "beginner expert bikepark",
+        "open_from": "01-01",
+        "closed_from": "01-01",
+        "kind": "bikepark"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.852304,
+          52.623753,
+          0
+        ]
+      },
+      "properties": {
+        "name": "Dyfi Bike Park (Wales, UK) [uplift price unverified]",
+        "description": {
+          "@type": "html",
+          "value": "<b>Dyfi Forest - big-mountain gravity trails built by the Athertons</b><br/><br/><b>Trails</b><br/>A 650-acre destination with hand-built red through triple-black trails. Long, fast and technical descents combine natural rock and roots with large jumps and race-scale features. There is no beginner terrain: even the red trails require solid bike-park skills.<br/><br/><b>Getting up / price</b><br/>Land Rover shuttles provide uplift from the base. Prices and operating days vary through the booking calendar, so reserve directly with the park.<br/><br/><b>Open season</b><br/>Normally open year-round on selected booked days, subject to Welsh mountain weather and maintenance closures.<br/><br/><b>Access</b><table class=\"access\"><tr><th>From</th><th>Transport</th><th>Duration</th></tr><tr><td>Aberystwyth</td><td>Car</td><td>~45 min</td></tr><tr><td>Manchester</td><td>Car</td><td>~2h30</td></tr></table><br/><i>Source: <a href=\"https://www.dyfibikepark.co.uk/\">official Dyfi Bike Park site</a>; advance booking required.</i>"
+        },
+        "styleUrl": "#placemark-blue",
+        "icon-opacity": 1,
+        "icon-color": "#0066CC",
+        "icon": "https://omaps.app/placemarks/placemark-blue.png",
+        "spot": "dyfi",
+        "tags": "expert bikepark",
+        "open_from": "01-01",
+        "closed_from": "01-01",
+        "kind": "bikepark"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -4.999258,
+          56.852366,
+          0
+        ]
+      },
+      "properties": {
+        "name": "Nevis Range (Fort William, UK) [39.85 GBP online]",
+        "description": {
+          "@type": "html",
+          "value": "<b>Aonach Mor 650 m gondola station - World Cup downhill above Fort William</b><br/><br/><b>Trails</b><br/>Three major gondola descents: the legendary orange World Cup track, tight technical black Top Chief and the more approachable Blue Doon. Lower Witches trails add year-round pedal-access riding below the gondola. Highland weather, rocks and sustained vertical make even the easier mountain line demanding.<br/><br/><b>Getting up / price</b><br/>The Mountain Gondola carries riders and bikes in about fifteen minutes. The 2026 adult online multi-trip uplift is 39.85 GBP, or 41.95 GBP at the ticket office.<br/><br/><b>Open season</b><br/>Open from 1 May; closed from 1 October (typical bike-uplift window). Lower trails remain open year-round, while gondola dates and individual descents depend on weather, events and maintenance.<br/><br/><b>Access</b><table class=\"access\"><tr><th>From</th><th>Transport</th><th>Duration</th></tr><tr><td>Fort William</td><td>Car / bus</td><td>~15 min</td></tr><tr><td>Glasgow</td><td>Car</td><td>~2h45</td></tr></table><br/><i>Source: <a href=\"https://www.nevisrange.co.uk/activities/bike/uplift-prices/\">official Nevis Range 2026 uplift page</a>; check the daily mountain report.</i>"
+        },
+        "styleUrl": "#placemark-blue",
+        "icon-opacity": 1,
+        "icon-color": "#0066CC",
+        "icon": "https://omaps.app/placemarks/placemark-blue.png",
+        "spot": "nevisrange",
+        "tags": "beginner expert bikepark",
+        "open_from": "05-01",
+        "closed_from": "10-01",
+        "price_day": "39.85 GBP",
+        "price_season": "437.65 GBP",
+        "kind": "bikepark"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.182007,
+          55.656936,
+          0
+        ]
+      },
+      "properties": {
+        "name": "Glentress 7stanes (Scotland, UK) [no lift, parking fee]",
+        "description": {
+          "@type": "html",
+          "value": "<b>Glentress Forest - 75 km of purpose-built Tweed Valley singletrack</b><br/><br/><b>Trails</b><br/>Scotland's flagship trail centre ranges from green family loops and blue progression trails to long red and black routes. Modern flow finales sit alongside classic rooty and rocky forest singletrack, with enough climbing and distance for full-day rides.<br/><br/><b>Getting up / price</b><br/>No lift: all official routes are pedal-accessed. Trails are free, with all-day parking charged at the visitor centre; bike hire, coaching, showers and food are available.<br/><br/><b>Open season</b><br/>Normally open year-round. Forestry work, storms and repairs regularly divert or close individual sections, so check current notices.<br/><br/><b>Access</b><table class=\"access\"><tr><th>From</th><th>Transport</th><th>Duration</th></tr><tr><td>Edinburgh</td><td>Car</td><td>~1h00</td></tr><tr><td>Edinburgh</td><td>Bus</td><td>~1h30</td></tr></table><br/><i>Source: <a href=\"https://forestryandland.gov.scot/visit/destinations/glentress/bike\">Forestry and Land Scotland</a>; follow live diversions.</i>"
+        },
+        "styleUrl": "#placemark-brown",
+        "icon-opacity": 1,
+        "icon-color": "#804633",
+        "icon": "https://omaps.app/placemarks/placemark-brown.png",
+        "spot": "glentress",
+        "tags": "beginner expert natural",
+        "open_from": "01-01",
+        "closed_from": "01-01",
+        "kind": "nolift"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.063384,
+          55.619074,
+          0
+        ]
+      },
+      "properties": {
+        "name": "Innerleithen and Golfie (Scotland, UK) [optional shuttle]",
+        "description": {
+          "@type": "html",
+          "value": "<b>Traquair and Caberston forests - technical Tweed Valley enduro</b><br/><br/><b>Trails</b><br/>Innerleithen's four formal downhill tracks drop steeply from Plora Rig, while the adjacent Golfie in Caberston Forest is famous for demanding natural enduro trails. Expect roots, mud, rock, steep chutes and limited easy options; this is primarily an expert destination.<br/><br/><b>Getting up / price</b><br/>Pedal and push-up access is always the baseline. Adrenalin Uplift runs a bookable shuttle to the formal downhill hill when available; current prices and dates depend on its calendar.<br/><br/><b>Open season</b><br/>Normally rideable year-round, subject to storm damage, forestry operations, trail maintenance and shuttle availability.<br/><br/><b>Access</b><table class=\"access\"><tr><th>From</th><th>Transport</th><th>Duration</th></tr><tr><td>Edinburgh</td><td>Car</td><td>~1h10</td></tr><tr><td>Glentress</td><td>Car</td><td>~15 min</td></tr></table><br/><i>Source: <a href=\"https://forestryandland.gov.scot/visit/destinations/innerleithen/bike\">Forestry and Land Scotland</a>; clean bikes to limit forest disease and obey closures.</i>"
+        },
+        "styleUrl": "#placemark-green",
+        "icon-opacity": 1,
+        "icon-color": "#3C8C3C",
+        "icon": "https://omaps.app/placemarks/placemark-green.png",
+        "spot": "innerleithen",
+        "tags": "expert natural",
+        "open_from": "01-01",
+        "closed_from": "01-01",
+        "kind": "natural"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          16.814,
+          50.26,
+          0
+        ]
+      },
+      "properties": {
+        "name": "Bike Park Czarna Gora (PL) [119 PLN weekdays]",
+        "description": {
+          "@type": "html",
+          "value": "<b>Czarna Gora 1205 m - one of Poland's largest lift-served parks</b><br/><br/><b>Trails</b><br/>Nineteen maintained trails cover beginner flow, skills zones, freeride, enduro and advanced downhill. The Kids and Skills arenas make progression unusually accessible, while the steeper race lines provide serious rock, roots and technical features.<br/><br/><b>Getting up / price</b><br/>The Luxtorpeda chairlift and Efka lift carry bikes. The published 2026 adult weekday day pass is 119 PLN; weekend pricing can be higher.<br/><br/><b>Open season</b><br/>Open from 1 May; closed from 1 November (typical 2026 lift window; reduced schedules and maintenance closures apply).<br/><br/><b>Access</b><table class=\"access\"><tr><th>From</th><th>Transport</th><th>Duration</th></tr><tr><td>Wroclaw</td><td>Car</td><td>~2h00</td></tr><tr><td>Prague</td><td>Car</td><td>~3h00</td></tr></table><br/><i>Source: <a href=\"https://www.bikeparkczarnagora.pl/\">official Bike Park Czarna Gora site</a>; check lift status.</i>"
+        },
+        "styleUrl": "#placemark-blue",
+        "icon-opacity": 1,
+        "icon-color": "#0066CC",
+        "icon": "https://omaps.app/placemarks/placemark-blue.png",
+        "spot": "czarnagora",
+        "tags": "beginner expert bikepark",
+        "open_from": "05-01",
+        "closed_from": "11-01",
+        "price_day": "119 PLN",
+        "kind": "bikepark"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          16.658923,
+          50.575566,
+          0
+        ]
+      },
+      "properties": {
+        "name": "Enduro Trails Srebrna Gora (PL) [shuttle price unverified]",
+        "description": {
+          "@type": "html",
+          "value": "<b>Srebrna Gora - shuttle-assisted Lower Silesian enduro</b><br/><br/><b>Trails</b><br/>Long purpose-built and natural descents use roughly 330 m of vertical around the historic fortress. Lines range from flowing intermediate riding to steep technical enduro with rock, roots and tight forest sections; SGR Line is the signature expert descent.<br/><br/><b>Getting up / price</b><br/>Commercial vans and trailers provide booked uplift, with pedalling also possible. Current shuttle prices vary by package and were not reliably published in the sources checked.<br/><br/><b>Open season</b><br/>Open from 1 April; closed from 1 December (typical riding and shuttle window; check booking availability).<br/><br/><b>Access</b><table class=\"access\"><tr><th>From</th><th>Transport</th><th>Duration</th></tr><tr><td>Wroclaw</td><td>Car</td><td>~1h30</td></tr><tr><td>Prague</td><td>Car</td><td>~3h00</td></tr></table><br/><i>Sources: <a href=\"https://www.srebrna.com/rowery/\">Srebrna Gora trail information</a> and NS Bikeparks; reserve uplift in advance.</i>"
+        },
+        "styleUrl": "#placemark-blue",
+        "icon-opacity": 1,
+        "icon-color": "#0066CC",
+        "icon": "https://omaps.app/placemarks/placemark-blue.png",
+        "spot": "srebrnagora",
+        "tags": "expert bikepark",
+        "open_from": "04-01",
+        "closed_from": "12-01",
+        "kind": "bikepark"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          19.001475,
+          49.759856,
+          0
+        ]
+      },
+      "properties": {
+        "name": "Enduro Trails Bielsko-Biala (PL) [no lift, free trails]",
+        "description": {
+          "@type": "html",
+          "value": "<b>Blonia trail centre - Poland's best-known pedal-access enduro network</b><br/><br/><b>Trails</b><br/>A large signed network on the wooded hills above Bielsko-Biala, combining machine-built flow with technical natural enduro. Climbing trails link green and blue progression lines to red and black descents; the area hosted Enduro World Cup racing.<br/><br/><b>Getting up / price</b><br/>No lift at the main Blonia network: climb the signed uphill trails. Trail access is free, with rentals, coaching and services available at the base.<br/><br/><b>Open season</b><br/>Open from 1 April; closed from 1 December (typical window). Respect wet-weather, forestry and event closures.<br/><br/><b>Access</b><table class=\"access\"><tr><th>From</th><th>Transport</th><th>Duration</th></tr><tr><td>Katowice</td><td>Car / train</td><td>~1h15</td></tr><tr><td>Krakow</td><td>Car</td><td>~1h30</td></tr></table><br/><i>Source: <a href=\"https://endurotrails.pl/en\">official Enduro Trails site</a>; check current trail status.</i>"
+        },
+        "styleUrl": "#placemark-brown",
+        "icon-opacity": 1,
+        "icon-color": "#804633",
+        "icon": "https://omaps.app/placemarks/placemark-brown.png",
+        "spot": "bielsko",
+        "tags": "beginner expert bikepark",
+        "open_from": "04-01",
+        "closed_from": "12-01",
+        "kind": "nolift"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          20.159665,
+          49.717046,
+          0
+        ]
+      },
+      "properties": {
+        "name": "Bike Park Kasina (PL) [169 PLN]",
+        "description": {
+          "@type": "html",
+          "value": "<b>Snieznica above Kasina Wielka - compact lift-served gravity park</b><br/><br/><b>Trails</b><br/>A well-established Polish park with flow, jump and downhill lines packed into a compact hill. Easier shaped trails support progression, while rooty forest tracks and steeper technical variants suit advanced riders.<br/><br/><b>Getting up / price</b><br/>A high-speed chairlift carries bikes. The published 2026 regular adult day ticket is 169 PLN, or 149 PLN with the phone-sticker pass.<br/><br/><b>Open season</b><br/>Open from 1 May; closed from 1 November (typical operating window; check weekday and shoulder-season schedules).<br/><br/><b>Access</b><table class=\"access\"><tr><th>From</th><th>Transport</th><th>Duration</th></tr><tr><td>Krakow</td><td>Car</td><td>~1h10</td></tr><tr><td>Zakopane</td><td>Car</td><td>~1h20</td></tr></table><br/><i>Source: <a href=\"https://kasinaski.pl/en/price-lists/bike-park-price-list/\">official Kasina 2026 price list</a>; check opening hours.</i>"
+        },
+        "styleUrl": "#placemark-blue",
+        "icon-opacity": 1,
+        "icon-color": "#0066CC",
+        "icon": "https://omaps.app/placemarks/placemark-blue.png",
+        "spot": "kasina",
+        "tags": "beginner expert bikepark",
+        "open_from": "05-01",
+        "closed_from": "11-01",
+        "price_day": "169 PLN",
+        "kind": "bikepark"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          18.988607,
+          49.683663,
+          0
+        ]
+      },
+      "properties": {
+        "name": "Szczyrk Bike Park by Trek (PL) [lift price unverified]",
+        "description": {
+          "@type": "html",
+          "value": "<b>Szczyrk Mountain Resort - lift-served Beskid flow and downhill</b><br/><br/><b>Trails</b><br/>One-way purpose-built trails spread across the resort, from smoother blue flow and a progressive skill zone to red, black and competition-level downhill. The park hosts major Polish and European DH racing.<br/><br/><b>Getting up / price</b><br/>Gondola and chairlifts provide bike uplift. Current 2026 bike-pass prices are sold through the resort and were not reliably exposed here.<br/><br/><b>Open season</b><br/>Open from 1 May; closed from 1 November (typical lift window; shoulder-season operation may be weekends only).<br/><br/><b>Access</b><table class=\"access\"><tr><th>From</th><th>Transport</th><th>Duration</th></tr><tr><td>Katowice</td><td>Car</td><td>~1h30</td></tr><tr><td>Krakow</td><td>Car</td><td>~2h00</td></tr></table><br/><i>Source: <a href=\"https://www.szczyrkowski.pl/en/resort/szczyrk-news/szczyrk-mountain-resort-news\">official Szczyrk 2026 news</a>; verify open lifts and trails.</i>"
+        },
+        "styleUrl": "#placemark-blue",
+        "icon-opacity": 1,
+        "icon-color": "#0066CC",
+        "icon": "https://omaps.app/placemarks/placemark-blue.png",
+        "spot": "szczyrk",
+        "tags": "beginner expert bikepark",
+        "open_from": "05-01",
+        "closed_from": "11-01",
+        "kind": "bikepark"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          19.213981,
+          49.771417,
+          0
+        ]
+      },
+      "properties": {
+        "name": "Gora Zar Bike Park (PL) [funicular price unverified]",
+        "description": {
+          "@type": "html",
+          "value": "<b>Gora Zar 761 m - steep gravity trails above Miedzybrodzie Zywieckie</b><br/><br/><b>Trails</b><br/>A smaller Polish gravity venue with fast shaped sections and technical forest riding on a steep hill. It is best suited to intermediate and expert riders rather than first-time mountain bikers.<br/><br/><b>Getting up / price</b><br/>The PKL funicular carries riders toward the trail starts when bike service is operating. Current bike-specific pricing was not reliably published; confirm carriage and trail status before travelling.<br/><br/><b>Open season</b><br/>Open from 1 May; closed from 1 October (typical 2026 bike season, subject to announcements and weather).<br/><br/><b>Access</b><table class=\"access\"><tr><th>From</th><th>Transport</th><th>Duration</th></tr><tr><td>Katowice</td><td>Car</td><td>~1h30</td></tr><tr><td>Krakow</td><td>Car</td><td>~1h45</td></tr></table><br/><i>Source: <a href=\"https://www.pkl.pl/post/gora-zar/aktualnosci/otwarcie-tras-rowerowych-na-gorze-zar-juz-niebawem.html\">PKL 2026 bike-trail announcement</a>; verify bike uplift.</i>"
+        },
+        "styleUrl": "#placemark-blue",
+        "icon-opacity": 1,
+        "icon-color": "#0066CC",
+        "icon": "https://omaps.app/placemarks/placemark-blue.png",
+        "spot": "gorazar",
+        "tags": "expert bikepark",
+        "open_from": "05-01",
+        "closed_from": "10-01",
+        "kind": "bikepark"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.508078,
+          58.039861,
+          0
+        ]
+      },
+      "properties": {
+        "name": "Munaka Bike and Hike Park (Estonia) [chairlift price unverified]",
+        "description": {
+          "@type": "html",
+          "value": "<b>Vaike Munamagi above Otepaa - Estonia's chairlift-served bike park</b><br/><br/><b>Trails</b><br/>A small purpose-built enduro park using Estonia's unusually hilly Otepaa terrain. Short descents mix shaped features and natural forest surfaces, with bike rental and e-bike routes extending the riding beyond the lift hill.<br/><br/><b>Getting up / price</b><br/>Estonia's only summer chairlift carries bikes. Current day pricing was not reliably exposed, so check the operator before visiting.<br/><br/><b>Open season</b><br/>Open from 19 June; closed from 22 September (published main season). Weekend operation is standard; riding before and after the main dates is available to prebooked groups through 1 November.<br/><br/><b>Access</b><table class=\"access\"><tr><th>From</th><th>Transport</th><th>Duration</th></tr><tr><td>Tartu</td><td>Car</td><td>~40 min</td></tr><tr><td>Tallinn</td><td>Car</td><td>~2h30</td></tr></table><br/><i>Sources: <a href=\"https://www.munakas.ee/en/home/\">official Munakas site</a> and Visit Estonia; check weekend hours.</i>"
+        },
+        "styleUrl": "#placemark-blue",
+        "icon-opacity": 1,
+        "icon-color": "#0066CC",
+        "icon": "https://omaps.app/placemarks/placemark-blue.png",
+        "spot": "munaka",
+        "tags": "beginner expert bikepark",
+        "open_from": "06-19",
+        "closed_from": "09-22",
+        "kind": "bikepark"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          25.56386,
+          59.2205,
+          0
+        ]
+      },
+      "properties": {
+        "name": "Valgehobusemae Bike Trail (Estonia) [no lift]",
+        "description": {
+          "@type": "html",
+          "value": "<b>Valgehobusemae Recreation Centre - long forest and bog-country MTB loop</b><br/><br/><b>Trails</b><br/>A signed cross-country route of up to 50 km circles Valgehobusemae and Kakerdaja bog. Expect forest tracks, rolling singletrack and remote sections rather than gravity-park features; shorter options suit less experienced riders.<br/><br/><b>Getting up / price</b><br/>No lift: the network is ridden as pedal-powered loops. Access information and bike rental are available from the recreation centre.<br/><br/><b>Open season</b><br/>Open from 1 May; closed from 2 October (published cycling season).<br/><br/><b>Access</b><table class=\"access\"><tr><th>From</th><th>Transport</th><th>Duration</th></tr><tr><td>Tallinn</td><td>Car</td><td>~1h00</td></tr><tr><td>Tartu</td><td>Car</td><td>~1h45</td></tr></table><br/><i>Source: <a href=\"https://visitestonia.com/en/valgehobusemae-bike-trail\">Visit Estonia trail listing</a>; carry food, water and navigation.</i>"
+        },
+        "styleUrl": "#placemark-brown",
+        "icon-opacity": 1,
+        "icon-color": "#804633",
+        "icon": "https://omaps.app/placemarks/placemark-brown.png",
+        "spot": "valgehobuse",
+        "tags": "beginner natural",
+        "open_from": "05-01",
+        "closed_from": "10-02",
+        "kind": "nolift"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          24.4034,
+          56.771578,
+          0
+        ]
+      },
+      "properties": {
+        "name": "Riekstukalns DH Trails (Latvia) [no public uplift verified]",
+        "description": {
+          "@type": "html",
+          "value": "<b>Riekstukalns near Baldone - Latvia's most established downhill training hill</b><br/><br/><b>Trails</b><br/>Short, steep community-maintained downhill lines use the ski hill's compact vertical, with roots, jumps and race-oriented features. This is a local training venue rather than a full-service destination park.<br/><br/><b>Getting up / price</b><br/>No dependable public bike uplift was verified: expect push-up or pedal access unless an event announces otherwise. Confirm access with the local downhill community.<br/><br/><b>Open season</b><br/>Open from 1 May; closed from 1 November (typical regional riding window; event and land-use restrictions can apply).<br/><br/><b>Access</b><table class=\"access\"><tr><th>From</th><th>Transport</th><th>Duration</th></tr><tr><td>Riga</td><td>Car</td><td>~40 min</td></tr></table><br/><i>Source: <a href=\"https://downhill.lv/contact/\">Downhill.lv training locations</a>; verify permission and conditions locally.</i>"
+        },
+        "styleUrl": "#placemark-brown",
+        "icon-opacity": 1,
+        "icon-color": "#804633",
+        "icon": "https://omaps.app/placemarks/placemark-brown.png",
+        "spot": "riekstukalns",
+        "tags": "expert natural",
+        "open_from": "05-01",
+        "closed_from": "11-01",
+        "kind": "nolift"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          24.837583,
+          57.150059,
+          0
+        ]
+      },
+      "properties": {
+        "name": "Sigulda DH Trails (Latvia) [no public uplift verified]",
+        "description": {
+          "@type": "html",
+          "value": "<b>Gauja valley slopes at Sigulda - Latvian downhill and enduro terrain</b><br/><br/><b>Trails</b><br/>Short, steep natural descents around the deeply cut Gauja valley support local downhill training and racing. Expect roots, loam and compact technical runs rather than a signed commercial bike-park network.<br/><br/><b>Getting up / price</b><br/>No dependable public bike uplift was verified. Use pedal or push-up access and confirm the current legal training location with local riders before setting out.<br/><br/><b>Open season</b><br/>Open from 1 May; closed from 1 November (typical regional riding window). Weather, events and protected-area rules may restrict individual trails.<br/><br/><b>Access</b><table class=\"access\"><tr><th>From</th><th>Transport</th><th>Duration</th></tr><tr><td>Riga</td><td>Car / train</td><td>~1h00</td></tr></table><br/><i>Source: <a href=\"https://downhill.lv/contact/\">Downhill.lv training locations</a>; verify exact permitted trails locally.</i>"
+        },
+        "styleUrl": "#placemark-brown",
+        "icon-opacity": 1,
+        "icon-color": "#804633",
+        "icon": "https://omaps.app/placemarks/placemark-brown.png",
+        "spot": "sigulda",
+        "tags": "expert natural",
+        "open_from": "05-01",
+        "closed_from": "11-01",
+        "kind": "nolift"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          25.347898,
+          54.726242,
+          0
+        ]
+      },
+      "properties": {
+        "name": "Molyne Bike Park (Vilnius, LT) [no lift]",
+        "description": {
+          "@type": "html",
+          "value": "<b>Plytines forest in Vilnius - small community skills and trail park</b><br/><br/><b>Trails</b><br/>A compact community-built area with an easy family trail and a jump line. The vertical is modest, but it is Lithuania's clearest purpose-built MTB progression spot and can be linked with longer forest riding around Antakalnis.<br/><br/><b>Getting up / price</b><br/>No lift: pedal or push back to the starts. No mandatory access price was verified; respect community maintenance and any posted forest rules.<br/><br/><b>Open season</b><br/>Open from 1 April; closed from 1 December (typical riding window). Avoid wet or freeze-thaw conditions that damage the small trail network.<br/><br/><b>Access</b><table class=\"access\"><tr><th>From</th><th>Transport</th><th>Duration</th></tr><tr><td>Vilnius centre</td><td>Bike / car</td><td>~25 min</td></tr></table><br/><i>Sources: <a href=\"https://www.molyne.lt/\">Molyne community site</a> and current trail reports; verify local status.</i>"
+        },
+        "styleUrl": "#placemark-brown",
+        "icon-opacity": 1,
+        "icon-color": "#804633",
+        "icon": "https://omaps.app/placemarks/placemark-brown.png",
+        "spot": "molyne",
+        "tags": "beginner expert bikepark",
+        "open_from": "04-01",
+        "closed_from": "12-01",
+        "kind": "nolift"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.091003,
+          48.132684,
+          0
+        ]
+      },
+      "properties": {
+        "name": "Lac Blanc Bike Park (Vosges, FR) [33 EUR]",
+        "description": {
+          "@type": "html",
+          "value": "<b>Lac Blanc 1200 to Lac Blanc 900 - the leading gravity park in the Vosges</b><br/><br/><b>Trails</b><br/>A long-established proper bike park with family and progression tracks, freeride, downhill, North Shore wood features and fast technical expert lines. The natural Vosges forest surface adds roots and rock beneath the shaped berms and jumps.<br/><br/><b>Getting up / price</b><br/>The dedicated lift returns bikes from Lac Blanc 900. The published 2026 adult day pass is 33 EUR; DH bike and protection rental is available at the base.<br/><br/><b>Open season</b><br/>Open from 11 April; closed from 26 October (published 2026 span). Daily or selected weekday operation runs in July and August; spring and autumn are primarily weekends and holidays.<br/><br/><b>Access</b><table class=\"access\"><tr><th>From</th><th>Transport</th><th>Duration</th></tr><tr><td>Colmar</td><td>Car</td><td>~40 min</td></tr><tr><td>Strasbourg</td><td>Car</td><td>~1h20</td></tr></table><br/><i>Source: <a href=\"https://www.lac-blanc.com/en/summer/cycling-mountain-bike-mtb-vosges/bike-park-dh/\">official Lac Blanc Bike Park page</a>; check the detailed operating calendar.</i>"
+        },
+        "styleUrl": "#placemark-blue",
+        "icon-opacity": 1,
+        "icon-color": "#0066CC",
+        "icon": "https://omaps.app/placemarks/placemark-blue.png",
+        "spot": "lacblanc",
+        "tags": "beginner expert bikepark",
+        "open_from": "04-11",
+        "closed_from": "10-26",
+        "price_day": "33 EUR",
+        "kind": "bikepark"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.972643,
+          48.037592,
+          0
+        ]
+      },
+      "properties": {
+        "name": "La Bresse-Hohneck Bike Park (Vosges, FR) [31 EUR]",
+        "description": {
+          "@type": "html",
+          "value": "<b>Vologne Express summit above La Bresse - rocky Vosges DH and freeride</b><br/><br/><b>Trails</b><br/>Ten maintained descents split between six technical DH tracks and four freeride lines. A green trail gives newcomers a route into the park, while the red and black lines are known for rough rock, roots, braking bumps and demanding race-style riding.<br/><br/><b>Getting up / price</b><br/>The Vologne Express chairlift carries bikes. The published 2026 adult day pass is 31 EUR; equipment rental and instruction are available at the resort.<br/><br/><b>Open season</b><br/>Open from 1 May; closed from 21 September (published 2026 dates). Daily operation runs from 4 July through 30 August, with a reduced schedule outside it.<br/><br/><b>Access</b><table class=\"access\"><tr><th>From</th><th>Transport</th><th>Duration</th></tr><tr><td>Colmar</td><td>Car</td><td>~1h00</td></tr><tr><td>Nancy</td><td>Car</td><td>~1h45</td></tr></table><br/><i>Source: <a href=\"https://labresse.labellemontagne.com/fr/ete/vtt-et-bikepark/bike-park/forfait-saison/\">official La Bresse Bike Park page</a>; check trail status.</i>"
+        },
+        "styleUrl": "#placemark-blue",
+        "icon-opacity": 1,
+        "icon-color": "#0066CC",
+        "icon": "https://omaps.app/placemarks/placemark-blue.png",
+        "spot": "labresse",
+        "tags": "beginner expert bikepark",
+        "open_from": "05-01",
+        "closed_from": "09-21",
+        "price_day": "31 EUR",
+        "kind": "bikepark"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.528009,
+          45.368125,
+          0
+        ]
+      },
+      "properties": {
+        "name": "Pilat Enduro Trails (near Lyon, FR) [no lift, free trails]",
+        "description": {
+          "@type": "html",
+          "value": "<b>Croix de Chaubouret above Saint-Etienne - official natural enduro network</b><br/><br/><b>Trails</b><br/>Six official enduro itineraries cross the varied Pilat massif, from shorter intermediate descents to the 18.6 km Col du Gratteau route with roughly 1100 m of climbing. These are shared natural paths rather than closed bike-park tracks, combining forest singletrack, rock, roots and linking climbs.<br/><br/><b>Getting up / price</b><br/>No lift and no mandatory trail fee. Ride the routes as pedal-powered itineraries or arrange your own point-to-point transport; riders must yield to walkers.<br/><br/><b>Open season</b><br/>Open from 1 March; closed from 1 December (typical riding window). Snow, freeze-thaw, storms and forestry work can shorten the season.<br/><br/><b>Access</b><table class=\"access\"><tr><th>From</th><th>Transport</th><th>Duration</th></tr><tr><td>Saint-Etienne</td><td>Car</td><td>~25 min</td></tr><tr><td>Lyon</td><td>Car</td><td>~1h10</td></tr></table><br/><i>Source: <a href=\"https://www.pilat-tourisme.fr/planifier/activites-et-detente/velo-et-vtt/nos-circuits-vtt/enduro\">official Pilat enduro route page</a>; shared paths are not downhill-only tracks.</i>"
+        },
+        "styleUrl": "#placemark-brown",
+        "icon-opacity": 1,
+        "icon-color": "#804633",
+        "icon": "https://omaps.app/placemarks/placemark-brown.png",
+        "spot": "pilat",
+        "tags": "beginner expert natural",
+        "open_from": "03-01",
+        "closed_from": "12-01",
+        "kind": "nolift"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.097538,
+          45.803367,
+          0
+        ]
+      },
+      "properties": {
+        "name": "Semnoz Bike Park (Annecy, FR) [17.50 EUR]",
+        "description": {
+          "@type": "html",
+          "value": "<b>Semnoz above Lake Annecy - compact new Télémix-served park</b><br/><br/><b>Trails</b><br/>Four dedicated descents provide unusually clear progression close to Annecy: one family green, one more technical blue and two red trails with shaped turns, jumps and modules. It is a compact park rather than a full holiday domain, but its accessibility makes it a valuable local gravity spot.<br/><br/><b>Getting up / price</b><br/>The Télémix carries bikes to the trail starts. The published 2026 adult day pass is 17.50 EUR, or 14.50 EUR for four consecutive hours.<br/><br/><b>Open season</b><br/>Open from 20 June; closed from 21 September (published 2026 dates). Daily operation runs from 4 July through 30 August; June and September have selected weekend dates.<br/><br/><b>Access</b><table class=\"access\"><tr><th>From</th><th>Transport</th><th>Duration</th></tr><tr><td>Annecy</td><td>Car / summer bus</td><td>~35 min</td></tr><tr><td>Geneva</td><td>Car</td><td>~1h15</td></tr></table><br/><i>Source: <a href=\"https://www.semnoz.fr/vtt/\">official Semnoz Bike Park page</a>; check operating dates.</i>"
+        },
+        "styleUrl": "#placemark-blue",
+        "icon-opacity": 1,
+        "icon-color": "#0066CC",
+        "icon": "https://omaps.app/placemarks/placemark-blue.png",
+        "spot": "semnoz",
+        "tags": "beginner expert bikepark",
+        "open_from": "06-20",
+        "closed_from": "09-21",
+        "price_day": "17.50 EUR",
+        "kind": "bikepark"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.455653,
+          45.95884,
+          0
+        ]
+      },
+      "properties": {
+        "name": "Le Grand-Bornand MTB (Aravis, FR) [20 EUR]",
+        "description": {
+          "@type": "html",
+          "value": "<b>Rosay and Lachat above Le Grand-Bornand - lift-assisted Aravis trail riding</b><br/><br/><b>Trails</b><br/>More than 178 km across sixteen marked routes combine high alpine tracks, natural singletrack, cross-country loops and long descents into the village. The riding is less shaped than a dedicated DH park; the Grand Tour and Enduro du Grand-Bo are the notable sportier options.<br/><br/><b>Getting up / price</b><br/>The Rosay gondola and Lachat chairlift provide bike access to the upper network. The published 2026 adult day pass covering both lifts is 20 EUR.<br/><br/><b>Open season</b><br/>Open from 27 June; closed from 7 September (published 2026 span, including preview and closing weekends). Core daily operation runs from 4 July through 29 August.<br/><br/><b>Access</b><table class=\"access\"><tr><th>From</th><th>Transport</th><th>Duration</th></tr><tr><td>Annecy</td><td>Car</td><td>~45 min</td></tr><tr><td>Geneva</td><td>Car</td><td>~1h10</td></tr></table><br/><i>Source: <a href=\"https://www.legrandbornand.com/app/uploads/legrandbornand/2026/04/Summer-activities-guide-2026.pdf\">official 2026 summer guide</a>; check which lift serves your route.</i>"
+        },
+        "styleUrl": "#placemark-green",
+        "icon-opacity": 1,
+        "icon-color": "#3C8C3C",
+        "icon": "https://omaps.app/placemarks/placemark-green.png",
+        "spot": "grandbornand",
+        "tags": "beginner expert natural",
+        "open_from": "06-27",
+        "closed_from": "09-07",
+        "price_day": "20 EUR",
+        "kind": "natural"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.408692,
+          45.866725,
+          0
+        ]
+      },
+      "properties": {
+        "name": "Manigod - Tete de Cabeau (Aravis, FR) [18 EUR]",
+        "description": {
+          "@type": "html",
+          "value": "<b>Tete de Cabeau 1650 m - small family-oriented lift park at Croix Fry</b><br/><br/><b>Trails</b><br/>Five family descents and one advanced trail make this a compact progression park. The green Aiglon line is about 1.1 km with 84 m of descent; harder variants add more speed, natural surface and technical features without the scale of nearby La Clusaz.<br/><br/><b>Getting up / price</b><br/>The Tete de Cabeau chairlift carries mountain bikes. The published 2026 adult day pass is 18 EUR, with single rides available for 8 EUR.<br/><br/><b>Open season</b><br/>Open from 27 June; closed from 31 August (published 2026 dates), operating 10:00-17:00 subject to conditions.<br/><br/><b>Access</b><table class=\"access\"><tr><th>From</th><th>Transport</th><th>Duration</th></tr><tr><td>Annecy</td><td>Car</td><td>~45 min</td></tr><tr><td>Geneva</td><td>Car</td><td>~1h15</td></tr></table><br/><i>Source: <a href=\"https://en.manigod.com/chairlift-for-pedestrians-mountain-bikers-and-mountain-carts.html\">official Manigod 2026 lift page</a>; check trail status.</i>"
+        },
+        "styleUrl": "#placemark-blue",
+        "icon-opacity": 1,
+        "icon-color": "#0066CC",
+        "icon": "https://omaps.app/placemarks/placemark-blue.png",
+        "spot": "manigod",
+        "tags": "beginner expert bikepark",
+        "open_from": "06-27",
+        "closed_from": "08-31",
+        "price_day": "18 EUR",
+        "kind": "bikepark"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          128.677729,
+          37.628151,
+          0
+        ]
+      },
+      "properties": {
+        "name": "Mona YongPyong MTB Park (Pyeongchang, KR) [gondola, public price unverified]",
+        "description": {
+          "@type": "html",
+          "value": "<b>Balwangsan at Mona YongPyong - South Korea's 2026 UCI World Cup gravity venue</b><br/><br/><b>Trails</b><br/>Purpose-built downhill and cross-country race terrain on the steep forested slopes of Balwangsan. Mona YongPyong hosted Asia's first UCI Mountain Bike World Series round in May 2026, with a full downhill course, technical natural sections and a dedicated finish bowl. This is serious race terrain rather than a broad beginner holiday network.<br/><br/><b>Getting up / price</b><br/>The resort gondola carried bikes from the main venue to the downhill start and the Rainbow chairlift returned accredited riders during the 2026 World Cup. A normal public bike-uplift price and calendar were not verified, so contact the resort before travelling outside an announced MTB event.<br/><br/><b>Open season</b><br/>Open from 1 May; closed from 1 October (estimated snow-free riding window). Public trail and uplift access may be limited to scheduled events even inside this period.<br/><br/><b>Access</b><table class=\"access\"><tr><th>From</th><th>Transport</th><th>Duration</th></tr><tr><td>Seoul</td><td>Car / intercity bus</td><td>~2h30</td></tr><tr><td>Gangneung</td><td>Car</td><td>~45 min</td></tr></table><br/><i>Sources: <a href=\"https://www.czechcyclingfederation.com/wp-content/uploads/2026/04/Event_Guide_-_South_Korea_V1.pdf\">2026 UCI event guide</a> and <a href=\"https://www.yongpyong.co.kr/eng/index.do\">official Mona YongPyong site</a>; confirm public MTB access.</i>"
+        },
+        "styleUrl": "#placemark-blue",
+        "icon-opacity": 1,
+        "icon-color": "#0066CC",
+        "icon": "https://omaps.app/placemarks/placemark-blue.png",
+        "spot": "yongpyong",
+        "tags": "expert bikepark",
+        "open_from": "05-01",
+        "closed_from": "10-01",
+        "kind": "bikepark"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.738246,
+          35.433435,
+          0
+        ]
+      },
+      "properties": {
+        "name": "Gochang MTB Park (Jeonbuk, KR) [no public uplift verified]",
+        "description": {
+          "@type": "html",
+          "value": "<b>Bangjangsan foothills at Gochang - one of South Korea's established downhill parks</b><br/><br/><b>Trails</b><br/>A purpose-built mountain-bike park used for Korean downhill and cross-country riding, with steep forest race lines, rock, roots and technical features. The terrain is best suited to experienced riders; inspect features and current course conditions before committing.<br/><br/><b>Getting up / price</b><br/>No dependable public lift or shuttle service was verified. Plan to pedal or push unless a race or local organizer announces vehicle uplift. No current mandatory access price was published.<br/><br/><b>Open season</b><br/>Open from 1 March; closed from 1 December (typical regional riding window). The official listed hours are 09:00-17:00 and the facility is closed on Mondays; weather or events can change access.<br/><br/><b>Access</b><table class=\"access\"><tr><th>From</th><th>Transport</th><th>Duration</th></tr><tr><td>Gwangju</td><td>Car</td><td>~55 min</td></tr><tr><td>Jeonju</td><td>Car</td><td>~1h15</td></tr></table><br/><i>Source: <a href=\"https://www.gochang.go.kr/tour/board/view.gochang?boardId=BBS_TOUR&amp;categoryCode1=TOUR03&amp;dataSid=157491&amp;menuCd=DOM_000000402002003000&amp;orderBy=TAG_ID%20ASC%2CDATA_SID%20DESC&amp;paging=ok&amp;startPage=1\">official Gochang tourism listing</a>; verify course status locally.</i>"
+        },
+        "styleUrl": "#placemark-brown",
+        "icon-opacity": 1,
+        "icon-color": "#804633",
+        "icon": "https://omaps.app/placemarks/placemark-brown.png",
+        "spot": "gochang",
+        "tags": "expert bikepark",
+        "open_from": "03-01",
+        "closed_from": "12-01",
+        "kind": "nolift"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.0448,
+          35.1847,
+          0
+        ]
+      },
+      "properties": {
+        "name": "Baegyangsan MTB Trails (Busan, KR) [no lift]",
+        "description": {
+          "@type": "html",
+          "value": "<b>Baegyangsan above central Busan - natural urban mountain-bike network</b><br/><br/><b>Trails</b><br/>A dense mix of forest roads and natural singletrack with sustained climbing, rooty enduro descents and steeper downhill options. Local routes cover beginner, intermediate and advanced riding, but these are shared mountain paths rather than signed, bike-only park tracks. Start from the Busan Children's Grand Park side for convenient access.<br/><br/><b>Getting up / price</b><br/>No lift and no mandatory trail fee: pedal the forest-road climbs and connect the natural descents. Yield to walkers, avoid busy hiking periods and respect any temporary closures.<br/><br/><b>Open season</b><br/>Open year-round. Heavy summer rain, typhoons, ice and freeze-thaw conditions can make the steep natural trails unsuitable; avoid riding when the surface is saturated.<br/><br/><b>Access</b><table class=\"access\"><tr><th>From</th><th>Transport</th><th>Duration</th></tr><tr><td>Central Busan</td><td>Bike / metro and bike</td><td>~30 min</td></tr></table><br/><i>Sources: <a href=\"https://www.visitbusan.net/index.do?lang_cd=en&amp;menuCd=DOM_000000302008001000&amp;uc_seq=446\">Visit Busan mountain guide</a> and <a href=\"https://www.busan.go.kr/geopark_en/baegyangsan\">Busan Geopark</a>; trails are shared and unsigned for MTB.</i>"
+        },
+        "styleUrl": "#placemark-brown",
+        "icon-opacity": 1,
+        "icon-color": "#804633",
+        "icon": "https://omaps.app/placemarks/placemark-brown.png",
+        "spot": "baegyangsan",
+        "tags": "beginner expert natural",
+        "open_from": "01-01",
+        "closed_from": "01-01",
+        "kind": "nolift"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.885155,
+          37.563025,
+          0
+        ]
+      },
+      "properties": {
+        "name": "Nanji Hangang Extreme Bike Park (Seoul, KR) [no lift]",
+        "description": {
+          "@type": "html",
+          "value": "<b>Nanji Hangang Park - compact beginner MTB skills course in Seoul</b><br/><br/><b>Trails</b><br/>South Korea's first flat-site MTB practice course recreates small mountain contours and slopes in a 5,425 square metre facility. Its 450 m circuit is designed for beginner and intermediate riders to practise bike handling safely. It is a useful city session spot, not a destination downhill park.<br/><br/><b>Getting up / price</b><br/>No lift is needed on the compact circuit. No current admission charge was published; helmets and suitable protective equipment are required.<br/><br/><b>Open season</b><br/>Open year-round. Published hours are 09:00-18:00 in summer and 09:00-16:00 in winter; severe weather or maintenance can close the course.<br/><br/><b>Access</b><table class=\"access\"><tr><th>From</th><th>Transport</th><th>Duration</th></tr><tr><td>Central Seoul</td><td>Bike / metro and bike</td><td>~35 min</td></tr></table><br/><i>Source: <a href=\"https://data.visitkorea.or.kr/resource/1029885\">Korea Tourism Organization facility listing</a>.</i>"
+        },
+        "styleUrl": "#placemark-brown",
+        "icon-opacity": 1,
+        "icon-color": "#804633",
+        "icon": "https://omaps.app/placemarks/placemark-brown.png",
+        "spot": "nanji",
+        "tags": "beginner bikepark",
+        "open_from": "01-01",
+        "closed_from": "01-01",
+        "kind": "nolift"
       }
     }
   ]

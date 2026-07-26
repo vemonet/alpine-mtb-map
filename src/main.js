@@ -362,13 +362,19 @@ const matches = (spot) => {
 
 const applyFilters = () => {
   const cap = priceCap();
+  let visibleCount = 0;
   priceOut.textContent = cap === Infinity ? "any" : `${cap} CHF`;
   for (const spot of spots.values()) {
     const visible = matches(spot);
     if (visible) map.addLayer(spot.group);
     else map.removeLayer(spot.group);
-    if (spot.entry) spot.entry.row.hidden = !visible;
+    if (spot.entry) {
+      spot.entry.row.hidden = !visible;
+      if (visible) visibleCount++;
+    }
   }
+  document.querySelector("#spot-count").textContent =
+    `${visibleCount} ${visibleCount === 1 ? "spot" : "spots"} shown`;
 };
 
 for (const chip of chips) {
