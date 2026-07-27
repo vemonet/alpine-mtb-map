@@ -20,7 +20,7 @@ Travel times are given from reference cities that actually makes sense for each 
 | ------------ | --------------------------------------------------- |
 | Blue         | purpose-built, operator-maintained bike park        |
 | Dark green   | natural or lightly developed spot with uplift       |
-| Brown        | natural spot with no lift - pedal up                |
+| Brown        | any spot with no lift - pedal up                    |
 | Grey         | secondary points: stations, mid-stations, lift hubs |
 | Orange lines | trails                                              |
 
@@ -28,38 +28,40 @@ Travel times are given from reference cities that actually makes sense for each 
 
 Every filter combines with the others. See [the tags](#6-the-tags) for how to classify a spot.
 
-The three **spot type** chips start on and represent mutually distinct map categories:
+The **Show** menu contains spot type, access, riding style and difficulty checkboxes. They start checked, use OR matching inside each applicable section and can be reset together with **Show all** or **Hide all**. Spot type and lift access are independent:
 
-| Filter        | Shows                                                      |
-| ------------- | ---------------------------------------------------------- |
-| **Bike park** | purpose-built and maintained bike parks                    |
-| **Natural**   | natural or lightly developed riding with mechanical uplift |
-| **No lift**   | natural spots where the climb is under your own power      |
+| Filter        | Shows                                         |
+| ------------- | --------------------------------------------- |
+| **Bike park** | purpose-built and maintained bike parks       |
+| **Natural**   | natural or lightly developed riding           |
+| **No lift**   | spots where the climb is under your own power |
 
-Every spot must carry either `bikepark` or `natural`. A no-lift spot is still tagged `natural` in the data, but appears under the separate **No lift** filter because its brown pin takes precedence.
+Every spot must carry exactly one of `bikepark` or `natural`. Add `nolift` independently whenever there is no mechanical uplift. A purpose-built bike park can therefore be `bikepark nolift`. No-lift takes visual priority, so both `bikepark nolift` and `natural nolift` use a brown pin. A bike park with uplift uses blue, while a natural spot with uplift uses dark green.
 
-**Inclusion** chips start **off**. Turning one on hides everything that does _not_ carry the tag:
+The **Only show** menu contains optional requirements. They start unchecked, and selecting one hides everything that does _not_ carry its tag:
 
 | Filter | On means |
 | --- | --- |
 | 🎫 **Magic Pass** | only resorts in the [Magic Pass](https://www.magicpass.ch/) network (10 today) |
 | 🎟️ **Season pass** | only spots with a published season pass price (13 today) |
+| **Mass start venue** | only venues that host a documented mass-start gravity race |
 
-**Group** chips are on together and match on _any_: a spot shows while at least one of its tags in the group is still on.
+Riding style and difficulty match on _any_: a spot shows while at least one of its tags in each section remains checked. A spot may carry several difficulty and riding-style tags.
 
-| Group      | Filters                        |
-| ---------- | ------------------------------ |
-| Difficulty | 🟢 **Beginner**, 💀 **Expert** |
+| Group        | Filters                          |
+| ------------ | -------------------------------- |
+| Difficulty   | 🟢 **Beginner**, 💀 **Expert**   |
+| Riding style | **DH**, **Enduro**, **Freeride** |
 
-That is why somewhere tagged both beginner and expert survives turning either one off. Turn both off and the map empties, which is the honest answer to "show me spots that are neither".
+That is why somewhere tagged both beginner and expert survives turning either one off, and a park tagged `dh freeride` survives while either riding-style chip remains on. Turning every chip in a group off empties the map.
 
 **Day pass up to** is the one numeric filter: a slider that hides spots whose day price is above the cap. At its far right it reads _any_ and hides nothing. Prices are compared in Swiss francs, with the other currencies converted at fixed rough rates (CHF, EUR, CAD, JPY are recognised), so it sorts spots into brackets rather than quoting you a figure. **Spots with no verified price are never hidden by it** - we do not filter on data we do not have, and a currency the table does not know reads the same way.
 
-**Open on** is a date picker that defaults to **Any date**. Choosing a date hides every spot whose recurring season does not include the selected month and day. Published 2026 dates are used where available; otherwise the KML description labels the regional average as a typical window. Weather, maintenance and partial-season lift schedules can still change actual access, so always check the operator.
+**Open & weather on** is one shared date picker that defaults to **Any date**. Choosing a date hides every spot whose recurring season does not include the selected month and day and uses that date for weather when it is inside the available forecast window. Published 2026 dates are used where available; otherwise the KML description labels the regional average as a typical window. Weather, maintenance and partial-season lift schedules can still change actual access, so always check the operator.
 
 Seasons that run across New Year work the same way: the four southern-hemisphere spots (Thredbo, Nevados de Chillan, Cerro Catedral, La Parva) are open from December to April, so on a July date they are correctly hidden and on a January one they are most of what is left.
 
-**Weather on** selects a forecast date from today through 12 days ahead, leaving enough forecast range to show the surrounding days. It defaults to today before 16:00 and tomorrow from 16:00 onward. Weather is enabled by default and can be turned off with the cloud-and-rain button left of the location button. A rain icon appears inside a spot's original coloured dot when at least 1 mm of precipitation or a 50% precipitation probability is forecast for the selected day, or at least 5 mm fell the day before. Clicking a spot shows the selected day, the three days before it and the three days after it. Forecasts are cached in the browser for six hours to limit Open-Meteo requests.
+When the shared date is **Any**, weather uses today before 16:00 and tomorrow from 16:00 onward. Weather is enabled by default and can be turned off with the cloud-and-rain button left of the location button. A rain icon appears inside a spot's original coloured dot when at least 1 mm of precipitation or a 50% precipitation probability is forecast for the effective weather date, or at least 5 mm fell the day before. Clicking a spot shows that day, the three days before it and the three days after it. Dates outside Open-Meteo's available range show a clear unavailable message. Forecasts are cached in the browser for six hours to limit Open-Meteo requests.
 
 ## Adding a point
 
@@ -92,7 +94,7 @@ Right-click the spot on [openstreetmap.org](https://www.openstreetmap.org/) and 
   <Point><coordinates>6.912345,46.512345,0</coordinates></Point>
   <ExtendedData>
     <Data name="spot"><value>somewhere</value></Data>
-    <Data name="tags"><value>beginner expert bikepark magicpass</value></Data>
+    <Data name="tags"><value>beginner expert bikepark dh enduro freeride magicpass</value></Data>
     <Data name="open_from"><value>06-20</value></Data>
     <Data name="closed_from"><value>08-24</value></Data>
     <Data name="price_day"><value>30 CHF</value></Data>
@@ -133,11 +135,11 @@ It renders as a highlighted box on the site and as its own line in the GPX expor
 | ------------------ | ------------------------------------------------------------ |
 | `#placemark-blue`  | a purpose-built, maintained bike park                        |
 | `#placemark-green` | a natural or lightly developed spot with mechanical uplift   |
-| `#placemark-brown` | a natural spot where you pedal up                            |
+| `#placemark-brown` | any no-lift spot where you pedal up                          |
 | `#placemark-gray`  | a secondary point: station, mid-station, lift hub, trailhead |
 | `#line-trail`      | a trail line                                                 |
 
-Pin colour encodes the displayed spot category. No-lift takes precedence over the underlying `natural` classification. Nothing else is colour coded, so do not invent new styles.
+Pin colour encodes lift access first, then spot category. No lift always takes visual priority and uses brown. Among spots with uplift, bike parks use blue and natural spots use dark green. Nothing else is colour coded, so do not invent new styles.
 
 ### 6. The tags
 
@@ -146,7 +148,7 @@ This is the `<ExtendedData>` block. Organic Maps ignores it entirely; it exists 
 | Field | Required? | Value |
 | --- | --- | --- |
 | `spot` | recommended | A short lowercase id, unique per spot (`leysin`, `verbier`). Give the main pin, its secondary pins and all its trail lines the **same** id, and they show and hide together. Omit it and the pin becomes its own island. |
-| `tags` | required | Space-separated, from the list below. Must contain `beginner` and/or `expert`, plus exactly one of `bikepark` or `natural`. |
+| `tags` | required | Space-separated, from the list below. Must contain `beginner` and/or `expert`, exactly one of `bikepark` or `natural`, and at least one of `dh`, `enduro` or `freeride`. Multiple riding-style tags are encouraged where accurate. |
 | `open_from` | required | First open day as `MM-DD`, on the main pin only. |
 | `closed_from` | required | First closed day as `MM-DD`, on the main pin only. This date is excluded by the filter. Use the same value as `open_from` for a normally year-round spot. |
 | `price_day` | optional | Day access to the resort or mandatory lift, as `30 CHF`, `25 EUR`, `5500 JPY`. Main pin only. |
@@ -156,30 +158,34 @@ Season fields are recurring month-day values because the picker is for trip plan
 
 The `tags` value is a union across a spot's placemarks, so in practice put the same tags on the pin and its trail lines. Available tags:
 
-| Tag         | Meaning                                                                      |
-| ----------- | ---------------------------------------------------------------------------- |
-| `beginner`  | Trails a newcomer can enjoy: green or blue flow, wide tracks, escape routes. |
-| `expert`    | Hard trails worth travelling for: steep, technical, black-graded.            |
-| `bikepark`  | Purpose-built trails maintained and operated as a bike park.                 |
-| `natural`   | Natural or lightly developed trails, with or without uplift.                 |
-| `winter`    | Informational metadata for spots usually ridable through the cold months.    |
-| `magicpass` | The resort is in the [Magic Pass](https://www.magicpass.ch/) network.        |
+| Tag | Meaning |
+| --- | --- |
+| `beginner` | Trails a newcomer can enjoy: green or blue flow, wide tracks, escape routes. |
+| `expert` | Hard trails worth travelling for: steep, technical, black-graded. |
+| `bikepark` | Purpose-built trails maintained and operated as a bike park. |
+| `natural` | Natural or lightly developed trails, with or without uplift. |
+| `nolift` | No mechanical uplift. Independent of `bikepark` or `natural`. |
+| `dh` | Downhill riding: predominantly descending trails, usually gravity or uplift focused. |
+| `enduro` | Enduro riding: technical singletrack or trail networks combining climbs, traverses and descents. |
+| `freeride` | Freeride terrain: jumps, drops, sculpted features, big-mountain lines or creative unsanctioned-style riding. |
+| `winter` | Informational metadata for spots usually ridable through the cold months. |
+| `magicpass` | The resort is in the [Magic Pass](https://www.magicpass.ch/) network. |
+| `massstart` | The spot hosts a documented mass-start gravity race. Mention the race by name in the description and link its source. |
 
-Plenty of spots deserve both `beginner` and `expert`; a spot with neither will never show, since the difficulty filters have nothing to match. A spot must also be either `bikepark` or `natural`, never both.
+Plenty of spots deserve both `beginner` and `expert`; a spot with neither will never show, since the difficulty filters have nothing to match. A spot must also be either `bikepark` or `natural`, never both. Lift access and riding styles are independent: a pedal-up park can be `bikepark nolift dh freeride`, a natural pedal-up network might be `natural nolift enduro`, and a lift-served big-mountain zone might be `natural freeride`.
 
 Tagging examples:
 
 ```xml
-<Data name="tags"><value>beginner natural</value></Data>
-<Data name="tags"><value>expert bikepark</value></Data>
-<Data name="tags"><value>beginner expert bikepark</value></Data>
-<Data name="tags"><value>expert natural winter</value></Data>
-<Data name="tags"><value>beginner expert bikepark magicpass</value></Data>
+<Data name="tags"><value>beginner natural enduro</value></Data>
+<Data name="tags"><value>expert bikepark dh</value></Data>
+<Data name="tags"><value>beginner expert bikepark nolift enduro freeride</value></Data>
+<Data name="tags"><value>beginner expert bikepark dh freeride</value></Data>
+<Data name="tags"><value>expert natural enduro freeride winter</value></Data>
+<Data name="tags"><value>beginner expert bikepark dh enduro freeride magicpass</value></Data>
 ```
 
-Two tags are **derived, never written by hand**: `nolift` comes from a
-
-`#placemark-brown` style, and `season` from the presence of `price_season`.
+For backward compatibility, `nolift` is also derived from a `#placemark-brown` style, but contributors should write it explicitly. The `season` tag is derived from the presence of `price_season` and is never written by hand.
 
 #### Prices
 
@@ -225,7 +231,7 @@ Same idea with a `<LineString>` instead of a `<Point>`. Coordinates are `lon,lat
   </LineString>
   <ExtendedData>
     <Data name="spot"><value>somewhere</value></Data>
-    <Data name="tags"><value>expert</value></Data>
+    <Data name="tags"><value>expert natural enduro</value></Data>
   </ExtendedData>
 </Placemark>
 ```

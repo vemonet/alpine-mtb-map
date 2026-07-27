@@ -21,7 +21,7 @@ For each spot you get:
 - an **Access** table: travel time from the city a rider would realistically start from
 - **tags** you can filter on: difficulty, winter riding, Magic Pass, price
 - **trail lines** where [OpenStreetMap](https://openstreetmap.org) has the geometry, and **extra waypoints** where they help: valley stations, mid-stations, trailheads, lift hubs
-- a 16-day **[Open-Meteo](https://open-meteo.com/) forecast**, with wet-condition badges based on predicted rain and the previous day's precipitation
+- a 16-day **[Open-Meteo](https://open-meteo.com/) weather forecast**, with wet-condition warning based on predicted rain and the previous day's precipitation
 
 A good spot here means at least one singletrack where mountain biking is allowed. Many also have a way to get from the bottom to the top that is not your legs (funicular, cog railway, gondola, cable car). Purpose-built bike parks are blue, natural lift-served spots are dark green, and no-lift spots are in brown.
 

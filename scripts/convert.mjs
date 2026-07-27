@@ -26,6 +26,41 @@ const kinds = [...doc.getElementsByTagName("Placemark")].map((pm) => {
   const el = pm.getElementsByTagName("styleUrl")[0];
   return KINDS[el ? el.textContent.trim().replace(/^#/, "") : ""] ?? "minor";
 });
+
+// Fail export generation when a main spot is missing one of the required tag
+// axes. This keeps new contributions filterable instead of silently producing
+// spots that disappear when a whole filter group is enabled.
+const requiredGroups = [
+  ["beginner", "expert"],
+  ["dh", "enduro", "freeride"],
+];
+const spotTypes = ["bikepark", "natural"];
+const spotTags = new Map();
+const mainSpots = new Map();
+for (const [index, pm] of [...doc.getElementsByTagName("Placemark")].entries()) {
+  const data = [...pm.getElementsByTagName("Data")];
+  const facet = (name) =>
+    data.find((item) => item.getAttribute("name") === name)?.textContent.trim() ?? "";
+  const name = pm.getElementsByTagName("name")[0]?.textContent.trim() ?? "";
+  const spot = facet("spot") || name;
+  const tags = spotTags.get(spot) ?? new Set();
+  for (const tag of facet("tags").split(/\s+/).filter(Boolean)) tags.add(tag);
+  spotTags.set(spot, tags);
+  if (kinds[index] !== "minor" && kinds[index] !== "trail" && /\[.+\]$/.test(name)) {
+    mainSpots.set(spot, name);
+  }
+}
+for (const [spot, name] of mainSpots) {
+  const tags = spotTags.get(spot);
+  if (spotTypes.filter((tag) => tags?.has(tag)).length !== 1) {
+    throw new Error(`${name} needs exactly one of: ${spotTypes.join(", ")}`);
+  }
+  for (const group of requiredGroups) {
+    if (!group.some((tag) => tags?.has(tag))) {
+      throw new Error(`${name} needs at least one of: ${group.join(", ")}`);
+    }
+  }
+}
 geojson.features.forEach((f, i) => {
   f.properties.kind = kinds[i];
 });

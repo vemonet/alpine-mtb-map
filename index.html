@@ -183,76 +183,167 @@
           </div>
         </header>
         <nav id="filters">
-          <button
-            class="filter"
-            data-tag="beginner"
-            data-mode="any"
-            data-group="difficulty"
-            aria-pressed="true"
-            title="Spots with trails good for beginners"
-          >
-            <span class="ico" aria-hidden="true">🟢</span>Beginner
-          </button>
-          <button
-            class="filter"
-            data-tag="expert"
-            data-mode="any"
-            data-group="difficulty"
-            aria-pressed="true"
-            title="Spots with hard trails for riders after a challenge"
-          >
-            <span class="ico" aria-hidden="true">💀</span>Expert
-          </button>
-          <button
-            class="filter"
-            data-category="bikepark"
-            aria-pressed="true"
-            title="Purpose-built, operator-maintained bike parks"
-          >
-            <span class="dot blue"></span>Bike park
-          </button>
-          <button
-            class="filter"
-            data-category="natural"
-            aria-pressed="true"
-            title="Natural or lightly developed trails reached by lift or public transport"
-          >
-            <span class="dot green"></span>Natural
-          </button>
-          <button
-            class="filter"
-            data-category="nolift"
-            aria-pressed="true"
-            title="Natural spots where you pedal up"
-          >
-            <span class="dot brown"></span>No lift
-          </button>
-          <button
-            class="filter"
-            data-tag="magicpass"
-            data-mode="only"
-            aria-pressed="false"
-            title="Show only resorts included in the Magic Pass"
-          >
-            🎫 Magic Pass
-          </button>
-          <button
-            class="filter"
-            data-tag="season"
-            data-mode="only"
-            aria-pressed="false"
-            title="Show only spots with a published season pass price"
-          >
-            🎟️ Season pass
-          </button>
+          <div class="filter-menus">
+            <details class="filter-menu" id="show-filter-menu">
+              <summary>
+                <svg
+                  viewBox="0 0 16 16"
+                  width="14"
+                  height="14"
+                  aria-hidden="true"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.4"
+                >
+                  <path d="M1.5 8s2.4-4 6.5-4 6.5 4 6.5 4-2.4 4-6.5 4S1.5 8 1.5 8Z" />
+                  <circle cx="8" cy="8" r="2" />
+                </svg>
+                <span>Show</span>
+                <output id="show-filter-summary">All</output>
+              </summary>
+              <div class="filter-popover">
+                <div class="filter-actions">
+                  <button type="button" data-filter-set="all">Show all</button>
+                  <button type="button" data-filter-set="none">Hide all</button>
+                </div>
+                <fieldset>
+                  <legend>Spot type</legend>
+                  <label
+                    ><input class="filter" type="checkbox" data-category="bikepark" checked /><span
+                      class="dot blue"
+                    ></span
+                    >Bike park</label
+                  >
+                  <label
+                    ><input class="filter" type="checkbox" data-category="natural" checked /><span
+                      class="dot green"
+                    ></span
+                    >Natural spot</label
+                  >
+                </fieldset>
+                <fieldset>
+                  <legend>Access</legend>
+                  <label
+                    ><input class="filter" type="checkbox" data-tag="nolift" checked /><span
+                      class="dot brown"
+                    ></span
+                    >No lift</label
+                  >
+                </fieldset>
+                <fieldset>
+                  <legend>Riding style</legend>
+                  <label
+                    ><input
+                      class="filter"
+                      type="checkbox"
+                      data-tag="dh"
+                      data-mode="any"
+                      data-group="discipline"
+                      checked
+                    />Downhill</label
+                  >
+                  <label
+                    ><input
+                      class="filter"
+                      type="checkbox"
+                      data-tag="enduro"
+                      data-mode="any"
+                      data-group="discipline"
+                      checked
+                    />Enduro</label
+                  >
+                  <label
+                    ><input
+                      class="filter"
+                      type="checkbox"
+                      data-tag="freeride"
+                      data-mode="any"
+                      data-group="discipline"
+                      checked
+                    />Freeride</label
+                  >
+                </fieldset>
+                <fieldset>
+                  <legend>Difficulty</legend>
+                  <label
+                    ><input
+                      class="filter"
+                      type="checkbox"
+                      data-tag="beginner"
+                      data-mode="any"
+                      data-group="difficulty"
+                      checked
+                    />Beginner-friendly</label
+                  >
+                  <label
+                    ><input
+                      class="filter"
+                      type="checkbox"
+                      data-tag="expert"
+                      data-mode="any"
+                      data-group="difficulty"
+                      checked
+                    />Hard / expert</label
+                  >
+                </fieldset>
+              </div>
+            </details>
+            <details class="filter-menu" id="only-filter-menu">
+              <summary>
+                <svg
+                  viewBox="0 0 16 16"
+                  width="14"
+                  height="14"
+                  aria-hidden="true"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.4"
+                  stroke-linejoin="round"
+                >
+                  <path d="M2 3h12L9.5 8v4l-3 1V8L2 3Z" />
+                </svg>
+                <span>Only show</span>
+                <output id="only-filter-summary">Any</output>
+              </summary>
+              <div class="filter-popover">
+                <fieldset>
+                  <legend>Optional requirements</legend>
+                  <label
+                    ><input
+                      class="filter"
+                      type="checkbox"
+                      data-tag="magicpass"
+                      data-mode="only"
+                    />Magic Pass</label
+                  >
+                  <label
+                    ><input
+                      class="filter"
+                      type="checkbox"
+                      data-tag="season"
+                      data-mode="only"
+                    />Season pass available</label
+                  >
+                  <label
+                    ><input
+                      class="filter"
+                      type="checkbox"
+                      data-tag="massstart"
+                      data-mode="only"
+                    />Mass start venue</label
+                  >
+                </fieldset>
+              </div>
+            </details>
+          </div>
           <label class="range" for="price-day">
             <span>Day pass up to <output id="price-day-out">any</output></span>
             <input id="price-day" type="range" min="0" max="75" step="5" value="75" />
           </label>
           <div class="date-filter">
-            <span>Open on</span>
+            <span>Open &amp; weather on</span>
             <span class="date-control">
-              <button id="open-date-button" type="button" aria-label="Choose open date">
+              <button id="open-date-button" type="button" aria-label="Choose open and weather date">
                 <output id="open-date-display"></output>
                 <svg
                   class="calendar-icon"
@@ -273,39 +364,28 @@
               <input id="open-date" type="date" tabindex="-1" aria-hidden="true" />
             </span>
           </div>
-          <div class="date-filter" id="weather-date-filter">
-            <span>Weather on</span>
-            <span class="date-control">
-              <button id="weather-date-button" type="button" aria-label="Choose forecast date">
-                <output id="weather-date-display"></output>
-                <svg
-                  class="calendar-icon"
-                  viewBox="0 0 16 16"
-                  width="14"
-                  height="14"
-                  aria-hidden="true"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="1.4"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                >
-                  <rect x="2" y="3.5" width="12" height="10.5" rx="2" />
-                  <path d="M5 2v3M11 2v3M2 7h12" />
-                </svg>
-              </button>
-              <input id="weather-date" type="date" tabindex="-1" aria-hidden="true" />
-            </span>
-          </div>
         </nav>
         <div id="search">
-          <input
-            id="spot-search"
-            type="search"
-            placeholder="Search spots..."
-            aria-label="Search spots by title or description"
-            autocomplete="off"
-          />
+          <span class="search-field">
+            <input
+              id="spot-search"
+              type="search"
+              placeholder="Search spots..."
+              aria-label="Search spots by title or description"
+              autocomplete="off"
+            />
+            <button
+              id="clear-search"
+              type="button"
+              aria-label="Clear search"
+              title="Clear search"
+              hidden
+            >
+              <svg viewBox="0 0 16 16" aria-hidden="true">
+                <path d="m4 4 8 8M12 4l-8 8" />
+              </svg>
+            </button>
+          </span>
         </div>
         <div id="spot-count" aria-live="polite"></div>
         <ul id="spots"></ul>
@@ -408,6 +488,11 @@
         <a href="https://www.comaps.app/">CoMaps</a>,
         <a href="https://organicmaps.app/">Organic Maps</a> or OsmAnd; this site is just a
         convenient way to browse and filter it without installing anything.
+      </p>
+      <p>
+        The website also provides live weather forecasts and marks spots expected to be wet, using
+        rain on the selected day and the preceding days to help you judge current and upcoming trail
+        conditions.
       </p>
       <h3>Natural trail grading: T and E</h3>
       <p>

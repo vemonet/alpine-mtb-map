@@ -37,6 +37,18 @@ body:
     validations:
       required: true
 
+  - type: checkboxes
+    id: riding_styles
+    attributes:
+      label: Riding style
+      description: Select every style available at this spot.
+      options:
+        - label: Downhill
+        - label: Enduro
+        - label: Freeride
+    validations:
+      required: true
+
   - type: textarea
     id: description
     attributes:

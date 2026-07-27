@@ -1,5 +1,7 @@
 import L from "leaflet";
 import "leaflet/dist/leaflet.css";
+import "maplibre-gl/dist/maplibre-gl.css";
+import "@maplibre/maplibre-gl-leaflet";
 import "./style.css";
 
 // The KML is the single source of truth. It lives in public/ so the deployed
@@ -84,10 +86,14 @@ const places = parseKml(kmlText).filter((p) => p.coords.length);
 // ------------------------------------------------------------------ map ---
 const DEFAULT_VIEW = [46.2, 7.1];
 const DEFAULT_ZOOM = 8;
+const DEFAULT_MAP_LAYER = "OpenStreetMap";
+const MAP_LAYER_STORAGE_KEY = "mapLayer";
 const map = L.map("map", { scrollWheelZoom: true }).setView(DEFAULT_VIEW, DEFAULT_ZOOM);
 
 const attribution =
   '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors';
+const cartoAttribution = `${attribution}, &copy; <a href="https://carto.com/attributions">CARTO</a>`;
+const openFreeMapAttribution = `${attribution}, <a href="https://openfreemap.org/">OpenFreeMap</a>`;
 
 const layers = {
   OpenStreetMap: L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
@@ -102,9 +108,25 @@ const layers = {
     maxZoom: 19,
     attribution: `${attribution}, <a href="https://www.cyclosm.org">CyclOSM</a>`,
   }),
+  "OpenFreeMap Liberty": L.maplibreGL({
+    style: "https://tiles.openfreemap.org/styles/liberty",
+    attribution: openFreeMapAttribution,
+  }),
+  "CARTO Voyager": L.tileLayer(
+    "https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png",
+    {
+      subdomains: "abcd",
+      maxZoom: 20,
+      attribution: cartoAttribution,
+    },
+  ),
 };
-layers.OpenStreetMap.addTo(map);
+const savedMapLayer = localStorage.getItem(MAP_LAYER_STORAGE_KEY);
+const initialMapLayer = Object.hasOwn(layers, savedMapLayer) ? savedMapLayer : DEFAULT_MAP_LAYER;
+layers[initialMapLayer].addTo(map);
 L.control.layers(layers).addTo(map);
+L.control.scale({ imperial: false, maxWidth: 140 }).addTo(map);
+map.on("baselayerchange", ({ name }) => localStorage.setItem(MAP_LAYER_STORAGE_KEY, name));
 
 const pinIcon = (kind, wet = false) =>
   L.divIcon({
@@ -221,6 +243,10 @@ const requestedSpot = new URL(window.location.href).searchParams.get("spot");
 const requestedEntry = requestedSpot && spots.get(requestedSpot)?.entry;
 if (requestedEntry) requestAnimationFrame(() => showEntry(requestedEntry, false));
 
+const dateInput = document.getElementById("open-date");
+const dateDisplay = document.getElementById("open-date-display");
+const dateButton = document.getElementById("open-date-button");
+
 // --------------------------------------------------------------- weather ---
 // Open-Meteo accepts comma-separated coordinate lists. Fetching the main pins
 // in batches keeps the request URLs bounded while avoiding one request per
@@ -234,9 +260,6 @@ const WEATHER_RAIN_MM = 1;
 const WEATHER_PREVIOUS_DAY_MM = 5;
 const WEATHER_RAIN_PROBABILITY = 50;
 const weatherBtn = document.getElementById("weather");
-const weatherDateInput = document.getElementById("weather-date");
-const weatherDateDisplay = document.getElementById("weather-date-display");
-const weatherDateButton = document.getElementById("weather-date-button");
 let weatherEnabled = true;
 let weatherRequest = 0;
 
@@ -258,14 +281,8 @@ const europeanDate = (iso, short = false) => {
 const today = new Date();
 const forecastStart = localDate(today);
 const forecastEnd = shiftedDate(forecastStart, 12);
-weatherDateInput.min = forecastStart;
-weatherDateInput.max = forecastEnd;
-weatherDateInput.value = shiftedDate(forecastStart, today.getHours() >= 16 ? 1 : 0);
-
-const updateWeatherDateDisplay = () => {
-  weatherDateDisplay.textContent = europeanDate(weatherDateInput.value);
-};
-updateWeatherDateDisplay();
+const defaultWeatherDate = shiftedDate(forecastStart, today.getHours() >= 16 ? 1 : 0);
+const weatherDate = () => dateInput.value || defaultWeatherDate;
 
 const openDatePicker = (input) => {
   if (input.showPicker) input.showPicker();
@@ -274,8 +291,6 @@ const openDatePicker = (input) => {
     input.click();
   }
 };
-weatherDateButton.addEventListener("click", () => openDatePicker(weatherDateInput));
-
 const weatherCode = (code) => {
   if (code === 0) return "Clear";
   if (code <= 3) return "Cloudy";
@@ -288,7 +303,7 @@ const weatherCode = (code) => {
   return "Variable";
 };
 
-const wetReason = (weather, date = weatherDateInput.value) => {
+const wetReason = (weather, date = weatherDate()) => {
   if (!weather?.days?.has(date)) return "";
   const day = weather.days.get(date);
   const previous = weather.days.get(shiftedDate(date, -1));
@@ -305,12 +320,13 @@ const wetReason = (weather, date = weatherDateInput.value) => {
 };
 
 const forecastRows = (weather) => {
-  const dates = [-3, -2, -1, 0, 1, 2, 3].map((days) => shiftedDate(weatherDateInput.value, days));
+  const selectedDate = weatherDate();
+  const dates = [-3, -2, -1, 0, 1, 2, 3].map((days) => shiftedDate(selectedDate, days));
   return dates
     .filter((date) => weather.days.has(date))
     .map((date) => {
       const day = weather.days.get(date);
-      const selected = date === weatherDateInput.value ? ' class="selected"' : "";
+      const selected = date === selectedDate ? ' class="selected"' : "";
       return `<tr${selected}><td>${europeanDate(date, true)}</td><td>${weatherCode(
         day.code,
       )}</td><td>${Math.round(day.min)}-${Math.round(day.max)} C</td><td>${day.precipitation.toFixed(
@@ -329,9 +345,13 @@ function weatherPopup(place, spot) {
       : "Forecast unavailable.";
     return `${content}<section class="weather-forecast"><h4>Weather</h4><p>${status}</p></section>`;
   }
+  const selectedDate = weatherDate();
+  if (!spot.weather.days.has(selectedDate)) {
+    return `${content}<section class="weather-forecast"><h4>🌦️ Weather forecast</h4><p>Forecast unavailable for ${europeanDate(selectedDate)}. Open-Meteo covers ${europeanDate(forecastStart)} to ${europeanDate(forecastEnd)} here.</p></section>`;
+  }
   const reason = wetReason(spot.weather);
-  return `${content}<section class="weather-forecast"><h4>Weather forecast</h4>
-    <p>${europeanDate(weatherDateInput.value)}: ${
+  return `${content}<section class="weather-forecast"><h4>🌦️ Weather forecast</h4>
+    <p>${europeanDate(selectedDate)}: ${
       reason
         ? `<span class="wet-note">Likely wet: ${reason}.</span>`
         : "No significant rain signal."
@@ -467,16 +487,11 @@ weatherBtn.addEventListener("click", () => {
   weatherBtn.classList.remove("loading");
   weatherBtn.title = weatherEnabled ? "Disable weather" : "Enable weather";
   weatherBtn.setAttribute("aria-label", weatherBtn.title);
-  document.getElementById("weather-date-filter").hidden = !weatherEnabled;
   refreshWeatherPresentation();
   if (weatherEnabled && entries.some((entry) => !entry.spot.weather)) loadWeather();
   else if (!weatherEnabled) weatherRequest++;
 });
 
-weatherDateInput.addEventListener("input", () => {
-  updateWeatherDateDisplay();
-  refreshWeatherPresentation();
-});
 loadWeather();
 
 // ----------------------------------------------------------- geolocation ---
@@ -565,20 +580,18 @@ for (const a of document.querySelectorAll("a.dl")) {
 }
 
 // --------------------------------------------------------------- filters ---
-// Every chip is a tag test; the chip's markup says which of three modes it
-// uses, so adding a filter is one <button data-tag> in index.html plus the tag
-// in the KML. Nothing here knows what "winter" or "magicpass" mean.
+// Checkbox markup defines each filter's behavior. Filters inside an "any"
+// group use OR logic; optional "only" filters are requirements and combine
+// with AND logic.
 //
-//   exclude (default) - starts on; off hides spots carrying the tag
 //   only              - starts off; on hides spots NOT carrying the tag
 //   any + data-group  - a spot shows while at least one tag in the group is on
 //
-// "any" is what lets a spot tagged both beginner and expert survive turning
-// either chip off; turn both off and the group matches nothing, which is the
-// honest answer to "show me spots that are neither".
+// "any" lets multi-tag spots survive while any matching chip remains on. It
+// drives both the difficulty group and the DH/enduro/freeride discipline group.
 const chips = [...document.querySelectorAll(".filter[data-tag]")];
 const categoryChips = [...document.querySelectorAll(".filter[data-category]")];
-const on = (chip) => chip.getAttribute("aria-pressed") === "true";
+const on = (chip) => chip.checked;
 const modeOf = (chip) => chip.dataset.mode ?? "exclude";
 
 const anyGroups = new Map(); // group name -> chips
@@ -600,13 +613,13 @@ const priceCap = () => {
 
 // Seasons recur each year, so only the month and day are compared. closed_from
 // is exclusive; matching dates mean the spot is normally open year-round.
-const dateInput = document.getElementById("open-date");
-const dateDisplay = document.getElementById("open-date-display");
-const dateButton = document.getElementById("open-date-button");
 const searchInput = document.getElementById("spot-search");
+const clearSearchButton = document.getElementById("clear-search");
 const updateDateDisplay = () => {
   const [year, month, day] = dateInput.value.split("-");
-  dateDisplay.textContent = year ? `${day}.${month}.${year}` : "Any date";
+  dateDisplay.textContent = year
+    ? `${day}.${month}.${year}`
+    : `Any · weather ${europeanDate(defaultWeatherDate, true)}`;
 };
 updateDateDisplay();
 dateButton.addEventListener("click", () => {
@@ -627,11 +640,7 @@ const matches = (spot) => {
   const query = searchInput.value.trim().toLocaleLowerCase();
   if (query && !spot.searchText.includes(query)) return false;
 
-  const category = spot.tags.has("nolift")
-    ? "nolift"
-    : spot.tags.has("bikepark")
-      ? "bikepark"
-      : "natural";
+  const category = spot.tags.has("bikepark") ? "bikepark" : "natural";
   if (!categoryChips.some((chip) => on(chip) && chip.dataset.category === category)) return false;
 
   for (const chip of chips) {
@@ -661,26 +670,59 @@ const applyFilters = () => {
     }
   }
   document.querySelector("#spot-count").textContent =
-    `${visibleCount} ${visibleCount === 1 ? "spot" : "spots"} shown`;
+    `${visibleCount} ${visibleCount === 1 ? "spot" : "spots"}`;
+  const showFilters = [...document.querySelectorAll("#show-filter-menu .filter")];
+  const shown = showFilters.filter(on).length;
+  document.getElementById("show-filter-summary").textContent =
+    shown === showFilters.length ? "All" : shown ? `${shown}/${showFilters.length}` : "None";
+  const required = [...document.querySelectorAll("#only-filter-menu .filter")].filter(on).length;
+  document.getElementById("only-filter-summary").textContent =
+    required === 0 ? "Any" : `${required} active`;
 };
 
 for (const chip of chips) {
-  chip.addEventListener("click", () => {
-    chip.setAttribute("aria-pressed", String(!on(chip)));
-    applyFilters();
-  });
+  chip.addEventListener("change", applyFilters);
 }
 for (const chip of categoryChips) {
-  chip.addEventListener("click", () => {
-    chip.setAttribute("aria-pressed", String(!on(chip)));
+  chip.addEventListener("change", applyFilters);
+}
+for (const button of document.querySelectorAll("[data-filter-set]")) {
+  button.addEventListener("click", () => {
+    const checked = button.dataset.filterSet === "all";
+    for (const input of document.querySelectorAll("#show-filter-menu .filter")) {
+      input.checked = checked;
+    }
     applyFilters();
   });
 }
+for (const menu of document.querySelectorAll(".filter-menu")) {
+  menu.addEventListener("toggle", () => {
+    if (!menu.open) return;
+    for (const other of document.querySelectorAll(".filter-menu")) {
+      if (other !== menu) other.removeAttribute("open");
+    }
+  });
+}
+document.addEventListener("click", (event) => {
+  for (const menu of document.querySelectorAll(".filter-menu[open]")) {
+    if (!menu.contains(event.target)) menu.removeAttribute("open");
+  }
+});
 priceInput.addEventListener("input", applyFilters);
-searchInput.addEventListener("input", applyFilters);
+searchInput.addEventListener("input", () => {
+  clearSearchButton.hidden = !searchInput.value;
+  applyFilters();
+});
+clearSearchButton.addEventListener("click", () => {
+  searchInput.value = "";
+  clearSearchButton.hidden = true;
+  applyFilters();
+  searchInput.focus();
+});
 dateInput.addEventListener("input", () => {
   updateDateDisplay();
   applyFilters();
+  refreshWeatherPresentation();
 });
 applyFilters();
 
