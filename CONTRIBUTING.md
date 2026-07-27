@@ -121,10 +121,7 @@ Keep the five sections in this order. It is HTML inside `<![CDATA[ ... ]]>`, so 
 To flag a local access rule or a hazard, add a warning box between "Getting up / price" and Access:
 
 ```html
-<p class="warn">
-  &#9888;&#65039; Only ride on single tracks that are marked for biking, or 2 m wide, as this is
-  Vaud canton.
-</p>
+<p class="warn">&#9888;&#65039; Only ride on single tracks that are marked for biking.</p>
 ```
 
 It renders as a highlighted box on the site and as its own line in the GPX export.

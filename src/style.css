@@ -382,10 +382,6 @@ body {
   border-top: 1px solid var(--line);
 }
 
-.filter-popover fieldset:first-of-type {
-  border-top: 0;
-}
-
 .filter-popover legend {
   padding: 0 3px;
   color: var(--muted);
@@ -775,6 +771,77 @@ a.dl:hover {
 .leaflet-popup-content h3 {
   margin: 0 0 6px;
   font-size: 15px;
+}
+
+.leaflet-popup-content hr {
+  border: 0;
+  border-top: 1px solid #d4d4d4;
+  margin: 10px 0;
+}
+
+.tag-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin: 0;
+}
+
+.tag-badge {
+  display: inline-block;
+  padding: 0.15rem 0.55rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #2a2a2a;
+  background: #d0d0d0;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+.tag-badge.tag-beginner {
+  background: #b8e0b8;
+}
+.tag-badge.tag-expert {
+  background: #e6b8b8;
+}
+.tag-badge.tag-bike-park {
+  background: #a8c8e8;
+}
+.tag-badge.tag-dh {
+  background: #e8c8a8;
+}
+.tag-badge.tag-enduro {
+  background: #c8b8e8;
+}
+.tag-badge.tag-freeride {
+  background: #d8b8d8;
+}
+.tag-badge.tag-natural {
+  background: #d0e0b0;
+}
+.tag-badge.tag-no-lift {
+  background: #c8c8c8;
+}
+.tag-badge.tag-magic-pass {
+  background: #e8dc98;
+}
+.tag-badge.tag-season-pass {
+  background: #a8d8c8;
+}
+.tag-badge.tag-mass-start {
+  background: #e8b8c8;
+}
+.tag-badge.tag-winter {
+  background: #a8d8e0;
+}
+.tag-badge.tag-race {
+  background: #f0d8a0;
+}
+.tag-badge.tag-shuttle {
+  background: #b8d8f0;
+}
+.tag-badge.tag-season {
+  background: #c0e8b8;
 }
 
 .popup-buttons {

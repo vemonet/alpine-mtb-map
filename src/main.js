@@ -74,7 +74,23 @@ function parseKml(text) {
 // rates: this sorts spots into the right bracket, it is not a quote. A
 // currency missing from the table reads as "no price", so the slider ignores
 // the spot rather than bracketing it wrongly.
-const CHF_PER = { CHF: 1, EUR: 0.95, USD: 0.8, CAD: 0.58, JPY: 0.0053 };
+const CHF_PER = {
+  CHF: 1,
+  EUR: 0.95,
+  GBP: 1.1,
+  USD: 0.8,
+  CAD: 0.58,
+  AUD: 0.53,
+  NZD: 0.48,
+  JPY: 0.0053,
+  CZK: 0.038,
+  PLN: 0.22,
+  RON: 0.19,
+  UAH: 0.019,
+  TWD: 0.025,
+  PHP: 0.014,
+  MUR: 0.017,
+};
 function chf(price) {
   const m = /([\d.]+)\s*([A-Z]{3})/i.exec(price);
   const rate = m && CHF_PER[m[2].toUpperCase()];
@@ -139,6 +155,30 @@ const pinIcon = (kind, wet = false) =>
     iconSize: [15, 15],
     iconAnchor: [7, 7],
   });
+
+// Display labels for compound tags: keep the rest as-is.
+const TAG_DISPLAY = {
+  bikepark: "bike-park",
+  nolift: "no-lift",
+  massstart: "mass-start",
+  magicpass: "magic-pass",
+  seasonpass: "season-pass",
+  dh: "DH",
+};
+
+const displayTag = (tag) => TAG_DISPLAY[tag] ?? tag;
+
+const tagBadges = (tags) => {
+  if (!tags?.size) return "";
+  const badges = [...tags]
+    .sort()
+    .map((tag) => {
+      const label = displayTag(tag);
+      return `<span class="tag-badge tag-${label.toLowerCase()}">${label}</span>`;
+    })
+    .join("");
+  return `<div class="tag-badges">${badges}</div>`;
+};
 
 const basePopup = (p) => `<h3>${p.name}</h3>${p.description || ""}`;
 
@@ -338,16 +378,17 @@ const forecastRows = (weather) => {
 
 function weatherPopup(place, spot) {
   const content = basePopup(place);
+  const tags = tagBadges(spot.tags);
   if (!weatherEnabled) return content;
   if (!spot.weather) {
     const status = weatherBtn.classList.contains("loading")
       ? "Loading forecast..."
       : "Forecast unavailable.";
-    return `${content}<section class="weather-forecast"><h4>Weather</h4><p>${status}</p></section>`;
+    return `${content}<section class="weather-forecast"><h4>Weather</h4><p>${status}</p><hr>${tags}</section>`;
   }
   const selectedDate = weatherDate();
   if (!spot.weather.days.has(selectedDate)) {
-    return `${content}<section class="weather-forecast"><h4>🌦️ Weather forecast</h4><p>Forecast unavailable for ${europeanDate(selectedDate)}. Open-Meteo covers ${europeanDate(forecastStart)} to ${europeanDate(forecastEnd)} here.</p></section>`;
+    return `${content}<section class="weather-forecast"><h4>🌦️ Weather forecast</h4><p>Forecast unavailable for ${europeanDate(selectedDate)}. Open-Meteo covers ${europeanDate(forecastStart)} to ${europeanDate(forecastEnd)} here.</p><hr>${tags}</section>`;
   }
   const reason = wetReason(spot.weather);
   return `${content}<section class="weather-forecast"><h4>🌦️ Weather forecast</h4>
@@ -358,7 +399,7 @@ function weatherPopup(place, spot) {
     }</p>
     <table class="weather-table"><thead><tr><th>Date</th><th>Sky</th><th>Temp.</th><th>Rain</th><th>Risk</th></tr></thead>
     <tbody>${forecastRows(spot.weather)}</tbody></table>
-    <p><small>Forecast by <a href="https://open-meteo.com/" target="_blank" rel="noopener">Open-Meteo</a>.</small></p>
+    <p><small>Forecast by <a href="https://open-meteo.com/" target="_blank" rel="noopener">Open-Meteo</a>.</small></p><hr>${tags}
   </section>`;
 }
 
