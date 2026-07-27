@@ -7405,6 +7405,55 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          6.475162,
+          46.238162,
+          0
+        ]
+      },
+      "properties": {
+        "name": "Les Habères Bike Park (Vallée Verte) [20.50 EUR]",
+        "description": {
+          "@type": "html",
+          "value": "<b>Darandet 1160 m - top of the Darandet chairlift</b><br/><br/><b>Trails</b><br/>A small, family-friendly bike park with a handful of downhill tracks, VTT and gravel routes, and a kids' play zone. The Darandet chairlift serves about 200 m of vertical on quiet, uncrowded slopes with views across Lake Geneva to Mont Blanc. Green and blue flow lines for learning, plus red DH tracks for building confidence.<br/><br/><b>Getting up / price</b><br/>The Darandet chairlift carries bikes Friday to Sunday in summer. Day pass 20.50 EUR adult, 14.50 EUR child; 4 hours 17 EUR / 12 EUR; single ride 7 EUR. Free with the Magic Pass.<br/><br/><b>Open season</b><br/>Open from 10 July; closed from 17 August (published 2026 dates). Spring and autumn weekend openings: check the operator schedule.<br/>Daily opening hours: 10:00-17:00<br/><small>Published operating hours; check the operator schedule.</small><br/><br/><b>Access</b><table class=\"access\"><tr><th>From</th><th>Transport</th><th>Duration</th></tr><tr><td>Geneva</td><td>Car</td><td>~45 min</td></tr></table><br/><i>Source: <a href=\"https://jeskieauxhaberes.com/\">Les Habères official site</a>. Prices, schedules, trail status and access can change; verify before travel.</i>"
+        },
+        "styleUrl": "#placemark-blue",
+        "icon-opacity": 1,
+        "icon-color": "#0066CC",
+        "icon": "https://omaps.app/placemarks/placemark-blue.png",
+        "spot": "haberes",
+        "tags": "beginner bikepark dh magicpass",
+        "open_from": "07-10",
+        "closed_from": "08-17",
+        "price_day": "20.50 EUR",
+        "kind": "bikepark"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.471262,
+          46.244561,
+          0
+        ]
+      },
+      "properties": {
+        "name": "Les Habères: Darandet chairlift valley station (944 m)",
+        "styleUrl": "#placemark-gray",
+        "icon-opacity": 1,
+        "icon-color": "#737373",
+        "icon": "https://omaps.app/placemarks/placemark-gray.png",
+        "spot": "haberes",
+        "tags": "beginner bikepark dh magicpass",
+        "kind": "minor"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           7.385609,
           46.314928,
           0
@@ -55690,6 +55739,115 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          8.25137,
+          46.99082,
+          0
+        ]
+      },
+      "properties": {
+        "name": "Pilatus / Fräkmüntegg (Luzern) [gondola]",
+        "description": {
+          "@type": "html",
+          "value": "<b>Fräkmüntegg 1410 m - top of the Kriens gondola</b><br/><br/><b>Trails</b><br/>Technical natural singletrack descends from Fräkmüntegg and Pilatus Kulm (2014 m, reached by a second cable car) toward Kriens and Alpnach. This is raw Prealp riding, not a shaped bike park: steep forest trails, roots and switchbacks from the Krienseregg mid-station down to the Luzern suburbs. The upper Pilatus Kulm sector is high-alpine and exposed.<br/><br/><b>Getting up / price</b><br/>The gondola from Kriens (Luzern) carries bikes to Fräkmüntegg; the Pilatus Kulm cable car above it may not accept bicycles. Day return from Kriens is about 72 CHF; confirm the current bike surcharge before travelling.<br/><br/><b>Open season</b><br/>Open from May; closed from November (estimated summer gondola window).<br/>Daily opening hours: 08:30-17:30<br/><small>Estimated hours; verify Pilatus Bahnen summer schedule and bike carriage policy.</small><br/><br/><b>Access</b><table class=\"access\"><tr><th>From</th><th>Transport</th><th>Duration</th></tr><tr><td>Lucerne</td><td>Bus + gondola</td><td>~30 min</td></tr><tr><td>Zurich</td><td>Train + bus + gondola</td><td>~1h15</td></tr></table><br/><i>Source: <a href=\"https://www.pilatus.ch/en/\">Pilatus Bahnen</a>. Confirm bike carriage, trail conditions and lift prices before travel.</i>"
+        },
+        "styleUrl": "#placemark-green",
+        "icon-opacity": 1,
+        "icon-color": "#3C8C3C",
+        "icon": "https://omaps.app/placemarks/placemark-green.png",
+        "spot": "pilatus",
+        "tags": "expert natural dh enduro",
+        "open_from": "05-01",
+        "closed_from": "11-15",
+        "kind": "natural"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.63717,
+          46.9695,
+          0
+        ]
+      },
+      "properties": {
+        "name": "Stoos - Fronalpstock (Schwyz) [funicular + chairlift]",
+        "description": {
+          "@type": "html",
+          "value": "<b>Fronalpstock 1900 m - top of the Mettlen-Fronalpstock chairlift</b><br/><br/><b>Trails</b><br/>A car-free resort accessible only by the world's steepest funicular, with a network of SuisseMobile mountain-bike routes in a panorama setting above Lake Lucerne. Trails are natural and shared-use, descending from Fronalpstock and Klingenstock (1900 m) back to the Stoos plateau (1300 m) or all the way to the valley. The riding is scenic XC and enduro rather than built park.<br/><br/><b>Getting up / price</b><br/>The Morschach-Stoos cable car or the Schwyz-Stoos funicular (bike surcharge ~5 CHF). From Stoos, chairlifts to Fronalpstock and Klingenstock carry bikes. A combined return from Schwyz is about 44 CHF + bike supplement.<br/><br/><b>Open season</b><br/>Open from June; closed from October (estimated summer lift window).<br/>Daily opening hours: 08:30-17:00<br/><small>Estimated hours; check the Stoos Bahnen summer timetable.</small><br/><br/><b>Access</b><table class=\"access\"><tr><th>From</th><th>Transport</th><th>Duration</th></tr><tr><td>Lucerne</td><td>Train + funicular</td><td>~1h</td></tr><tr><td>Zurich</td><td>Train + funicular</td><td>~1h15</td></tr></table><br/><i>Source: <a href=\"https://www.stoos.ch/en/summer/mountain-bike/\">Stoos tourist office</a>. Prices, schedules, trail status and access can change; verify before travel.</i>"
+        },
+        "styleUrl": "#placemark-green",
+        "icon-opacity": 1,
+        "icon-color": "#3C8C3C",
+        "icon": "https://omaps.app/placemarks/placemark-green.png",
+        "spot": "stoos",
+        "tags": "beginner expert natural enduro",
+        "open_from": "06-01",
+        "closed_from": "10-19",
+        "kind": "natural"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.26917,
+          46.77591,
+          0
+        ]
+      },
+      "properties": {
+        "name": "Melchsee-Frutt (Obwalden) [gondola]",
+        "description": {
+          "@type": "html",
+          "value": "<b>Melchsee-Frutt 1925 m - top of the Stöckalp gondola</b><br/><br/><b>Trails</b><br/>High-alpine XC and enduro riding at 1900-2200 m around Lake Melchsee, with panoramic loops and additional chairlift-served descents from Bonistock (2148 m) and Erzegg (2136 m). Trails are natural mountain paths shared with hikers rather than purpose-built bike trails. The altitude, views and clean air make it a proper summer escape from the lowlands.<br/><br/><b>Getting up / price</b><br/>The Stöckalp-Melchsee-Frutt gondola carries bikes to the high plateau. Additional chairlifts (Cheselen, Jäst, Bettenalp, Erzegg, Bonistock) run higher. Confirm the current bike ticket and lift schedule before travelling.<br/><br/><b>Open season</b><br/>Open from June; closed from mid-October (estimated summer lift window).<br/>Daily opening hours: 08:30-17:00<br/><small>Estimated hours; check the Melchsee-Frutt summer timetable.</small><br/><br/><b>Access</b><table class=\"access\"><tr><th>From</th><th>Transport</th><th>Duration</th></tr><tr><td>Lucerne</td><td>Car / bus</td><td>~1h</td></tr><tr><td>Stöckalp valley station</td><td>Gondola</td><td>~15 min</td></tr></table><br/><i>Source: <a href=\"https://www.melchsee-frutt.ch/en/summer/mountainbike\">Melchsee-Frutt</a>. Prices, schedules, trail status and access can change; verify before travel.</i>"
+        },
+        "styleUrl": "#placemark-green",
+        "icon-opacity": 1,
+        "icon-color": "#3C8C3C",
+        "icon": "https://omaps.app/placemarks/placemark-green.png",
+        "spot": "melchsee-frutt",
+        "tags": "beginner expert natural enduro",
+        "open_from": "06-01",
+        "closed_from": "10-15",
+        "kind": "natural"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.78989,
+          47.01158,
+          0
+        ]
+      },
+      "properties": {
+        "name": "Hoch-Ybrig (Schwyz) [38 CHF]",
+        "description": {
+          "@type": "html",
+          "value": "<b>Seebli 1460 m - top of the Weglosen 3S gondola</b><br/><br/><b>Trails</b><br/>A 100+ km network of shared mountain paths and natural singletrack across two valleys in the Schwyz Prealps. Trails are well-developed alpine ways rather than dedicated MTB routes, with the Sternen and Spirstock chairlifts adding higher access. This is a scenic trail-riding destination with good lift infrastructure, not a built bike park.<br/><br/><b>Getting up / price</b><br/>The 3S gondola from Weglosen to Seebli, plus chairlifts to Sternen and Spirstock. Summer day pass 38 CHF adult, 10 CHF child (6-16). Bike transport is included or free; no dedicated bike surcharge published.<br/><br/><b>Open season</b><br/>Open from 4 July; closed from 18 October (expected 2026 summer window).<br/>Daily opening hours: 08:30-17:00<br/><small>Published summer lift window estimate; verify the operator timetable.</small><br/><br/><b>Access</b><table class=\"access\"><tr><th>From</th><th>Transport</th><th>Duration</th></tr><tr><td>Zurich</td><td>Car</td><td>~55 min</td></tr><tr><td>Winterthur</td><td>Car</td><td>~55 min</td></tr></table><br/><i>Source: <a href=\"https://www.hoch-ybrig.ch/en/summer/adventures/mountain-biking\">Hoch-Ybrig</a>. Prices, schedules, trail status and access can change; verify before travel.</i>"
+        },
+        "styleUrl": "#placemark-green",
+        "icon-opacity": 1,
+        "icon-color": "#3C8C3C",
+        "icon": "https://omaps.app/placemarks/placemark-green.png",
+        "spot": "hoch-ybrig",
+        "tags": "beginner expert natural enduro",
+        "open_from": "07-04",
+        "closed_from": "10-18",
+        "price_day": "38 CHF",
+        "kind": "natural"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           6.68549,
           46.15028,
           0
@@ -59022,6 +59180,142 @@
         "tags": "beginner expert natural dh enduro",
         "open_from": "03-01",
         "closed_from": "12-01",
+        "kind": "nolift"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          116.187,
+          39.994,
+          0
+        ]
+      },
+      "properties": {
+        "name": "Beijing Xishan / Xiangshan MTB Trails (CN) [no lift]",
+        "description": {
+          "@type": "html",
+          "value": "<b>Unofficial singletrack in the Western Hills above Beijing</b><br/><br/><b>Trails</b><br/>A network of unofficial singletrack, fireroad climbs and DIY technical descents through the forested Western Hills (Xishan / Xiangshan / Miaofengshan) above Haidian District. Trails range from easy fireroads to steep expert lines with rock gardens. This is a local-community riding zone, not a sanctioned or signed trail network.<br/><br/><b>Getting up / price</b><br/>No lift. All riding is pedal-up or shuttle via local group arrangements. No trail pass required. Respect park access rules and avoid hiking paths where cycling is prohibited.<br/><br/><b>Open season</b><br/>Best March-May and September-November. Summer is hot and humid; winter is cold but dry and rideable.<br/><br/><b>Access</b><table class=\"access\"><tr><th>From</th><th>Transport</th><th>Duration</th></tr><tr><td>Central Beijing</td><td>Metro + bike</td><td>~45 min to trailhead</td></tr></table><br/><i>Indicative urban trail-zone pin. No mapped or sanctioned MTB network exists; riding is driven by local WeChat-group knowledge and word of mouth. Confirm current access with local riders before travelling.</i><br/><br/><i>Source: local Beijing riding community reports. Check current trail access and park restrictions.</i>"
+        },
+        "styleUrl": "#placemark-brown",
+        "icon-opacity": 1,
+        "icon-color": "#804633",
+        "icon": "https://omaps.app/placemarks/placemark-brown.png",
+        "spot": "beijing-xishan-mtb",
+        "tags": "beginner expert natural nolift dh enduro",
+        "open_from": "03-01",
+        "closed_from": "12-01",
+        "kind": "nolift"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.191,
+          22.565,
+          0
+        ]
+      },
+      "properties": {
+        "name": "Shenzhen Wutong Mountain MTB Trails (CN) [no lift]",
+        "description": {
+          "@type": "html",
+          "value": "<b>Technical singletrack on Shenzhen's highest peak</b><br/><br/><b>Trails</b><br/>Mapped mountain-bike lines on Wutong Mountain (944 m) and surrounding hills include graded singletrack from easy blue (Kunpeng Path) to double-black extreme (Extreme Wutong, mtb:scale 6). The Yantian coastal hills add red-grade speed tracks and enduro lines. The Dayun XC loop (2.4 km) near Longgang is the only purpose-built MTB track in the city.<br/><br/><b>Getting up / price</b><br/>No lift. Pedal up or use local shuttle arrangements. Sightseeing gondolas at OCT East and Qiushuishan do not carry bikes.<br/><br/><b>Open season</b><br/>Best October-April. Summer brings extreme heat (35 C+), monsoon rain and typhoon risk.<br/><br/><b>Access</b><table class=\"access\"><tr><th>From</th><th>Transport</th><th>Duration</th></tr><tr><td>Central Shenzhen</td><td>Metro + bike</td><td>~40 min to Wutong trailhead</td></tr></table><br/><i>Most trails are unofficial and ride at your own risk; Wutong Mountain's main road formally bans cycling. Verify current access and local conditions before riding.</i><br/><br/><i>Source: OpenStreetMap (30+ mtb-tagged ways, ODbL). Trail access and legality can change; verify before travel.</i>"
+        },
+        "styleUrl": "#placemark-brown",
+        "icon-opacity": 1,
+        "icon-color": "#804633",
+        "icon": "https://omaps.app/placemarks/placemark-brown.png",
+        "spot": "shenzhen-wutong-mtb",
+        "tags": "beginner expert natural nolift dh enduro",
+        "open_from": "10-01",
+        "closed_from": "05-01",
+        "kind": "nolift"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.822,
+          24.857,
+          0
+        ]
+      },
+      "properties": {
+        "name": "Yetopia MTB Park (Yilan, TW) [shuttle, NT$300]",
+        "description": {
+          "@type": "html",
+          "value": "<b>Taiwan's only purpose-built mountain bike park</b><br/><br/><b>Trails</b><br/>Three downhill/enduro trails descend from the ridge above Toucheng: Wild Boar (0.8 km, 226 m drop, easy flow), Muntjac (1.1 km, 202 m drop, medium, rocky/rooty) and Timber Trail (0.8 km, 100 m drop, hard, drops and off-camber). A 20 km XC loop (1,000 m ascent) and a pump track round out the park.<br/><br/><b>Getting up / price</b><br/>No mechanical lift. Shuttle van uplift: NT$500 half-day, NT$800 full-day (unlimited laps). Trail pass: NT$300/day. Full-suspension rental: NT$1,500/day. Summer season pass NT$1,500 (Jul-Nov). Guided sessions available.<br/><br/><b>Open season</b><br/>Open year-round; avoid typhoon months (late July to mid September).<br/><br/><b>Access</b><table class=\"access\"><tr><th>From</th><th>Transport</th><th>Duration</th></tr><tr><td>Taipei</td><td>Train + transfer</td><td>~1h30</td></tr><tr><td>Yilan / Jiaoxi</td><td>Car / taxi</td><td>~30 min</td></tr></table><br/><i>Source: <a href=\"https://yetopia.tw\">official Yetopia</a>. Prices, schedules, trail status and access can change; verify before travel.</i>"
+        },
+        "styleUrl": "#placemark-brown",
+        "icon-opacity": 1,
+        "icon-color": "#804633",
+        "icon": "https://omaps.app/placemarks/placemark-brown.png",
+        "spot": "yetopia-mtb-park",
+        "tags": "beginner expert bikepark nolift dh enduro",
+        "open_from": "01-01",
+        "closed_from": "01-01",
+        "price_day": "300 TWD",
+        "kind": "nolift"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.58,
+          24.15,
+          0
+        ]
+      },
+      "properties": {
+        "name": "Lao Wai Trails / Dadu Trail House (Taichung, TW) [no lift]",
+        "description": {
+          "@type": "html",
+          "value": "<b>Expat-built XC and enduro network above Taichung</b><br/><br/><b>Trails</b><br/>A network of flow and XC trails on Dadu Mountain, built and maintained by the expat MTB community. The Dadu Trail House bar, cafe and bike-rental shop is the local hub, with e-bikes available. Trails are shared-use, unsigned and known by local word of mouth.<br/><br/><b>Getting up / price</b><br/>No lift. Pedal up from the urban fringe or start at the Dadu Trail House for local knowledge and rentals.<br/><br/><b>Open season</b><br/>Rideable year-round; avoid typhoon rains (Jul-Sep) and the hottest summer afternoons.<br/><br/><b>Access</b><table class=\"access\"><tr><th>From</th><th>Transport</th><th>Duration</th></tr><tr><td>Central Taichung</td><td>Bike / taxi</td><td>~25 min</td></tr></table><br/><i>Community trail network; no formal trail map. Start at Dadu Trail House for current conditions and guidance.</i><br/><br/><i>Source: local rider reports and <a href=\"https://ziraneffect.com/\">Ziran Effect blog</a>.</i>"
+        },
+        "styleUrl": "#placemark-brown",
+        "icon-opacity": 1,
+        "icon-color": "#804633",
+        "icon": "https://omaps.app/placemarks/placemark-brown.png",
+        "spot": "laowai-dadu-mtb",
+        "tags": "beginner expert natural nolift enduro",
+        "open_from": "01-01",
+        "closed_from": "01-01",
+        "kind": "nolift"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.8,
+          21.95,
+          0
+        ]
+      },
+      "properties": {
+        "name": "Kenting MTB Trails (Pingtung, TW) [no lift]",
+        "description": {
+          "@type": "html",
+          "value": "<b>Coastal tropical singletrack in southern Taiwan</b><br/><br/><b>Trails</b><br/>Singletrack, downhill sections and jump/drop playgrounds around Dajianshr Mountain inside Kenting National Park. Open coastal terrain with ocean views makes this Taiwan's most scenic trail zone, but heat, sun exposure and typhoon risk require planning.<br/><br/><b>Getting up / price</b><br/>No lift. Pedal from the park access roads. A local guide (@accompany_bike_studio) offers supported rides.<br/><br/><b>Open season</b><br/>Rideable year-round; avoid typhoon season (Jul-Sep) when trails can be closed or washed out. Heat is intense in summer.<br/><br/><b>Access</b><table class=\"access\"><tr><th>From</th><th>Transport</th><th>Duration</th></tr><tr><td>Kenting / Hengchun</td><td>Bike / car</td><td>~20 min</td></tr><tr><td>Kaohsiung</td><td>Car / bus</td><td>~2h</td></tr></table><br/><i>Natural trail riding inside a national park; respect all signage, park rules and weather closures.</i><br/><br/><i>Source: local rider reports and <a href=\"https://ziraneffect.com/\">Ziran Effect blog</a>.</i>"
+        },
+        "styleUrl": "#placemark-brown",
+        "icon-opacity": 1,
+        "icon-color": "#804633",
+        "icon": "https://omaps.app/placemarks/placemark-brown.png",
+        "spot": "kenting-mtb",
+        "tags": "beginner expert natural nolift enduro",
+        "open_from": "01-01",
+        "closed_from": "01-01",
         "kind": "nolift"
       }
     },
@@ -63444,6 +63738,141 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          25.3531188,
+          47.332522,
+          0
+        ]
+      },
+      "properties": {
+        "name": "Vatra Dornei Bike Park (Suceava, RO) [ski lift]",
+        "description": {
+          "@type": "html",
+          "value": "<b>First bike park in north-east Romania, Moldavia's Bukovina highlands</b><br/><br/><b>Trails</b><br/>The Family Line (1,490 m, 180 m drop) starts at Veverita summit and is a beginner-friendly flow descent through scenic Carpathian forest. Seven trails are planned by 2027 across the Veverita, Parc and Dealu Negru sectors, adding progression options.<br/><br/><b>Getting up / price</b><br/>Teleschi Veverita carries bikes on Easy LOOP carriers. Multi-run tickets only: 2 runs 15 RON, 5 runs 35 RON, 12 runs 60 RON, 25 runs 100 RON. Groups of 10+ available Mon-Thu on request.<br/><br/><b>Open season</b><br/>Open from 1 June; closed from 1 October (estimated summer season).<br/>Daily opening hours: Fri 12:00-17:00, Sat-Sun 10:00-17:00<br/><small>Published 2026 hours; Mon-Thu by reservation for groups of 10+.</small><br/><br/><b>Access</b><table class=\"access\"><tr><th>From</th><th>Transport</th><th>Duration</th></tr><tr><td>Vatra Dornei</td><td>Bike / car</td><td>~5 min</td></tr><tr><td>Suceava</td><td>Car</td><td>~2h</td></tr></table><br/><i>Source: <a href=\"https://redescopera-taradornelor.ro/bike-park-vatra-dornei/\">official Vatra Dornei Bike Park page</a>. Prices, schedules, trail status and access can change; verify before travel.</i>"
+        },
+        "styleUrl": "#placemark-blue",
+        "icon-opacity": 1,
+        "icon-color": "#0066CC",
+        "icon": "https://omaps.app/placemarks/placemark-blue.png",
+        "spot": "vatra-dornei-bike-park",
+        "tags": "beginner bikepark dh",
+        "open_from": "06-01",
+        "closed_from": "10-01",
+        "price_day": "60 RON",
+        "kind": "bikepark"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          25.3562558,
+          47.3390663,
+          0
+        ]
+      },
+      "properties": {
+        "name": "Vatra Dornei: Veverita base 850 m",
+        "description": {
+          "@type": "html",
+          "value": "Teleschi Veverita valley station with Easy LOOP bike carriers."
+        },
+        "styleUrl": "#placemark-gray",
+        "icon-opacity": 1,
+        "icon-color": "#737373",
+        "icon": "https://omaps.app/placemarks/placemark-gray.png",
+        "spot": "vatra-dornei-bike-park",
+        "kind": "minor"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          23.60995,
+          42.24838,
+          0
+        ]
+      },
+      "properties": {
+        "name": "Borovets Bike Park (Bulgaria) [29 EUR]",
+        "description": {
+          "@type": "html",
+          "value": "<b>Sitnyakovo Express top 1780 m - Rila Mountains</b><br/><br/><b>Trails</b><br/>15 professionally built and maintained trails totaling 55+ km on the Rila slopes above Borovets, including Flintstones, Simpsons, Forrest Gump, Machete, Harry Potter, Jumanji, Dumbledore, Sun Valley, Mini Air Line, Need For Speed, Tom & Jerry, Scary Movie, Rocky, Air Line and Dirty Dan. An additional 60+ km of shared mountain paths extend the riding into centuries-old forest and scenic highland routes.<br/><br/><b>Getting up / price</b><br/>The Sitnyakovo Express 4-seat chairlift takes riders and bikes to the start zone in ~12 min. 2026 day pass: 29 EUR adult, 24 EUR child/senior; 2 days 48/40 EUR; 3 days 69/59 EUR; season pass 400 EUR. Bike rental and guided DH packages available at Adventure Center Borosport.<br/><br/><b>Open season</b><br/>Open from 12 June; closed from 28 September (published 2026 season).<br/>Daily opening hours: Fri-Tue 08:30-18:20<br/><small>Closed Wednesdays and Thursdays. Published 2026 hours.</small><br/><br/><b>Access</b><table class=\"access\"><tr><th>From</th><th>Transport</th><th>Duration</th></tr><tr><td>Sofia</td><td>Car</td><td>~1h30</td></tr><tr><td>Borovets resort</td><td>Bike / walk</td><td>Local</td></tr></table><br/><i>Sources: <a href=\"https://www.borovets-bg.com/bg/aktivnostii/borovec-bajk-park\">official Borovets Bike Park</a> and <a href=\"https://www.borovets-bg.com/bg/liftove/ceni-na-lift-karti-i-bileti\">lift pass prices</a>.</i>"
+        },
+        "styleUrl": "#placemark-blue",
+        "icon-opacity": 1,
+        "icon-color": "#0066CC",
+        "icon": "https://omaps.app/placemarks/placemark-blue.png",
+        "spot": "borovets-bike-park",
+        "tags": "beginner expert bikepark dh enduro freeride",
+        "open_from": "06-12",
+        "closed_from": "09-28",
+        "price_day": "29 EUR",
+        "price_season": "400 EUR",
+        "kind": "bikepark"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          24.679,
+          41.637,
+          0
+        ]
+      },
+      "properties": {
+        "name": "Pamporovo Bike Park (Bulgaria) [chairlift]",
+        "description": {
+          "@type": "html",
+          "value": "<b>Snezhanka peak 1925 m - Rhodope Mountains</b><br/><br/><b>Trails</b><br/>A UCI-calendar downhill race track and enduro trails (Elevation 999 race routes) descend from Snezhanka peak through the Rhodope highlands. The park hosts the Pamporovo Bike Fest (12th edition, July 2026, 200+ riders) and a round of the Maxxis BG Downhill Series, confirming serious race-proven terrain.<br/><br/><b>Getting up / price</b><br/>Resort chairlifts serve the DH track during summer events and scheduled operation. Confirm the current bike ticket price and operating calendar before travelling, as published English information is limited.<br/><br/><b>Open season</b><br/>Open from June; closed from September (estimated summer season).<br/>Daily opening hours: 09:00-17:00<br/><small>Estimated hours; verify the resort lift schedule and event calendar.</small><br/><br/><b>Access</b><table class=\"access\"><tr><th>From</th><th>Transport</th><th>Duration</th></tr><tr><td>Plovdiv</td><td>Car</td><td>~1h30</td></tr><tr><td>Pamporovo resort</td><td>Bike / walk</td><td>Local</td></tr></table><br/><i>Sources: <a href=\"https://pamporovo.me\">Pamporovo resort</a> and <a href=\"https://mtb-bg.com/tag/pamporovo\">MTB-BG Pamporovo coverage</a>.</i>"
+        },
+        "styleUrl": "#placemark-blue",
+        "icon-opacity": 1,
+        "icon-color": "#0066CC",
+        "icon": "https://omaps.app/placemarks/placemark-blue.png",
+        "spot": "pamporovo-bike-park",
+        "tags": "beginner expert bikepark dh enduro",
+        "open_from": "06-01",
+        "closed_from": "10-01",
+        "kind": "bikepark"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          23.28835,
+          42.56689,
+          0
+        ]
+      },
+      "properties": {
+        "name": "Vitosha Mountain Bike Park (Bulgaria) [chairlift]",
+        "description": {
+          "@type": "html",
+          "value": "<b>Vitoshko Lale top 2250 m - Vitosha Mountain above Sofia</b><br/><br/><b>Trails</b><br/>A DH race track that has hosted Balkan and European Championships, plus enduro and technical singletrack lines through the Vitosha Nature Park above Sofia. The park runs the Home Mountain Enduro (12th edition, June 2026) and Home Mountain Bike Cup DH series. The MTB-BG Bike School offers regular training courses on the trails.<br/><br/><b>Getting up / price</b><br/>Two chairlifts (Vitoshko Lale 1 + 2) carry bikes during summer operation. Summer 2026 opening was 6-7 June. Check the current ticket price and lift status directly.<br/><br/><b>Open season</b><br/>Open from 1 June; closed from 1 October (estimated summer season).<br/>Daily opening hours: 09:00-17:00<br/><small>Estimated hours; verify lift and trail status with the operator.</small><br/><br/><b>Access</b><table class=\"access\"><tr><th>From</th><th>Transport</th><th>Duration</th></tr><tr><td>Sofia</td><td>Car / bus</td><td>~40 min</td></tr></table><br/><i>Source: <a href=\"https://mtb-bg.com/tag/vitosha\">MTB-BG Vitosha coverage</a>. Confirm lift and trail operation before travel.</i>"
+        },
+        "styleUrl": "#placemark-blue",
+        "icon-opacity": 1,
+        "icon-color": "#0066CC",
+        "icon": "https://omaps.app/placemarks/placemark-blue.png",
+        "spot": "vitosha-mtb-park",
+        "tags": "beginner expert bikepark dh enduro",
+        "open_from": "06-01",
+        "closed_from": "10-01",
+        "kind": "bikepark"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           19.584724,
           48.969756,
           0
@@ -63876,8 +64305,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          6.918289,
-          45.697146,
+          6.93947,
+          45.69837,
           0
         ]
       },
@@ -63885,7 +64314,7 @@
         "name": "La Thuile Bike Park (Italy) [chairlifts]",
         "description": {
           "@type": "html",
-          "value": "<b>Raw World Cup gravity below the Rutor massif</b><br/><br/><b>Trails</b><br/>La Thuile combines a lift-served park with a huge natural trail area totaling roughly 170 km. Its reputation comes from long, steep and physical enduro stages plus raw downhill tracks with roots, rock, changing lines and serious alpine weather. It has hosted the Enduro World Series and the UCI Downhill and Enduro World Cups.<br/><br/><b>Getting up / price</b><br/>Summer chairlifts carry bikes from the Planibel base, with regional summer tickets also connecting other Valle d'Aosta lift areas. Check the current resort tariff because products and included lifts vary by season.<br/><br/><b>Open season</b><br/>Open from 21 June; closed from 15 September (typical summer indication).<br/>Daily opening hours: 09:30-17:00<br/><small>Estimated summer lift window; verify published 2026 dates, weather closures and the live trail report.</small><br/><br/><b>Access</b><table class=\"access\"><tr><th>From</th><th>Transport</th><th>Duration</th></tr><tr><td>Geneva Airport</td><td>Car</td><td>~2h30</td></tr><tr><td>Aosta</td><td>Car / bus</td><td>~45 min</td></tr></table><br/><i>Sources: <a href=\"https://www.lathuile.it/index.php/en/natural-trail-area-and-bike-park\">official La Thuile bike-park page</a> and <a href=\"https://balteus.lovevda.it/fr/base-de-donnees/7/vtt/la-thuile/bike-park-la-thuile/2794\">Valle d'Aosta tourism</a>. Check current lift dates, tickets and trail status.</i>"
+          "value": "<b>Planibel base 2175 m - top of the Les Suches gondola</b><br/><br/><b>Trails</b><br/>La Thuile combines a lift-served park with a huge natural trail area totaling roughly 170 km. Its reputation comes from long, steep and physical enduro stages plus raw downhill tracks with roots, rock, changing lines and serious alpine weather. It has hosted the Enduro World Series and the UCI Downhill and Enduro World Cups.<br/><br/><b>Getting up / price</b><br/>Summer chairlifts carry bikes from the Planibel base, with regional summer tickets also connecting other Valle d'Aosta lift areas. Check the current resort tariff because products and included lifts vary by season.<br/><br/><b>Open season</b><br/>Open from 21 June; closed from 15 September (typical summer indication).<br/>Daily opening hours: 09:30-17:00<br/><small>Estimated summer lift window; verify published 2026 dates, weather closures and the live trail report.</small><br/><br/><b>Access</b><table class=\"access\"><tr><th>From</th><th>Transport</th><th>Duration</th></tr><tr><td>Geneva Airport</td><td>Car</td><td>~2h30</td></tr><tr><td>Aosta</td><td>Car / bus</td><td>~45 min</td></tr></table><br/><i>Sources: <a href=\"https://www.lathuile.it/index.php/en/natural-trail-area-and-bike-park\">official La Thuile bike-park page</a> and <a href=\"https://balteus.lovevda.it/fr/base-de-donnees/7/vtt/la-thuile/bike-park-la-thuile/2794\">Valle d'Aosta tourism</a>. Check current lift dates, tickets and trail status.</i>"
         },
         "styleUrl": "#placemark-blue",
         "icon-opacity": 1,
@@ -63896,6 +64325,48 @@
         "open_from": "06-21",
         "closed_from": "09-15",
         "kind": "bikepark"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.94916,
+          45.71143,
+          0
+        ]
+      },
+      "properties": {
+        "name": "La Thuile: Les Suches gondola valley station (1466 m)",
+        "styleUrl": "#placemark-gray",
+        "icon-opacity": 1,
+        "icon-color": "#737373",
+        "icon": "https://omaps.app/placemarks/placemark-gray.png",
+        "spot": "la-thuile-bike-park",
+        "tags": "beginner expert bikepark dh enduro freeride",
+        "kind": "minor"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.91624,
+          45.69026,
+          0
+        ]
+      },
+      "properties": {
+        "name": "La Thuile: Chaz Dura Express 2 top (2558 m)",
+        "styleUrl": "#placemark-gray",
+        "icon-opacity": 1,
+        "icon-color": "#737373",
+        "icon": "https://omaps.app/placemarks/placemark-gray.png",
+        "spot": "la-thuile-bike-park",
+        "tags": "beginner expert bikepark dh enduro freeride",
+        "kind": "minor"
       }
     },
     {
