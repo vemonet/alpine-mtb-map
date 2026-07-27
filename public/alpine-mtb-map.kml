@@ -5926,5 +5926,1249 @@
       <mwm:icon>Mountain</mwm:icon><mwm:visibility>1</mwm:visibility>
     </ExtendedData>
   </Placemark>
+  <Placemark>
+    <name>Alyeska Bike Park [check operator]</name>
+    <description><![CDATA[<b>Alyeska Bike Park - Girdwood, AK</b><br/><br/><b>Trails</b><br/>14 miles of maintained downhill and gravity trails with purpose-built descending terrain. Check the current trail map for grades, closures and bike requirements.<br/><br/><b>Getting up / price</b><br/>2 chairlifts. Day-ticket pricing varies by date; check the operator before travel.<br/><br/><b>Open season</b><br/>June – September (directory indication; weather and maintenance can shorten the season).<br/>Daily opening hours: 09:00-17:00<br/><small>Typical operating-day estimate; verify the operator calendar and hours.</small><br/><br/><b>Access</b><table class="access"><tr><th>From</th><th>Transport</th><th>Duration</th></tr><tr><td>Girdwood</td><td>Car</td><td>Local</td></tr></table><br/><i>Sources: <a href="https://alyeskaresort.com/alyeska-bike-park/">operator information</a> and <a href="https://www.twowheeledwanderer.com/posts/mountain-bike-parks-united-states/">US downhill bike-park directory</a>. Prices, schedules, trail status and access can change; verify before travel.</i>]]></description>
+    <styleUrl>#placemark-blue</styleUrl>
+    <Point><coordinates>-149.133697,60.963246,0</coordinates></Point>
+    <ExtendedData xmlns:mwm="https://omaps.app">
+      <Data name="spot"><value>us-alyeska-bike-park</value></Data>
+      <Data name="tags"><value>beginner expert bikepark</value></Data>
+      <Data name="open_from"><value>06-01</value></Data>
+      <Data name="closed_from"><value>10-01</value></Data>
+      <mwm:icon>Transport</mwm:icon><mwm:visibility>1</mwm:visibility>
+    </ExtendedData>
+  </Placemark>
+  <Placemark>
+    <name>Sunrise Bike Park [check operator]</name>
+    <description><![CDATA[<b>Sunrise Bike Park - Greer, AZ</b><br/><br/><b>Trails</b><br/>17 miles of maintained downhill and gravity trails with purpose-built descending terrain. Check the current trail map for grades, closures and bike requirements.<br/><br/><b>Getting up / price</b><br/>2 chairlifts. Day-ticket pricing varies by date; check the operator before travel.<br/><br/><b>Open season</b><br/>May – October (directory indication; weather and maintenance can shorten the season).<br/>Daily opening hours: 09:00-17:00<br/><small>Typical operating-day estimate; verify the operator calendar and hours.</small><br/><br/><b>Access</b><table class="access"><tr><th>From</th><th>Transport</th><th>Duration</th></tr><tr><td>Greer</td><td>Car</td><td>Local</td></tr></table><br/><i>Sources: <a href="https://www.sunrise.ski/summer/downhill-mountain-biking/">operator information</a> and <a href="https://www.twowheeledwanderer.com/posts/mountain-bike-parks-united-states/">US downhill bike-park directory</a>. Prices, schedules, trail status and access can change; verify before travel.</i>]]></description>
+    <styleUrl>#placemark-blue</styleUrl>
+    <Point><coordinates>-109.458701,34.010048,0</coordinates></Point>
+    <ExtendedData xmlns:mwm="https://omaps.app">
+      <Data name="spot"><value>us-sunrise-bike-park</value></Data>
+      <Data name="tags"><value>beginner expert bikepark</value></Data>
+      <Data name="open_from"><value>05-01</value></Data>
+      <Data name="closed_from"><value>11-01</value></Data>
+      <mwm:icon>Transport</mwm:icon><mwm:visibility>1</mwm:visibility>
+    </ExtendedData>
+  </Placemark>
+  <Placemark>
+    <name>Lake Leatherwood Gravity Project [check operator]</name>
+    <description><![CDATA[<b>Lake Leatherwood Gravity Project - Eureka Springs, AR</b><br/><br/><b>Trails</b><br/>6 miles (not including the nearby XC trails) of maintained downhill and gravity trails with purpose-built descending terrain. Check the current trail map for grades, closures and bike requirements.<br/><br/><b>Getting up / price</b><br/>1 shuttle bus. Day-ticket pricing varies by date; check the operator before travel.<br/><br/><b>Open season</b><br/>Year-round (directory indication; weather and maintenance can shorten the season).<br/>Daily opening hours: 09:00-17:00<br/><small>Typical operating-day estimate; verify the operator calendar and hours.</small><br/><br/><b>Access</b><table class="access"><tr><th>From</th><th>Transport</th><th>Duration</th></tr><tr><td>Eureka Springs</td><td>Car</td><td>Local</td></tr></table><br/><i>Sources: <a href="https://www.slaughtertrailguides.com/downhillallday">operator information</a> and <a href="https://www.twowheeledwanderer.com/posts/mountain-bike-parks-united-states/">US downhill bike-park directory</a>. Prices, schedules, trail status and access can change; verify before travel.</i>]]></description>
+    <styleUrl>#placemark-blue</styleUrl>
+    <Point><coordinates>-93.739242,36.400080,0</coordinates></Point>
+    <ExtendedData xmlns:mwm="https://omaps.app">
+      <Data name="spot"><value>us-lake-leatherwood-gravity-project</value></Data>
+      <Data name="tags"><value>beginner expert bikepark</value></Data>
+      <Data name="open_from"><value>01-01</value></Data>
+      <Data name="closed_from"><value>01-01</value></Data>
+      <mwm:icon>Transport</mwm:icon><mwm:visibility>1</mwm:visibility>
+    </ExtendedData>
+  </Placemark>
+  <Placemark>
+    <name>Buffalo River Outdoor Center [check operator]</name>
+    <description><![CDATA[<b>Buffalo River Outdoor Center - Ponca, AR</b><br/><br/><b>Trails</b><br/>11 miles of downhill + 40 miles cross-country of maintained downhill and gravity trails with purpose-built descending terrain. Check the current trail map for grades, closures and bike requirements.<br/><br/><b>Getting up / price</b><br/>1 shuttle bus. Day-ticket pricing varies by date; check the operator before travel.<br/><br/><b>Open season</b><br/>Year-round depending on conditions (directory indication; weather and maintenance can shorten the season).<br/>Daily opening hours: 09:00-17:00<br/><small>Typical operating-day estimate; verify the operator calendar and hours.</small><br/><br/><b>Access</b><table class="access"><tr><th>From</th><th>Transport</th><th>Duration</th></tr><tr><td>Ponca</td><td>Car</td><td>Local</td></tr></table><br/><i>Sources: <a href="https://www.buffaloriver.com/biking/">operator information</a> and <a href="https://www.twowheeledwanderer.com/posts/mountain-bike-parks-united-states/">US downhill bike-park directory</a>. Prices, schedules, trail status and access can change; verify before travel.</i>]]></description>
+    <styleUrl>#placemark-blue</styleUrl>
+    <Point><coordinates>-93.364626,36.024243,0</coordinates></Point>
+    <ExtendedData xmlns:mwm="https://omaps.app">
+      <Data name="spot"><value>us-buffalo-river-outdoor-center</value></Data>
+      <Data name="tags"><value>beginner expert bikepark</value></Data>
+      <Data name="open_from"><value>01-01</value></Data>
+      <Data name="closed_from"><value>01-01</value></Data>
+      <mwm:icon>Transport</mwm:icon><mwm:visibility>1</mwm:visibility>
+    </ExtendedData>
+  </Placemark>
+  <Placemark>
+    <name>China Peak Bike Park [check operator]</name>
+    <description><![CDATA[<b>China Peak Bike Park - Lakeshore, CA</b><br/><br/><b>Trails</b><br/>21 miles of maintained downhill and gravity trails with purpose-built descending terrain. Check the current trail map for grades, closures and bike requirements.<br/><br/><b>Getting up / price</b><br/>1 chairlift. Day-ticket pricing varies by date; check the operator before travel.<br/><br/><b>Open season</b><br/>June – September (directory indication; weather and maintenance can shorten the season).<br/>Daily opening hours: 09:00-17:00<br/><small>Typical operating-day estimate; verify the operator calendar and hours.</small><br/><br/><b>Access</b><table class="access"><tr><th>From</th><th>Transport</th><th>Duration</th></tr><tr><td>Lakeshore</td><td>Car</td><td>Local</td></tr></table><br/><i>Sources: <a href="https://www.skichinapeak.com/mountain-biking-scenic-chair-rides">operator information</a> and <a href="https://www.twowheeledwanderer.com/posts/mountain-bike-parks-united-states/">US downhill bike-park directory</a>. Prices, schedules, trail status and access can change; verify before travel.</i>]]></description>
+    <styleUrl>#placemark-blue</styleUrl>
+    <Point><coordinates>-86.786603,33.468895,0</coordinates></Point>
+    <ExtendedData xmlns:mwm="https://omaps.app">
+      <Data name="spot"><value>us-china-peak-bike-park</value></Data>
+      <Data name="tags"><value>beginner expert bikepark</value></Data>
+      <Data name="open_from"><value>06-01</value></Data>
+      <Data name="closed_from"><value>10-01</value></Data>
+      <mwm:icon>Transport</mwm:icon><mwm:visibility>1</mwm:visibility>
+    </ExtendedData>
+  </Placemark>
+  <Placemark>
+    <name>Mammoth Mountain Bike Park [check operator]</name>
+    <description><![CDATA[<b>Mammoth Mountain Bike Park - Mammoth Lakes, CA</b><br/><br/><b>Trails</b><br/>80+ miles of maintained downhill and gravity trails with purpose-built descending terrain. Check the current trail map for grades, closures and bike requirements.<br/><br/><b>Getting up / price</b><br/>1 gondola, 3 chairlifts, 1 bus shuttle. Day-ticket pricing varies by date; check the operator before travel.<br/><br/><b>Open season</b><br/>May/June (depending on snowpack) - September (directory indication; weather and maintenance can shorten the season).<br/>Daily opening hours: 09:00-17:00<br/><small>Typical operating-day estimate; verify the operator calendar and hours.</small><br/><br/><b>Access</b><table class="access"><tr><th>From</th><th>Transport</th><th>Duration</th></tr><tr><td>Mammoth Lakes</td><td>Car</td><td>Local</td></tr></table><br/><i>Sources: <a href="https://www.mammothmountain.com/things-to-do/activities/bike-park">operator information</a> and <a href="https://www.twowheeledwanderer.com/posts/mountain-bike-parks-united-states/">US downhill bike-park directory</a>. Prices, schedules, trail status and access can change; verify before travel.</i>]]></description>
+    <styleUrl>#placemark-blue</styleUrl>
+    <Point><coordinates>-118.966851,37.643253,0</coordinates></Point>
+    <ExtendedData xmlns:mwm="https://omaps.app">
+      <Data name="spot"><value>us-mammoth-mountain-bike-park</value></Data>
+      <Data name="tags"><value>beginner expert bikepark</value></Data>
+      <Data name="open_from"><value>05-01</value></Data>
+      <Data name="closed_from"><value>10-01</value></Data>
+      <mwm:icon>Transport</mwm:icon><mwm:visibility>1</mwm:visibility>
+    </ExtendedData>
+  </Placemark>
+  <Placemark>
+    <name>Snow Summit Bike Park [check operator]</name>
+    <description><![CDATA[<b>Snow Summit Bike Park - Big Bear, CA</b><br/><br/><b>Trails</b><br/>15 miles of maintained downhill and gravity trails with purpose-built descending terrain. Check the current trail map for grades, closures and bike requirements.<br/><br/><b>Getting up / price</b><br/>2 chairlifts. Day-ticket pricing varies by date; check the operator before travel.<br/><br/><b>Open season</b><br/>June - October (directory indication; weather and maintenance can shorten the season).<br/>Daily opening hours: 09:00-17:00<br/><small>Typical operating-day estimate; verify the operator calendar and hours.</small><br/><br/><b>Access</b><table class="access"><tr><th>From</th><th>Transport</th><th>Duration</th></tr><tr><td>Big Bear</td><td>Car</td><td>Local</td></tr></table><br/><i>Sources: <a href="https://www.bigbearmountainresort.com/mountain-biking">operator information</a> and <a href="https://www.twowheeledwanderer.com/posts/mountain-bike-parks-united-states/">US downhill bike-park directory</a>. Prices, schedules, trail status and access can change; verify before travel.</i>]]></description>
+    <styleUrl>#placemark-blue</styleUrl>
+    <Point><coordinates>-110.776801,32.323648,0</coordinates></Point>
+    <ExtendedData xmlns:mwm="https://omaps.app">
+      <Data name="spot"><value>us-snow-summit-bike-park</value></Data>
+      <Data name="tags"><value>beginner expert bikepark</value></Data>
+      <Data name="open_from"><value>06-01</value></Data>
+      <Data name="closed_from"><value>11-01</value></Data>
+      <mwm:icon>Transport</mwm:icon><mwm:visibility>1</mwm:visibility>
+    </ExtendedData>
+  </Placemark>
+  <Placemark>
+    <name>Snow Valley Bike Park [check operator]</name>
+    <description><![CDATA[<b>Snow Valley Bike Park - Running Springs, CA</b><br/><br/><b>Trails</b><br/>7 miles of maintained downhill and gravity trails with purpose-built descending terrain. Check the current trail map for grades, closures and bike requirements.<br/><br/><b>Getting up / price</b><br/>1 chairlift. Day-ticket pricing varies by date; check the operator before travel.<br/><br/><b>Open season</b><br/>May - October (directory indication; weather and maintenance can shorten the season).<br/>Daily opening hours: 09:00-17:00<br/><small>Typical operating-day estimate; verify the operator calendar and hours.</small><br/><br/><b>Access</b><table class="access"><tr><th>From</th><th>Transport</th><th>Duration</th></tr><tr><td>Running Springs</td><td>Car</td><td>Local</td></tr></table><br/><i>Sources: <a href="https://www.bigbearmountainresort.com/things-to-do/events/snow-valley-bike-park-opening-day">operator information</a> and <a href="https://www.twowheeledwanderer.com/posts/mountain-bike-parks-united-states/">US downhill bike-park directory</a>. Prices, schedules, trail status and access can change; verify before travel.</i>]]></description>
+    <styleUrl>#placemark-blue</styleUrl>
+    <Point><coordinates>-117.109204,34.207786,0</coordinates></Point>
+    <ExtendedData xmlns:mwm="https://omaps.app">
+      <Data name="spot"><value>us-snow-valley-bike-park</value></Data>
+      <Data name="tags"><value>beginner expert bikepark</value></Data>
+      <Data name="open_from"><value>05-01</value></Data>
+      <Data name="closed_from"><value>11-01</value></Data>
+      <mwm:icon>Transport</mwm:icon><mwm:visibility>1</mwm:visibility>
+    </ExtendedData>
+  </Placemark>
+  <Placemark>
+    <name>Northstar Bike Park [check operator]</name>
+    <description><![CDATA[<b>Northstar Bike Park - Truckee, CA</b><br/><br/><b>Trails</b><br/>45+ miles of maintained downhill and gravity trails with purpose-built descending terrain. Check the current trail map for grades, closures and bike requirements.<br/><br/><b>Getting up / price</b><br/>1 gondola, 2 chairlifts. Day-ticket pricing varies by date; check the operator before travel.<br/><br/><b>Open season</b><br/>June - September (directory indication; weather and maintenance can shorten the season).<br/>Daily opening hours: 09:00-17:00<br/><small>Typical operating-day estimate; verify the operator calendar and hours.</small><br/><br/><b>Access</b><table class="access"><tr><th>From</th><th>Transport</th><th>Duration</th></tr><tr><td>Truckee</td><td>Car</td><td>Local</td></tr></table><br/><i>Sources: <a href="https://www.northstarcalifornia.com/explore-the-resort/activities-and-events/summer-activities/bike-and-hike/mountain-biking.aspx">operator information</a> and <a href="https://www.twowheeledwanderer.com/posts/mountain-bike-parks-united-states/">US downhill bike-park directory</a>. Prices, schedules, trail status and access can change; verify before travel.</i>]]></description>
+    <styleUrl>#placemark-blue</styleUrl>
+    <Point><coordinates>-120.183577,39.327945,0</coordinates></Point>
+    <ExtendedData xmlns:mwm="https://omaps.app">
+      <Data name="spot"><value>us-northstar-bike-park</value></Data>
+      <Data name="tags"><value>beginner expert bikepark</value></Data>
+      <Data name="open_from"><value>06-01</value></Data>
+      <Data name="closed_from"><value>10-01</value></Data>
+      <mwm:icon>Transport</mwm:icon><mwm:visibility>1</mwm:visibility>
+    </ExtendedData>
+  </Placemark>
+  <Placemark>
+    <name>Woodward Bike Park [check operator]</name>
+    <description><![CDATA[<b>Woodward Bike Park - Tahoe, CA</b><br/><br/><b>Trails</b><br/>Not sure of maintained downhill and gravity trails with purpose-built descending terrain. Check the current trail map for grades, closures and bike requirements.<br/><br/><b>Getting up / price</b><br/>1 chairlift. Day-ticket pricing varies by date; check the operator before travel.<br/><br/><b>Open season</b><br/>May - October (directory indication; weather and maintenance can shorten the season).<br/>Daily opening hours: 09:00-17:00<br/><small>Typical operating-day estimate; verify the operator calendar and hours.</small><br/><br/><b>Access</b><table class="access"><tr><th>From</th><th>Transport</th><th>Duration</th></tr><tr><td>Tahoe</td><td>Car</td><td>Local</td></tr></table><br/><i>Sources: <a href="https://www.rideboreal.com/explore/who-we-are/woodward-tahoe/">operator information</a> and <a href="https://www.twowheeledwanderer.com/posts/mountain-bike-parks-united-states/">US downhill bike-park directory</a>. Prices, schedules, trail status and access can change; verify before travel.</i>]]></description>
+    <styleUrl>#placemark-blue</styleUrl>
+    <Point><coordinates>-119.475515,39.514068,0</coordinates></Point>
+    <ExtendedData xmlns:mwm="https://omaps.app">
+      <Data name="spot"><value>us-woodward-bike-park</value></Data>
+      <Data name="tags"><value>beginner expert bikepark</value></Data>
+      <Data name="open_from"><value>05-01</value></Data>
+      <Data name="closed_from"><value>11-01</value></Data>
+      <mwm:icon>Transport</mwm:icon><mwm:visibility>1</mwm:visibility>
+    </ExtendedData>
+  </Placemark>
+  <Placemark>
+    <name>Beaver Creek Bike Park [check operator]</name>
+    <description><![CDATA[<b>Beaver Creek Bike Park - Avon, CO</b><br/><br/><b>Trails</b><br/>46 miles of cross-country terrain of maintained downhill and gravity trails with purpose-built descending terrain. Check the current trail map for grades, closures and bike requirements.<br/><br/><b>Getting up / price</b><br/>1 chairlift. Day-ticket pricing varies by date; check the operator before travel.<br/><br/><b>Open season</b><br/>May/June – September (directory indication; weather and maintenance can shorten the season).<br/>Daily opening hours: 09:00-17:00<br/><small>Typical operating-day estimate; verify the operator calendar and hours.</small><br/><br/><b>Access</b><table class="access"><tr><th>From</th><th>Transport</th><th>Duration</th></tr><tr><td>Avon</td><td>Car</td><td>Local</td></tr></table><br/><i>Sources: <a href="https://www.beavercreek.com/explore-the-resort/activities/summer-activities/bike-haul.aspx">operator information</a> and <a href="https://www.twowheeledwanderer.com/posts/mountain-bike-parks-united-states/">US downhill bike-park directory</a>. Prices, schedules, trail status and access can change; verify before travel.</i>]]></description>
+    <styleUrl>#placemark-blue</styleUrl>
+    <Point><coordinates>-97.415302,32.967360,0</coordinates></Point>
+    <ExtendedData xmlns:mwm="https://omaps.app">
+      <Data name="spot"><value>us-beaver-creek-bike-park</value></Data>
+      <Data name="tags"><value>beginner expert bikepark</value></Data>
+      <Data name="open_from"><value>05-01</value></Data>
+      <Data name="closed_from"><value>10-01</value></Data>
+      <mwm:icon>Transport</mwm:icon><mwm:visibility>1</mwm:visibility>
+    </ExtendedData>
+  </Placemark>
+  <Placemark>
+    <name>Copper Mountain Bike Park [check operator]</name>
+    <description><![CDATA[<b>Copper Mountain Bike Park - Copper Mountain, CO</b><br/><br/><b>Trails</b><br/>18 miles of maintained downhill and gravity trails with purpose-built descending terrain. Check the current trail map for grades, closures and bike requirements.<br/><br/><b>Getting up / price</b><br/>1 chairlift. Day-ticket pricing varies by date; check the operator before travel.<br/><br/><b>Open season</b><br/>June – September (directory indication; weather and maintenance can shorten the season).<br/>Daily opening hours: 09:00-17:00<br/><small>Typical operating-day estimate; verify the operator calendar and hours.</small><br/><br/><b>Access</b><table class="access"><tr><th>From</th><th>Transport</th><th>Duration</th></tr><tr><td>Copper Mountain</td><td>Car</td><td>Local</td></tr></table><br/><i>Sources: <a href="https://www.coppercolorado.com/things-to-do/activities-amenities/activities-at-copper?season=summer">operator information</a> and <a href="https://www.twowheeledwanderer.com/posts/mountain-bike-parks-united-states/">US downhill bike-park directory</a>. Prices, schedules, trail status and access can change; verify before travel.</i>]]></description>
+    <styleUrl>#placemark-blue</styleUrl>
+    <Point><coordinates>-132.604610,55.238176,0</coordinates></Point>
+    <ExtendedData xmlns:mwm="https://omaps.app">
+      <Data name="spot"><value>us-copper-mountain-bike-park</value></Data>
+      <Data name="tags"><value>beginner expert bikepark</value></Data>
+      <Data name="open_from"><value>06-01</value></Data>
+      <Data name="closed_from"><value>10-01</value></Data>
+      <mwm:icon>Transport</mwm:icon><mwm:visibility>1</mwm:visibility>
+    </ExtendedData>
+  </Placemark>
+  <Placemark>
+    <name>Crested Butte Bike Park [check operator]</name>
+    <description><![CDATA[<b>Crested Butte Bike Park - Crested Butte, CO</b><br/><br/><b>Trails</b><br/>30 miles of maintained downhill and gravity trails with purpose-built descending terrain. Check the current trail map for grades, closures and bike requirements.<br/><br/><b>Getting up / price</b><br/>1 chairlift. Day-ticket pricing varies by date; check the operator before travel.<br/><br/><b>Open season</b><br/>June – September (directory indication; weather and maintenance can shorten the season).<br/>Daily opening hours: 09:00-17:00<br/><small>Typical operating-day estimate; verify the operator calendar and hours.</small><br/><br/><b>Access</b><table class="access"><tr><th>From</th><th>Transport</th><th>Duration</th></tr><tr><td>Crested Butte</td><td>Car</td><td>Local</td></tr></table><br/><i>Sources: <a href="https://www.skicb.com/explore-the-resort/activities-and-events/cb-bike-park.aspx">operator information</a> and <a href="https://www.twowheeledwanderer.com/posts/mountain-bike-parks-united-states/">US downhill bike-park directory</a>. Prices, schedules, trail status and access can change; verify before travel.</i>]]></description>
+    <styleUrl>#placemark-blue</styleUrl>
+    <Point><coordinates>-106.984043,38.869820,0</coordinates></Point>
+    <ExtendedData xmlns:mwm="https://omaps.app">
+      <Data name="spot"><value>us-crested-butte-bike-park</value></Data>
+      <Data name="tags"><value>beginner expert bikepark</value></Data>
+      <Data name="open_from"><value>06-01</value></Data>
+      <Data name="closed_from"><value>10-01</value></Data>
+      <mwm:icon>Transport</mwm:icon><mwm:visibility>1</mwm:visibility>
+    </ExtendedData>
+  </Placemark>
+  <Placemark>
+    <name>Granby Ranch Bike Park [check operator]</name>
+    <description><![CDATA[<b>Granby Ranch Bike Park - Granby, CO</b><br/><br/><b>Trails</b><br/>61 miles including trails outside the bike park of maintained downhill and gravity trails with purpose-built descending terrain. Check the current trail map for grades, closures and bike requirements.<br/><br/><b>Getting up / price</b><br/>1 chairlift. Day-ticket pricing varies by date; check the operator before travel.<br/><br/><b>Open season</b><br/>June – September (directory indication; weather and maintenance can shorten the season).<br/>Daily opening hours: 09:00-17:00<br/><small>Typical operating-day estimate; verify the operator calendar and hours.</small><br/><br/><b>Access</b><table class="access"><tr><th>From</th><th>Transport</th><th>Duration</th></tr><tr><td>Granby</td><td>Car</td><td>Local</td></tr></table><br/><i>Sources: <a href="https://granbyranch.com/things-to-do/summer-activities/biking/">operator information</a> and <a href="https://www.twowheeledwanderer.com/posts/mountain-bike-parks-united-states/">US downhill bike-park directory</a>. Prices, schedules, trail status and access can change; verify before travel.</i>]]></description>
+    <styleUrl>#placemark-blue</styleUrl>
+    <Point><coordinates>-105.939459,40.086097,0</coordinates></Point>
+    <ExtendedData xmlns:mwm="https://omaps.app">
+      <Data name="spot"><value>us-granby-ranch-bike-park</value></Data>
+      <Data name="tags"><value>beginner expert bikepark</value></Data>
+      <Data name="open_from"><value>06-01</value></Data>
+      <Data name="closed_from"><value>10-01</value></Data>
+      <mwm:icon>Transport</mwm:icon><mwm:visibility>1</mwm:visibility>
+    </ExtendedData>
+  </Placemark>
+  <Placemark>
+    <name>Keystone Bike Park [check operator]</name>
+    <description><![CDATA[<b>Keystone Bike Park - Keystone, CO</b><br/><br/><b>Trails</b><br/>100+ miles including backcountry terrain of maintained downhill and gravity trails with purpose-built descending terrain. Check the current trail map for grades, closures and bike requirements.<br/><br/><b>Getting up / price</b><br/>1 chairlift. Day-ticket pricing varies by date; check the operator before travel.<br/><br/><b>Open season</b><br/>June – September (directory indication; weather and maintenance can shorten the season).<br/>Daily opening hours: 09:00-17:00<br/><small>Typical operating-day estimate; verify the operator calendar and hours.</small><br/><br/><b>Access</b><table class="access"><tr><th>From</th><th>Transport</th><th>Duration</th></tr><tr><td>Keystone</td><td>Car</td><td>Local</td></tr></table><br/><i>Sources: <a href="https://www.keystoneresort.com/explore-the-resort/activities-and-events/summer-activities/mountain-biking.aspx">operator information</a> and <a href="https://www.twowheeledwanderer.com/posts/mountain-bike-parks-united-states/">US downhill bike-park directory</a>. Prices, schedules, trail status and access can change; verify before travel.</i>]]></description>
+    <styleUrl>#placemark-blue</styleUrl>
+    <Point><coordinates>-104.796858,39.531937,0</coordinates></Point>
+    <ExtendedData xmlns:mwm="https://omaps.app">
+      <Data name="spot"><value>us-keystone-bike-park</value></Data>
+      <Data name="tags"><value>beginner expert bikepark</value></Data>
+      <Data name="open_from"><value>06-01</value></Data>
+      <Data name="closed_from"><value>10-01</value></Data>
+      <mwm:icon>Transport</mwm:icon><mwm:visibility>1</mwm:visibility>
+    </ExtendedData>
+  </Placemark>
+  <Placemark>
+    <name>Telluride Bike Park [check operator]</name>
+    <description><![CDATA[<b>Telluride Bike Park - Telluride, CO</b><br/><br/><b>Trails</b><br/>17 miles of maintained downhill and gravity trails with purpose-built descending terrain. Check the current trail map for grades, closures and bike requirements.<br/><br/><b>Getting up / price</b><br/>1 gondola and 1 chairlift. Day-ticket pricing varies by date; check the operator before travel.<br/><br/><b>Open season</b><br/>June – October (directory indication; weather and maintenance can shorten the season).<br/>Daily opening hours: 09:00-17:00<br/><small>Typical operating-day estimate; verify the operator calendar and hours.</small><br/><br/><b>Access</b><table class="access"><tr><th>From</th><th>Transport</th><th>Duration</th></tr><tr><td>Telluride</td><td>Car</td><td>Local</td></tr></table><br/><i>Sources: <a href="https://tellurideskiresort.com/bike-park/">operator information</a> and <a href="https://www.twowheeledwanderer.com/posts/mountain-bike-parks-united-states/">US downhill bike-park directory</a>. Prices, schedules, trail status and access can change; verify before travel.</i>]]></description>
+    <styleUrl>#placemark-blue</styleUrl>
+    <Point><coordinates>-111.601091,33.202450,0</coordinates></Point>
+    <ExtendedData xmlns:mwm="https://omaps.app">
+      <Data name="spot"><value>us-telluride-bike-park</value></Data>
+      <Data name="tags"><value>beginner expert bikepark</value></Data>
+      <Data name="open_from"><value>06-01</value></Data>
+      <Data name="closed_from"><value>11-01</value></Data>
+      <mwm:icon>Transport</mwm:icon><mwm:visibility>1</mwm:visibility>
+    </ExtendedData>
+  </Placemark>
+  <Placemark>
+    <name>Snowmass Bike Park [check operator]</name>
+    <description><![CDATA[<b>Snowmass Bike Park - Aspen, CO</b><br/><br/><b>Trails</b><br/>50+ miles of maintained downhill and gravity trails with purpose-built descending terrain. Check the current trail map for grades, closures and bike requirements.<br/><br/><b>Getting up / price</b><br/>1 gondola and 1 chairlift. Day-ticket pricing varies by date; check the operator before travel.<br/><br/><b>Open season</b><br/>June – September (directory indication; weather and maintenance can shorten the season).<br/>Daily opening hours: 09:00-17:00<br/><small>Typical operating-day estimate; verify the operator calendar and hours.</small><br/><br/><b>Access</b><table class="access"><tr><th>From</th><th>Transport</th><th>Duration</th></tr><tr><td>Aspen</td><td>Car</td><td>Local</td></tr></table><br/><i>Sources: <a href="https://www.aspensnowmass.com/plan-your-stay/biking/snowmass-bike-park">operator information</a> and <a href="https://www.twowheeledwanderer.com/posts/mountain-bike-parks-united-states/">US downhill bike-park directory</a>. Prices, schedules, trail status and access can change; verify before travel.</i>]]></description>
+    <styleUrl>#placemark-blue</styleUrl>
+    <Point><coordinates>-112.128778,35.190569,0</coordinates></Point>
+    <ExtendedData xmlns:mwm="https://omaps.app">
+      <Data name="spot"><value>us-snowmass-bike-park</value></Data>
+      <Data name="tags"><value>beginner expert bikepark</value></Data>
+      <Data name="open_from"><value>06-01</value></Data>
+      <Data name="closed_from"><value>10-01</value></Data>
+      <mwm:icon>Transport</mwm:icon><mwm:visibility>1</mwm:visibility>
+    </ExtendedData>
+  </Placemark>
+  <Placemark>
+    <name>Powderhorn Bike Park [check operator]</name>
+    <description><![CDATA[<b>Powderhorn Bike Park - Palisade, CO</b><br/><br/><b>Trails</b><br/>13 miles of maintained downhill and gravity trails with purpose-built descending terrain. Check the current trail map for grades, closures and bike requirements.<br/><br/><b>Getting up / price</b><br/>1 chairlift. Day-ticket pricing varies by date; check the operator before travel.<br/><br/><b>Open season</b><br/>June – September (directory indication; weather and maintenance can shorten the season).<br/>Daily opening hours: 09:00-17:00<br/><small>Typical operating-day estimate; verify the operator calendar and hours.</small><br/><br/><b>Access</b><table class="access"><tr><th>From</th><th>Transport</th><th>Duration</th></tr><tr><td>Palisade</td><td>Car</td><td>Local</td></tr></table><br/><i>Sources: <a href="https://www.powderhorn.com/activities-and-groups/summer-activities/mountain-biking.html">operator information</a> and <a href="https://www.twowheeledwanderer.com/posts/mountain-bike-parks-united-states/">US downhill bike-park directory</a>. Prices, schedules, trail status and access can change; verify before travel.</i>]]></description>
+    <styleUrl>#placemark-blue</styleUrl>
+    <Point><coordinates>-109.893960,31.976890,0</coordinates></Point>
+    <ExtendedData xmlns:mwm="https://omaps.app">
+      <Data name="spot"><value>us-powderhorn-bike-park</value></Data>
+      <Data name="tags"><value>beginner expert bikepark</value></Data>
+      <Data name="open_from"><value>06-01</value></Data>
+      <Data name="closed_from"><value>10-01</value></Data>
+      <mwm:icon>Transport</mwm:icon><mwm:visibility>1</mwm:visibility>
+    </ExtendedData>
+  </Placemark>
+  <Placemark>
+    <name>Purgatory Bike Park [check operator]</name>
+    <description><![CDATA[<b>Purgatory Bike Park - Durango, CO</b><br/><br/><b>Trails</b><br/>45 miles of maintained downhill and gravity trails with purpose-built descending terrain. Check the current trail map for grades, closures and bike requirements.<br/><br/><b>Getting up / price</b><br/>2 chairlifts. Day-ticket pricing varies by date; check the operator before travel.<br/><br/><b>Open season</b><br/>June – September (directory indication; weather and maintenance can shorten the season).<br/>Daily opening hours: 09:00-17:00<br/><small>Typical operating-day estimate; verify the operator calendar and hours.</small><br/><br/><b>Access</b><table class="access"><tr><th>From</th><th>Transport</th><th>Duration</th></tr><tr><td>Durango</td><td>Car</td><td>Local</td></tr></table><br/><i>Sources: <a href="https://www.purgatoryresort.com/activities/mtn-bike-uplift/">operator information</a> and <a href="https://www.twowheeledwanderer.com/posts/mountain-bike-parks-united-states/">US downhill bike-park directory</a>. Prices, schedules, trail status and access can change; verify before travel.</i>]]></description>
+    <styleUrl>#placemark-blue</styleUrl>
+    <Point><coordinates>-112.119969,33.426703,0</coordinates></Point>
+    <ExtendedData xmlns:mwm="https://omaps.app">
+      <Data name="spot"><value>us-purgatory-bike-park</value></Data>
+      <Data name="tags"><value>beginner expert bikepark</value></Data>
+      <Data name="open_from"><value>06-01</value></Data>
+      <Data name="closed_from"><value>10-01</value></Data>
+      <mwm:icon>Transport</mwm:icon><mwm:visibility>1</mwm:visibility>
+    </ExtendedData>
+  </Placemark>
+  <Placemark>
+    <name>Steamboat Springs Bike Park [check operator]</name>
+    <description><![CDATA[<b>Steamboat Springs Bike Park - Steamboat Springs, CO</b><br/><br/><b>Trails</b><br/>40 miles of maintained downhill and gravity trails with purpose-built descending terrain. Check the current trail map for grades, closures and bike requirements.<br/><br/><b>Getting up / price</b><br/>1 chairlift. Day-ticket pricing varies by date; check the operator before travel.<br/><br/><b>Open season</b><br/>June – September (directory indication; weather and maintenance can shorten the season).<br/>Daily opening hours: 09:00-17:00<br/><small>Typical operating-day estimate; verify the operator calendar and hours.</small><br/><br/><b>Access</b><table class="access"><tr><th>From</th><th>Transport</th><th>Duration</th></tr><tr><td>Steamboat Springs</td><td>Car</td><td>Local</td></tr></table><br/><i>Sources: <a href="https://www.steamboat.com/things-to-do/activities/mountain-biking">operator information</a> and <a href="https://www.twowheeledwanderer.com/posts/mountain-bike-parks-united-states/">US downhill bike-park directory</a>. Prices, schedules, trail status and access can change; verify before travel.</i>]]></description>
+    <styleUrl>#placemark-blue</styleUrl>
+    <Point><coordinates>-106.831735,40.484800,0</coordinates></Point>
+    <ExtendedData xmlns:mwm="https://omaps.app">
+      <Data name="spot"><value>us-steamboat-springs-bike-park</value></Data>
+      <Data name="tags"><value>beginner expert bikepark</value></Data>
+      <Data name="open_from"><value>06-01</value></Data>
+      <Data name="closed_from"><value>10-01</value></Data>
+      <mwm:icon>Transport</mwm:icon><mwm:visibility>1</mwm:visibility>
+    </ExtendedData>
+  </Placemark>
+  <Placemark>
+    <name>Trestle Bike Park [check operator]</name>
+    <description><![CDATA[<b>Trestle Bike Park - Winter Park, CO</b><br/><br/><b>Trails</b><br/>40+ miles of maintained downhill and gravity trails with purpose-built descending terrain. Check the current trail map for grades, closures and bike requirements.<br/><br/><b>Getting up / price</b><br/>1 gondola, 2 chairlifts. Day-ticket pricing varies by date; check the operator before travel.<br/><br/><b>Open season</b><br/>June – September (directory indication; weather and maintenance can shorten the season).<br/>Daily opening hours: 09:00-17:00<br/><small>Typical operating-day estimate; verify the operator calendar and hours.</small><br/><br/><b>Access</b><table class="access"><tr><th>From</th><th>Transport</th><th>Duration</th></tr><tr><td>Winter Park</td><td>Car</td><td>Local</td></tr></table><br/><i>Sources: <a href="https://www.trestlebikepark.com/">operator information</a> and <a href="https://www.twowheeledwanderer.com/posts/mountain-bike-parks-united-states/">US downhill bike-park directory</a>. Prices, schedules, trail status and access can change; verify before travel.</i>]]></description>
+    <styleUrl>#placemark-blue</styleUrl>
+    <Point><coordinates>-105.760279,39.857264,0</coordinates></Point>
+    <ExtendedData xmlns:mwm="https://omaps.app">
+      <Data name="spot"><value>us-trestle-bike-park</value></Data>
+      <Data name="tags"><value>beginner expert bikepark</value></Data>
+      <Data name="open_from"><value>06-01</value></Data>
+      <Data name="closed_from"><value>10-01</value></Data>
+      <mwm:icon>Transport</mwm:icon><mwm:visibility>1</mwm:visibility>
+    </ExtendedData>
+  </Placemark>
+  <Placemark>
+    <name>Vail Bike Park [check operator]</name>
+    <description><![CDATA[<b>Vail Bike Park - Vail, CO</b><br/><br/><b>Trails</b><br/>63 miles of maintained downhill and gravity trails with purpose-built descending terrain. Check the current trail map for grades, closures and bike requirements.<br/><br/><b>Getting up / price</b><br/>2 gondolas. Day-ticket pricing varies by date; check the operator before travel.<br/><br/><b>Open season</b><br/>June – September/October (directory indication; weather and maintenance can shorten the season).<br/>Daily opening hours: 09:00-17:00<br/><small>Typical operating-day estimate; verify the operator calendar and hours.</small><br/><br/><b>Access</b><table class="access"><tr><th>From</th><th>Transport</th><th>Duration</th></tr><tr><td>Vail</td><td>Car</td><td>Local</td></tr></table><br/><i>Sources: <a href="https://www.vail.com/explore-the-resort/activities-and-events/summer-activities/mountain-biking.aspx">operator information</a> and <a href="https://www.twowheeledwanderer.com/posts/mountain-bike-parks-united-states/">US downhill bike-park directory</a>. Prices, schedules, trail status and access can change; verify before travel.</i>]]></description>
+    <styleUrl>#placemark-blue</styleUrl>
+    <Point><coordinates>-106.388630,39.644124,0</coordinates></Point>
+    <ExtendedData xmlns:mwm="https://omaps.app">
+      <Data name="spot"><value>us-vail-bike-park</value></Data>
+      <Data name="tags"><value>beginner expert bikepark</value></Data>
+      <Data name="open_from"><value>06-01</value></Data>
+      <Data name="closed_from"><value>11-01</value></Data>
+      <mwm:icon>Transport</mwm:icon><mwm:visibility>1</mwm:visibility>
+    </ExtendedData>
+  </Placemark>
+  <Placemark>
+    <name>Powder Ridge Bike Park [check operator]</name>
+    <description><![CDATA[<b>Powder Ridge Bike Park - Middlefield, CT</b><br/><br/><b>Trails</b><br/>7 miles of maintained downhill and gravity trails with purpose-built descending terrain. Check the current trail map for grades, closures and bike requirements.<br/><br/><b>Getting up / price</b><br/>1 chairlift. Day-ticket pricing varies by date; check the operator before travel.<br/><br/><b>Open season</b><br/>April – November (directory indication; weather and maintenance can shorten the season).<br/>Daily opening hours: 09:00-17:00<br/><small>Typical operating-day estimate; verify the operator calendar and hours.</small><br/><br/><b>Access</b><table class="access"><tr><th>From</th><th>Transport</th><th>Duration</th></tr><tr><td>Middlefield</td><td>Car</td><td>Local</td></tr></table><br/><i>Sources: <a href="https://powderridgepark.com/activities/mountain-bike/">operator information</a> and <a href="https://www.twowheeledwanderer.com/posts/mountain-bike-parks-united-states/">US downhill bike-park directory</a>. Prices, schedules, trail status and access can change; verify before travel.</i>]]></description>
+    <styleUrl>#placemark-blue</styleUrl>
+    <Point><coordinates>-72.712079,41.516516,0</coordinates></Point>
+    <ExtendedData xmlns:mwm="https://omaps.app">
+      <Data name="spot"><value>us-powder-ridge-bike-park</value></Data>
+      <Data name="tags"><value>beginner expert bikepark</value></Data>
+      <Data name="open_from"><value>04-01</value></Data>
+      <Data name="closed_from"><value>12-01</value></Data>
+      <mwm:icon>Transport</mwm:icon><mwm:visibility>1</mwm:visibility>
+    </ExtendedData>
+  </Placemark>
+  <Placemark>
+    <name>Jarrod’s Place Bike Park [check operator]</name>
+    <description><![CDATA[<b>Jarrod’s Place Bike Park - Summerville, GA</b><br/><br/><b>Trails</b><br/>8 miles of maintained downhill and gravity trails with purpose-built descending terrain. Check the current trail map for grades, closures and bike requirements.<br/><br/><b>Getting up / price</b><br/>1 shuttle. Day-ticket pricing varies by date; check the operator before travel.<br/><br/><b>Open season</b><br/>Year-round (weather dependent) (directory indication; weather and maintenance can shorten the season).<br/>Daily opening hours: 09:00-17:00<br/><small>Typical operating-day estimate; verify the operator calendar and hours.</small><br/><br/><b>Access</b><table class="access"><tr><th>From</th><th>Transport</th><th>Duration</th></tr><tr><td>Summerville</td><td>Car</td><td>Local</td></tr></table><br/><i>Sources: <a href="https://jarrodsplacebikepark.com/">operator information</a> and <a href="https://www.twowheeledwanderer.com/posts/mountain-bike-parks-united-states/">US downhill bike-park directory</a>. Prices, schedules, trail status and access can change; verify before travel.</i>]]></description>
+    <styleUrl>#placemark-blue</styleUrl>
+    <Point><coordinates>-85.347734,34.480642,0</coordinates></Point>
+    <ExtendedData xmlns:mwm="https://omaps.app">
+      <Data name="spot"><value>us-jarrods-place-bike-park</value></Data>
+      <Data name="tags"><value>beginner expert bikepark</value></Data>
+      <Data name="open_from"><value>01-01</value></Data>
+      <Data name="closed_from"><value>01-01</value></Data>
+      <mwm:icon>Transport</mwm:icon><mwm:visibility>1</mwm:visibility>
+    </ExtendedData>
+  </Placemark>
+  <Placemark>
+    <name>Bogus Basin Bike Park [check operator]</name>
+    <description><![CDATA[<b>Bogus Basin Bike Park - Boise, ID</b><br/><br/><b>Trails</b><br/>20 miles of maintained downhill and gravity trails with purpose-built descending terrain. Check the current trail map for grades, closures and bike requirements.<br/><br/><b>Getting up / price</b><br/>1 chairlift. Day-ticket pricing varies by date; check the operator before travel.<br/><br/><b>Open season</b><br/>June – October (directory indication; weather and maintenance can shorten the season).<br/>Daily opening hours: 09:00-17:00<br/><small>Typical operating-day estimate; verify the operator calendar and hours.</small><br/><br/><b>Access</b><table class="access"><tr><th>From</th><th>Transport</th><th>Duration</th></tr><tr><td>Boise</td><td>Car</td><td>Local</td></tr></table><br/><i>Sources: <a href="https://bogusbasin.org/your-mountain/things-to-do/summer-activities/mountain-biking/the-basin-gravity-park/">operator information</a> and <a href="https://www.twowheeledwanderer.com/posts/mountain-bike-parks-united-states/">US downhill bike-park directory</a>. Prices, schedules, trail status and access can change; verify before travel.</i>]]></description>
+    <styleUrl>#placemark-blue</styleUrl>
+    <Point><coordinates>-116.126210,43.737199,0</coordinates></Point>
+    <ExtendedData xmlns:mwm="https://omaps.app">
+      <Data name="spot"><value>us-bogus-basin-bike-park</value></Data>
+      <Data name="tags"><value>beginner expert bikepark</value></Data>
+      <Data name="open_from"><value>06-01</value></Data>
+      <Data name="closed_from"><value>11-01</value></Data>
+      <mwm:icon>Transport</mwm:icon><mwm:visibility>1</mwm:visibility>
+    </ExtendedData>
+  </Placemark>
+  <Placemark>
+    <name>Brundage Mountain Bike Park [check operator]</name>
+    <description><![CDATA[<b>Brundage Mountain Bike Park - McCall, ID</b><br/><br/><b>Trails</b><br/>26 miles of maintained downhill and gravity trails with purpose-built descending terrain. Check the current trail map for grades, closures and bike requirements.<br/><br/><b>Getting up / price</b><br/>1 chairlift. Day-ticket pricing varies by date; check the operator before travel.<br/><br/><b>Open season</b><br/>June – September (directory indication; weather and maintenance can shorten the season).<br/>Daily opening hours: 09:00-17:00<br/><small>Typical operating-day estimate; verify the operator calendar and hours.</small><br/><br/><b>Access</b><table class="access"><tr><th>From</th><th>Transport</th><th>Duration</th></tr><tr><td>McCall</td><td>Car</td><td>Local</td></tr></table><br/><i>Sources: <a href="https://brundage.com/mountain-biking/">operator information</a> and <a href="https://www.twowheeledwanderer.com/posts/mountain-bike-parks-united-states/">US downhill bike-park directory</a>. Prices, schedules, trail status and access can change; verify before travel.</i>]]></description>
+    <styleUrl>#placemark-blue</styleUrl>
+    <Point><coordinates>-116.098281,44.911046,0</coordinates></Point>
+    <ExtendedData xmlns:mwm="https://omaps.app">
+      <Data name="spot"><value>us-brundage-mountain-bike-park</value></Data>
+      <Data name="tags"><value>beginner expert bikepark</value></Data>
+      <Data name="open_from"><value>06-01</value></Data>
+      <Data name="closed_from"><value>10-01</value></Data>
+      <mwm:icon>Transport</mwm:icon><mwm:visibility>1</mwm:visibility>
+    </ExtendedData>
+  </Placemark>
+  <Placemark>
+    <name>Schweitzer Mountain Bike Park [check operator]</name>
+    <description><![CDATA[<b>Schweitzer Mountain Bike Park - Sandpoint, ID</b><br/><br/><b>Trails</b><br/>40 miles of maintained downhill and gravity trails with purpose-built descending terrain. Check the current trail map for grades, closures and bike requirements.<br/><br/><b>Getting up / price</b><br/>1 chairlift &amp; 1 shuttle for lower basin trails. Day-ticket pricing varies by date; check the operator before travel.<br/><br/><b>Open season</b><br/>June – September (directory indication; weather and maintenance can shorten the season).<br/>Daily opening hours: 09:00-17:00<br/><small>Typical operating-day estimate; verify the operator calendar and hours.</small><br/><br/><b>Access</b><table class="access"><tr><th>From</th><th>Transport</th><th>Duration</th></tr><tr><td>Sandpoint</td><td>Car</td><td>Local</td></tr></table><br/><i>Sources: <a href="https://www.schweitzer.com/things-to-do/activities/mountain-biking">operator information</a> and <a href="https://www.twowheeledwanderer.com/posts/mountain-bike-parks-united-states/">US downhill bike-park directory</a>. Prices, schedules, trail status and access can change; verify before travel.</i>]]></description>
+    <styleUrl>#placemark-blue</styleUrl>
+    <Point><coordinates>-116.548783,48.276131,0</coordinates></Point>
+    <ExtendedData xmlns:mwm="https://omaps.app">
+      <Data name="spot"><value>us-schweitzer-mountain-bike-park</value></Data>
+      <Data name="tags"><value>beginner expert bikepark</value></Data>
+      <Data name="open_from"><value>06-01</value></Data>
+      <Data name="closed_from"><value>10-01</value></Data>
+      <mwm:icon>Transport</mwm:icon><mwm:visibility>1</mwm:visibility>
+    </ExtendedData>
+  </Placemark>
+  <Placemark>
+    <name>Silver Mountain Bike Park [check operator]</name>
+    <description><![CDATA[<b>Silver Mountain Bike Park - Kellogg, ID</b><br/><br/><b>Trails</b><br/>40 miles of maintained downhill and gravity trails with purpose-built descending terrain. Check the current trail map for grades, closures and bike requirements.<br/><br/><b>Getting up / price</b><br/>1 gondola, 1 chairlift. Day-ticket pricing varies by date; check the operator before travel.<br/><br/><b>Open season</b><br/>May – October (directory indication; weather and maintenance can shorten the season).<br/>Daily opening hours: 09:00-17:00<br/><small>Typical operating-day estimate; verify the operator calendar and hours.</small><br/><br/><b>Access</b><table class="access"><tr><th>From</th><th>Transport</th><th>Duration</th></tr><tr><td>Kellogg</td><td>Car</td><td>Local</td></tr></table><br/><i>Sources: <a href="https://www.silvermt.com/mountain/bike-park">operator information</a> and <a href="https://www.twowheeledwanderer.com/posts/mountain-bike-parks-united-states/">US downhill bike-park directory</a>. Prices, schedules, trail status and access can change; verify before travel.</i>]]></description>
+    <styleUrl>#placemark-blue</styleUrl>
+    <Point><coordinates>-116.118887,47.538235,0</coordinates></Point>
+    <ExtendedData xmlns:mwm="https://omaps.app">
+      <Data name="spot"><value>us-silver-mountain-bike-park</value></Data>
+      <Data name="tags"><value>beginner expert bikepark</value></Data>
+      <Data name="open_from"><value>05-01</value></Data>
+      <Data name="closed_from"><value>11-01</value></Data>
+      <mwm:icon>Transport</mwm:icon><mwm:visibility>1</mwm:visibility>
+    </ExtendedData>
+  </Placemark>
+  <Placemark>
+    <name>Bald Mountain Bike Park @ Sun Valley [check operator]</name>
+    <description><![CDATA[<b>Bald Mountain Bike Park @ Sun Valley - Ketchum, ID</b><br/><br/><b>Trails</b><br/>32 miles of maintained downhill and gravity trails with purpose-built descending terrain. Check the current trail map for grades, closures and bike requirements.<br/><br/><b>Getting up / price</b><br/>1 gondola, 1 chairlift. Day-ticket pricing varies by date; check the operator before travel.<br/><br/><b>Open season</b><br/>June – September (directory indication; weather and maintenance can shorten the season).<br/>Daily opening hours: 09:00-17:00<br/><small>Typical operating-day estimate; verify the operator calendar and hours.</small><br/><br/><b>Access</b><table class="access"><tr><th>From</th><th>Transport</th><th>Duration</th></tr><tr><td>Ketchum</td><td>Car</td><td>Local</td></tr></table><br/><i>Sources: <a href="https://www.sunvalley.com/things-to-do/biking/">operator information</a> and <a href="https://www.twowheeledwanderer.com/posts/mountain-bike-parks-united-states/">US downhill bike-park directory</a>. Prices, schedules, trail status and access can change; verify before travel.</i>]]></description>
+    <styleUrl>#placemark-blue</styleUrl>
+    <Point><coordinates>-114.363662,43.680741,0</coordinates></Point>
+    <ExtendedData xmlns:mwm="https://omaps.app">
+      <Data name="spot"><value>us-bald-mountain-bike-park-sun-valley</value></Data>
+      <Data name="tags"><value>beginner expert bikepark</value></Data>
+      <Data name="open_from"><value>06-01</value></Data>
+      <Data name="closed_from"><value>10-01</value></Data>
+      <mwm:icon>Transport</mwm:icon><mwm:visibility>1</mwm:visibility>
+    </ExtendedData>
+  </Placemark>
+  <Placemark>
+    <name>Farside Bike Park @ Chestnut Mountain [check operator]</name>
+    <description><![CDATA[<b>Farside Bike Park @ Chestnut Mountain - Galena, IL</b><br/><br/><b>Trails</b><br/>10 miles of maintained downhill and gravity trails with purpose-built descending terrain. Check the current trail map for grades, closures and bike requirements.<br/><br/><b>Getting up / price</b><br/>1 chairlift. Day-ticket pricing varies by date; check the operator before travel.<br/><br/><b>Open season</b><br/>June - October (directory indication; weather and maintenance can shorten the season).<br/>Daily opening hours: 09:00-17:00<br/><small>Typical operating-day estimate; verify the operator calendar and hours.</small><br/><br/><b>Access</b><table class="access"><tr><th>From</th><th>Transport</th><th>Duration</th></tr><tr><td>Galena</td><td>Car</td><td>Local</td></tr></table><br/><i>Sources: <a href="https://www.chestnutmtn.com/activity/farside-bike-park/">operator information</a> and <a href="https://www.twowheeledwanderer.com/posts/mountain-bike-parks-united-states/">US downhill bike-park directory</a>. Prices, schedules, trail status and access can change; verify before travel.</i>]]></description>
+    <styleUrl>#placemark-blue</styleUrl>
+    <Point><coordinates>-90.426072,42.415955,0</coordinates></Point>
+    <ExtendedData xmlns:mwm="https://omaps.app">
+      <Data name="spot"><value>us-farside-bike-park-chestnut-mountain</value></Data>
+      <Data name="tags"><value>beginner expert bikepark</value></Data>
+      <Data name="open_from"><value>06-01</value></Data>
+      <Data name="closed_from"><value>11-01</value></Data>
+      <mwm:icon>Transport</mwm:icon><mwm:visibility>1</mwm:visibility>
+    </ExtendedData>
+  </Placemark>
+  <Placemark>
+    <name>Mt. Abram Bike Park [check operator]</name>
+    <description><![CDATA[<b>Mt. Abram Bike Park - Greenwood, ME</b><br/><br/><b>Trails</b><br/>19 miles of maintained downhill and gravity trails with purpose-built descending terrain. Check the current trail map for grades, closures and bike requirements.<br/><br/><b>Getting up / price</b><br/>2 chairlifts. Day-ticket pricing varies by date; check the operator before travel.<br/><br/><b>Open season</b><br/>May - October (directory indication; weather and maintenance can shorten the season).<br/>Daily opening hours: 09:00-17:00<br/><small>Typical operating-day estimate; verify the operator calendar and hours.</small><br/><br/><b>Access</b><table class="access"><tr><th>From</th><th>Transport</th><th>Duration</th></tr><tr><td>Greenwood</td><td>Car</td><td>Local</td></tr></table><br/><i>Sources: <a href="https://mtabram.com/">operator information</a> and <a href="https://www.twowheeledwanderer.com/posts/mountain-bike-parks-united-states/">US downhill bike-park directory</a>. Prices, schedules, trail status and access can change; verify before travel.</i>]]></description>
+    <styleUrl>#placemark-blue</styleUrl>
+    <Point><coordinates>-70.706000,44.379000,0</coordinates></Point>
+    <ExtendedData xmlns:mwm="https://omaps.app">
+      <Data name="spot"><value>us-mt-abram-bike-park</value></Data>
+      <Data name="tags"><value>beginner expert bikepark</value></Data>
+      <Data name="open_from"><value>05-01</value></Data>
+      <Data name="closed_from"><value>11-01</value></Data>
+      <mwm:icon>Transport</mwm:icon><mwm:visibility>1</mwm:visibility>
+    </ExtendedData>
+  </Placemark>
+  <Placemark>
+    <name>Thunder Mountain Bike Park [check operator]</name>
+    <description><![CDATA[<b>Thunder Mountain Bike Park - Charlemont, MA</b><br/><br/><b>Trails</b><br/>25 miles of maintained downhill and gravity trails with purpose-built descending terrain. Check the current trail map for grades, closures and bike requirements.<br/><br/><b>Getting up / price</b><br/>1 chairlift. Day-ticket pricing varies by date; check the operator before travel.<br/><br/><b>Open season</b><br/>May - November (directory indication; weather and maintenance can shorten the season).<br/>Daily opening hours: 09:00-17:00<br/><small>Typical operating-day estimate; verify the operator calendar and hours.</small><br/><br/><b>Access</b><table class="access"><tr><th>From</th><th>Transport</th><th>Duration</th></tr><tr><td>Charlemont</td><td>Car</td><td>Local</td></tr></table><br/><i>Sources: <a href="https://berkshireeast.com/summer/thunder-mountain-bike-park/overview">operator information</a> and <a href="https://www.twowheeledwanderer.com/posts/mountain-bike-parks-united-states/">US downhill bike-park directory</a>. Prices, schedules, trail status and access can change; verify before travel.</i>]]></description>
+    <styleUrl>#placemark-blue</styleUrl>
+    <Point><coordinates>-72.874488,42.627535,0</coordinates></Point>
+    <ExtendedData xmlns:mwm="https://omaps.app">
+      <Data name="spot"><value>us-thunder-mountain-bike-park</value></Data>
+      <Data name="tags"><value>beginner expert bikepark</value></Data>
+      <Data name="open_from"><value>05-01</value></Data>
+      <Data name="closed_from"><value>12-01</value></Data>
+      <mwm:icon>Transport</mwm:icon><mwm:visibility>1</mwm:visibility>
+    </ExtendedData>
+  </Placemark>
+  <Placemark>
+    <name>Jiminy Peak Bike Park [check operator]</name>
+    <description><![CDATA[<b>Jiminy Peak Bike Park - Hancock, MA</b><br/><br/><b>Trails</b><br/>22 miles of maintained downhill and gravity trails with purpose-built descending terrain. Check the current trail map for grades, closures and bike requirements.<br/><br/><b>Getting up / price</b><br/>2 chairlifts. Day-ticket pricing varies by date; check the operator before travel.<br/><br/><b>Open season</b><br/>July - September (directory indication; weather and maintenance can shorten the season).<br/>Daily opening hours: 09:00-17:00<br/><small>Typical operating-day estimate; verify the operator calendar and hours.</small><br/><br/><b>Access</b><table class="access"><tr><th>From</th><th>Transport</th><th>Duration</th></tr><tr><td>Hancock</td><td>Car</td><td>Local</td></tr></table><br/><i>Sources: <a href="https://www.jiminypeak.com/Summer/Attractions/Mountain-Biking">operator information</a> and <a href="https://www.twowheeledwanderer.com/posts/mountain-bike-parks-united-states/">US downhill bike-park directory</a>. Prices, schedules, trail status and access can change; verify before travel.</i>]]></description>
+    <styleUrl>#placemark-blue</styleUrl>
+    <Point><coordinates>-73.290806,42.550806,0</coordinates></Point>
+    <ExtendedData xmlns:mwm="https://omaps.app">
+      <Data name="spot"><value>us-jiminy-peak-bike-park</value></Data>
+      <Data name="tags"><value>beginner expert bikepark</value></Data>
+      <Data name="open_from"><value>07-01</value></Data>
+      <Data name="closed_from"><value>10-01</value></Data>
+      <mwm:icon>Transport</mwm:icon><mwm:visibility>1</mwm:visibility>
+    </ExtendedData>
+  </Placemark>
+  <Placemark>
+    <name>The Highlands Bike Park [check operator]</name>
+    <description><![CDATA[<b>The Highlands Bike Park - Harbor Springs, MI</b><br/><br/><b>Trails</b><br/>22 miles of maintained downhill and gravity trails with purpose-built descending terrain. Check the current trail map for grades, closures and bike requirements.<br/><br/><b>Getting up / price</b><br/>1 chairlift. Day-ticket pricing varies by date; check the operator before travel.<br/><br/><b>Open season</b><br/>May - September (directory indication; weather and maintenance can shorten the season).<br/>Daily opening hours: 09:00-17:00<br/><small>Typical operating-day estimate; verify the operator calendar and hours.</small><br/><br/><b>Access</b><table class="access"><tr><th>From</th><th>Transport</th><th>Duration</th></tr><tr><td>Harbor Springs</td><td>Car</td><td>Local</td></tr></table><br/><i>Sources: <a href="https://www.highlandsharborsprings.com/bike">operator information</a> and <a href="https://www.twowheeledwanderer.com/posts/mountain-bike-parks-united-states/">US downhill bike-park directory</a>. Prices, schedules, trail status and access can change; verify before travel.</i>]]></description>
+    <styleUrl>#placemark-blue</styleUrl>
+    <Point><coordinates>-84.991999,45.431676,0</coordinates></Point>
+    <ExtendedData xmlns:mwm="https://omaps.app">
+      <Data name="spot"><value>us-the-highlands-bike-park</value></Data>
+      <Data name="tags"><value>beginner expert bikepark</value></Data>
+      <Data name="open_from"><value>05-01</value></Data>
+      <Data name="closed_from"><value>10-01</value></Data>
+      <mwm:icon>Transport</mwm:icon><mwm:visibility>1</mwm:visibility>
+    </ExtendedData>
+  </Placemark>
+  <Placemark>
+    <name>Marquette Mountain Bike Park [check operator]</name>
+    <description><![CDATA[<b>Marquette Mountain Bike Park - Marquette, MI</b><br/><br/><b>Trails</b><br/>10 miles of maintained downhill and gravity trails with purpose-built descending terrain. Check the current trail map for grades, closures and bike requirements.<br/><br/><b>Getting up / price</b><br/>1 chairlift. Day-ticket pricing varies by date; check the operator before travel.<br/><br/><b>Open season</b><br/>June - October (directory indication; weather and maintenance can shorten the season).<br/>Daily opening hours: 09:00-17:00<br/><small>Typical operating-day estimate; verify the operator calendar and hours.</small><br/><br/><b>Access</b><table class="access"><tr><th>From</th><th>Transport</th><th>Duration</th></tr><tr><td>Marquette</td><td>Car</td><td>Local</td></tr></table><br/><i>Sources: <a href="https://www.marquettemountain.com/summer/downhill-bike-park/">operator information</a> and <a href="https://www.twowheeledwanderer.com/posts/mountain-bike-parks-united-states/">US downhill bike-park directory</a>. Prices, schedules, trail status and access can change; verify before travel.</i>]]></description>
+    <styleUrl>#placemark-blue</styleUrl>
+    <Point><coordinates>-87.439398,46.548755,0</coordinates></Point>
+    <ExtendedData xmlns:mwm="https://omaps.app">
+      <Data name="spot"><value>us-marquette-mountain-bike-park</value></Data>
+      <Data name="tags"><value>beginner expert bikepark</value></Data>
+      <Data name="open_from"><value>06-01</value></Data>
+      <Data name="closed_from"><value>11-01</value></Data>
+      <mwm:icon>Transport</mwm:icon><mwm:visibility>1</mwm:visibility>
+    </ExtendedData>
+  </Placemark>
+  <Placemark>
+    <name>Giants Ridge Bike Park [check operator]</name>
+    <description><![CDATA[<b>Giants Ridge Bike Park - Biwabik, MN</b><br/><br/><b>Trails</b><br/>10+ miles of maintained downhill and gravity trails with purpose-built descending terrain. Check the current trail map for grades, closures and bike requirements.<br/><br/><b>Getting up / price</b><br/>1 chairlift. Day-ticket pricing varies by date; check the operator before travel.<br/><br/><b>Open season</b><br/>May - October (directory indication; weather and maintenance can shorten the season).<br/>Daily opening hours: 09:00-17:00<br/><small>Typical operating-day estimate; verify the operator calendar and hours.</small><br/><br/><b>Access</b><table class="access"><tr><th>From</th><th>Transport</th><th>Duration</th></tr><tr><td>Biwabik</td><td>Car</td><td>Local</td></tr></table><br/><i>Sources: <a href="https://www.giantsridge.com/mountain-biking/">operator information</a> and <a href="https://www.twowheeledwanderer.com/posts/mountain-bike-parks-united-states/">US downhill bike-park directory</a>. Prices, schedules, trail status and access can change; verify before travel.</i>]]></description>
+    <styleUrl>#placemark-blue</styleUrl>
+    <Point><coordinates>-92.340179,47.532981,0</coordinates></Point>
+    <ExtendedData xmlns:mwm="https://omaps.app">
+      <Data name="spot"><value>us-giants-ridge-bike-park</value></Data>
+      <Data name="tags"><value>beginner expert bikepark</value></Data>
+      <Data name="open_from"><value>05-01</value></Data>
+      <Data name="closed_from"><value>11-01</value></Data>
+      <mwm:icon>Transport</mwm:icon><mwm:visibility>1</mwm:visibility>
+    </ExtendedData>
+  </Placemark>
+  <Placemark>
+    <name>Spirit Mountain Bike Park [check operator]</name>
+    <description><![CDATA[<b>Spirit Mountain Bike Park - Duluth, MN</b><br/><br/><b>Trails</b><br/>19 miles of maintained downhill and gravity trails with purpose-built descending terrain. Check the current trail map for grades, closures and bike requirements.<br/><br/><b>Getting up / price</b><br/>1 chairlift. Day-ticket pricing varies by date; check the operator before travel.<br/><br/><b>Open season</b><br/>May - October (directory indication; weather and maintenance can shorten the season).<br/>Daily opening hours: 09:00-17:00<br/><small>Typical operating-day estimate; verify the operator calendar and hours.</small><br/><br/><b>Access</b><table class="access"><tr><th>From</th><th>Transport</th><th>Duration</th></tr><tr><td>Duluth</td><td>Car</td><td>Local</td></tr></table><br/><i>Sources: <a href="https://spiritmt.com/summer/mountain-biking/">operator information</a> and <a href="https://www.twowheeledwanderer.com/posts/mountain-bike-parks-united-states/">US downhill bike-park directory</a>. Prices, schedules, trail status and access can change; verify before travel.</i>]]></description>
+    <styleUrl>#placemark-blue</styleUrl>
+    <Point><coordinates>-92.201578,46.722468,0</coordinates></Point>
+    <ExtendedData xmlns:mwm="https://omaps.app">
+      <Data name="spot"><value>us-spirit-mountain-bike-park</value></Data>
+      <Data name="tags"><value>beginner expert bikepark</value></Data>
+      <Data name="open_from"><value>05-01</value></Data>
+      <Data name="closed_from"><value>11-01</value></Data>
+      <mwm:icon>Transport</mwm:icon><mwm:visibility>1</mwm:visibility>
+    </ExtendedData>
+  </Placemark>
+  <Placemark>
+    <name>Detroit Mountain Bike Park [check operator]</name>
+    <description><![CDATA[<b>Detroit Mountain Bike Park - Detroit, MN</b><br/><br/><b>Trails</b><br/>15 miles of maintained downhill and gravity trails with purpose-built descending terrain. Check the current trail map for grades, closures and bike requirements.<br/><br/><b>Getting up / price</b><br/>1 chairlift. Day-ticket pricing varies by date; check the operator before travel.<br/><br/><b>Open season</b><br/>May - October/November (directory indication; weather and maintenance can shorten the season).<br/>Daily opening hours: 09:00-17:00<br/><small>Typical operating-day estimate; verify the operator calendar and hours.</small><br/><br/><b>Access</b><table class="access"><tr><th>From</th><th>Transport</th><th>Duration</th></tr><tr><td>Detroit</td><td>Car</td><td>Local</td></tr></table><br/><i>Sources: <a href="https://detroitmountain.com/mountain-biking/">operator information</a> and <a href="https://www.twowheeledwanderer.com/posts/mountain-bike-parks-united-states/">US downhill bike-park directory</a>. Prices, schedules, trail status and access can change; verify before travel.</i>]]></description>
+    <styleUrl>#placemark-blue</styleUrl>
+    <Point><coordinates>-95.845325,46.817181,0</coordinates></Point>
+    <ExtendedData xmlns:mwm="https://omaps.app">
+      <Data name="spot"><value>us-detroit-mountain-bike-park</value></Data>
+      <Data name="tags"><value>beginner expert bikepark</value></Data>
+      <Data name="open_from"><value>05-01</value></Data>
+      <Data name="closed_from"><value>12-01</value></Data>
+      <mwm:icon>Transport</mwm:icon><mwm:visibility>1</mwm:visibility>
+    </ExtendedData>
+  </Placemark>
+  <Placemark>
+    <name>Howler Bike Park [check operator]</name>
+    <description><![CDATA[<b>Howler Bike Park - Branson, MN</b><br/><br/><b>Trails</b><br/>7 miles (more in the works!) of maintained downhill and gravity trails with purpose-built descending terrain. Check the current trail map for grades, closures and bike requirements.<br/><br/><b>Getting up / price</b><br/>1 rad shuttle. Day-ticket pricing varies by date; check the operator before travel.<br/><br/><b>Open season</b><br/>Year-round (depending on weather) (directory indication; weather and maintenance can shorten the season).<br/>Daily opening hours: 09:00-17:00<br/><small>Typical operating-day estimate; verify the operator calendar and hours.</small><br/><br/><b>Access</b><table class="access"><tr><th>From</th><th>Transport</th><th>Duration</th></tr><tr><td>Branson</td><td>Car</td><td>Local</td></tr></table><br/><i>Sources: <a href="https://howlerbikepark.com/">operator information</a> and <a href="https://www.twowheeledwanderer.com/posts/mountain-bike-parks-united-states/">US downhill bike-park directory</a>. Prices, schedules, trail status and access can change; verify before travel.</i>]]></description>
+    <styleUrl>#placemark-blue</styleUrl>
+    <Point><coordinates>-93.230164,36.644736,0</coordinates></Point>
+    <ExtendedData xmlns:mwm="https://omaps.app">
+      <Data name="spot"><value>us-howler-bike-park</value></Data>
+      <Data name="tags"><value>beginner expert bikepark</value></Data>
+      <Data name="open_from"><value>01-01</value></Data>
+      <Data name="closed_from"><value>01-01</value></Data>
+      <mwm:icon>Transport</mwm:icon><mwm:visibility>1</mwm:visibility>
+    </ExtendedData>
+  </Placemark>
+  <Placemark>
+    <name>Shepherd Mountain Bike Park [check operator]</name>
+    <description><![CDATA[<b>Shepherd Mountain Bike Park - Ironton, MN</b><br/><br/><b>Trails</b><br/>7+ miles of maintained downhill and gravity trails with purpose-built descending terrain. Check the current trail map for grades, closures and bike requirements.<br/><br/><b>Getting up / price</b><br/>1 shuttle. Day-ticket pricing varies by date; check the operator before travel.<br/><br/><b>Open season</b><br/>Year-round (depending on weather) (directory indication; weather and maintenance can shorten the season).<br/>Daily opening hours: 09:00-17:00<br/><small>Typical operating-day estimate; verify the operator calendar and hours.</small><br/><br/><b>Access</b><table class="access"><tr><th>From</th><th>Transport</th><th>Duration</th></tr><tr><td>Ironton</td><td>Car</td><td>Local</td></tr></table><br/><i>Sources: <a href="http://www.shepherdmountainbikepark.com/">operator information</a> and <a href="https://www.twowheeledwanderer.com/posts/mountain-bike-parks-united-states/">US downhill bike-park directory</a>. Prices, schedules, trail status and access can change; verify before travel.</i>]]></description>
+    <styleUrl>#placemark-blue</styleUrl>
+    <Point><coordinates>-90.628176,37.597826,0</coordinates></Point>
+    <ExtendedData xmlns:mwm="https://omaps.app">
+      <Data name="spot"><value>us-shepherd-mountain-bike-park</value></Data>
+      <Data name="tags"><value>beginner expert bikepark</value></Data>
+      <Data name="open_from"><value>01-01</value></Data>
+      <Data name="closed_from"><value>01-01</value></Data>
+      <mwm:icon>Transport</mwm:icon><mwm:visibility>1</mwm:visibility>
+    </ExtendedData>
+  </Placemark>
+  <Placemark>
+    <name>Big Sky Bike Park [check operator]</name>
+    <description><![CDATA[<b>Big Sky Bike Park - Big Sky, MT</b><br/><br/><b>Trails</b><br/>50 miles (20 lift-serve) of maintained downhill and gravity trails with purpose-built descending terrain. Check the current trail map for grades, closures and bike requirements.<br/><br/><b>Getting up / price</b><br/>3 chairlifts. Day-ticket pricing varies by date; check the operator before travel.<br/><br/><b>Open season</b><br/>June - September (directory indication; weather and maintenance can shorten the season).<br/>Daily opening hours: 09:00-17:00<br/><small>Typical operating-day estimate; verify the operator calendar and hours.</small><br/><br/><b>Access</b><table class="access"><tr><th>From</th><th>Transport</th><th>Duration</th></tr><tr><td>Big Sky</td><td>Car</td><td>Local</td></tr></table><br/><i>Sources: <a href="https://bigskyresort.com/summer-activities/mountain-biking">operator information</a> and <a href="https://www.twowheeledwanderer.com/posts/mountain-bike-parks-united-states/">US downhill bike-park directory</a>. Prices, schedules, trail status and access can change; verify before travel.</i>]]></description>
+    <styleUrl>#placemark-blue</styleUrl>
+    <Point><coordinates>-111.266189,45.255111,0</coordinates></Point>
+    <ExtendedData xmlns:mwm="https://omaps.app">
+      <Data name="spot"><value>us-big-sky-bike-park</value></Data>
+      <Data name="tags"><value>beginner expert bikepark</value></Data>
+      <Data name="open_from"><value>06-01</value></Data>
+      <Data name="closed_from"><value>10-01</value></Data>
+      <mwm:icon>Transport</mwm:icon><mwm:visibility>1</mwm:visibility>
+    </ExtendedData>
+  </Placemark>
+  <Placemark>
+    <name>Discovery Bike Park [check operator]</name>
+    <description><![CDATA[<b>Discovery Bike Park - Phillipsburg, MT</b><br/><br/><b>Trails</b><br/>7 miles of maintained downhill and gravity trails with purpose-built descending terrain. Check the current trail map for grades, closures and bike requirements.<br/><br/><b>Getting up / price</b><br/>1 chairlift. Day-ticket pricing varies by date; check the operator before travel.<br/><br/><b>Open season</b><br/>May - October (directory indication; weather and maintenance can shorten the season).<br/>Daily opening hours: 09:00-17:00<br/><small>Typical operating-day estimate; verify the operator calendar and hours.</small><br/><br/><b>Access</b><table class="access"><tr><th>From</th><th>Transport</th><th>Duration</th></tr><tr><td>Phillipsburg</td><td>Car</td><td>Local</td></tr></table><br/><i>Sources: <a href="https://www.skidiscovery.com/bike-park/">operator information</a> and <a href="https://www.twowheeledwanderer.com/posts/mountain-bike-parks-united-states/">US downhill bike-park directory</a>. Prices, schedules, trail status and access can change; verify before travel.</i>]]></description>
+    <styleUrl>#placemark-blue</styleUrl>
+    <Point><coordinates>-113.294499,46.332188,0</coordinates></Point>
+    <ExtendedData xmlns:mwm="https://omaps.app">
+      <Data name="spot"><value>us-discovery-bike-park</value></Data>
+      <Data name="tags"><value>beginner expert bikepark</value></Data>
+      <Data name="open_from"><value>05-01</value></Data>
+      <Data name="closed_from"><value>11-01</value></Data>
+      <mwm:icon>Transport</mwm:icon><mwm:visibility>1</mwm:visibility>
+    </ExtendedData>
+  </Placemark>
+  <Placemark>
+    <name>Whitefish Bike Park [check operator]</name>
+    <description><![CDATA[<b>Whitefish Bike Park - Whitefish, MT</b><br/><br/><b>Trails</b><br/>23 miles (not including cross-country trails) of maintained downhill and gravity trails with purpose-built descending terrain. Check the current trail map for grades, closures and bike requirements.<br/><br/><b>Getting up / price</b><br/>2 chairlifts. Day-ticket pricing varies by date; check the operator before travel.<br/><br/><b>Open season</b><br/>May - September (directory indication; weather and maintenance can shorten the season).<br/>Daily opening hours: 09:00-17:00<br/><small>Typical operating-day estimate; verify the operator calendar and hours.</small><br/><br/><b>Access</b><table class="access"><tr><th>From</th><th>Transport</th><th>Duration</th></tr><tr><td>Whitefish</td><td>Car</td><td>Local</td></tr></table><br/><i>Sources: <a href="https://skiwhitefish.com/mountain-biking/">operator information</a> and <a href="https://www.twowheeledwanderer.com/posts/mountain-bike-parks-united-states/">US downhill bike-park directory</a>. Prices, schedules, trail status and access can change; verify before travel.</i>]]></description>
+    <styleUrl>#placemark-blue</styleUrl>
+    <Point><coordinates>-114.334624,48.410802,0</coordinates></Point>
+    <ExtendedData xmlns:mwm="https://omaps.app">
+      <Data name="spot"><value>us-whitefish-bike-park</value></Data>
+      <Data name="tags"><value>beginner expert bikepark</value></Data>
+      <Data name="open_from"><value>05-01</value></Data>
+      <Data name="closed_from"><value>10-01</value></Data>
+      <mwm:icon>Transport</mwm:icon><mwm:visibility>1</mwm:visibility>
+    </ExtendedData>
+  </Placemark>
+  <Placemark>
+    <name>Legacy Bike Park [check operator]</name>
+    <description><![CDATA[<b>Legacy Bike Park - Lakeside, MT</b><br/><br/><b>Trails</b><br/>16 miles of maintained downhill and gravity trails with purpose-built descending terrain. Check the current trail map for grades, closures and bike requirements.<br/><br/><b>Getting up / price</b><br/>Bus shuttle. Day-ticket pricing varies by date; check the operator before travel.<br/><br/><b>Open season</b><br/>July - October (directory indication; weather and maintenance can shorten the season).<br/>Daily opening hours: 09:00-17:00<br/><small>Typical operating-day estimate; verify the operator calendar and hours.</small><br/><br/><b>Access</b><table class="access"><tr><th>From</th><th>Transport</th><th>Duration</th></tr><tr><td>Lakeside</td><td>Car</td><td>Local</td></tr></table><br/><i>Sources: <a href="https://legacybikepark.com/">operator information</a> and <a href="https://www.twowheeledwanderer.com/posts/mountain-bike-parks-united-states/">US downhill bike-park directory</a>. Prices, schedules, trail status and access can change; verify before travel.</i>]]></description>
+    <styleUrl>#placemark-blue</styleUrl>
+    <Point><coordinates>-114.199699,47.975582,0</coordinates></Point>
+    <ExtendedData xmlns:mwm="https://omaps.app">
+      <Data name="spot"><value>us-legacy-bike-park</value></Data>
+      <Data name="tags"><value>beginner expert bikepark</value></Data>
+      <Data name="open_from"><value>07-01</value></Data>
+      <Data name="closed_from"><value>11-01</value></Data>
+      <mwm:icon>Transport</mwm:icon><mwm:visibility>1</mwm:visibility>
+    </ExtendedData>
+  </Placemark>
+  <Placemark>
+    <name>Mount Sunapee Bike Park [check operator]</name>
+    <description><![CDATA[<b>Mount Sunapee Bike Park - Newberry, NH</b><br/><br/><b>Trails</b><br/>5 miles of maintained downhill and gravity trails with purpose-built descending terrain. Check the current trail map for grades, closures and bike requirements.<br/><br/><b>Getting up / price</b><br/>1 chairlift. Day-ticket pricing varies by date; check the operator before travel.<br/><br/><b>Open season</b><br/>May - October (directory indication; weather and maintenance can shorten the season).<br/>Daily opening hours: 09:00-17:00<br/><small>Typical operating-day estimate; verify the operator calendar and hours.</small><br/><br/><b>Access</b><table class="access"><tr><th>From</th><th>Transport</th><th>Duration</th></tr><tr><td>Newberry</td><td>Car</td><td>Local</td></tr></table><br/><i>Sources: <a href="https://www.mountsunapee.com/explore-the-resort/activities-and-events/mountain-biking.aspx">operator information</a> and <a href="https://www.twowheeledwanderer.com/posts/mountain-bike-parks-united-states/">US downhill bike-park directory</a>. Prices, schedules, trail status and access can change; verify before travel.</i>]]></description>
+    <styleUrl>#placemark-blue</styleUrl>
+    <Point><coordinates>-72.065209,43.327728,0</coordinates></Point>
+    <ExtendedData xmlns:mwm="https://omaps.app">
+      <Data name="spot"><value>us-mount-sunapee-bike-park</value></Data>
+      <Data name="tags"><value>beginner expert bikepark</value></Data>
+      <Data name="open_from"><value>05-01</value></Data>
+      <Data name="closed_from"><value>11-01</value></Data>
+      <mwm:icon>Transport</mwm:icon><mwm:visibility>1</mwm:visibility>
+    </ExtendedData>
+  </Placemark>
+  <Placemark>
+    <name>Highland Bike Park [check operator]</name>
+    <description><![CDATA[<b>Highland Bike Park - Northfield, NH</b><br/><br/><b>Trails</b><br/>14+ miles of maintained downhill and gravity trails with purpose-built descending terrain. Check the current trail map for grades, closures and bike requirements.<br/><br/><b>Getting up / price</b><br/>1 chairlift. Day-ticket pricing varies by date; check the operator before travel.<br/><br/><b>Open season</b><br/>April - November (directory indication; weather and maintenance can shorten the season).<br/>Daily opening hours: 09:00-17:00<br/><small>Typical operating-day estimate; verify the operator calendar and hours.</small><br/><br/><b>Access</b><table class="access"><tr><th>From</th><th>Transport</th><th>Duration</th></tr><tr><td>Northfield</td><td>Car</td><td>Local</td></tr></table><br/><i>Sources: <a href="https://www.highlandmountain.com/">operator information</a> and <a href="https://www.twowheeledwanderer.com/posts/mountain-bike-parks-united-states/">US downhill bike-park directory</a>. Prices, schedules, trail status and access can change; verify before travel.</i>]]></description>
+    <styleUrl>#placemark-blue</styleUrl>
+    <Point><coordinates>-71.593262,43.440072,0</coordinates></Point>
+    <ExtendedData xmlns:mwm="https://omaps.app">
+      <Data name="spot"><value>us-highland-bike-park</value></Data>
+      <Data name="tags"><value>beginner expert bikepark</value></Data>
+      <Data name="open_from"><value>04-01</value></Data>
+      <Data name="closed_from"><value>12-01</value></Data>
+      <mwm:icon>Transport</mwm:icon><mwm:visibility>1</mwm:visibility>
+    </ExtendedData>
+  </Placemark>
+  <Placemark>
+    <name>Loon Mountain Bike Park [check operator]</name>
+    <description><![CDATA[<b>Loon Mountain Bike Park - Lincoln, NH</b><br/><br/><b>Trails</b><br/>11 miles of maintained downhill and gravity trails with purpose-built descending terrain. Check the current trail map for grades, closures and bike requirements.<br/><br/><b>Getting up / price</b><br/>1 chairlift. Day-ticket pricing varies by date; check the operator before travel.<br/><br/><b>Open season</b><br/>May - October (directory indication; weather and maintenance can shorten the season).<br/>Daily opening hours: 09:00-17:00<br/><small>Typical operating-day estimate; verify the operator calendar and hours.</small><br/><br/><b>Access</b><table class="access"><tr><th>From</th><th>Transport</th><th>Duration</th></tr><tr><td>Lincoln</td><td>Car</td><td>Local</td></tr></table><br/><i>Sources: <a href="https://www.loonmtn.com/summer-activities/biking/bike-park">operator information</a> and <a href="https://www.twowheeledwanderer.com/posts/mountain-bike-parks-united-states/">US downhill bike-park directory</a>. Prices, schedules, trail status and access can change; verify before travel.</i>]]></description>
+    <styleUrl>#placemark-blue</styleUrl>
+    <Point><coordinates>-71.668417,44.044533,0</coordinates></Point>
+    <ExtendedData xmlns:mwm="https://omaps.app">
+      <Data name="spot"><value>us-loon-mountain-bike-park</value></Data>
+      <Data name="tags"><value>beginner expert bikepark</value></Data>
+      <Data name="open_from"><value>05-01</value></Data>
+      <Data name="closed_from"><value>11-01</value></Data>
+      <mwm:icon>Transport</mwm:icon><mwm:visibility>1</mwm:visibility>
+    </ExtendedData>
+  </Placemark>
+  <Placemark>
+    <name>Waterville Valley Resort Bike Park [check operator]</name>
+    <description><![CDATA[<b>Waterville Valley Resort Bike Park - Waterville, NH</b><br/><br/><b>Trails</b><br/>3 miles (mix of lift-served and cross-country) of maintained downhill and gravity trails with purpose-built descending terrain. Check the current trail map for grades, closures and bike requirements.<br/><br/><b>Getting up / price</b><br/>1 chairlift. Day-ticket pricing varies by date; check the operator before travel.<br/><br/><b>Open season</b><br/>May - September (directory indication; weather and maintenance can shorten the season).<br/>Daily opening hours: 09:00-17:00<br/><small>Typical operating-day estimate; verify the operator calendar and hours.</small><br/><br/><b>Access</b><table class="access"><tr><th>From</th><th>Transport</th><th>Duration</th></tr><tr><td>Waterville</td><td>Car</td><td>Local</td></tr></table><br/><i>Sources: <a href="https://www.waterville.com/adventure-center#biking">operator information</a> and <a href="https://www.twowheeledwanderer.com/posts/mountain-bike-parks-united-states/">US downhill bike-park directory</a>. Prices, schedules, trail status and access can change; verify before travel.</i>]]></description>
+    <styleUrl>#placemark-blue</styleUrl>
+    <Point><coordinates>-71.505697,43.949631,0</coordinates></Point>
+    <ExtendedData xmlns:mwm="https://omaps.app">
+      <Data name="spot"><value>us-waterville-valley-resort-bike-park</value></Data>
+      <Data name="tags"><value>beginner expert bikepark</value></Data>
+      <Data name="open_from"><value>05-01</value></Data>
+      <Data name="closed_from"><value>10-01</value></Data>
+      <mwm:icon>Transport</mwm:icon><mwm:visibility>1</mwm:visibility>
+    </ExtendedData>
+  </Placemark>
+  <Placemark>
+    <name>Mountain Creek Bike Park [check operator]</name>
+    <description><![CDATA[<b>Mountain Creek Bike Park - Vernon, NJ</b><br/><br/><b>Trails</b><br/>40+ miles (including some cross-country) of maintained downhill and gravity trails with purpose-built descending terrain. Check the current trail map for grades, closures and bike requirements.<br/><br/><b>Getting up / price</b><br/>1 cabriolet. Day-ticket pricing varies by date; check the operator before travel.<br/><br/><b>Open season</b><br/>May - November (directory indication; weather and maintenance can shorten the season).<br/>Daily opening hours: 09:00-17:00<br/><small>Typical operating-day estimate; verify the operator calendar and hours.</small><br/><br/><b>Access</b><table class="access"><tr><th>From</th><th>Transport</th><th>Duration</th></tr><tr><td>Vernon</td><td>Car</td><td>Local</td></tr></table><br/><i>Sources: <a href="https://www.mountaincreek.com/bike-park">operator information</a> and <a href="https://www.twowheeledwanderer.com/posts/mountain-bike-parks-united-states/">US downhill bike-park directory</a>. Prices, schedules, trail status and access can change; verify before travel.</i>]]></description>
+    <styleUrl>#placemark-blue</styleUrl>
+    <Point><coordinates>-74.483213,41.198429,0</coordinates></Point>
+    <ExtendedData xmlns:mwm="https://omaps.app">
+      <Data name="spot"><value>us-mountain-creek-bike-park</value></Data>
+      <Data name="tags"><value>beginner expert bikepark</value></Data>
+      <Data name="open_from"><value>05-01</value></Data>
+      <Data name="closed_from"><value>12-01</value></Data>
+      <mwm:icon>Transport</mwm:icon><mwm:visibility>1</mwm:visibility>
+    </ExtendedData>
+  </Placemark>
+  <Placemark>
+    <name>Angel Fire Bike Park [check operator]</name>
+    <description><![CDATA[<b>Angel Fire Bike Park - Angel Fire, NM</b><br/><br/><b>Trails</b><br/>60 miles of maintained downhill and gravity trails with purpose-built descending terrain. Check the current trail map for grades, closures and bike requirements.<br/><br/><b>Getting up / price</b><br/>1 chairlift. Day-ticket pricing varies by date; check the operator before travel.<br/><br/><b>Open season</b><br/>May - October (directory indication; weather and maintenance can shorten the season).<br/>Daily opening hours: 09:00-17:00<br/><small>Typical operating-day estimate; verify the operator calendar and hours.</small><br/><br/><b>Access</b><table class="access"><tr><th>From</th><th>Transport</th><th>Duration</th></tr><tr><td>Angel Fire</td><td>Car</td><td>Local</td></tr></table><br/><i>Sources: <a href="https://www.angelfireresort.com/bike-park/">operator information</a> and <a href="https://www.twowheeledwanderer.com/posts/mountain-bike-parks-united-states/">US downhill bike-park directory</a>. Prices, schedules, trail status and access can change; verify before travel.</i>]]></description>
+    <styleUrl>#placemark-blue</styleUrl>
+    <Point><coordinates>-105.285009,36.393088,0</coordinates></Point>
+    <ExtendedData xmlns:mwm="https://omaps.app">
+      <Data name="spot"><value>us-angel-fire-bike-park</value></Data>
+      <Data name="tags"><value>beginner expert bikepark</value></Data>
+      <Data name="open_from"><value>05-01</value></Data>
+      <Data name="closed_from"><value>11-01</value></Data>
+      <mwm:icon>Transport</mwm:icon><mwm:visibility>1</mwm:visibility>
+    </ExtendedData>
+  </Placemark>
+  <Placemark>
+    <name>Pajarito Bike Park [check operator]</name>
+    <description><![CDATA[<b>Pajarito Bike Park - Los Alamos, NM</b><br/><br/><b>Trails</b><br/>39 miles (including connecting trails outside the park) of maintained downhill and gravity trails with purpose-built descending terrain. Check the current trail map for grades, closures and bike requirements.<br/><br/><b>Getting up / price</b><br/>1 chairlift. Day-ticket pricing varies by date; check the operator before travel.<br/><br/><b>Open season</b><br/>June - September (directory indication; weather and maintenance can shorten the season).<br/>Daily opening hours: 09:00-17:00<br/><small>Typical operating-day estimate; verify the operator calendar and hours.</small><br/><br/><b>Access</b><table class="access"><tr><th>From</th><th>Transport</th><th>Duration</th></tr><tr><td>Los Alamos</td><td>Car</td><td>Local</td></tr></table><br/><i>Sources: <a href="https://www.pajarito.ski/pajarito-mountain-biking/">operator information</a> and <a href="https://www.twowheeledwanderer.com/posts/mountain-bike-parks-united-states/">US downhill bike-park directory</a>. Prices, schedules, trail status and access can change; verify before travel.</i>]]></description>
+    <styleUrl>#placemark-blue</styleUrl>
+    <Point><coordinates>-106.298959,35.881370,0</coordinates></Point>
+    <ExtendedData xmlns:mwm="https://omaps.app">
+      <Data name="spot"><value>us-pajarito-bike-park</value></Data>
+      <Data name="tags"><value>beginner expert bikepark</value></Data>
+      <Data name="open_from"><value>06-01</value></Data>
+      <Data name="closed_from"><value>10-01</value></Data>
+      <mwm:icon>Transport</mwm:icon><mwm:visibility>1</mwm:visibility>
+    </ExtendedData>
+  </Placemark>
+  <Placemark>
+    <name>Greek Peak Bike Park [check operator]</name>
+    <description><![CDATA[<b>Greek Peak Bike Park - Cortland, NY</b><br/><br/><b>Trails</b><br/>19 miles of maintained downhill and gravity trails with purpose-built descending terrain. Check the current trail map for grades, closures and bike requirements.<br/><br/><b>Getting up / price</b><br/>1 chairlift. Day-ticket pricing varies by date; check the operator before travel.<br/><br/><b>Open season</b><br/>June - October (directory indication; weather and maintenance can shorten the season).<br/>Daily opening hours: 09:00-17:00<br/><small>Typical operating-day estimate; verify the operator calendar and hours.</small><br/><br/><b>Access</b><table class="access"><tr><th>From</th><th>Transport</th><th>Duration</th></tr><tr><td>Cortland</td><td>Car</td><td>Local</td></tr></table><br/><i>Sources: <a href="https://www.greekpeak.net/bike-park/">operator information</a> and <a href="https://www.twowheeledwanderer.com/posts/mountain-bike-parks-united-states/">US downhill bike-park directory</a>. Prices, schedules, trail status and access can change; verify before travel.</i>]]></description>
+    <styleUrl>#placemark-blue</styleUrl>
+    <Point><coordinates>-76.070491,42.584214,0</coordinates></Point>
+    <ExtendedData xmlns:mwm="https://omaps.app">
+      <Data name="spot"><value>us-greek-peak-bike-park</value></Data>
+      <Data name="tags"><value>beginner expert bikepark</value></Data>
+      <Data name="open_from"><value>06-01</value></Data>
+      <Data name="closed_from"><value>11-01</value></Data>
+      <mwm:icon>Transport</mwm:icon><mwm:visibility>1</mwm:visibility>
+    </ExtendedData>
+  </Placemark>
+  <Placemark>
+    <name>HoliMont Bike Park [check operator]</name>
+    <description><![CDATA[<b>HoliMont Bike Park - Ellicottville, NY</b><br/><br/><b>Trails</b><br/>10 miles of maintained downhill and gravity trails with purpose-built descending terrain. Check the current trail map for grades, closures and bike requirements.<br/><br/><b>Getting up / price</b><br/>1 chairlift. Day-ticket pricing varies by date; check the operator before travel.<br/><br/><b>Open season</b><br/>May - October (directory indication; weather and maintenance can shorten the season).<br/>Daily opening hours: 09:00-17:00<br/><small>Typical operating-day estimate; verify the operator calendar and hours.</small><br/><br/><b>Access</b><table class="access"><tr><th>From</th><th>Transport</th><th>Duration</th></tr><tr><td>Ellicottville</td><td>Car</td><td>Local</td></tr></table><br/><i>Sources: <a href="https://holimont.com/programs/bike-park/">operator information</a> and <a href="https://www.twowheeledwanderer.com/posts/mountain-bike-parks-united-states/">US downhill bike-park directory</a>. Prices, schedules, trail status and access can change; verify before travel.</i>]]></description>
+    <styleUrl>#placemark-blue</styleUrl>
+    <Point><coordinates>-78.671535,42.273593,0</coordinates></Point>
+    <ExtendedData xmlns:mwm="https://omaps.app">
+      <Data name="spot"><value>us-holimont-bike-park</value></Data>
+      <Data name="tags"><value>beginner expert bikepark</value></Data>
+      <Data name="open_from"><value>05-01</value></Data>
+      <Data name="closed_from"><value>11-01</value></Data>
+      <mwm:icon>Transport</mwm:icon><mwm:visibility>1</mwm:visibility>
+    </ExtendedData>
+  </Placemark>
+  <Placemark>
+    <name>Gore Mountain Bike Park [check operator]</name>
+    <description><![CDATA[<b>Gore Mountain Bike Park - North Creek, NY</b><br/><br/><b>Trails</b><br/>7 miles of maintained downhill and gravity trails with purpose-built descending terrain. Check the current trail map for grades, closures and bike requirements.<br/><br/><b>Getting up / price</b><br/>1 chairlift. Day-ticket pricing varies by date; check the operator before travel.<br/><br/><b>Open season</b><br/>June - October (directory indication; weather and maintenance can shorten the season).<br/>Daily opening hours: 09:00-17:00<br/><small>Typical operating-day estimate; verify the operator calendar and hours.</small><br/><br/><b>Access</b><table class="access"><tr><th>From</th><th>Transport</th><th>Duration</th></tr><tr><td>North Creek</td><td>Car</td><td>Local</td></tr></table><br/><i>Sources: <a href="https://goremountain.com/todo/downhill-mountain-biking/">operator information</a> and <a href="https://www.twowheeledwanderer.com/posts/mountain-bike-parks-united-states/">US downhill bike-park directory</a>. Prices, schedules, trail status and access can change; verify before travel.</i>]]></description>
+    <styleUrl>#placemark-blue</styleUrl>
+    <Point><coordinates>-73.986727,43.691484,0</coordinates></Point>
+    <ExtendedData xmlns:mwm="https://omaps.app">
+      <Data name="spot"><value>us-gore-mountain-bike-park</value></Data>
+      <Data name="tags"><value>beginner expert bikepark</value></Data>
+      <Data name="open_from"><value>06-01</value></Data>
+      <Data name="closed_from"><value>11-01</value></Data>
+      <mwm:icon>Transport</mwm:icon><mwm:visibility>1</mwm:visibility>
+    </ExtendedData>
+  </Placemark>
+  <Placemark>
+    <name>Beech Mountain Bike Park [check operator]</name>
+    <description><![CDATA[<b>Beech Mountain Bike Park - Beech Mountain, NC</b><br/><br/><b>Trails</b><br/>6 miles of maintained downhill and gravity trails with purpose-built descending terrain. Check the current trail map for grades, closures and bike requirements.<br/><br/><b>Getting up / price</b><br/>1 chairlift. Day-ticket pricing varies by date; check the operator before travel.<br/><br/><b>Open season</b><br/>May - October (directory indication; weather and maintenance can shorten the season).<br/>Daily opening hours: 09:00-17:00<br/><small>Typical operating-day estimate; verify the operator calendar and hours.</small><br/><br/><b>Access</b><table class="access"><tr><th>From</th><th>Transport</th><th>Duration</th></tr><tr><td>Beech Mountain</td><td>Car</td><td>Local</td></tr></table><br/><i>Sources: <a href="https://www.beechmountainresort.com/summer/mountain-biking/">operator information</a> and <a href="https://www.twowheeledwanderer.com/posts/mountain-bike-parks-united-states/">US downhill bike-park directory</a>. Prices, schedules, trail status and access can change; verify before travel.</i>]]></description>
+    <styleUrl>#placemark-blue</styleUrl>
+    <Point><coordinates>-81.930082,36.237221,0</coordinates></Point>
+    <ExtendedData xmlns:mwm="https://omaps.app">
+      <Data name="spot"><value>us-beech-mountain-bike-park</value></Data>
+      <Data name="tags"><value>beginner expert bikepark</value></Data>
+      <Data name="open_from"><value>05-01</value></Data>
+      <Data name="closed_from"><value>11-01</value></Data>
+      <mwm:icon>Transport</mwm:icon><mwm:visibility>1</mwm:visibility>
+    </ExtendedData>
+  </Placemark>
+  <Placemark>
+    <name>Sugar Mountain Bike Park [check operator]</name>
+    <description><![CDATA[<b>Sugar Mountain Bike Park - Sugar Mountain, NC</b><br/><br/><b>Trails</b><br/>4 miles of maintained downhill and gravity trails with purpose-built descending terrain. Check the current trail map for grades, closures and bike requirements.<br/><br/><b>Getting up / price</b><br/>1 chairlift. Day-ticket pricing varies by date; check the operator before travel.<br/><br/><b>Open season</b><br/>May - October (directory indication; weather and maintenance can shorten the season).<br/>Daily opening hours: 09:00-17:00<br/><small>Typical operating-day estimate; verify the operator calendar and hours.</small><br/><br/><b>Access</b><table class="access"><tr><th>From</th><th>Transport</th><th>Duration</th></tr><tr><td>Sugar Mountain</td><td>Car</td><td>Local</td></tr></table><br/><i>Sources: <a href="https://seesugar.com/summer-bike-lift/">operator information</a> and <a href="https://www.twowheeledwanderer.com/posts/mountain-bike-parks-united-states/">US downhill bike-park directory</a>. Prices, schedules, trail status and access can change; verify before travel.</i>]]></description>
+    <styleUrl>#placemark-blue</styleUrl>
+    <Point><coordinates>-81.860112,36.127349,0</coordinates></Point>
+    <ExtendedData xmlns:mwm="https://omaps.app">
+      <Data name="spot"><value>us-sugar-mountain-bike-park</value></Data>
+      <Data name="tags"><value>beginner expert bikepark</value></Data>
+      <Data name="open_from"><value>05-01</value></Data>
+      <Data name="closed_from"><value>11-01</value></Data>
+      <mwm:icon>Transport</mwm:icon><mwm:visibility>1</mwm:visibility>
+    </ExtendedData>
+  </Placemark>
+  <Placemark>
+    <name>Ride Rock Creek Bike Park [check operator]</name>
+    <description><![CDATA[<b>Ride Rock Creek Bike Park - Zirconia, NC</b><br/><br/><b>Trails</b><br/>6 miles of maintained downhill and gravity trails with purpose-built descending terrain. Check the current trail map for grades, closures and bike requirements.<br/><br/><b>Getting up / price</b><br/>1 shuttle. Day-ticket pricing varies by date; check the operator before travel.<br/><br/><b>Open season</b><br/>Open year-round depending on the weather (directory indication; weather and maintenance can shorten the season).<br/>Daily opening hours: 09:00-17:00<br/><small>Typical operating-day estimate; verify the operator calendar and hours.</small><br/><br/><b>Access</b><table class="access"><tr><th>From</th><th>Transport</th><th>Duration</th></tr><tr><td>Zirconia</td><td>Car</td><td>Local</td></tr></table><br/><i>Sources: <a href="https://riderockcreek.com/">operator information</a> and <a href="https://www.twowheeledwanderer.com/posts/mountain-bike-parks-united-states/">US downhill bike-park directory</a>. Prices, schedules, trail status and access can change; verify before travel.</i>]]></description>
+    <styleUrl>#placemark-blue</styleUrl>
+    <Point><coordinates>-82.517803,35.203856,0</coordinates></Point>
+    <ExtendedData xmlns:mwm="https://omaps.app">
+      <Data name="spot"><value>us-ride-rock-creek-bike-park</value></Data>
+      <Data name="tags"><value>beginner expert bikepark</value></Data>
+      <Data name="open_from"><value>01-01</value></Data>
+      <Data name="closed_from"><value>01-01</value></Data>
+      <mwm:icon>Transport</mwm:icon><mwm:visibility>1</mwm:visibility>
+    </ExtendedData>
+  </Placemark>
+  <Placemark>
+    <name>Horns Hill Bike Park [check operator]</name>
+    <description><![CDATA[<b>Horns Hill Bike Park - Newark, OH</b><br/><br/><b>Trails</b><br/>8 miles of maintained downhill and gravity trails with purpose-built descending terrain. Check the current trail map for grades, closures and bike requirements.<br/><br/><b>Getting up / price</b><br/>1 shuttle. Day-ticket pricing varies by date; check the operator before travel.<br/><br/><b>Open season</b><br/>Open year-round depending on the weather (directory indication; weather and maintenance can shorten the season).<br/>Daily opening hours: 09:00-17:00<br/><small>Typical operating-day estimate; verify the operator calendar and hours.</small><br/><br/><b>Access</b><table class="access"><tr><th>From</th><th>Transport</th><th>Duration</th></tr><tr><td>Newark</td><td>Car</td><td>Local</td></tr></table><br/><i>Sources: <a href="https://hornshillbikepark.com/">operator information</a> and <a href="https://www.twowheeledwanderer.com/posts/mountain-bike-parks-united-states/">US downhill bike-park directory</a>. Prices, schedules, trail status and access can change; verify before travel.</i>]]></description>
+    <styleUrl>#placemark-blue</styleUrl>
+    <Point><coordinates>-82.408375,40.092174,0</coordinates></Point>
+    <ExtendedData xmlns:mwm="https://omaps.app">
+      <Data name="spot"><value>us-horns-hill-bike-park</value></Data>
+      <Data name="tags"><value>beginner expert bikepark</value></Data>
+      <Data name="open_from"><value>01-01</value></Data>
+      <Data name="closed_from"><value>01-01</value></Data>
+      <mwm:icon>Transport</mwm:icon><mwm:visibility>1</mwm:visibility>
+    </ExtendedData>
+  </Placemark>
+  <Placemark>
+    <name>Mt. Bachelor Bike Park [check operator]</name>
+    <description><![CDATA[<b>Mt. Bachelor Bike Park - Bend, OR</b><br/><br/><b>Trails</b><br/>13+ miles within the park and tons of riding just outside of maintained downhill and gravity trails with purpose-built descending terrain. Check the current trail map for grades, closures and bike requirements.<br/><br/><b>Getting up / price</b><br/>2 chairlifts. Day-ticket pricing varies by date; check the operator before travel.<br/><br/><b>Open season</b><br/>June - October (directory indication; weather and maintenance can shorten the season).<br/>Daily opening hours: 09:00-17:00<br/><small>Typical operating-day estimate; verify the operator calendar and hours.</small><br/><br/><b>Access</b><table class="access"><tr><th>From</th><th>Transport</th><th>Duration</th></tr><tr><td>Bend</td><td>Car</td><td>Local</td></tr></table><br/><i>Sources: <a href="https://www.mtbachelor.com/the-mountain/bike-park/info/">operator information</a> and <a href="https://www.twowheeledwanderer.com/posts/mountain-bike-parks-united-states/">US downhill bike-park directory</a>. Prices, schedules, trail status and access can change; verify before travel.</i>]]></description>
+    <styleUrl>#placemark-blue</styleUrl>
+    <Point><coordinates>-121.688000,43.979000,0</coordinates></Point>
+    <ExtendedData xmlns:mwm="https://omaps.app">
+      <Data name="spot"><value>us-mt-bachelor-bike-park</value></Data>
+      <Data name="tags"><value>beginner expert bikepark</value></Data>
+      <Data name="open_from"><value>06-01</value></Data>
+      <Data name="closed_from"><value>11-01</value></Data>
+      <mwm:icon>Transport</mwm:icon><mwm:visibility>1</mwm:visibility>
+    </ExtendedData>
+  </Placemark>
+  <Placemark>
+    <name>Timberline Bike Park [check operator]</name>
+    <description><![CDATA[<b>Timberline Bike Park - Government Camp, OR</b><br/><br/><b>Trails</b><br/>20 miles of maintained downhill and gravity trails with purpose-built descending terrain. Check the current trail map for grades, closures and bike requirements.<br/><br/><b>Getting up / price</b><br/>1 chairlift. Day-ticket pricing varies by date; check the operator before travel.<br/><br/><b>Open season</b><br/>June - September (directory indication; weather and maintenance can shorten the season).<br/>Daily opening hours: 09:00-17:00<br/><small>Typical operating-day estimate; verify the operator calendar and hours.</small><br/><br/><b>Access</b><table class="access"><tr><th>From</th><th>Transport</th><th>Duration</th></tr><tr><td>Government Camp</td><td>Car</td><td>Local</td></tr></table><br/><i>Sources: <a href="https://www.timberlinelodge.com/mountain/bike-park">operator information</a> and <a href="https://www.twowheeledwanderer.com/posts/mountain-bike-parks-united-states/">US downhill bike-park directory</a>. Prices, schedules, trail status and access can change; verify before travel.</i>]]></description>
+    <styleUrl>#placemark-blue</styleUrl>
+    <Point><coordinates>-121.754760,45.304103,0</coordinates></Point>
+    <ExtendedData xmlns:mwm="https://omaps.app">
+      <Data name="spot"><value>us-timberline-bike-park</value></Data>
+      <Data name="tags"><value>beginner expert bikepark</value></Data>
+      <Data name="open_from"><value>06-01</value></Data>
+      <Data name="closed_from"><value>10-01</value></Data>
+      <mwm:icon>Transport</mwm:icon><mwm:visibility>1</mwm:visibility>
+    </ExtendedData>
+  </Placemark>
+  <Placemark>
+    <name>Blue Mountain Bike Park [check operator]</name>
+    <description><![CDATA[<b>Blue Mountain Bike Park - Palmerton, PA</b><br/><br/><b>Trails</b><br/>12 miles of maintained downhill and gravity trails with purpose-built descending terrain. Check the current trail map for grades, closures and bike requirements.<br/><br/><b>Getting up / price</b><br/>1 chairlift. Day-ticket pricing varies by date; check the operator before travel.<br/><br/><b>Open season</b><br/>May - October (directory indication; weather and maintenance can shorten the season).<br/>Daily opening hours: 09:00-17:00<br/><small>Typical operating-day estimate; verify the operator calendar and hours.</small><br/><br/><b>Access</b><table class="access"><tr><th>From</th><th>Transport</th><th>Duration</th></tr><tr><td>Palmerton</td><td>Car</td><td>Local</td></tr></table><br/><i>Sources: <a href="https://www.skibluemt.com/outdoor/mountain-biking/">operator information</a> and <a href="https://www.twowheeledwanderer.com/posts/mountain-bike-parks-united-states/">US downhill bike-park directory</a>. Prices, schedules, trail status and access can change; verify before travel.</i>]]></description>
+    <styleUrl>#placemark-blue</styleUrl>
+    <Point><coordinates>-75.610187,40.801483,0</coordinates></Point>
+    <ExtendedData xmlns:mwm="https://omaps.app">
+      <Data name="spot"><value>us-blue-mountain-bike-park</value></Data>
+      <Data name="tags"><value>beginner expert bikepark</value></Data>
+      <Data name="open_from"><value>05-01</value></Data>
+      <Data name="closed_from"><value>11-01</value></Data>
+      <mwm:icon>Transport</mwm:icon><mwm:visibility>1</mwm:visibility>
+    </ExtendedData>
+  </Placemark>
+  <Placemark>
+    <name>Windrock Bike Park [check operator]</name>
+    <description><![CDATA[<b>Windrock Bike Park - Olive Springs, TN</b><br/><br/><b>Trails</b><br/>13 miles of maintained downhill and gravity trails with purpose-built descending terrain. Check the current trail map for grades, closures and bike requirements.<br/><br/><b>Getting up / price</b><br/>1 shuttle. Day-ticket pricing varies by date; check the operator before travel.<br/><br/><b>Open season</b><br/>Open year-round (directory indication; weather and maintenance can shorten the season).<br/>Daily opening hours: 09:00-17:00<br/><small>Typical operating-day estimate; verify the operator calendar and hours.</small><br/><br/><b>Access</b><table class="access"><tr><th>From</th><th>Transport</th><th>Duration</th></tr><tr><td>Olive Springs</td><td>Car</td><td>Local</td></tr></table><br/><i>Sources: <a href="https://windrockbikepark.com/">operator information</a> and <a href="https://www.twowheeledwanderer.com/posts/mountain-bike-parks-united-states/">US downhill bike-park directory</a>. Prices, schedules, trail status and access can change; verify before travel.</i>]]></description>
+    <styleUrl>#placemark-blue</styleUrl>
+    <Point><coordinates>-84.343297,36.046258,0</coordinates></Point>
+    <ExtendedData xmlns:mwm="https://omaps.app">
+      <Data name="spot"><value>us-windrock-bike-park</value></Data>
+      <Data name="tags"><value>beginner expert bikepark</value></Data>
+      <Data name="open_from"><value>01-01</value></Data>
+      <Data name="closed_from"><value>01-01</value></Data>
+      <mwm:icon>Transport</mwm:icon><mwm:visibility>1</mwm:visibility>
+    </ExtendedData>
+  </Placemark>
+  <Placemark>
+    <name>Spider Mountain Bike Park [check operator]</name>
+    <description><![CDATA[<b>Spider Mountain Bike Park - Burnet, TX</b><br/><br/><b>Trails</b><br/>6 miles of maintained downhill and gravity trails with purpose-built descending terrain. Check the current trail map for grades, closures and bike requirements.<br/><br/><b>Getting up / price</b><br/>1 chairlift. Day-ticket pricing varies by date; check the operator before travel.<br/><br/><b>Open season</b><br/>Open year-round (directory indication; weather and maintenance can shorten the season).<br/>Daily opening hours: 09:00-17:00<br/><small>Typical operating-day estimate; verify the operator calendar and hours.</small><br/><br/><b>Access</b><table class="access"><tr><th>From</th><th>Transport</th><th>Duration</th></tr><tr><td>Burnet</td><td>Car</td><td>Local</td></tr></table><br/><i>Sources: <a href="https://www.avantlink.com/click.php?tt=el&amp;merchant_id=09c1ceae-6670-45b0-a04f-dc8d02941db0&amp;website_id=54e58999-cdb6-4f11-9634-8b19a7e0f62f&amp;url=https%3A%2F%2Fwww.spidermountain.com%2F">operator information</a> and <a href="https://www.twowheeledwanderer.com/posts/mountain-bike-parks-united-states/">US downhill bike-park directory</a>. Prices, schedules, trail status and access can change; verify before travel.</i>]]></description>
+    <styleUrl>#placemark-blue</styleUrl>
+    <Point><coordinates>-98.338894,30.835504,0</coordinates></Point>
+    <ExtendedData xmlns:mwm="https://omaps.app">
+      <Data name="spot"><value>us-spider-mountain-bike-park</value></Data>
+      <Data name="tags"><value>beginner expert bikepark</value></Data>
+      <Data name="open_from"><value>01-01</value></Data>
+      <Data name="closed_from"><value>01-01</value></Data>
+      <mwm:icon>Transport</mwm:icon><mwm:visibility>1</mwm:visibility>
+    </ExtendedData>
+  </Placemark>
+  <Placemark>
+    <name>Brian Head Bike Park [check operator]</name>
+    <description><![CDATA[<b>Brian Head Bike Park - Brian Head, UT</b><br/><br/><b>Trails</b><br/>63 miles including backcountry singletrack of maintained downhill and gravity trails with purpose-built descending terrain. Check the current trail map for grades, closures and bike requirements.<br/><br/><b>Getting up / price</b><br/>1 chairlift. Day-ticket pricing varies by date; check the operator before travel.<br/><br/><b>Open season</b><br/>June – September (directory indication; weather and maintenance can shorten the season).<br/>Daily opening hours: 09:00-17:00<br/><small>Typical operating-day estimate; verify the operator calendar and hours.</small><br/><br/><b>Access</b><table class="access"><tr><th>From</th><th>Transport</th><th>Duration</th></tr><tr><td>Brian Head</td><td>Car</td><td>Local</td></tr></table><br/><i>Sources: <a href="https://www.brianhead.com/mountain-biking/">operator information</a> and <a href="https://www.twowheeledwanderer.com/posts/mountain-bike-parks-united-states/">US downhill bike-park directory</a>. Prices, schedules, trail status and access can change; verify before travel.</i>]]></description>
+    <styleUrl>#placemark-blue</styleUrl>
+    <Point><coordinates>-112.850776,37.692755,0</coordinates></Point>
+    <ExtendedData xmlns:mwm="https://omaps.app">
+      <Data name="spot"><value>us-brian-head-bike-park</value></Data>
+      <Data name="tags"><value>beginner expert bikepark</value></Data>
+      <Data name="open_from"><value>06-01</value></Data>
+      <Data name="closed_from"><value>10-01</value></Data>
+      <mwm:icon>Transport</mwm:icon><mwm:visibility>1</mwm:visibility>
+    </ExtendedData>
+  </Placemark>
+  <Placemark>
+    <name>Deer Valley Bike Park [check operator]</name>
+    <description><![CDATA[<b>Deer Valley Bike Park - Park City, UT</b><br/><br/><b>Trails</b><br/>70 miles of maintained downhill and gravity trails with purpose-built descending terrain. Check the current trail map for grades, closures and bike requirements.<br/><br/><b>Getting up / price</b><br/>3 chairlifts. Day-ticket pricing varies by date; check the operator before travel.<br/><br/><b>Open season</b><br/>June – September (directory indication; weather and maintenance can shorten the season).<br/>Daily opening hours: 09:00-17:00<br/><small>Typical operating-day estimate; verify the operator calendar and hours.</small><br/><br/><b>Access</b><table class="access"><tr><th>From</th><th>Transport</th><th>Duration</th></tr><tr><td>Park City</td><td>Car</td><td>Local</td></tr></table><br/><i>Sources: <a href="https://www.deervalley.com/things-to-do/activities/mountain-biking">operator information</a> and <a href="https://www.twowheeledwanderer.com/posts/mountain-bike-parks-united-states/">US downhill bike-park directory</a>. Prices, schedules, trail status and access can change; verify before travel.</i>]]></description>
+    <styleUrl>#placemark-blue</styleUrl>
+    <Point><coordinates>-111.478251,40.637403,0</coordinates></Point>
+    <ExtendedData xmlns:mwm="https://omaps.app">
+      <Data name="spot"><value>us-deer-valley-bike-park</value></Data>
+      <Data name="tags"><value>beginner expert bikepark</value></Data>
+      <Data name="open_from"><value>06-01</value></Data>
+      <Data name="closed_from"><value>10-01</value></Data>
+      <mwm:icon>Transport</mwm:icon><mwm:visibility>1</mwm:visibility>
+    </ExtendedData>
+  </Placemark>
+  <Placemark>
+    <name>Snow Basin Bike Park [check operator]</name>
+    <description><![CDATA[<b>Snow Basin Bike Park - Ogden, UT</b><br/><br/><b>Trails</b><br/>67 miles including connecting cross-country singletrack of maintained downhill and gravity trails with purpose-built descending terrain. Check the current trail map for grades, closures and bike requirements.<br/><br/><b>Getting up / price</b><br/>1 gondola. Day-ticket pricing varies by date; check the operator before travel.<br/><br/><b>Open season</b><br/>June – October (directory indication; weather and maintenance can shorten the season).<br/>Daily opening hours: 09:00-17:00<br/><small>Typical operating-day estimate; verify the operator calendar and hours.</small><br/><br/><b>Access</b><table class="access"><tr><th>From</th><th>Transport</th><th>Duration</th></tr><tr><td>Ogden</td><td>Car</td><td>Local</td></tr></table><br/><i>Sources: <a href="https://www.snowbasin.com/hiking-biking/">operator information</a> and <a href="https://www.twowheeledwanderer.com/posts/mountain-bike-parks-united-states/">US downhill bike-park directory</a>. Prices, schedules, trail status and access can change; verify before travel.</i>]]></description>
+    <styleUrl>#placemark-blue</styleUrl>
+    <Point><coordinates>-111.860000,41.216000,0</coordinates></Point>
+    <ExtendedData xmlns:mwm="https://omaps.app">
+      <Data name="spot"><value>us-snow-basin-bike-park</value></Data>
+      <Data name="tags"><value>beginner expert bikepark</value></Data>
+      <Data name="open_from"><value>06-01</value></Data>
+      <Data name="closed_from"><value>11-01</value></Data>
+      <mwm:icon>Transport</mwm:icon><mwm:visibility>1</mwm:visibility>
+    </ExtendedData>
+  </Placemark>
+  <Placemark>
+    <name>Solitude Mountain Bike Park [check operator]</name>
+    <description><![CDATA[<b>Solitude Mountain Bike Park - Brighton, UT</b><br/><br/><b>Trails</b><br/>39 miles including connecting backcountry trails of maintained downhill and gravity trails with purpose-built descending terrain. Check the current trail map for grades, closures and bike requirements.<br/><br/><b>Getting up / price</b><br/>2 chairlifts. Day-ticket pricing varies by date; check the operator before travel.<br/><br/><b>Open season</b><br/>June – October (directory indication; weather and maintenance can shorten the season).<br/>Daily opening hours: 09:00-17:00<br/><small>Typical operating-day estimate; verify the operator calendar and hours.</small><br/><br/><b>Access</b><table class="access"><tr><th>From</th><th>Transport</th><th>Duration</th></tr><tr><td>Brighton</td><td>Car</td><td>Local</td></tr></table><br/><i>Sources: <a href="https://www.solitudemountain.com/things-to-do/mountain-bike">operator information</a> and <a href="https://www.twowheeledwanderer.com/posts/mountain-bike-parks-united-states/">US downhill bike-park directory</a>. Prices, schedules, trail status and access can change; verify before travel.</i>]]></description>
+    <styleUrl>#placemark-blue</styleUrl>
+    <Point><coordinates>-111.583719,40.597991,0</coordinates></Point>
+    <ExtendedData xmlns:mwm="https://omaps.app">
+      <Data name="spot"><value>us-solitude-mountain-bike-park</value></Data>
+      <Data name="tags"><value>beginner expert bikepark</value></Data>
+      <Data name="open_from"><value>06-01</value></Data>
+      <Data name="closed_from"><value>11-01</value></Data>
+      <mwm:icon>Transport</mwm:icon><mwm:visibility>1</mwm:visibility>
+    </ExtendedData>
+  </Placemark>
+  <Placemark>
+    <name>Sundance Bike Park [check operator]</name>
+    <description><![CDATA[<b>Sundance Bike Park - Sundance, UT</b><br/><br/><b>Trails</b><br/>25+ miles of maintained downhill and gravity trails with purpose-built descending terrain. Check the current trail map for grades, closures and bike requirements.<br/><br/><b>Getting up / price</b><br/>2 chairlifts. Day-ticket pricing varies by date; check the operator before travel.<br/><br/><b>Open season</b><br/>June – September (directory indication; weather and maintenance can shorten the season).<br/>Daily opening hours: 09:00-17:00<br/><small>Typical operating-day estimate; verify the operator calendar and hours.</small><br/><br/><b>Access</b><table class="access"><tr><th>From</th><th>Transport</th><th>Duration</th></tr><tr><td>Sundance</td><td>Car</td><td>Local</td></tr></table><br/><i>Sources: <a href="https://www.sundanceresort.com/summer-activities/mountain-bike-lift-rides/">operator information</a> and <a href="https://www.twowheeledwanderer.com/posts/mountain-bike-parks-united-states/">US downhill bike-park directory</a>. Prices, schedules, trail status and access can change; verify before travel.</i>]]></description>
+    <styleUrl>#placemark-blue</styleUrl>
+    <Point><coordinates>-111.579000,40.392000,0</coordinates></Point>
+    <ExtendedData xmlns:mwm="https://omaps.app">
+      <Data name="spot"><value>us-sundance-bike-park</value></Data>
+      <Data name="tags"><value>beginner expert bikepark</value></Data>
+      <Data name="open_from"><value>06-01</value></Data>
+      <Data name="closed_from"><value>10-01</value></Data>
+      <mwm:icon>Transport</mwm:icon><mwm:visibility>1</mwm:visibility>
+    </ExtendedData>
+  </Placemark>
+  <Placemark>
+    <name>Powder Mountain Bike Park [check operator]</name>
+    <description><![CDATA[<b>Powder Mountain Bike Park - Eden, UT</b><br/><br/><b>Trails</b><br/>10+ miles of maintained downhill and gravity trails with purpose-built descending terrain. Check the current trail map for grades, closures and bike requirements.<br/><br/><b>Getting up / price</b><br/>2 chairlifts. Day-ticket pricing varies by date; check the operator before travel.<br/><br/><b>Open season</b><br/>June – September (directory indication; weather and maintenance can shorten the season).<br/>Daily opening hours: 09:00-17:00<br/><small>Typical operating-day estimate; verify the operator calendar and hours.</small><br/><br/><b>Access</b><table class="access"><tr><th>From</th><th>Transport</th><th>Duration</th></tr><tr><td>Eden</td><td>Car</td><td>Local</td></tr></table><br/><i>Sources: <a href="https://powdermountain.com/activities/multi-use-trails">operator information</a> and <a href="https://www.twowheeledwanderer.com/posts/mountain-bike-parks-united-states/">US downhill bike-park directory</a>. Prices, schedules, trail status and access can change; verify before travel.</i>]]></description>
+    <styleUrl>#placemark-blue</styleUrl>
+    <Point><coordinates>-111.826295,41.304474,0</coordinates></Point>
+    <ExtendedData xmlns:mwm="https://omaps.app">
+      <Data name="spot"><value>us-powder-mountain-bike-park</value></Data>
+      <Data name="tags"><value>beginner expert bikepark</value></Data>
+      <Data name="open_from"><value>06-01</value></Data>
+      <Data name="closed_from"><value>10-01</value></Data>
+      <mwm:icon>Transport</mwm:icon><mwm:visibility>1</mwm:visibility>
+    </ExtendedData>
+  </Placemark>
+  <Placemark>
+    <name>Woodward Park City [check operator]</name>
+    <description><![CDATA[<b>Woodward Park City - Park City, UT</b><br/><br/><b>Trails</b><br/>7 miles of maintained downhill and gravity trails with purpose-built descending terrain. Check the current trail map for grades, closures and bike requirements.<br/><br/><b>Getting up / price</b><br/>1 chairlift. Day-ticket pricing varies by date; check the operator before travel.<br/><br/><b>Open season</b><br/>June – October (directory indication; weather and maintenance can shorten the season).<br/>Daily opening hours: 09:00-17:00<br/><small>Typical operating-day estimate; verify the operator calendar and hours.</small><br/><br/><b>Access</b><table class="access"><tr><th>From</th><th>Transport</th><th>Duration</th></tr><tr><td>Park City</td><td>Car</td><td>Local</td></tr></table><br/><i>Sources: <a href="https://www.woodwardparkcity.com/">operator information</a> and <a href="https://www.twowheeledwanderer.com/posts/mountain-bike-parks-united-states/">US downhill bike-park directory</a>. Prices, schedules, trail status and access can change; verify before travel.</i>]]></description>
+    <styleUrl>#placemark-blue</styleUrl>
+    <Point><coordinates>-111.581000,40.754000,0</coordinates></Point>
+    <ExtendedData xmlns:mwm="https://omaps.app">
+      <Data name="spot"><value>us-woodward-park-city</value></Data>
+      <Data name="tags"><value>beginner expert bikepark</value></Data>
+      <Data name="open_from"><value>06-01</value></Data>
+      <Data name="closed_from"><value>11-01</value></Data>
+      <mwm:icon>Transport</mwm:icon><mwm:visibility>1</mwm:visibility>
+    </ExtendedData>
+  </Placemark>
+  <Placemark>
+    <name>Bolton Valley Bike Park [check operator]</name>
+    <description><![CDATA[<b>Bolton Valley Bike Park - Bolton Valley, VT</b><br/><br/><b>Trails</b><br/>28 miles of maintained downhill and gravity trails with purpose-built descending terrain. Check the current trail map for grades, closures and bike requirements.<br/><br/><b>Getting up / price</b><br/>1 chairlift. Day-ticket pricing varies by date; check the operator before travel.<br/><br/><b>Open season</b><br/>May - October (directory indication; weather and maintenance can shorten the season).<br/>Daily opening hours: 09:00-17:00<br/><small>Typical operating-day estimate; verify the operator calendar and hours.</small><br/><br/><b>Access</b><table class="access"><tr><th>From</th><th>Transport</th><th>Duration</th></tr><tr><td>Bolton Valley</td><td>Car</td><td>Local</td></tr></table><br/><i>Sources: <a href="https://www.boltonvalley.com/summer/mountain-biking/">operator information</a> and <a href="https://www.twowheeledwanderer.com/posts/mountain-bike-parks-united-states/">US downhill bike-park directory</a>. Prices, schedules, trail status and access can change; verify before travel.</i>]]></description>
+    <styleUrl>#placemark-blue</styleUrl>
+    <Point><coordinates>-72.841577,44.417593,0</coordinates></Point>
+    <ExtendedData xmlns:mwm="https://omaps.app">
+      <Data name="spot"><value>us-bolton-valley-bike-park</value></Data>
+      <Data name="tags"><value>beginner expert bikepark</value></Data>
+      <Data name="open_from"><value>05-01</value></Data>
+      <Data name="closed_from"><value>11-01</value></Data>
+      <mwm:icon>Transport</mwm:icon><mwm:visibility>1</mwm:visibility>
+    </ExtendedData>
+  </Placemark>
+  <Placemark>
+    <name>Burke Mountain Bike Park [check operator]</name>
+    <description><![CDATA[<b>Burke Mountain Bike Park - East Burke, VT</b><br/><br/><b>Trails</b><br/>21 miles plus many more at Kingdom Trails of maintained downhill and gravity trails with purpose-built descending terrain. Check the current trail map for grades, closures and bike requirements.<br/><br/><b>Getting up / price</b><br/>1 chairlift. Day-ticket pricing varies by date; check the operator before travel.<br/><br/><b>Open season</b><br/>May - October (directory indication; weather and maintenance can shorten the season).<br/>Daily opening hours: 09:00-17:00<br/><small>Typical operating-day estimate; verify the operator calendar and hours.</small><br/><br/><b>Access</b><table class="access"><tr><th>From</th><th>Transport</th><th>Duration</th></tr><tr><td>East Burke</td><td>Car</td><td>Local</td></tr></table><br/><i>Sources: <a href="https://skiburke.com/mountain-biking/the-trails/burke-mountain-bike-park/">operator information</a> and <a href="https://www.twowheeledwanderer.com/posts/mountain-bike-parks-united-states/">US downhill bike-park directory</a>. Prices, schedules, trail status and access can change; verify before travel.</i>]]></description>
+    <styleUrl>#placemark-blue</styleUrl>
+    <Point><coordinates>-71.940562,44.589150,0</coordinates></Point>
+    <ExtendedData xmlns:mwm="https://omaps.app">
+      <Data name="spot"><value>us-burke-mountain-bike-park</value></Data>
+      <Data name="tags"><value>beginner expert bikepark</value></Data>
+      <Data name="open_from"><value>05-01</value></Data>
+      <Data name="closed_from"><value>11-01</value></Data>
+      <mwm:icon>Transport</mwm:icon><mwm:visibility>1</mwm:visibility>
+    </ExtendedData>
+  </Placemark>
+  <Placemark>
+    <name>Killington Bike Park [check operator]</name>
+    <description><![CDATA[<b>Killington Bike Park - Killington, VT</b><br/><br/><b>Trails</b><br/>32 miles of maintained downhill and gravity trails with purpose-built descending terrain. Check the current trail map for grades, closures and bike requirements.<br/><br/><b>Getting up / price</b><br/>2 chairlifts, 1 gondola. Day-ticket pricing varies by date; check the operator before travel.<br/><br/><b>Open season</b><br/>May - October (directory indication; weather and maintenance can shorten the season).<br/>Daily opening hours: 09:00-17:00<br/><small>Typical operating-day estimate; verify the operator calendar and hours.</small><br/><br/><b>Access</b><table class="access"><tr><th>From</th><th>Transport</th><th>Duration</th></tr><tr><td>Killington</td><td>Car</td><td>Local</td></tr></table><br/><i>Sources: <a href="https://www.killington.com/things-to-do/activities/bike-park/">operator information</a> and <a href="https://www.twowheeledwanderer.com/posts/mountain-bike-parks-united-states/">US downhill bike-park directory</a>. Prices, schedules, trail status and access can change; verify before travel.</i>]]></description>
+    <styleUrl>#placemark-blue</styleUrl>
+    <Point><coordinates>-72.778445,43.674330,0</coordinates></Point>
+    <ExtendedData xmlns:mwm="https://omaps.app">
+      <Data name="spot"><value>us-killington-bike-park</value></Data>
+      <Data name="tags"><value>beginner expert bikepark</value></Data>
+      <Data name="open_from"><value>05-01</value></Data>
+      <Data name="closed_from"><value>11-01</value></Data>
+      <mwm:icon>Transport</mwm:icon><mwm:visibility>1</mwm:visibility>
+    </ExtendedData>
+  </Placemark>
+  <Placemark>
+    <name>Stratton Mountain Bike Park [check operator]</name>
+    <description><![CDATA[<b>Stratton Mountain Bike Park - Stratton, VT</b><br/><br/><b>Trails</b><br/>10+ miles of maintained downhill and gravity trails with purpose-built descending terrain. Check the current trail map for grades, closures and bike requirements.<br/><br/><b>Getting up / price</b><br/>1 chairlift, 1 magic carpet. Day-ticket pricing varies by date; check the operator before travel.<br/><br/><b>Open season</b><br/>May - October (directory indication; weather and maintenance can shorten the season).<br/>Daily opening hours: 09:00-17:00<br/><small>Typical operating-day estimate; verify the operator calendar and hours.</small><br/><br/><b>Access</b><table class="access"><tr><th>From</th><th>Transport</th><th>Duration</th></tr><tr><td>Stratton</td><td>Car</td><td>Local</td></tr></table><br/><i>Sources: <a href="https://www.stratton.com/Plan-your-trip/Bike-Park">operator information</a> and <a href="https://www.twowheeledwanderer.com/posts/mountain-bike-parks-united-states/">US downhill bike-park directory</a>. Prices, schedules, trail status and access can change; verify before travel.</i>]]></description>
+    <styleUrl>#placemark-blue</styleUrl>
+    <Point><coordinates>-72.910933,43.042856,0</coordinates></Point>
+    <ExtendedData xmlns:mwm="https://omaps.app">
+      <Data name="spot"><value>us-stratton-mountain-bike-park</value></Data>
+      <Data name="tags"><value>beginner expert bikepark</value></Data>
+      <Data name="open_from"><value>05-01</value></Data>
+      <Data name="closed_from"><value>11-01</value></Data>
+      <mwm:icon>Transport</mwm:icon><mwm:visibility>1</mwm:visibility>
+    </ExtendedData>
+  </Placemark>
+  <Placemark>
+    <name>Mt. Snow Bike Park [check operator]</name>
+    <description><![CDATA[<b>Mt. Snow Bike Park - West Dover, VT</b><br/><br/><b>Trails</b><br/>12 miles of maintained downhill and gravity trails with purpose-built descending terrain. Check the current trail map for grades, closures and bike requirements.<br/><br/><b>Getting up / price</b><br/>2 chairlifts. Day-ticket pricing varies by date; check the operator before travel.<br/><br/><b>Open season</b><br/>June - October (directory indication; weather and maintenance can shorten the season).<br/>Daily opening hours: 09:00-17:00<br/><small>Typical operating-day estimate; verify the operator calendar and hours.</small><br/><br/><b>Access</b><table class="access"><tr><th>From</th><th>Transport</th><th>Duration</th></tr><tr><td>West Dover</td><td>Car</td><td>Local</td></tr></table><br/><i>Sources: <a href="https://www.mountsnow.com/explore-the-resort/activities-and-events/summer-activities/mount-snow-bike-park.aspx">operator information</a> and <a href="https://www.twowheeledwanderer.com/posts/mountain-bike-parks-united-states/">US downhill bike-park directory</a>. Prices, schedules, trail status and access can change; verify before travel.</i>]]></description>
+    <styleUrl>#placemark-blue</styleUrl>
+    <Point><coordinates>-72.853136,42.939502,0</coordinates></Point>
+    <ExtendedData xmlns:mwm="https://omaps.app">
+      <Data name="spot"><value>us-mt-snow-bike-park</value></Data>
+      <Data name="tags"><value>beginner expert bikepark</value></Data>
+      <Data name="open_from"><value>06-01</value></Data>
+      <Data name="closed_from"><value>11-01</value></Data>
+      <mwm:icon>Transport</mwm:icon><mwm:visibility>1</mwm:visibility>
+    </ExtendedData>
+  </Placemark>
+  <Placemark>
+    <name>Bryce Bike Park [check operator]</name>
+    <description><![CDATA[<b>Bryce Bike Park - Bayse, VA</b><br/><br/><b>Trails</b><br/>6 miles of maintained downhill and gravity trails with purpose-built descending terrain. Check the current trail map for grades, closures and bike requirements.<br/><br/><b>Getting up / price</b><br/>1 chairlift. Day-ticket pricing varies by date; check the operator before travel.<br/><br/><b>Open season</b><br/>May - October (directory indication; weather and maintenance can shorten the season).<br/>Daily opening hours: 09:00-17:00<br/><small>Typical operating-day estimate; verify the operator calendar and hours.</small><br/><br/><b>Access</b><table class="access"><tr><th>From</th><th>Transport</th><th>Duration</th></tr><tr><td>Bayse</td><td>Car</td><td>Local</td></tr></table><br/><i>Sources: <a href="https://bryceresort.com/bryce-bike-park/">operator information</a> and <a href="https://www.twowheeledwanderer.com/posts/mountain-bike-parks-united-states/">US downhill bike-park directory</a>. Prices, schedules, trail status and access can change; verify before travel.</i>]]></description>
+    <styleUrl>#placemark-blue</styleUrl>
+    <Point><coordinates>-78.766006,38.820245,0</coordinates></Point>
+    <ExtendedData xmlns:mwm="https://omaps.app">
+      <Data name="spot"><value>us-bryce-bike-park</value></Data>
+      <Data name="tags"><value>beginner expert bikepark</value></Data>
+      <Data name="open_from"><value>05-01</value></Data>
+      <Data name="closed_from"><value>11-01</value></Data>
+      <mwm:icon>Transport</mwm:icon><mwm:visibility>1</mwm:visibility>
+    </ExtendedData>
+  </Placemark>
+  <Placemark>
+    <name>Massanutten Bike Park [check operator]</name>
+    <description><![CDATA[<b>Massanutten Bike Park - Harrisonburg, VA</b><br/><br/><b>Trails</b><br/>7 miles of maintained downhill and gravity trails with purpose-built descending terrain. Check the current trail map for grades, closures and bike requirements.<br/><br/><b>Getting up / price</b><br/>2 chairlifts. Day-ticket pricing varies by date; check the operator before travel.<br/><br/><b>Open season</b><br/>March - November (directory indication; weather and maintenance can shorten the season).<br/>Daily opening hours: 09:00-17:00<br/><small>Typical operating-day estimate; verify the operator calendar and hours.</small><br/><br/><b>Access</b><table class="access"><tr><th>From</th><th>Transport</th><th>Duration</th></tr><tr><td>Harrisonburg</td><td>Car</td><td>Local</td></tr></table><br/><i>Sources: <a href="https://www.massresort.com/play/mountain-biking/bike-park/">operator information</a> and <a href="https://www.twowheeledwanderer.com/posts/mountain-bike-parks-united-states/">US downhill bike-park directory</a>. Prices, schedules, trail status and access can change; verify before travel.</i>]]></description>
+    <styleUrl>#placemark-blue</styleUrl>
+    <Point><coordinates>-78.867730,38.453888,0</coordinates></Point>
+    <ExtendedData xmlns:mwm="https://omaps.app">
+      <Data name="spot"><value>us-massanutten-bike-park</value></Data>
+      <Data name="tags"><value>beginner expert bikepark</value></Data>
+      <Data name="open_from"><value>03-01</value></Data>
+      <Data name="closed_from"><value>12-01</value></Data>
+      <mwm:icon>Transport</mwm:icon><mwm:visibility>1</mwm:visibility>
+    </ExtendedData>
+  </Placemark>
+  <Placemark>
+    <name>Western Slope Bike Park [check operator]</name>
+    <description><![CDATA[<b>Western Slope Bike Park - Harrisonburg, VA</b><br/><br/><b>Trails</b><br/>32 miles of maintained downhill and gravity trails with purpose-built descending terrain. Check the current trail map for grades, closures and bike requirements.<br/><br/><b>Getting up / price</b><br/>1 shuttle. Day-ticket pricing varies by date; check the operator before travel.<br/><br/><b>Open season</b><br/>March - November (directory indication; weather and maintenance can shorten the season).<br/>Daily opening hours: 09:00-17:00<br/><small>Typical operating-day estimate; verify the operator calendar and hours.</small><br/><br/><b>Access</b><table class="access"><tr><th>From</th><th>Transport</th><th>Duration</th></tr><tr><td>Harrisonburg</td><td>Car</td><td>Local</td></tr></table><br/><i>Sources: <a href="https://svbcoalition.org/western-slope-trails/">operator information</a> and <a href="https://www.twowheeledwanderer.com/posts/mountain-bike-parks-united-states/">US downhill bike-park directory</a>. Prices, schedules, trail status and access can change; verify before travel.</i>]]></description>
+    <styleUrl>#placemark-blue</styleUrl>
+    <Point><coordinates>-78.867730,38.453888,0</coordinates></Point>
+    <ExtendedData xmlns:mwm="https://omaps.app">
+      <Data name="spot"><value>us-western-slope-bike-park</value></Data>
+      <Data name="tags"><value>beginner expert bikepark</value></Data>
+      <Data name="open_from"><value>03-01</value></Data>
+      <Data name="closed_from"><value>12-01</value></Data>
+      <mwm:icon>Transport</mwm:icon><mwm:visibility>1</mwm:visibility>
+    </ExtendedData>
+  </Placemark>
+  <Placemark>
+    <name>Steven's Pass Bike Park [check operator]</name>
+    <description><![CDATA[<b>Steven's Pass Bike Park - Leavenworth, WA</b><br/><br/><b>Trails</b><br/>23 miles of maintained downhill and gravity trails with purpose-built descending terrain. Check the current trail map for grades, closures and bike requirements.<br/><br/><b>Getting up / price</b><br/>1 chairlift. Day-ticket pricing varies by date; check the operator before travel.<br/><br/><b>Open season</b><br/>June - September (directory indication; weather and maintenance can shorten the season).<br/>Daily opening hours: 09:00-17:00<br/><small>Typical operating-day estimate; verify the operator calendar and hours.</small><br/><br/><b>Access</b><table class="access"><tr><th>From</th><th>Transport</th><th>Duration</th></tr><tr><td>Leavenworth</td><td>Car</td><td>Local</td></tr></table><br/><i>Sources: <a href="https://www.stevenspass.com/explore-the-resort/activities-and-events/mountain-biking.aspx">operator information</a> and <a href="https://www.twowheeledwanderer.com/posts/mountain-bike-parks-united-states/">US downhill bike-park directory</a>. Prices, schedules, trail status and access can change; verify before travel.</i>]]></description>
+    <styleUrl>#placemark-blue</styleUrl>
+    <Point><coordinates>-121.089000,47.744000,0</coordinates></Point>
+    <ExtendedData xmlns:mwm="https://omaps.app">
+      <Data name="spot"><value>us-stevens-pass-bike-park</value></Data>
+      <Data name="tags"><value>beginner expert bikepark</value></Data>
+      <Data name="open_from"><value>06-01</value></Data>
+      <Data name="closed_from"><value>10-01</value></Data>
+      <mwm:icon>Transport</mwm:icon><mwm:visibility>1</mwm:visibility>
+    </ExtendedData>
+  </Placemark>
+  <Placemark>
+    <name>The Summit Bike Park @ Snoqualmie [check operator]</name>
+    <description><![CDATA[<b>The Summit Bike Park @ Snoqualmie - North Bend, WA</b><br/><br/><b>Trails</b><br/>8 miles of maintained downhill and gravity trails with purpose-built descending terrain. Check the current trail map for grades, closures and bike requirements.<br/><br/><b>Getting up / price</b><br/>1 chairlift. Day-ticket pricing varies by date; check the operator before travel.<br/><br/><b>Open season</b><br/>June - September (directory indication; weather and maintenance can shorten the season).<br/>Daily opening hours: 09:00-17:00<br/><small>Typical operating-day estimate; verify the operator calendar and hours.</small><br/><br/><b>Access</b><table class="access"><tr><th>From</th><th>Transport</th><th>Duration</th></tr><tr><td>North Bend</td><td>Car</td><td>Local</td></tr></table><br/><i>Sources: <a href="https://www.summitatsnoqualmie.com/activities/biking">operator information</a> and <a href="https://www.twowheeledwanderer.com/posts/mountain-bike-parks-united-states/">US downhill bike-park directory</a>. Prices, schedules, trail status and access can change; verify before travel.</i>]]></description>
+    <styleUrl>#placemark-blue</styleUrl>
+    <Point><coordinates>-121.416000,47.424000,0</coordinates></Point>
+    <ExtendedData xmlns:mwm="https://omaps.app">
+      <Data name="spot"><value>us-the-summit-bike-park-snoqualmie</value></Data>
+      <Data name="tags"><value>beginner expert bikepark</value></Data>
+      <Data name="open_from"><value>06-01</value></Data>
+      <Data name="closed_from"><value>10-01</value></Data>
+      <mwm:icon>Transport</mwm:icon><mwm:visibility>1</mwm:visibility>
+    </ExtendedData>
+  </Placemark>
+  <Placemark>
+    <name>Snowshoe Bike Park [check operator]</name>
+    <description><![CDATA[<b>Snowshoe Bike Park - Snowshoe, WV</b><br/><br/><b>Trails</b><br/>24 miles of maintained downhill and gravity trails with purpose-built descending terrain. Check the current trail map for grades, closures and bike requirements.<br/><br/><b>Getting up / price</b><br/>2 chairlifts. Day-ticket pricing varies by date; check the operator before travel.<br/><br/><b>Open season</b><br/>May - October (directory indication; weather and maintenance can shorten the season).<br/>Daily opening hours: 09:00-17:00<br/><small>Typical operating-day estimate; verify the operator calendar and hours.</small><br/><br/><b>Access</b><table class="access"><tr><th>From</th><th>Transport</th><th>Duration</th></tr><tr><td>Snowshoe</td><td>Car</td><td>Local</td></tr></table><br/><i>Sources: <a href="https://www.snowshoemtn.com/things-to-do/activities/snowshoe-bike-park">operator information</a> and <a href="https://www.twowheeledwanderer.com/posts/mountain-bike-parks-united-states/">US downhill bike-park directory</a>. Prices, schedules, trail status and access can change; verify before travel.</i>]]></description>
+    <styleUrl>#placemark-blue</styleUrl>
+    <Point><coordinates>-79.996442,38.412824,0</coordinates></Point>
+    <ExtendedData xmlns:mwm="https://omaps.app">
+      <Data name="spot"><value>us-snowshoe-bike-park</value></Data>
+      <Data name="tags"><value>beginner expert bikepark</value></Data>
+      <Data name="open_from"><value>05-01</value></Data>
+      <Data name="closed_from"><value>11-01</value></Data>
+      <mwm:icon>Transport</mwm:icon><mwm:visibility>1</mwm:visibility>
+    </ExtendedData>
+  </Placemark>
+  <Placemark>
+    <name>Grand Targhee Bike Park [check operator]</name>
+    <description><![CDATA[<b>Grand Targhee Bike Park - Alta, WY</b><br/><br/><b>Trails</b><br/>70+ miles including cross-country singletrack of maintained downhill and gravity trails with purpose-built descending terrain. Check the current trail map for grades, closures and bike requirements.<br/><br/><b>Getting up / price</b><br/>2 chairlifts. Day-ticket pricing varies by date; check the operator before travel.<br/><br/><b>Open season</b><br/>June - September (directory indication; weather and maintenance can shorten the season).<br/>Daily opening hours: 09:00-17:00<br/><small>Typical operating-day estimate; verify the operator calendar and hours.</small><br/><br/><b>Access</b><table class="access"><tr><th>From</th><th>Transport</th><th>Duration</th></tr><tr><td>Alta</td><td>Car</td><td>Local</td></tr></table><br/><i>Sources: <a href="https://www.grandtarghee.com/activities-events/activity-finder/bike-park">operator information</a> and <a href="https://www.twowheeledwanderer.com/posts/mountain-bike-parks-united-states/">US downhill bike-park directory</a>. Prices, schedules, trail status and access can change; verify before travel.</i>]]></description>
+    <styleUrl>#placemark-blue</styleUrl>
+    <Point><coordinates>-110.949622,43.748309,0</coordinates></Point>
+    <ExtendedData xmlns:mwm="https://omaps.app">
+      <Data name="spot"><value>us-grand-targhee-bike-park</value></Data>
+      <Data name="tags"><value>beginner expert bikepark</value></Data>
+      <Data name="open_from"><value>06-01</value></Data>
+      <Data name="closed_from"><value>10-01</value></Data>
+      <mwm:icon>Transport</mwm:icon><mwm:visibility>1</mwm:visibility>
+    </ExtendedData>
+  </Placemark>
+  <Placemark>
+    <name>Jackson Hole Bike Park [check operator]</name>
+    <description><![CDATA[<b>Jackson Hole Bike Park - Jackson Hole, WY</b><br/><br/><b>Trails</b><br/>47 miles including cross-country trails of maintained downhill and gravity trails with purpose-built descending terrain. Check the current trail map for grades, closures and bike requirements.<br/><br/><b>Getting up / price</b><br/>1 gondola &amp; 1 chairlift. Day-ticket pricing varies by date; check the operator before travel.<br/><br/><b>Open season</b><br/>June - September (directory indication; weather and maintenance can shorten the season).<br/>Daily opening hours: 09:00-17:00<br/><small>Typical operating-day estimate; verify the operator calendar and hours.</small><br/><br/><b>Access</b><table class="access"><tr><th>From</th><th>Transport</th><th>Duration</th></tr><tr><td>Jackson Hole</td><td>Car</td><td>Local</td></tr></table><br/><i>Sources: <a href="https://www.jacksonhole.com/bike-park.html">operator information</a> and <a href="https://www.twowheeledwanderer.com/posts/mountain-bike-parks-united-states/">US downhill bike-park directory</a>. Prices, schedules, trail status and access can change; verify before travel.</i>]]></description>
+    <styleUrl>#placemark-blue</styleUrl>
+    <Point><coordinates>-110.807142,43.469816,0</coordinates></Point>
+    <ExtendedData xmlns:mwm="https://omaps.app">
+      <Data name="spot"><value>us-jackson-hole-bike-park</value></Data>
+      <Data name="tags"><value>beginner expert bikepark</value></Data>
+      <Data name="open_from"><value>06-01</value></Data>
+      <Data name="closed_from"><value>10-01</value></Data>
+      <mwm:icon>Transport</mwm:icon><mwm:visibility>1</mwm:visibility>
+    </ExtendedData>
+  </Placemark>
+  <Placemark>
+    <name>Virgin Freeride / Red Bull Rampage Zone [no lift]</name>
+    <description><![CDATA[<b>Virgin Freeride / Red Bull Rampage Zone - Virgin, UT</b><br/><br/><b>Trails</b><br/>Raw desert freeride terrain around the historic Red Bull Rampage venues: exposed ridgelines, steep chutes, drops and large hand-built features. Event lines cross fragile terrain and are not a public bike park; respect land status, closures and active event zones.<br/><br/><b>Getting up / price</b><br/>No lift; pedal access.<br/><br/><b>Open season</b><br/>Typical regional riding window; weather, snow, heat, fire restrictions and land-management closures override it.<br/><br/><b>Access</b><table class="access"><tr><th>From</th><th>Transport</th><th>Duration</th></tr><tr><td>Virgin</td><td>Car</td><td>Local</td></tr></table><br/><i>Source: <a href="https://www.redbull.com/us-en/events/red-bull-rampage/">land manager or destination information</a>. Trail status and access can change; verify before travel.</i>]]></description>
+    <styleUrl>#placemark-brown</styleUrl>
+    <Point><coordinates>-113.202000,37.208000,0</coordinates></Point>
+    <ExtendedData xmlns:mwm="https://omaps.app">
+      <Data name="spot"><value>us-virgin-freeride-red-bull-rampage-zone</value></Data><Data name="tags"><value>expert natural</value></Data>
+      <Data name="open_from"><value>09-15</value></Data><Data name="closed_from"><value>05-16</value></Data>
+      <mwm:icon>Mountain</mwm:icon><mwm:visibility>1</mwm:visibility>
+    </ExtendedData>
+  </Placemark>
+  <Placemark>
+    <name>Moab - The Whole Enchilada [commercial shuttle]</name>
+    <description><![CDATA[<b>Moab - The Whole Enchilada - Moab, UT</b><br/><br/><b>Trails</b><br/>A landmark high-alpine-to-desert enduro descent linking Burro Pass, Hazard County, Kokopelli, UPS, LPS and Porcupine Rim. Snow and extreme heat make timing essential.<br/><br/><b>Getting up / price</b><br/>commercial shuttle; book and verify the current operator and price.<br/><br/><b>Open season</b><br/>Typical regional riding window; weather, snow, heat, fire restrictions and land-management closures override it.<br/><br/><b>Access</b><table class="access"><tr><th>From</th><th>Transport</th><th>Duration</th></tr><tr><td>Moab</td><td>Car</td><td>Local</td></tr></table><br/><i>Source: <a href="https://www.discovermoab.com/mountainbiking/">land manager or destination information</a>. Trail status and access can change; verify before travel.</i>]]></description>
+    <styleUrl>#placemark-green</styleUrl>
+    <Point><coordinates>-109.493000,38.573000,0</coordinates></Point>
+    <ExtendedData xmlns:mwm="https://omaps.app">
+      <Data name="spot"><value>us-moab---the-whole-enchilada</value></Data><Data name="tags"><value>expert natural</value></Data>
+      <Data name="open_from"><value>05-01</value></Data><Data name="closed_from"><value>11-16</value></Data>
+      <mwm:icon>Mountain</mwm:icon><mwm:visibility>1</mwm:visibility>
+    </ExtendedData>
+  </Placemark>
+  <Placemark>
+    <name>Sedona Trail Network [no lift]</name>
+    <description><![CDATA[<b>Sedona Trail Network - Sedona, AZ</b><br/><br/><b>Trails</b><br/>World-class red-rock technical riding with ledges, slickrock, exposure and flow across networks including Hiline, Hangover, Broken Arrow and West Sedona.<br/><br/><b>Getting up / price</b><br/>No lift; pedal access.<br/><br/><b>Open season</b><br/>Typical regional riding window; weather, snow, heat, fire restrictions and land-management closures override it.<br/><br/><b>Access</b><table class="access"><tr><th>From</th><th>Transport</th><th>Duration</th></tr><tr><td>Sedona</td><td>Car</td><td>Local</td></tr></table><br/><i>Source: <a href="https://www.fs.usda.gov/recarea/coconino/recarea/?recid=54892">land manager or destination information</a>. Trail status and access can change; verify before travel.</i>]]></description>
+    <styleUrl>#placemark-brown</styleUrl>
+    <Point><coordinates>-111.761000,34.866000,0</coordinates></Point>
+    <ExtendedData xmlns:mwm="https://omaps.app">
+      <Data name="spot"><value>us-sedona-trail-network</value></Data><Data name="tags"><value>beginner expert natural</value></Data>
+      <Data name="open_from"><value>01-01</value></Data><Data name="closed_from"><value>01-01</value></Data>
+      <mwm:icon>Mountain</mwm:icon><mwm:visibility>1</mwm:visibility>
+    </ExtendedData>
+  </Placemark>
+  <Placemark>
+    <name>Pisgah National Forest [no lift]</name>
+    <description><![CDATA[<b>Pisgah National Forest - Brevard, NC</b><br/><br/><b>Trails</b><br/>Long, raw Appalachian descents with roots, rock, creek crossings and major climbing around Pisgah Ranger District classics such as Black Mountain and Avery Creek.<br/><br/><b>Getting up / price</b><br/>No lift; pedal access.<br/><br/><b>Open season</b><br/>Typical regional riding window; weather, snow, heat, fire restrictions and land-management closures override it.<br/><br/><b>Access</b><table class="access"><tr><th>From</th><th>Transport</th><th>Duration</th></tr><tr><td>Brevard</td><td>Car</td><td>Local</td></tr></table><br/><i>Source: <a href="https://www.fs.usda.gov/r08/northcarolina/recreation/pisgah-national-forest">land manager or destination information</a>. Trail status and access can change; verify before travel.</i>]]></description>
+    <styleUrl>#placemark-brown</styleUrl>
+    <Point><coordinates>-82.728000,35.284000,0</coordinates></Point>
+    <ExtendedData xmlns:mwm="https://omaps.app">
+      <Data name="spot"><value>us-pisgah-national-forest</value></Data><Data name="tags"><value>expert natural</value></Data>
+      <Data name="open_from"><value>03-01</value></Data><Data name="closed_from"><value>12-16</value></Data>
+      <mwm:icon>Mountain</mwm:icon><mwm:visibility>1</mwm:visibility>
+    </ExtendedData>
+  </Placemark>
+  <Placemark>
+    <name>DuPont State Recreational Forest [no lift]</name>
+    <description><![CDATA[<b>DuPont State Recreational Forest - Brevard, NC</b><br/><br/><b>Trails</b><br/>A dense signed network mixing fast forest singletrack, granite slabs, waterfalls and approachable loops. Shared-use rules and wet-weather closures apply.<br/><br/><b>Getting up / price</b><br/>No lift; pedal access.<br/><br/><b>Open season</b><br/>Typical regional riding window; weather, snow, heat, fire restrictions and land-management closures override it.<br/><br/><b>Access</b><table class="access"><tr><th>From</th><th>Transport</th><th>Duration</th></tr><tr><td>Brevard</td><td>Car</td><td>Local</td></tr></table><br/><i>Source: <a href="https://www.dupontstaterecreationalforest.com/mountain-biking">land manager or destination information</a>. Trail status and access can change; verify before travel.</i>]]></description>
+    <styleUrl>#placemark-brown</styleUrl>
+    <Point><coordinates>-82.621000,35.200000,0</coordinates></Point>
+    <ExtendedData xmlns:mwm="https://omaps.app">
+      <Data name="spot"><value>us-dupont-state-recreational-forest</value></Data><Data name="tags"><value>beginner expert natural</value></Data>
+      <Data name="open_from"><value>01-01</value></Data><Data name="closed_from"><value>01-01</value></Data>
+      <mwm:icon>Mountain</mwm:icon><mwm:visibility>1</mwm:visibility>
+    </ExtendedData>
+  </Placemark>
+  <Placemark>
+    <name>Galbraith Mountain [no lift]</name>
+    <description><![CDATA[<b>Galbraith Mountain - Bellingham, WA</b><br/><br/><b>Trails</b><br/>A nationally known community-built network with more than 60 miles of climbing trails, flow lines, jumps and steep technical descents.<br/><br/><b>Getting up / price</b><br/>No lift; pedal access.<br/><br/><b>Open season</b><br/>Typical regional riding window; weather, snow, heat, fire restrictions and land-management closures override it.<br/><br/><b>Access</b><table class="access"><tr><th>From</th><th>Transport</th><th>Duration</th></tr><tr><td>Bellingham</td><td>Car</td><td>Local</td></tr></table><br/><i>Source: <a href="https://www.wmbcmtb.org/galbraith">land manager or destination information</a>. Trail status and access can change; verify before travel.</i>]]></description>
+    <styleUrl>#placemark-brown</styleUrl>
+    <Point><coordinates>-122.426000,48.702000,0</coordinates></Point>
+    <ExtendedData xmlns:mwm="https://omaps.app">
+      <Data name="spot"><value>us-galbraith-mountain</value></Data><Data name="tags"><value>beginner expert natural</value></Data>
+      <Data name="open_from"><value>01-01</value></Data><Data name="closed_from"><value>01-01</value></Data>
+      <mwm:icon>Mountain</mwm:icon><mwm:visibility>1</mwm:visibility>
+    </ExtendedData>
+  </Placemark>
+  <Placemark>
+    <name>Downieville Downhill [commercial shuttle]</name>
+    <description><![CDATA[<b>Downieville Downhill - Downieville, CA</b><br/><br/><b>Trails</b><br/>A classic Sierra shuttle descent from Packer Saddle, combining Sunrise, Butcher Ranch and lower river trails into a long, rough and fast backcountry run.<br/><br/><b>Getting up / price</b><br/>commercial shuttle; book and verify the current operator and price.<br/><br/><b>Open season</b><br/>Typical regional riding window; weather, snow, heat, fire restrictions and land-management closures override it.<br/><br/><b>Access</b><table class="access"><tr><th>From</th><th>Transport</th><th>Duration</th></tr><tr><td>Downieville</td><td>Car</td><td>Local</td></tr></table><br/><i>Source: <a href="https://downievilleclassic.com/trails/">land manager or destination information</a>. Trail status and access can change; verify before travel.</i>]]></description>
+    <styleUrl>#placemark-green</styleUrl>
+    <Point><coordinates>-120.828000,39.560000,0</coordinates></Point>
+    <ExtendedData xmlns:mwm="https://omaps.app">
+      <Data name="spot"><value>us-downieville-downhill</value></Data><Data name="tags"><value>expert natural</value></Data>
+      <Data name="open_from"><value>06-01</value></Data><Data name="closed_from"><value>11-01</value></Data>
+      <mwm:icon>Mountain</mwm:icon><mwm:visibility>1</mwm:visibility>
+    </ExtendedData>
+  </Placemark>
+  <Placemark>
+    <name>Oakridge Alpine Trail Network [commercial shuttle]</name>
+    <description><![CDATA[<b>Oakridge Alpine Trail Network - Oakridge, OR</b><br/><br/><b>Trails</b><br/>Deep-forest Cascade riding with long shuttle or pedal-accessed descents, loam, roots and substantial backcountry mileage around Alpine, Lawler and Dead Mountain.<br/><br/><b>Getting up / price</b><br/>commercial shuttle; book and verify the current operator and price.<br/><br/><b>Open season</b><br/>Typical regional riding window; weather, snow, heat, fire restrictions and land-management closures override it.<br/><br/><b>Access</b><table class="access"><tr><th>From</th><th>Transport</th><th>Duration</th></tr><tr><td>Oakridge</td><td>Car</td><td>Local</td></tr></table><br/><i>Source: <a href="https://www.mtbproject.com/directory/8011238/oakridge">land manager or destination information</a>. Trail status and access can change; verify before travel.</i>]]></description>
+    <styleUrl>#placemark-green</styleUrl>
+    <Point><coordinates>-122.460000,43.746000,0</coordinates></Point>
+    <ExtendedData xmlns:mwm="https://omaps.app">
+      <Data name="spot"><value>us-oakridge-alpine-trail-network</value></Data><Data name="tags"><value>expert natural</value></Data>
+      <Data name="open_from"><value>05-01</value></Data><Data name="closed_from"><value>11-16</value></Data>
+      <mwm:icon>Mountain</mwm:icon><mwm:visibility>1</mwm:visibility>
+    </ExtendedData>
+  </Placemark>
+  <Placemark>
+    <name>Copper Harbor Trails [commercial shuttle]</name>
+    <description><![CDATA[<b>Copper Harbor Trails - Copper Harbor, MI</b><br/><br/><b>Trails</b><br/>Lake Superior ridge riding with rock slabs, roots, wooden features, flow trails and shuttle-served descents across an IMBA-designated trail system.<br/><br/><b>Getting up / price</b><br/>commercial shuttle; book and verify the current operator and price.<br/><br/><b>Open season</b><br/>Typical regional riding window; weather, snow, heat, fire restrictions and land-management closures override it.<br/><br/><b>Access</b><table class="access"><tr><th>From</th><th>Transport</th><th>Duration</th></tr><tr><td>Copper Harbor</td><td>Car</td><td>Local</td></tr></table><br/><i>Source: <a href="https://copperharbortrails.org/">land manager or destination information</a>. Trail status and access can change; verify before travel.</i>]]></description>
+    <styleUrl>#placemark-green</styleUrl>
+    <Point><coordinates>-87.890000,47.468000,0</coordinates></Point>
+    <ExtendedData xmlns:mwm="https://omaps.app">
+      <Data name="spot"><value>us-copper-harbor-trails</value></Data><Data name="tags"><value>beginner expert natural</value></Data>
+      <Data name="open_from"><value>05-15</value></Data><Data name="closed_from"><value>11-01</value></Data>
+      <mwm:icon>Mountain</mwm:icon><mwm:visibility>1</mwm:visibility>
+    </ExtendedData>
+  </Placemark>
+  <Placemark>
+    <name>Kingdom Trails [no lift]</name>
+    <description><![CDATA[<b>Kingdom Trails - East Burke, VT</b><br/><br/><b>Trails</b><br/>A large member-supported network of wooded singletrack and flow trails around East Burke. Access depends on private-land permissions and current trail status.<br/><br/><b>Getting up / price</b><br/>No lift; pedal access.<br/><br/><b>Open season</b><br/>Typical regional riding window; weather, snow, heat, fire restrictions and land-management closures override it.<br/><br/><b>Access</b><table class="access"><tr><th>From</th><th>Transport</th><th>Duration</th></tr><tr><td>East Burke</td><td>Car</td><td>Local</td></tr></table><br/><i>Source: <a href="https://www.kingdomtrails.org/">land manager or destination information</a>. Trail status and access can change; verify before travel.</i>]]></description>
+    <styleUrl>#placemark-brown</styleUrl>
+    <Point><coordinates>-71.940000,44.589000,0</coordinates></Point>
+    <ExtendedData xmlns:mwm="https://omaps.app">
+      <Data name="spot"><value>us-kingdom-trails</value></Data><Data name="tags"><value>beginner expert natural</value></Data>
+      <Data name="open_from"><value>05-01</value></Data><Data name="closed_from"><value>11-16</value></Data>
+      <mwm:icon>Mountain</mwm:icon><mwm:visibility>1</mwm:visibility>
+    </ExtendedData>
+  </Placemark>
+  <Placemark>
+    <name>Tiger Mountain MTB [no lift]</name>
+    <description><![CDATA[<b>Tiger Mountain MTB - Issaquah, WA</b><br/><br/><b>Trails</b><br/>Steep, wet-weather Pacific Northwest enduro riding with purpose-built descents such as Predator and East Tiger Summit trails. Shared access and seasonal work can affect routes.<br/><br/><b>Getting up / price</b><br/>No lift; pedal access.<br/><br/><b>Open season</b><br/>Typical regional riding window; weather, snow, heat, fire restrictions and land-management closures override it.<br/><br/><b>Access</b><table class="access"><tr><th>From</th><th>Transport</th><th>Duration</th></tr><tr><td>Issaquah</td><td>Car</td><td>Local</td></tr></table><br/><i>Source: <a href="https://www.evergreenmtb.org/trails/tiger-mountain">land manager or destination information</a>. Trail status and access can change; verify before travel.</i>]]></description>
+    <styleUrl>#placemark-brown</styleUrl>
+    <Point><coordinates>-121.995000,47.499000,0</coordinates></Point>
+    <ExtendedData xmlns:mwm="https://omaps.app">
+      <Data name="spot"><value>us-tiger-mountain-mtb</value></Data><Data name="tags"><value>expert natural</value></Data>
+      <Data name="open_from"><value>04-01</value></Data><Data name="closed_from"><value>12-16</value></Data>
+      <mwm:icon>Mountain</mwm:icon><mwm:visibility>1</mwm:visibility>
+    </ExtendedData>
+  </Placemark>
+  <Placemark>
+    <name>Soquel Demonstration State Forest [no lift]</name>
+    <description><![CDATA[<b>Soquel Demonstration State Forest - Santa Cruz, CA</b><br/><br/><b>Trails</b><br/>Redwood-forest climbing and technical descending on official roads and trails, with steep grades, roots and jumps. Respect forest closures and only ride designated legal routes.<br/><br/><b>Getting up / price</b><br/>No lift; pedal access.<br/><br/><b>Open season</b><br/>Typical regional riding window; weather, snow, heat, fire restrictions and land-management closures override it.<br/><br/><b>Access</b><table class="access"><tr><th>From</th><th>Transport</th><th>Duration</th></tr><tr><td>Santa Cruz</td><td>Car</td><td>Local</td></tr></table><br/><i>Source: <a href="https://www.fire.ca.gov/what-we-do/natural-resource-management/demonstration-state-forests/soquel-demonstration-state-forest">land manager or destination information</a>. Trail status and access can change; verify before travel.</i>]]></description>
+    <styleUrl>#placemark-brown</styleUrl>
+    <Point><coordinates>-121.842000,37.083000,0</coordinates></Point>
+    <ExtendedData xmlns:mwm="https://omaps.app">
+      <Data name="spot"><value>us-soquel-demonstration-state-forest</value></Data><Data name="tags"><value>expert natural</value></Data>
+      <Data name="open_from"><value>01-01</value></Data><Data name="closed_from"><value>01-01</value></Data>
+      <mwm:icon>Mountain</mwm:icon><mwm:visibility>1</mwm:visibility>
+    </ExtendedData>
+  </Placemark>
+  <Placemark>
+    <name>Lunch Loops [no lift]</name>
+    <description><![CDATA[<b>Lunch Loops - Grand Junction, CO</b><br/><br/><b>Trails</b><br/>Technical high-desert singletrack close to town, known for rock ledges, drops, steep lines and demanding classics such as Free Lunch and The Ribbon.<br/><br/><b>Getting up / price</b><br/>No lift; pedal access.<br/><br/><b>Open season</b><br/>Typical regional riding window; weather, snow, heat, fire restrictions and land-management closures override it.<br/><br/><b>Access</b><table class="access"><tr><th>From</th><th>Transport</th><th>Duration</th></tr><tr><td>Grand Junction</td><td>Car</td><td>Local</td></tr></table><br/><i>Source: <a href="https://www.blm.gov/visit/lunch-loops-trail-system">land manager or destination information</a>. Trail status and access can change; verify before travel.</i>]]></description>
+    <styleUrl>#placemark-brown</styleUrl>
+    <Point><coordinates>-108.619000,39.038000,0</coordinates></Point>
+    <ExtendedData xmlns:mwm="https://omaps.app">
+      <Data name="spot"><value>us-lunch-loops</value></Data><Data name="tags"><value>expert natural</value></Data>
+      <Data name="open_from"><value>03-01</value></Data><Data name="closed_from"><value>12-01</value></Data>
+      <mwm:icon>Mountain</mwm:icon><mwm:visibility>1</mwm:visibility>
+    </ExtendedData>
+  </Placemark>
+  <Placemark>
+    <name>Monarch Crest Trail [commercial shuttle]</name>
+    <description><![CDATA[<b>Monarch Crest Trail - Salida, CO</b><br/><br/><b>Trails</b><br/>High-altitude backcountry riding above treeline followed by long forest descents. Weather exposure, altitude and remote terrain demand preparation.<br/><br/><b>Getting up / price</b><br/>commercial shuttle; book and verify the current operator and price.<br/><br/><b>Open season</b><br/>Typical regional riding window; weather, snow, heat, fire restrictions and land-management closures override it.<br/><br/><b>Access</b><table class="access"><tr><th>From</th><th>Transport</th><th>Duration</th></tr><tr><td>Salida</td><td>Car</td><td>Local</td></tr></table><br/><i>Source: <a href="https://www.fs.usda.gov/recarea/psicc/recarea/?recid=12613">land manager or destination information</a>. Trail status and access can change; verify before travel.</i>]]></description>
+    <styleUrl>#placemark-green</styleUrl>
+    <Point><coordinates>-106.325000,38.497000,0</coordinates></Point>
+    <ExtendedData xmlns:mwm="https://omaps.app">
+      <Data name="spot"><value>us-monarch-crest-trail</value></Data><Data name="tags"><value>expert natural</value></Data>
+      <Data name="open_from"><value>07-01</value></Data><Data name="closed_from"><value>10-16</value></Data>
+      <mwm:icon>Mountain</mwm:icon><mwm:visibility>1</mwm:visibility>
+    </ExtendedData>
+  </Placemark>
+  <Placemark>
+    <name>Bentonville and Bella Vista Trails [no lift]</name>
+    <description><![CDATA[<b>Bentonville and Bella Vista Trails - Bentonville, AR</b><br/><br/><b>Trails</b><br/>A major urban and forest trail destination with extensive purpose-built singletrack, jump lines, technical rock features and all-level progression across multiple connected networks.<br/><br/><b>Getting up / price</b><br/>No lift; pedal access.<br/><br/><b>Open season</b><br/>Typical regional riding window; weather, snow, heat, fire restrictions and land-management closures override it.<br/><br/><b>Access</b><table class="access"><tr><th>From</th><th>Transport</th><th>Duration</th></tr><tr><td>Bentonville</td><td>Car</td><td>Local</td></tr></table><br/><i>Source: <a href="https://www.oztrails.com/">land manager or destination information</a>. Trail status and access can change; verify before travel.</i>]]></description>
+    <styleUrl>#placemark-brown</styleUrl>
+    <Point><coordinates>-94.209000,36.372000,0</coordinates></Point>
+    <ExtendedData xmlns:mwm="https://omaps.app">
+      <Data name="spot"><value>us-bentonville-and-bella-vista-trails</value></Data><Data name="tags"><value>beginner expert natural</value></Data>
+      <Data name="open_from"><value>01-01</value></Data><Data name="closed_from"><value>01-01</value></Data>
+      <mwm:icon>Mountain</mwm:icon><mwm:visibility>1</mwm:visibility>
+    </ExtendedData>
+  </Placemark>
 </Document>
 </kml>
