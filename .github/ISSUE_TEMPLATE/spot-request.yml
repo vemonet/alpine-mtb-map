@@ -1,0 +1,58 @@
+name: 📍 Request a spot
+description: Suggest a mountain biking spot or trail to add to the map
+title: "Add spot: "
+labels:
+  - spot request
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for helping improve Alpine MTB Map. Please provide enough detail and sources to verify the spot, access rules, season, uplift and pricing.
+
+  - type: input
+    id: name
+    attributes:
+      label: Trail or spot name
+      placeholder: "Example: Bike Park Example Mountain"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: spot_type
+    attributes:
+      label: Type of spot
+      options:
+        - Natural spot
+        - Bike park
+    validations:
+      required: true
+
+  - type: dropdown
+    id: has_lift
+    attributes:
+      label: Has a lift?
+      options:
+        - "Yes"
+        - "No"
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: Describe the trails, difficulty, uplift or climb, access, opening season, hours and prices when known.
+      placeholder: Tell us what makes this spot useful to mountain bikers.
+    validations:
+      required: true
+
+  - type: textarea
+    id: sources
+    attributes:
+      label: Sources
+      description: Add one source URL per line. Prefer the operator, trail manager, transport authority or official tourism website.
+      placeholder: |
+        https://example.com/trails
+        https://example.com/prices-and-hours
+    validations:
+      required: true

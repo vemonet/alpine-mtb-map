@@ -6,6 +6,7 @@
   --natural: #2f6f4e;
   --brown: #8a4a33;
   --locate: #7048e8;
+  --wet: #075985;
   color-scheme: light;
   --bg: #fff;
   --fg: #1a1a1a;
@@ -434,6 +435,21 @@ body {
   font-weight: 600;
 }
 
+#weather[aria-pressed="true"] {
+  border-color: var(--wet);
+  color: var(--wet);
+}
+
+#weather.loading {
+  animation: weather-pulse 1s ease-in-out infinite alternate;
+}
+
+@keyframes weather-pulse {
+  to {
+    opacity: 0.45;
+  }
+}
+
 #spots {
   list-style: none;
   margin: 0;
@@ -623,7 +639,53 @@ a.dl:hover {
   font-weight: 600;
 }
 
+.weather-forecast {
+  margin-top: 13px;
+  padding-top: 9px;
+  border-top: 1px solid #d4d4d4;
+}
+
+.weather-forecast h4 {
+  margin: 0 0 4px;
+  font-size: 13.5px;
+}
+
+.weather-forecast p {
+  margin: 3px 0;
+}
+
+.weather-forecast .wet-note {
+  color: var(--wet);
+  font-weight: 600;
+}
+
+.weather-table {
+  width: 100%;
+  margin-top: 6px;
+  border-collapse: collapse;
+  font-size: 12px;
+}
+
+.weather-table th,
+.weather-table td {
+  padding: 3px 5px;
+  border-bottom: 1px solid #ddd;
+  text-align: right;
+  white-space: nowrap;
+}
+
+.weather-table th:first-child,
+.weather-table td:first-child {
+  text-align: left;
+}
+
+.weather-table tr.selected {
+  background: rgb(7 89 133 / 10%);
+  font-weight: 600;
+}
+
 .pin {
+  position: relative;
   width: 15px;
   height: 15px;
   border-radius: 50%;
@@ -645,6 +707,21 @@ a.dl:hover {
   width: 10px;
   height: 10px;
   border-width: 2px;
+}
+
+.wet-badge {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  color: #fff;
+  pointer-events: none;
+}
+
+.wet-badge svg {
+  width: 6px;
+  height: 8px;
+  filter: drop-shadow(0 0 1px rgb(0 0 0 / 55%));
 }
 
 @media (max-width: 720px) {

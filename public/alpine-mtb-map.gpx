@@ -21,7 +21,7 @@ Access
 From | Transport | Duration
 Lausanne | Train | ~1h05
 
-Travel times and prices are 2026 indications · check before you go.</desc>
+Source: NStCM railway. Prices, schedules, trail status and access can change; verify before travel.</desc>
   </wpt>
   <wpt lat="46.448486" lon="6.160171">
     <name>St-Cergue: St-Cergue station (NStCM)</name>
@@ -142,7 +142,7 @@ Access
 From | Transport | Duration
 Lausanne | Train | ~1h00
 
-Travel times and prices are 2026 indications · check before you go.</desc>
+Source: MOB transport. Prices, schedules, trail status and access can change; verify before travel.</desc>
   </wpt>
   <wpt lat="47.026524" lon="6.957526">
     <name>Chaumont (Neuchâtel) [city fare, ~5 CHF]</name>
@@ -156,12 +156,14 @@ The funicular is part of the Neuchatel city network (transN / Onde Verte): a few
 
 Open season
 Open from 1 January with no seasonal closure (normally open year-round).
+Daily opening hours: 09:00-17:00
+Typical daily estimate; check the operator schedule.
 
 Access
 From | Transport | Duration
 Lausanne | Train + funicular | ~1h10
 
-Travel times and prices are 2026 indications · check before you go.</desc>
+Source: TransN. Prices, schedules, trail status and access can change; verify before travel.</desc>
   </wpt>
   <wpt lat="46.359507" lon="7.002932">
     <name>Leysin - Berneuse [28 CHF / Magic Pass]</name>
@@ -175,12 +177,14 @@ Gondola + downhill day pass around 28 CHF. Free with the Magic Pass. Bike park o
 
 Open season
 Open from 20 June; closed from 24 August (published 2026 dates).
+Daily opening hours: 11:30-16:00
+Published high-summer Tete d'Ai chairlift hours; other lifts vary.
 
 Access
 From | Transport | Duration
 Lausanne | Train | ~1h10
 
-Travel times and prices are 2026 indications · check before you go.</desc>
+Source: Leysin tourism. Prices, schedules, trail status and access can change; verify before travel.</desc>
   </wpt>
   <wpt lat="46.345636" lon="7.006709">
     <name>Leysin: Leysin-Grand-Hotel station</name>
@@ -208,7 +212,7 @@ Access
 From | Transport | Duration
 Lausanne | Train | ~1h25
 
-Travel times and prices are 2026 indications · check before you go.</desc>
+Source: MOB Rochers-de-Naye. Prices, schedules, trail status and access can change; verify before travel.</desc>
   </wpt>
   <wpt lat="46.431148" lon="6.938524">
     <name>Naye: Caux mid station</name>
@@ -269,12 +273,14 @@ Summer day pass around 35 CHF; Crans - Cry d'Er return alone is 25 CHF. Bike par
 
 Open season
 Open from 13 June; closed from 26 October (published 2026 dates).
+Daily opening hours: 09:00-17:00
+Typical daily estimate; check the operator schedule.
 
 Access
 From | Transport | Duration
 Lausanne | Train + funicular | ~1h30
 
-Travel times and prices are 2026 indications · check before you go.</desc>
+Source: Crans-Montana bike. Prices, schedules, trail status and access can change; verify before travel.</desc>
   </wpt>
   <wpt lat="46.320660" lon="7.498832">
     <name>Crans-Montana: Les Violettes / Les Barzettes</name>
@@ -610,12 +616,14 @@ Journee bike (funicular + cable car + chairlift) 38 CHF; a 4-hour bike ticket (f
 
 Open season
 Open from 15 May; closed from 2 November (typical window; check the operator and conditions).
+Daily opening hours: 09:00-17:00
+Typical daily estimate; check the operator schedule.
 
 Access
 From | Transport | Duration
 Lausanne | Train + bus | ~1h40
 
-Travel times and prices are 2026 indications · check before you go.</desc>
+Source: Moleson. Prices, schedules, trail status and access can change; verify before travel.</desc>
   </wpt>
   <wpt lat="46.547247" lon="7.018134">
     <name>Moleson: Le Moléson 2002 m - summit cable car station</name>
@@ -632,12 +640,14 @@ TVGD summer day pass 36 CHF adult / 18 CHF child, covering the Villars-Bretaye t
 
 Open season
 Open from 15 June; closed from 26 October (typical window; check the operator and conditions).
+Daily opening hours: 08:30-17:00
+Typical daily estimate; check the operator schedule.
 
 Access
 From | Transport | Duration
 Lausanne | Train | ~1h45
 
-Travel times and prices are 2026 indications · check before you go.</desc>
+Source: Villars-Diablerets. Prices, schedules, trail status and access can change; verify before travel.</desc>
   </wpt>
   <wpt lat="46.326579" lon="7.061778">
     <name>Bretaye: Grand Chamossaire 2120 m - top of the chairlift</name>
@@ -1227,12 +1237,14 @@ Same TVGD day pass as Villars, 36 CHF, free with the Magic Pass. Important cavea
 
 Open season
 Open from 1 July; closed from 1 September (typical window; check the operator and conditions).
+Daily opening hours: 08:30-17:00
+Typical daily estimate; check the operator schedule.
 
 Access
 From | Transport | Duration
 Lausanne | Train | ~1h25
 
-Travel times and prices are 2026 indications · check before you go.</desc>
+Source: Villars-Diablerets. Prices, schedules, trail status and access can change; verify before travel.</desc>
   </wpt>
   <trk>
     <name>Diablerets: Isenau Bike (590)</name>
@@ -1428,12 +1440,14 @@ Gondola day ticket 36 CHF adult (25-63), 31 CHF for 16-24, free under 6. Free wi
 
 Open season
 Open from 15 May; closed from 2 November (typical window; check the operator and conditions).
+Daily opening hours: 09:00-17:00
+Typical daily estimate; check the operator schedule.
 
 Access
 From | Transport | Duration
 Lausanne | Train + bus | ~1h40
 
-Travel times and prices are 2026 indications · check before you go.</desc>
+Source: Charmey. Prices, schedules, trail status and access can change; verify before travel.</desc>
   </wpt>
   <wpt lat="46.154468" lon="6.193165">
     <name>Le Salève (above Geneva) [18 EUR return]</name>
@@ -1447,12 +1461,14 @@ Getting up / price
 
 Open season
 Open from 1 January with no seasonal closure (normally open year-round).
+Daily opening hours: 09:00-18:30
+Typical daily estimate; check the operator schedule.
 
 Access
 From | Transport | Duration
 Lausanne | Train + bus | ~1h25
 
-Travel times and prices are 2026 indications · check before you go.</desc>
+Source: Saleve cable car. Prices, schedules, trail status and access can change; verify before travel.</desc>
   </wpt>
   <wpt lat="46.314928" lon="7.385609">
     <name>Anzère - Pas de Maimbré [bikes ride free]</name>
@@ -1466,31 +1482,35 @@ Carrying a mountain bike on the gondola is free in summer, which makes this unus
 
 Open season
 Open from 15 June; closed from 19 October (typical window; check the operator and conditions).
+Daily opening hours: 09:00-17:00
+Typical daily estimate; check the operator schedule.
 
 Access
 From | Transport | Duration
 Lausanne | Train + bus | ~1h50
 
-Travel times and prices are 2026 indications · check before you go.</desc>
+Source: Anzere tourism. Prices, schedules, trail status and access can change; verify before travel.</desc>
   </wpt>
   <wpt lat="47.139139" lon="7.214443">
-    <name>Bienne / Magglingen - BielTrail [city fare]</name>
+    <name>Bienne / Magglingen - BielTrail [16 CHF with Half Fare]</name>
     <desc>Magglingen/Macolin - top of the funicular
 
 Trails
-BielTrail: 1.95 km, 440 m of descent, graded red, downhill-only and point-to-point straight back to the funicular. Fast, flowing, well maintained, and you can lap it all day for pocket change - probably the best laps-per-franc ratio on this map. The wider Jura network (Les Pres-d'Orvin Bike 844, Erguel Bike 843) starts from the same plateau if you want distance instead.
+BielTrail is a 1.95 km, 440 m descent running point-to-point back towards the funicular. Most of the main line is fast, flowing and well maintained, but it includes a short black section that is genuinely technical: a steep downhill passage through rocks and roots. Additional, more relaxed paths descend through the same area, but these are shared with hikers rather than bike-only trails: slow down, give way and expect people around blind corners. The wider Jura network (Les Pres-d'Orvin Bike 844, Erguel Bike 843) starts from the same plateau if you want more distance.
 
 Getting up / price
-The funicular is Biel city transport, so a normal urban fare of a few francs per ride. (Your note on this pin says 30 CHF for a day - that will be a multi-ride / day card.) There is a bike wash behind the lower funicular station.
+The Magglingen funicular is part of Biel city transport. A day costs 16 CHF with the Swiss Half Fare Travelcard, making repeated laps unusually good value. There is a bike wash behind the lower funicular station.
 
 Open season
-Open from 1 January with no seasonal closure in a typical year; check local conditions.
+Open from 1 January with no seasonal closure in a typical year; avoid riding when the ground is saturated and check local conditions.
+Daily opening hours: 05:45-00:00
+Typical daily estimate; check the operator schedule.
 
 Access
 From | Transport | Duration
 Lausanne | Train + funicular | ~1h25
 
-Travel times and prices are 2026 indications · check before you go.</desc>
+Source: City of Biel. Prices, schedules, trail status and access can change; verify before travel.</desc>
   </wpt>
   <trk>
     <name>BielTrail: BielTrail (red, DH only)</name>
@@ -1691,12 +1711,14 @@ Swiss-side day passes start around 26 CHF for a single sector; the Champery cabl
 
 Open season
 Open from 12 June; closed from 14 September (typical window; check the operator and conditions).
+Daily opening hours: 09:00-17:00
+Typical daily estimate; check the operator schedule.
 
 Access
 From | Transport | Duration
 Lausanne | Train | ~1h50
 
-Travel times and prices are 2026 indications · check before you go.</desc>
+Source: Portes du Soleil. Prices, schedules, trail status and access can change; verify before travel.</desc>
   </wpt>
   <wpt lat="46.177227" lon="6.840223">
     <name>Champery: Les Crosets - lift hub, Grand Conche start</name>
@@ -1764,12 +1786,14 @@ Verbier bike day pass 47 CHF; the full 4 Vallees bike day pass 57 CHF. Season: V
 
 Open season
 Open from 4 July; closed from 22 September (published 2026 dates).
+Daily opening hours: 09:00-17:00
+Typical daily estimate; check the operator schedule.
 
 Access
 From | Transport | Duration
 Lausanne | Train | ~1h50
 
-Travel times and prices are 2026 indications · check before you go.</desc>
+Source: Verbier 4 Vallees. Prices, schedules, trail status and access can change; verify before travel.</desc>
   </wpt>
   <wpt lat="46.103794" lon="7.224809">
     <name>Verbier: Savoleyres - second lift, quieter enduro side</name>
@@ -1786,12 +1810,14 @@ Torrent-Bahnen day tickets - price not verified here, budget 35-45 CHF; check to
 
 Open season
 Open from 15 June; closed from 19 October (typical window; check the operator and conditions).
+Daily opening hours: 09:00-17:00
+Typical daily estimate; check the operator schedule.
 
 Access
 From | Transport | Duration
 Lausanne | Train + bus | ~2h05
 
-Travel times and prices are 2026 indications · check before you go.</desc>
+Source: Leukerbad. Prices, schedules, trail status and access can change; verify before travel.</desc>
   </wpt>
   <wpt lat="46.361674" lon="7.635141">
     <name>Leukerbad: Torrentalp - mid station</name>
@@ -2511,12 +2537,14 @@ Small local cable car (Luftseilbahn Gampel-Jeizinen), runs all year, cheap by Va
 
 Open season
 Open from 1 May; closed from 1 November (typical window; check the operator and conditions).
+Daily opening hours: 09:00-17:00
+Typical daily estimate; check the operator schedule.
 
 Access
 From | Transport | Duration
 Lausanne | Train | ~1h55
 
-Travel times and prices are 2026 indications · check before you go.</desc>
+Source: Gampel-Bratsch tourism. Prices, schedules, trail status and access can change; verify before travel.</desc>
   </wpt>
   <wpt lat="46.315529" lon="7.739287">
     <name>Jeizinen: Gampel cable car - valley station</name>
@@ -2951,12 +2979,14 @@ Chatel bike day pass 33 EUR adult / 30 EUR youth-senior / 25 EUR child. Full Por
 
 Open season
 Open from 12 June; closed from 14 September (typical window; check the operator and conditions).
+Daily opening hours: 09:00-17:00
+Typical daily estimate; check the operator schedule.
 
 Access
 From | Transport | Duration
 Lausanne | Boat + bus | ~2h20
 
-Travel times and prices are 2026 indications · check before you go.</desc>
+Source: Chatel Bike Park. Prices, schedules, trail status and access can change; verify before travel.</desc>
   </wpt>
   <trk>
     <name>Chatel: Fluid</name>
@@ -3458,7 +3488,7 @@ Access
 From | Transport | Duration
 Lausanne | Boat + bus | ~1h30
 
-Travel times and prices are 2026 indications · check before you go.</desc>
+Source: Bernex tourism. Prices, schedules, trail status and access can change; verify before travel.</desc>
   </wpt>
   <trk>
     <name>Bernex: La Verte</name>
@@ -3653,13 +3683,15 @@ Bike park day pass 33 EUR adult, 4 hours 26 EUR, 2 days 57 EUR. Season 320 EUR, 
 
 Open season
 Open from 11 April; closed from 31 August (published 2026 dates).
+Daily opening hours: 09:00-17:00
+Typical daily estimate; check the operator schedule.
 
 Access
 From | Transport | Duration
 Grenoble | Car | ~1h10
 Lausanne | Train + bus | ~6h
 
-Travel times and prices are 2026 indications · check before you go.</desc>
+Source: Les 2 Alpes. Prices, schedules, trail status and access can change; verify before travel.</desc>
   </wpt>
   <wpt lat="44.999964" lon="6.126403">
     <name>Les 2 Alpes: Parking des Perrons - bottom of the Venosc side</name>
@@ -4640,12 +4672,14 @@ Bike Kingdom day ticket from 53 CHF, about 6% less booked online. One ticket cov
 
 Open season
 Open from 1 June; closed from 26 October (typical window; check the operator and conditions).
+Daily opening hours: 09:00-17:00
+Typical daily estimate; check the operator schedule.
 
 Access
 From | Transport | Duration
 Lausanne | Train + bus | ~4h30
 
-Travel times and prices are 2026 indications · check before you go.</desc>
+Source: Bike Kingdom. Prices, schedules, trail status and access can change; verify before travel.</desc>
   </wpt>
   <wpt lat="46.740208" lon="9.556581">
     <name>Lenzerheide: Lai Canols</name>
@@ -5374,12 +5408,14 @@ Same Bike Kingdom ticket as Lenzerheide, from 53 CHF, and the Urdenbahn links th
 
 Open season
 Open from 15 June; closed from 26 October (typical window; check the operator and conditions).
+Daily opening hours: 09:00-17:00
+Typical daily estimate; check the operator schedule.
 
 Access
 From | Transport | Duration
 Lausanne | Train | ~4h45
 
-Travel times and prices are 2026 indications · check before you go.</desc>
+Source: Arosa Lenzerheide. Prices, schedules, trail status and access can change; verify before travel.</desc>
   </wpt>
   <wpt lat="46.789284" lon="9.639157">
     <name>Arosa: Weisshorn 2653 m</name>
@@ -5992,12 +6028,14 @@ Covered by the same Bike Kingdom ticket, from 53 CHF. The cable car starts insid
 
 Open season
 Open from 15 May; closed from 2 November (typical window; check the operator and conditions).
+Daily opening hours: 09:00-17:00
+Typical daily estimate; check the operator schedule.
 
 Access
 From | Transport | Duration
 Lausanne | Train | ~3h45
 
-Travel times and prices are 2026 indications · check before you go.</desc>
+Source: Chur tourism. Prices, schedules, trail status and access can change; verify before travel.</desc>
   </wpt>
   <wpt lat="46.847324" lon="9.525755">
     <name>Chur: Brambrueeschbahn valley station</name>
@@ -6248,12 +6286,14 @@ Day pass 23.50 EUR adult, 19.50 EUR youth; a 4-hour ticket is 10.50 EUR, and in 
 
 Open season
 Open from 4 July; closed from 31 August (published 2026 dates).
+Daily opening hours: 09:00-17:00
+Typical daily estimate; check the operator schedule.
 
 Access
 From | Transport | Duration
 Grenoble | Car | ~45 min
 
-Travel times and prices are 2026 indications · check before you go.</desc>
+Source: Chamrousse. Prices, schedules, trail status and access can change; verify before travel.</desc>
   </wpt>
   <wpt lat="45.125927" lon="5.879622">
     <name>Chamrousse: Recoin 1750</name>
@@ -6919,12 +6959,14 @@ Day pass 21.50 EUR online, 23.50 EUR at the window; 4 hours 18 EUR, two days 37.
 
 Open season
 Open from 4 July; closed from 31 August (published 2026 dates).
+Daily opening hours: 09:00-17:00
+Typical daily estimate; check the operator schedule.
 
 Access
 From | Transport | Duration
 Grenoble | Car | ~50 min
 
-Travel times and prices are 2026 indications · check before you go.</desc>
+Source: Les 7 Laux. Prices, schedules, trail status and access can change; verify before travel.</desc>
   </wpt>
   <wpt lat="45.251177" lon="6.001611">
     <name>7 Laux: Bouquetins</name>
@@ -7263,12 +7305,14 @@ MTB day pass 25 EUR adult, 21.50 EUR child, 21.50 EUR each on a family pass, 7.5
 
 Open season
 Open from 27 June; closed from 31 August (published 2026 dates).
+Daily opening hours: 09:00-17:00
+Typical daily estimate; check the operator schedule.
 
 Access
 From | Transport | Duration
 Grenoble | Car | ~1h15
 
-Travel times and prices are 2026 indications · check before you go.</desc>
+Source: Alpe d'Huez. Prices, schedules, trail status and access can change; verify before travel.</desc>
   </wpt>
   <wpt lat="45.086706" lon="6.058227">
     <name>Alpe d'Huez: Huez Express</name>
@@ -7779,12 +7823,14 @@ The nearest bike park to Grenoble as the crow flies, but the one to phone ahead 
 
 Open season
 Open from 1 July; closed from 1 September (typical window; check the operator and conditions).
+Daily opening hours: 09:00-17:00
+Typical daily estimate; check the operator schedule.
 
 Access
 From | Transport | Duration
 Grenoble | Car | ~35 min
 
-Travel times and prices are 2026 indications · check before you go.</desc>
+Source: Lans-en-Vercors tourism. Prices, schedules, trail status and access can change; verify before travel.</desc>
   </wpt>
   <trk>
     <name>Lans: La Bleue</name>
@@ -7891,12 +7937,14 @@ Usually the first bike park in France to open, in early June. Weekends in June a
 
 Open season
 Open from 5 July; closed from 1 September (published 2026 dates).
+Daily opening hours: 09:00-17:00
+Published operating hours; check the operator schedule.
 
 Access
 From | Transport | Duration
 Grenoble | Car | ~45 min
 
-Travel times and prices are 2026 indications · check before you go.</desc>
+Source: Villard-Correncon. Prices, schedules, trail status and access can change; verify before travel.</desc>
   </wpt>
   <wpt lat="45.044400" lon="5.560000">
     <name>Villard: Cote 2000 valley station</name>
@@ -7918,12 +7966,14 @@ Bike day pass 37 CHF, single ascent 17 CHF, pedestrian return 23 CHF. Free with 
 
 Open season
 Open from 1 July; closed from 1 November (published 2026 dates).
+Daily opening hours: 09:00-17:00
+Published opening time; closing time is estimated.
 
 Access
 From | Transport | Duration
 Lausanne | Train + bus | ~1h50
 
-Travel times and prices are 2026 indications · check before you go.</desc>
+Source: La Berra. Prices, schedules, trail status and access can change; verify before travel.</desc>
   </wpt>
   <wpt lat="46.686608" lon="7.154978">
     <name>La Berra: Le Brand valley station</name>
@@ -7941,12 +7991,14 @@ Bern's local hill, so it is city transport pricing: take the S-Bahn or tram to W
 
 Open season
 Open from 1 January with no seasonal closure (normally open year-round).
+Daily opening hours: 07:00-23:30
+Typical daily estimate; check the operator schedule.
 
 Access
 From | Transport | Duration
 Lausanne | Train + funicular | ~1h20
 
-Travel times and prices are 2026 indications · check before you go.</desc>
+Source: Gurtenbahn. Prices, schedules, trail status and access can change; verify before travel.</desc>
   </wpt>
   <trk>
     <name>Gurten: GurtenTrail 2.0</name>
@@ -8018,12 +8070,14 @@ Day pass with trail access 43 CHF adult, 38 CHF youth and seniors; children 6-15
 
 Open season
 Open from 1 April; closed from 16 November (typical window; check the operator and conditions).
+Daily opening hours: 09:00-17:00
+Typical daytime hours; published Friday and Saturday evening service runs until 20:00 in July and August.
 
 Access
 From | Transport | Duration
 Lausanne | Train + bus | ~2h45
 
-Travel times and prices are 2026 indications · check before you go.</desc>
+Source: Wiriehorn. Prices, schedules, trail status and access can change; verify before travel.</desc>
   </wpt>
   <wpt lat="46.601000" lon="7.536837">
     <name>Wiriehorn: Riedli valley station</name>
@@ -8177,12 +8231,14 @@ Sunnbuelbahn cable car. Check sunnbuel.ch for bike fare before travelling.
 
 Open season
 Open from 15 June; closed from 19 October (typical window; check the operator and conditions).
+Daily opening hours: 09:00-17:00
+Typical daily estimate; check the operator schedule.
 
 Access
 From | Transport | Duration
 Lausanne | Train | ~2h00
 
-Travel times and prices are 2026 indications · check before you go.</desc>
+Source: Sunnbuel cable car. Prices, schedules, trail status and access can change; verify before travel.</desc>
   </wpt>
   <wpt lat="46.476608" lon="7.663554">
     <name>Kandersteg: Sunnbuel valley station</name>
@@ -8328,12 +8384,14 @@ The Harderbahn funicular leaves a few minutes' walk from Interlaken Ost. Bike ca
 
 Open season
 Open from 1 April; closed from 1 December (typical window; check the operator and conditions).
+Daily opening hours: 09:00-21:00
+Typical daily estimate; check the operator schedule.
 
 Access
 From | Transport | Duration
 Lausanne | Train | ~2h20
 
-Travel times and prices are 2026 indications · check before you go.</desc>
+Source: Jungfrau Railways. Prices, schedules, trail status and access can change; verify before travel.</desc>
   </wpt>
   <trk>
     <name>Harder: Harder Downhill</name>
@@ -8404,12 +8462,14 @@ Reached by cable car and mountain railway from Lauterbrunnen - Murren has no roa
 
 Open season
 Open from 15 June; closed from 19 October (typical window; check the operator and conditions).
+Daily opening hours: 06:00-23:30
+Typical daily estimate; check the operator schedule.
 
 Access
 From | Transport | Duration
 Lausanne | Train | ~3h00
 
-Travel times and prices are 2026 indications · check before you go.</desc>
+Source: Murren tourism. Prices, schedules, trail status and access can change; verify before travel.</desc>
   </wpt>
   <wpt lat="46.596562" lon="7.890707">
     <name>Murren: Grutschalp</name>
@@ -8738,12 +8798,14 @@ Firstbahn gondola. Bike carriage and the exact 2026 fare are not confirmed here 
 
 Open season
 Open from 15 June; closed from 26 October (typical window; check the operator and conditions).
+Daily opening hours: 08:00-17:30
+Typical daily estimate; check the operator schedule.
 
 Access
 From | Transport | Duration
 Lausanne | Train | ~3h00
 
-Travel times and prices are 2026 indications · check before you go.</desc>
+Source: Grindelwald-First. Prices, schedules, trail status and access can change; verify before travel.</desc>
   </wpt>
   <wpt lat="46.646756" lon="8.051765">
     <name>Grindelwald: Bort</name>
@@ -8770,7 +8832,7 @@ Access
 From | Transport | Duration
 Lausanne | Train | ~4h15
 
-Travel times and prices are 2026 indications · check before you go.</desc>
+Source: Andermatt. Prices, schedules, trail status and access can change; verify before travel.</desc>
   </wpt>
   <wpt lat="46.602310" lon="8.611604">
     <name>Andermatt: Gemsstock</name>
@@ -9473,12 +9535,14 @@ Three separate cable cars from the valley floor - Morel to Riederalp, Betten to 
 
 Open season
 Open from 15 June; closed from 19 October (typical window; check the operator and conditions).
+Daily opening hours: 08:30-17:00
+Typical daily estimate; check the operator schedule.
 
 Access
 From | Transport | Duration
 Lausanne | Train | ~2h15
 
-Travel times and prices are 2026 indications · check before you go.</desc>
+Source: Aletsch Arena. Prices, schedules, trail status and access can change; verify before travel.</desc>
   </wpt>
   <wpt lat="46.377876" lon="8.033288">
     <name>Aletsch: Riederalp-Mitte</name>
@@ -10291,12 +10355,14 @@ Small local gondola to Richinen. Bike carriage is offered; check bellwald.ch for
 
 Open season
 Open from 15 June; closed from 19 October (typical window; check the operator and conditions).
+Daily opening hours: 09:00-17:00
+Typical daily estimate; check the operator schedule.
 
 Access
 From | Transport | Duration
 Lausanne | Train + bus | ~2h45
 
-Travel times and prices are 2026 indications · check before you go.</desc>
+Source: Bellwald. Prices, schedules, trail status and access can change; verify before travel.</desc>
   </wpt>
   <wpt lat="46.428973" lon="8.161785">
     <name>Bellwald: village gondola station</name>
@@ -10598,7 +10664,7 @@ Access
 From | Transport | Duration
 Lausanne | Train + bus | ~1h15
 
-Travel times and prices are 2026 indications · check before you go.</desc>
+Source: Swiss federal map. Prices, schedules, trail status and access can change; verify before travel.</desc>
   </wpt>
   <wpt lat="46.572227" lon="6.276140">
     <name>Grand Cunay / Col du Marchairuz [no lift]</name>
@@ -10617,7 +10683,7 @@ Access
 From | Transport | Duration
 Lausanne | Train + bus | ~1h30
 
-Travel times and prices are 2026 indications · check before you go.</desc>
+Source: Swiss federal map. Prices, schedules, trail status and access can change; verify before travel.</desc>
   </wpt>
   <wpt lat="46.851795" lon="6.538253">
     <name>Le Chasseron (Sainte-Croix) [no lift]</name>
@@ -10636,7 +10702,7 @@ Access
 From | Transport | Duration
 Lausanne | Train | ~1h10
 
-Travel times and prices are 2026 indications · check before you go.</desc>
+Source: Yverdon region. Prices, schedules, trail status and access can change; verify before travel.</desc>
   </wpt>
   <wpt lat="46.565724" lon="6.692604">
     <name>Chalet-a-Gobet / Jorat (Lausanne) [no lift]</name>
@@ -10655,7 +10721,7 @@ Access
 From | Transport | Duration
 Lausanne | Bus / metro + bus | ~25 min
 
-Travel times and prices are 2026 indications · check before you go.</desc>
+Source: Lausanne tourism. Prices, schedules, trail status and access can change; verify before travel.</desc>
   </wpt>
   <wpt lat="45.688440" lon="7.310960">
     <name>Pila Bike Park (Aosta Valley) [40 EUR]</name>
@@ -10669,13 +10735,15 @@ The 2026 adult bike pass is 40 EUR and includes bike transport. The Aosta-Pila g
 
 Open season
 Open from 13 June; closed from 14 September (published 2026 dates).
+Daily opening hours: 09:00-17:00
+Typical daily estimate; check the operator schedule.
 
 Access
 From | Transport | Duration
 Geneva | Car | ~2h30
 Aosta | Gondola | ~18 min
 
-Travel times and prices are 2026 indications &amp;middot; check before you go.</desc>
+Source: Pila. Prices, schedules, trail status and access can change; verify before travel.</desc>
   </wpt>
   <wpt lat="45.731920" lon="7.319260">
     <name>Pila: Aosta gondola valley station</name>
@@ -10693,13 +10761,15 @@ The 2026 whole-valley MTB day pass is 40.50 EUR and gives uphill access at Les H
 &amp;#9888;&amp;#65039; In July and August, ride only the marked MTB routes under the local municipal rules.
 Open season
 Open from 13 June; closed from 21 September (published 2026 dates).
+Daily opening hours: 09:00-17:30
+Typical daily estimate; check the operator schedule.
 
 Access
 From | Transport | Duration
 Geneva | Car | ~1h10
 Chamonix | Train + bus | ~30 min
 
-Travel times and prices are 2026 indications &amp;middot; check before you go.</desc>
+Source: Les Houches. Prices, schedules, trail status and access can change; verify before travel.</desc>
   </wpt>
   <wpt lat="45.894601" lon="6.781642">
     <name>Les Houches: Prarion gondola valley station</name>
@@ -10754,13 +10824,15 @@ The peak-season 2026 adult bike-park day pass is 30 EUR and covers twelve lifts.
 
 Open season
 Open from 13 June; closed from 14 September (published 2026 dates).
+Daily opening hours: 09:00-17:30
+Typical daily estimate; check the operator schedule.
 
 Access
 From | Transport | Duration
 Geneva | Car | ~2h30
 Bourg-Saint-Maurice | Funicular | ~7 min
 
-Travel times and prices are 2026 indications &amp;middot; check before you go.</desc>
+Source: Les Arcs. Prices, schedules, trail status and access can change; verify before travel.</desc>
   </wpt>
   <wpt lat="45.613950" lon="6.774300">
     <name>Les Arcs: Bourg-Saint-Maurice funicular station</name>
@@ -10821,12 +10893,14 @@ Two lifts run in summer, the Mercantour gondola and the Combe Grosse detachable 
 
 Open season
 Open from 4 July; closed from 1 September (published 2026 dates).
+Daily opening hours: 09:00-17:00
+Typical daily estimate; check the operator schedule.
 
 Access
 From | Transport | Duration
 Nice | Car | ~1h50
 
-Travel times and prices are 2026 indications &amp;middot; check before you go.</desc>
+Source: Isola 2000. Prices, schedules, trail status and access can change; verify before travel.</desc>
   </wpt>
   <wpt lat="44.189460" lon="7.149760">
     <name>Isola 2000: Mercantour gondola base (village)</name>
@@ -10846,12 +10920,14 @@ Bike day pass 20 EUR, half day 15 EUR, single ride 10 EUR. Season pass 130 EUR f
 
 Open season
 Open from 4 July; closed from 31 August (published 2026 dates).
+Daily opening hours: 09:00-17:00
+Typical daily estimate; check the operator schedule.
 
 Access
 From | Transport | Duration
 Nice | Car | ~2h00
 
-Travel times and prices are 2026 indications &amp;middot; check before you go.</desc>
+Source: Auron. Prices, schedules, trail status and access can change; verify before travel.</desc>
   </wpt>
   <wpt lat="44.219900" lon="6.929730">
     <name>Auron: Blainon chairlift base (village, 1615 m)</name>
@@ -10868,12 +10944,14 @@ The Eguilles chairlift takes riders and bikes up in about 8 minutes. Bike day pa
 
 Open season
 Open from 27 June; closed from 31 August (published 2026 dates).
+Daily opening hours: 09:00-17:00
+Typical daily estimate; check the operator schedule.
 
 Access
 From | Transport | Duration
 Nice | Car | ~1h45
 
-Travel times and prices are 2026 indications &amp;middot; check before you go.</desc>
+Source: Valberg. Prices, schedules, trail status and access can change; verify before travel.</desc>
   </wpt>
   <wpt lat="44.080650" lon="6.955870">
     <name>Valberg: Eguilles chairlift base (1505 m)</name>
@@ -10890,12 +10968,14 @@ The Pic chairlift from Col Saint-Martin carries bikes; the ride is included in t
 
 Open season
 Open from 6 June; closed from 2 November (published 2026 dates).
+Daily opening hours: 09:00-17:00
+Typical daily estimate; check the operator schedule.
 
 Access
 From | Transport | Duration
 Nice | Car | ~1h20
 
-Travel times and prices are 2026 indications &amp;middot; check before you go.</desc>
+Source: La Colmiane. Prices, schedules, trail status and access can change; verify before travel.</desc>
   </wpt>
   <wpt lat="44.065590" lon="7.226970">
     <name>La Colmiane: Pic chairlift base (Col Saint-Martin, 1470 m)</name>
@@ -10919,8 +10999,38 @@ From | Transport | Duration
 Menton | Bike | ~1h15 climb
 Nice | Car | ~50 min
 
-Travel times and prices are 2026 indications &amp;middot; check before you go.</desc>
+Source: VTTour Ravin du Rank. Prices, schedules, trail status and access can change; verify before travel.</desc>
   </wpt>
+  <trk>
+    <name>Ravin du Rank: Col de la Madone &gt; Gorbio</name>
+    <desc>The complete 2.743 km Ravin du Rank descent from the Col de la Madone toward Gorbio: 554 m down, graded T5 / E2 by VTTour. Hyper-rough, narrow and ridden downhill only; climbing it means carrying the bike throughout.</desc>
+    <trkseg>
+      <trkpt lat="43.803100" lon="7.423700"/>
+      <trkpt lat="43.802500" lon="7.423700"/>
+      <trkpt lat="43.801500" lon="7.424600"/>
+      <trkpt lat="43.798800" lon="7.424500"/>
+      <trkpt lat="43.799100" lon="7.425100"/>
+      <trkpt lat="43.797600" lon="7.425900"/>
+      <trkpt lat="43.796900" lon="7.427200"/>
+      <trkpt lat="43.795800" lon="7.427600"/>
+      <trkpt lat="43.795400" lon="7.428200"/>
+      <trkpt lat="43.795300" lon="7.429900"/>
+      <trkpt lat="43.794400" lon="7.431100"/>
+      <trkpt lat="43.794100" lon="7.431300"/>
+      <trkpt lat="43.793400" lon="7.431500"/>
+      <trkpt lat="43.793500" lon="7.432800"/>
+      <trkpt lat="43.792100" lon="7.434000"/>
+      <trkpt lat="43.792000" lon="7.435700"/>
+      <trkpt lat="43.791300" lon="7.437000"/>
+      <trkpt lat="43.791400" lon="7.437300"/>
+      <trkpt lat="43.789400" lon="7.440200"/>
+      <trkpt lat="43.788400" lon="7.440600"/>
+      <trkpt lat="43.788100" lon="7.441100"/>
+      <trkpt lat="43.788100" lon="7.442100"/>
+      <trkpt lat="43.787600" lon="7.442000"/>
+      <trkpt lat="43.787200" lon="7.442900"/>
+    </trkseg>
+  </trk>
   <wpt lat="43.802400" lon="7.458455">
     <name>Menton: Sainte-Agnes GR51 trailhead</name>
     <desc>Start of the mapped Sainte-Agnes &gt; Monti descent: the complete GR51 trail described by VTTour sentier 137 (T3 / E2).</desc>
@@ -11174,13 +11284,15 @@ The 8-seat Daolasa - Val Mastellina gondola runs from Commezzadura in the valley
 
 Open season
 Open from 27 June; closed from 14 September (published 2026 dates).
+Daily opening hours: 09:00-17:00
+Typical daily estimate; check the operator schedule.
 
 Access
 From | Transport | Duration
 Trento | Car | ~1h15
 Milan | Car | ~3h00
 
-Travel times and prices are 2026 indications &amp;middot; check before you go.</desc>
+Source: Val di Sole Bikeland. Prices, schedules, trail status and access can change; verify before travel.</desc>
   </wpt>
   <wpt lat="46.319180" lon="10.836200">
     <name>Val di Sole: Daolasa gondola valley station (815 m)</name>
@@ -11197,12 +11309,14 @@ The Fitzsimmons Express chair lifts riders out of Whistler Village; Garbanzo, Cr
 
 Open season
 Open from 15 May; closed from 16 October (typical window; check the operator and conditions).
+Daily opening hours: 10:00-20:00
+Typical daily estimate; check the operator schedule.
 
 Access
 From | Transport | Duration
 Vancouver | Car | ~2h00
 
-Travel times and prices are 2026 indications &amp;middot; check before you go.</desc>
+Source: Whistler Blackcomb. Prices, schedules, trail status and access can change; verify before travel.</desc>
   </wpt>
   <wpt lat="50.112850" lon="-122.953320">
     <name>Whistler: bike park base, Whistler Village (685 m)</name>
@@ -11222,12 +11336,14 @@ L'Etoile Filante gondola carries bikes to the summit; two chairlifts serve the l
 
 Open season
 Open from 15 June; closed from 16 October (typical window; check the operator and conditions).
+Daily opening hours: 10:00-17:00
+Typical daily estimate; check the operator schedule.
 
 Access
 From | Transport | Duration
 Quebec City | Car | ~35 min
 
-Travel times and prices are 2026 indications &amp;middot; check before you go.</desc>
+Source: Mont-Sainte-Anne. Prices, schedules, trail status and access can change; verify before travel.</desc>
   </wpt>
   <wpt lat="47.074380" lon="-70.908490">
     <name>Mont-Sainte-Anne: gondola base (180 m)</name>
@@ -11244,36 +11360,40 @@ The Suzuran gondola lifts riders and bikes from 1055 m to the 1780 m summit in a
 
 Open season
 Open from 24 April; closed from 16 November (published 2026 dates).
+Daily opening hours: 08:30-16:30
+Typical daily estimate; check the operator schedule.
 
 Access
 From | Transport | Duration
 Tokyo | Train + shuttle | ~3h00
 Fujimi station | Shuttle | ~10 min
 
-Travel times and prices are 2026 indications &amp;middot; check before you go.</desc>
+Source: Fujimi Panorama. Prices, schedules, trail status and access can change; verify before travel.</desc>
   </wpt>
   <wpt lat="35.913090" lon="138.204760">
     <name>Fujimi Panorama: gondola base (1055 m)</name>
   </wpt>
   <wpt lat="46.751370" lon="6.353640">
-    <name>Metabief - Mont d'Or (Jura, FR) [26.90 EUR]</name>
+    <name>Metabief - Mont d'Or (Jura, FR) [26.90 EUR / Magic Pass]</name>
     <desc>Morond 1410 m - top of the Morond chairlift
 
 Trails
 The biggest bike park in the eastern Jura, and the nearest real downhill to Lausanne. Eight marked downhill and enduro runs share about 390 m of vertical off the Morond, roughly 25 km of trail in total: dark spruce forest, roots and off-camber limestone rather than manicured berms, which makes the reds and blacks ride harder than the modest drop suggests. It rides best in the dry.
 
 Getting up / price
-The Morond chairlift carries bikes, usually 9h30 to 17h30. Day pass 26.90 EUR, four consecutive hours 18.90 EUR. The park opens 1 May 2026 with the chairlift and the first trails, then runs through the summer.
+The Morond chairlift carries bikes, usually 9h30 to 17h30. Day pass 26.90 EUR, four consecutive hours 18.90 EUR. Free with the Magic Pass, including access to the Morond chairlift and bike park. The park opens 1 May 2026 on weekends and public holidays, runs daily from 27 June to 30 August, then returns to weekends in September.
 
 Open season
-Open from 1 May; closed from 19 October (typical window; check the operator and conditions).
+Open from 1 May; closed from 28 September (published 2026 bike-park dates).
+Daily opening hours: 09:30-17:30
+Published operating hours; check the operator schedule.
 
 Access
 From | Transport | Duration
 Lausanne | Car | ~45 min
 Lausanne | Train + bike | ~1h30
 
-Travel times and prices are 2026 indications &amp;middot; check before you go.</desc>
+Sources: Magic Pass Metabief and the bike-park operator. Prices are 2026 indications &amp;middot; check before you go.</desc>
   </wpt>
   <wpt lat="46.767620" lon="6.356560">
     <name>Metabief: Morond chairlift base (village, 1020 m)</name>
@@ -11290,13 +11410,15 @@ The Asitzbahn gondola runs in two sections from Leogang at 835 m, with the Asitz
 
 Open season
 Open from 8 May; closed from 9 November (published 2026 dates).
+Daily opening hours: 08:30-16:30
+Typical daily estimate; check the operator schedule.
 
 Access
 From | Transport | Duration
 Salzburg | Car | ~1h00
 Munich | Car | ~2h00
 
-Travel times and prices are 2026 indications &amp;middot; check before you go.</desc>
+Source: Bikepark Leogang. Prices, schedules, trail status and access can change; verify before travel.</desc>
   </wpt>
   <wpt lat="47.439250" lon="12.718830">
     <name>Leogang: Asitzbahn valley station (835 m)</name>
@@ -11316,12 +11438,14 @@ The Schattberg X-Press lifts bikes in two sections out of Saalbach at 990 m; a d
 
 Open season
 Open from 15 May; closed from 27 October (typical window; check the operator and conditions).
+Daily opening hours: 08:30-16:30
+Typical daily estimate; check the operator schedule.
 
 Access
 From | Transport | Duration
 Salzburg | Car | ~1h15
 
-Travel times and prices are 2026 indications &amp;middot; check before you go.</desc>
+Source: Saalbach. Prices, schedules, trail status and access can change; verify before travel.</desc>
   </wpt>
   <wpt lat="47.390310" lon="12.635280">
     <name>Saalbach: Schattberg X-Press valley station (990 m)</name>
@@ -11341,13 +11465,15 @@ The Planaibahn gondola runs in two sections from Schladming at 740 m. Day pass 5
 
 Open season
 Open from 29 May; closed from 6 October (published 2026 dates).
+Daily opening hours: 08:30-16:30
+Typical daily estimate; check the operator schedule.
 
 Access
 From | Transport | Duration
 Salzburg | Car | ~1h20
 Vienna | Car | ~3h30
 
-Travel times and prices are 2026 indications &amp;middot; check before you go.</desc>
+Source: Schladming-Dachstein. Prices, schedules, trail status and access can change; verify before travel.</desc>
   </wpt>
   <wpt lat="47.392890" lon="13.693220">
     <name>Schladming: Planaibahn valley station (740 m)</name>
@@ -11364,12 +11490,14 @@ The Moeseralmbahn gondola from Fiss serves the park trails; the Schoenjochbahn c
 
 Open season
 Open from 13 June; closed from 12 October (published 2026 dates).
+Daily opening hours: 08:30-17:00
+Published operating hours; check the operator schedule.
 
 Access
 From | Transport | Duration
 Innsbruck | Car | ~1h15
 
-Travel times and prices are 2026 indications &amp;middot; check before you go.</desc>
+Source: Bikepark Serfaus-Fiss-Ladis. Prices, schedules, trail status and access can change; verify before travel.</desc>
   </wpt>
   <wpt lat="47.056730" lon="10.613640">
     <name>Serfaus-Fiss-Ladis: Moeseralmbahn base, Fiss (1465 m)</name>
@@ -11389,12 +11517,14 @@ The Giggijochbahn and Gaislachkoglbahn gondolas both take bikes and both sell ti
 
 Open season
 Open from 12 June; closed from 5 October (typical window; check the operator and conditions).
+Daily opening hours: 08:30-16:30
+Typical daily estimate; check the operator schedule.
 
 Access
 From | Transport | Duration
 Innsbruck | Car | ~1h00
 
-Travel times and prices are 2026 indications &amp;middot; check before you go.</desc>
+Source: Bike Republic Solden. Prices, schedules, trail status and access can change; verify before travel.</desc>
   </wpt>
   <wpt lat="46.972500" lon="11.008680">
     <name>Soelden: Giggijochbahn valley station (1345 m)</name>
@@ -11411,12 +11541,14 @@ The Muttereralmbahn gondola from Mutters, reachable by tram from Innsbruck. Day 
 
 Open season
 Open from 25 May; closed from 26 October (typical window; check the operator and conditions).
+Daily opening hours: 09:00-17:00
+Published operating hours; check the operator schedule.
 
 Access
 From | Transport | Duration
 Innsbruck | Tram + gondola | ~35 min
 
-Travel times and prices are 2026 indications &amp;middot; check before you go.</desc>
+Source: Bikepark Innsbruck. Prices, schedules, trail status and access can change; verify before travel.</desc>
   </wpt>
   <wpt lat="47.222440" lon="11.366270">
     <name>Innsbruck: Muttereralmbahn valley station, Mutters (970 m)</name>
@@ -11437,13 +11569,15 @@ The Petzen gondola climbs from 650 m in Feistritz to 1700 m, daily 9:00 to 16:30
 
 Open season
 Open from 15 May; closed from 27 October (typical window; check the operator and conditions).
+Daily opening hours: 09:00-16:30
+Published hours; last ascent at 16:15.
 
 Access
 From | Transport | Duration
 Klagenfurt | Car | ~45 min
 Ljubljana | Car | ~1h15
 
-Travel times and prices are 2026 indications &amp;middot; check before you go.</desc>
+Source: MTB Zone Petzen. Prices, schedules, trail status and access can change; verify before travel.</desc>
   </wpt>
   <wpt lat="46.540450" lon="14.773960">
     <name>Petzen: gondola valley station, Feistritz (650 m)</name>
@@ -11460,13 +11594,15 @@ The LAAX cable car and the Arena Express from Flims both carry bikes to Crap Sog
 
 Open season
 Open from 15 June; closed from 26 October (typical window; check the operator and conditions).
+Daily opening hours: 09:00-17:00
+Typical daily estimate; check the operator schedule.
 
 Access
 From | Transport | Duration
 Zurich | Car | ~1h45
 Chur | Train + bus | ~50 min
 
-Travel times and prices are 2026 indications &amp;middot; check before you go.</desc>
+Source: Flims Laax. Prices, schedules, trail status and access can change; verify before travel.</desc>
   </wpt>
   <wpt lat="46.820170" lon="9.263250">
     <name>Laax: cable car valley station (1090 m)</name>
@@ -11486,13 +11622,15 @@ The Gotschnabahn cable car from Klosters at 1190 m. A day pass including bike tr
 
 Open season
 Open from 15 June; closed from 20 October (typical window; check the operator and conditions).
+Daily opening hours: 08:30-17:00
+Typical daily estimate; check the operator schedule.
 
 Access
 From | Transport | Duration
 Zurich | Train | ~2h15
 Chur | Train | ~1h00
 
-Travel times and prices are 2026 indications &amp;middot; check before you go.</desc>
+Source: Davos Klosters. Prices, schedules, trail status and access can change; verify before travel.</desc>
   </wpt>
   <wpt lat="46.869000" lon="9.880440">
     <name>Klosters: Gotschnabahn valley station (1190 m)</name>
@@ -11509,13 +11647,15 @@ The Scuol gondola carries bikes, as do the Ftan and Naluns chairlifts. The opera
 
 Open season
 Open from 15 June; closed from 19 October (typical window; check the operator and conditions).
+Daily opening hours: 09:00-17:00
+Typical daily estimate; check the operator schedule.
 
 Access
 From | Transport | Duration
 Zurich | Train | ~3h00
 Landeck | Car | ~1h00
 
-Travel times and prices are 2026 indications &amp;middot; check before you go.</desc>
+Source: Engadin Scuol. Prices, schedules, trail status and access can change; verify before travel.</desc>
   </wpt>
   <wpt lat="46.795320" lon="10.289130">
     <name>Scuol: gondola valley station (1295 m)</name>
@@ -11532,13 +11672,15 @@ The Titlis Xpress gondola from Engelberg at 1000 m to Trubsee, then the Jochpass
 
 Open season
 Open from 15 June; closed from 19 October (typical window; check the operator and conditions).
+Daily opening hours: 09:00-17:00
+Typical daily estimate; check the operator schedule.
 
 Access
 From | Transport | Duration
 Lucerne | Train | ~45 min
 Zurich | Train | ~1h45
 
-Travel times and prices are 2026 indications &amp;middot; check before you go.</desc>
+Source: Engelberg. Prices, schedules, trail status and access can change; verify before travel.</desc>
   </wpt>
   <wpt lat="46.793500" lon="8.397670">
     <name>Engelberg: Trubsee, gondola mid-station (1790 m)</name>
@@ -11558,13 +11700,15 @@ The 12-seat Prodalp-Express gondola from Tannenheim, plus the Prodkamm chairlift
 
 Open season
 Open from 23 May; closed from 26 October (typical window; check the operator and conditions).
+Daily opening hours: 09:00-17:00
+Typical daily estimate; check the operator schedule.
 
 Access
 From | Transport | Duration
 Zurich | Train + bus | ~1h30
 Zurich | Car | ~1h00
 
-Travel times and prices are 2026 indications &amp;middot; check before you go.</desc>
+Source: Flumserberg. Prices, schedules, trail status and access can change; verify before travel.</desc>
   </wpt>
   <wpt lat="47.089060" lon="9.303490">
     <name>Flumserberg: Prodalp-Express valley station, Tannenheim (1225 m)</name>
@@ -11581,13 +11725,15 @@ The Signalbahn from St. Moritz Dorf and the gondola from Celerina to Marguns bot
 
 Open season
 Open from 15 June; closed from 19 October (typical window; check the operator and conditions).
+Daily opening hours: 08:30-17:00
+Typical daily estimate; check the operator schedule.
 
 Access
 From | Transport | Duration
 Zurich | Train | ~3h15
 Chur | Train | ~2h00
 
-Travel times and prices are 2026 indications &amp;middot; check before you go.</desc>
+Source: Engadin St. Moritz. Prices, schedules, trail status and access can change; verify before travel.</desc>
   </wpt>
   <wpt lat="46.483530" lon="9.832660">
     <name>St. Moritz: Signalbahn valley station (1775 m)</name>
@@ -11607,13 +11753,15 @@ The Chavannes gondola and Chavannes Express from the village at 1170 m, plus the
 
 Open season
 Open from 19 June; closed from 13 September (published 2026 dates). Mont Chery closes 30 August; pre-opening weekends from 22 May.
+Daily opening hours: 09:00-17:00
+Typical daily estimate; check the operator schedule.
 
 Access
 From | Transport | Duration
 Geneva | Car | ~1h30
 Lausanne | Car | ~2h00
 
-Travel times and prices are 2026 indications &amp;middot; check before you go.</desc>
+Source: Les Gets. Prices, schedules, trail status and access can change; verify before travel.</desc>
   </wpt>
   <wpt lat="46.156960" lon="6.668730">
     <name>Les Gets: Chavannes gondola valley station (1170 m)</name>
@@ -11633,13 +11781,15 @@ The Pleney gondola from the middle of Morzine at 985 m; the Prodains Express 3S 
 
 Open season
 Open from 19 June; closed from 13 September (typical window; check the operator and conditions).
+Daily opening hours: 09:00-17:00
+Typical daily estimate; check the operator schedule.
 
 Access
 From | Transport | Duration
 Geneva | Car | ~1h20
 Lausanne | Car | ~1h50
 
-Travel times and prices are 2026 indications &amp;middot; check before you go.</desc>
+Source: Morzine. Prices, schedules, trail status and access can change; verify before travel.</desc>
   </wpt>
   <wpt lat="46.179900" lon="6.701940">
     <name>Morzine: Pleney gondola valley station (985 m)</name>
@@ -11659,13 +11809,15 @@ The Beauregard gondola from the village at 1040 m, plus the Cret du Merle and Cr
 
 Open season
 Open from 13 June; closed from 20 September (published 2026 dates). Weekends in June and September, daily 1 July to 30 August.
+Daily opening hours: 09:00-17:00
+Typical daily estimate; check the operator schedule.
 
 Access
 From | Transport | Duration
 Geneva | Car | ~1h15
 Annecy | Car | ~40 min
 
-Travel times and prices are 2026 indications &amp;middot; check before you go.</desc>
+Source: La Clusaz. Prices, schedules, trail status and access can change; verify before travel.</desc>
   </wpt>
   <wpt lat="45.903210" lon="6.422250">
     <name>La Clusaz: Beauregard gondola valley station (1040 m)</name>
@@ -11682,13 +11834,15 @@ The Grand Massif Express gondola from Samoens at 700 m. A Grand Massif pedestria
 
 Open season
 Open from 27 June; closed from 31 August (typical window; check the operator and conditions).
+Daily opening hours: 09:00-17:00
+Typical daily estimate; check the operator schedule.
 
 Access
 From | Transport | Duration
 Geneva | Car | ~1h15
 Lausanne | Car | ~2h15
 
-Travel times and prices are 2026 indications &amp;middot; check before you go.</desc>
+Source: Samoens. Prices, schedules, trail status and access can change; verify before travel.</desc>
   </wpt>
   <wpt lat="46.076530" lon="6.721230">
     <name>Samoens: Grand Massif Express valley station (700 m)</name>
@@ -11705,13 +11859,15 @@ The Toviere gondola from Tignes le Lac at 2090 m, plus the Palafour and other su
 
 Open season
 Open from 4 July; closed from 30 August (published 2026 dates).
+Daily opening hours: 09:00-17:00
+Typical daily estimate; check the operator schedule.
 
 Access
 From | Transport | Duration
 Geneva | Car | ~3h00
 Chambery | Car | ~2h15
 
-Travel times and prices are 2026 indications &amp;middot; check before you go.</desc>
+Source: Tignes. Prices, schedules, trail status and access can change; verify before travel.</desc>
   </wpt>
   <wpt lat="45.468240" lon="6.907230">
     <name>Tignes: Toviere gondola base, Tignes le Lac (2090 m)</name>
@@ -11728,13 +11884,15 @@ The Ratier gondola from Chantemerle at 1360 m; the Casse du Boeuf chairlift at V
 
 Open season
 Open from 20 June; closed from 30 August (published 2026 dates). Chantemerle opens 27 June, Briancon and Monetier 4 July.
+Daily opening hours: 09:00-17:00
+Typical daily estimate; check the operator schedule.
 
 Access
 From | Transport | Duration
 Grenoble | Car | ~1h45
 Marseille | Car | ~3h00
 
-Travel times and prices are 2026 indications &amp;middot; check before you go.</desc>
+Source: Serre Chevalier. Prices, schedules, trail status and access can change; verify before travel.</desc>
   </wpt>
   <wpt lat="44.932930" lon="6.587400">
     <name>Serre Chevalier: Ratier gondola valley station, Chantemerle (1360 m)</name>
@@ -11754,13 +11912,15 @@ The Summit Express gondola and the Comet Six Pack from the village at 1600 m. Ad
 
 Open season
 Open from 21 June; closed from 15 September (published 2026 dates).
+Daily opening hours: 10:00-17:00
+Typical daily estimate; check the operator schedule.
 
 Access
 From | Transport | Duration
 Kelowna | Car | ~1h15
 Vancouver | Car | ~4h45
 
-Travel times and prices are 2026 indications &amp;middot; check before you go.</desc>
+Source: SilverStar. Prices, schedules, trail status and access can change; verify before travel.</desc>
   </wpt>
   <wpt lat="50.360430" lon="-119.057100">
     <name>SilverStar: village base (1600 m)</name>
@@ -11777,13 +11937,15 @@ The Sunburst Express chairlift from the village at 1260 m. Adult day ticket 82 C
 
 Open season
 Open from 20 June; closed from 7 September (typical window; check the operator and conditions).
+Daily opening hours: 10:00-17:00
+Typical daily estimate; check the operator schedule.
 
 Access
 From | Transport | Duration
 Kamloops | Car | ~50 min
 Vancouver | Car | ~4h30
 
-Travel times and prices are 2026 indications &amp;middot; check before you go.</desc>
+Source: Sun Peaks. Prices, schedules, trail status and access can change; verify before travel.</desc>
   </wpt>
   <wpt lat="50.884610" lon="-119.887330">
     <name>Sun Peaks: village base (1260 m)</name>
@@ -11800,13 +11962,15 @@ The Elk Quad from the resort base at 1065 m, daily 10:00 to 16:00 and until 19:0
 
 Open season
 Open from 25 June; closed from 7 September (published 2026 dates).
+Daily opening hours: 10:00-16:00
+Published hours; Tuesdays and Thursdays run until 19:00.
 
 Access
 From | Transport | Duration
 Calgary | Car | ~3h00
 Cranbrook | Car | ~1h15
 
-Travel times and prices are 2026 indications &amp;middot; check before you go.</desc>
+Source: Fernie Alpine Resort. Prices, schedules, trail status and access can change; verify before travel.</desc>
   </wpt>
   <wpt lat="49.465160" lon="-115.087030">
     <name>Fernie: resort base (1065 m)</name>
@@ -11823,13 +11987,15 @@ The Telecabine Express gondola from the village at 260 m. Summer bike ticket pri
 
 Open season
 Open from 24 May; closed from 13 October (typical window; check the operator and conditions).
+Daily opening hours: 10:00-17:00
+Typical daily estimate; check the operator schedule.
 
 Access
 From | Transport | Duration
 Montreal | Car | ~1h45
 Ottawa | Car | ~2h30
 
-Travel times and prices are 2026 indications &amp;middot; check before you go.</desc>
+Source: Tremblant. Prices, schedules, trail status and access can change; verify before travel.</desc>
   </wpt>
   <wpt lat="46.213110" lon="-74.583910">
     <name>Mont-Tremblant: gondola base, pedestrian village (260 m)</name>
@@ -11846,13 +12012,15 @@ Six lifts serve the mountain from the village at 200 m. Adult single-day tickets
 
 Open season
 Open from 15 May; closed from 26 October (typical window; check the operator and conditions).
+Daily opening hours: 10:00-17:00
+Typical daily estimate; check the operator schedule.
 
 Access
 From | Transport | Duration
 Montreal | Car | ~1h00
 Sherbrooke | Car | ~45 min
 
-Travel times and prices are 2026 indications &amp;middot; check before you go.</desc>
+Source: Bromont. Prices, schedules, trail status and access can change; verify before travel.</desc>
   </wpt>
   <wpt lat="45.300730" lon="-72.636840">
     <name>Bromont: Express du Village base (200 m)</name>
@@ -11869,6 +12037,8 @@ No lift: climb the signed ascent under your own power. Trail access is paid, but
 
 Open season
 Open from 16 March; closed from 1 December (published 2026 tourism dates). Weather and mud closures can shorten the riding season.
+Daily opening hours: 10:00-17:00
+Typical daily estimate; check the operator schedule.
 
 Access
 From | Transport | Duration
@@ -11889,13 +12059,15 @@ The Noah gondola lifts riders and bikes from 745 m to the 1290 m summit in about
 
 Open season
 Open from 25 April; closed from 15 November (typical window; check the operator and conditions).
+Daily opening hours: 08:30-16:30
+Typical daily estimate; check the operator schedule.
 
 Access
 From | Transport | Duration
 Tokyo | Train + bus | ~3h30
 Nagano | Train + bus | ~1h15
 
-Travel times and prices are 2026 indications &amp;middot; check before you go.</desc>
+Source: Hakuba Iwatake. Prices, schedules, trail status and access can change; verify before travel.</desc>
   </wpt>
   <wpt lat="36.717050" lon="137.858620">
     <name>Hakuba Iwatake: Noah gondola base (745 m)</name>
@@ -11912,13 +12084,15 @@ Chairlifts carry riders and bikes from the base at 1295 m. The resort publishes 
 
 Open season
 Open from 1 May; closed from 31 October (typical window; check the operator and conditions).
+Daily opening hours: 08:30-16:30
+Typical daily estimate; check the operator schedule.
 
 Access
 From | Transport | Duration
 Tokyo | Car | ~2h00
 Kawaguchiko | Car | ~30 min
 
-Travel times and prices are 2026 indications &amp;middot; check before you go.</desc>
+Source: Fujiten. Prices, schedules, trail status and access can change; verify before travel.</desc>
   </wpt>
   <wpt lat="35.441410" lon="138.688390">
     <name>Fujiten: base area (1295 m)</name>
@@ -11935,13 +12109,15 @@ The Kosciuszko Express chairlift and the Merritts Gondola both carry bikes from 
 
 Open season
 Open from 21 November; closed from 27 April (published dates). 2026/27 season: 21 November 2026 to 26 April 2027.
+Daily opening hours: 09:00-16:30
+Typical daily estimate; check the operator schedule.
 
 Access
 From | Transport | Duration
 Canberra | Car | ~2h30
 Sydney | Car | ~5h30
 
-Travel times and prices are 2026 indications &amp;middot; check before you go.</desc>
+Source: Thredbo. Prices, schedules, trail status and access can change; verify before travel.</desc>
   </wpt>
   <wpt lat="-36.491770" lon="148.307370">
     <name>Thredbo: Merritts Gondola top (1665 m)</name>
@@ -11961,13 +12137,15 @@ Two chairlifts take bikes, El Tata and El Refugio, both from Plaza Tata at 1535 
 
 Open season
 Open from 1 December; closed from 30 April (typical window; check the operator and conditions). Southern-hemisphere season.
+Daily opening hours: 10:00-16:45
+Published operating hours; check the operator schedule.
 
 Access
 From | Transport | Duration
 Chillan | Car | ~1h30
 Santiago | Car | ~6h00
 
-Travel times and prices are 2026 indications &amp;middot; check before you go.</desc>
+Source: Nevados de Chillan. Prices, schedules, trail status and access can change; verify before travel.</desc>
   </wpt>
   <wpt lat="-36.904690" lon="-71.413750">
     <name>Nevados de Chillan: El Tata chairlift top (1700 m)</name>
@@ -11987,13 +12165,15 @@ The Telecabina Amancay runs year-round from the base at 1055 m and takes bikes i
 
 Open season
 Open from 1 December; closed from 15 April (typical window; check the operator and conditions). Southern-hemisphere season.
+Daily opening hours: 09:00-16:30
+Typical daily estimate; check the operator schedule.
 
 Access
 From | Transport | Duration
 Bariloche | Car | ~30 min
 Bariloche | Bus | ~50 min
 
-Travel times and prices are 2026 indications &amp;middot; check before you go.</desc>
+Source: Catedral Alta Patagonia. Prices, schedules, trail status and access can change; verify before travel.</desc>
   </wpt>
   <wpt lat="-41.168340" lon="-71.443300">
     <name>Cerro Catedral: Amancay gondola base (1055 m)</name>
@@ -12013,12 +12193,14 @@ One chairlift is adapted for bikes and lifts riders out of Base Camp. Reported d
 
 Open season
 Open from 1 December; closed from 1 April (typical window; check the operator and conditions). Weekends only in parts of the season.
+Daily opening hours: 09:00-16:30
+Typical daily estimate; check the operator schedule.
 
 Access
 From | Transport | Duration
 Santiago | Car | ~1h30
 
-Travel times and prices are 2026 indications &amp;middot; check before you go.</desc>
+Source: La Parva. Prices, schedules, trail status and access can change; verify before travel.</desc>
   </wpt>
   <wpt lat="-33.350090" lon="-70.281540">
     <name>La Parva: Cururo chairlift top (2945 m)</name>
@@ -12040,7 +12222,7 @@ Access
 From | Transport | Duration
 Oaxaca City | Car | ~45 min
 
-Travel times and prices are 2026 indications &amp;middot; check before you go.</desc>
+Source: Sierra Norte Expediciones. Prices, schedules, trail status and access can change; verify before travel.</desc>
   </wpt>
   <wpt lat="19.191510" lon="-100.113929">
     <name>Valle de Bravo - Monte Alto (MX) [shuttle, no lift]</name>
@@ -12060,7 +12242,7 @@ From | Transport | Duration
 Mexico City | Car | ~2h30
 Toluca | Car | ~1h15
 
-Travel times and prices are 2026 indications &amp;middot; check before you go.</desc>
+Source: Trailforks Valle de Bravo. Prices, schedules, trail status and access can change; verify before travel.</desc>
   </wpt>
   <wpt lat="9.960528" lon="-84.531904">
     <name>Buen Camino Bike Park (San Mateo, CR) [25 USD, no lift]</name>
@@ -12074,13 +12256,15 @@ No lift - you ride up and descend. Bike day pass 25 USD bought on site, hiking 1
 
 Open season
 Open from 1 January with no seasonal closure (normally open year-round).
+Daily opening hours: 08:00-16:00
+Published Wednesday-Monday hours; closed Tuesday.
 
 Access
 From | Transport | Duration
 San Jose | Car | ~1h00
 Jaco | Car | ~40 min
 
-Travel times and prices are 2026 indications &amp;middot; check before you go.</desc>
+Source: Buen Camino. Prices, schedules, trail status and access can change; verify before travel.</desc>
   </wpt>
   <wpt lat="14.486900" lon="-90.743400">
     <name>El Zur (Volcan de Agua, GT) [guided only, 90-199 USD]</name>
@@ -12100,7 +12284,7 @@ From | Transport | Duration
 Antigua Guatemala | Car | ~30 min
 Guatemala City | Car | ~1h30
 
-Travel times and prices are 2026 indications &amp;middot; check before you go.</desc>
+Source: Old Town Outfitters. Prices, schedules, trail status and access can change; verify before travel.</desc>
   </wpt>
   <wpt lat="31.206300" lon="-7.861900">
     <name>Oukaimeden High Atlas Enduro (MA) [no lift]</name>
@@ -12135,13 +12319,15 @@ Every summer gondola carries bikes: Kronplatz 2000 and Ried from Reischach at 95
 
 Open season
 Open from 16 May; closed from 12 October (published 2026 dates). Sectors open in stages: Reischach from 16 May, San Vigilio from 19 June, Valdaora from 20 June.
+Daily opening hours: 09:00-17:00
+Typical daily estimate; check the operator schedule.
 
 Access
 From | Transport | Duration
 Bolzano | Car | ~1h15
 Innsbruck | Car | ~1h45
 
-Travel times and prices are 2026 indications &amp;middot; check before you go.</desc>
+Source: Kronplatz. Prices, schedules, trail status and access can change; verify before travel.</desc>
   </wpt>
   <wpt lat="46.771950" lon="11.941030">
     <name>Kronplatz: Reischach valley station (950 m)</name>
@@ -12161,13 +12347,15 @@ The Andalo - Doss Pela gondola from 1030 m is the main bike lift, with the Albi 
 
 Open season
 Open from 18 May; closed from 2 November (typical window; check the operator and conditions). Andalo opens first, the upper chairlifts from late May.
+Daily opening hours: 09:00-17:00
+Typical daily estimate; check the operator schedule.
 
 Access
 From | Transport | Duration
 Trento | Car | ~40 min
 Verona | Car | ~2h00
 
-Travel times and prices are 2026 indications &amp;middot; check before you go.</desc>
+Source: Dolomiti Paganella Bike. Prices, schedules, trail status and access can change; verify before travel.</desc>
   </wpt>
   <wpt lat="46.163570" lon="11.005600">
     <name>Paganella: Andalo gondola valley station (1030 m)</name>
@@ -12187,13 +12375,15 @@ Three lifts take bikes: Piz Sorega from San Cassiano at 1545 m, La Fraina and Pr
 
 Open season
 Open from 18 June; closed from 2 October (published 2026 dates).
+Daily opening hours: 09:00-17:00
+Typical daily estimate; check the operator schedule.
 
 Access
 From | Transport | Duration
 Bolzano | Car | ~1h20
 Brunico | Car | ~50 min
 
-Travel times and prices are 2026 indications &amp;middot; check before you go.</desc>
+Source: Alta Badia Bike Beats. Prices, schedules, trail status and access can change; verify before travel.</desc>
   </wpt>
   <wpt lat="46.567550" lon="11.937750">
     <name>Alta Badia: Piz Sorega gondola base, San Cassiano (1545 m)</name>
@@ -12213,13 +12403,15 @@ The Laurin 1 gondola from the middle of Nova Levante at 1190 m carries bikes to 
 
 Open season
 Open from 23 May; closed from 2 November (published 2026 dates). Dates are the lift company's summer season.
+Daily opening hours: 09:00-17:00
+Typical daily estimate; check the operator schedule.
 
 Access
 From | Transport | Duration
 Bolzano | Car | ~35 min
 Trento | Car | ~1h20
 
-Travel times and prices are 2026 indications &amp;middot; check before you go.</desc>
+Source: Eggental. Prices, schedules, trail status and access can change; verify before travel.</desc>
   </wpt>
   <wpt lat="46.432290" lon="11.545840">
     <name>Carezza: Laurin 1 valley station, Nova Levante (1190 m)</name>
@@ -12236,6 +12428,8 @@ The Pohorska Vzpenjaca gondola serves the main hill, with additional lifts in th
 
 Open season
 Open from 11 March; closed from 1 December (published opening and 2026 season-pass end used as the practical season).
+Daily opening hours: 09:00-17:00
+Typical daily estimate; check the operator schedule.
 
 Access
 From | Transport | Duration
@@ -12256,6 +12450,8 @@ No lift: pedal the climbing roads and connectors or arrange transport through a 
 
 Open season
 Open from 1 January with no seasonal closure in a typical year. The destination markets year-round cycling; avoid the hottest summer afternoons and check trail conditions after storms.
+Daily opening hours: 08:00-18:00
+Typical daily estimate; check the operator schedule.
 
 Access
 From | Transport | Duration
@@ -12298,6 +12494,8 @@ Dajti Ekspres reaches the plateau and is reported to carry bikes, giving access 
 &amp;#9888;&amp;#65039; Shared national-park terrain: control speed around walkers, respect closures and do not assume every hiking path permits or suits bikes.
 Open season
 Open from 1 March; closed from 1 December (typical riding window). Low trails may be rideable in winter; check gondola operation, rain and snow conditions.
+Daily opening hours: 09:00-18:00
+Typical daily estimate; check the operator schedule.
 
 Access
 From | Transport | Duration
@@ -12318,6 +12516,8 @@ The four-seat Pancicev Vrh chairlift has bike carriers and serves the downhill t
 
 Open season
 Open from 15 June; closed from 15 September (typical summer-lift window; exact 2026 bike-park dates not published in the sources checked).
+Daily opening hours: 09:00-17:00
+Typical daily estimate; check the operator schedule.
 
 Access
 From | Transport | Duration
@@ -12338,6 +12538,8 @@ Skyvall carries bikes from Loudenvielle to 1600 m, then the Privilege chairlift 
 
 Open season
 Open from 8 May; closed from 19 October (published 2026 span). May, June, September and October are mostly weekends and holidays; daily operation is from 4 July through 30 August, and the upper chairlifts run on selected days.
+Daily opening hours: 09:00-17:00
+Typical daily estimate; check the operator schedule.
 
 Access
 From | Transport | Duration
@@ -12358,6 +12560,8 @@ The detachable Bouleaux chairlift carries bikes. The 2026 adult day pass is 22.5
 
 Open season
 Open from 27 June; closed from 31 August (published 2026 dates). The opening weekend uses the Bouleaux chairlift only; daily operation runs from 4 July through 30 August.
+Daily opening hours: 09:00-17:00
+Typical daily estimate; check the operator schedule.
 
 Access
 From | Transport | Duration
@@ -12378,6 +12582,8 @@ The village gondola serves the park. The published adult day pass starts at 24.5
 
 Open season
 Open from 27 June; closed from 31 August (published 2026 dates). The park operates daily in the main window, subject to weather and the Tour de France closure on 6 July 2026.
+Daily opening hours: 09:00-17:00
+Typical daily estimate; check the operator schedule.
 
 Access
 From | Transport | Duration
@@ -12398,6 +12604,8 @@ The Cadi-Moixero gondola and Cap de Comella chairlift serve the park. The latest
 
 Open season
 Open from 14 June; closed from 6 October (typical window based on the latest full published season). Core daily lift operation is concentrated in July and August, with reduced schedules outside it.
+Daily opening hours: 09:00-17:00
+Typical daily estimate; check the operator schedule.
 
 Access
 From | Transport | Duration
@@ -12438,6 +12646,8 @@ Summer access uses the Borreguiles gondola and Veleta chairlift. A current bike-
 
 Open season
 Open from 11 July; closed from 24 August (published 2026 summer-lift dates). Individual bike trails may have a shorter window or remain closed depending on maintenance and conditions.
+Daily opening hours: 09:00-17:00
+Typical daily estimate; check the operator schedule.
 
 Access
 From | Transport | Duration
@@ -12458,6 +12668,8 @@ The Prima Express chairlift carries bikes from the Jachymov side. Current bike-p
 
 Open season
 Open from 1 May; closed from 1 November (typical lift-served window; check the current calendar).
+Daily opening hours: 09:00-17:00
+Typical daily estimate; check the operator schedule.
 
 Access
 From | Transport | Duration
@@ -12478,6 +12690,8 @@ The Sneznik chairlift carries bikes to the upper trail network. Day bike-pass pr
 
 Open season
 Open from 8 May; closed from 1 November (typical 2026 summer and autumn lift window; reduced operation outside peak season).
+Daily opening hours: 09:00-17:00
+Typical daily estimate; check the operator schedule.
 
 Access
 From | Transport | Duration
@@ -12518,6 +12732,8 @@ Five vans and bike trailers provide scheduled uplift, with pedal access also pos
 
 Open season
 Normally open year-round on scheduled operating days; severe weather and forestry work can cause closures.
+Daily opening hours: 09:30-16:30
+Typical daily estimate; check the operator schedule.
 
 Access
 From | Transport | Duration
@@ -12558,6 +12774,8 @@ Dedicated vehicles provide booked uplift, or riders can buy pedal and e-bike acc
 
 Open season
 Normally open year-round on scheduled days. Booking availability, storms and trail work can affect individual dates.
+Daily opening hours: 09:30-16:30
+Typical daily estimate; check the operator schedule.
 
 Access
 From | Transport | Duration
@@ -12578,6 +12796,8 @@ Land Rover shuttles provide uplift from the base. Prices and operating days vary
 
 Open season
 Normally open year-round on selected booked days, subject to Welsh mountain weather and maintenance closures.
+Daily opening hours: 09:30-16:30
+Typical daily estimate; check the operator schedule.
 
 Access
 From | Transport | Duration
@@ -12598,6 +12818,8 @@ The Mountain Gondola carries riders and bikes in about fifteen minutes. The 2026
 
 Open season
 Open from 1 May; closed from 1 October (typical bike-uplift window). Lower trails remain open year-round, while gondola dates and individual descents depend on weather, events and maintenance.
+Daily opening hours: 09:30-16:30
+Typical daily estimate; check the operator schedule.
 
 Access
 From | Transport | Duration
@@ -12658,6 +12880,8 @@ The Luxtorpeda chairlift and Efka lift carry bikes. The published 2026 adult wee
 
 Open season
 Open from 1 May; closed from 1 November (typical 2026 lift window; reduced schedules and maintenance closures apply).
+Daily opening hours: 09:00-17:00
+Typical daily estimate; check the operator schedule.
 
 Access
 From | Transport | Duration
@@ -12678,6 +12902,8 @@ Commercial vans and trailers provide booked uplift, with pedalling also possible
 
 Open season
 Open from 1 April; closed from 1 December (typical riding and shuttle window; check booking availability).
+Daily opening hours: 09:00-17:00
+Typical daily estimate; check the operator schedule.
 
 Access
 From | Transport | Duration
@@ -12698,6 +12924,8 @@ No lift at the main Blonia network: climb the signed uphill trails. Trail access
 
 Open season
 Open from 1 April; closed from 1 December (typical window). Respect wet-weather, forestry and event closures.
+Daily opening hours: 08:00-18:00
+Typical daily estimate; check the operator schedule.
 
 Access
 From | Transport | Duration
@@ -12718,6 +12946,8 @@ A high-speed chairlift carries bikes. The published 2026 regular adult day ticke
 
 Open season
 Open from 1 May; closed from 1 November (typical operating window; check weekday and shoulder-season schedules).
+Daily opening hours: 09:00-17:00
+Typical daily estimate; check the operator schedule.
 
 Access
 From | Transport | Duration
@@ -12738,6 +12968,8 @@ Gondola and chairlifts provide bike uplift. Current 2026 bike-pass prices are so
 
 Open season
 Open from 1 May; closed from 1 November (typical lift window; shoulder-season operation may be weekends only).
+Daily opening hours: 09:00-17:00
+Typical daily estimate; check the operator schedule.
 
 Access
 From | Transport | Duration
@@ -12758,6 +12990,8 @@ The PKL funicular carries riders toward the trail starts when bike service is op
 
 Open season
 Open from 1 May; closed from 1 October (typical 2026 bike season, subject to announcements and weather).
+Daily opening hours: 09:00-17:00
+Typical daily estimate; check the operator schedule.
 
 Access
 From | Transport | Duration
@@ -12778,6 +13012,8 @@ Estonia's only summer chairlift carries bikes. Current day pricing was not relia
 
 Open season
 Open from 19 June; closed from 22 September (published main season). Weekend operation is standard; riding before and after the main dates is available to prebooked groups through 1 November.
+Daily opening hours: 09:00-17:00
+Typical daily estimate; check the operator schedule.
 
 Access
 From | Transport | Duration
@@ -12856,6 +13092,8 @@ No lift: pedal or push back to the starts. No mandatory access price was verifie
 
 Open season
 Open from 1 April; closed from 1 December (typical riding window). Avoid wet or freeze-thaw conditions that damage the small trail network.
+Daily opening hours: 08:00-18:00
+Typical daily estimate; check the operator schedule.
 
 Access
 From | Transport | Duration
@@ -12875,6 +13113,8 @@ The dedicated lift returns bikes from Lac Blanc 900. The published 2026 adult da
 
 Open season
 Open from 11 April; closed from 26 October (published 2026 span). Daily or selected weekday operation runs in July and August; spring and autumn are primarily weekends and holidays.
+Daily opening hours: 09:00-17:00
+Typical daily estimate; check the operator schedule.
 
 Access
 From | Transport | Duration
@@ -12895,6 +13135,8 @@ The Vologne Express chairlift carries bikes. The published 2026 adult day pass i
 
 Open season
 Open from 1 May; closed from 21 September (published 2026 dates). Daily operation runs from 4 July through 30 August, with a reduced schedule outside it.
+Daily opening hours: 09:00-17:00
+Typical daily estimate; check the operator schedule.
 
 Access
 From | Transport | Duration
@@ -12935,6 +13177,8 @@ The Télémix carries bikes to the trail starts. The published 2026 adult day pa
 
 Open season
 Open from 20 June; closed from 21 September (published 2026 dates). Daily operation runs from 4 July through 30 August; June and September have selected weekend dates.
+Daily opening hours: 09:00-17:00
+Typical daily estimate; check the operator schedule.
 
 Access
 From | Transport | Duration
@@ -12955,6 +13199,8 @@ The Rosay gondola and Lachat chairlift provide bike access to the upper network.
 
 Open season
 Open from 27 June; closed from 7 September (published 2026 span, including preview and closing weekends). Core daily operation runs from 4 July through 29 August.
+Daily opening hours: 09:00-17:00
+Typical daily estimate; check the operator schedule.
 
 Access
 From | Transport | Duration
@@ -12975,6 +13221,8 @@ The Tete de Cabeau chairlift carries mountain bikes. The published 2026 adult da
 
 Open season
 Open from 27 June; closed from 31 August (published 2026 dates), operating 10:00-17:00 subject to conditions.
+Daily opening hours: 10:00-17:00
+Published operating hours; check the operator schedule.
 
 Access
 From | Transport | Duration
@@ -12995,6 +13243,8 @@ The resort gondola carried bikes from the main venue to the downhill start and t
 
 Open season
 Open from 1 May; closed from 1 October (estimated snow-free riding window). Public trail and uplift access may be limited to scheduled events even inside this period.
+Daily opening hours: 08:30-16:30
+Typical daily estimate; check the operator schedule.
 
 Access
 From | Transport | Duration
@@ -13015,6 +13265,8 @@ No dependable public lift or shuttle service was verified. Plan to pedal or push
 
 Open season
 Open from 1 March; closed from 1 December (typical regional riding window). The official listed hours are 09:00-17:00 and the facility is closed on Mondays; weather or events can change access.
+Daily opening hours: 09:00-17:00
+Published hours; closed Monday.
 
 Access
 From | Transport | Duration
@@ -13054,11 +13306,1429 @@ No lift is needed on the compact circuit. No current admission charge was publis
 
 Open season
 Open year-round. Published hours are 09:00-18:00 in summer and 09:00-16:00 in winter; severe weather or maintenance can close the course.
+Daily opening hours: 09:00-18:00
+Published summer hours; winter closes at 16:00.
 
 Access
 From | Transport | Duration
 Central Seoul | Bike / metro and bike | ~35 min
 
 Source: Korea Tourism Organization facility listing.</desc>
+  </wpt>
+  <wpt lat="5.166000" lon="-75.518000">
+    <name>Manizales / Neira Coffee Trails (CO) [shuttle, price unverified]</name>
+    <desc>Neira and the cloud-forest ridges above Manizales
+
+Trails
+World-class natural enduro in Colombia's coffee country: long, raw descents mix loam, slick roots, rock, tight jungle turns and plantation paths. The area has hosted Enduro World Series racing, but it is a riding zone rather than a signed bike park; a local guide is strongly recommended.
+
+Getting up / price
+Commercial guides use 4x4 or traditional chiva-style road shuttles. There is no public lift or standard day-pass price, and trail access can cross private farms.
+
+Open season
+Open year-round; December-March and July-August are usually drier. Avoid saturated trails and confirm landslide and private-land access locally.
+
+Access
+From | Transport | Duration
+Manizales | Guide shuttle | ~35 min to Neira
+
+Sources: Colombia Travel: Trails del Cafe and Colombia MTB.</desc>
+  </wpt>
+  <wpt lat="6.210000" lon="-75.502000">
+    <name>Santa Elena / Medellin Enduro (CO) [shuttle, price unverified]</name>
+    <desc>Santa Elena plateau above Medellin - informal gravity network
+
+Trails
+Pine and cloud-forest singletrack descends from the cool plateau toward the Aburra valley, ranging from flowing local lines to steep, rooty and technical enduro. Routes are unsigned, change frequently and share land with walkers and farmers.
+
+Getting up / price
+Use a local 4x4 shuttle, guide, or pedal the roads from Santa Elena. The Arvi Metrocable is useful for visiting the plateau, but bicycle carriage and direct access to gravity trails must be confirmed before relying on it.
+
+Open season
+Open year-round; January-February and July-August are normally driest. Do not ride saturated cloud-forest trails.
+
+Access
+From | Transport | Duration
+Medellin centre | Car / local bus | ~45 min
+
+Sources: official Medellin tourism guide and Medellin municipality. Ride with local knowledge.</desc>
+  </wpt>
+  <wpt lat="6.555000" lon="-73.133000">
+    <name>San Gil / Chicamocha Mule Trails (CO) [no lift]</name>
+    <desc>San Gil and Chicamocha Canyon - rocky backcountry enduro
+
+Trails
+Historic mule tracks, dry canyon paths and rough mountain roads create long, rocky adventure rides around San Gil and the Chicamocha rim. This is exposed backcountry riding, not a maintained trail centre; route-finding, heat and water management matter more than bike-park features.
+
+Getting up / price
+No bike lift. Pedal point-to-point, arrange a local vehicle, or book a guide. Confirm access across villages and private land.
+
+Open season
+Open year-round; December-March is typically driest. Avoid the hottest part of the day and check storm conditions in the canyon.
+
+Access
+From | Transport | Duration
+Bucaramanga | Car / bus | ~2h30
+
+Indicative regional adventure-riding pin; use a local guide and verify the chosen route.
+
+Source: Colombia Travel. Prices, schedules, trail status and access can change; verify before travel.</desc>
+  </wpt>
+  <wpt lat="-22.735000" lon="-45.592000">
+    <name>Zoom Bike Park (Campos do Jordao, BR) [price unverified]</name>
+    <desc>Campos do Jordao - maintained Mantiqueira trail centre
+
+Trails
+A purpose-built, signed network for XC, all-mountain and enduro, with progression-friendly singletrack, technical lines and e-MTB-suitable climbing. The park is built and maintained specifically for mountain bikes rather than being an informal forest network.
+
+Getting up / price
+No lift was verified: climb under your own power. Current admission, booking and wet-weather status must be checked with the operator.
+
+Open season
+Normally rideable year-round, with rain closures possible.
+Daily opening hours: 08:00-17:00
+Typical daily estimate; check the operator schedule and rain closures.
+
+Access
+From | Transport | Duration
+Sao Paulo | Car | ~2h45
+
+Source: official Zoom Bike Park.</desc>
+  </wpt>
+  <wpt lat="-26.740000" lon="-49.176000">
+    <name>Pomeranos DH Trails (Pomerode, BR) [no lift]</name>
+    <desc>Pomerode hills - Santa Catarina downhill race terrain
+
+Trails
+Steep subtropical forest descents used by the established Pomeranos downhill scene, with roots, red dirt, chutes and race-built technical sections. This is not confirmed as a continuously operated commercial park, so expect local trails rather than a staffed facility.
+
+Getting up / price
+No public lift or standard shuttle was verified. Pedal or arrange access with local riders, and confirm landowner permission before riding.
+
+Open season
+Open year-round when dry; avoid the clay trails after heavy rain.
+
+Access
+From | Transport | Duration
+Blumenau | Car | ~45 min
+
+Source: Santa Catarina Cycling Federation, which lists Pomeranos downhill events in Pomerode. Confirm current local access.</desc>
+  </wpt>
+  <wpt lat="-20.245000" lon="-46.365000">
+    <name>Serra da Canastra Adventure MTB (Minas Gerais, BR) [no lift]</name>
+    <desc>Sao Roque de Minas gateway - high-plateau adventure riding
+
+Trails
+Long red-dirt roads, rocky tracks, granite slabs and rural connectors cross the Canastra plateau and its waterfall country. The best riding is XC and backcountry trail exploration rather than gravity laps; carry navigation, water and repair equipment.
+
+Getting up / price
+No lift. Pedal point-to-point or arrange a 4x4 support vehicle. National-park entry rules and permitted cycling routes must be checked before departure.
+
+Open season
+Best from May to September in the dry season; summer storms can make river crossings and clay roads unsafe.
+
+Access
+From | Transport | Duration
+Belo Horizonte | Car | ~5h30
+
+Sources: Brazil Ministry of Tourism and Delfinopolis tourism. Verify protected-area rules.</desc>
+  </wpt>
+  <wpt lat="14.679600" lon="121.118100">
+    <name>Timberland Mountain Bike Park (Rizal, PH) [250-550 PHP]</name>
+    <desc>Timberland Heights, San Mateo - purpose-built trail park
+
+Trails
+A patrolled, colour-graded network from beginner flow to expert gravity, with berms, rollers, tabletops, bridges and rollable drops. Expect climbing between descents because there is no uplift.
+
+Getting up / price
+Pedal access. Published passes are 250 PHP weekdays and 550 PHP weekends and holidays, plus the operator's current insurance or registration requirements.
+
+Open season
+Open year-round with a reduced wet-season schedule.
+Daily opening hours: 07:00-16:00
+Published hours; Wednesday-Sunday in the dry season and Thursday-Sunday in the wet season.
+
+Access
+From | Transport | Duration
+Metro Manila | Car | ~1h15
+
+Source: official Timberland rider information.</desc>
+  </wpt>
+  <wpt lat="14.085000" lon="120.854000">
+    <name>Twin Lakes MTB Trail (Tagaytay, PH) [access status unverified]</name>
+    <desc>Twin Lakes estate above Taal - compact scenic trail
+
+Trails
+A 2.5 km off-road loop was built with fast descents, berms, off-camber turns, switchbacks, short climbs and views toward Taal Lake. It was designed for mixed abilities, but current maintenance and public access could not be confirmed from a recent operator page.
+
+Getting up / price
+No lift; pedal the loop. Confirm at the estate before travelling specifically to ride.
+
+Open season
+Potentially year-round when open and dry; avoid typhoon and saturated conditions.
+
+Access
+From | Transport | Duration
+Metro Manila | Car | ~2h
+
+Source: BusinessWorld trail report. Current status is unverified.</desc>
+  </wpt>
+  <wpt lat="14.705000" lon="121.151000">
+    <name>Mount Maarat / Patiis Trails (Rizal, PH) [no lift]</name>
+    <desc>Mount Maarat above San Mateo - raw local enduro
+
+Trails
+A long-established local network of brutally steep climbs and loose, rooty jungle descents, including the notorious Shotgun area. Lines are informal and technical rather than marked park trails, and land access can change.
+
+Getting up / price
+No formal lift. Pedal, arrange a local pickup, and ride with people who know current entrances and private-land restrictions.
+
+Open season
+Year-round in principle, but the dry months from November-May are more reliable. Avoid heavy rain and typhoon periods.
+
+Access
+From | Transport | Duration
+Metro Manila | Car | ~1h15
+
+Sources: Rizal's established Maarat riding area and local trail reports; access is informal and must be confirmed locally.
+
+Source: Trailforks San Mateo. Prices, schedules, trail status and access can change; verify before travel.</desc>
+  </wpt>
+  <wpt lat="-6.786000" lon="107.651000">
+    <name>Cikole Gravity Trails (Lembang, ID) [shuttle, price unverified]</name>
+    <desc>Cikole pine forest above Bandung - established gravity zone
+
+Trails
+Deep volcanic soil, pine-forest loam, roots and race-built downhill lines make Cikole one of Indonesia's best-known gravity areas. Expect a mix of raw DH, freeride features and locally shaped flow rather than a single unified resort trail map.
+
+Getting up / price
+Local vehicle uplift and riding packages are available around the Cikole recreation area; there is no verified fixed public lift pass. Arrange uplift and guide details before arrival.
+
+Open season
+Open year-round, best in the drier May-October period.
+Daily opening hours: 08:00-17:00
+Typical area estimate; confirm with the selected uplift or trail operator.
+
+Access
+From | Transport | Duration
+Bandung | Car | ~1h15
+
+Sources: Cikole's established MTB riding area and Indonesia Travel for the Cikole setting. Confirm the active trail operator.</desc>
+  </wpt>
+  <wpt lat="-7.584000" lon="110.447000">
+    <name>Klangon Merapi DH (Yogyakarta, ID) [no lift]</name>
+    <desc>Klangon Hill on Mount Merapi - volcanic downhill track
+
+Trails
+A recognised downhill competition venue at roughly 1,100 m, with fast, technical dirt and volcanic surfaces under a dramatic view of active Mount Merapi. It is a compact local track, not a large lift-served resort.
+
+Getting up / price
+No public uplift was verified; push or pedal and ask locally about event-day vehicle access. A small general tourism or maintenance fee may apply.
+
+Open season
+Open year-round subject to rain and volcanic exclusion zones.
+Daily opening hours: 06:00-18:00
+Typical daylight estimate; check weather and volcanic closures locally.
+
+Access
+From | Transport | Duration
+Yogyakarta | Car | ~1h
+
+Source: Yogyakarta Tourism Portal. Obey all Merapi safety closures.</desc>
+  </wpt>
+  <wpt lat="-8.242000" lon="115.375000">
+    <name>Kintamani / Mount Batur MTB (Bali, ID) [guided shuttle]</name>
+    <desc>Kintamani crater rim - volcanic adventure descents
+
+Trails
+Routes start around 1,500 m above the Batur caldera and descend on volcanic sand, dirt tracks, village lanes and tropical singletrack. Guided options range from easy scenic downhill tours to much rougher enduro-style lines toward Tianyar or the lower villages.
+
+Getting up / price
+Commercial tours provide vehicle transfer to Kintamani; no bike lift. Choose an MTB-specific operator because many advertised cycling tours use easy roads rather than technical trails.
+
+Open season
+Best from April-October; wet-season storms make volcanic surfaces and jungle sections unpredictable.
+
+Access
+From | Transport | Duration
+Ubud | Tour shuttle | ~1h15
+
+Sources: Visit Bali MTB routes and Indonesia Travel.</desc>
+  </wpt>
+  <wpt lat="1.030000" lon="104.057000">
+    <name>Mangsang Bike Park (Batam, ID) [uplift price unverified]</name>
+    <desc>Bukit Mangsang, Batam - downhill and enduro race park
+
+Trails
+A gravity-focused local park with downhill, enduro and XC competition tracks, including steep race sections and a substantial rock garden. It hosted Indonesian national-level MTB competition and draws riders from Singapore and Malaysia.
+
+Getting up / price
+Local packages use vehicle uplift, but no current walk-up schedule or price was verified. Contact the park before taking the ferry with a bike.
+
+Open season
+Open year-round subject to tropical rain and events.
+Daily opening hours: 08:00-17:00
+Typical daily estimate; arrange current access and uplift before arrival.
+
+Access
+From | Transport | Duration
+Batam Centre | Car | ~35 min
+Singapore | Ferry + car | ~2h30
+
+Sources: Batam sports authority and ANTARA.</desc>
+  </wpt>
+  <wpt lat="3.143500" lon="101.638500">
+    <name>Bukit Kiara Trails (Kuala Lumpur, MY) [no lift]</name>
+    <desc>Bukit Kiara - volunteer-maintained urban jungle network
+
+Trails
+A dense network of roughly 90 named trails, from approachable loops to root-heavy technical all-mountain and downhill lines such as the harder local classics. Trails were built and maintained by riders but are intentionally shared with hikers and runners.
+
+Getting up / price
+Free pedal access; no lift. Climb the tarmac spine or trail connectors, yield to every non-rider and never build or modify lines without local approval.
+
+Open season
+Open year-round, but do not ride during or immediately after tropical downpours.
+
+Access
+From | Transport | Duration
+Central Kuala Lumpur | Car / metro and bike | ~25 min
+
+Sources: Friends of Bukit Kiara and TRAKS Malaysia.</desc>
+  </wpt>
+  <wpt lat="6.000000" lon="116.575000">
+    <name>Mount Kinabalu Foothills Adventure MTB (Sabah, MY) [guided, no lift]</name>
+    <desc>Kundasang and the Crocker Range foothills - Borneo adventure riding
+
+Trails
+Highland farm roads, village tracks and rainforest connectors offer scenic XC and guided adventure riding beneath Mount Kinabalu. This is not a formal bike park, and national-park hiking trails must not be assumed legal for bicycles.
+
+Getting up / price
+No lift. Use a local cycling operator for vehicle support, permission and a legal route; do not enter protected footpaths without approval.
+
+Open season
+Rideable year-round, with February-April usually drier. Tropical storms and mud can close or damage routes quickly.
+
+Access
+From | Transport | Duration
+Kota Kinabalu | Guide vehicle | ~2h
+
+Indicative regional adventure-riding pin. Confirm a permitted route with a Sabah operator and protected-area authorities.
+
+Source: Sabah Tourism. Prices, schedules, trail status and access can change; verify before travel.</desc>
+  </wpt>
+  <wpt lat="1.372000" lon="103.776000">
+    <name>Chestnut Nature Park MTB Trails (Singapore) [no lift, free]</name>
+    <desc>Chestnut Nature Park - purpose-built urban singletrack
+
+Trails
+Singapore's largest nature park separates designated MTB and hiking routes, with rolling singletrack, berms, rock features and mixed-difficulty loops in an 81 ha forest setting. Ride only the marked MTB trails.
+
+Getting up / price
+Free pedal access; no lift. Protect the trail surface by staying away in heavy rain and obey NParks closures.
+
+Open season
+Open year-round.
+Daily opening hours: 07:00-19:00
+Published NParks opening hours; temporary weather closures may apply.
+
+Access
+From | Transport | Duration
+Central Singapore | Metro/bus + bike | ~45 min
+
+Source: Singapore NParks.</desc>
+  </wpt>
+  <wpt lat="1.349000" lon="103.776500">
+    <name>Bukit Timah MTB Trail (Singapore) [no lift, free]</name>
+    <desc>Dairy Farm / Bukit Timah - Singapore's oldest technical MTB loop
+
+Trails
+A 7 km intermediate-to-advanced designated circuit with fast descents, rock gardens, drops, blind corners and technical climbs. Twenty-three named sections and multiple exits allow riders to shorten the loop.
+
+Getting up / price
+Free pedal access; no lift. Bicycles must remain on the designated MTB trail and riders should follow NParks nature-reserve rules.
+
+Open season
+Open year-round when conditions allow.
+Daily opening hours: 07:00-19:00
+Typical nature-reserve hours estimate; check NParks notices.
+
+Access
+From | Transport | Duration
+Central Singapore | Metro/bus + bike | ~40 min
+
+Source: Singapore NParks MTB guide.</desc>
+  </wpt>
+  <wpt lat="1.405000" lon="103.958000">
+    <name>Ketam Mountain Bike Park (Pulau Ubin, SG) [no lift, free]</name>
+    <desc>Ketam Quarry, Pulau Ubin - international-standard XC park
+
+Trails
+Ten kilometres of purpose-built tracks around a former quarry, graded from blue square through black and double black. Expect narrow low-grip trail, long stepped climbs, drops, sharp corners and steep technical obstacles rather than uplifted downhill.
+
+Getting up / price
+Free pedal access; no lift. Reach Pulau Ubin by bumboat from Changi Point, then ride from the village. Boat space and bicycle charges vary.
+
+Open season
+Open year-round in daylight, subject to ferry service, rain and NParks closures.
+Daily opening hours: 07:00-19:00
+Daylight estimate; ferry service and NParks closures control practical access.
+
+Access
+From | Transport | Duration
+Central Singapore | Bus/taxi + bumboat + bike | ~1h30
+
+Source: Singapore NParks Pulau Ubin cycling guide.</desc>
+  </wpt>
+  <wpt lat="36.049000" lon="51.417000">
+    <name>Dizin / Shemshak Alborz Enduro (IR) [no verified bike lift]</name>
+    <desc>Gardaneh Dizin and Shemshak - high-Alborz alpine riding
+
+Trails
+Loose, rocky ski-area roads, ridge tracks and natural paths can produce descents exceeding 1,000 m of vertical in dry, exposed alpine terrain. This is informal backcountry enduro, not a maintained summer bike park.
+
+Getting up / price
+Summer bicycle uplift at Dizin or Shemshak could not be verified. Use a local guide and road shuttle or pedal; do not assume winter lifts carry bikes.
+
+Open season
+Best from June-October after snowmelt. Afternoon storms, altitude and exposure require conservative planning.
+
+Access
+From | Transport | Duration
+Tehran | Car / guide shuttle | ~2h30
+
+Source: Dizin Pass cycling guide. MTB access is informal and must be verified locally.</desc>
+  </wpt>
+  <wpt lat="35.817500" lon="51.409000">
+    <name>Mount Tochal / Tehran Foothills (IR) [gondola bike access unverified]</name>
+    <desc>Tochal above Tehran - huge vertical and technical foothill paths
+
+Trails
+The Alborz rises directly from the city to almost 4,000 m. Rough natural paths around Darakeh and the mid-mountain stations offer rocky, exposed descending, but they are shared hiking terrain rather than sanctioned bike-park runs.
+
+Getting up / price
+The Tochal Telecabin reaches high stations, but current bicycle carriage could not be confirmed. Ask the operator before relying on it; road shuttle and pedalling are safer planning assumptions.
+
+Open season
+Lower foothills are broadly year-round; high routes are normally June-October.
+Daily opening hours: 07:30-15:00
+Typical gondola estimate; confirm current operation and bicycle acceptance.
+
+Access
+From | Transport | Duration
+Central Tehran | Car / taxi | ~35 min
+
+Source: Tochal Complex gondola infrastructure; confirm bicycle rules and stay off pedestrian-only paths.
+
+Source: Tochal. Prices, schedules, trail status and access can change; verify before travel.</desc>
+  </wpt>
+  <wpt lat="36.260000" lon="52.930000">
+    <name>Lafur / Mazandaran Forest MTB (IR) [guided, no lift]</name>
+    <desc>Lafur Forest - Hyrcanian forest adventure riding
+
+Trails
+Dense beech forest, loamy village tracks, steep mountain roads and wet roots offer a green contrast to Iran's dry southern Alborz. There is no signed trail centre, and forest protection, land access and navigation require local knowledge.
+
+Getting up / price
+No lift. Arrange a guide and vehicle support from Mazandaran; use only permitted roads and tracks.
+
+Open season
+Best from April-June and September-November. Avoid saturated trails, snow and peak summer humidity.
+
+Access
+From | Transport | Duration
+Tehran | Car | ~4h
+
+Source: Visit Iran: Lafur Forest. This is a regional adventure pin, not a marked MTB park.</desc>
+  </wpt>
+  <wpt lat="35.900000" lon="52.050000">
+    <name>Lar National Park / Damavand MTB (IR) [guided, no lift]</name>
+    <desc>Lar Valley beneath Mount Damavand - high-altitude expedition MTB
+
+Trails
+A serious point-to-point backcountry ride across alpine plateau, riverbeds, dirt tracks and high passes beneath Iran's 5,610 m volcano. Commercial itineraries rate it highly demanding and normally take several days.
+
+Getting up / price
+No lift. Guided trips use support vehicles and camps; permits and protected-area access must be arranged in advance.
+
+Open season
+Open from late May through August in a typical year; snow, river levels and conservation closures control access.
+
+Access
+From | Transport | Duration
+Tehran | Guide vehicle | ~2h to western approach
+
+Sources: Lar Plain MTB itinerary and Adventure Iran trip report.</desc>
+  </wpt>
+  <wpt lat="40.904000" lon="115.455000">
+    <name>Thaiwoo Bike Park (Chongli, CN) [gondola price unverified]</name>
+    <desc>Thaiwoo Ski Town - China's flagship lift-served bike park
+
+Trails
+Purpose-built summer MTB terrain with gondola-served flow, jumps, pump-track facilities and technical downhill on the Olympic-region mountains. The operator actively lists mountain biking among its summer sports.
+
+Getting up / price
+Summer gondola uplift is offered, but a current public bike-pass price was not reliably available in English. Confirm ticketing and trail status directly.
+
+Open season
+Open from June; closed from October (typical Chongli bike season).
+Daily opening hours: 09:00-17:00
+Typical summer estimate; check the official daily schedule.
+
+Access
+From | Transport | Duration
+Beijing | Fast train + taxi | ~2h
+
+Source: official Thaiwoo summer activities.</desc>
+  </wpt>
+  <wpt lat="40.976000" lon="115.386000">
+    <name>Duolemeidi Bike Park (Chongli, CN) [lift status unverified]</name>
+    <desc>Duolemeidi ski area - established Chongli downhill network
+
+Trails
+Mapped green, blue and black singletrack includes sustained descents such as Big Brother, dropping roughly 350 m through open ski terrain and forest. Current maintenance and public summer uplift must be confirmed before travel.
+
+Getting up / price
+The ski resort has lift infrastructure, but a current 2026 bicycle uplift schedule and price were not verified.
+
+Open season
+Potential summer season June-September.
+Daily opening hours: 09:00-16:30
+Typical estimate; confirm current bike-park and uplift operation.
+
+Access
+From | Transport | Duration
+Beijing | Fast train + taxi | ~2h30
+
+Source: mapped Chongli trails. Current operator status is unverified.</desc>
+  </wpt>
+  <wpt lat="40.941000" lon="115.438000">
+    <name>Genting Secret Garden MTB (Chongli, CN) [summer status unverified]</name>
+    <desc>Genting Snow Park - Olympic resort summer terrain
+
+Trails
+The resort was planned with a mountain-bike raceway and has high-speed gondola infrastructure across substantial alpine terrain. Public 2026 summer MTB operation and trail maintenance could not be confirmed, so treat this as a check-before-travel pin.
+
+Getting up / price
+Gondolas exist, but bicycle carriage, summer schedule and price are unverified.
+
+Open season
+Potential June-September operation.
+Daily opening hours: 09:00-16:30
+Typical estimate; summer bike operation is unverified.
+
+Access
+From | Transport | Duration
+Beijing | Fast train + taxi | ~2h30
+
+Source: Genting Secret Garden development overview. Confirm current MTB operation.</desc>
+  </wpt>
+  <wpt lat="22.330000" lon="113.400000">
+    <name>Quanlin Daray Bike Park (Zhongshan, CN) [cable-car price unverified]</name>
+    <desc>Sanxiang, Zhongshan - year-round south-China gravity park
+
+Trails
+A compact purpose-built park with two blue lines, a black line and a large asphalt pump track across roughly 255 m of vertical. It is one of southern China's rare bike parks with cable-car uplift.
+
+Getting up / price
+Cable-car bike uplift is documented, but current ticket prices and operating days were not verified.
+
+Open season
+Designed for year-round riding; heat, typhoons and heavy rain can close trails.
+Daily opening hours: 09:00-17:00
+Typical daily estimate; check cable-car and trail operation.
+
+Access
+From | Transport | Duration
+Zhuhai | Car | ~45 min
+Guangzhou | Car | ~1h45
+
+Sources: Biketo park report and Zhongshan city portal.</desc>
+  </wpt>
+  <wpt lat="25.690000" lon="100.110000">
+    <name>Dali / Shaxi Tea-Horse Trails (Yunnan, CN) [guided, no lift]</name>
+    <desc>Dali and the ancient Tea-Horse corridor - highland adventure MTB
+
+Trails
+Old stone roads, pine-forest paths, village tracks and high passes connect Bai and Tibetan cultural landscapes between Dali, Shaxi and the northwest Yunnan highlands. This is guided expedition riding, not a signed bike park.
+
+Getting up / price
+No bike lift. Commercial guides use vehicle transfers for point-to-point routes; confirm permissions because many famous hiking or heritage paths are not automatically bike routes.
+
+Open season
+Best March-May and September-November; summer monsoon mud and winter snow affect high routes.
+
+Access
+From | Transport | Duration
+Dali | Guide vehicle | Local / multi-day
+
+Regional adventure-riding pin centred on Dali; use a local MTB guide and verify each route.
+
+Source: Bike China. Prices, schedules, trail status and access can change; verify before travel.</desc>
+  </wpt>
+  <wpt lat="31.000000" lon="102.850000">
+    <name>Western Sichuan / Four Sisters MTB (CN) [guided, no lift]</name>
+    <desc>Qionglai and Tibetan Plateau foothills - high-altitude expedition riding
+
+Trails
+Remote roads and mountain tracks rise from the Sichuan basin toward Tibetan plateau scenery around the Four Sisters range. Expect major altitude, long climbs, rough surfaces and expedition logistics rather than gravity laps.
+
+Getting up / price
+No lift. Book a local guide and support vehicle; route permissions and foreign-traveller restrictions can change.
+
+Open season
+Best May-June and September-October. Monsoon landslides, snow and altitude are serious constraints.
+
+Access
+From | Transport | Duration
+Chengdu | Guide vehicle | ~4h to Rilong
+
+Source: Bike China Four Sisters itinerary.</desc>
+  </wpt>
+  <wpt lat="22.676000" lon="113.846000">
+    <name>Fenghuang Mountain Greenway (Shenzhen, CN) [no lift, free]</name>
+    <desc>Fenghuang Mountain Forest Park - official mountain greenway
+
+Trails
+A 9.1 km mountain route combining forest road, hiking-road and waterfront terrain. It has hosted national mountain-bike challenges, but it is more greenway and XC challenge than technical bike park.
+
+Getting up / price
+Free pedal access; no lift. Stay on routes where cycling is permitted and respect busy pedestrian sections.
+
+Open season
+Open year-round subject to storms and park notices. Daily opening hours: 07:00-19:00.
+
+Access
+From | Transport | Duration
+Central Shenzhen | Metro + taxi/bike | ~1h
+
+Source: Shenzhen Government Online.</desc>
+  </wpt>
+  <wpt lat="30.225000" lon="120.110000">
+    <name>Longjing Tea Hills MTB (Hangzhou, CN) [no lift]</name>
+    <desc>Longjing tea hills west of Hangzhou - shared forest and village riding
+
+Trails
+Steep paved lanes, tea-field tracks and forest paths create short urban-edge rides above West Lake. This is a shared landscape, not a sanctioned gravity park: many paths are pedestrian or agricultural, so use only routes where cycling is allowed.
+
+Getting up / price
+No lift and no trail pass. Pedal from the city or use a local cycling guide.
+
+Open season
+Best in spring and autumn; avoid monsoon rain, extreme summer heat and crowded holiday periods.
+
+Access
+From | Transport | Duration
+Central Hangzhou | Bike / metro and bike | ~35 min
+
+Indicative urban trail-zone pin. Confirm legal cycling routes locally and always yield to walkers and tea workers.
+
+Source: Hangzhou tourism. Prices, schedules, trail status and access can change; verify before travel.</desc>
+  </wpt>
+  <wpt lat="20.820700" lon="-156.247800">
+    <name>Kahakapao / Makawao Forest Reserve (Maui, US) [no lift, free]</name>
+    <desc>Maui's main purpose-built forest trail centre
+
+Trails
+The Pineapple Express one-way descent drops about 400 m over 3.4 km with tabletops, a wooden berm and beginner ride-arounds. Renegade adds mixed cross-country and downhill terrain, while three skills areas progress from novice berms and a teeter to pump tracks and expert wooden step-up jumps.
+
+Getting up / price
+Free pedal access; no uplift. Climb the forest roads and signed trail network from the Kahakapao trailhead.
+
+Open season
+Open year-round, but avoid riding when wet or muddy.
+Daily opening hours: 07:00-18:00
+Daylight riding estimate; closures can follow heavy rain, storms or forestry work.
+
+Access
+From | Transport | Duration
+Kahului | Car | ~35 min
+Makawao | Car | ~15 min
+
+Sources: Hawaii DLNR Na Ala Hele and the 2026 Makawao Forest Reserve management plan.</desc>
+  </wpt>
+  <wpt lat="20.997800" lon="-156.669000">
+    <name>West Maui Bike Park (Napili, US) [no lift, free]</name>
+    <desc>Community dirt-jump and skills park in Napili
+
+Trails
+A five-acre community bike park with progressive dirt-jump lines, pump and skills terrain developed by the Maui Mountain Bike Coalition with input from Cam Zink. It is a compact practice park rather than a mountain descent.
+
+Getting up / price
+Free pedal access; no lift. Pedal or push back to the start of each line. Pedal bikes only.
+
+Open season
+Open year-round; it closes for rain, saturated ground or high winds.
+Daily opening hours: 08:00-18:00
+Published daily hours; weather closures apply.
+
+Access
+From | Transport | Duration
+Lahaina | Car | ~20 min
+Kahului | Car | ~55 min
+
+Source: Maui Mountain Bike Coalition. Check its channels for weather closures.</desc>
+  </wpt>
+  <wpt lat="21.282800" lon="-157.710700">
+    <name>Koko Head Bike Park (Oahu, US) [no lift, free]</name>
+    <desc>Honolulu's public dirt-jump and pump-track park
+
+Trails
+Volunteer-built progressive dirt jumps, pump tracks and skills lines range from strider and family terrain to large expert jumps. This is a session park, not a downhill trail network.
+
+Getting up / price
+Free pedal access; no lift. Pedal bikes only; e-bikes and motorized vehicles are not permitted on the bike-park features.
+
+Open season
+Open year-round, subject to maintenance and wet-ground closures.
+Daily opening hours: 07:00-22:00
+District-park hours estimate; ride in daylight and check HBL Dirt for closures.
+
+Access
+From | Transport | Duration
+Waikiki | Car | ~25 min
+Honolulu | Bus + bike | ~1h
+
+Source: HBL Dirt - Koko Head Bike Park. Respect volunteer closures and posted line directions.</desc>
+  </wpt>
+  <wpt lat="21.574000" lon="-158.189000">
+    <name>Peacock Flats / Kuaokala (Oahu, US) [permit access, no lift]</name>
+    <desc>Remote Waianae ridge riding above Oahu's northwest coast
+
+Trails
+Rough ridge roads and steep, technical rainforest singletrack connect the Peacock Flats camping area and Kuaokala zone, with exposed ocean views and loose, eroded sections. This is remote natural riding, not a maintained bike park.
+
+Getting up / price
+No lift. Access through the Space Force tracking-station road is controlled; obtain the required state permit and carry identification. Expect a substantial pedal and route-finding.
+
+Open season
+Rideable year-round when access is open; avoid storms, mud and high fire-risk closures.
+
+Access
+From | Transport | Duration
+Honolulu | Car + pedal | ~1h30 to gate
+
+Source: Hawaii DLNR access notice. Verify permits and gate arrangements before departure.</desc>
+  </wpt>
+  <wpt lat="21.311800" lon="-157.798500">
+    <name>St Louis Heights / Waahila Ridge (Oahu, US) [access must be checked, no lift]</name>
+    <desc>Steep Honolulu ridge terrain with uncertain bike access
+
+Trails
+The forested ridge above St Louis Heights has steep roots, clay, narrow natural lines and short technical descents. It is shared hiking terrain rather than a sanctioned bike park, and bicycle permission can vary by segment.
+
+Getting up / price
+No lift. Pedal from town, but confirm locally that every intended trail permits bicycles; yield to walkers and do not ride closed or hiking-only paths.
+
+Open season
+Potentially rideable year-round, but wet red clay becomes slick and damaging. Access status is not sufficiently documented for a destination trip.
+
+Access
+From | Transport | Duration
+Waikiki | Bike / car | ~25 min
+
+Indicative local riding-zone pin only. Confirm legal bicycle access with Hawaii trail managers before riding.
+
+Source: Hawaii DLNR trails. Prices, schedules, trail status and access can change; verify before travel.</desc>
+  </wpt>
+  <wpt lat="-17.621000" lon="-149.426000">
+    <name>Papenoo Valley (Tahiti, PF) [backcountry, no lift]</name>
+    <desc>Tahiti's volcanic interior adventure route
+
+Trails
+A rough valley road and connecting tracks enter a deep volcanic canyon through rainforest, river crossings and waterfall country. It is scenic backcountry and expedition-style riding, not a signed singletrack park.
+
+Getting up / price
+No lift. Ride out-and-back or arrange a local guide and 4x4 support. River depth, landslides and private or controlled sections can alter the route.
+
+Open season
+Best in the drier May-October period; avoid heavy rain because rivers rise quickly and surfaces become hazardous.
+
+Access
+From | Transport | Duration
+Papeete | Car + bike | ~45 min to valley mouth
+
+Sources: Tahiti Tourisme Papenoo Valley and local bike rental or guide advice.</desc>
+  </wpt>
+  <wpt lat="-17.526000" lon="-149.837000">
+    <name>Moorea Pineapple Route / Opunohu (PF) [shared tracks, no lift]</name>
+    <desc>Plantation tracks beneath Moorea's volcanic peaks
+
+Trails
+Farm roads and mixed natural tracks wind through pineapple plantations in the Opunohu interior, with connections toward Belvedere viewpoints. Expect scenic cross-country and adventure riding rather than a formal bike park or continuous gravity singletrack.
+
+Getting up / price
+No lift. Rent a mountain bike locally and pedal from the coast. Stay on permitted routes, respect plantation work and ask before entering private tracks.
+
+Open season
+Rideable year-round; May-October is generally drier. Tropical rain can turn clay tracks muddy very quickly.
+
+Access
+From | Transport | Duration
+Tahiti | Ferry + bike | ~45 min ferry
+
+Source: Tahiti Tourisme - Moorea.</desc>
+  </wpt>
+  <wpt lat="-21.605000" lon="165.475000">
+    <name>Domaine de Deva MTB (Bourail, NC) [no lift, free]</name>
+    <desc>New Caledonia's major coastal trail park
+
+Trails
+An extensive marked network crosses dry forest, ridges and lagoon-facing terrain, with green family riding through technical red routes. Individual circuits include the 12.4 km Blue Riviere de Deva loop. Trails are unsupervised.
+
+Getting up / price
+Free pedal access; no lift. Start from the Domaine de Deva reception and choose a signed loop appropriate to conditions.
+
+Open season
+Open year-round, but wildfire danger, storms or maintenance can close the domain.
+Daily opening hours: 06:30-19:00
+Published domain hours; fire-risk and weather closures apply.
+
+Access
+From | Transport | Duration
+Noumea | Car | ~2h
+Bourail | Car | ~20 min
+
+Source: New Caledonia Tourism. Check the domain's fire-risk status.</desc>
+  </wpt>
+  <wpt lat="-22.136000" lon="166.662000">
+    <name>Blue River Provincial Park MTB (Yate, NC) [no lift]</name>
+    <desc>Red-dirt forest riding in Parc Provincial de la Riviere Bleue
+
+Trails
+Six designated MTB routes sit within roughly 54 km of park tracks, crossing red earth, native forest, river scenery and the Perignon bridge area. The riding ranges from touring loops to longer backcountry outings rather than gravity laps.
+
+Getting up / price
+No bike lift. Pedal from the park entrance or use the internal visitor shuttle where permitted; confirm reservations, bicycle transport and current entry fees before travel.
+
+Open season
+Open year-round Wednesday-Sunday, subject to weather, fire risk and provincial closures.
+Daily opening hours: 08:00-16:00
+Published Wednesday-Sunday hours; check provincial notices and booking requirements.
+
+Access
+From | Transport | Duration
+Noumea | Car | ~1h30
+
+Sources: New Caledonia Tourism MTB guide and the provincial park overview.</desc>
+  </wpt>
+  <wpt lat="-45.025100" lon="168.647200">
+    <name>Queenstown Bike Park / Skyline Uplift (NZ) [gondola]</name>
+    <desc>Ben Lomond's world-class gondola-served gravity network
+
+Trails
+More than 30 km of purpose-built downhill lines descend directly toward Queenstown, spanning approachable flow through jumps, roots and steep expert technical tracks. The public Ben Lomond trails are separate from the Skyline uplift operation.
+
+Getting up / price
+Skyline's dedicated MTB gondola cabins carry riders and bikes from Brecon Street. A bike-uplift pass is required; 2026/27 standard pricing is due to be published on 1 August 2026.
+
+Open season
+Bike uplift is scheduled from 19 September 2026 to about 16 May 2027, weather dependent. The trail reserve can have separate fire, rain or maintenance closures.
+Daily opening hours: 09:30-21:00
+Indicative gondola hours; the MTB uplift schedule varies by date and can stop for rain, lightning or reserve closures.
+
+Access
+From | Transport | Duration
+Queenstown centre | Bike | ~5 min
+
+Source: official Skyline MTB uplift. Check live uplift hours before riding.</desc>
+  </wpt>
+  <wpt lat="-43.600400" lon="172.610700">
+    <name>Christchurch Adventure Park (NZ) [chairlift, NZD 95/day]</name>
+    <desc>Year-round chairlift gravity park in Christchurch's Port Hills
+
+Trails
+Machine- and hand-built downhill trails cover beginner flow, intermediate progression, large jump tracks and technical expert terrain. The chairlift provides repeated gravity laps, with rental bikes, protection, lessons and patrol available.
+
+Getting up / price
+The 1.8 km chairlift carries bikes. Adult day pass: NZD 95; single uplift: NZD 30. Riders under 10 ride free with required supervision. Prices checked July 2026.
+
+Open season
+Open year-round on published operating days. Winter 2026: closed Monday-Tuesday; Wednesday-Friday 11:00-17:00 and weekends/holidays 10:00-17:00, with some Wednesday night rides.
+Daily opening hours: 10:00-17:00
+Typical operating hours; winter weekdays may start at 11:00, Monday-Tuesday closures and night-ride extensions apply.
+
+Access
+From | Transport | Duration
+Central Christchurch | Car / bike | ~20 min
+
+Sources: official MTB pricing and live park status.</desc>
+  </wpt>
+  <wpt lat="-38.188400" lon="176.281500">
+    <name>Whakarewarewa Forest MTB (Rotorua, NZ) [no lift, free]</name>
+    <desc>Rotorua's globally renowned volcanic-soil trail network
+
+Trails
+Around 150 km of continually evolving, purpose-built trails range from smooth beginner forest tracks to extreme roots, drops, jumps and steep technical lines. Well-draining volcanic soil makes this one of New Zealand's most reliable large trail centres.
+
+Getting up / price
+Forest trail access is free and has no public lift. Pedal climbing routes and commercial shuttle services are available; bike hire and guiding operate around Waipa MTB car park.
+
+Open season
+Rideable year-round, with temporary forestry, event and maintenance closures. Daylight riding is recommended.
+Daily opening hours: 06:00-22:30
+Waipa and Redwoods vehicle-gate hours vary; walking and cycling access remains available, but daylight riding is recommended.
+
+Access
+From | Transport | Duration
+Rotorua centre | Bike / car | ~15 min
+
+Sources: official Redwoods bike guide and forest opening hours.</desc>
+  </wpt>
+  <wpt lat="18.074500" lon="-63.061600">
+    <name>Pic Paradis (Saint Martin, MF) [access must be checked, no lift]</name>
+    <desc>Steep tropical ridge riding around Saint Martin's highest point
+
+Trails
+Natural tracks around the 424 m Pic Paradis ridge provide short, steep descents, rocky sections and broad views toward Marigot and Grand Case. The mapped riding is informal and overlaps hiking terrain; this is not a sanctioned bike park.
+
+Getting up / price
+No lift. Pedal the steep access road or arrange a local vehicle drop where legal. Loterie Farm is private property and its marked trails are primarily for walking, so obtain permission and confirm the exact bicycle route locally.
+
+Open season
+Best December-May during the drier season. Avoid tropical storms and wet clay; hurricane damage can alter access.
+
+Access
+From | Transport | Duration
+Marigot | Bike / car | ~20 min
+Grand Case | Bike / car | ~20 min
+
+Sources: official island tourism overview and mapped local MTB activity. Confirm access before riding.</desc>
+  </wpt>
+  <wpt lat="14.491000" lon="-60.956000">
+    <name>Foret de Montravail MTB (Martinique, MQ) [shared trails, no lift]</name>
+    <desc>Accessible forest trail riding above Sainte-Luce
+
+Trails
+A compact network of maintained forest tracks combines rolling climbs, roots and short natural descents. Martinique Tourism recommends Montravail for intermediate MTB riders, but the forest is shared with walkers and is not a gravity bike park.
+
+Getting up / price
+Free pedal access; no lift. Build loops from the forest parking areas and remain on routes where cycling is permitted.
+
+Open season
+Rideable year-round, with the most reliable conditions December-May. Rain makes roots and tropical clay extremely slippery.
+
+Access
+From | Transport | Duration
+Sainte-Luce | Car / bike | ~20 min
+Fort-de-France | Car | ~45 min
+
+Source: Martinique Tourism MTB guide. Yield to walkers and respect current forestry notices.</desc>
+  </wpt>
+  <wpt lat="14.467500" lon="-60.886500">
+    <name>Morne Gommier MTB (Martinique, MQ) [shared tracks, no lift]</name>
+    <desc>Panoramic southern Martinique hill riding
+
+Trails
+Steep lanes, farm tracks and natural paths around Morne Gommier form scenic cross-country and short enduro-style loops above Le Marin. The terrain is more mixed-surface exploration than a marked trail centre.
+
+Getting up / price
+No lift and no trail pass. Pedal from Le Marin or start near the viewpoint; confirm private-property boundaries and use a local guide for less obvious connections.
+
+Open season
+Rideable year-round; December-May is generally drier. Avoid exposed routes during heavy rain, tropical storms and the hottest part of the day.
+
+Access
+From | Transport | Duration
+Le Marin | Bike / car | ~15 min
+Fort-de-France | Car | ~1h
+
+Source: Martinique Tourism MTB guide. Route choice and land access should be confirmed locally.</desc>
+  </wpt>
+  <wpt lat="14.705000" lon="-61.085000">
+    <name>Trace des Jesuites (Martinique, MQ) [shared rainforest trail, no lift]</name>
+    <desc>Technical rainforest singletrack in northern Martinique
+
+Trails
+A narrow historic trail crosses dense rainforest with roots, rocks, stream crossings and persistently slippery ground. Martinique Tourism lists it for advanced mountain biking, but it is principally a shared hiking trail rather than a managed MTB route.
+
+Getting up / price
+No lift. Arrange a point-to-point pickup or return by road. Check current bicycle permission and trail condition with local authorities or a guide before riding, then give absolute priority to walkers.
+
+Open season
+Best attempted in the drier December-May period. Do not ride after heavy rain, during flood risk or when the trail surface would be damaged.
+
+Access
+From | Transport | Duration
+Fort-de-France | Car | ~35 min
+Morne-Rouge | Car | ~20 min
+
+Source: Martinique Tourism MTB guide. Current access must be checked locally.</desc>
+  </wpt>
+  <wpt lat="15.985900" lon="-61.712800">
+    <name>Bisdary Downhill Track (Guadeloupe, GP) [no lift, free]</name>
+    <desc>Official short downhill trail above Riviere-Sens
+
+Trails
+A blue-marked 500 m descent drops about 70 m through the Bisdary forest to the marina. It shares part of the Tour du Houelmont hiking trail, so control speed and give pedestrians priority. The run is short but is Guadeloupe's clearest officially documented MTB-specific descent.
+
+Getting up / price
+Free access; no lift. Pedal or arrange your own vehicle return from Riviere-Sens to Rue des Archives in Bisdary. Parking is unsupervised.
+
+Open season
+Permanent route, best December-May. Avoid riding during heavy rain, storms or when the shared surface is saturated.
+
+Access
+From | Transport | Duration
+Basse-Terre | Bike / car | ~15 min
+Pointe-a-Pitre | Car | ~1h
+
+Source: Guadeloupe Islands official trail page, including downloadable route guide.</desc>
+  </wpt>
+  <wpt lat="16.331000" lon="-61.696500">
+    <name>North Basse-Terre MTB (Sainte-Rose, GP) [guided, no lift]</name>
+    <desc>Guided tropical trail riding between coast and rainforest
+
+Trails
+Local routes around Sainte-Rose combine sugar-cane tracks, mangrove edges, riverbeds, tropical forest and steeper natural singletrack. The best connections are deliberately not published on standard maps, making this a guided riding zone rather than a signed trail centre.
+
+Getting up / price
+No lift. VELOC offers mountain-bike rental, delivery and local route advice or accompaniment from Sainte-Rose. Confirm the selected route, difficulty and price directly.
+
+Open season
+Guiding and rental are listed year-round in 2026; December-May usually offers drier riding. Routes can close after storms, flooding or forestry damage.
+
+Access
+From | Transport | Duration
+Pointe-a-Pitre | Car | ~35 min
+Deshaies | Car | ~30 min
+
+Sources: Guadeloupe Islands tourism listing and VELOC.</desc>
+  </wpt>
+  <wpt lat="43.128000" lon="77.080200">
+    <name>Shymbulak Bike Park (Almaty, KZ) [uplift status unverified]</name>
+    <desc>High-altitude resort terrain above Almaty
+
+Trails
+Shymbulak's published resort rules define a downhill bike park with purpose-built natural and artificial features, using the steep ski terrain between roughly 2,200 and 3,180 m. However, the official 2026 summer programme does not currently list public MTB operation, so trail maintenance and access must be confirmed before travel.
+
+Getting up / price
+The Medeu-Shymbulak gondola and upper lifts operate for summer visitors, but 2026 bicycle carriage, bike-park uplift and prices are unverified. Do not assume a sightseeing ticket includes a bicycle.
+
+&amp;#9888;&amp;#65039; Current bike-park operation is unverified. Contact Shymbulak before planning a riding day.
+Open season
+Potential summer operation from June through September; snow, maintenance and national-park restrictions apply.
+Daily opening hours: 09:00-18:00
+Summer resort estimate only; bicycle uplift and bike-park operation must be confirmed.
+
+Access
+From | Transport | Duration
+Central Almaty | Bus/taxi + gondola | ~45 min
+
+Sources: official resort overview and the published resort rules.</desc>
+  </wpt>
+  <wpt lat="43.158000" lon="76.976000">
+    <name>Kok-Zhailau MTB (Almaty, KZ) [shared trails, no lift]</name>
+    <desc>Alpine plateau and ridge riding directly above Almaty
+
+Trails
+Rocky forest tracks climb from the city edge to the Kok-Zhailau plateau around 2,000-2,200 m. Beginner outings turn around on the plateau; experienced riders can continue toward the meteorological station or exposed ridge terrain. These are busy shared mountain trails, not a bike park.
+
+Getting up / price
+No lift. Pedal from Prosveshchenets or the Medeu side, or book a local guided e-MTB outing. Give way to hikers and horses, especially on summer weekends.
+
+Open season
+Best May-October. Snow, spring mud, thunderstorms and national-park closures affect the higher route.
+
+Access
+From | Transport | Duration
+Central Almaty | Bike / bus + bike | ~30 min to trailhead
+
+Source: local Kok-Zhailau cycling guide. Confirm permitted routes locally.</desc>
+  </wpt>
+  <wpt lat="32.316000" lon="77.156700">
+    <name>Manali / Solang Valley MTB (Himachal Pradesh, IN) [shuttle, no lift]</name>
+    <desc>India's best-known Himalayan gravity base
+
+Trails
+Steep pine-forest singletrack, village paths and rough alpine tracks descend around Solang, Old Manali and the surrounding Kullu mountains. Terrain ranges from guided cross-country to technical enduro and downhill; it is a developing regional network rather than a signed bike park.
+
+Getting up / price
+No verified public bike lift. Local operators arrange 4x4 shuttles, guiding and occasional specialist helibiking, all of which must be booked and checked independently. The government has also planned dedicated Manali and Solang cycling trails, but completion status varies.
+
+Open season
+Best April-June and September-November. Monsoon rain, winter snow, landslides and heavy Solang road traffic can prevent riding.
+
+Access
+From | Transport | Duration
+Manali | Bike / shuttle | ~35 min to Solang
+Kullu airport | Car | ~1h30
+
+Source: Himachal Pradesh mountain-bike trail planning document. Use a current local MTB operator.</desc>
+  </wpt>
+  <wpt lat="34.278300" lon="77.604600">
+    <name>Khardung La / Nubra MTB (Ladakh, IN) [vehicle drop, no lift]</name>
+    <desc>Extreme-altitude descent from one of Ladakh's great passes
+
+Trails
+The classic objective is a supported ride from the Khardung La road pass into the Indus or Nubra side, combining a very long high-altitude road descent with optional rough tracks and village routes. It is an expedition ride, not continuous singletrack or a bike park.
+
+Getting up / price
+No lift. Use a licensed local guide and support vehicle from Leh. Current road permits, checkpoints and route restrictions must be verified; independent foreign travel rules can change.
+
+&amp;#9888;&amp;#65039; The pass is above 5,300 m. Acclimatize in Leh first and treat altitude illness, cold, traffic and remote rescue as serious hazards.
+Open season
+Usually May-September, entirely dependent on snow clearance, road status and military or civil restrictions.
+
+Access
+From | Transport | Duration
+Leh | Guide vehicle | ~2h to pass
+
+Source: District Leh adventure tourism guide, which lists Khardung La and Nubra among its mountain-bike areas.</desc>
+  </wpt>
+  <wpt lat="27.236000" lon="88.422800">
+    <name>Temi / South Sikkim MTB (IN) [guided, no lift]</name>
+    <desc>Eastern Himalayan riding through tea, forest and mountain villages
+
+Trails
+The Temi and Ravangla area provides steep jeep tracks, tea-garden lanes, forest paths and long mountain-road links beneath views toward Kanchenjunga. Sikkim promotes multiple mountain-bike routes and a state MTB tour, but this remains guided regional riding rather than a formal trail centre.
+
+Getting up / price
+No lift. Arrange rental, permits, guiding and vehicle support in Gangtok or through Sikkim Tourism. Do not enter tea estates, protected forests or village land without permission.
+
+Open season
+Best October-May, with the clearest conditions in autumn and spring. Avoid the June-September monsoon because landslides and saturated trails are common.
+
+Access
+From | Transport | Duration
+Gangtok | Guide vehicle | ~2h30
+Bagdogra airport | Car | ~4h
+
+Source: Government of Sikkim adventure tourism.</desc>
+  </wpt>
+  <wpt lat="26.996500" lon="88.267000">
+    <name>Darjeeling / Senchal MTB (West Bengal, IN) [guided, no lift]</name>
+    <desc>Tea-hill and forest descents beneath Kanchenjunga views
+
+Trails
+Steep estate roads, rocky village tracks and forest routes around Darjeeling, Senchal and Tiger Hill create short technical descents and longer cross-country days. Many attractive paths are hiking trails, protected forest or private tea-estate land, so legal route selection matters.
+
+Getting up / price
+No lift. Use a local cycling guide and vehicle drop where permitted. The Rangeet Valley cable car is a sightseeing installation and should not be assumed to carry mountain bikes.
+
+Open season
+Best October-May. Monsoon rain from June-September brings deep mud, poor visibility and landslide risk.
+
+Access
+From | Transport | Duration
+Darjeeling | Bike / guide vehicle | ~30 min
+Bagdogra airport | Car | ~3h
+
+Regional riding pin based around Senchal. See Incredible India - Darjeeling and verify every off-road section locally.</desc>
+  </wpt>
+  <wpt lat="12.030000" lon="108.440000">
+    <name>Da Lat Pine Forest MTB (Vietnam) [guided, no lift]</name>
+    <desc>Vietnam's cool-climate pine-forest riding hub
+
+Trails
+Dirt roads and natural trails north of Da Lat cross the Langbiang Plateau through pine forest, farms and rolling highland terrain. Routes can be linked into technical singletrack and longer cross-country days, but there is no signed gravity bike park.
+
+Getting up / price
+No lift. Rent locally or book a guide and vehicle transfer from Da Lat. Bidoup-Nui Ba and other protected areas require adherence to park access rules.
+
+Open season
+Best December-April in the drier season. May-November rain makes red dirt and roots slippery, although guided rides operate year-round when conditions permit.
+
+Access
+From | Transport | Duration
+Da Lat centre | Bike / shuttle | ~25 min
+Da Lat airport | Car | ~45 min
+
+Source: Vietnam Tourism, which recommends mountain biking the pine-forest dirt trails north of the city.</desc>
+  </wpt>
+  <wpt lat="22.336000" lon="103.844000">
+    <name>Sapa Valley MTB (Vietnam) [guided, no lift]</name>
+    <desc>Rice-terrace and mountain-village riding in northern Vietnam
+
+Trails
+Steep roads, buffalo tracks and mixed dirt paths descend through rice terraces and Hmong villages around Sapa and the Muong Hoa valley. The riding is scenic and culturally sensitive rather than park-built, ranging from accessible valley tours to technical wet singletrack.
+
+Getting up / price
+No lift. Mountain-bike rental and guided tours are available in Sapa; use a local guide for village access, route finding and point-to-point vehicle support.
+
+Open season
+Best in April-May and September-October. Summer is hot and wet; winter can be cold, foggy and occasionally icy at altitude.
+
+Access
+From | Transport | Duration
+Sapa centre | Bike | Immediate
+Hanoi | Bus / train + van | ~5-8h
+
+Source: Vietnam Tourism. Ride respectfully through working farms and villages.</desc>
+  </wpt>
+  <wpt lat="61.231000" lon="10.453000">
+    <name>Hafjell Bike Park (Norway) [lift]</name>
+    <desc>Norway's benchmark lift-served downhill park
+
+Trails
+Seventeen green-to-black trails cover roughly 28 km, mixing long machine-built flow, jump lines and World Cup-grade technical downhill over substantial vertical. Roller Coaster alone packs 60 jumps and 36 berms.
+
+Getting up / price
+Gondola and chairlift uplift with rentals at the base. Current day-pass prices vary by date; buy through the operator.
+
+Open season
+Typically mid-June to mid-October: weekends at each end and daily in high summer.
+Daily opening hours: 10:00-16:00
+Typical published hours; operating days vary across the season.
+
+Access
+From | Transport | Duration
+Lillehammer | Car / bus | ~20 min
+Oslo | Car | ~2h30
+
+Source: official Hafjell Bike Park.</desc>
+  </wpt>
+  <wpt lat="61.306500" lon="12.164500">
+    <name>Trysil Bike Park (Norway) [chairlift]</name>
+    <desc>Large progression-focused trail destination at Trysilfjellet
+
+Trails
+Lift-served flow trails with berms, jumps and drops connect to the wider Trysil Bike Arena, including around 30 km of built trails near the main centre. Options range from family progression to fast expert lines.
+
+Getting up / price
+Fjellekspressen chairlift carries bikes; a bike pass is required. Pedal-access trail networks remain available beyond lift days.
+
+Open season
+Published 2026 lift season: selected dates from 5 June through 11 October, daily 20 June-16 August and during autumn holidays.
+Daily opening hours: 10:00-16:00
+Published standard lift hours; selected evening extensions apply.
+
+Access
+From | Transport | Duration
+Oslo | Car / bus | ~2h45
+
+Source: official 2026 summer lift schedule.</desc>
+  </wpt>
+  <wpt lat="63.399000" lon="13.075800">
+    <name>Are Bike Park (Sweden) [gondola / chairlift]</name>
+    <desc>Scandinavia's largest lift-served bike park
+
+Trails
+Around 40 downhill trails descend from exposed rock slabs into forest, including the long Easy Rider flow line, technical Hallrajd and the classic rocky 1000-metersleden. Separate trail and XC areas add substantial pedal riding.
+
+Getting up / price
+VM8 chairlift and gondola serve the downhill network. Bike pass, rental and guiding are available in Are village.
+
+Open season
+Published 2026 downhill season: weekends from 5 June, daily 21 June-30 August, then Thursday-Sunday through 27 September.
+Daily opening hours: 10:00-16:00
+Published 2026 standard hours; lift and trail status can vary.
+
+Access
+From | Transport | Duration
+Ostersund | Train / car | ~1h30
+
+Sources: Are summer lifts and Are Bike Park guide.</desc>
+  </wpt>
+  <wpt lat="61.714000" lon="16.168000">
+    <name>Jarvso Bergscykel Park (Sweden) [lift]</name>
+    <desc>Dedicated Swedish downhill park with strong progression
+
+Trails
+Purpose-built green, blue, red and black downhill lines combine smooth berms and jumps with rougher forest technical terrain. Registration is required before riding, with rental and instruction at the base.
+
+Getting up / price
+Lift-served bike park; purchase a bike pass and complete the rider registration.
+
+Open season
+Published 2026 season: 14 May-1 November, daily 22 May-30 August, then Friday-Sunday plus autumn holidays.
+Daily opening hours: 09:30-16:00
+Published standard hours; some Fridays and Saturdays extend to 17:00.
+
+Access
+From | Transport | Duration
+Stockholm | Train / car | ~3h
+
+Source: official 2026 opening hours.</desc>
+  </wpt>
+  <wpt lat="67.783000" lon="24.805500">
+    <name>Levi Bike Park (Finland) [gondola / chairlift]</name>
+    <desc>Lapland lift-served park with long flow and enduro trails
+
+Trails
+Thirteen bike-park routes and a wider 114 km MTB network range from the Hidden Forest beginner skills area to technical black lines. Northern Flow runs for more than 4 km from the fell.
+
+Getting up / price
+Gondola2000 and Express lifts carry bikes. Rental, protection and instruction are available at Gondolitie.
+
+Open season
+Published 2026 bike-park season: 19 June-20 September.
+Daily opening hours: 10:00-18:00
+Published 2026 bike-park and rental hours.
+
+Access
+From | Transport | Duration
+Kittila airport | Bus / car | ~15 min
+
+Source: official Levi Bike Park.</desc>
+  </wpt>
+  <wpt lat="45.598500" lon="25.552000">
+    <name>Postavaru Bike Park (Poiana Brasov, RO) [gondola]</name>
+    <desc>Brasov's lift-served Carpathian gravity network
+
+Trails
+Long natural descents from Postavaru combine roots, loam, rocks and purpose-built bike-park sections, with lines for intermediate through expert riders. Conditions change quickly after rain and trail works.
+
+Getting up / price
+Poiana Brasov gondola access is used for bike uplift when summer operations permit. Confirm bike carriage, current trails and pass price before departure.
+
+Open season
+Typically late May-October, subject to maintenance and weather. 2026 trail preparation was underway in May.
+Daily opening hours: 09:00-17:00
+Typical summer estimate; verify gondola bike carriage and live trail status.
+
+Access
+From | Transport | Duration
+Brasov | Bus / car | ~30 min
+
+Current 2026 riding is documented by local Brasov reporting; verify status with Poiana Brasov.
+
+Source: Poiana Brasov. Prices, schedules, trail status and access can change; verify before travel.</desc>
+  </wpt>
+  <wpt lat="45.351300" lon="25.552300">
+    <name>Bike Resort Sinaia (Romania) [gondola]</name>
+    <desc>Romania's first official gondola-served bike resort
+
+Trails
+Four downhill, all-mountain and XC routes total about 10 km between Cota 1400 and the lower gondola, including Easy Breezy and Fairy Trail. The upper Cota 2000 sector is not part of the prepared MTB network.
+
+Getting up / price
+Sinaia gondola section 1000-1400 provides bike uplift. Check the daily cableway programme and bike tariff before riding.
+
+Open season
+Typical May-October operation, subject to gondola maintenance, wind and wet-trail closures.
+Daily opening hours: 09:00-17:00
+Typical summer estimate; check the official gondola programme.
+
+Access
+From | Transport | Duration
+Bucharest | Train / car | ~1h45
+
+Source: official Bike Resort Sinaia.</desc>
+  </wpt>
+  <wpt lat="48.359000" lon="24.445000">
+    <name>Bukovel Bike Park (Ukraine) [chairlift, UAH 800/day]</name>
+    <desc>Ukraine's principal lift-served downhill park
+
+Trails
+One blue, two red and one black downhill trail use jumps, narrow bridges and natural forest obstacles. Lift 2 carries bicycles.
+
+Getting up / price
+2026 advertised adult price: UAH 800/day, UAH 550 half-day or UAH 350 single ride.
+
+&amp;#9888;&amp;#65039; Ukraine remains at war. Missile and drone attacks can occur in western regions; multiple governments advise against non-essential or all travel. Do not treat resort operation as evidence that travel is safe.
+Open season
+Summer operation is advertised, but dates and security conditions can change without notice.
+Daily opening hours: 09:00-18:00
+Published hours; security, curfew, weather and lift closures can override them.
+
+Access
+From | Transport | Duration
+Ivano-Frankivsk | Car / bus | ~2h
+
+Sources: official Bukovel Bike Park and current Ukraine travel advice.</desc>
+  </wpt>
+  <wpt lat="47.211000" lon="17.916000">
+    <name>Epleny Bike Park (Hungary) [chairlift]</name>
+    <desc>Hungary's main lift-accessed forest bike park
+
+Trails
+Built downhill and enduro lines use the wooded Siarena slope, with berms, jumps and race sections plus easier family and e-bike riding nearby.
+
+Getting up / price
+The four-seat chairlift provides summer uplift on scheduled bike-park days. Verify the live calendar and ticket price because it is not a continuous daily operation.
+
+Open season
+Selected spring-to-autumn dates and events; confirm each visit directly.
+Daily opening hours: 09:00-17:00
+Event-day estimate; verify the bike-park and chairlift calendar.
+
+Access
+From | Transport | Duration
+Budapest | Car | ~1h30
+Veszprem | Car | ~25 min
+
+Source: official Siarena Vibe Park.</desc>
+  </wpt>
+  <wpt lat="38.532000" lon="35.526000">
+    <name>Erciyes Bike Park (Kayseri, Turkey) [uplift status unverified]</name>
+    <desc>High volcanic downhill terrain on Mount Erciyes
+
+Trails
+Erciyes developed Turkey's first dedicated downhill courses and has hosted European downhill racing, with multiple difficulty levels and a children's skills area on open volcanic terrain.
+
+Getting up / price
+Resort lifts exist and planning documents describe bike transport, but current 2026 public bicycle uplift, maintained routes and pricing were not verified. Contact Erciyes before travel.
+
+Open season
+Potential June-October season; high-altitude snow, wind and maintenance apply.
+Daily opening hours: 09:00-17:00
+Typical estimate; current bicycle uplift and trail operation are unverified.
+
+Access
+From | Transport | Duration
+Kayseri | Car / bus | ~30 min
+
+Sources: Kayseri municipality bike-park announcement and Erciyes resort information.</desc>
+  </wpt>
+  <wpt lat="-33.998000" lon="18.962000">
+    <name>Jonkershoek / Stellenbosch MTB (South Africa) [permit, no lift]</name>
+    <desc>World-class Cape mountain and winelands trail network
+
+Trails
+Long fire-road climbs feed rocky natural descents, flow trails, jumps and technical enduro lines around MTO Jonkershoek and the broader Stellenbosch network. The regional permit connects many neighbouring trail systems.
+
+Getting up / price
+No lift. Buy the correct day or regional permit before entering; the MTB network is on MTO land near, but administratively distinct from, the CapeNature reserve.
+
+Open season
+Rideable year-round, best in the cooler dry periods. Fire danger, forestry work and winter storms cause closures.
+
+Access
+From | Transport | Duration
+Stellenbosch | Bike / car | ~15 min
+Cape Town | Car | ~1h
+
+Sources: Wine Lands Trails permit and Stellenbosch Trail Fund.</desc>
+  </wpt>
+  <wpt lat="-29.382800" lon="30.263700">
+    <name>Karkloof Country Club MTB (South Africa) [permit, no lift]</name>
+    <desc>Major KwaZulu-Natal plantation singletrack network
+
+Trails
+More than 300 km of riding crosses forestry land, river valleys and waterfall country. Marked loops range from short family rides to 55 km, with advanced optional features inside easier routes.
+
+Getting up / price
+No lift. Day visitors must start at Karkloof Country Club, pay before riding, sign the indemnity and display the issued bike board. Private-land vehicle drops are prohibited.
+
+Open season
+Open year-round subject to forestry, fire and weather closures.
+
+Access
+From | Transport | Duration
+Howick | Car | ~20 min
+Durban | Car | ~1h30
+
+Source: official visitor and permit rules.</desc>
+  </wpt>
+  <wpt lat="-28.823000" lon="28.728000">
+    <name>Afriski Mountain MTB (Lesotho) [no summer lift confirmed]</name>
+    <desc>High-altitude Maloti Mountain riding above 3,000 m
+
+Trails
+Natural and built lines around Afriski include short flow and downhill trails such as Break Back Mountain and Bosman's Way, with broader highland tracks extending toward Mahlasela Pass. Thin air, rock and severe weather make even short rides demanding.
+
+Getting up / price
+No summer bike uplift is currently confirmed. Pedal, arrange resort transport or ride as part of an organized event; do not assume the winter ski lift carries bikes.
+
+Open season
+Best September-May outside the main snow season. Storms, snow and high winds can occur at any time.
+
+Access
+From | Transport | Duration
+Butha-Buthe | Car | ~2h
+Johannesburg | Car | ~5h
+
+Sources: Visit Lesotho and current mapped Afriski trails. Check border, road and resort status.</desc>
   </wpt>
 </gpx>

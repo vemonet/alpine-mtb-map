@@ -106,7 +106,19 @@ const layers = {
 layers.OpenStreetMap.addTo(map);
 L.control.layers(layers).addTo(map);
 
-const popup = (p) => `<h3>${p.name}</h3>${p.description || ""}`;
+const pinIcon = (kind, wet = false) =>
+  L.divIcon({
+    className: "",
+    html: `<div class="pin ${kind}">${
+      wet
+        ? '<span class="wet-badge" aria-hidden="true"><svg viewBox="0 0 8 10" width="6" height="8" fill="currentColor"><path d="M4 0C3 2 1 4.2 1 6.2a3 3 0 0 0 6 0C7 4.2 5 2 4 0Z"/></svg></span>'
+        : ""
+    }</div>`,
+    iconSize: [15, 15],
+    iconAnchor: [7, 7],
+  });
+
+const basePopup = (p) => `<h3>${p.name}</h3>${p.description || ""}`;
 
 // A spot owns its main pin, its secondary pins and its trail lines: they are
 // shown and hidden together, so the filters operate on whole spots.
@@ -117,33 +129,34 @@ for (const p of places) {
   const layer =
     p.type === "point"
       ? L.marker(p.coords[0], {
-          icon: L.divIcon({
-            className: "",
-            html: `<div class="pin ${p.kind}"></div>`,
-            iconSize: [15, 15],
-            iconAnchor: [7, 7],
-          }),
+          icon: pinIcon(p.kind),
           title: p.name,
         })
       : L.polyline(p.coords, { color: TRAIL_COLOR, weight: 4, opacity: 0.85 });
-
-  layer.bindPopup(popup(p), { maxWidth: 340 });
 
   const key = p.spot || p.name;
   let spot = spots.get(key);
   if (!spot) {
     spot = {
+      id: key,
       tags: new Set(),
       searchText: "",
       priceDay: null,
       openFrom: "",
       closedFrom: "",
+      weather: null,
+      places: [],
       group: L.layerGroup().addTo(map),
     };
     spots.set(key, spot);
   }
   spot.group.addLayer(layer);
+  spot.places.push({ layer, place: p });
   spot.searchText += ` ${p.name} ${p.description}`.toLocaleLowerCase();
+  layer.bindPopup(() => weatherPopup(p, spot), { maxWidth: 360 });
+  layer.on("popupopen", () => {
+    if (spot.entry) setSelectedSpotUrl(spot);
+  });
 
   // A spot's tag set is the union of its placemarks', plus two tags derived
   // from data that is already there: the no-lift style and season price facet.
@@ -160,7 +173,7 @@ for (const p of places) {
   // Main spot pins are the ones carrying a "[28 CHF]" summary in the name.
   const m = p.name.match(/^(.*?)\s*\[(.+)\]$/);
   if (p.type === "point" && m && p.kind !== "minor") {
-    const entry = { name: m[1], meta: m[2], layer, spot };
+    const entry = { name: m[1], meta: m[2], kind: p.kind, layer, spot };
     spot.entry = entry;
     entries.push(entry);
   }
@@ -174,18 +187,297 @@ requestAnimationFrame(() => {
 
 // -------------------------------------------------------------- sidebar ---
 const list = document.getElementById("spots");
+const setSelectedSpotUrl = (spot) => {
+  const url = new URL(window.location.href);
+  url.searchParams.set("spot", spot.id);
+  history.replaceState({ spot: spot.id }, "", url);
+};
+
+const clearSelectedSpotUrl = () => {
+  const url = new URL(window.location.href);
+  url.searchParams.delete("spot");
+  history.replaceState(null, "", url);
+};
+
+map.on("popupclose", clearSelectedSpotUrl);
+
+const showEntry = (entry, animate = true) => {
+  setSelectedSpotUrl(entry.spot);
+  map.flyTo(entry.layer.getLatLng(), 12, { duration: animate ? 0.6 : 0 });
+  entry.layer.openPopup();
+};
+
 for (const e of entries) {
   const li = document.createElement("li");
   const btn = document.createElement("button");
   btn.innerHTML = `<span class="name">${e.name}</span><span class="meta">${e.meta}</span>`;
-  btn.addEventListener("click", () => {
-    map.flyTo(e.layer.getLatLng(), 12, { duration: 0.6 });
-    e.layer.openPopup();
-  });
+  btn.addEventListener("click", () => showEntry(e));
   li.append(btn);
   list.append(li);
   e.row = li;
 }
+
+const requestedSpot = new URL(window.location.href).searchParams.get("spot");
+const requestedEntry = requestedSpot && spots.get(requestedSpot)?.entry;
+if (requestedEntry) requestAnimationFrame(() => showEntry(requestedEntry, false));
+
+// --------------------------------------------------------------- weather ---
+// Open-Meteo accepts comma-separated coordinate lists. Fetching the main pins
+// in batches keeps the request URLs bounded while avoiding one request per
+// spot. One response contains three past days and the full 16-day forecast
+// window, leaving room to show three days on either side of the selected date.
+const WEATHER_API = "https://api.open-meteo.com/v1/forecast";
+const WEATHER_BATCH_SIZE = 40;
+const WEATHER_CACHE_KEY = "alpine-mtb-weather-v1";
+const WEATHER_CACHE_TTL = 6 * 60 * 60 * 1000;
+const WEATHER_RAIN_MM = 1;
+const WEATHER_PREVIOUS_DAY_MM = 5;
+const WEATHER_RAIN_PROBABILITY = 50;
+const weatherBtn = document.getElementById("weather");
+const weatherDateInput = document.getElementById("weather-date");
+const weatherDateDisplay = document.getElementById("weather-date-display");
+const weatherDateButton = document.getElementById("weather-date-button");
+let weatherEnabled = true;
+let weatherRequest = 0;
+
+const localDate = (date) => {
+  const year = date.getFullYear();
+  const month = String(date.getMonth() + 1).padStart(2, "0");
+  const day = String(date.getDate()).padStart(2, "0");
+  return `${year}-${month}-${day}`;
+};
+const shiftedDate = (iso, days) => {
+  const [year, month, day] = iso.split("-").map(Number);
+  return localDate(new Date(year, month - 1, day + days));
+};
+const europeanDate = (iso, short = false) => {
+  const [year, month, day] = iso.split("-");
+  return short ? `${day}.${month}` : `${day}.${month}.${year}`;
+};
+
+const today = new Date();
+const forecastStart = localDate(today);
+const forecastEnd = shiftedDate(forecastStart, 12);
+weatherDateInput.min = forecastStart;
+weatherDateInput.max = forecastEnd;
+weatherDateInput.value = shiftedDate(forecastStart, today.getHours() >= 16 ? 1 : 0);
+
+const updateWeatherDateDisplay = () => {
+  weatherDateDisplay.textContent = europeanDate(weatherDateInput.value);
+};
+updateWeatherDateDisplay();
+
+const openDatePicker = (input) => {
+  if (input.showPicker) input.showPicker();
+  else {
+    input.focus();
+    input.click();
+  }
+};
+weatherDateButton.addEventListener("click", () => openDatePicker(weatherDateInput));
+
+const weatherCode = (code) => {
+  if (code === 0) return "Clear";
+  if (code <= 3) return "Cloudy";
+  if (code === 45 || code === 48) return "Fog";
+  if (code >= 51 && code <= 67) return "Rain";
+  if (code >= 71 && code <= 77) return "Snow";
+  if (code >= 80 && code <= 82) return "Showers";
+  if (code >= 85 && code <= 86) return "Snow showers";
+  if (code >= 95) return "Thunderstorm";
+  return "Variable";
+};
+
+const wetReason = (weather, date = weatherDateInput.value) => {
+  if (!weather?.days?.has(date)) return "";
+  const day = weather.days.get(date);
+  const previous = weather.days.get(shiftedDate(date, -1));
+  if (day.precipitation >= WEATHER_RAIN_MM) {
+    return `${day.precipitation.toFixed(1)} mm precipitation forecast`;
+  }
+  if (day.probability >= WEATHER_RAIN_PROBABILITY) {
+    return `${day.probability}% chance of precipitation`;
+  }
+  if (previous?.precipitation >= WEATHER_PREVIOUS_DAY_MM) {
+    return `${previous.precipitation.toFixed(1)} mm precipitation the previous day`;
+  }
+  return "";
+};
+
+const forecastRows = (weather) => {
+  const dates = [-3, -2, -1, 0, 1, 2, 3].map((days) => shiftedDate(weatherDateInput.value, days));
+  return dates
+    .filter((date) => weather.days.has(date))
+    .map((date) => {
+      const day = weather.days.get(date);
+      const selected = date === weatherDateInput.value ? ' class="selected"' : "";
+      return `<tr${selected}><td>${europeanDate(date, true)}</td><td>${weatherCode(
+        day.code,
+      )}</td><td>${Math.round(day.min)}-${Math.round(day.max)} C</td><td>${day.precipitation.toFixed(
+        1,
+      )} mm</td><td>${day.probability}%</td></tr>`;
+    })
+    .join("");
+};
+
+function weatherPopup(place, spot) {
+  const content = basePopup(place);
+  if (!weatherEnabled) return content;
+  if (!spot.weather) {
+    const status = weatherBtn.classList.contains("loading")
+      ? "Loading forecast..."
+      : "Forecast unavailable.";
+    return `${content}<section class="weather-forecast"><h4>Weather</h4><p>${status}</p></section>`;
+  }
+  const reason = wetReason(spot.weather);
+  return `${content}<section class="weather-forecast"><h4>Weather forecast</h4>
+    <p>${europeanDate(weatherDateInput.value)}: ${
+      reason
+        ? `<span class="wet-note">Likely wet: ${reason}.</span>`
+        : "No significant rain signal."
+    }</p>
+    <table class="weather-table"><thead><tr><th>Date</th><th>Sky</th><th>Temp.</th><th>Rain</th><th>Risk</th></tr></thead>
+    <tbody>${forecastRows(spot.weather)}</tbody></table>
+    <p><small>Forecast by <a href="https://open-meteo.com/" target="_blank" rel="noopener">Open-Meteo</a>.</small></p>
+  </section>`;
+}
+
+const refreshWeatherPresentation = () => {
+  for (const entry of entries) {
+    entry.layer.setIcon(
+      pinIcon(entry.kind, weatherEnabled && Boolean(wetReason(entry.spot.weather))),
+    );
+  }
+  for (const spot of spots.values()) {
+    for (const { layer, place } of spot.places) {
+      if (layer.isPopupOpen()) layer.setPopupContent(weatherPopup(place, spot));
+    }
+  }
+};
+
+const parseWeather = (data) => {
+  const days = new Map();
+  for (let i = 0; i < data.daily.time.length; i++) {
+    days.set(data.daily.time[i], {
+      code: data.daily.weather_code[i],
+      min: data.daily.temperature_2m_min[i],
+      max: data.daily.temperature_2m_max[i],
+      precipitation: data.daily.precipitation_sum[i] ?? 0,
+      probability: data.daily.precipitation_probability_max[i] ?? 0,
+    });
+  }
+  return { days };
+};
+
+const readWeatherCache = () => {
+  try {
+    return JSON.parse(localStorage.getItem(WEATHER_CACHE_KEY)) || {};
+  } catch {
+    return {};
+  }
+};
+
+const weatherCache = readWeatherCache();
+
+const loadCachedWeather = () => {
+  const now = Date.now();
+  for (const entry of entries) {
+    const cached = weatherCache[entry.spot.id];
+    if (
+      cached?.days &&
+      Number.isFinite(cached.cachedAt) &&
+      now - cached.cachedAt < WEATHER_CACHE_TTL
+    ) {
+      entry.spot.weather = { days: new Map(Object.entries(cached.days)) };
+    } else {
+      delete weatherCache[entry.spot.id];
+    }
+  }
+};
+
+const saveWeatherCache = () => {
+  try {
+    localStorage.setItem(WEATHER_CACHE_KEY, JSON.stringify(weatherCache));
+  } catch {
+    // Weather still works when storage is unavailable or full.
+  }
+};
+
+const fetchWeatherBatch = async (batch, request) => {
+  const params = new URLSearchParams({
+    latitude: batch.map((entry) => entry.layer.getLatLng().lat.toFixed(5)).join(","),
+    longitude: batch.map((entry) => entry.layer.getLatLng().lng.toFixed(5)).join(","),
+    daily:
+      "weather_code,temperature_2m_max,temperature_2m_min,precipitation_sum,precipitation_probability_max",
+    past_days: "3",
+    forecast_days: "16",
+    timezone: "auto",
+  });
+  const response = await fetch(`${WEATHER_API}?${params}`);
+  if (!response.ok) throw new Error(`Open-Meteo returned ${response.status}`);
+  const result = await response.json();
+  if (request !== weatherRequest || !weatherEnabled) return;
+  const forecasts = Array.isArray(result) ? result : [result];
+  for (let i = 0; i < batch.length; i++) {
+    if (forecasts[i]?.daily) {
+      const weather = parseWeather(forecasts[i]);
+      batch[i].spot.weather = weather;
+      weatherCache[batch[i].spot.id] = {
+        cachedAt: Date.now(),
+        days: Object.fromEntries(weather.days),
+      };
+    }
+  }
+  saveWeatherCache();
+  refreshWeatherPresentation();
+};
+
+const loadWeather = async () => {
+  const request = ++weatherRequest;
+  loadCachedWeather();
+  refreshWeatherPresentation();
+  const missingEntries = entries.filter((entry) => !entry.spot.weather);
+  if (!missingEntries.length) {
+    weatherBtn.classList.remove("loading");
+    weatherBtn.title = "Disable weather";
+    weatherBtn.setAttribute("aria-label", weatherBtn.title);
+    return;
+  }
+  weatherBtn.classList.add("loading");
+  weatherBtn.title = "Loading weather forecasts";
+  const batches = [];
+  for (let i = 0; i < missingEntries.length; i += WEATHER_BATCH_SIZE) {
+    batches.push(fetchWeatherBatch(missingEntries.slice(i, i + WEATHER_BATCH_SIZE), request));
+  }
+  const results = await Promise.allSettled(batches);
+  if (request !== weatherRequest || !weatherEnabled) return;
+  weatherBtn.classList.remove("loading");
+  const failed = results.filter((result) => result.status === "rejected").length;
+  const label = failed
+    ? `Disable weather (${failed} forecast ${failed === 1 ? "request" : "requests"} failed)`
+    : "Disable weather";
+  weatherBtn.title = label;
+  weatherBtn.setAttribute("aria-label", label);
+  refreshWeatherPresentation();
+};
+
+weatherBtn.addEventListener("click", () => {
+  weatherEnabled = !weatherEnabled;
+  weatherBtn.setAttribute("aria-pressed", String(weatherEnabled));
+  weatherBtn.classList.remove("loading");
+  weatherBtn.title = weatherEnabled ? "Disable weather" : "Enable weather";
+  weatherBtn.setAttribute("aria-label", weatherBtn.title);
+  document.getElementById("weather-date-filter").hidden = !weatherEnabled;
+  refreshWeatherPresentation();
+  if (weatherEnabled && entries.some((entry) => !entry.spot.weather)) loadWeather();
+  else if (!weatherEnabled) weatherRequest++;
+});
+
+weatherDateInput.addEventListener("input", () => {
+  updateWeatherDateDisplay();
+  refreshWeatherPresentation();
+});
+loadWeather();
 
 // ----------------------------------------------------------- geolocation ---
 // Opt-in only: nothing touches the Geolocation API until this button is
@@ -318,12 +610,7 @@ const updateDateDisplay = () => {
 };
 updateDateDisplay();
 dateButton.addEventListener("click", () => {
-  if (dateInput.showPicker) {
-    dateInput.showPicker();
-  } else {
-    dateInput.focus();
-    dateInput.click();
-  }
+  openDatePicker(dateInput);
 });
 const selectedDay = () => dateInput.value.slice(5);
 const isOpen = (spot) => {

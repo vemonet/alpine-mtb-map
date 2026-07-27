@@ -43,6 +43,16 @@ export default defineConfig({
         globPatterns: ["**/*.{js,css,html,png,kml,gpx,geojson}"],
         runtimeCaching: [
           {
+            urlPattern: /^https:\/\/api\.open-meteo\.com\/v1\/forecast/,
+            handler: "NetworkFirst",
+            options: {
+              cacheName: "weather-forecasts",
+              networkTimeoutSeconds: 5,
+              expiration: { maxEntries: 30, maxAgeSeconds: 60 * 60 },
+              cacheableResponse: { statuses: [0, 200] },
+            },
+          },
+          {
             // Tiles you have already looked at stay available offline. Capped
             // so a long browsing session cannot fill up the device.
             urlPattern: /^https:\/\/[a-c]?\.?tile.*\.(png|jpg)$/,

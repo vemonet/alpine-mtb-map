@@ -3,10 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Alpine MTB Map · Bike Parks, Enduro and DH Trails Worldwide</title>
+    <title>Alpine MTB Map · Downhill, Enduro and Freeride Spots Worldwide</title>
     <meta
       name="description"
-      content="Explore lift-served bike parks, natural enduro spots and downhill trails across the Alps and worldwide. Compare trails, lift prices, opening seasons and access, then download the map as KML, GPX or GeoJSON."
+      content="The definitive open map for gravity mountain biking. Discover top downhill bike parks, enduro trails, and freeride spots worldwide."
     />
     <meta name="robots" content="index, follow" />
     <meta name="author" content="Alpine MTB Map contributors" />
@@ -27,20 +27,23 @@
     <meta property="og:site_name" content="Alpine MTB Map" />
     <meta
       property="og:title"
-      content="Alpine MTB Map - Bike Parks, Enduro and DH Trails Worldwide"
+      content="Alpine MTB Map - Downhill, Enduro and Freeride Spots Worldwide"
     />
     <meta
       property="og:description"
-      content="Find bike parks, natural enduro spots and downhill trails, with prices, seasons, access details and downloadable GPS data."
+      content="The definitive open map for gravity mountain biking. Discover top downhill bike parks, enduro trails, and freeride spots worldwide."
     />
     <meta property="og:url" content="https://vemonet.github.io/alpine-mtb-map/" />
     <meta property="og:image" content="https://vemonet.github.io/alpine-mtb-map/icon-512.png" />
     <meta property="og:image:alt" content="Alpine MTB Map logo" />
     <meta name="twitter:card" content="summary" />
-    <meta name="twitter:title" content="Alpine MTB Map - Bike Parks, Enduro and DH Trails" />
+    <meta
+      name="twitter:title"
+      content="Alpine MTB Map - Downhill, Enduro and Freeride Spots Worldwide"
+    />
     <meta
       name="twitter:description"
-      content="An interactive map of bike parks and natural gravity riding spots with downloadable KML, GPX and GeoJSON data."
+      content="The definitive open map for gravity mountain biking. Discover top downhill bike parks, enduro trails, and freeride spots worldwide."
     />
     <meta name="twitter:image" content="https://vemonet.github.io/alpine-mtb-map/icon-512.png" />
     <!-- The icon's own background, so the PWA chrome matches the mark.
@@ -54,7 +57,7 @@
         "@type": "WebApplication",
         "name": "Alpine MTB Map",
         "url": "https://vemonet.github.io/alpine-mtb-map/",
-        "description": "Interactive map of lift-served bike parks, natural enduro spots and downhill trails across the Alps and worldwide.",
+        "description": "The definitive open map for gravity mountain biking. Discover top downhill bike parks, enduro trails, and freeride spots worldwide.",
         "applicationCategory": "TravelApplication",
         "operatingSystem": "Any",
         "isAccessibleForFree": true,
@@ -91,8 +94,33 @@
       <aside id="sidebar">
         <header>
           <h1><img class="logo" src="./icon.png" alt="" width="24" height="24" />Alpine MTB Map</h1>
-          <p>Mountain biking spots across the Alps & beyond</p>
+          <p>
+            The definitive open map for gravity mountain biking. Discover top downhill bike parks,
+            enduro trails, and freeride spots worldwide.
+          </p>
           <div class="header-actions">
+            <button
+              id="weather"
+              type="button"
+              title="Disable weather"
+              aria-label="Disable weather"
+              aria-pressed="true"
+            >
+              <svg
+                viewBox="0 0 18 16"
+                width="15"
+                height="14"
+                aria-hidden="true"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M5.2 11.5h8a3 3 0 0 0 .3-6A4.6 4.6 0 0 0 4.8 6.8a2.4 2.4 0 0 0 .4 4.7Z" />
+                <path d="m6.5 13.2-.7 1.2m4-1.2-.7 1.2m4-1.2-.7 1.2" />
+              </svg>
+            </button>
             <button
               id="locate"
               type="button"
@@ -243,6 +271,30 @@
                 </svg>
               </button>
               <input id="open-date" type="date" tabindex="-1" aria-hidden="true" />
+            </span>
+          </div>
+          <div class="date-filter" id="weather-date-filter">
+            <span>Weather on</span>
+            <span class="date-control">
+              <button id="weather-date-button" type="button" aria-label="Choose forecast date">
+                <output id="weather-date-display"></output>
+                <svg
+                  class="calendar-icon"
+                  viewBox="0 0 16 16"
+                  width="14"
+                  height="14"
+                  aria-hidden="true"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.4"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <rect x="2" y="3.5" width="12" height="10.5" rx="2" />
+                  <path d="M5 2v3M11 2v3M2 7h12" />
+                </svg>
+              </button>
+              <input id="weather-date" type="date" tabindex="-1" aria-hidden="true" />
             </span>
           </div>
         </nav>
@@ -449,14 +501,20 @@
           the signs on the ground, not the trace.
         </li>
         <li>
-          <b>Lift prices, opening dates and travel times</b> compiled from the operators' own sites
-          and <a href="https://www.magicpass.ch/">Magic Pass</a>, in July 2026. Where a 2026 figure
-          could not be confirmed the pin says so rather than guessing.
+          <b>Lift prices, opening dates, daily hours and travel times</b> compiled from the
+          operators' own sites and <a href="https://www.magicpass.ch/">Magic Pass</a>, in July 2026.
+          Where published daily hours could not be confirmed, the pin shows a typical regional
+          estimate and says so explicitly.
         </li>
         <li>
           <b>Trail descriptions</b> written by an LLM, from riding and from operator trail maps.
         </li>
         <li><b>Base map tiles</b> from OpenStreetMap, OpenTopoMap (CC BY-SA) and CyclOSM.</li>
+        <li>
+          <b>Weather forecasts</b> from <a href="https://open-meteo.com/">Open-Meteo</a>. A blue
+          rain badge means at least 1 mm of precipitation or a 50% probability is forecast, or at
+          least 5 mm fell the previous day.
+        </li>
       </ul>
       <h3>Licence</h3>
       <p>
