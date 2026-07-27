@@ -4,6 +4,94 @@
     <name>Alpine MTB Map</name>
     <desc>Lift-served mountain-bike spots in the western Alps and Jura. Trail geometries from OpenStreetMap (ODbL).</desc>
   </metadata>
+  <wpt lat="37.490917" lon="71.548922">
+    <name>Khorog - Pamir Highway and Wakhan (Tajikistan) [no lift]</name>
+    <desc>Remote high-altitude mountain-bike expeditions through the Pamirs
+
+Trails
+Khorog is the main riding and logistics base for the Pamir Highway, Wakhan Valley and Gorno-Badakhshan. This is expedition terrain rather than a trail centre: long gravel stages cross passes above 4,000 m, with rough descents including Koi-Tezek, Nayzatash and Ak-Baital. Side valleys add unmaintained tracks, river crossings and very isolated mountain riding.
+
+Getting up / price
+No lift. Most trips combine pedalling with a 4x4 support vehicle, luggage transport and local guiding. Independent riding is possible for experienced expedition cyclists, but distances, altitude and limited supplies make supported travel strongly advisable.
+
+Open season
+Open from 01 July; closed from 01 October (average high-pass riding window).
+Daily opening hours: daylight hours
+A GBAO permit is required. Some border areas and Zorkul require additional permission; rules, crossings and road conditions can change at short notice.
+
+Access
+From | Transport | Duration
+Khorog | Bike / 4x4 | Direct
+Dushanbe | Flight / long 4x4 transfer | Variable
+
+Sources: Travel to Tajikistan sports tourism, the Pamir Guides bike-tour itinerary and Travel Tajikistan Pamir Highway itinerary. Confirm permits, security advice and current road access before departure.</desc>
+  </wpt>
+  <wpt lat="41.559475" lon="70.015402">
+    <name>Chimgan - Ugam-Chatkal (Uzbekistan) [no bike lift documented]</name>
+    <desc>Natural Tian Shan enduro and adventure riding above Charvak Reservoir
+
+Trails
+Chimgan is the main mountain base near Tashkent, with rocky jeep tracks, shepherd paths, gorge descents and steep natural terrain in the Ugam-Chatkal mountains. It is best approached as a guided backcountry ride rather than a maintained bike park; trail marking and reliable difficulty information are limited.
+
+Getting up / price
+Pedal access or locally arranged vehicle support. No operating mountain-bike lift is documented. Nearby Amirsoy runs gondolas for sightseeing, but its official summer activity information does not confirm bicycle carriage.
+
+Open season
+Open from 01 May; closed from 01 November (average snow-free riding season).
+Daily opening hours: daylight hours
+Confirm the route, protected-area rules and any permit requirements with a local guide before riding.
+
+Access
+From | Transport | Duration
+Tashkent | Car | ~1 h 30
+Chimgan village | Bike | Direct
+
+Sources: Amirsoy official activities and Visit Tashkent mountain-area information. Current MTB infrastructure is not formally documented, so verify locally.</desc>
+  </wpt>
+  <wpt lat="42.599493" lon="78.500159">
+    <name>Jyrgalan Valley MTB (Kyrgyzstan) [no lift]</name>
+    <desc>Community-based natural mountain biking in the eastern Tian Shan
+
+Trails
+Marked village routes include the 7 km Tulpar Tash ride, the 13 km Kok-Bel waterfall route and the 16.6 km Eki Chat loop. Stronger riders can tackle the rough Kok-Bel Pass route, with alpine terrain, river valleys and technical natural sections. Local guesthouses arrange rentals and guides.
+
+Getting up / price
+Pedal access; no lift. Guided rides and vehicle support can be arranged locally. The destination lists bike rental at 1,320 KGS per day or 660 KGS per half day; confirm current rates.
+
+Open season
+Open from 01 June; closed from 01 October (official recommended riding season is June to September).
+Daily opening hours: daylight hours
+Mountain weather changes quickly. Carry repair and navigation equipment, and use a local guide for remote routes.
+
+Access
+From | Transport | Duration
+Karakol | Car | ~1 h
+Jyrgalan village | Bike | Direct
+
+Source: Destination Jyrgalan official mountain-biking guide. Check current trail and rental conditions locally.</desc>
+  </wpt>
+  <wpt lat="42.481740" lon="78.400293">
+    <name>Karakol - Jeti-Oguz MTB (Kyrgyzstan) [no lift]</name>
+    <desc>Natural Tian Shan enduro and multi-day riding hub
+
+Trails
+Karakol is the principal base for forest singletrack, alpine valleys and long natural descents around Jeti-Oguz and the eastern Issyk-Kul region. Riding ranges from approachable valley routes to remote high-pass adventures with substantial climbing and exposed mountain terrain.
+
+Getting up / price
+Pedal access or a locally arranged shuttle; no lift-served bike park is documented. Do not assume that nearby ski lifts carry bicycles. Karakol has bike rental and guiding operators for day rides and supported multi-day trips.
+
+Open season
+Open from 01 June; closed from 15 October (average high-country riding season).
+Daily opening hours: daylight hours
+Route conditions and river crossings vary. A guide is strongly recommended outside the lower valley network.
+
+Access
+From | Transport | Duration
+Karakol | Bike / car | Direct
+Bishkek | Car | ~5 h
+
+Source: Visit Kyrgyzstan Karakol mountain-biking guide. Confirm routes, guides and access before departure.</desc>
+  </wpt>
   <wpt lat="46.454526" lon="6.111707">
     <name>St-Cergue / La Dôle (Jura vaudois) [train fare only]</name>
     <desc>La Givrine (top of the NStCM train)
@@ -633,7 +721,7 @@ Source: Moleson. Prices, schedules, trail status and access can change; verify b
     <desc>Col de Bretaye 1806 m - top of the Villars cog railway
 
 Trails
-The Grand Chamossaire descent, opened in summer 2025: 3 km of blue flow with big berms, a few technical sections and smooth fast bits between them - built for families and improving riders rather than for hucking. Around it sits a dense network of marked SuisseMobile routes: 573 Bretaye &gt; Villars, 572 Bretaye &gt; Ollon (a long 20 km+ descent to the Rhone valley), 580 towards Les Chaux and Solalex, and 582 Taveyanne-Solalex. Villars also preserves the Maxi Avalanche line toward the valley, a former mass start race course with roughly 1500 m of vertical from the Roc d'Orsay sector.
+The Grand Chamossaire descent, opened in summer 2025: 3 km of blue flow with big berms, a few technical sections and smooth fast bits between them - built for families and improving riders rather than for hucking. Around it sits a dense network of marked SuisseMobile routes: 573 Bretaye &gt; Villars, 572 Bretaye &gt; Ollon (a long 20 km+ descent to the Rhone valley), 580 towards Les Chaux and Solalex, and 582 Taveyanne-Solalex. Villars also preserves the Maxi Avalanche line toward the valley, with roughly 1500 m of vertical from the Roc d'Orsay sector.
 
 Getting up / price
 TVGD summer day pass 36 CHF adult / 18 CHF child, covering the Villars-Bretaye train, the gondolas and the Grand Chamossaire chairlift. Single ascent 20 CHF. Free with the Magic Pass. Mid-June to late October.
