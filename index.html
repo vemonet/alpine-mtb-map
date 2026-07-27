@@ -483,124 +483,133 @@
         rarely a KML or GPX to drop into your GPS app.
       </p>
       <p>
-        This map is that missing file. Every spot lives in a single KML you can download and load
-        into
-        <a href="https://www.comaps.app/">CoMaps</a>,
-        <a href="https://organicmaps.app/">Organic Maps</a> or OsmAnd; this site is just a
-        convenient way to browse and filter it without installing anything.
+        This map is that missing file. <b>Every spot lives in a single KML file</b> you can download
+        and load into <a href="https://www.comaps.app/" target="_blank" rel="noopener">CoMaps</a>,
+        <a href="https://organicmaps.app/" target="_blank" rel="noopener">Organic Maps</a> or
+        OsmAnd; this site is just a convenient way to browse and filter it without installing
+        anything.
       </p>
       <p>
         The website also provides live weather forecasts and marks spots expected to be wet, using
         rain on the selected day and the preceding days to help you judge current and upcoming trail
         conditions.
       </p>
-      <h3>Natural trail grading: T and E</h3>
-      <p>
-        Ratings such as <b>T5 / E2</b> combine two independent VTTour scales. <b>T</b> describes how
-        technically difficult the riding is; <b>E</b> describes how serious the consequences of a
-        fall are. T5 / E2 therefore means extremely difficult riding on a narrow trail with some
-        obstacles, but without the severe cliff exposure of E3 or E4. Ratings assume dry conditions
-        and remain subjective.
-      </p>
-      <table class="grade-table">
-        <caption>
-          Technical difficulty
-        </caption>
-        <tbody>
-          <tr>
-            <th>T1</th>
-            <td>
-              Wide, smooth trail; gentle slope below roughly 20%; broad turns and no obstacles.
-            </td>
-          </tr>
-          <tr>
-            <th>T2</th>
-            <td>
-              Wide trail; moderate 20-30% slope; fine loose stones, small obstacles and easy
-              switchbacks.
-            </td>
-          </tr>
-          <tr>
-            <th>T3</th>
-            <td>
-              Narrow and often steeper than 30%; roots, steps below 30 cm, medium scree and a few
-              difficult switchbacks.
-            </td>
-          </tr>
-          <tr>
-            <th>T4</th>
-            <td>
-              Narrow, steep and strongly off-camber; steps above 30 cm, large loose rock and
-              repeated difficult or occasional trials-style turns.
-            </td>
-          </tr>
-          <tr>
-            <th>T5</th>
-            <td>
-              Extreme gradients with numerous trials-style passages requiring advanced balance,
-              wheel placement and low-speed control.
-            </td>
-          </tr>
-        </tbody>
-      </table>
-      <table class="grade-table">
-        <caption>
-          Exposure and fall consequences
-        </caption>
-        <tbody>
-          <tr>
-            <th>E1</th>
-            <td>Low exposure: wide trail with no major hazards beside or below it.</td>
-          </tr>
-          <tr>
-            <th>E2</th>
-            <td>Medium exposure: narrow trail with some obstacles that can worsen a fall.</td>
-          </tr>
-          <tr>
-            <th>E3</th>
-            <td>
-              High exposure: very narrow trail with many obstacles, steep slopes or small rock drops
-              beside it.
-            </td>
-          </tr>
-          <tr>
-            <th>E4</th>
-            <td>
-              Very high exposure: substantial cliffs or rock drops beside the trail; a fall can have
-              critical consequences.
-            </td>
-          </tr>
-        </tbody>
-      </table>
-      <p>
-        Scale definitions adapted from
-        <a href="https://vttour.fr/forums/125536">VTTour's grading reference</a>.
-      </p>
-      <h3>Where the data comes from</h3>
-      <ul>
-        <li>
-          <b>Trail geometry</b> from
-          <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>
-          MTB route relations, pulled via
-          <a href="https://overpass-turbo.eu/">Overpass</a> and simplified. Indicative only: follow
-          the signs on the ground, not the trace.
-        </li>
-        <li>
-          <b>Lift prices, opening dates, daily hours and travel times</b> compiled from the
-          operators' own sites and <a href="https://www.magicpass.ch/">Magic Pass</a>, in July 2026.
-          Where published daily hours could not be confirmed, the pin shows a typical regional
-          estimate and says so explicitly.
-        </li>
-        <li>
-          <b>Trail descriptions</b> written by an LLM, from riding and from operator trail maps.
-        </li>
-        <li><b>Base map tiles</b> from OpenStreetMap, OpenTopoMap (CC BY-SA) and CyclOSM.</li>
-        <li>
-          <b>Weather forecasts</b> from <a href="https://open-meteo.com/">Open-Meteo</a>. A blue
-          rain badge means at least 1 mm of precipitation or a 50% probability is forecast, or at
-          least 5 mm fell the previous day.
-        </li>
-      </ul>
+      <details class="about-details">
+        <summary><h3>Where the data comes from</h3></summary>
+        <ul>
+          <li>
+            <b>Trail geometry</b> from
+            <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener"
+              >OpenStreetMap</a
+            >
+            MTB route relations, pulled via
+            <a href="https://overpass-turbo.eu/" target="_blank" rel="noopener">Overpass</a> and
+            simplified. Indicative only: follow the signs on the ground, not the trace.
+          </li>
+          <li>
+            <b>Lift prices, opening dates, daily hours and travel times</b> compiled from the
+            operators' own sites and
+            <a href="https://www.magicpass.ch/" target="_blank" rel="noopener">Magic Pass</a>, in
+            July 2026. Where published daily hours could not be confirmed, the pin shows a typical
+            regional estimate and says so explicitly.
+          </li>
+          <li>
+            <b>Trail descriptions</b> written by humans often assisted by an LLM, from riding and
+            from operator trail maps.
+          </li>
+          <li><b>Base map tiles</b> from OpenStreetMap, OpenTopoMap (CC BY-SA) and CyclOSM.</li>
+          <li>
+            <b>Weather forecasts</b> from
+            <a href="https://open-meteo.com/" target="_blank" rel="noopener">Open-Meteo</a>. A blue
+            rain badge means at least 1 mm of precipitation or a 50% probability is forecast, or at
+            least 5 mm fell the previous day.
+          </li>
+        </ul>
+      </details>
+      <details class="about-details">
+        <summary><h3>Natural trail grading: T and E</h3></summary>
+        <p>
+          Ratings such as <b>T5 / E2</b> combine two independent VTTour scales. <b>T</b> describes
+          how technically difficult the riding is; <b>E</b> describes how serious the consequences
+          of a fall are. T5 / E2 therefore means extremely difficult riding on a narrow trail with
+          some obstacles, but without the severe cliff exposure of E3 or E4. Ratings assume dry
+          conditions and remain subjective.
+        </p>
+        <table class="grade-table">
+          <caption>
+            Technical difficulty
+          </caption>
+          <tbody>
+            <tr>
+              <th>T1</th>
+              <td>
+                Wide, smooth trail; gentle slope below roughly 20%; broad turns and no obstacles.
+              </td>
+            </tr>
+            <tr>
+              <th>T2</th>
+              <td>
+                Wide trail; moderate 20-30% slope; fine loose stones, small obstacles and easy
+                switchbacks.
+              </td>
+            </tr>
+            <tr>
+              <th>T3</th>
+              <td>
+                Narrow and often steeper than 30%; roots, steps below 30 cm, medium scree and a few
+                difficult switchbacks.
+              </td>
+            </tr>
+            <tr>
+              <th>T4</th>
+              <td>
+                Narrow, steep and strongly off-camber; steps above 30 cm, large loose rock and
+                repeated difficult or occasional trials-style turns.
+              </td>
+            </tr>
+            <tr>
+              <th>T5</th>
+              <td>
+                Extreme gradients with numerous trials-style passages requiring advanced balance,
+                wheel placement and low-speed control.
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <table class="grade-table">
+          <caption>
+            Exposure and fall consequences
+          </caption>
+          <tbody>
+            <tr>
+              <th>E1</th>
+              <td>Low exposure: wide trail with no major hazards beside or below it.</td>
+            </tr>
+            <tr>
+              <th>E2</th>
+              <td>Medium exposure: narrow trail with some obstacles that can worsen a fall.</td>
+            </tr>
+            <tr>
+              <th>E3</th>
+              <td>
+                High exposure: very narrow trail with many obstacles, steep slopes or small rock
+                drops beside it.
+              </td>
+            </tr>
+            <tr>
+              <th>E4</th>
+              <td>
+                Very high exposure: substantial cliffs or rock drops beside the trail; a fall can
+                have critical consequences.
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <p>
+          Scale definitions adapted from
+          <a href="https://vttour.fr/forums/125536">VTTour's grading reference</a>.
+        </p>
+      </details>
       <h3>Licence</h3>
       <p>
         Map data under
@@ -615,9 +624,22 @@
         <code>vp i &amp;&amp; vp dev</code>, and send a pull request. The README has a template and
         the tag reference.
       </p>
-      <p>
-        <a href="https://github.com/vemonet/alpine-mtb-map">github.com/vemonet/alpine-mtb-map</a>
-      </p>
+      <div class="about-buttons">
+        <a
+          href="https://github.com/vemonet/alpine-mtb-map/issues/new?template=add-spot.yml"
+          class="popup-btn source-btn"
+          target="_blank"
+          rel="noopener"
+          >Add spot</a
+        >
+        <a
+          href="https://github.com/vemonet/alpine-mtb-map"
+          class="popup-btn request-btn"
+          target="_blank"
+          rel="noopener"
+          >Source</a
+        >
+      </div>
       <form method="dialog"><button>Close</button></form>
     </dialog>
     <script type="module" src="/src/main.js"></script>

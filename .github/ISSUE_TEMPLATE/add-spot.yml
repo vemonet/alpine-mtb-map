@@ -1,8 +1,8 @@
-name: 📍 Request a spot
+name: 📍 Add a spot
 description: Suggest a mountain biking spot or trail to add to the map
 title: "Add spot: "
 labels:
-  - spot request
+  - add spot
 body:
   - type: markdown
     attributes:
@@ -13,7 +13,7 @@ body:
     id: name
     attributes:
       label: Trail or spot name
-      placeholder: "Example: Bike Park Example Mountain"
+      placeholder: "Verbier - 4 Vallées"
     validations:
       required: true
 

@@ -231,6 +231,28 @@ body {
   font-size: 12.5px;
 }
 
+.about-buttons {
+  display: flex;
+  gap: 8px;
+  margin-top: 16px;
+  justify-content: center;
+}
+
+.about-buttons .popup-btn {
+  border: 1px solid var(--line);
+  background: var(--muted-bg, #e9ecef);
+  color: var(--muted-fg, #495057);
+  text-decoration: none;
+}
+
+.about-buttons .popup-btn:hover {
+  background: var(--line);
+}
+
+.about-buttons .request-btn {
+  background: var(--line, #dee2e6);
+}
+
 #about form {
   margin-top: 16px;
   text-align: right;
@@ -753,6 +775,48 @@ a.dl:hover {
 .leaflet-popup-content h3 {
   margin: 0 0 6px;
   font-size: 15px;
+}
+
+.popup-buttons {
+  display: flex;
+  gap: 8px;
+  margin: 10px 0 4px;
+}
+
+.popup-btn {
+  display: inline-block;
+  padding: 5px 12px;
+  border-radius: 5px;
+  font-size: 12.5px;
+  font-weight: 500;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: opacity 0.15s;
+}
+
+.popup-btn:hover {
+  opacity: 0.8;
+}
+
+#about a.source-btn {
+  background: var(--accent, #2a6f97);
+  color: #fff;
+}
+
+#about a.request-btn {
+  background: var(--muted-bg, #e9ecef);
+  color: var(--muted-fg, #495057);
+  border: 1px solid var(--muted-border, #ced4da);
+}
+
+.about-details {
+  margin: 16px 0;
+}
+
+.about-details summary h3 {
+  display: inline;
+  cursor: pointer;
+  font-size: 18px;
 }
 
 .leaflet-popup-content .warn {
