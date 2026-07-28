@@ -22,7 +22,16 @@ const KINDS = {
   "line-trail": "trail",
 };
 
-const TRAIL_COLOR = "#e8590c";
+// Trail line styleUrl -> stroke colour, mirrors the KML's own <Style> defs
+// so the web map and Organic Maps (which reads the KML style directly) match.
+const TRAIL_COLORS = {
+  "line-green": "#2b8a3e",
+  "line-blue": "#1864ab",
+  "line-red": "#c92a2a",
+  "line-black": "#000000",
+  "line-trail": "#c92a2a",
+};
+const TRAIL_COLOR = TRAIL_COLORS["line-trail"];
 // Distinct from the blue spot pins, so 'you are here' never reads as a spot.
 const LOCATE_COLOR = "#7048e8";
 
@@ -57,6 +66,7 @@ function parseKml(text) {
       name: text_(pm, "name"),
       description: text_(pm, "description"),
       kind: KINDS[styleUrl] ?? "minor",
+      styleUrl,
       spot: facet(pm, "spot"),
       tags: facet(pm, "tags").split(/\s+/).filter(Boolean),
       priceDay: facet(pm, "price_day"),
@@ -186,15 +196,21 @@ const basePopup = (p) => `<h3>${p.name}</h3>${p.description || ""}`;
 // shown and hidden together, so the filters operate on whole spots.
 const spots = new Map(); // key -> {tags: Set, searchText, priceDay, group, entry}
 const entries = []; // sidebar rows, one per main pin
+const lineLayers = []; // {layer, spot, color} - lets the Lines filter toggle trails independently of their spot
 
 for (const p of places) {
+  const lineColor = p.styleUrl?.replace(/^line-/, "") ?? "trail";
   const layer =
     p.type === "point"
       ? L.marker(p.coords[0], {
           icon: pinIcon(p.kind),
           title: p.name,
         })
-      : L.polyline(p.coords, { color: TRAIL_COLOR, weight: 4, opacity: 0.85 });
+      : L.polyline(p.coords, {
+          color: TRAIL_COLORS[p.styleUrl] ?? TRAIL_COLOR,
+          weight: 4,
+          opacity: 0.85,
+        });
 
   const key = p.spot || p.name;
   let spot = spots.get(key);
@@ -214,6 +230,7 @@ for (const p of places) {
   }
   spot.group.addLayer(layer);
   spot.places.push({ layer, place: p });
+  if (p.type === "line") lineLayers.push({ layer, spot, color: lineColor });
   spot.searchText += ` ${p.name} ${p.description}`.toLocaleLowerCase();
   layer.bindPopup(() => weatherPopup(p, spot), { maxWidth: 360 });
   layer.on("popupopen", () => {
@@ -632,6 +649,7 @@ for (const a of document.querySelectorAll("a.dl")) {
 // drives both the difficulty group and the DH/enduro/freeride discipline group.
 const chips = [...document.querySelectorAll(".filter[data-tag]")];
 const categoryChips = [...document.querySelectorAll(".filter[data-category]")];
+const lineColorChips = [...document.querySelectorAll(".filter[data-line-color]")];
 const on = (chip) => chip.checked;
 const modeOf = (chip) => chip.dataset.mode ?? "exclude";
 
@@ -710,6 +728,14 @@ const applyFilters = () => {
       if (visible) visibleCount++;
     }
   }
+  // Trail lines toggle independently of their spot: a spot stays visible for
+  // its pins even while one of its line colours is switched off.
+  for (const { layer, spot, color } of lineLayers) {
+    const chip = lineColorChips.find((c) => c.dataset.lineColor === color);
+    const show = chip ? on(chip) : true;
+    if (show) spot.group.addLayer(layer);
+    else spot.group.removeLayer(layer);
+  }
   document.querySelector("#spot-count").textContent =
     `${visibleCount} ${visibleCount === 1 ? "spot" : "spots"}`;
   const showFilters = [...document.querySelectorAll("#show-filter-menu .filter")];
@@ -722,6 +748,9 @@ const applyFilters = () => {
 };
 
 for (const chip of chips) {
+  chip.addEventListener("change", applyFilters);
+}
+for (const chip of lineColorChips) {
   chip.addEventListener("change", applyFilters);
 }
 for (const chip of categoryChips) {

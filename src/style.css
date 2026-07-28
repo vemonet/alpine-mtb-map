@@ -522,6 +522,22 @@ body {
   background: var(--brown);
 }
 
+.dot.line-green {
+  background: #2b8a3e;
+}
+
+.dot.line-blue {
+  background: #1864ab;
+}
+
+.dot.line-red {
+  background: #c92a2a;
+}
+
+.dot.line-black {
+  background: #000000;
+}
+
 #search {
   padding: 10px 16px;
   border-bottom: 1px solid var(--line);
