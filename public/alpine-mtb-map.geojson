@@ -696,7 +696,7 @@
         "icon-color": "#0066CC",
         "icon": "https://omaps.app/placemarks/placemark-blue.png",
         "spot": "leysin",
-        "tags": "expert magicpass bikepark dh enduro",
+        "tags": "expert magic-pass bikepark dh enduro",
         "open_from": "06-20",
         "closed_from": "08-24",
         "price_day": "28 CHF",
@@ -724,7 +724,7 @@
         "icon-color": "#737373",
         "icon": "https://omaps.app/placemarks/placemark-gray.png",
         "spot": "leysin",
-        "tags": "expert magicpass bikepark dh enduro",
+        "tags": "expert magic-pass bikepark dh enduro",
         "kind": "minor"
       }
     },
@@ -749,7 +749,7 @@
         "icon-color": "#737373",
         "icon": "https://omaps.app/placemarks/placemark-gray.png",
         "spot": "leysin",
-        "tags": "expert magicpass bikepark dh enduro",
+        "tags": "expert magic-pass bikepark dh enduro",
         "kind": "minor"
       }
     },
@@ -3998,7 +3998,7 @@
         "stroke": "#000000",
         "stroke-width": 4,
         "spot": "cransmontana",
-        "tags": "beginner expert magicpass bikepark dh freeride",
+        "tags": "beginner expert magic-pass bikepark dh freeride",
         "kind": "minor"
       }
     },
@@ -4105,7 +4105,7 @@
         "stroke": "#000000",
         "stroke-width": 4,
         "spot": "cransmontana",
-        "tags": "beginner expert magicpass bikepark dh freeride",
+        "tags": "beginner expert magic-pass bikepark dh freeride",
         "kind": "minor"
       }
     },
@@ -4777,7 +4777,7 @@
         "stroke": "#1864ab",
         "stroke-width": 4,
         "spot": "cransmontana",
-        "tags": "beginner expert magicpass bikepark dh freeride",
+        "tags": "beginner expert magic-pass bikepark dh freeride",
         "kind": "minor"
       }
     },
@@ -4802,7 +4802,7 @@
         "icon-color": "#0066CC",
         "icon": "https://omaps.app/placemarks/placemark-blue.png",
         "spot": "moleson",
-        "tags": "beginner expert magicpass bikepark dh enduro",
+        "tags": "beginner expert magic-pass bikepark dh enduro",
         "open_from": "05-15",
         "closed_from": "11-02",
         "price_day": "38 CHF",
@@ -4826,7 +4826,7 @@
         "icon-color": "#737373",
         "icon": "https://omaps.app/placemarks/placemark-gray.png",
         "spot": "moleson",
-        "tags": "beginner expert magicpass bikepark dh enduro",
+        "tags": "beginner expert magic-pass bikepark dh enduro",
         "kind": "minor"
       }
     },
@@ -4851,7 +4851,7 @@
         "icon-color": "#3C8C3C",
         "icon": "https://omaps.app/placemarks/placemark-green.png",
         "spot": "villars",
-        "tags": "beginner expert magicpass natural enduro",
+        "tags": "beginner expert magic-pass natural enduro",
         "open_from": "06-15",
         "closed_from": "10-26",
         "price_day": "36 CHF",
@@ -4875,7 +4875,7 @@
         "icon-color": "#737373",
         "icon": "https://omaps.app/placemarks/placemark-gray.png",
         "spot": "villars",
-        "tags": "beginner magicpass natural enduro",
+        "tags": "beginner magic-pass natural enduro",
         "kind": "minor"
       }
     },
@@ -6042,7 +6042,7 @@
         "stroke": "#1864ab",
         "stroke-width": 4,
         "spot": "villars",
-        "tags": "beginner magicpass natural enduro",
+        "tags": "beginner magic-pass natural enduro",
         "kind": "minor"
       }
     },
@@ -6584,7 +6584,7 @@
         "stroke": "#1864ab",
         "stroke-width": 4,
         "spot": "villars",
-        "tags": "beginner magicpass natural enduro",
+        "tags": "beginner magic-pass natural enduro",
         "kind": "minor"
       }
     },
@@ -6991,7 +6991,7 @@
         "stroke": "#1864ab",
         "stroke-width": 4,
         "spot": "villars",
-        "tags": "beginner magicpass natural enduro",
+        "tags": "beginner magic-pass natural enduro",
         "kind": "minor"
       }
     },
@@ -7318,7 +7318,7 @@
         "stroke": "#1864ab",
         "stroke-width": 4,
         "spot": "villars",
-        "tags": "beginner magicpass natural enduro",
+        "tags": "beginner magic-pass natural enduro",
         "kind": "minor"
       }
     },
@@ -7700,7 +7700,7 @@
         "stroke": "#2b8a3e",
         "stroke-width": 4,
         "spot": "villars",
-        "tags": "beginner magicpass natural enduro",
+        "tags": "beginner magic-pass natural enduro",
         "kind": "minor"
       }
     },
@@ -8562,7 +8562,7 @@
         "stroke": "#000000",
         "stroke-width": 4,
         "spot": "villars",
-        "tags": "beginner expert magicpass massstart natural enduro",
+        "tags": "beginner expert magic-pass massstart natural enduro",
         "kind": "minor"
       }
     },
@@ -8587,7 +8587,7 @@
         "icon-color": "#3C8C3C",
         "icon": "https://omaps.app/placemarks/placemark-green.png",
         "spot": "diablerets",
-        "tags": "beginner magicpass natural enduro",
+        "tags": "beginner magic-pass natural enduro",
         "open_from": "07-01",
         "closed_from": "09-01",
         "price_day": "36 CHF",
@@ -9492,7 +9492,7 @@
         "stroke": "#1864ab",
         "stroke-width": 4,
         "spot": "diablerets",
-        "tags": "beginner magicpass natural enduro",
+        "tags": "beginner magic-pass natural enduro",
         "kind": "minor"
       }
     },
@@ -9517,7 +9517,7 @@
         "icon-color": "#3C8C3C",
         "icon": "https://omaps.app/placemarks/placemark-green.png",
         "spot": "charmey",
-        "tags": "beginner magicpass natural dh enduro freeride",
+        "tags": "beginner magic-pass natural dh enduro freeride",
         "open_from": "05-15",
         "closed_from": "11-02",
         "price_day": "36 CHF",
@@ -9573,7 +9573,7 @@
         "icon-color": "#0066CC",
         "icon": "https://omaps.app/placemarks/placemark-blue.png",
         "spot": "haberes",
-        "tags": "beginner bikepark dh magicpass",
+        "tags": "beginner bikepark dh magic-pass",
         "open_from": "07-10",
         "closed_from": "08-17",
         "price_day": "20.50 EUR",
@@ -9597,7 +9597,7 @@
         "icon-color": "#737373",
         "icon": "https://omaps.app/placemarks/placemark-gray.png",
         "spot": "haberes",
-        "tags": "beginner bikepark dh magicpass",
+        "tags": "beginner bikepark dh magic-pass",
         "kind": "minor"
       }
     },
@@ -9622,7 +9622,7 @@
         "icon-color": "#3C8C3C",
         "icon": "https://omaps.app/placemarks/placemark-green.png",
         "spot": "anzere",
-        "tags": "beginner expert magicpass natural dh enduro",
+        "tags": "beginner expert magic-pass natural dh enduro",
         "open_from": "06-15",
         "closed_from": "10-19",
         "kind": "natural"
@@ -23387,7 +23387,7 @@
         "icon-color": "#3C8C3C",
         "icon": "https://omaps.app/placemarks/placemark-green.png",
         "spot": "bernex",
-        "tags": "beginner magicpass natural enduro",
+        "tags": "beginner magic-pass natural enduro",
         "open_from": "07-01",
         "closed_from": "09-01",
         "kind": "natural"
@@ -23671,7 +23671,7 @@
         "stroke": "#2b8a3e",
         "stroke-width": 4,
         "spot": "bernex",
-        "tags": "beginner magicpass natural enduro",
+        "tags": "beginner magic-pass natural enduro",
         "kind": "minor"
       }
     },
@@ -23883,7 +23883,7 @@
         "stroke": "#1864ab",
         "stroke-width": 4,
         "spot": "bernex",
-        "tags": "beginner magicpass natural enduro",
+        "tags": "beginner magic-pass natural enduro",
         "kind": "minor"
       }
     },
@@ -24020,7 +24020,7 @@
         "stroke": "#c92a2a",
         "stroke-width": 4,
         "spot": "bernex",
-        "tags": "beginner magicpass natural enduro",
+        "tags": "beginner magic-pass natural enduro",
         "kind": "minor"
       }
     },
@@ -24067,7 +24067,7 @@
         "stroke": "#000000",
         "stroke-width": 4,
         "spot": "bernex",
-        "tags": "beginner magicpass natural enduro",
+        "tags": "beginner magic-pass natural enduro",
         "kind": "minor"
       }
     },
@@ -24134,7 +24134,7 @@
         "stroke": "#000000",
         "stroke-width": 4,
         "spot": "bernex",
-        "tags": "beginner magicpass natural enduro",
+        "tags": "beginner magic-pass natural enduro",
         "kind": "minor"
       }
     },
@@ -24246,7 +24246,7 @@
         "stroke": "#c92a2a",
         "stroke-width": 4,
         "spot": "bernex",
-        "tags": "beginner magicpass natural enduro",
+        "tags": "beginner magic-pass natural enduro",
         "kind": "minor"
       }
     },
@@ -44413,7 +44413,7 @@
         "icon-color": "#0066CC",
         "icon": "https://omaps.app/placemarks/placemark-blue.png",
         "spot": "laberra",
-        "tags": "beginner expert magicpass bikepark dh freeride",
+        "tags": "beginner expert magic-pass bikepark dh freeride",
         "open_from": "07-01",
         "closed_from": "11-01",
         "price_day": "37 CHF",
@@ -44441,7 +44441,7 @@
         "icon-color": "#737373",
         "icon": "https://omaps.app/placemarks/placemark-gray.png",
         "spot": "laberra",
-        "tags": "beginner expert magicpass bikepark dh freeride",
+        "tags": "beginner expert magic-pass bikepark dh freeride",
         "kind": "minor"
       }
     },
@@ -63355,14 +63355,14 @@
         "name": "Metabief - Mont d'Or (Jura, FR) [26.90 EUR / Magic Pass]",
         "description": {
           "@type": "html",
-          "value": "<b>Morond 1410 m - top of the Morond chairlift</b><br/><br/><b>Trails</b><br/>The biggest bike park in the eastern Jura, and the nearest real downhill to Lausanne. Eight marked downhill and enduro runs share about 390 m of vertical off the Morond, roughly 25 km of trail in total: dark spruce forest, roots and off-camber limestone rather than manicured berms, which makes the reds and blacks ride harder than the modest drop suggests. It rides best in the dry.<br/><br/><b>Getting up / price</b><br/>The Morond chairlift carries bikes, usually 9h30 to 17h30. Day pass 26.90 EUR, four consecutive hours 18.90 EUR. Free with the Magic Pass, including access to the Morond chairlift and bike park. The park opens 1 May 2026 on weekends and public holidays, runs daily from 27 June to 30 August, then returns to weekends in September.<br/><br/><b>Open season</b><br/>Open from 1 May; closed from 28 September (published 2026 bike-park dates).<br/>Daily opening hours: 09:30-17:30<br/><small>Published operating hours; check the operator schedule.</small><br/><br/><b>Access</b><table class=\"access\"><tr><th>From</th><th>Transport</th><th>Duration</th></tr><tr><td>Lausanne</td><td>Car</td><td>~45 min</td></tr><tr><td>Lausanne</td><td>Train + bike</td><td>~1h30</td></tr></table><br/><i>Sources: <a href=\"https://www.magicpass.ch/en/ski-resorts/metabief-1794\">Magic Pass Metabief</a> and the bike-park operator. Prices are 2026 indications &middot; check before you go.</i>"
+          "value": "<b>Morond 1410 m - top of the Morond chairlift</b><br/><br/><b>Trails</b><br/>The biggest bike park in the eastern Jura, and the nearest real downhill to Lausanne. Eight marked downhill and enduro runs share about 390 m of vertical off the Morond, roughly 25 km of trail in total: dark spruce forest, roots and off-camber limestone rather than manicured berms, which makes the reds and blacks ride harder than the modest drop suggests. It rides best in the dry.<br/><br/><b>Getting up / price</b><br/>The Morond chairlift carries bikes, usually 9h30 to 17h30. Day pass 26.90 EUR, four consecutive hours 18.90 EUR. Free with the Magic Pass, including access to the Morond chairlift and bike park. The park opens 1 May 2026 on weekends and public holidays, runs daily from 27 June to 30 August, then returns to weekends in September.<br/><br/><b>Open season</b><br/>Open from 1 May; closed from 28 September (published 2026 bike-park dates).<br/>Daily opening hours: 09:30-17:30<br/><small>Published operating hours; check the operator schedule.</small><br/><br/><b>Access</b><table class=\"access\"><tr><th>From</th><th>Transport</th><th>Duration</th></tr><tr><td>Lausanne</td><td>Car</td><td>~45 min</td></tr><tr><td>Lausanne</td><td>Train + bike</td><td>~1h30</td></tr></table><br/><i>Sources: <a href=\"https://www.magic-pass.ch/en/ski-resorts/metabief-1794\">Magic Pass Metabief</a> and the bike-park operator. Prices are 2026 indications &middot; check before you go.</i>"
         },
         "styleUrl": "#placemark-blue",
         "icon-opacity": 1,
         "icon-color": "#0066CC",
         "icon": "https://omaps.app/placemarks/placemark-blue.png",
         "spot": "metabief",
-        "tags": "beginner expert magicpass bikepark dh enduro freeride",
+        "tags": "beginner expert magic-pass bikepark dh enduro freeride",
         "open_from": "05-01",
         "closed_from": "09-28",
         "price_day": "26.90 EUR",
@@ -63386,7 +63386,7 @@
         "icon-color": "#737373",
         "icon": "https://omaps.app/placemarks/placemark-gray.png",
         "spot": "metabief",
-        "tags": "beginner expert magicpass bikepark dh enduro freeride",
+        "tags": "beginner expert magic-pass bikepark dh enduro freeride",
         "kind": "minor"
       }
     },
@@ -86746,6 +86746,112 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          -135.06222,
+          60.60446,
+          0
+        ]
+      },
+      "properties": {
+        "name": "Mount Sima Bike Park (Yukon, CA) [40 CAD]",
+        "description": {
+          "@type": "html",
+          "value": "<b>Mount Sima 1154 m - top of the bike park chairlift</b><br/><br/><b>Trails</b><br/>Whitehorse's lift-served park, a short drive from downtown, with two blue flow runs (including a 3.9 km machine-built line), an expert black and two extreme double-black lines - Lefty Loosey and Drop the Clutch among them, with Righty Tighty on the intermediate side. Compact vertical (around 260 m) but a good mid-week evening lap spot.<br/><br/><b>Getting up / price</b><br/>Day ticket 40 CAD adult, 35 CAD youth (U18) and 65+.<br/><br/><b>Open season</b><br/>Open from 22 June; closed from 7 September (typical window; check the operator before travel).<br/>Daily opening hours: 11:00-19:00, extended to 22:00 Wednesdays and Fridays for Bike Nights<br/><small>Typical daily estimate; check the operator schedule.</small><br/><br/><b>Access</b><table class=\"access\"><tr><th>From</th><th>Transport</th><th>Duration</th></tr><tr><td>Whitehorse</td><td>Car</td><td>~10 min</td></tr><tr><td>Whitehorse airport</td><td>Car</td><td>~15 min</td></tr></table><br/><br/><i>Source: <a href=\"https://mountsima.com/\">Mount Sima</a>. Prices, schedules, trail status and access can change; verify before travel.</i>"
+        },
+        "styleUrl": "#placemark-blue",
+        "icon-opacity": 1,
+        "icon-color": "#0066CC",
+        "icon": "https://omaps.app/placemarks/placemark-blue.png",
+        "spot": "mtsima",
+        "tags": "beginner expert bikepark dh freeride",
+        "open_from": "06-22",
+        "closed_from": "09-07",
+        "price_day": "40 CAD",
+        "kind": "bikepark"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -135.04656,
+          60.61188,
+          0
+        ]
+      },
+      "properties": {
+        "name": "Mount Sima: base area",
+        "description": {
+          "@type": "html",
+          "value": "Base area at 890 m - chairlift load, lodge, bike shop and rentals."
+        },
+        "styleUrl": "#placemark-gray",
+        "icon-opacity": 1,
+        "icon-color": "#737373",
+        "icon": "https://omaps.app/placemarks/placemark-gray.png",
+        "spot": "mtsima",
+        "tags": "beginner expert bikepark dh freeride",
+        "kind": "minor"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.86025,
+          55.05592,
+          0
+        ]
+      },
+      "properties": {
+        "name": "Nitehawk Bike Park (Alberta, CA) [28 CAD]",
+        "description": {
+          "@type": "html",
+          "value": "<b>Nitehawk 673 m - top of the Bauer Triple Chair</b><br/><br/><b>Trails</b><br/>A gravity park just south of Grande Prairie with green, blue and black lines built around berms, log rides, doubles, skinnies, drops and tabletops. Dirty Deeds (blue, downhill only) is a signature run, with a technical black connector through to O'Brien.<br/><br/><b>Getting up / price</b><br/>Bauer Triple Chair uplift. Adult full day 28 CAD (half day 25 CAD), children 12 and under full day 22 CAD (half day 20 CAD).<br/><br/><b>Open season</b><br/>Open from 20 May; closed from 30 August (typical window; check the operator before travel).<br/>Daily opening hours: Wed 17:30-21:00, Sat 12:00-17:00<br/><small>Limited weekly schedule; check the operator calendar.</small><br/><br/><b>Access</b><table class=\"access\"><tr><th>From</th><th>Transport</th><th>Duration</th></tr><tr><td>Grande Prairie</td><td>Car</td><td>~20 min</td></tr></table><br/><br/><i>Source: <a href=\"https://gonitehawk.com/\">Nitehawk Year-Round Adventure Park</a>. Prices, schedules, trail status and access can change; verify before travel.</i>"
+        },
+        "styleUrl": "#placemark-blue",
+        "icon-opacity": 1,
+        "icon-color": "#0066CC",
+        "icon": "https://omaps.app/placemarks/placemark-blue.png",
+        "spot": "nitehawk",
+        "tags": "beginner expert bikepark dh",
+        "open_from": "05-20",
+        "closed_from": "08-30",
+        "price_day": "28 CAD",
+        "kind": "bikepark"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.85881,
+          55.06115,
+          0
+        ]
+      },
+      "properties": {
+        "name": "Nitehawk: base area",
+        "description": {
+          "@type": "html",
+          "value": "Base area at 528 m - chairlift load, lodge and bike shop."
+        },
+        "styleUrl": "#placemark-gray",
+        "icon-opacity": 1,
+        "icon-color": "#737373",
+        "icon": "https://omaps.app/placemarks/placemark-gray.png",
+        "spot": "nitehawk",
+        "tags": "beginner expert bikepark dh",
+        "kind": "minor"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           -71.30396,
           -40.20837,
           0
@@ -99368,7 +99474,7 @@
         "icon-color": "#3C8C3C",
         "icon": "https://omaps.app/placemarks/placemark-green.png",
         "spot": "ovronnaz",
-        "tags": "expert natural enduro magicpass",
+        "tags": "expert natural enduro magic-pass",
         "open_from": "06-20",
         "closed_from": "10-25",
         "price_day": "26 CHF",

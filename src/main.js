@@ -171,7 +171,6 @@ const TAG_DISPLAY = {
   bikepark: "bike-park",
   nolift: "no-lift",
   massstart: "mass-start",
-  magicpass: "magic-pass",
   seasonpass: "season-pass",
   dh: "DH",
 };

@@ -263,7 +263,7 @@
     <Point><coordinates>7.002932,46.359507,0</coordinates></Point>
     <ExtendedData xmlns:mwm="https://omaps.app">
       <Data name="spot"><value>leysin</value></Data>
-      <Data name="tags"><value>expert magicpass bikepark dh enduro</value></Data>
+      <Data name="tags"><value>expert magic-pass bikepark dh enduro</value></Data>
       <Data name="open_from"><value>06-20</value></Data>
       <Data name="closed_from"><value>08-24</value></Data>
       <Data name="price_day"><value>28 CHF</value></Data>
@@ -278,7 +278,7 @@
     <Point><coordinates>7.006709,46.345636,0</coordinates></Point>
     <ExtendedData xmlns:mwm="https://omaps.app">
       <Data name="spot"><value>leysin</value></Data>
-      <Data name="tags"><value>expert magicpass bikepark dh enduro</value></Data>
+      <Data name="tags"><value>expert magic-pass bikepark dh enduro</value></Data>
       <mwm:icon>Transport</mwm:icon>
       <mwm:visibility>1</mwm:visibility>
     </ExtendedData>
@@ -290,7 +290,7 @@
     <Point><coordinates>7.015547,46.346555,0</coordinates></Point>
     <ExtendedData xmlns:mwm="https://omaps.app">
       <Data name="spot"><value>leysin</value></Data>
-      <Data name="tags"><value>expert magicpass bikepark dh enduro</value></Data>
+      <Data name="tags"><value>expert magic-pass bikepark dh enduro</value></Data>
       <mwm:icon>Transport</mwm:icon>
       <mwm:visibility>1</mwm:visibility>
     </ExtendedData>
@@ -406,7 +406,7 @@
     </LineString>
     <ExtendedData>
       <Data name="spot"><value>cransmontana</value></Data>
-      <Data name="tags"><value>beginner expert magicpass bikepark dh freeride</value></Data>
+      <Data name="tags"><value>beginner expert magic-pass bikepark dh freeride</value></Data>
     </ExtendedData>
   </Placemark>
   <Placemark>
@@ -418,7 +418,7 @@
     </LineString>
     <ExtendedData>
       <Data name="spot"><value>cransmontana</value></Data>
-      <Data name="tags"><value>beginner expert magicpass bikepark dh freeride</value></Data>
+      <Data name="tags"><value>beginner expert magic-pass bikepark dh freeride</value></Data>
     </ExtendedData>
   </Placemark>
   <Placemark>
@@ -430,7 +430,7 @@
     </LineString>
     <ExtendedData>
       <Data name="spot"><value>cransmontana</value></Data>
-      <Data name="tags"><value>beginner expert magicpass bikepark dh freeride</value></Data>
+      <Data name="tags"><value>beginner expert magic-pass bikepark dh freeride</value></Data>
     </ExtendedData>
   </Placemark>
   <Placemark>
@@ -440,7 +440,7 @@
     <Point><coordinates>7.023757,46.555639,0</coordinates></Point>
     <ExtendedData xmlns:mwm="https://omaps.app">
       <Data name="spot"><value>moleson</value></Data>
-      <Data name="tags"><value>beginner expert magicpass bikepark dh enduro</value></Data>
+      <Data name="tags"><value>beginner expert magic-pass bikepark dh enduro</value></Data>
       <Data name="open_from"><value>05-15</value></Data>
       <Data name="closed_from"><value>11-02</value></Data>
       <Data name="price_day"><value>38 CHF</value></Data>
@@ -454,7 +454,7 @@
     <Point><coordinates>7.018134,46.547247,0</coordinates></Point>
     <ExtendedData xmlns:mwm="https://omaps.app">
       <Data name="spot"><value>moleson</value></Data>
-      <Data name="tags"><value>beginner expert magicpass bikepark dh enduro</value></Data>
+      <Data name="tags"><value>beginner expert magic-pass bikepark dh enduro</value></Data>
       <mwm:icon>Transport</mwm:icon>
       <mwm:visibility>1</mwm:visibility>
     </ExtendedData>
@@ -466,7 +466,7 @@
     <Point><coordinates>7.073167,46.321886,0</coordinates></Point>
     <ExtendedData xmlns:mwm="https://omaps.app">
       <Data name="spot"><value>villars</value></Data>
-      <Data name="tags"><value>beginner expert magicpass natural enduro</value></Data>
+      <Data name="tags"><value>beginner expert magic-pass natural enduro</value></Data>
       <Data name="open_from"><value>06-15</value></Data>
       <Data name="closed_from"><value>10-26</value></Data>
       <Data name="price_day"><value>36 CHF</value></Data>
@@ -480,7 +480,7 @@
     <Point><coordinates>7.061778,46.326579,0</coordinates></Point>
     <ExtendedData xmlns:mwm="https://omaps.app">
       <Data name="spot"><value>villars</value></Data>
-      <Data name="tags"><value>beginner magicpass natural enduro</value></Data>
+      <Data name="tags"><value>beginner magic-pass natural enduro</value></Data>
       <mwm:icon>Transport</mwm:icon>
       <mwm:visibility>1</mwm:visibility>
     </ExtendedData>
@@ -494,7 +494,7 @@
     </LineString>
     <ExtendedData>
       <Data name="spot"><value>villars</value></Data>
-      <Data name="tags"><value>beginner magicpass natural enduro</value></Data>
+      <Data name="tags"><value>beginner magic-pass natural enduro</value></Data>
     </ExtendedData>
   </Placemark>
   <Placemark>
@@ -506,7 +506,7 @@
     </LineString>
     <ExtendedData>
       <Data name="spot"><value>villars</value></Data>
-      <Data name="tags"><value>beginner magicpass natural enduro</value></Data>
+      <Data name="tags"><value>beginner magic-pass natural enduro</value></Data>
     </ExtendedData>
   </Placemark>
   <Placemark>
@@ -518,7 +518,7 @@
     </LineString>
     <ExtendedData>
       <Data name="spot"><value>villars</value></Data>
-      <Data name="tags"><value>beginner magicpass natural enduro</value></Data>
+      <Data name="tags"><value>beginner magic-pass natural enduro</value></Data>
     </ExtendedData>
   </Placemark>
   <Placemark>
@@ -530,7 +530,7 @@
     </LineString>
     <ExtendedData>
       <Data name="spot"><value>villars</value></Data>
-      <Data name="tags"><value>beginner magicpass natural enduro</value></Data>
+      <Data name="tags"><value>beginner magic-pass natural enduro</value></Data>
     </ExtendedData>
   </Placemark>
   <Placemark>
@@ -542,7 +542,7 @@
     </LineString>
     <ExtendedData>
       <Data name="spot"><value>villars</value></Data>
-      <Data name="tags"><value>beginner magicpass natural enduro</value></Data>
+      <Data name="tags"><value>beginner magic-pass natural enduro</value></Data>
     </ExtendedData>
   </Placemark>
   <Placemark>
@@ -554,7 +554,7 @@
     </LineString>
     <ExtendedData>
       <Data name="spot"><value>villars</value></Data>
-      <Data name="tags"><value>beginner expert magicpass massstart natural enduro</value></Data>
+      <Data name="tags"><value>beginner expert magic-pass massstart natural enduro</value></Data>
     </ExtendedData>
   </Placemark>
   <Placemark>
@@ -564,7 +564,7 @@
     <Point><coordinates>7.121228,46.333290,0</coordinates></Point>
     <ExtendedData xmlns:mwm="https://omaps.app">
       <Data name="spot"><value>diablerets</value></Data>
-      <Data name="tags"><value>beginner magicpass natural enduro</value></Data>
+      <Data name="tags"><value>beginner magic-pass natural enduro</value></Data>
       <Data name="open_from"><value>07-01</value></Data>
       <Data name="closed_from"><value>09-01</value></Data>
       <Data name="price_day"><value>36 CHF</value></Data>
@@ -581,7 +581,7 @@
     </LineString>
     <ExtendedData>
       <Data name="spot"><value>diablerets</value></Data>
-      <Data name="tags"><value>beginner magicpass natural enduro</value></Data>
+      <Data name="tags"><value>beginner magic-pass natural enduro</value></Data>
     </ExtendedData>
   </Placemark>
   <Placemark>
@@ -591,7 +591,7 @@
     <Point><coordinates>7.206881,46.625967,0</coordinates></Point>
     <ExtendedData xmlns:mwm="https://omaps.app">
       <Data name="spot"><value>charmey</value></Data>
-      <Data name="tags"><value>beginner magicpass natural dh enduro freeride</value></Data>
+      <Data name="tags"><value>beginner magic-pass natural dh enduro freeride</value></Data>
       <Data name="open_from"><value>05-15</value></Data>
       <Data name="closed_from"><value>11-02</value></Data>
       <Data name="price_day"><value>36 CHF</value></Data>
@@ -621,7 +621,7 @@
     <Point><coordinates>6.475162,46.238162,0</coordinates></Point>
     <ExtendedData xmlns:mwm="https://omaps.app">
       <Data name="spot"><value>haberes</value></Data>
-      <Data name="tags"><value>beginner bikepark dh magicpass</value></Data>
+      <Data name="tags"><value>beginner bikepark dh magic-pass</value></Data>
       <Data name="open_from"><value>07-10</value></Data>
       <Data name="closed_from"><value>08-17</value></Data>
       <Data name="price_day"><value>20.50 EUR</value></Data>
@@ -635,7 +635,7 @@
     <Point><coordinates>6.471262,46.244561,0</coordinates></Point>
     <ExtendedData xmlns:mwm="https://omaps.app">
       <Data name="spot"><value>haberes</value></Data>
-      <Data name="tags"><value>beginner bikepark dh magicpass</value></Data>
+      <Data name="tags"><value>beginner bikepark dh magic-pass</value></Data>
       <mwm:icon>Transport</mwm:icon>
       <mwm:visibility>1</mwm:visibility>
     </ExtendedData>
@@ -647,7 +647,7 @@
     <Point><coordinates>7.385609,46.314928,0</coordinates></Point>
     <ExtendedData xmlns:mwm="https://omaps.app">
       <Data name="spot"><value>anzere</value></Data>
-      <Data name="tags"><value>beginner expert magicpass natural dh enduro</value></Data>
+      <Data name="tags"><value>beginner expert magic-pass natural dh enduro</value></Data>
       <Data name="open_from"><value>06-15</value></Data>
       <Data name="closed_from"><value>10-19</value></Data>
       <mwm:icon>Mountain</mwm:icon>
@@ -1228,7 +1228,7 @@
     <Point><coordinates>6.695000,46.349500,0</coordinates></Point>
     <ExtendedData xmlns:mwm="https://omaps.app">
       <Data name="spot"><value>bernex</value></Data>
-      <Data name="tags"><value>beginner magicpass natural enduro</value></Data>
+      <Data name="tags"><value>beginner magic-pass natural enduro</value></Data>
       <Data name="open_from"><value>07-01</value></Data>
       <Data name="closed_from"><value>09-01</value></Data>
       <mwm:icon>Mountain</mwm:icon>
@@ -1244,7 +1244,7 @@
     </LineString>
     <ExtendedData>
       <Data name="spot"><value>bernex</value></Data>
-      <Data name="tags"><value>beginner magicpass natural enduro</value></Data>
+      <Data name="tags"><value>beginner magic-pass natural enduro</value></Data>
     </ExtendedData>
   </Placemark>
   <Placemark>
@@ -1256,7 +1256,7 @@
     </LineString>
     <ExtendedData>
       <Data name="spot"><value>bernex</value></Data>
-      <Data name="tags"><value>beginner magicpass natural enduro</value></Data>
+      <Data name="tags"><value>beginner magic-pass natural enduro</value></Data>
     </ExtendedData>
   </Placemark>
   <Placemark>
@@ -1268,7 +1268,7 @@
     </LineString>
     <ExtendedData>
       <Data name="spot"><value>bernex</value></Data>
-      <Data name="tags"><value>beginner magicpass natural enduro</value></Data>
+      <Data name="tags"><value>beginner magic-pass natural enduro</value></Data>
     </ExtendedData>
   </Placemark>
   <Placemark>
@@ -1280,7 +1280,7 @@
     </LineString>
     <ExtendedData>
       <Data name="spot"><value>bernex</value></Data>
-      <Data name="tags"><value>beginner magicpass natural enduro</value></Data>
+      <Data name="tags"><value>beginner magic-pass natural enduro</value></Data>
     </ExtendedData>
   </Placemark>
   <Placemark>
@@ -1292,7 +1292,7 @@
     </LineString>
     <ExtendedData>
       <Data name="spot"><value>bernex</value></Data>
-      <Data name="tags"><value>beginner magicpass natural enduro</value></Data>
+      <Data name="tags"><value>beginner magic-pass natural enduro</value></Data>
     </ExtendedData>
   </Placemark>
   <Placemark>
@@ -1304,7 +1304,7 @@
     </LineString>
     <ExtendedData>
       <Data name="spot"><value>bernex</value></Data>
-      <Data name="tags"><value>beginner magicpass natural enduro</value></Data>
+      <Data name="tags"><value>beginner magic-pass natural enduro</value></Data>
     </ExtendedData>
   </Placemark>
   <Placemark>
@@ -2563,7 +2563,7 @@
     <Point><coordinates>7.178790,46.677656,0</coordinates></Point>
     <ExtendedData xmlns:mwm="https://omaps.app">
       <Data name="spot"><value>laberra</value></Data>
-      <Data name="tags"><value>beginner expert magicpass bikepark dh freeride</value></Data>
+      <Data name="tags"><value>beginner expert magic-pass bikepark dh freeride</value></Data>
       <Data name="open_from"><value>07-01</value></Data>
       <Data name="closed_from"><value>11-01</value></Data>
       <Data name="price_day"><value>37 CHF</value></Data>
@@ -2578,7 +2578,7 @@
     <Point><coordinates>7.154978,46.686608,0</coordinates></Point>
     <ExtendedData xmlns:mwm="https://omaps.app">
       <Data name="spot"><value>laberra</value></Data>
-      <Data name="tags"><value>beginner expert magicpass bikepark dh freeride</value></Data>
+      <Data name="tags"><value>beginner expert magic-pass bikepark dh freeride</value></Data>
       <mwm:icon>Transport</mwm:icon>
       <mwm:visibility>1</mwm:visibility>
     </ExtendedData>
@@ -4258,12 +4258,12 @@
   </Placemark>
   <Placemark>
     <name>Metabief - Mont d'Or (Jura, FR) [26.90 EUR / Magic Pass]</name>
-    <description><![CDATA[<b>Morond 1410 m - top of the Morond chairlift</b><br/><br/><b>Trails</b><br/>The biggest bike park in the eastern Jura, and the nearest real downhill to Lausanne. Eight marked downhill and enduro runs share about 390 m of vertical off the Morond, roughly 25 km of trail in total: dark spruce forest, roots and off-camber limestone rather than manicured berms, which makes the reds and blacks ride harder than the modest drop suggests. It rides best in the dry.<br/><br/><b>Getting up / price</b><br/>The Morond chairlift carries bikes, usually 9h30 to 17h30. Day pass 26.90 EUR, four consecutive hours 18.90 EUR. Free with the Magic Pass, including access to the Morond chairlift and bike park. The park opens 1 May 2026 on weekends and public holidays, runs daily from 27 June to 30 August, then returns to weekends in September.<br/><br/><b>Open season</b><br/>Open from 1 May; closed from 28 September (published 2026 bike-park dates).<br/>Daily opening hours: 09:30-17:30<br/><small>Published operating hours; check the operator schedule.</small><br/><br/><b>Access</b><table class="access"><tr><th>From</th><th>Transport</th><th>Duration</th></tr><tr><td>Lausanne</td><td>Car</td><td>~45 min</td></tr><tr><td>Lausanne</td><td>Train + bike</td><td>~1h30</td></tr></table><br/><i>Sources: <a href="https://www.magicpass.ch/en/ski-resorts/metabief-1794">Magic Pass Metabief</a> and the bike-park operator. Prices are 2026 indications &middot; check before you go.</i>]]></description>
+    <description><![CDATA[<b>Morond 1410 m - top of the Morond chairlift</b><br/><br/><b>Trails</b><br/>The biggest bike park in the eastern Jura, and the nearest real downhill to Lausanne. Eight marked downhill and enduro runs share about 390 m of vertical off the Morond, roughly 25 km of trail in total: dark spruce forest, roots and off-camber limestone rather than manicured berms, which makes the reds and blacks ride harder than the modest drop suggests. It rides best in the dry.<br/><br/><b>Getting up / price</b><br/>The Morond chairlift carries bikes, usually 9h30 to 17h30. Day pass 26.90 EUR, four consecutive hours 18.90 EUR. Free with the Magic Pass, including access to the Morond chairlift and bike park. The park opens 1 May 2026 on weekends and public holidays, runs daily from 27 June to 30 August, then returns to weekends in September.<br/><br/><b>Open season</b><br/>Open from 1 May; closed from 28 September (published 2026 bike-park dates).<br/>Daily opening hours: 09:30-17:30<br/><small>Published operating hours; check the operator schedule.</small><br/><br/><b>Access</b><table class="access"><tr><th>From</th><th>Transport</th><th>Duration</th></tr><tr><td>Lausanne</td><td>Car</td><td>~45 min</td></tr><tr><td>Lausanne</td><td>Train + bike</td><td>~1h30</td></tr></table><br/><i>Sources: <a href="https://www.magic-pass.ch/en/ski-resorts/metabief-1794">Magic Pass Metabief</a> and the bike-park operator. Prices are 2026 indications &middot; check before you go.</i>]]></description>
     <styleUrl>#placemark-blue</styleUrl>
     <Point><coordinates>6.353640,46.751370,0</coordinates></Point>
     <ExtendedData xmlns:mwm="https://omaps.app">
       <Data name="spot"><value>metabief</value></Data>
-      <Data name="tags"><value>beginner expert magicpass bikepark dh enduro freeride</value></Data>
+      <Data name="tags"><value>beginner expert magic-pass bikepark dh enduro freeride</value></Data>
       <Data name="open_from"><value>05-01</value></Data>
       <Data name="closed_from"><value>09-28</value></Data>
       <Data name="price_day"><value>26.90 EUR</value></Data>
@@ -4277,7 +4277,7 @@
     <Point><coordinates>6.356560,46.767620,0</coordinates></Point>
     <ExtendedData xmlns:mwm="https://omaps.app">
       <Data name="spot"><value>metabief</value></Data>
-      <Data name="tags"><value>beginner expert magicpass bikepark dh enduro freeride</value></Data>
+      <Data name="tags"><value>beginner expert magic-pass bikepark dh enduro freeride</value></Data>
       <mwm:icon>Transport</mwm:icon>
       <mwm:visibility>1</mwm:visibility>
     </ExtendedData>
@@ -10410,6 +10410,60 @@
     </ExtendedData>
   </Placemark>
   <Placemark>
+    <name>Mount Sima Bike Park (Yukon, CA) [40 CAD]</name>
+    <description><![CDATA[<b>Mount Sima 1154 m - top of the bike park chairlift</b><br/><br/><b>Trails</b><br/>Whitehorse's lift-served park, a short drive from downtown, with two blue flow runs (including a 3.9 km machine-built line), an expert black and two extreme double-black lines - Lefty Loosey and Drop the Clutch among them, with Righty Tighty on the intermediate side. Compact vertical (around 260 m) but a good mid-week evening lap spot.<br/><br/><b>Getting up / price</b><br/>Day ticket 40 CAD adult, 35 CAD youth (U18) and 65+.<br/><br/><b>Open season</b><br/>Open from 22 June; closed from 7 September (typical window; check the operator before travel).<br/>Daily opening hours: 11:00-19:00, extended to 22:00 Wednesdays and Fridays for Bike Nights<br/><small>Typical daily estimate; check the operator schedule.</small><br/><br/><b>Access</b><table class="access"><tr><th>From</th><th>Transport</th><th>Duration</th></tr><tr><td>Whitehorse</td><td>Car</td><td>~10 min</td></tr><tr><td>Whitehorse airport</td><td>Car</td><td>~15 min</td></tr></table><br/><br/><i>Source: <a href="https://mountsima.com/">Mount Sima</a>. Prices, schedules, trail status and access can change; verify before travel.</i>]]></description>
+    <styleUrl>#placemark-blue</styleUrl>
+    <Point><coordinates>-135.06222,60.60446,0</coordinates></Point>
+    <ExtendedData xmlns:mwm="https://omaps.app">
+      <Data name="spot"><value>mtsima</value></Data>
+      <Data name="tags"><value>beginner expert bikepark dh freeride</value></Data>
+      <Data name="open_from"><value>06-22</value></Data>
+      <Data name="closed_from"><value>09-07</value></Data>
+      <Data name="price_day"><value>40 CAD</value></Data>
+      <mwm:icon>Mountain</mwm:icon>
+      <mwm:visibility>1</mwm:visibility>
+    </ExtendedData>
+  </Placemark>
+  <Placemark>
+    <name>Mount Sima: base area</name>
+    <description><![CDATA[Base area at 890 m - chairlift load, lodge, bike shop and rentals.]]></description>
+    <styleUrl>#placemark-gray</styleUrl>
+    <Point><coordinates>-135.04656,60.61188,0</coordinates></Point>
+    <ExtendedData xmlns:mwm="https://omaps.app">
+      <Data name="spot"><value>mtsima</value></Data>
+      <Data name="tags"><value>beginner expert bikepark dh freeride</value></Data>
+      <mwm:icon>Transport</mwm:icon>
+      <mwm:visibility>1</mwm:visibility>
+    </ExtendedData>
+  </Placemark>
+  <Placemark>
+    <name>Nitehawk Bike Park (Alberta, CA) [28 CAD]</name>
+    <description><![CDATA[<b>Nitehawk 673 m - top of the Bauer Triple Chair</b><br/><br/><b>Trails</b><br/>A gravity park just south of Grande Prairie with green, blue and black lines built around berms, log rides, doubles, skinnies, drops and tabletops. Dirty Deeds (blue, downhill only) is a signature run, with a technical black connector through to O'Brien.<br/><br/><b>Getting up / price</b><br/>Bauer Triple Chair uplift. Adult full day 28 CAD (half day 25 CAD), children 12 and under full day 22 CAD (half day 20 CAD).<br/><br/><b>Open season</b><br/>Open from 20 May; closed from 30 August (typical window; check the operator before travel).<br/>Daily opening hours: Wed 17:30-21:00, Sat 12:00-17:00<br/><small>Limited weekly schedule; check the operator calendar.</small><br/><br/><b>Access</b><table class="access"><tr><th>From</th><th>Transport</th><th>Duration</th></tr><tr><td>Grande Prairie</td><td>Car</td><td>~20 min</td></tr></table><br/><br/><i>Source: <a href="https://gonitehawk.com/">Nitehawk Year-Round Adventure Park</a>. Prices, schedules, trail status and access can change; verify before travel.</i>]]></description>
+    <styleUrl>#placemark-blue</styleUrl>
+    <Point><coordinates>-118.86025,55.05592,0</coordinates></Point>
+    <ExtendedData xmlns:mwm="https://omaps.app">
+      <Data name="spot"><value>nitehawk</value></Data>
+      <Data name="tags"><value>beginner expert bikepark dh</value></Data>
+      <Data name="open_from"><value>05-20</value></Data>
+      <Data name="closed_from"><value>08-30</value></Data>
+      <Data name="price_day"><value>28 CAD</value></Data>
+      <mwm:icon>Mountain</mwm:icon>
+      <mwm:visibility>1</mwm:visibility>
+    </ExtendedData>
+  </Placemark>
+  <Placemark>
+    <name>Nitehawk: base area</name>
+    <description><![CDATA[Base area at 528 m - chairlift load, lodge and bike shop.]]></description>
+    <styleUrl>#placemark-gray</styleUrl>
+    <Point><coordinates>-118.85881,55.06115,0</coordinates></Point>
+    <ExtendedData xmlns:mwm="https://omaps.app">
+      <Data name="spot"><value>nitehawk</value></Data>
+      <Data name="tags"><value>beginner expert bikepark dh</value></Data>
+      <mwm:icon>Transport</mwm:icon>
+      <mwm:visibility>1</mwm:visibility>
+    </ExtendedData>
+  </Placemark>
+  <Placemark>
     <name>Chapelco Bike Park (Neuquen, AR) [summer rate unverified]</name>
     <description><![CDATA[<b>Cota 1600 - top of the Telecabina Chapelco</b><br/><br/><b>Trails</b><br/>Seven marked descents for every level, dropping through lenga forest on the flank of Cerro Chapelco above San Martin de los Andes. A new ten-seat gondola opened for 2026, linking the base to Cota 1600 in about five minutes and carrying up to 3000 people an hour, which transforms how many laps a day is worth. Southern-hemisphere season, so it runs while the Alps are shut.<br/><br/><b>Getting up / price</b><br/>Unlimited gondola laps with a bike pass; bring your own bike and helmet. The operator publishes winter skiing rates well ahead but had not posted a summer bike-park tariff at the time of writing, so no price is recorded here - check cerrochapelco.com.ar.<br/><br/><b>Open season</b><br/>Open from 15 December; closed from 16 April (typical southern-summer window; confirm dates with the operator).<br/>Daily opening hours: 10:00-17:00<br/><small>Typical daily estimate; check the operator schedule.</small><br/><br/><b>Access</b><table class="access"><tr><th>From</th><th>Transport</th><th>Duration</th></tr><tr><td>San Martin de los Andes</td><td>Car</td><td>~30 min</td></tr><tr><td>Bariloche</td><td>Car</td><td>~2h30</td></tr></table><br/><br/><i>Source: <a href="https://www.cerrochapelco.com.ar/">Cerro Chapelco</a>. Prices, schedules, trail status and access can change; verify before travel.</i>]]></description>
     <styleUrl>#placemark-blue</styleUrl>
@@ -11577,7 +11631,7 @@
     <Point><coordinates>7.14192,46.20374,0</coordinates></Point>
     <ExtendedData xmlns:mwm="https://omaps.app">
       <Data name="spot"><value>ovronnaz</value></Data>
-      <Data name="tags"><value>expert natural enduro magicpass</value></Data>
+      <Data name="tags"><value>expert natural enduro magic-pass</value></Data>
       <Data name="open_from"><value>06-20</value></Data>
       <Data name="closed_from"><value>10-25</value></Data>
       <Data name="price_day"><value>26 CHF</value></Data>

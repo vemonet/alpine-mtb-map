@@ -25577,6 +25577,57 @@ Source: Big White Ski Resort. Prices, schedules, trail status and access can cha
     <name>Big White: village base</name>
     <desc>Big White village at 1660 m - Bullet Express and Plaza loading, ticket office and bike shop.</desc>
   </wpt>
+  <wpt lat="60.604460" lon="-135.062220">
+    <name>Mount Sima Bike Park (Yukon, CA) [40 CAD]</name>
+    <desc>Mount Sima 1154 m - top of the bike park chairlift
+
+Trails
+Whitehorse's lift-served park, a short drive from downtown, with two blue flow runs (including a 3.9 km machine-built line), an expert black and two extreme double-black lines - Lefty Loosey and Drop the Clutch among them, with Righty Tighty on the intermediate side. Compact vertical (around 260 m) but a good mid-week evening lap spot.
+
+Getting up / price
+Day ticket 40 CAD adult, 35 CAD youth (U18) and 65+.
+
+Open season
+Open from 22 June; closed from 7 September (typical window; check the operator before travel).
+Daily opening hours: 11:00-19:00, extended to 22:00 Wednesdays and Fridays for Bike Nights
+Typical daily estimate; check the operator schedule.
+
+Access
+From | Transport | Duration
+Whitehorse | Car | ~10 min
+Whitehorse airport | Car | ~15 min
+
+Source: Mount Sima. Prices, schedules, trail status and access can change; verify before travel.</desc>
+  </wpt>
+  <wpt lat="60.611880" lon="-135.046560">
+    <name>Mount Sima: base area</name>
+    <desc>Base area at 890 m - chairlift load, lodge, bike shop and rentals.</desc>
+  </wpt>
+  <wpt lat="55.055920" lon="-118.860250">
+    <name>Nitehawk Bike Park (Alberta, CA) [28 CAD]</name>
+    <desc>Nitehawk 673 m - top of the Bauer Triple Chair
+
+Trails
+A gravity park just south of Grande Prairie with green, blue and black lines built around berms, log rides, doubles, skinnies, drops and tabletops. Dirty Deeds (blue, downhill only) is a signature run, with a technical black connector through to O'Brien.
+
+Getting up / price
+Bauer Triple Chair uplift. Adult full day 28 CAD (half day 25 CAD), children 12 and under full day 22 CAD (half day 20 CAD).
+
+Open season
+Open from 20 May; closed from 30 August (typical window; check the operator before travel).
+Daily opening hours: Wed 17:30-21:00, Sat 12:00-17:00
+Limited weekly schedule; check the operator calendar.
+
+Access
+From | Transport | Duration
+Grande Prairie | Car | ~20 min
+
+Source: Nitehawk Year-Round Adventure Park. Prices, schedules, trail status and access can change; verify before travel.</desc>
+  </wpt>
+  <wpt lat="55.061150" lon="-118.858810">
+    <name>Nitehawk: base area</name>
+    <desc>Base area at 528 m - chairlift load, lodge and bike shop.</desc>
+  </wpt>
   <wpt lat="-40.208370" lon="-71.303960">
     <name>Chapelco Bike Park (Neuquen, AR) [summer rate unverified]</name>
     <desc>Cota 1600 - top of the Telecabina Chapelco
