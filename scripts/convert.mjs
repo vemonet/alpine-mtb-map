@@ -16,9 +16,9 @@ const geojson = kml(doc);
 // Carry the styleUrl across explicitly as a readable kind, so consumers keep
 // the displayed spot category without having to parse KML styles.
 const KINDS = {
-  "placemark-blue": "bikepark",
+  "placemark-blue": "bike-park",
   "placemark-green": "natural",
-  "placemark-brown": "nolift",
+  "placemark-brown": "no-lift",
   "placemark-gray": "minor",
   "line-trail": "trail",
 };
@@ -34,7 +34,7 @@ const requiredGroups = [
   ["beginner", "expert"],
   ["dh", "enduro", "freeride"],
 ];
-const spotTypes = ["bikepark", "natural"];
+const spotTypes = ["bike-park", "natural"];
 const spotTags = new Map();
 const mainSpots = new Map();
 for (const [index, pm] of [...doc.getElementsByTagName("Placemark")].entries()) {

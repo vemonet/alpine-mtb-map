@@ -209,7 +209,7 @@
                 <fieldset>
                   <legend>Spot type</legend>
                   <label
-                    ><input class="filter" type="checkbox" data-category="bikepark" checked /><span
+                    ><input class="filter" type="checkbox" data-category="bike-park" checked /><span
                       class="dot blue"
                     ></span
                     >Bike park</label
@@ -224,7 +224,7 @@
                 <fieldset>
                   <legend>Access</legend>
                   <label
-                    ><input class="filter" type="checkbox" data-tag="nolift" checked /><span
+                    ><input class="filter" type="checkbox" data-tag="no-lift" checked /><span
                       class="dot brown"
                     ></span
                     >No lift</label
@@ -333,8 +333,12 @@
                 <output id="only-filter-summary">Any</output>
               </summary>
               <div class="filter-popover">
+                <label class="range" for="price-day">
+                  <span>Day pass up to <output id="price-day-out">any</output></span>
+                  <input id="price-day" type="range" min="0" max="75" step="5" value="75" />
+                </label>
                 <fieldset>
-                  <legend>Optional requirements</legend>
+                  <!-- <legend>Optional requirements</legend> -->
                   <label
                     ><input
                       class="filter"
@@ -355,7 +359,7 @@
                     ><input
                       class="filter"
                       type="checkbox"
-                      data-tag="massstart"
+                      data-tag="mass-start"
                       data-mode="only"
                     />Mass start venue</label
                   >
@@ -363,10 +367,6 @@
               </div>
             </details>
           </div>
-          <label class="range" for="price-day">
-            <span>Day pass up to <output id="price-day-out">any</output></span>
-            <input id="price-day" type="range" min="0" max="75" step="5" value="75" />
-          </label>
           <div class="date-filter">
             <span>Open &amp; weather on</span>
             <span class="date-control">

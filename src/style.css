@@ -438,6 +438,10 @@ body {
   white-space: nowrap;
 }
 
+.filter-popover .range {
+  padding: 2px 5px 7px;
+}
+
 .range input {
   flex: 1;
   min-width: 0;
@@ -982,13 +986,13 @@ a.dl:hover {
   box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.4);
 }
 
-.pin.bikepark {
+.pin.bike-park {
   background: var(--lift);
 }
 .pin.natural {
   background: var(--natural);
 }
-.pin.nolift {
+.pin.no-lift {
   background: var(--brown);
 }
 .pin.minor {

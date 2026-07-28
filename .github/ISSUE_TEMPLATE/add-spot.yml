@@ -68,3 +68,10 @@ body:
         https://example.com/prices-and-hours
     validations:
       required: true
+
+  - type: textarea
+    id: traces
+    attributes:
+      label: KML, GPX or GeoJSON traces
+      description: If available, provide traces of trails on this spot in KML, GPX or GeoJSON.
+      placeholder: <kml xmlns="http://www.opengis.net/kml/2.2">

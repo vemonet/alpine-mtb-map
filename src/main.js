@@ -15,9 +15,9 @@ const KML_NS = "http://www.opengis.net/kml/2.2";
 
 // styleUrl -> how it is drawn. Pin colour encodes the displayed spot category.
 const KINDS = {
-  "placemark-blue": "bikepark",
+  "placemark-blue": "bike-park",
   "placemark-green": "natural",
-  "placemark-brown": "nolift",
+  "placemark-brown": "no-lift",
   "placemark-gray": "minor",
   "line-trail": "trail",
 };
@@ -168,10 +168,6 @@ const pinIcon = (kind, wet = false) =>
 
 // Display labels for compound tags: keep the rest as-is.
 const TAG_DISPLAY = {
-  bikepark: "bike-park",
-  nolift: "no-lift",
-  massstart: "mass-start",
-  seasonpass: "season-pass",
   dh: "DH",
 };
 
@@ -241,7 +237,7 @@ for (const p of places) {
   // from data that is already there: the no-lift style and season price facet.
   // Everything downstream then filters on tags alone.
   for (const t of p.tags) spot.tags.add(t);
-  if (p.kind === "nolift") spot.tags.add("nolift");
+  if (p.kind === "no-lift") spot.tags.add("no-lift");
   if (p.priceSeason) spot.tags.add("season");
   if (p.priceDay) spot.priceDay = chf(p.priceDay);
   if (p.openFrom && p.closedFrom) {
@@ -715,7 +711,7 @@ const matches = (spot) => {
   const query = searchInput.value.trim().toLocaleLowerCase();
   if (query && !spot.searchText.includes(query)) return false;
 
-  const category = spot.tags.has("bikepark") ? "bikepark" : "natural";
+  const category = spot.tags.has("bike-park") ? "bike-park" : "natural";
   if (!categoryChips.some((chip) => on(chip) && chip.dataset.category === category)) return false;
 
   for (const chip of chips) {

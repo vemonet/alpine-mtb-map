@@ -36,7 +36,7 @@ The **Show** menu contains spot type, access, riding style and difficulty checkb
 | **Natural**   | natural or lightly developed riding           |
 | **No lift**   | spots where the climb is under your own power |
 
-Every spot must carry exactly one of `bikepark` or `natural`. Add `nolift` independently whenever there is no mechanical uplift. A purpose-built bike park can therefore be `bikepark nolift`. No-lift takes visual priority, so both `bikepark nolift` and `natural nolift` use a brown pin. A bike park with uplift uses blue, while a natural spot with uplift uses dark green.
+Every spot must carry exactly one of `bike-park` or `natural`. Add `no-lift` independently whenever there is no mechanical uplift. A purpose-built bike park can therefore be `bike-park no-lift`. No-lift takes visual priority, so both `bike-park no-lift` and `natural no-lift` use a brown pin. A bike park with uplift uses blue, while a natural spot with uplift uses dark green.
 
 The **Only show** menu contains optional requirements. They start unchecked, and selecting one hides everything that does _not_ carry its tag:
 
@@ -94,7 +94,7 @@ Right-click the spot on [openstreetmap.org](https://www.openstreetmap.org/) and 
   <Point><coordinates>6.912345,46.512345,0</coordinates></Point>
   <ExtendedData>
     <Data name="spot"><value>somewhere</value></Data>
-    <Data name="tags"><value>beginner expert bikepark dh enduro freeride magicpass</value></Data>
+    <Data name="tags"><value>beginner expert bike-park dh enduro freeride magicpass</value></Data>
     <Data name="open_from"><value>06-20</value></Data>
     <Data name="closed_from"><value>08-24</value></Data>
     <Data name="price_day"><value>30 CHF</value></Data>
@@ -145,7 +145,7 @@ This is the `<ExtendedData>` block. Organic Maps ignores it entirely; it exists 
 | Field | Required? | Value |
 | --- | --- | --- |
 | `spot` | recommended | A short lowercase id, unique per spot (`leysin`, `verbier`). Give the main pin, its secondary pins and all its trail lines the **same** id, and they show and hide together. Omit it and the pin becomes its own island. |
-| `tags` | required | Space-separated, from the list below. Must contain `beginner` and/or `expert`, exactly one of `bikepark` or `natural`, and at least one of `dh`, `enduro` or `freeride`. Multiple riding-style tags are encouraged where accurate. |
+| `tags` | required | Space-separated, from the list below. Must contain `beginner` and/or `expert`, exactly one of `bike-park` or `natural`, and at least one of `dh`, `enduro` or `freeride`. Multiple riding-style tags are encouraged where accurate. |
 | `open_from` | required | First open day as `MM-DD`, on the main pin only. |
 | `closed_from` | required | First closed day as `MM-DD`, on the main pin only. This date is excluded by the filter. Use the same value as `open_from` for a normally year-round spot. |
 | `price_day` | optional | Day access to the resort or mandatory lift, as `30 CHF`, `25 EUR`, `5500 JPY`. Main pin only. |
@@ -159,30 +159,30 @@ The `tags` value is a union across a spot's placemarks, so in practice put the s
 | --- | --- |
 | `beginner` | Trails a newcomer can enjoy: green or blue flow, wide tracks, escape routes. |
 | `expert` | Hard trails worth travelling for: steep, technical, black-graded. |
-| `bikepark` | Purpose-built trails maintained and operated as a bike park. |
+| `bike-park` | Purpose-built trails maintained and operated as a bike park. |
 | `natural` | Natural or lightly developed trails, with or without uplift. |
-| `nolift` | No mechanical uplift. Independent of `bikepark` or `natural`. |
+| `no-lift` | No mechanical uplift. Independent of `bike-park` or `natural`. |
 | `dh` | Downhill riding: predominantly descending trails, usually gravity or uplift focused. |
 | `enduro` | Enduro riding: technical singletrack or trail networks combining climbs, traverses and descents. |
 | `freeride` | Freeride terrain: jumps, drops, sculpted features, big-mountain lines or creative unsanctioned-style riding. |
 | `winter` | Informational metadata for spots usually ridable through the cold months. |
 | `magicpass` | The resort is in the [Magic Pass](https://www.magicpass.ch/) network. |
-| `massstart` | The spot hosts a documented mass-start gravity race. Mention the race by name in the description and link its source. |
+| `mass-start` | The spot hosts a documented mass-start gravity race. Mention the race by name in the description and link its source. |
 
-Plenty of spots deserve both `beginner` and `expert`; a spot with neither will never show, since the difficulty filters have nothing to match. A spot must also be either `bikepark` or `natural`, never both. Lift access and riding styles are independent: a pedal-up park can be `bikepark nolift dh freeride`, a natural pedal-up network might be `natural nolift enduro`, and a lift-served big-mountain zone might be `natural freeride`.
+Plenty of spots deserve both `beginner` and `expert`; a spot with neither will never show, since the difficulty filters have nothing to match. A spot must also be either `bike-park` or `natural`, never both. Lift access and riding styles are independent: a pedal-up park can be `bike-park no-lift dh freeride`, a natural pedal-up network might be `natural no-lift enduro`, and a lift-served big-mountain zone might be `natural freeride`.
 
 Tagging examples:
 
 ```xml
 <Data name="tags"><value>beginner natural enduro</value></Data>
-<Data name="tags"><value>expert bikepark dh</value></Data>
-<Data name="tags"><value>beginner expert bikepark nolift enduro freeride</value></Data>
-<Data name="tags"><value>beginner expert bikepark dh freeride</value></Data>
+<Data name="tags"><value>expert bike-park dh</value></Data>
+<Data name="tags"><value>beginner expert bike-park no-lift enduro freeride</value></Data>
+<Data name="tags"><value>beginner expert bike-park dh freeride</value></Data>
 <Data name="tags"><value>expert natural enduro freeride winter</value></Data>
-<Data name="tags"><value>beginner expert bikepark dh enduro freeride magicpass</value></Data>
+<Data name="tags"><value>beginner expert bike-park dh enduro freeride magicpass</value></Data>
 ```
 
-For backward compatibility, `nolift` is also derived from a `#placemark-brown` style, but contributors should write it explicitly. The `season` tag is derived from the presence of `price_season` and is never written by hand.
+For backward compatibility, `no-lift` is also derived from a `#placemark-brown` style, but contributors should write it explicitly. The `season` tag is derived from the presence of `price_season` and is never written by hand.
 
 #### Prices
 
@@ -249,7 +249,7 @@ Open the printed URL. If the map is blank, the KML is malformed and the browser 
 vp run convert
 ```
 
-Regenerates `public/alpine-mtb-map.geojson` and `public/alpine-mtb-map.gpx` from `public/alpine-mtb-map.kml`. Points become GPX waypoints and GeoJSON `Point` features, trails become GPX tracks and `LineString` features; HTML descriptions are flattened to plain text for GPX. The `kind` (`bikepark` / `natural` / `nolift` / `minor` / `trail`) plus every `<ExtendedData>` facet (`spot`, `tags`, `open_from`, `closed_from`, `price_day`, `price_season`) is carried into GeoJSON as a property.
+Regenerates `public/alpine-mtb-map.geojson` and `public/alpine-mtb-map.gpx` from `public/alpine-mtb-map.kml`. Points become GPX waypoints and GeoJSON `Point` features, trails become GPX tracks and `LineString` features; HTML descriptions are flattened to plain text for GPX. The `kind` (`bike-park` / `natural` / `no-lift` / `minor` / `trail`) plus every `<ExtendedData>` facet (`spot`, `tags`, `open_from`, `closed_from`, `price_day`, `price_season`) is carried into GeoJSON as a property.
 
 **Never edit the generated files by hand** - the KML is the source of truth and `vp run convert` overwrites them.
 
