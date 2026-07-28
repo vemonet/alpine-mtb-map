@@ -248,7 +248,7 @@
     <Point><coordinates>6.957526,47.026524,0</coordinates></Point>
     <ExtendedData xmlns:mwm="https://omaps.app">
       <Data name="spot"><value>chaumont</value></Data>
-      <Data name="tags"><value>expert winter natural dh enduro freeride</value></Data>
+      <Data name="tags"><value>expert natural dh enduro freeride</value></Data>
       <Data name="open_from"><value>01-01</value></Data>
       <Data name="closed_from"><value>01-01</value></Data>
       <Data name="price_day"><value>5 CHF</value></Data>
@@ -542,7 +542,7 @@
     </LineString>
     <ExtendedData>
       <Data name="spot"><value>villars</value></Data>
-      <Data name="tags"><value>beginner magic-pass natural enduro</value></Data>
+      <Data name="tags"><value>beginner magic-pass natural dh</value></Data>
     </ExtendedData>
   </Placemark>
   <Placemark>
@@ -554,7 +554,7 @@
     </LineString>
     <ExtendedData>
       <Data name="spot"><value>villars</value></Data>
-      <Data name="tags"><value>beginner expert magic-pass massstart natural enduro</value></Data>
+      <Data name="tags"><value>expert magic-pass massstart natural enduro</value></Data>
     </ExtendedData>
   </Placemark>
   <Placemark>
@@ -606,7 +606,7 @@
     <Point><coordinates>6.193165,46.154468,0</coordinates></Point>
     <ExtendedData xmlns:mwm="https://omaps.app">
       <Data name="spot"><value>saleve</value></Data>
-      <Data name="tags"><value>expert winter natural enduro</value></Data>
+      <Data name="tags"><value>expert natural enduro</value></Data>
       <Data name="open_from"><value>01-01</value></Data>
       <Data name="closed_from"><value>01-01</value></Data>
       <Data name="price_day"><value>18 EUR</value></Data>
@@ -780,7 +780,7 @@
     </LineString>
     <ExtendedData>
       <Data name="spot"><value>verbier</value></Data>
-      <Data name="tags"><value>expert bikepark dh enduro</value></Data>
+      <Data name="tags"><value>beginner enduro</value></Data>
     </ExtendedData>
   </Placemark>
   <Placemark>
@@ -792,7 +792,7 @@
     </LineString>
     <ExtendedData>
       <Data name="spot"><value>verbier</value></Data>
-      <Data name="tags"><value>expert bikepark dh enduro</value></Data>
+      <Data name="tags"><value>beginner bikepark dh</value></Data>
     </ExtendedData>
   </Placemark>
   <Placemark>
@@ -804,7 +804,7 @@
     </LineString>
     <ExtendedData>
       <Data name="spot"><value>verbier</value></Data>
-      <Data name="tags"><value>expert bikepark dh enduro</value></Data>
+      <Data name="tags"><value>beginner bikepark enduro</value></Data>
     </ExtendedData>
   </Placemark>
   <Placemark>
@@ -816,7 +816,7 @@
     </LineString>
     <ExtendedData>
       <Data name="spot"><value>verbier</value></Data>
-      <Data name="tags"><value>expert bikepark dh enduro</value></Data>
+      <Data name="tags"><value>beginner bikepark dh</value></Data>
     </ExtendedData>
   </Placemark>
   <Placemark>
@@ -840,7 +840,7 @@
     </LineString>
     <ExtendedData>
       <Data name="spot"><value>verbier</value></Data>
-      <Data name="tags"><value>expert bikepark dh enduro</value></Data>
+      <Data name="tags"><value>expert dh enduro</value></Data>
     </ExtendedData>
   </Placemark>
   <Placemark>
@@ -2150,7 +2150,7 @@
     </LineString>
     <ExtendedData>
       <Data name="spot"><value>sept-laux</value></Data>
-      <Data name="tags"><value>beginner expert bikepark dh</value></Data>
+      <Data name="tags"><value>beginner bikepark dh</value></Data>
     </ExtendedData>
   </Placemark>
   <Placemark>
@@ -2162,7 +2162,7 @@
     </LineString>
     <ExtendedData>
       <Data name="spot"><value>sept-laux</value></Data>
-      <Data name="tags"><value>beginner expert bikepark dh</value></Data>
+      <Data name="tags"><value>beginner bikepark dh</value></Data>
     </ExtendedData>
   </Placemark>
   <Placemark>
@@ -2174,7 +2174,7 @@
     </LineString>
     <ExtendedData>
       <Data name="spot"><value>sept-laux</value></Data>
-      <Data name="tags"><value>beginner expert bikepark dh</value></Data>
+      <Data name="tags"><value>beginner bikepark dh</value></Data>
     </ExtendedData>
   </Placemark>
   <Placemark>
@@ -2186,7 +2186,7 @@
     </LineString>
     <ExtendedData>
       <Data name="spot"><value>sept-laux</value></Data>
-      <Data name="tags"><value>beginner expert bikepark dh</value></Data>
+      <Data name="tags"><value>expert bikepark dh</value></Data>
     </ExtendedData>
   </Placemark>
   <Placemark>
@@ -2198,7 +2198,7 @@
     </LineString>
     <ExtendedData>
       <Data name="spot"><value>sept-laux</value></Data>
-      <Data name="tags"><value>beginner expert bikepark dh</value></Data>
+      <Data name="tags"><value>expert bikepark dh</value></Data>
     </ExtendedData>
   </Placemark>
   <Placemark>
@@ -2210,7 +2210,7 @@
     </LineString>
     <ExtendedData>
       <Data name="spot"><value>sept-laux</value></Data>
-      <Data name="tags"><value>beginner expert bikepark dh</value></Data>
+      <Data name="tags"><value>expert bikepark dh</value></Data>
     </ExtendedData>
   </Placemark>
   <Placemark>
@@ -2222,7 +2222,7 @@
     </LineString>
     <ExtendedData>
       <Data name="spot"><value>sept-laux</value></Data>
-      <Data name="tags"><value>beginner expert bikepark dh</value></Data>
+      <Data name="tags"><value>expert bikepark dh</value></Data>
     </ExtendedData>
   </Placemark>
   <Placemark>
@@ -2234,7 +2234,7 @@
     </LineString>
     <ExtendedData>
       <Data name="spot"><value>sept-laux</value></Data>
-      <Data name="tags"><value>beginner expert bikepark dh</value></Data>
+      <Data name="tags"><value>beginner bikepark dh</value></Data>
     </ExtendedData>
   </Placemark>
   <Placemark>
@@ -2246,7 +2246,7 @@
     </LineString>
     <ExtendedData>
       <Data name="spot"><value>sept-laux</value></Data>
-      <Data name="tags"><value>beginner expert bikepark dh</value></Data>
+      <Data name="tags"><value>expert bikepark dh</value></Data>
     </ExtendedData>
   </Placemark>
   <Placemark>
@@ -2258,7 +2258,7 @@
     </LineString>
     <ExtendedData>
       <Data name="spot"><value>sept-laux</value></Data>
-      <Data name="tags"><value>beginner expert bikepark dh</value></Data>
+      <Data name="tags"><value>expert bikepark dh</value></Data>
     </ExtendedData>
   </Placemark>
   <Placemark>
@@ -2270,7 +2270,7 @@
     </LineString>
     <ExtendedData>
       <Data name="spot"><value>sept-laux</value></Data>
-      <Data name="tags"><value>beginner expert bikepark dh</value></Data>
+      <Data name="tags"><value>expert bikepark dh</value></Data>
     </ExtendedData>
   </Placemark>
   <Placemark>
@@ -2282,7 +2282,7 @@
     </LineString>
     <ExtendedData>
       <Data name="spot"><value>sept-laux</value></Data>
-      <Data name="tags"><value>beginner expert bikepark dh</value></Data>
+      <Data name="tags"><value>expert bikepark dh</value></Data>
     </ExtendedData>
   </Placemark>
   <Placemark>
@@ -2590,7 +2590,7 @@
     <Point><coordinates>7.439742,46.919547,0</coordinates></Point>
     <ExtendedData xmlns:mwm="https://omaps.app">
       <Data name="spot"><value>gurten</value></Data>
-      <Data name="tags"><value>beginner expert winter natural dh freeride</value></Data>
+      <Data name="tags"><value>beginner expert natural dh freeride</value></Data>
       <Data name="open_from"><value>01-01</value></Data>
       <Data name="closed_from"><value>01-01</value></Data>
       <Data name="price_day"><value>3.50 CHF</value></Data>
@@ -2607,7 +2607,7 @@
     </LineString>
     <ExtendedData>
       <Data name="spot"><value>gurten</value></Data>
-      <Data name="tags"><value>beginner expert winter natural dh freeride</value></Data>
+      <Data name="tags"><value>beginner expert natural dh freeride</value></Data>
     </ExtendedData>
   </Placemark>
   <Placemark>
@@ -3280,7 +3280,7 @@
     </LineString>
     <ExtendedData>
       <Data name="spot"><value>thyon</value></Data>
-      <Data name="tags"><value>beginner expert bikepark enduro dh</value></Data>
+      <Data name="tags"><value>beginner bikepark dh</value></Data>
     </ExtendedData>
   </Placemark>
   <Placemark>
@@ -3332,7 +3332,7 @@
     <Point><coordinates>6.692604,46.565724,0</coordinates></Point>
     <ExtendedData xmlns:mwm="https://omaps.app">
       <Data name="spot"><value>gobet</value></Data>
-      <Data name="tags"><value>beginner winter natural enduro</value></Data>
+      <Data name="tags"><value>beginner natural enduro</value></Data>
       <Data name="open_from"><value>01-01</value></Data>
       <Data name="closed_from"><value>01-01</value></Data>
       <mwm:icon>Mountain</mwm:icon>
@@ -3400,7 +3400,7 @@
     </LineString>
     <ExtendedData>
       <Data name="spot"><value>chamonix-leshouches</value></Data>
-      <Data name="tags"><value>beginner expert bikepark dh</value></Data>
+      <Data name="tags"><value>beginner bikepark dh</value></Data>
     </ExtendedData>
   </Placemark>
   <Placemark>
@@ -3574,7 +3574,7 @@
     <Point><coordinates>7.423330,43.803110,0</coordinates></Point>
     <ExtendedData xmlns:mwm="https://omaps.app">
       <Data name="spot"><value>madone</value></Data>
-      <Data name="tags"><value>expert winter natural dh freeride</value></Data>
+      <Data name="tags"><value>expert natural dh freeride</value></Data>
       <Data name="open_from"><value>01-01</value></Data>
       <Data name="closed_from"><value>01-01</value></Data>
       <mwm:icon>Mountain</mwm:icon>
@@ -3590,7 +3590,7 @@
     </coordinates></LineString>
     <ExtendedData xmlns:mwm="https://omaps.app">
       <Data name="spot"><value>madone</value></Data>
-      <Data name="tags"><value>expert winter natural dh freeride</value></Data>
+      <Data name="tags"><value>expert natural dh freeride</value></Data>
       <mwm:icon>Mountain</mwm:icon>
       <mwm:visibility>1</mwm:visibility>
     </ExtendedData>
@@ -3602,7 +3602,7 @@
     <Point><coordinates>7.458455,43.802400,0</coordinates></Point>
     <ExtendedData xmlns:mwm="https://omaps.app">
       <Data name="spot"><value>madone</value></Data>
-      <Data name="tags"><value>expert winter natural dh freeride</value></Data>
+      <Data name="tags"><value>expert natural dh freeride</value></Data>
       <mwm:icon>Mountain</mwm:icon>
       <mwm:visibility>1</mwm:visibility>
     </ExtendedData>
@@ -3616,7 +3616,7 @@
     </coordinates></LineString>
     <ExtendedData xmlns:mwm="https://omaps.app">
       <Data name="spot"><value>madone</value></Data>
-      <Data name="tags"><value>expert winter natural dh freeride</value></Data>
+      <Data name="tags"><value>expert natural dh freeride</value></Data>
       <mwm:visibility>1</mwm:visibility>
     </ExtendedData>
   </Placemark>
@@ -3712,7 +3712,7 @@
     <name>Machairas - Lythrodontas (Cyprus) [no lift]</name>
     <description><![CDATA[<b>Machairas Forest mountain-bike hub from Lythrodontas</b><br/><br/><b>Trails</b><br/>Cyprus's strongest documented mountain-bike area combines long rough dirt tracks, pine forest, sudden technical descents and substantial climbing around Kionia, Machairas Monastery and Mantra tou Kampiou. The area hosts major MTB races, but it is a natural route network rather than a gravity park.<br/><br/><b>Getting up / price</b><br/>Free and pedal-accessed; no lift. The official 45 km circular route gains about 890 m and is rated very difficult. Guided e-MTB trips are available locally.<br/><br/><b>Open season</b><br/>Open from 01 October; closed from 01 June (best cooler-season window; access may be possible year-round).<br/>Daily opening hours: daylight hours<br/><small>Summer heat and fire restrictions can affect forest access; check locally.</small><br/><br/><b>Access</b><table class="access"><tr><th>From</th><th>Transport</th><th>Duration</th></tr><tr><td>Nicosia</td><td>Car</td><td>~40 min</td></tr><tr><td>Larnaca</td><td>Car</td><td>~45 min</td></tr></table><br/><i>Sources: <a href="https://www.visitcyprus.com/discover-cyprus/rural/cycling-rural/lythrodontas-circular-cycling-route/">Visit Cyprus circular route</a> and the <a href="https://www.visitcyprus.com/discover-cyprus/nature/cycling/lefkosia-2-lythrodontas-kionia-machairas-monastery-lythrodontas-cycling-route/">Machairas route guide</a>. Follow current forestry rules.</i>]]></description>
     <styleUrl>#placemark-brown</styleUrl><Point><coordinates>33.298047,34.951352,0</coordinates></Point>
-    <ExtendedData xmlns:mwm="https://omaps.app"><Data name="spot"><value>machairas-lythrodontas</value></Data><Data name="tags"><value>expert natural nolift enduro winter</value></Data><Data name="open_from"><value>10-01</value></Data><Data name="closed_from"><value>06-01</value></Data><mwm:icon>Mountain</mwm:icon><mwm:visibility>1</mwm:visibility></ExtendedData>
+    <ExtendedData xmlns:mwm="https://omaps.app"><Data name="spot"><value>machairas-lythrodontas</value></Data><Data name="tags"><value>expert natural nolift enduro</value></Data><Data name="open_from"><value>10-01</value></Data><Data name="closed_from"><value>06-01</value></Data><mwm:icon>Mountain</mwm:icon><mwm:visibility>1</mwm:visibility></ExtendedData>
   </Placemark>
   <Placemark>
     <name>Troodos Mountain Bike Routes (Cyprus) [no lift]</name>
@@ -3808,7 +3808,7 @@
     <name>Sanremo - Monte Bignone Enduro (Liguria) [shuttle, natural]</name>
     <description><![CDATA[<b>Natural shuttle enduro above the Ligurian coast</b><br/><br/><b>Trails</b><br/>A winter-training classic for elite enduro and downhill riders: steep dry singletrack, loose rock, exposed ridges and technical forest descents drop from Monte Bignone toward Sanremo and the sea. This is an extensive natural network, not a signed bike park.<br/><br/><b>Getting up / price</b><br/>Local operators provide van shuttles; self-powered loops are also possible. Confirm land access and use a local guide for the maze of trails.<br/><br/><b>Open season</b><br/>Open from 01 October; closed from 01 June (best cool-season window; riding may be possible year-round).<br/>Daily opening hours: daylight hours<br/><small>Shuttles require booking; fire risk and trail access can change.</small><br/><br/><b>Access</b><table class="access"><tr><th>From</th><th>Transport</th><th>Duration</th></tr><tr><td>Nice</td><td>Train / car</td><td>~1h00</td></tr><tr><td>Sanremo</td><td>Shuttle</td><td>~30 min</td></tr></table><br/><i>Source: <a href="https://www.sanremobike.it/">Sanremo Bike</a>. Confirm routes, access and shuttle arrangements locally.</i>]]></description>
     <styleUrl>#placemark-green</styleUrl><Point><coordinates>7.733859,43.873521,0</coordinates></Point>
-    <ExtendedData xmlns:mwm="https://omaps.app"><Data name="spot"><value>sanremo-enduro</value></Data><Data name="tags"><value>expert natural dh enduro freeride winter</value></Data><Data name="open_from"><value>10-01</value></Data><Data name="closed_from"><value>06-01</value></Data><mwm:icon>Mountain</mwm:icon><mwm:visibility>1</mwm:visibility></ExtendedData>
+    <ExtendedData xmlns:mwm="https://omaps.app"><Data name="spot"><value>sanremo-enduro</value></Data><Data name="tags"><value>expert natural dh enduro freeride</value></Data><Data name="open_from"><value>10-01</value></Data><Data name="closed_from"><value>06-01</value></Data><mwm:icon>Mountain</mwm:icon><mwm:visibility>1</mwm:visibility></ExtendedData>
   </Placemark>
   <Placemark>
     <name>Bardonecchia Bike Park (Piedmont) [lift pass]</name>
@@ -4888,7 +4888,7 @@
     </LineString>
     <ExtendedData>
       <Data name="spot"><value>morzine</value></Data>
-      <Data name="tags"><value>expert bikepark dh</value></Data>
+      <Data name="tags"><value>beginner bikepark dh</value></Data>
     </ExtendedData>
   </Placemark>
   <Placemark>
@@ -5353,7 +5353,7 @@
     <Point><coordinates>-96.580807,17.221892,0</coordinates></Point>
     <ExtendedData xmlns:mwm="https://omaps.app">
       <Data name="spot"><value>oaxaca</value></Data>
-      <Data name="tags"><value>beginner expert winter natural dh enduro</value></Data>
+      <Data name="tags"><value>beginner expert natural dh enduro</value></Data>
       <Data name="open_from"><value>11-01</value></Data>
       <Data name="closed_from"><value>06-15</value></Data>
       <mwm:icon>Mountain</mwm:icon>
@@ -5367,7 +5367,7 @@
     <Point><coordinates>-100.113929,19.191510,0</coordinates></Point>
     <ExtendedData xmlns:mwm="https://omaps.app">
       <Data name="spot"><value>vallebravo</value></Data>
-      <Data name="tags"><value>beginner expert winter natural dh enduro</value></Data>
+      <Data name="tags"><value>beginner expert natural dh enduro</value></Data>
       <Data name="open_from"><value>11-01</value></Data>
       <Data name="closed_from"><value>06-01</value></Data>
       <mwm:icon>Mountain</mwm:icon>
@@ -5381,7 +5381,7 @@
     <Point><coordinates>-84.531904,9.960528,0</coordinates></Point>
     <ExtendedData xmlns:mwm="https://omaps.app">
       <Data name="spot"><value>buencamino</value></Data>
-      <Data name="tags"><value>beginner expert winter bikepark dh freeride</value></Data>
+      <Data name="tags"><value>beginner expert bikepark dh freeride</value></Data>
       <Data name="price_day"><value>25 USD</value></Data>
       <Data name="open_from"><value>01-01</value></Data>
       <Data name="closed_from"><value>01-01</value></Data>
@@ -5396,7 +5396,7 @@
     <Point><coordinates>-90.743400,14.486900,0</coordinates></Point>
     <ExtendedData xmlns:mwm="https://omaps.app">
       <Data name="spot"><value>elzur</value></Data>
-      <Data name="tags"><value>expert winter natural enduro</value></Data>
+      <Data name="tags"><value>expert natural enduro</value></Data>
       <Data name="open_from"><value>11-01</value></Data>
       <Data name="closed_from"><value>05-01</value></Data>
       <mwm:icon>Mountain</mwm:icon>

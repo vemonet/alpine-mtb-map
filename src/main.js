@@ -234,6 +234,7 @@ for (const p of places) {
   layer.bindPopup(() => weatherPopup(p, spot), { maxWidth: 360 });
   layer.on("popupopen", () => {
     if (spot.entry) setSelectedSpotUrl(spot);
+    if (p.type === "line") selectLine(layer);
   });
 
   // A spot's tag set is the union of its placemarks', plus two tags derived
@@ -277,7 +278,23 @@ const clearSelectedSpotUrl = () => {
   history.replaceState(null, "", url);
 };
 
-map.on("popupclose", clearSelectedSpotUrl);
+// Dim a clicked trail line a bit so it stands out against the others.
+let selectedLine = null;
+const selectLine = (layer) => {
+  if (selectedLine) selectedLine.setStyle({ opacity: 0.85 });
+  layer.setStyle({ opacity: 0.45 });
+  selectedLine = layer;
+};
+const clearSelectedLine = () => {
+  if (!selectedLine) return;
+  selectedLine.setStyle({ opacity: 0.85 });
+  selectedLine = null;
+};
+
+map.on("popupclose", () => {
+  clearSelectedSpotUrl();
+  clearSelectedLine();
+});
 
 const showEntry = (entry, animate = true) => {
   setSelectedSpotUrl(entry.spot);
@@ -394,7 +411,7 @@ const forecastRows = (weather) => {
 
 function weatherPopup(place, spot) {
   const content = basePopup(place);
-  const tags = tagBadges(spot.tags);
+  const tags = tagBadges(new Set(place.tags));
   if (!weatherEnabled) return content;
   if (!spot.weather) {
     const status = weatherBtn.classList.contains("loading")

@@ -668,7 +668,7 @@
         "icon-color": "#3C8C3C",
         "icon": "https://omaps.app/placemarks/placemark-green.png",
         "spot": "chaumont",
-        "tags": "expert winter natural dh enduro freeride",
+        "tags": "expert natural dh enduro freeride",
         "open_from": "01-01",
         "closed_from": "01-01",
         "price_day": "5 CHF",
@@ -7700,7 +7700,7 @@
         "stroke": "#2b8a3e",
         "stroke-width": 4,
         "spot": "villars",
-        "tags": "beginner magic-pass natural enduro",
+        "tags": "beginner magic-pass natural dh",
         "kind": "minor"
       }
     },
@@ -8562,7 +8562,7 @@
         "stroke": "#000000",
         "stroke-width": 4,
         "spot": "villars",
-        "tags": "beginner expert magic-pass massstart natural enduro",
+        "tags": "expert magic-pass massstart natural enduro",
         "kind": "minor"
       }
     },
@@ -9545,7 +9545,7 @@
         "icon-color": "#3C8C3C",
         "icon": "https://omaps.app/placemarks/placemark-green.png",
         "spot": "saleve",
-        "tags": "expert winter natural enduro",
+        "tags": "expert natural enduro",
         "open_from": "01-01",
         "closed_from": "01-01",
         "price_day": "18 EUR",
@@ -11472,7 +11472,7 @@
         "stroke": "#1864ab",
         "stroke-width": 4,
         "spot": "verbier",
-        "tags": "expert bikepark dh enduro",
+        "tags": "beginner enduro",
         "kind": "minor"
       }
     },
@@ -12194,7 +12194,7 @@
         "stroke": "#1864ab",
         "stroke-width": 4,
         "spot": "verbier",
-        "tags": "expert bikepark dh enduro",
+        "tags": "beginner bikepark dh",
         "kind": "minor"
       }
     },
@@ -12601,7 +12601,7 @@
         "stroke": "#2b8a3e",
         "stroke-width": 4,
         "spot": "verbier",
-        "tags": "expert bikepark dh enduro",
+        "tags": "beginner bikepark enduro",
         "kind": "minor"
       }
     },
@@ -12743,7 +12743,7 @@
         "stroke": "#1864ab",
         "stroke-width": 4,
         "spot": "verbier",
-        "tags": "expert bikepark dh enduro",
+        "tags": "beginner bikepark dh",
         "kind": "minor"
       }
     },
@@ -15427,7 +15427,7 @@
         "stroke": "#c92a2a",
         "stroke-width": 4,
         "spot": "verbier",
-        "tags": "expert bikepark dh enduro",
+        "tags": "expert dh enduro",
         "kind": "minor"
       }
     },
@@ -40089,7 +40089,7 @@
         "stroke": "#2b8a3e",
         "stroke-width": 4,
         "spot": "sept-laux",
-        "tags": "beginner expert bikepark dh",
+        "tags": "beginner bikepark dh",
         "kind": "minor"
       }
     },
@@ -40241,7 +40241,7 @@
         "stroke": "#1864ab",
         "stroke-width": 4,
         "spot": "sept-laux",
-        "tags": "beginner expert bikepark dh",
+        "tags": "beginner bikepark dh",
         "kind": "minor"
       }
     },
@@ -40458,7 +40458,7 @@
         "stroke": "#1864ab",
         "stroke-width": 4,
         "spot": "sept-laux",
-        "tags": "beginner expert bikepark dh",
+        "tags": "beginner bikepark dh",
         "kind": "minor"
       }
     },
@@ -40600,7 +40600,7 @@
         "stroke": "#c92a2a",
         "stroke-width": 4,
         "spot": "sept-laux",
-        "tags": "beginner expert bikepark dh",
+        "tags": "expert bikepark dh",
         "kind": "minor"
       }
     },
@@ -40717,7 +40717,7 @@
         "stroke": "#000000",
         "stroke-width": 4,
         "spot": "sept-laux",
-        "tags": "beginner expert bikepark dh",
+        "tags": "expert bikepark dh",
         "kind": "minor"
       }
     },
@@ -40799,7 +40799,7 @@
         "stroke": "#000000",
         "stroke-width": 4,
         "spot": "sept-laux",
-        "tags": "beginner expert bikepark dh",
+        "tags": "expert bikepark dh",
         "kind": "minor"
       }
     },
@@ -40906,7 +40906,7 @@
         "stroke": "#c92a2a",
         "stroke-width": 4,
         "spot": "sept-laux",
-        "tags": "beginner expert bikepark dh",
+        "tags": "expert bikepark dh",
         "kind": "minor"
       }
     },
@@ -40973,7 +40973,7 @@
         "stroke": "#1864ab",
         "stroke-width": 4,
         "spot": "sept-laux",
-        "tags": "beginner expert bikepark dh",
+        "tags": "beginner bikepark dh",
         "kind": "minor"
       }
     },
@@ -41020,7 +41020,7 @@
         "stroke": "#c92a2a",
         "stroke-width": 4,
         "spot": "sept-laux",
-        "tags": "beginner expert bikepark dh",
+        "tags": "expert bikepark dh",
         "kind": "minor"
       }
     },
@@ -41112,7 +41112,7 @@
         "stroke": "#000000",
         "stroke-width": 4,
         "spot": "sept-laux",
-        "tags": "beginner expert bikepark dh",
+        "tags": "expert bikepark dh",
         "kind": "minor"
       }
     },
@@ -41299,7 +41299,7 @@
         "stroke": "#c92a2a",
         "stroke-width": 4,
         "spot": "sept-laux",
-        "tags": "beginner expert bikepark dh",
+        "tags": "expert bikepark dh",
         "kind": "minor"
       }
     },
@@ -41416,7 +41416,7 @@
         "stroke": "#c92a2a",
         "stroke-width": 4,
         "spot": "sept-laux",
-        "tags": "beginner expert bikepark dh",
+        "tags": "expert bikepark dh",
         "kind": "minor"
       }
     },
@@ -44466,7 +44466,7 @@
         "icon-color": "#3C8C3C",
         "icon": "https://omaps.app/placemarks/placemark-green.png",
         "spot": "gurten",
-        "tags": "beginner expert winter natural dh freeride",
+        "tags": "beginner expert natural dh freeride",
         "open_from": "01-01",
         "closed_from": "01-01",
         "price_day": "3.50 CHF",
@@ -44751,7 +44751,7 @@
         "stroke": "#c92a2a",
         "stroke-width": 4,
         "spot": "gurten",
-        "tags": "beginner expert winter natural dh freeride",
+        "tags": "beginner expert natural dh freeride",
         "kind": "minor"
       }
     },
@@ -59193,7 +59193,7 @@
         "stroke": "#2b8a3e",
         "stroke-width": 4,
         "spot": "thyon",
-        "tags": "beginner expert bikepark enduro dh",
+        "tags": "beginner bikepark dh",
         "kind": "minor"
       }
     },
@@ -59299,7 +59299,7 @@
         "icon-color": "#804633",
         "icon": "https://omaps.app/placemarks/placemark-brown.png",
         "spot": "gobet",
-        "tags": "beginner winter natural enduro",
+        "tags": "beginner natural enduro",
         "open_from": "01-01",
         "closed_from": "01-01",
         "kind": "nolift"
@@ -59581,7 +59581,7 @@
         "stroke": "#1864ab",
         "stroke-width": 4,
         "spot": "chamonix-leshouches",
-        "tags": "beginner expert bikepark dh",
+        "tags": "beginner bikepark dh",
         "kind": "minor"
       }
     },
@@ -60090,7 +60090,7 @@
         "icon-color": "#804633",
         "icon": "https://omaps.app/placemarks/placemark-brown.png",
         "spot": "madone",
-        "tags": "expert winter natural dh freeride",
+        "tags": "expert natural dh freeride",
         "open_from": "01-01",
         "closed_from": "01-01",
         "kind": "nolift"
@@ -60234,7 +60234,7 @@
         "stroke": "#000000",
         "stroke-width": 4,
         "spot": "madone",
-        "tags": "expert winter natural dh freeride",
+        "tags": "expert natural dh freeride",
         "kind": "minor"
       }
     },
@@ -60259,7 +60259,7 @@
         "icon-color": "#737373",
         "icon": "https://omaps.app/placemarks/placemark-gray.png",
         "spot": "madone",
-        "tags": "expert winter natural dh freeride",
+        "tags": "expert natural dh freeride",
         "kind": "minor"
       }
     },
@@ -61436,7 +61436,7 @@
         "stroke": "#c92a2a",
         "stroke-width": 4,
         "spot": "madone",
-        "tags": "expert winter natural dh freeride",
+        "tags": "expert natural dh freeride",
         "kind": "minor"
       }
     },
@@ -61628,7 +61628,7 @@
         "icon-color": "#804633",
         "icon": "https://omaps.app/placemarks/placemark-brown.png",
         "spot": "machairas-lythrodontas",
-        "tags": "expert natural nolift enduro winter",
+        "tags": "expert natural nolift enduro",
         "open_from": "10-01",
         "closed_from": "06-01",
         "kind": "nolift"
@@ -62061,7 +62061,7 @@
         "icon-color": "#3C8C3C",
         "icon": "https://omaps.app/placemarks/placemark-green.png",
         "spot": "sanremo-enduro",
-        "tags": "expert natural dh enduro freeride winter",
+        "tags": "expert natural dh enduro freeride",
         "open_from": "10-01",
         "closed_from": "06-01",
         "kind": "natural"
@@ -66007,7 +66007,7 @@
         "stroke": "#1864ab",
         "stroke-width": 4,
         "spot": "morzine",
-        "tags": "expert bikepark dh",
+        "tags": "beginner bikepark dh",
         "kind": "minor"
       }
     },
@@ -66895,7 +66895,7 @@
         "icon-color": "#804633",
         "icon": "https://omaps.app/placemarks/placemark-brown.png",
         "spot": "oaxaca",
-        "tags": "beginner expert winter natural dh enduro",
+        "tags": "beginner expert natural dh enduro",
         "open_from": "11-01",
         "closed_from": "06-15",
         "kind": "nolift"
@@ -66922,7 +66922,7 @@
         "icon-color": "#804633",
         "icon": "https://omaps.app/placemarks/placemark-brown.png",
         "spot": "vallebravo",
-        "tags": "beginner expert winter natural dh enduro",
+        "tags": "beginner expert natural dh enduro",
         "open_from": "11-01",
         "closed_from": "06-01",
         "kind": "nolift"
@@ -66949,7 +66949,7 @@
         "icon-color": "#804633",
         "icon": "https://omaps.app/placemarks/placemark-brown.png",
         "spot": "buencamino",
-        "tags": "beginner expert winter bikepark dh freeride",
+        "tags": "beginner expert bikepark dh freeride",
         "price_day": "25 USD",
         "open_from": "01-01",
         "closed_from": "01-01",
@@ -66977,7 +66977,7 @@
         "icon-color": "#804633",
         "icon": "https://omaps.app/placemarks/placemark-brown.png",
         "spot": "elzur",
-        "tags": "expert winter natural enduro",
+        "tags": "expert natural enduro",
         "open_from": "11-01",
         "closed_from": "05-01",
         "kind": "nolift"
