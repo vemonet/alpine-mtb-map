@@ -108,6 +108,16 @@ function chf(price) {
 }
 
 const places = parseKml(kmlText).filter((p) => p.coords.length);
+const HIDDEN_TRACES_STORAGE_KEY = "hiddenTraces";
+const traceId = (place) => `${place.spot}\n${place.name}`;
+let hiddenTraceIds;
+try {
+  hiddenTraceIds = new Set(JSON.parse(localStorage.getItem(HIDDEN_TRACES_STORAGE_KEY) ?? "[]"));
+} catch {
+  hiddenTraceIds = new Set();
+}
+const saveHiddenTraces = () =>
+  localStorage.setItem(HIDDEN_TRACES_STORAGE_KEY, JSON.stringify([...hiddenTraceIds]));
 
 // ------------------------------------------------------------------ map ---
 const DEFAULT_VIEW = [46.2, 8.0];
@@ -188,6 +198,9 @@ const tagBadges = (tags) => {
 const shareIcon = `<svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
   <circle cx="4" cy="8" r="1.5"/><circle cx="12" cy="3" r="1.5"/><circle cx="12" cy="13" r="1.5"/><path d="m5.3 7.2 5.4-3.4M5.3 8.8l5.4 3.4"/>
 </svg>`;
+const hideIcon = `<svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M1.5 8s2.4-4 6.5-4 6.5 4 6.5 4-2.4 4-6.5 4S1.5 8 1.5 8Z"/><circle cx="8" cy="8" r="2"/><path d="m2 2 12 12"/>
+</svg>`;
 const traceCountSummary = (spot) => {
   const counts = new Map();
   for (const { place } of spot.places) {
@@ -206,7 +219,11 @@ const traceCountSummary = (spot) => {
 
 const basePopup = (p, spot) => {
   const traceCounts = p.type === "point" ? traceCountSummary(spot) : "";
-  return `<button class="leaflet-popup-share-button" type="button" title="Share" aria-label="Share">${shareIcon}</button><h3>${p.name}</h3>${traceCounts ? `<div class="trace-counts">${traceCounts}</div>` : ""}${p.description || ""}`;
+  const hideButton =
+    p.type === "line"
+      ? `<button class="leaflet-popup-hide-button" type="button" title="Hide this trace" aria-label="Hide this trace">${hideIcon}</button>`
+      : "";
+  return `${hideButton}<button class="leaflet-popup-share-button" type="button" title="Share" aria-label="Share">${shareIcon}</button><h3>${p.name}</h3>${traceCounts ? `<div class="trace-counts">${traceCounts}</div>` : ""}${p.description || ""}`;
 };
 
 // A spot owns its main pin, its secondary pins and its trail lines: they are
@@ -340,6 +357,14 @@ const copyText = async (text) => {
 };
 
 map.getContainer().addEventListener("click", async (event) => {
+  const hideButton = event.target.closest(".leaflet-popup-hide-button");
+  if (hideButton && activePopup?.place.type === "line") {
+    hiddenTraceIds.add(traceId(activePopup.place));
+    saveHiddenTraces();
+    map.closePopup();
+    applyFilters();
+    return;
+  }
   const button = event.target.closest(".leaflet-popup-share-button");
   if (!button || !activePopup) return;
   const { place, spot } = activePopup;
@@ -806,6 +831,7 @@ for (const a of document.querySelectorAll("a.dl")) {
 const chips = [...document.querySelectorAll(".filter[data-tag]")];
 const categoryChips = [...document.querySelectorAll(".filter[data-category]")];
 const lineColorChips = [...document.querySelectorAll(".filter[data-line-color]")];
+const restoreHiddenTracesButton = document.getElementById("restore-hidden-traces");
 const on = (chip) => chip.checked;
 const modeOf = (chip) => chip.dataset.mode ?? "exclude";
 
@@ -882,6 +908,7 @@ const applyFilters = () => {
     const chip = lineColorChips.find((candidate) => candidate.dataset.lineColor === entry.color);
     const visible =
       showingTraces &&
+      !hiddenTraceIds.has(traceId(entry.place)) &&
       matchesFilters(entry.spot) &&
       (!chip || on(chip)) &&
       (!query || entry.searchText.includes(query));
@@ -903,7 +930,10 @@ const applyFilters = () => {
       const lineEnabled = place.type !== "line" || !colorChip || on(colorChip);
       const visible = showingTraces
         ? visibleTraceLayers.has(layer)
-        : filterMatch && lineEnabled && spotSearchMatch;
+        : filterMatch &&
+          lineEnabled &&
+          spotSearchMatch &&
+          (place.type !== "line" || !hiddenTraceIds.has(traceId(place)));
       if (visible) {
         spot.group.addLayer(layer);
         hasVisibleLayer = true;
@@ -930,6 +960,8 @@ const applyFilters = () => {
   const required = [...document.querySelectorAll("#only-filter-menu .filter")].filter(on).length;
   document.getElementById("only-filter-summary").textContent =
     required === 0 ? "Any" : `${required} active`;
+  restoreHiddenTracesButton.hidden = hiddenTraceIds.size === 0;
+  restoreHiddenTracesButton.textContent = `Restore hidden (${hiddenTraceIds.size})`;
 };
 
 for (const chip of chips) {
@@ -950,6 +982,11 @@ for (const button of document.querySelectorAll("[data-filter-set]")) {
     applyFilters();
   });
 }
+restoreHiddenTracesButton.addEventListener("click", () => {
+  hiddenTraceIds.clear();
+  saveHiddenTraces();
+  applyFilters();
+});
 for (const menu of document.querySelectorAll(".filter-menu")) {
   menu.addEventListener("toggle", () => {
     if (!menu.open) return;

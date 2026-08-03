@@ -107906,7 +107906,7 @@
         "name": "EVO Bike Park (Digne-les-Bains) [shuttle park]",
         "description": {
           "@type": "html",
-          "value": "<b>Purpose-built gravity park in the Alpes-de-Haute-Provence</b><br/><br/>\n    <b>Trails</b><br/>A nationally known independent park built specifically for enduro, DH and freeride. Dry sculpted lines, large jumps, drops, steep race terrain and technical rock make EVO especially strong for advanced riders, with progression options below the flagship features.<br/><br/>\n    <b>Getting up / price</b><br/>The park operates its own uplift/shuttle system. Booking is required; check EVO for current sessions and pricing.<br/><br/>\n    <b>Open season</b><br/>Open from 01 March; closed from 01 December (typical operating season).<br/>Daily opening hours: 09:00-17:00<br/><small>Estimated session hours; opening is calendar- and weather-dependent.</small><br/><br/>\n    <b>Access</b><table class=\"access\"><tr><th>From</th><th>Transport</th><th>Duration</th></tr><tr><td>Digne-les-Bains</td><td>Car</td><td>~25 min</td></tr><tr><td>Marseille</td><td>Car</td><td>~2h00</td></tr></table><br/>\n    <i>Source: <a href=\"https://www.evobike-park.com/\">EVO Bike Park</a>. Book and verify current trail status before travel.</i>"
+          "value": "<b>Purpose-built gravity park in the Alpes-de-Haute-Provence</b><br/><br/>\n    <b>Trails</b><br/>Eleven park pistes: 2 blue, 4 red and 4 black, plus one additional line listed by the park. Named lines include Savage Train, Dirty Wave, Slate Line, Jungle Trail, Whip It, North Shore, Chainsaw, Original Gangsta, Double Black Mamba, Griffus Line and Stratos Line. The terrain combines shaped flow, jumps, technical rock, steep race sections and freeride features.<br/><br/>\n    <b>Getting up / price</b><br/>The park operates its own truck-and-trailer shuttle system. The day ticket is 35 EUR. Booking is required; check EVO for current sessions and pricing.<br/><br/>\n    <b>Open season</b><br/>Open year-round, subject to booking, weather and maintenance. Daily opening hours: 10:00-17:30; winter uplift typically ends at 17:00.<br/><small>Check the operator calendar before travelling.</small><br/><br/>\n    <b>Access</b><table class=\"access\"><tr><th>From</th><th>Transport</th><th>Duration</th></tr><tr><td>Digne-les-Bains</td><td>Car</td><td>~25 min</td></tr><tr><td>Marseille</td><td>Car</td><td>~2h00</td></tr></table><br/>\n    <i>Sources: <a href=\"https://evobikepark.com/bike-park/\">EVO Bike Park trail list</a> and <a href=\"https://evobikepark.com/\">EVO Bike Park practical information</a>. Book and verify current trail status before travel.</i>"
         },
         "styleUrl": "#placemark-blue",
         "icon-opacity": 1,
@@ -107914,8 +107914,6 @@
         "icon": "https://omaps.app/placemarks/placemark-blue.png",
         "spot": "evo-bike-park",
         "tags": "beginner expert bike-park dh enduro freeride",
-        "open_from": "03-01",
-        "closed_from": "12-01",
         "kind": "bike-park"
       }
     },
@@ -158170,6 +158168,357 @@
         "stroke-width": 4,
         "spot": "martigny-trient",
         "tags": "expert natural no-lift enduro",
+        "kind": "minor"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            6.269449,
+            44.104207,
+            0
+          ],
+          [
+            6.269393,
+            44.104631,
+            0
+          ],
+          [
+            6.269419,
+            44.104964,
+            0
+          ],
+          [
+            6.269741,
+            44.105303,
+            0
+          ],
+          [
+            6.269873,
+            44.105499,
+            0
+          ],
+          [
+            6.269736,
+            44.105892,
+            0
+          ],
+          [
+            6.270315,
+            44.10653,
+            0
+          ],
+          [
+            6.27079,
+            44.106925,
+            0
+          ],
+          [
+            6.270946,
+            44.107422,
+            0
+          ],
+          [
+            6.27057,
+            44.107721,
+            0
+          ],
+          [
+            6.269789,
+            44.108246,
+            0
+          ],
+          [
+            6.269033,
+            44.108866,
+            0
+          ],
+          [
+            6.268647,
+            44.109134,
+            0
+          ],
+          [
+            6.268534,
+            44.109365,
+            0
+          ],
+          [
+            6.268288,
+            44.109571,
+            0
+          ],
+          [
+            6.268441,
+            44.109819,
+            0
+          ],
+          [
+            6.268373,
+            44.110149,
+            0
+          ],
+          [
+            6.268465,
+            44.11028,
+            0
+          ],
+          [
+            6.267987,
+            44.11084,
+            0
+          ],
+          [
+            6.266819,
+            44.111056,
+            0
+          ]
+        ]
+      },
+      "properties": {
+        "name": "EVO: Slate Line",
+        "description": {
+          "@type": "html",
+          "value": "Mapped EVO Bike Park piste. Geometry simplified from <a href=\"https://www.openstreetmap.org/way/842483941\">OpenStreetMap way 842483941</a> (ODbL)."
+        },
+        "styleUrl": "#line-blue",
+        "stroke-opacity": 1,
+        "stroke": "#1864ab",
+        "stroke-width": 4,
+        "spot": "evo-bike-park",
+        "tags": "beginner bike-park dh",
+        "kind": "minor"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            6.268937,
+            44.102248,
+            0
+          ],
+          [
+            6.269009,
+            44.102757,
+            0
+          ],
+          [
+            6.269071,
+            44.103071,
+            0
+          ],
+          [
+            6.268907,
+            44.103866,
+            0
+          ],
+          [
+            6.26829,
+            44.104785,
+            0
+          ],
+          [
+            6.268435,
+            44.105093,
+            0
+          ],
+          [
+            6.268582,
+            44.105532,
+            0
+          ],
+          [
+            6.269253,
+            44.105813,
+            0
+          ],
+          [
+            6.268977,
+            44.106218,
+            0
+          ],
+          [
+            6.269104,
+            44.106582,
+            0
+          ],
+          [
+            6.268634,
+            44.10667,
+            0
+          ],
+          [
+            6.268379,
+            44.106801,
+            0
+          ],
+          [
+            6.268993,
+            44.107135,
+            0
+          ],
+          [
+            6.269347,
+            44.107375,
+            0
+          ],
+          [
+            6.268894,
+            44.107474,
+            0
+          ],
+          [
+            6.268331,
+            44.107751,
+            0
+          ],
+          [
+            6.268137,
+            44.108153,
+            0
+          ]
+        ]
+      },
+      "properties": {
+        "name": "EVO: Dirty Wave",
+        "description": {
+          "@type": "html",
+          "value": "Mapped EVO Bike Park piste. Geometry simplified from <a href=\"https://www.openstreetmap.org/way/842483942\">OpenStreetMap way 842483942</a> (ODbL)."
+        },
+        "styleUrl": "#line-blue",
+        "stroke-opacity": 1,
+        "stroke": "#1864ab",
+        "stroke-width": 4,
+        "spot": "evo-bike-park",
+        "tags": "beginner bike-park dh",
+        "kind": "minor"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            6.268237,
+            44.101452,
+            0
+          ],
+          [
+            6.268344,
+            44.101821,
+            0
+          ],
+          [
+            6.268671,
+            44.102094,
+            0
+          ],
+          [
+            6.2692,
+            44.102427,
+            0
+          ],
+          [
+            6.269589,
+            44.102761,
+            0
+          ],
+          [
+            6.269803,
+            44.103267,
+            0
+          ],
+          [
+            6.269449,
+            44.104207,
+            0
+          ],
+          [
+            6.269195,
+            44.104771,
+            0
+          ],
+          [
+            6.268827,
+            44.104995,
+            0
+          ],
+          [
+            6.268894,
+            44.105498,
+            0
+          ],
+          [
+            6.269546,
+            44.105719,
+            0
+          ],
+          [
+            6.269921,
+            44.106645,
+            0
+          ],
+          [
+            6.270742,
+            44.107189,
+            0
+          ],
+          [
+            6.270876,
+            44.107418,
+            0
+          ],
+          [
+            6.269679,
+            44.106967,
+            0
+          ],
+          [
+            6.268899,
+            44.106875,
+            0
+          ],
+          [
+            6.269594,
+            44.107225,
+            0
+          ],
+          [
+            6.269001,
+            44.10767,
+            0
+          ],
+          [
+            6.268711,
+            44.107647,
+            0
+          ],
+          [
+            6.268137,
+            44.108153,
+            0
+          ]
+        ]
+      },
+      "properties": {
+        "name": "EVO: Savage Train",
+        "description": {
+          "@type": "html",
+          "value": "Mapped EVO Bike Park piste. Geometry simplified from <a href=\"https://www.openstreetmap.org/way/842483943\">OpenStreetMap way 842483943</a> (ODbL)."
+        },
+        "styleUrl": "#line-blue",
+        "stroke-opacity": 1,
+        "stroke": "#1864ab",
+        "stroke-width": 4,
+        "spot": "evo-bike-park",
+        "tags": "beginner bike-park dh",
         "kind": "minor"
       }
     }

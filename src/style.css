@@ -844,7 +844,7 @@ a.dl:hover {
 
 .leaflet-popup-content h3 {
   margin: 0 0 6px;
-  padding-right: 22px;
+  padding-right: 46px;
   font-size: 15px;
 }
 
@@ -879,7 +879,8 @@ a.dl:hover {
   color: #ddd;
 }
 
-.leaflet-popup-share-button {
+.leaflet-popup-share-button,
+.leaflet-popup-hide-button {
   position: absolute;
   z-index: 1;
   top: 0;
@@ -896,17 +897,26 @@ a.dl:hover {
   cursor: pointer;
 }
 
+.leaflet-popup-hide-button {
+  right: 48px;
+}
+
 .leaflet-popup-share-button:hover,
-.leaflet-popup-share-button:focus-visible {
+.leaflet-popup-share-button:focus-visible,
+.leaflet-popup-hide-button:hover,
+.leaflet-popup-hide-button:focus-visible {
   color: #333;
 }
 
-:root[data-theme="dark"] .leaflet-popup-share-button {
+:root[data-theme="dark"] .leaflet-popup-share-button,
+:root[data-theme="dark"] .leaflet-popup-hide-button {
   color: #aaa;
 }
 
 :root[data-theme="dark"] .leaflet-popup-share-button:hover,
-:root[data-theme="dark"] .leaflet-popup-share-button:focus-visible {
+:root[data-theme="dark"] .leaflet-popup-share-button:focus-visible,
+:root[data-theme="dark"] .leaflet-popup-hide-button:hover,
+:root[data-theme="dark"] .leaflet-popup-hide-button:focus-visible {
   color: #ddd;
 }
 

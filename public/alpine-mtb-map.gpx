@@ -23719,22 +23719,21 @@ Ax-les-Thermes | Gondola | ~10 min
     <desc>Purpose-built gravity park in the Alpes-de-Haute-Provence
 
     Trails
-A nationally known independent park built specifically for enduro, DH and freeride. Dry sculpted lines, large jumps, drops, steep race terrain and technical rock make EVO especially strong for advanced riders, with progression options below the flagship features.
+Eleven park pistes: 2 blue, 4 red and 4 black, plus one additional line listed by the park. Named lines include Savage Train, Dirty Wave, Slate Line, Jungle Trail, Whip It, North Shore, Chainsaw, Original Gangsta, Double Black Mamba, Griffus Line and Stratos Line. The terrain combines shaped flow, jumps, technical rock, steep race sections and freeride features.
 
     Getting up / price
-The park operates its own uplift/shuttle system. Booking is required; check EVO for current sessions and pricing.
+The park operates its own truck-and-trailer shuttle system. The day ticket is 35 EUR. Booking is required; check EVO for current sessions and pricing.
 
     Open season
-Open from 01 March; closed from 01 December (typical operating season).
-Daily opening hours: 09:00-17:00
-Estimated session hours; opening is calendar- and weather-dependent.
+Open year-round, subject to booking, weather and maintenance. Daily opening hours: 10:00-17:30; winter uplift typically ends at 17:00.
+Check the operator calendar before travelling.
 
     Access
 From | Transport | Duration
 Digne-les-Bains | Car | ~25 min
 Marseille | Car | ~2h00
 
-    Source: EVO Bike Park. Book and verify current trail status before travel.</desc>
+    Sources: EVO Bike Park trail list and EVO Bike Park practical information. Book and verify current trail status before travel.</desc>
   </wpt>
   <wpt lat="44.696511" lon="6.322065">
     <name>Orcieres Bike Park (Champsaur) [lift pass]</name>
@@ -41176,6 +41175,81 @@ Le Planard is generally suitable from spring through autumn. The higher Trient l
       <trkpt lat="46.103760" lon="7.068900"/>
       <trkpt lat="46.104750" lon="7.071130"/>
       <trkpt lat="46.101513" lon="7.073708"/>
+    </trkseg>
+  </trk>
+  <trk>
+    <name>EVO: Slate Line</name>
+    <desc>Mapped EVO Bike Park piste. Geometry simplified from OpenStreetMap way 842483941 (ODbL).</desc>
+    <trkseg>
+      <trkpt lat="44.104207" lon="6.269449"/>
+      <trkpt lat="44.104631" lon="6.269393"/>
+      <trkpt lat="44.104964" lon="6.269419"/>
+      <trkpt lat="44.105303" lon="6.269741"/>
+      <trkpt lat="44.105499" lon="6.269873"/>
+      <trkpt lat="44.105892" lon="6.269736"/>
+      <trkpt lat="44.106530" lon="6.270315"/>
+      <trkpt lat="44.106925" lon="6.270790"/>
+      <trkpt lat="44.107422" lon="6.270946"/>
+      <trkpt lat="44.107721" lon="6.270570"/>
+      <trkpt lat="44.108246" lon="6.269789"/>
+      <trkpt lat="44.108866" lon="6.269033"/>
+      <trkpt lat="44.109134" lon="6.268647"/>
+      <trkpt lat="44.109365" lon="6.268534"/>
+      <trkpt lat="44.109571" lon="6.268288"/>
+      <trkpt lat="44.109819" lon="6.268441"/>
+      <trkpt lat="44.110149" lon="6.268373"/>
+      <trkpt lat="44.110280" lon="6.268465"/>
+      <trkpt lat="44.110840" lon="6.267987"/>
+      <trkpt lat="44.111056" lon="6.266819"/>
+    </trkseg>
+  </trk>
+  <trk>
+    <name>EVO: Dirty Wave</name>
+    <desc>Mapped EVO Bike Park piste. Geometry simplified from OpenStreetMap way 842483942 (ODbL).</desc>
+    <trkseg>
+      <trkpt lat="44.102248" lon="6.268937"/>
+      <trkpt lat="44.102757" lon="6.269009"/>
+      <trkpt lat="44.103071" lon="6.269071"/>
+      <trkpt lat="44.103866" lon="6.268907"/>
+      <trkpt lat="44.104785" lon="6.268290"/>
+      <trkpt lat="44.105093" lon="6.268435"/>
+      <trkpt lat="44.105532" lon="6.268582"/>
+      <trkpt lat="44.105813" lon="6.269253"/>
+      <trkpt lat="44.106218" lon="6.268977"/>
+      <trkpt lat="44.106582" lon="6.269104"/>
+      <trkpt lat="44.106670" lon="6.268634"/>
+      <trkpt lat="44.106801" lon="6.268379"/>
+      <trkpt lat="44.107135" lon="6.268993"/>
+      <trkpt lat="44.107375" lon="6.269347"/>
+      <trkpt lat="44.107474" lon="6.268894"/>
+      <trkpt lat="44.107751" lon="6.268331"/>
+      <trkpt lat="44.108153" lon="6.268137"/>
+    </trkseg>
+  </trk>
+  <trk>
+    <name>EVO: Savage Train</name>
+    <desc>Mapped EVO Bike Park piste. Geometry simplified from OpenStreetMap way 842483943 (ODbL).</desc>
+    <trkseg>
+      <trkpt lat="44.101452" lon="6.268237"/>
+      <trkpt lat="44.101821" lon="6.268344"/>
+      <trkpt lat="44.102094" lon="6.268671"/>
+      <trkpt lat="44.102427" lon="6.269200"/>
+      <trkpt lat="44.102761" lon="6.269589"/>
+      <trkpt lat="44.103267" lon="6.269803"/>
+      <trkpt lat="44.104207" lon="6.269449"/>
+      <trkpt lat="44.104771" lon="6.269195"/>
+      <trkpt lat="44.104995" lon="6.268827"/>
+      <trkpt lat="44.105498" lon="6.268894"/>
+      <trkpt lat="44.105719" lon="6.269546"/>
+      <trkpt lat="44.106645" lon="6.269921"/>
+      <trkpt lat="44.107189" lon="6.270742"/>
+      <trkpt lat="44.107418" lon="6.270876"/>
+      <trkpt lat="44.106967" lon="6.269679"/>
+      <trkpt lat="44.106875" lon="6.268899"/>
+      <trkpt lat="44.107225" lon="6.269594"/>
+      <trkpt lat="44.107670" lon="6.269001"/>
+      <trkpt lat="44.107647" lon="6.268711"/>
+      <trkpt lat="44.108153" lon="6.268137"/>
     </trkseg>
   </trk>
 </gpx>
