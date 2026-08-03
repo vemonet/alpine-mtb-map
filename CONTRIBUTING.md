@@ -203,7 +203,7 @@ Adding a whole new filter is two steps and no new filtering logic: put the tag i
 
 ### Finding coordinates and traces
 
-There is a skill for this: [`.claude/skills/spot-data/`](.claude/skills/spot-data/SKILL.md). It has two dependency-free scripts and the rules they encode.
+There is a skill for this: [`.github/skills/spot-data/`](.github/skills/spot-data/SKILL.md). It has two dependency-free scripts and the rules they encode.
 
 ```bash
 cd .claude/skills/spot-data/scripts
@@ -213,6 +213,15 @@ python3 trails.py 46.14,6.65,46.18,6.71 --id 220753196   # one, as KML
 ```
 
 `lifts.py --ele` is what tells you which end of a lift is the top station - that is where a main pin goes, and it is not guessable from the map. `trails.py` pulls geometry from OpenStreetMap, simplifies it and refuses to emit a relation that is a circuit rather than one descent.
+
+> [!TIP]
+>
+> To use them with other coding agents:
+>
+> ```sh
+> mkdir -p .agents/skills && ln -s ../../.github/skills/spot-data .agents/skills/spot-data
+> mkdir -p .claude/skills && ln -s ../../.github/skills/spot-data .claude/skills/spot-data
+> ```
 
 ### 7. Adding a trail line
 

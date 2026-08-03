@@ -110,8 +110,8 @@ function chf(price) {
 const places = parseKml(kmlText).filter((p) => p.coords.length);
 
 // ------------------------------------------------------------------ map ---
-const DEFAULT_VIEW = [46.2, 7.1];
-const DEFAULT_ZOOM = 8;
+const DEFAULT_VIEW = [46.2, 8.0];
+const DEFAULT_ZOOM = 7;
 const DEFAULT_MAP_LAYER = "OpenStreetMap";
 const MAP_LAYER_STORAGE_KEY = "mapLayer";
 const map = L.map("map", { scrollWheelZoom: true }).setView(DEFAULT_VIEW, DEFAULT_ZOOM);
@@ -185,13 +185,40 @@ const tagBadges = (tags) => {
   return `<div class="tag-badges">${badges}</div>`;
 };
 
-const basePopup = (p) => `<h3>${p.name}</h3>${p.description || ""}`;
+const shareIcon = `<svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+  <circle cx="4" cy="8" r="1.5"/><circle cx="12" cy="3" r="1.5"/><circle cx="12" cy="13" r="1.5"/><path d="m5.3 7.2 5.4-3.4M5.3 8.8l5.4 3.4"/>
+</svg>`;
+const traceCountSummary = (spot) => {
+  const counts = new Map();
+  for (const { place } of spot.places) {
+    if (place.type !== "line") continue;
+    const color = place.styleUrl === "line-trail" ? "red" : place.styleUrl.replace(/^line-/, "");
+    counts.set(color, (counts.get(color) ?? 0) + 1);
+  }
+  return ["green", "blue", "red", "black"]
+    .filter((color) => counts.has(color))
+    .map(
+      (color) =>
+        `<span class="trace-count trace-count-${color}">${counts.get(color)} ${color}</span>`,
+    )
+    .join('<span class="trace-count-separator"> · </span>');
+};
+
+const basePopup = (p, spot) => {
+  const traceCounts = p.type === "point" ? traceCountSummary(spot) : "";
+  return `<button class="leaflet-popup-share-button" type="button" title="Share" aria-label="Share">${shareIcon}</button><h3>${p.name}</h3>${traceCounts ? `<div class="trace-counts">${traceCounts}</div>` : ""}${p.description || ""}`;
+};
 
 // A spot owns its main pin, its secondary pins and its trail lines: they are
 // shown and hidden together, so the filters operate on whole spots.
 const spots = new Map(); // key -> {tags: Set, searchText, priceDay, group, entry}
 const entries = []; // sidebar rows, one per main pin
 const lineLayers = []; // {layer, spot, color} - lets the Lines filter toggle trails independently of their spot
+// Canvas click tolerance grows the invisible hit area without changing the
+// visible stroke. Touch pointers get extra room for less precise input.
+const trailRenderer = L.canvas({
+  tolerance: window.matchMedia("(pointer: coarse)").matches ? 14 : 8,
+});
 
 for (const p of places) {
   const lineColor = p.styleUrl?.replace(/^line-/, "") ?? "trail";
@@ -205,6 +232,7 @@ for (const p of places) {
           color: TRAIL_COLORS[p.styleUrl] ?? TRAIL_COLOR,
           weight: 4,
           opacity: 0.85,
+          renderer: trailRenderer,
         });
 
   const key = p.spot || p.name;
@@ -225,12 +253,17 @@ for (const p of places) {
   }
   spot.group.addLayer(layer);
   spot.places.push({ layer, place: p });
-  if (p.type === "line") lineLayers.push({ layer, spot, color: lineColor });
+  if (p.type === "line") lineLayers.push({ layer, spot, place: p, color: lineColor });
   spot.searchText += ` ${p.name} ${p.description}`.toLocaleLowerCase();
   layer.bindPopup(() => weatherPopup(p, spot), { maxWidth: 360 });
   layer.on("popupopen", () => {
-    if (spot.entry) setSelectedSpotUrl(spot);
-    if (p.type === "line") selectLine(layer);
+    activePopup = { place: p, spot };
+    setSelectedPlaceUrl(p, spot);
+    if (p.type === "line") selectLines([layer]);
+    else
+      selectLines(
+        spot.places.filter(({ place }) => place.type === "line").map(({ layer }) => layer),
+      );
   });
 
   // A spot's tag set is the union of its placemarks', plus two tags derived
@@ -262,55 +295,143 @@ requestAnimationFrame(() => {
 
 // -------------------------------------------------------------- sidebar ---
 const list = document.getElementById("spots");
-const setSelectedSpotUrl = (spot) => {
-  const url = new URL(window.location.href);
-  url.searchParams.set("spot", spot.id);
-  history.replaceState({ spot: spot.id }, "", url);
-};
+let activePopup = null;
 
-const clearSelectedSpotUrl = () => {
+const placeUrl = (place, spot) => {
   const url = new URL(window.location.href);
   url.searchParams.delete("spot");
+  url.searchParams.delete("trace");
+  if (place.type === "line") url.searchParams.set("trace", place.name);
+  else url.searchParams.set("spot", spot.id);
+  return url;
+};
+
+const setSelectedPlaceUrl = (place, spot) => {
+  const url = placeUrl(place, spot);
+  history.replaceState(place.type === "line" ? { trace: place.name } : { spot: spot.id }, "", url);
+};
+
+const clearSelectedPlaceUrl = () => {
+  const url = new URL(window.location.href);
+  url.searchParams.delete("spot");
+  url.searchParams.delete("trace");
   history.replaceState(null, "", url);
 };
 
-// Dim a clicked trail line a bit so it stands out against the others.
-let selectedLine = null;
-const selectLine = (layer) => {
-  if (selectedLine) selectedLine.setStyle({ opacity: 0.85 });
-  layer.setStyle({ opacity: 0.45 });
-  selectedLine = layer;
+const copyText = async (text) => {
+  if (navigator.clipboard?.writeText) {
+    try {
+      await navigator.clipboard.writeText(text);
+      return;
+    } catch {
+      // The legacy path still works in some installed PWAs where the modern
+      // clipboard API exists but is denied.
+    }
+  }
+  const input = document.createElement("textarea");
+  input.value = text;
+  input.setAttribute("readonly", "");
+  input.style.position = "fixed";
+  input.style.opacity = "0";
+  document.body.append(input);
+  input.select();
+  document.execCommand("copy");
+  input.remove();
 };
-const clearSelectedLine = () => {
-  if (!selectedLine) return;
-  selectedLine.setStyle({ opacity: 0.85 });
-  selectedLine = null;
+
+map.getContainer().addEventListener("click", async (event) => {
+  const button = event.target.closest(".leaflet-popup-share-button");
+  if (!button || !activePopup) return;
+  const { place, spot } = activePopup;
+  const url = placeUrl(place, spot).toString();
+  if (navigator.share) {
+    try {
+      await navigator.share({ title: place.name, url });
+      return;
+    } catch (error) {
+      if (error.name === "AbortError") return;
+    }
+  }
+  try {
+    await copyText(url);
+    button.title = "Link copied";
+    button.setAttribute("aria-label", "Link copied");
+    setTimeout(() => {
+      button.title = "Share";
+      button.setAttribute("aria-label", "Share");
+    }, 1500);
+  } catch (error) {
+    console.warn("Could not share this map link", error);
+  }
+});
+
+// Dim a clicked trail, or every trail linked to a clicked spot, with the same style.
+let selectedLines = [];
+const selectLines = (layers) => {
+  for (const layer of selectedLines) layer.setStyle({ opacity: 0.85 });
+  for (const layer of layers) layer.setStyle({ opacity: 0.45 });
+  selectedLines = layers;
+};
+const clearSelectedLines = () => {
+  for (const layer of selectedLines) layer.setStyle({ opacity: 0.85 });
+  selectedLines = [];
 };
 
 map.on("popupclose", () => {
-  clearSelectedSpotUrl();
-  clearSelectedLine();
+  activePopup = null;
+  clearSelectedPlaceUrl();
+  clearSelectedLines();
 });
 
 const showEntry = (entry, animate = true) => {
-  setSelectedSpotUrl(entry.spot);
   map.flyTo(entry.layer.getLatLng(), 12, { duration: animate ? 0.6 : 0 });
   entry.layer.openPopup();
 };
 
-for (const e of entries) {
+const showTrace = ({ layer }, animate = true) => {
+  map.fitBounds(layer.getBounds(), {
+    animate,
+    duration: animate ? 0.6 : 0,
+    maxZoom: 15,
+    padding: [30, 30],
+  });
+  layer.openPopup();
+};
+
+const traceEntries = lineLayers.map(({ layer, spot, place, color }) => ({
+  name: place.name,
+  meta: spot.entry?.name ?? spot.id,
+  searchText: `${place.name} ${place.description}`.toLocaleLowerCase(),
+  layer,
+  spot,
+  place,
+  color,
+}));
+
+const addResultRow = (entry, show) => {
   const li = document.createElement("li");
   const btn = document.createElement("button");
-  btn.innerHTML = `<span class="name">${e.name}</span><span class="meta">${e.meta}</span>`;
-  btn.addEventListener("click", () => showEntry(e));
+  btn.innerHTML = `<span class="name">${entry.name}</span><span class="meta">${entry.meta}</span>`;
+  btn.addEventListener("click", () => show(entry));
   li.append(btn);
   list.append(li);
-  e.row = li;
-}
+  entry.row = li;
+};
 
-const requestedSpot = new URL(window.location.href).searchParams.get("spot");
+for (const entry of entries) addResultRow(entry, showEntry);
+for (const entry of traceEntries) addResultRow(entry, showTrace);
+
+const requestedUrl = new URL(window.location.href);
+const requestedTrace = requestedUrl.searchParams.get("trace");
+const requestedSpot = requestedUrl.searchParams.get("spot");
 const requestedEntry = requestedSpot && spots.get(requestedSpot)?.entry;
-if (requestedEntry) requestAnimationFrame(() => showEntry(requestedEntry, false));
+if (requestedTrace) {
+  const trace = places.find((place) => place.type === "line" && place.name === requestedTrace);
+  const requestedPlace = trace
+    ? [...spots.values()].flatMap((spot) => spot.places).find(({ place }) => place === trace)
+    : null;
+  if (requestedPlace) requestAnimationFrame(() => showTrace(requestedPlace, false));
+} else if (requestedEntry) requestAnimationFrame(() => showEntry(requestedEntry, false));
 
 const dateInput = document.getElementById("open-date");
 const dateDisplay = document.getElementById("open-date-display");
@@ -328,6 +449,26 @@ const WEATHER_CACHE_TTL = 6 * 60 * 60 * 1000;
 const WEATHER_RAIN_MM = 1;
 const WEATHER_PREVIOUS_DAY_MM = 5;
 const WEATHER_RAIN_PROBABILITY = 50;
+
+// A spot's "rain-sensitive"/"rain-resilient" tag scales how easily it reads as
+// wet: impacted spots keep the sensitive defaults above, untagged ("normal")
+// spots need a bit more rain to flag, and resilient ones only flag on a
+// genuinely wet day itself (no probability or previous-day carry-over).
+const RAIN_SENSITIVITY = {
+  impacted: {
+    rain: WEATHER_RAIN_MM,
+    previous: WEATHER_PREVIOUS_DAY_MM,
+    probability: WEATHER_RAIN_PROBABILITY,
+  },
+  normal: { rain: 3, previous: 10, probability: 65 },
+  resilient: { rain: 15, previous: null, probability: null },
+};
+const rainSensitivityOf = (spot) =>
+  spot.tags.has("rain-resilient")
+    ? "resilient"
+    : spot.tags.has("rain-sensitive")
+      ? "impacted"
+      : "normal";
 const weatherBtn = document.getElementById("weather");
 let weatherEnabled = true;
 let weatherRequest = 0;
@@ -352,6 +493,8 @@ const forecastStart = localDate(today);
 const forecastEnd = shiftedDate(forecastStart, 12);
 const defaultWeatherDate = shiftedDate(forecastStart, today.getHours() >= 16 ? 1 : 0);
 const weatherDate = () => dateInput.value || defaultWeatherDate;
+const weatherDateLabel = () =>
+  `${europeanDate(weatherDate())}${!dateInput.value && defaultWeatherDate !== forecastStart ? " (tomorrow)" : ""}`;
 
 const openDatePicker = (input) => {
   if (input.showPicker) input.showPicker();
@@ -372,17 +515,18 @@ const weatherCode = (code) => {
   return "Variable";
 };
 
-const wetReason = (weather, date = weatherDate()) => {
+const wetReason = (weather, spot, date = weatherDate()) => {
   if (!weather?.days?.has(date)) return "";
+  const { rain, previous: previousMm, probability } = RAIN_SENSITIVITY[rainSensitivityOf(spot)];
   const day = weather.days.get(date);
   const previous = weather.days.get(shiftedDate(date, -1));
-  if (day.precipitation >= WEATHER_RAIN_MM) {
+  if (day.precipitation >= rain) {
     return `${day.precipitation.toFixed(1)} mm precipitation forecast`;
   }
-  if (day.probability >= WEATHER_RAIN_PROBABILITY) {
+  if (probability !== null && day.probability >= probability) {
     return `${day.probability}% chance of precipitation`;
   }
-  if (previous?.precipitation >= WEATHER_PREVIOUS_DAY_MM) {
+  if (previousMm !== null && previous?.precipitation >= previousMm) {
     return `${previous.precipitation.toFixed(1)} mm precipitation the previous day`;
   }
   return "";
@@ -406,7 +550,7 @@ const forecastRows = (weather) => {
 };
 
 function weatherPopup(place, spot) {
-  const content = basePopup(place);
+  const content = basePopup(place, spot);
   const tags = tagBadges(new Set(place.tags));
   if (!weatherEnabled) return content;
   if (!spot.weather) {
@@ -419,9 +563,9 @@ function weatherPopup(place, spot) {
   if (!spot.weather.days.has(selectedDate)) {
     return `${content}<section class="weather-forecast"><h4>🌦️ Weather forecast</h4><p>Forecast unavailable for ${europeanDate(selectedDate)}. Open-Meteo covers ${europeanDate(forecastStart)} to ${europeanDate(forecastEnd)} here.</p><hr>${tags}</section>`;
   }
-  const reason = wetReason(spot.weather);
+  const reason = wetReason(spot.weather, spot);
   return `${content}<section class="weather-forecast"><h4>🌦️ Weather forecast</h4>
-    <p>${europeanDate(selectedDate)}: ${
+    <p>${weatherDateLabel()}: ${
       reason
         ? `<span class="wet-note">Likely wet: ${reason}.</span>`
         : "No significant rain signal."
@@ -435,7 +579,7 @@ function weatherPopup(place, spot) {
 const refreshWeatherPresentation = () => {
   for (const entry of entries) {
     entry.layer.setIcon(
-      pinIcon(entry.kind, weatherEnabled && Boolean(wetReason(entry.spot.weather))),
+      pinIcon(entry.kind, weatherEnabled && Boolean(wetReason(entry.spot.weather, entry.spot))),
     );
   }
   for (const spot of spots.values()) {
@@ -686,6 +830,8 @@ const priceCap = () => {
 // is exclusive; matching dates mean the spot is normally open year-round.
 const searchInput = document.getElementById("spot-search");
 const clearSearchButton = document.getElementById("clear-search");
+const searchModeButtons = [...document.querySelectorAll("[data-search-mode]")];
+let searchMode = "spots";
 const updateDateDisplay = () => {
   const [year, month, day] = dateInput.value.split("-");
   dateDisplay.textContent = year
@@ -707,10 +853,7 @@ const isOpen = (spot) => {
   return day >= openFrom || day < closedFrom;
 };
 
-const matches = (spot) => {
-  const query = searchInput.value.trim().toLocaleLowerCase();
-  if (query && !spot.searchText.includes(query)) return false;
-
+const matchesFilters = (spot) => {
   const category = spot.tags.has("bike-park") ? "bike-park" : "natural";
   if (!categoryChips.some((chip) => on(chip) && chip.dataset.category === category)) return false;
 
@@ -729,27 +872,57 @@ const matches = (spot) => {
 
 const applyFilters = () => {
   const cap = priceCap();
+  const query = searchInput.value.trim().toLocaleLowerCase();
+  const showingTraces = searchMode === "traces";
+  const visibleTraceLayers = new Set();
   let visibleCount = 0;
   priceOut.textContent = cap === Infinity ? "any" : `${cap} CHF`;
+
+  for (const entry of traceEntries) {
+    const chip = lineColorChips.find((candidate) => candidate.dataset.lineColor === entry.color);
+    const visible =
+      showingTraces &&
+      matchesFilters(entry.spot) &&
+      (!chip || on(chip)) &&
+      (!query || entry.searchText.includes(query));
+    entry.row.hidden = !visible;
+    if (visible) {
+      visibleTraceLayers.add(entry.layer);
+      visibleCount++;
+    }
+  }
+
   for (const spot of spots.values()) {
-    const visible = matches(spot);
-    if (visible) map.addLayer(spot.group);
+    const filterMatch = matchesFilters(spot);
+    const spotSearchMatch = !query || spot.searchText.includes(query);
+    let hasVisibleLayer = false;
+
+    for (const { layer, place } of spot.places) {
+      const color = place.styleUrl?.replace(/^line-/, "") ?? "trail";
+      const colorChip = lineColorChips.find((chip) => chip.dataset.lineColor === color);
+      const lineEnabled = place.type !== "line" || !colorChip || on(colorChip);
+      const visible = showingTraces
+        ? visibleTraceLayers.has(layer)
+        : filterMatch && lineEnabled && spotSearchMatch;
+      if (visible) {
+        spot.group.addLayer(layer);
+        hasVisibleLayer = true;
+      } else {
+        spot.group.removeLayer(layer);
+      }
+    }
+
+    if (hasVisibleLayer) map.addLayer(spot.group);
     else map.removeLayer(spot.group);
     if (spot.entry) {
+      const visible = !showingTraces && filterMatch && spotSearchMatch;
       spot.entry.row.hidden = !visible;
       if (visible) visibleCount++;
     }
   }
-  // Trail lines toggle independently of their spot: a spot stays visible for
-  // its pins even while one of its line colours is switched off.
-  for (const { layer, spot, color } of lineLayers) {
-    const chip = lineColorChips.find((c) => c.dataset.lineColor === color);
-    const show = chip ? on(chip) : true;
-    if (show) spot.group.addLayer(layer);
-    else spot.group.removeLayer(layer);
-  }
+  const resultName = showingTraces ? "trace" : "spot";
   document.querySelector("#spot-count").textContent =
-    `${visibleCount} ${visibleCount === 1 ? "spot" : "spots"}`;
+    `${visibleCount} ${resultName}${visibleCount === 1 ? "" : "s"}`;
   const showFilters = [...document.querySelectorAll("#show-filter-menu .filter")];
   const shown = showFilters.filter(on).length;
   document.getElementById("show-filter-summary").textContent =
@@ -801,6 +974,22 @@ clearSearchButton.addEventListener("click", () => {
   applyFilters();
   searchInput.focus();
 });
+for (const button of searchModeButtons) {
+  button.addEventListener("click", () => {
+    searchMode = button.dataset.searchMode;
+    for (const candidate of searchModeButtons) {
+      candidate.setAttribute("aria-pressed", String(candidate === button));
+    }
+    const traces = searchMode === "traces";
+    searchInput.placeholder = traces ? "Search traces..." : "Search spots...";
+    searchInput.setAttribute(
+      "aria-label",
+      `Search ${traces ? "traces" : "spots"} by title or description`,
+    );
+    applyFilters();
+    searchInput.focus();
+  });
+}
 dateInput.addEventListener("input", () => {
   updateDateDisplay();
   applyFilters();

@@ -93,6 +93,14 @@ body {
   color: var(--lift);
 }
 
+/* Enlarge the handle's invisible hit target into the map without changing its
+   narrow visual footprint. */
+#toggle-sidebar::before {
+  content: "";
+  position: absolute;
+  inset: -6px -18px -6px 0;
+}
+
 #toggle-sidebar svg {
   transition: transform 0.2s ease;
 }
@@ -552,9 +560,13 @@ body {
   display: block;
 }
 
+.search-input-wrap {
+  display: block;
+}
+
 #spot-search {
   width: 100%;
-  padding: 8px 34px 8px 10px;
+  padding: 8px 88px 8px 10px;
   border: 1px solid var(--line);
   border-radius: 6px;
   background: var(--bg);
@@ -576,7 +588,7 @@ body {
 #clear-search {
   position: absolute;
   top: 50%;
-  right: 5px;
+  right: 57px;
   width: 26px;
   height: 26px;
   padding: 5px;
@@ -607,6 +619,48 @@ body {
 
 #clear-search[hidden] {
   display: none;
+}
+
+.search-mode {
+  position: absolute;
+  top: 6px;
+  right: 4px;
+  bottom: 6px;
+  display: flex;
+  gap: 2px;
+}
+
+.search-mode button {
+  width: 24px;
+  padding: 4px;
+  border: 0;
+  border-radius: 4px;
+  background: color-mix(in srgb, currentColor 8%, transparent);
+  color: var(--muted);
+  opacity: 0.5;
+  cursor: pointer;
+}
+
+.search-mode button[aria-pressed="true"] {
+  background: color-mix(in srgb, currentColor 18%, transparent);
+  color: inherit;
+  opacity: 1;
+}
+
+.search-mode button:focus-visible {
+  outline: 2px solid color-mix(in srgb, var(--lift) 35%, transparent);
+  outline-offset: 1px;
+}
+
+.search-mode svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.4;
 }
 
 #locate[aria-pressed="true"] {
@@ -790,7 +844,70 @@ a.dl:hover {
 
 .leaflet-popup-content h3 {
   margin: 0 0 6px;
+  padding-right: 22px;
   font-size: 15px;
+}
+
+.trace-counts {
+  margin: -2px 0 8px;
+  font-size: 12px;
+  font-weight: 600;
+  opacity: 0.72;
+}
+
+.trace-count-green {
+  color: #2b8a3e;
+}
+
+.trace-count-blue {
+  color: #1864ab;
+}
+
+.trace-count-red {
+  color: #c92a2a;
+}
+
+.trace-count-black {
+  color: #000;
+}
+
+.trace-count-separator {
+  color: #757575;
+}
+
+:root[data-theme="dark"] .trace-count-black {
+  color: #ddd;
+}
+
+.leaflet-popup-share-button {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  right: 24px;
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  background: transparent;
+  color: #757575;
+  cursor: pointer;
+}
+
+.leaflet-popup-share-button:hover,
+.leaflet-popup-share-button:focus-visible {
+  color: #333;
+}
+
+:root[data-theme="dark"] .leaflet-popup-share-button {
+  color: #aaa;
+}
+
+:root[data-theme="dark"] .leaflet-popup-share-button:hover,
+:root[data-theme="dark"] .leaflet-popup-share-button:focus-visible {
+  color: #ddd;
 }
 
 .leaflet-popup-content hr {
@@ -863,6 +980,15 @@ a.dl:hover {
 .tag-badge.tag-season {
   background: #c0e8b8;
 }
+.tag-badge.tag-rain-sensitive {
+  background: #a8c0e0;
+}
+.tag-badge.tag-rain-resilient {
+  background: #d8c8a0;
+}
+.tag-badge.tag-tested-and-approved {
+  background: #f0d878;
+}
 
 .popup-buttons {
   display: flex;
@@ -904,6 +1030,14 @@ a.dl:hover {
   display: inline;
   cursor: pointer;
   font-size: 18px;
+}
+
+.about-details hr {
+  width: 72%;
+  margin: 18px auto 0;
+  border: 0;
+  border-top: 1px solid var(--muted-border, #dee2e6);
+  opacity: 0.55;
 }
 
 .leaflet-popup-content .warn {
@@ -1047,6 +1181,9 @@ a.dl:hover {
     border-radius: 0 0 4px 4px;
     transform: translateX(-50%);
     transition: top 0.2s ease;
+  }
+  #toggle-sidebar::before {
+    inset: 0 -6px -18px;
   }
   #toggle-sidebar svg {
     transform: rotate(90deg);

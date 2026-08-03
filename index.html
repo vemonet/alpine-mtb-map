@@ -6,7 +6,7 @@
     <title>Alpine MTB Map · Downhill, Enduro and Freeride Spots Worldwide</title>
     <meta
       name="description"
-      content="The definitive open map for gravity mountain biking. Discover top downhill bike parks, enduro trails, and freeride spots worldwide."
+      content="A curated open map for gravity mountain biking. Discover top downhill bike parks, enduro trails, and freeride spots worldwide."
     />
     <meta name="robots" content="index, follow" />
     <meta name="author" content="Alpine MTB Map contributors" />
@@ -31,7 +31,7 @@
     />
     <meta
       property="og:description"
-      content="The definitive open map for gravity mountain biking. Discover top downhill bike parks, enduro trails, and freeride spots worldwide."
+      content="A curated open map for gravity mountain biking. Discover top downhill bike parks, enduro trails, and freeride spots worldwide."
     />
     <meta property="og:url" content="https://vemonet.github.io/alpine-mtb-map/" />
     <meta property="og:image" content="https://vemonet.github.io/alpine-mtb-map/icon-512.png" />
@@ -43,7 +43,7 @@
     />
     <meta
       name="twitter:description"
-      content="The definitive open map for gravity mountain biking. Discover top downhill bike parks, enduro trails, and freeride spots worldwide."
+      content="A curated open map for gravity mountain biking. Discover top downhill bike parks, enduro trails, and freeride spots worldwide."
     />
     <meta name="twitter:image" content="https://vemonet.github.io/alpine-mtb-map/icon-512.png" />
     <!-- The icon's own background, so the PWA chrome matches the mark.
@@ -57,7 +57,7 @@
         "@type": "WebApplication",
         "name": "Alpine MTB Map",
         "url": "https://vemonet.github.io/alpine-mtb-map/",
-        "description": "The definitive open map for gravity mountain biking. Discover top downhill bike parks, enduro trails, and freeride spots worldwide.",
+        "description": "A curated open map for gravity mountain biking. Discover top downhill bike parks, enduro trails, and freeride spots worldwide.",
         "applicationCategory": "TravelApplication",
         "operatingSystem": "Any",
         "isAccessibleForFree": true,
@@ -95,32 +95,10 @@
         <header>
           <h1><img class="logo" src="./icon.png" alt="" width="24" height="24" />Alpine MTB Map</h1>
           <p>
-            The definitive open map for gravity mountain biking. Discover top downhill bike parks,
-            enduro trails, and freeride spots worldwide.
+            A curated open map for gravity mountain biking. Discover top downhill bike parks, enduro
+            trails, and freeride spots worldwide.
           </p>
           <div class="header-actions">
-            <button
-              id="weather"
-              type="button"
-              title="Disable weather"
-              aria-label="Disable weather"
-              aria-pressed="true"
-            >
-              <svg
-                viewBox="0 0 18 16"
-                width="15"
-                height="14"
-                aria-hidden="true"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="1.5"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
-                <path d="M5.2 11.5h8a3 3 0 0 0 .3-6A4.6 4.6 0 0 0 4.8 6.8a2.4 2.4 0 0 0 .4 4.7Z" />
-                <path d="m6.5 13.2-.7 1.2m4-1.2-.7 1.2m4-1.2-.7 1.2" />
-              </svg>
-            </button>
             <button
               id="locate"
               type="button"
@@ -142,6 +120,28 @@
                 <circle cx="8" cy="8" r="2.2" />
                 <path d="M8 1v2M8 13v2M1 8h2M13 8h2" />
                 <circle cx="8" cy="8" r="5" />
+              </svg>
+            </button>
+            <button
+              id="weather"
+              type="button"
+              title="Disable weather"
+              aria-label="Disable weather"
+              aria-pressed="true"
+            >
+              <svg
+                viewBox="0 0 18 16"
+                width="15"
+                height="14"
+                aria-hidden="true"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M5.2 11.5h8a3 3 0 0 0 .3-6A4.6 4.6 0 0 0 4.8 6.8a2.4 2.4 0 0 0 .4 4.7Z" />
+                <path d="m6.5 13.2-.7 1.2m4-1.2-.7 1.2m4-1.2-.7 1.2" />
               </svg>
             </button>
             <button id="theme" type="button" title="Switch theme" aria-label="Switch theme">
@@ -240,7 +240,7 @@
                       data-mode="any"
                       data-group="discipline"
                       checked
-                    />Downhill</label
+                    />⬇️ Downhill</label
                   >
                   <label
                     ><input
@@ -250,7 +250,7 @@
                       data-mode="any"
                       data-group="discipline"
                       checked
-                    />Enduro</label
+                    />🔁 Enduro</label
                   >
                   <label
                     ><input
@@ -260,7 +260,7 @@
                       data-mode="any"
                       data-group="discipline"
                       checked
-                    />Freeride</label
+                    />🦅 Freeride</label
                   >
                 </fieldset>
                 <fieldset>
@@ -273,7 +273,7 @@
                       data-mode="any"
                       data-group="difficulty"
                       checked
-                    />Beginner-friendly</label
+                    />🌱 Beginner-friendly</label
                   >
                   <label
                     ><input
@@ -283,7 +283,7 @@
                       data-mode="any"
                       data-group="difficulty"
                       checked
-                    />Hard / expert</label
+                    />🔥 Hard / expert</label
                   >
                 </fieldset>
                 <fieldset>
@@ -334,7 +334,7 @@
               </summary>
               <div class="filter-popover">
                 <label class="range" for="price-day">
-                  <span>Day pass up to <output id="price-day-out">any</output></span>
+                  <span>💰 Day pass up to <output id="price-day-out">any</output></span>
                   <input id="price-day" type="range" min="0" max="75" step="5" value="75" />
                 </label>
                 <fieldset>
@@ -345,15 +345,11 @@
                       type="checkbox"
                       data-tag="magic-pass"
                       data-mode="only"
-                    />Magic Pass</label
+                    />🪪 Magic Pass</label
                   >
                   <label
-                    ><input
-                      class="filter"
-                      type="checkbox"
-                      data-tag="season"
-                      data-mode="only"
-                    />Season pass available</label
+                    ><input class="filter" type="checkbox" data-tag="season" data-mode="only" />🎟️
+                    Season pass available</label
                   >
                   <label
                     ><input
@@ -361,7 +357,34 @@
                       type="checkbox"
                       data-tag="mass-start"
                       data-mode="only"
-                    />Mass start venue</label
+                    />🏁 Mass start venue</label
+                  >
+                  <label
+                    title="Spots and trails ridden by a map contributor and confirmed as good mountain biking."
+                    ><input
+                      class="filter"
+                      type="checkbox"
+                      data-tag="tested-and-approved"
+                      data-mode="only"
+                    />✅ Tested and approved</label
+                  >
+                  <label
+                    title="Marked wet when at least 15 mm of precipitation is forecast for the selected day. Previous-day rain and precipitation probability are not considered."
+                    ><input
+                      class="filter"
+                      type="checkbox"
+                      data-tag="rain-resilient"
+                      data-mode="only"
+                    />☀️ Rain resilient</label
+                  >
+                  <label
+                    title="Marked wet when the selected day has at least 1 mm of forecast precipitation or a 50% precipitation probability, or when at least 5 mm fell the previous day."
+                    ><input
+                      class="filter"
+                      type="checkbox"
+                      data-tag="rain-sensitive"
+                      data-mode="only"
+                    />🌧️ Rain sensitive</label
                   >
                 </fieldset>
               </div>
@@ -394,24 +417,53 @@
         </nav>
         <div id="search">
           <span class="search-field">
-            <input
-              id="spot-search"
-              type="search"
-              placeholder="Search spots..."
-              aria-label="Search spots by title or description"
-              autocomplete="off"
-            />
-            <button
-              id="clear-search"
-              type="button"
-              aria-label="Clear search"
-              title="Clear search"
-              hidden
-            >
-              <svg viewBox="0 0 16 16" aria-hidden="true">
-                <path d="m4 4 8 8M12 4l-8 8" />
-              </svg>
-            </button>
+            <span class="search-input-wrap">
+              <input
+                id="spot-search"
+                type="search"
+                placeholder="Search spots..."
+                aria-label="Search spots by title or description"
+                autocomplete="off"
+              />
+              <button
+                id="clear-search"
+                type="button"
+                aria-label="Clear search"
+                title="Clear search"
+                hidden
+              >
+                <svg viewBox="0 0 16 16" aria-hidden="true">
+                  <path d="m4 4 8 8M12 4l-8 8" />
+                </svg>
+              </button>
+            </span>
+            <span class="search-mode" role="group" aria-label="Search for">
+              <button
+                type="button"
+                data-search-mode="spots"
+                aria-pressed="true"
+                title="Search spots"
+                aria-label="Search spots"
+              >
+                <svg viewBox="0 0 16 16" aria-hidden="true">
+                  <path d="M8 14s4-4.2 4-8a4 4 0 1 0-8 0c0 3.8 4 8 4 8Z" />
+                  <circle cx="8" cy="6" r="1.5" />
+                </svg>
+              </button>
+              <button
+                type="button"
+                data-search-mode="traces"
+                aria-pressed="false"
+                title="Search traces"
+                aria-label="Search traces"
+              >
+                <svg viewBox="0 0 16 16" aria-hidden="true">
+                  <path d="M2 12c2.4 0 2.3-4.5 4.7-4.5S9 11 11.3 11 13.5 5 14 3" />
+                  <circle cx="2" cy="12" r="1" />
+                  <circle cx="14" cy="3" r="1" />
+                </svg>
+              </button>
+            </span>
           </span>
         </div>
         <div id="spot-count" aria-live="polite"></div>
@@ -503,23 +555,51 @@
     </div>
     <dialog id="about">
       <h2>About this map</h2>
+      <details class="about-details">
+        <summary><h3>Why?</h3></summary>
+        <p>
+          Finding a good mountain-bike spot means trawling a dozen resort sites, none of which tell
+          you what you actually need to know in one place: what the trails are like, how the lift
+          works, and the costs. And once you have found somewhere, there is rarely a KML or GPX to
+          drop into your GPS app.
+        </p>
+        <p>
+          Websites like Trailforks are useful resources, but it can be difficult to find the riding
+          that matters: the filters do not always narrow the map enough, and the sheer number of
+          routes can obscure the good ones. Many are dirt roads or hiking trails that have somehow
+          been tagged for MTB despite being impractical to ride. In high alpine areas, some mapped
+          routes even approach alpinism rather than mountain biking.
+        </p>
+        <hr />
+      </details>
       <p>
-        Finding a good mountain-bike spot means trawling a dozen resort sites, none of which tell
-        you what you actually need to know in one place: what the trails are like, what the lift
-        costs, and how long it takes to get there. And once you have found somewhere, there is
-        rarely a KML or GPX to drop into your GPS app.
+        This map takes a <b>spot-first approach</b>. A typical MTB outing starts by choosing a
+        destination, ideally with a lift and a selection of worthwhile trails to ride throughout the
+        day. Each destination is first represented by a single point, with a practical description
+        of the riding available there. Once you arrive, the trails are often easy to find from
+        signs, local maps or the other riders around you.
       </p>
       <p>
-        This map is that missing file. <b>Every spot lives in a single KML file</b> you can download
-        and load into <a href="https://www.comaps.app/" target="_blank" rel="noopener">CoMaps</a>,
+        When reliable trail traces are available, they are included as a useful bonus rather than
+        the foundation of the map. <b>Every spot lives in a single KML file</b> you can download and
+        load into <a href="https://www.comaps.app/" target="_blank" rel="noopener">CoMaps</a>,
         <a href="https://organicmaps.app/" target="_blank" rel="noopener">Organic Maps</a> or
-        OsmAnd; this site is just a convenient way to browse and filter it without installing
+        OsmAnd; this site is a convenient way to browse and filter the same data without installing
         anything.
       </p>
       <p>
         The website also provides live weather forecasts and marks spots expected to be wet, using
         rain on the selected day and the preceding days to help you judge current and upcoming trail
-        conditions.
+        conditions. How much rain it takes to flag a spot as wet depends on how its terrain drains:
+        spots tagged <b>rain-sensitive</b> (clay, dark forest soil, little sun) turn wet with a
+        small amount of rain or rain the day before; untagged spots use a slightly less sensitive
+        default; spots tagged <b>rain-resilient</b> (rocky, well-draining, sunny/exposed terrain)
+        only flag as wet after genuinely heavy rain on the day itself; no note means it is assumed
+        to behave like most spots.
+      </p>
+      <p>
+        Spots and lines marked <b>Tested and approved</b> have been ridden in person by a map
+        contributor and confirmed as worthwhile MTB riding.
       </p>
       <details class="about-details">
         <summary><h3>Where the data comes from</h3></summary>
@@ -544,14 +624,28 @@
             <b>Trail descriptions</b> written by humans often assisted by an LLM, from riding and
             from operator trail maps.
           </li>
+          <li>
+            <b>Sources are linked per feature:</b> each spot description and each trail trace
+            includes links to the sources used for its description or geometry, so you can check the
+            underlying information yourself.
+          </li>
           <li><b>Base map tiles</b> from OpenStreetMap, OpenTopoMap (CC BY-SA) and CyclOSM.</li>
           <li>
             <b>Weather forecasts</b> from
             <a href="https://open-meteo.com/" target="_blank" rel="noopener">Open-Meteo</a>. A blue
             rain badge means at least 1 mm of precipitation or a 50% probability is forecast, or at
-            least 5 mm fell the previous day.
+            least 5 mm fell the previous day; these are the thresholds for
+            <b>rain-sensitive</b> spots. Untagged spots need a bit more rain, and
+            <b>rain-resilient</b> spots only badge on heavy same-day rain, as explained above.
           </li>
         </ul>
+        <p>
+          <b>License:</b> Map data under
+          <a href="https://opendatacommons.org/licenses/odbl/1-0/" target="_blank" rel="noopener"
+            >ODbL 1.0</a
+          >, because it derives from OpenStreetMap. Website code under MIT. Keep the attribution if
+          you redistribute the files.
+        </p>
       </details>
       <details class="about-details">
         <summary><h3>Natural trail grading: T and E</h3></summary>
@@ -637,13 +731,6 @@
           <a href="https://vttour.fr/forums/125536">VTTour's grading reference</a>.
         </p>
       </details>
-      <h3>Licence</h3>
-      <p>
-        Map data under
-        <a href="https://opendatacommons.org/licenses/odbl/1-0/">ODbL 1.0</a>, because it derives
-        from OpenStreetMap. Website code under MIT. Keep the attribution if you redistribute the
-        files.
-      </p>
       <h3>Contributing</h3>
       <p>
         Spots are missing, and prices go stale. Add yours to
