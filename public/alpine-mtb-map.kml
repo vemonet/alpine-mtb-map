@@ -125,6 +125,50 @@
   <description><![CDATA[A curated open map for gravity mountain biking. Discover top downhill bike parks, enduro trails, and freeride spots worldwide. Each main pin gives what it costs to get up, what the trails are like, and the weather forecast. Blue pins are purpose-built bike parks, dark green pins are natural lift-served spots, and brown pins are the ones you pedal up. A few spots stay ridable in winter. Lines are trail geometries from OpenStreetMap - treat them as indicative, not as a substitute for on-site signage. Compiled July 2026.]]></description>
   <visibility>1</visibility>
   <Placemark>
+    <name>Krasnaya Polyana Bike Park (Sochi, Russia)</name>
+    <description><![CDATA[<b>Vodopad Polikarya chairlift 1375 m - top of the lift serving the upper bike-park trails</b><br/><br/>
+    <b>Trails</b><br/>About 30 km of purpose-built gravity trails between roughly 1,375 m and 540 m, graded green, blue, red and black. The network mixes long flow sections with berms and rhythm features, steep technical lines, drops, wooden features, a skills park and pump track. The lower K1 gondola carries bikes between Polyana 540 and Polyana 960; the Vodopad Polikarya chairlift serves the upper sector.<br/><br/>
+    <b>Getting up / price</b><br/>Bike-pass required from 09:00 to 17:00 and sold at Polyana 540 and 960. Bikes use the external racks on the Krasnaya Polyana K1 gondola and the designated carriers on the Vodopad Polikarya chairlift. Check the live lift and trail status and current tariff before travelling.<br/><br/>
+    <b>Open season</b><br/>Open from 01 May; closed from 01 November (typical summer operating window; snow and maintenance can shorten the upper sector season).<br/>Daily opening hours: 09:00-17:00<br/><small>The resort lies within Sochi National Park; access above 960 m may require a separate national-park permit.</small><br/><br/>
+    <b>Access</b><table class="access"><tr><th>From</th><th>Transport</th><th>Duration</th></tr><tr><td>Sochi / Adler airport</td><td>Car / taxi</td><td>50-70 min</td></tr><tr><td>Esto-Sadok</td><td>Bus / taxi</td><td>10 min</td></tr></table><br/>
+    <i>Sources: <a href="https://krasnayapolyanaresort.ru/karta_trass_ekran_tolko_legenda_leto">official live bike-park and lift status</a>, <a href="https://krasnayapolyanaresort.ru/bajk_park_otkryivaet_novyie_trassyi">official trail overview</a> and <a href="https://krasnayapolyanaresort.ru/rules_bike_park.pdf">official bike-park rules</a>. Lift-top coordinate cross-checked against the published Vodopad Polikarya upper-station coordinate.</i>]]></description>
+    <styleUrl>#placemark-blue</styleUrl><Point><coordinates>40.268184,43.656719,0</coordinates></Point>
+    <ExtendedData xmlns:mwm="https://omaps.app"><Data name="spot"><value>krasnaya-polyana-bike-park</value></Data><Data name="tags"><value>beginner expert bike-park dh enduro freeride</value></Data><Data name="open_from"><value>05-01</value></Data><Data name="closed_from"><value>11-01</value></Data><mwm:icon>Mountain</mwm:icon><mwm:visibility>1</mwm:visibility></ExtendedData>
+  </Placemark>
+  <Placemark>
+    <name>Arkhyz Bike Park (Russia)</name>
+    <description><![CDATA[<b>Mlechny Put gondola 2240 m - top station on the south side</b><br/><br/>
+    <b>Trails</b><br/>More than 30 km of prepared bike-park trails across the south and north sectors. Green progression trails occupy the south slope, with blue and red flow and jump trails plus black expert lines and rougher northern-slope riding. Descents start in alpine terrain and continue through conifer forest; the park also hosts downhill, enduro, dual-slalom and e-MTB events.<br/><br/>
+    <b>Getting up / price</b><br/>The Mlechny Put gondola serves the south side and carries bikes in marked cabins. The 2026 one-day bike pass is 3,350 RUB adult / 2,450 RUB child; multi-day and season passes are available. Rental, workshop, instruction and guiding are available at the resort.<br/><br/>
+    <b>Open season</b><br/>Open from 16 May; closed from 16 October (published 2026 period).<br/>Daily opening hours: 09:00-16:30<br/><small>The north sector may open later because of snow. Lift maintenance days and weather closures occur; check the official status before travelling.</small><br/><br/>
+    <b>Access</b><table class="access"><tr><th>From</th><th>Transport</th><th>Duration</th></tr><tr><td>Mineralnye Vody airport</td><td>Car / shuttle</td><td>3-3.5 h</td></tr><tr><td>Arkhyz village</td><td>Car / taxi</td><td>15-20 min</td></tr></table><br/>
+    <i>Sources: <a href="https://arkhyzbikepark.ru/">official bike-park site</a>, <a href="https://arkhyzbikepark.ru/contacts">published 2026 season and hours</a>, <a href="https://resort-arkhyz.ru/services/summer/bike-park/">official 2026 prices and trail information</a> and the resort's published GPS coordinate for the Mlechny Put upper station.</i>]]></description>
+    <styleUrl>#placemark-blue</styleUrl><Point><coordinates>41.189370,43.564720,0</coordinates></Point>
+    <ExtendedData xmlns:mwm="https://omaps.app"><Data name="spot"><value>arkhyz-bike-park</value></Data><Data name="tags"><value>beginner expert bike-park dh enduro freeride</value></Data><Data name="open_from"><value>05-16</value></Data><Data name="closed_from"><value>10-16</value></Data><mwm:icon>Mountain</mwm:icon><mwm:visibility>1</mwm:visibility></ExtendedData>
+  </Placemark>
+  <Placemark>
+    <name>Bobrovy Log Bike Park (Krasnoyarsk, Russia)</name>
+    <description><![CDATA[<b>K1 chairlift 514 m - top station above Krasnoyarsk</b><br/><br/>
+    <b>Trails</b><br/>Compact lift-served gravity riding on the steep, forested edge of the Eastern Sayan. The official bike park includes a skills zone and prepared downhill trails; DH trail 8 is the main advanced line, with fast berms, technical forest sections and race features. Blue and red training trails are used by the local MTB academy, and the park regularly hosts Fun Bike Race downhill events.<br/><br/>
+    <b>Getting up / price</b><br/>The K1 detachable chairlift carries mountain bikes on designated chairs. The published 2026 bike pass costs 1,000 RUB for four hours or 1,350 RUB for the day. Operation is conditional on trail inspection, weather and the K1 schedule.<br/><br/>
+    <b>Open season</b><br/>Open from 01 June; closed from 01 October (typical snow-free operating window; check the official schedule).<br/>Daily opening hours: according to K1 lift schedule<br/><small>DH trail 8 opens only after inspection. A suitable mountain bike, helmet and protective equipment are required.</small><br/><br/>
+    <b>Access</b><table class="access"><tr><th>From</th><th>Transport</th><th>Duration</th></tr><tr><td>Central Krasnoyarsk</td><td>Car / taxi / bus</td><td>15-30 min</td></tr><tr><td>Krasnoyarsk airport</td><td>Car / taxi</td><td>50-70 min</td></tr></table><br/>
+    <i>Sources: <a href="https://bobrovylog.ru/services/bayk-park/">official bike-park information and 2026 prices</a>, <a href="https://bobrovylog.ru/pravila-fanparka/">official bike-park rules</a> and <a href="https://www.openstreetmap.org/node/1503587400">OSM K1 upper station node 1503587400</a> (ODbL).</i>]]></description>
+    <styleUrl>#placemark-blue</styleUrl><Point><coordinates>92.786265,55.949087,0</coordinates></Point>
+    <ExtendedData xmlns:mwm="https://omaps.app"><Data name="spot"><value>bobrovy-log-bike-park</value></Data><Data name="tags"><value>beginner expert bike-park dh freeride</value></Data><Data name="open_from"><value>06-01</value></Data><Data name="closed_from"><value>10-01</value></Data><mwm:icon>Mountain</mwm:icon><mwm:visibility>1</mwm:visibility></ExtendedData>
+  </Placemark>
+  <Placemark>
+    <name>Manzherok Bike Park (Altai, Russia)</name>
+    <description><![CDATA[<b>Vostok chairlift 1240 m - upper station on Malaya Sinyukha</b><br/><br/>
+    <b>Trails</b><br/>Lift-served downhill and enduro terrain on Malaya Sinyukha above Lake Manzherok. Published descriptions list green, blue, red and black gravity trails with berms, drops, steep turns and wooden skills features. The resort has expanded substantially, so published totals vary from about 7 km for the original downhill park to roughly 13 km for the wider bike-park network.<br/><br/>
+    <b>Getting up / price</b><br/>The Vostok chairlift reaches the 1,240 m upper station and connects to descending trails including mapped routes Argut, Maral and Velvet. Bike transport and the applicable downhill tariff should be confirmed with the resort before travelling; the older published bike-park information refers to a dedicated bike pass.<br/><br/>
+    <b>Open season</b><br/>Open from 01 June; closed from 01 October (typical summer window; current MTB operating dates not published clearly online).<br/>Daily opening hours: check with resort<br/><small>Manzherok has undergone major lift and trail redevelopment. Confirm which gravity trails and bike-carrying lifts are open before travel.</small><br/><br/>
+    <b>Access</b><table class="access"><tr><th>From</th><th>Transport</th><th>Duration</th></tr><tr><td>Gorno-Altaysk airport</td><td>Car / taxi</td><td>30-40 min</td></tr><tr><td>Manzherok village</td><td>Car / taxi</td><td>10-15 min</td></tr></table><br/>
+    <i>Sources: <a href="https://www.ski.ru/az/resort/524/activity/15218">published Manzherok bike-park overview</a> and <a href="https://www.openstreetmap.org/node/9729515306">OSM Vostok upper station node 9729515306</a> (ODbL), mapped at 1,240 m and operated by Manzherok.</i>]]></description>
+    <styleUrl>#placemark-blue</styleUrl><Point><coordinates>85.830386,51.791035,0</coordinates></Point>
+    <ExtendedData xmlns:mwm="https://omaps.app"><Data name="spot"><value>manzherok-bike-park</value></Data><Data name="tags"><value>beginner expert bike-park dh enduro freeride</value></Data><Data name="open_from"><value>06-01</value></Data><Data name="closed_from"><value>10-01</value></Data><mwm:icon>Mountain</mwm:icon><mwm:visibility>1</mwm:visibility></ExtendedData>
+  </Placemark>
+  <Placemark>
     <name>Khorog - Pamir Highway and Wakhan (Tajikistan) [no lift]</name>
     <description><![CDATA[<b>Remote high-altitude mountain-bike expeditions through the Pamirs</b><br/><br/>
     <b>Trails</b><br/>Khorog is the main riding and logistics base for the Pamir Highway, Wakhan Valley and Gorno-Badakhshan. This is expedition terrain rather than a trail centre: long gravel stages cross passes above 4,000 m, with rough descents including Koi-Tezek, Nayzatash and Ak-Baital. Side valleys add unmaintained tracks, river crossings and very isolated mountain riding.<br/><br/>
@@ -446,7 +490,7 @@
     <Point><coordinates>6.957526,47.026524,0</coordinates></Point>
     <ExtendedData xmlns:mwm="https://omaps.app">
       <Data name="spot"><value>chaumont</value></Data>
-      <Data name="tags"><value>expert natural dh enduro freeride</value></Data>
+      <Data name="tags"><value>expert bike-park dh enduro freeride</value></Data>
       <Data name="open_from"><value>01-01</value></Data>
       <Data name="closed_from"><value>01-01</value></Data>
       <Data name="price_day"><value>5 CHF</value></Data>
@@ -1204,7 +1248,7 @@
     <Point><coordinates>7.214443,47.139139,0</coordinates></Point>
     <ExtendedData xmlns:mwm="https://omaps.app">
       <Data name="spot"><value>bienne</value></Data>
-      <Data name="tags"><value>beginner expert natural dh enduro tested-and-approved</value></Data>
+      <Data name="tags"><value>expert natural dh enduro tested-and-approved</value></Data>
       <Data name="open_from"><value>01-01</value></Data>
       <Data name="closed_from"><value>01-01</value></Data>
       <Data name="price_day"><value>16 CHF</value></Data>
@@ -1221,7 +1265,7 @@
     </LineString>
     <ExtendedData>
       <Data name="spot"><value>bienne</value></Data>
-      <Data name="tags"><value>beginner expert natural dh enduro tested-and-approved</value></Data>
+      <Data name="tags"><value>expert natural dh enduro tested-and-approved</value></Data>
     </ExtendedData>
   </Placemark>
   <Placemark>
@@ -1233,7 +1277,7 @@
     </LineString>
     <ExtendedData>
       <Data name="spot"><value>bienne</value></Data>
-      <Data name="tags"><value>beginner expert natural dh enduro tested-and-approved</value></Data>
+      <Data name="tags"><value>expert natural dh enduro tested-and-approved</value></Data>
     </ExtendedData>
   </Placemark>
   <Placemark>
@@ -1245,7 +1289,7 @@
     </LineString>
     <ExtendedData>
       <Data name="spot"><value>bienne</value></Data>
-      <Data name="tags"><value>beginner expert natural dh enduro tested-and-approved</value></Data>
+      <Data name="tags"><value>expert natural dh enduro tested-and-approved</value></Data>
     </ExtendedData>
   </Placemark>
   <Placemark>
@@ -3642,7 +3686,7 @@
     <b>Getting up / price</b><br/>Surface T-bar drag lift (Téléski Les Orvales). Operating hours are managed by the local club; day pass typically costs around 15-25 CHF.<br/><br/>
     <b>Open season</b><br/>Open from late April/early May; closed from late October (typical window; check the local club).<br/>Daily opening hours: variable<br/><small>Check the local club schedule before visiting.</small><br/><br/>
     <b>Access</b><table class="access"><tr><th>From</th><th>Transport</th><th>Duration</th></tr><tr><td>Lausanne</td><td>Train</td><td>~1h50</td></tr></table><br/>
-    <i>Source: local trail reports.
+    <i>Sources: <a href="https://www.bikeparkvalbirse.ch/en/">BikePark Valbirse</a>, <a href="https://www.bikeparkvalbirse.ch/en/horaires-et-tarifs">official hours and prices</a>, <a href="https://www.valbirse.ch/1211-culture-loisirs-teleski-bikepark">Commune de Valbirse</a>, <a href="https://www.trailforks.com/region/bike-park-valbirse-60035/">Trailforks trail directory</a>.
     Prices, schedules, trail status and access can change; verify before travel.</i>]]></description>
     <styleUrl>#placemark-blue</styleUrl>
     <Point><coordinates>7.2581,47.2435,0</coordinates></Point>
@@ -8970,7 +9014,7 @@
     <b>Access</b><table class="access"><tr><th>From</th><th>Transport</th><th>Duration</th></tr><tr><td>Metro Manila</td><td>Car</td><td>~1h15</td></tr></table><br/>
     <i>Source: <a href="https://timberlandmountainbike-park.com/pages/know-before-you-go">official Timberland rider information</a>.</i>]]></description>
     <styleUrl>#placemark-brown</styleUrl>
-    <Point><coordinates>121.1181,14.6796,0</coordinates></Point>
+    <Point><coordinates>121.165301,14.680256,0</coordinates></Point>
     <ExtendedData xmlns:mwm="https://omaps.app">
       <Data name="spot"><value>timberland-ph</value></Data><Data name="tags"><value>beginner expert bike-park dh freeride</value></Data>
       <Data name="open_from"><value>01-01</value></Data><Data name="closed_from"><value>01-01</value></Data>
@@ -8987,7 +9031,7 @@
     <b>Access</b><table class="access"><tr><th>From</th><th>Transport</th><th>Duration</th></tr><tr><td>Metro Manila</td><td>Car</td><td>~2h</td></tr></table><br/>
     <i>Source: <a href="https://www.bworldonline.com/travel-tourism/2016/05/13/4980/a-mountain-bike-trail-in-tagaytay/">BusinessWorld trail report</a>. Current status is unverified.</i>]]></description>
     <styleUrl>#placemark-brown</styleUrl>
-    <Point><coordinates>120.8540,14.0850,0</coordinates></Point>
+    <Point><coordinates>120.856839,14.068781,0</coordinates></Point>
     <ExtendedData xmlns:mwm="https://omaps.app">
       <Data name="spot"><value>twin-lakes-ph</value></Data><Data name="tags"><value>beginner expert natural enduro</value></Data>
       <Data name="open_from"><value>01-01</value></Data><Data name="closed_from"><value>01-01</value></Data>
@@ -10161,7 +10205,7 @@
     <name>China Peak Bike Park [check operator]</name>
     <description><![CDATA[<b>China Peak Bike Park - Lakeshore, CA</b><br/><br/>
     <b>Trails</b><br/>21 miles of maintained downhill and gravity trails with purpose-built descending terrain. Check the current trail map for grades, closures and bike requirements.<br/><br/>
-    <b>Getting up / price</b><br/>1 chairlift. Day-ticket pricing varies by date; check the operator before travel.<br/><br/>
+    <b>Getting up / price</b><br/>1 chairlift. Day-ticket pricing varies by date; a season pass is available through the Mountain Bike Power Pass. Check the operator before travel.<br/><br/>
     <b>Open season</b><br/>June – September (directory indication; weather and maintenance can shorten the season).<br/>Daily opening hours: 09:00-17:00<br/><small>Typical operating-day estimate; verify the operator calendar and hours.</small><br/><br/>
     <b>Access</b><table class="access"><tr><th>From</th><th>Transport</th><th>Duration</th></tr><tr><td>Lakeshore</td><td>Car</td><td>Local</td></tr></table><br/>
     <i>Sources: <a href="https://www.skichinapeak.com/mountain-biking-scenic-chair-rides">operator information</a> and <a href="https://www.twowheeledwanderer.com/posts/mountain-bike-parks-united-states/">US downhill bike-park directory</a>.
@@ -11267,15 +11311,33 @@
     <b>Getting up / price</b><br/>1 chairlift. Day-ticket pricing varies by date; check the operator before travel.<br/><br/>
     <b>Open season</b><br/>Open year-round (directory indication; weather and maintenance can shorten the season).<br/>Daily opening hours: 09:00-17:00<br/><small>Typical operating-day estimate; verify the operator calendar and hours.</small><br/><br/>
     <b>Access</b><table class="access"><tr><th>From</th><th>Transport</th><th>Duration</th></tr><tr><td>Burnet</td><td>Car</td><td>Local</td></tr></table><br/>
-    <i>Sources: <a href="https://www.avantlink.com/click.php?tt=el&amp;merchant_id=09c1ceae-6670-45b0-a04f-dc8d02941db0&amp;website_id=54e58999-cdb6-4f11-9634-8b19a7e0f62f&amp;url=https%3A%2F%2Fwww.spidermountain.com%2F">operator information</a> and <a href="https://www.twowheeledwanderer.com/posts/mountain-bike-parks-united-states/">US downhill bike-park directory</a>.
+    <i>Sources: <a href="https://www.spidermountain.com/">Spider Mountain Bike Park</a>, <a href="https://www.leecanyonlv.com/mountain-bike-season-pass/">Mountain Bike Power Pass</a> and <a href="https://www.twowheeledwanderer.com/posts/mountain-bike-parks-united-states/">US downhill bike-park directory</a>.
     Prices, schedules, trail status and access can change; verify before travel.</i>]]></description>
     <styleUrl>#placemark-blue</styleUrl>
     <Point><coordinates>-98.338894,30.835504,0</coordinates></Point>
     <ExtendedData xmlns:mwm="https://omaps.app">
       <Data name="spot"><value>us-spider-mountain-bike-park</value></Data>
-      <Data name="tags"><value>beginner expert bike-park dh</value></Data>
+      <Data name="tags"><value>beginner expert bike-park dh season-pass</value></Data>
       <Data name="open_from"><value>01-01</value></Data>
       <Data name="closed_from"><value>01-01</value></Data>
+      <mwm:icon>Transport</mwm:icon><mwm:visibility>1</mwm:visibility>
+    </ExtendedData>
+  </Placemark>
+  <Placemark>
+    <name>Lee Canyon Bike Park [lift pass]</name>
+    <description><![CDATA[<b>Lift-served downhill bike park above Las Vegas</b><br/><br/>
+    <b>Trails</b><br/>Lee Canyon is Southern Nevada's lift-served downhill bike park, with green, blue and black trails including machine-built flow and technical natural terrain. Uphill travel is not permitted; riders must stay on designated trails.<br/><br/>
+    <b>Getting up / price</b><br/>The chairlift serves all bike-park trails. Day-ticket prices vary by demand. The 2026 Mountain Bike Power Pass includes unlimited access to Lee Canyon, Brian Head and Purgatory for the bike-park season, plus Spider Mountain access.<br/><br/>
+    <b>Open season</b><br/>Summer bike-park season, with dates and operating days subject to weather and conditions. Check the live calendar before travelling.<br/><br/>
+    <b>Access</b><table class="access"><tr><th>From</th><th>Transport</th><th>Duration</th></tr><tr><td>Las Vegas</td><td>Car</td><td>~45 min</td></tr></table><br/>
+    <i>Sources: <a href="https://www.leecanyonlv.com/mtb-lift-tickets/">Lee Canyon MTB lift tickets</a>, <a href="https://www.leecanyonlv.com/mountain-bike-season-pass/">Mountain Bike Power Pass</a> and <a href="https://www.leecanyonlv.com/mountain-biking-lee-canyon/">Lee Canyon mountain biking</a>. Verify current lift operation and trail status.</i>]]></description>
+    <styleUrl>#placemark-blue</styleUrl>
+    <Point><coordinates>-115.679692,36.303462,0</coordinates></Point>
+    <ExtendedData xmlns:mwm="https://omaps.app">
+      <Data name="spot"><value>us-lee-canyon-bike-park</value></Data>
+      <Data name="tags"><value>beginner expert bike-park dh enduro season-pass</value></Data>
+      <Data name="open_from"><value>05-22</value></Data>
+      <Data name="closed_from"><value>10-31</value></Data>
       <mwm:icon>Transport</mwm:icon><mwm:visibility>1</mwm:visibility>
     </ExtendedData>
   </Placemark>
@@ -11283,16 +11345,16 @@
     <name>Brian Head Bike Park [check operator]</name>
     <description><![CDATA[<b>Brian Head Bike Park - Brian Head, UT</b><br/><br/>
     <b>Trails</b><br/>63 miles including backcountry singletrack of maintained downhill and gravity trails with purpose-built descending terrain. Check the current trail map for grades, closures and bike requirements.<br/><br/>
-    <b>Getting up / price</b><br/>1 chairlift. Day-ticket pricing varies by date; check the operator before travel.<br/><br/>
+    <b>Getting up / price</b><br/>1 chairlift. Day-ticket pricing varies by date; a season pass is available through the Mountain Bike Power Pass. Check the operator before travel.<br/><br/>
     <b>Open season</b><br/>June – September (directory indication; weather and maintenance can shorten the season).<br/>Daily opening hours: 09:00-17:00<br/><small>Typical operating-day estimate; verify the operator calendar and hours.</small><br/><br/>
     <b>Access</b><table class="access"><tr><th>From</th><th>Transport</th><th>Duration</th></tr><tr><td>Brian Head</td><td>Car</td><td>Local</td></tr></table><br/>
-    <i>Sources: <a href="https://www.brianhead.com/mountain-biking/">operator information</a> and <a href="https://www.twowheeledwanderer.com/posts/mountain-bike-parks-united-states/">US downhill bike-park directory</a>.
+    <i>Sources: <a href="https://www.brianhead.com/mountain-biking/">operator information</a>, <a href="https://www.leecanyonlv.com/mountain-bike-season-pass/">Mountain Bike Power Pass</a> and <a href="https://www.twowheeledwanderer.com/posts/mountain-bike-parks-united-states/">US downhill bike-park directory</a>.
     Prices, schedules, trail status and access can change; verify before travel.</i>]]></description>
     <styleUrl>#placemark-blue</styleUrl>
     <Point><coordinates>-112.850776,37.692755,0</coordinates></Point>
     <ExtendedData xmlns:mwm="https://omaps.app">
       <Data name="spot"><value>us-brian-head-bike-park</value></Data>
-      <Data name="tags"><value>beginner expert bike-park dh enduro</value></Data>
+      <Data name="tags"><value>beginner expert bike-park dh enduro season-pass</value></Data>
       <Data name="open_from"><value>06-01</value></Data>
       <Data name="closed_from"><value>10-01</value></Data>
       <mwm:icon>Transport</mwm:icon><mwm:visibility>1</mwm:visibility>
@@ -13871,6 +13933,57 @@
       <Data name="closed_from"><value>10-01</value></Data>
       <mwm:icon>Mountain</mwm:icon><mwm:visibility>1</mwm:visibility>
     </ExtendedData>
+  </Placemark>
+
+  <Placemark>
+    <name>Hemsedal Rides (Norway) [chairlift]</name>
+    <description><![CDATA[<b>Lift-served flow and technical riding above Hemsedal</b><br/><br/>
+    <b>Trails</b><br/>Hollvin Express serves the Hemsedal Rides network, including the long blue Silverstone descent, green Broadway connector and the more technical red High Line. Tottelia Bike Park at the resort base adds compact progression trails and skills features.<br/><br/>
+    <b>Getting up / price</b><br/>Hollvin Express carries bikes to roughly 1,150 m. A SkiStar BikePass is required; rental and instruction are available at the resort.<br/><br/>
+    <b>Open season</b><br/>Published 2026 lift season: daily 27 June-16 August, plus selected September weekends and daily 26 September-4 October.<br/>Daily opening hours: 10:00-16:00<br/><small>Some autumn dates operate 11:00-15:00 or 11:00-16:00; check the live schedule and trail status.</small><br/><br/>
+    <b>Access</b><table class="access"><tr><th>From</th><th>Transport</th><th>Duration</th></tr><tr><td>Hemsedal centre</td><td>Bike / bus / car</td><td>~10 min</td></tr><tr><td>Oslo</td><td>Car / bus</td><td>~3h</td></tr></table><br/>
+    <i>Sources: <a href="https://www.skistar.com/en/ski-destinations/hemsedal/summer-in-hemsedal/activities/biking/">SkiStar Hemsedal biking</a>, <a href="https://www.skistar.com/no/vare-skisteder/hemsedal/sommer-i-hemsedal/oppettider/">official 2026 opening dates</a> and <a href="https://no.outdooractive.com/no/route/terrengsykkel/hemsedal/hemsedal-rides-silverstone/801260262/">Hemsedal's verified Silverstone listing</a>. Pin marks the published Silverstone start near the lift top at 1,151 m.</i>]]></description>
+    <styleUrl>#placemark-blue</styleUrl>
+    <Point><coordinates>8.511480,60.848340,0</coordinates></Point>
+    <ExtendedData xmlns:mwm="https://omaps.app">
+      <Data name="spot"><value>hemsedal-rides</value></Data><Data name="tags"><value>beginner expert bike-park dh enduro freeride</value></Data>
+      <Data name="open_from"><value>06-27</value></Data><Data name="closed_from"><value>10-05</value></Data>
+      <mwm:icon>Transport</mwm:icon><mwm:visibility>1</mwm:visibility>
+    </ExtendedData>
+  </Placemark>
+  <Placemark>
+    <name>Hemsedal Rides: Silverstone</name>
+    <description><![CDATA[3.9 km mapped section of the blue Silverstone flow trail. Geometry simplified from OpenStreetMap way 1070148234 (ODbL) - indicative only; follow signs and current closures. <i>Source: <a href="https://www.openstreetmap.org/way/1070148234">OSM way 1070148234</a>.</i>]]></description>
+    <styleUrl>#line-blue</styleUrl>
+    <LineString><tessellate>1</tessellate><coordinates>8.494781,60.853333,0 8.496209,60.853749,0 8.499748,60.854372,0 8.500785,60.854432,0 8.500864,60.854518,0 8.500646,60.854559,0 8.499367,60.854632,0 8.501208,60.854765,0 8.499517,60.855027,0 8.499556,60.855108,0 8.500383,60.855124,0 8.499778,60.855236,0 8.500845,60.855267,0 8.499912,60.855546,0 8.504034,60.855737,0 8.503882,60.855859,0 8.502999,60.855901,0 8.503943,60.855918,0 8.503413,60.856055,0 8.504215,60.856048,0 8.503301,60.856222,0 8.505257,60.856257,0 8.504121,60.856408,0 8.504371,60.856490,0 8.503958,60.856569,0 8.505340,60.856614,0 8.505451,60.856724,0 8.503499,60.856988,0 8.503570,60.857097,0 8.504772,60.857122,0 8.504134,60.857160,0 8.504651,60.857264,0 8.503881,60.857325,0 8.503569,60.857392,0 8.503657,60.857474,0 8.505079,60.857440,0 8.504325,60.857491,0 8.504938,60.857558,0 8.504184,60.857665,0 8.504798,60.857829,0 8.504259,60.858091,0 8.504318,60.858515,0 8.506013,60.858461,0 8.505980,60.858616,0 8.506274,60.858660,0 8.507567,60.858070,0 8.508494,60.858272,0 8.509041,60.858230,0 8.509892,60.857940,0 8.510301,60.858148,0 8.511222,60.858253,0 8.512838,60.858179,0 8.514392,60.858280,0 8.517758,60.858982,0 8.518223,60.859237,0 8.515035,60.859115,0 8.512534,60.859292,0 8.512113,60.859550,0 8.512839,60.859409,0 8.514371,60.859653,0 8.513765,60.859842,0 8.513698,60.860187,0</coordinates></LineString>
+    <ExtendedData><Data name="spot"><value>hemsedal-rides</value></Data><Data name="tags"><value>beginner bike-park dh flow</value></Data></ExtendedData>
+  </Placemark>
+
+  <Placemark>
+    <name>Nesbyen MTB (Norway) [shuttle]</name>
+    <description><![CDATA[<b>Norway's best-known shuttle-served gravity trail hub</b><br/><br/>
+    <b>Trails</b><br/>Nesbyen combines rough natural enduro descents around Trytetjern with purpose-built trails for several levels. HallingSpranget is the signature blue route: 17 km from Syningen on Nesfjellet to the town centre, losing about 1,000 vertical metres.<br/><br/>
+    <b>Getting up / price</b><br/>Trailhead Nesbyen runs fixed-route gravity shuttles between Blingsmovegen and Trytetjern. The separate FjellLinken bike bus serves the HallingSpranget start; advance booking is recommended.<br/><br/>
+    <b>Open season</b><br/>Typically May-October, depending on snow and trail conditions. HallingSpranget is aiming for an early June opening in 2026, with bookings available from 13 June and daily summer shuttle service.<br/>Daily opening hours: 10:00-16:30<br/><small>Typical gravity-shuttle window; HallingSpranget bus times and autumn operating days differ.</small><br/><br/>
+    <b>Access</b><table class="access"><tr><th>From</th><th>Transport</th><th>Duration</th></tr><tr><td>Nesbyen centre</td><td>Bike shuttle</td><td>~25-40 min to trailheads</td></tr><tr><td>Oslo</td><td>Train / car</td><td>~2h30-3h</td></tr></table><br/>
+    <i>Sources: <a href="https://www.trailheadnesbyen.no/en/shuttling">Trailhead Nesbyen shuttle</a> and <a href="https://www.hallingspranget.no/en/">official HallingSpranget site</a>. Pin marks the OSM-mapped HallingSpranget start at Syningen, officially described as roughly 1,100 m.</i>]]></description>
+    <styleUrl>#placemark-brown</styleUrl>
+    <Point><coordinates>9.059966,60.532437,0</coordinates></Point>
+    <ExtendedData xmlns:mwm="https://omaps.app">
+      <Data name="spot"><value>nesbyen-mtb</value></Data><Data name="tags"><value>beginner expert natural no-lift dh enduro freeride</value></Data>
+      <Data name="open_from"><value>05-01</value></Data><Data name="closed_from"><value>11-01</value></Data>
+      <mwm:icon>Mountain</mwm:icon><mwm:visibility>1</mwm:visibility>
+    </ExtendedData>
+  </Placemark>
+  <Placemark>
+    <name>Nesbyen: HallingSpranget upper trail</name>
+    <description><![CDATA[8.9 km of the upper and middle HallingSpranget blue trail, represented by two contiguous OSM sections. Geometry simplified from OpenStreetMap ways 996851052 and 996851056 (ODbL) - indicative only; follow signs and current closures. <i>Sources: <a href="https://www.openstreetmap.org/way/996851052">OSM way 996851052</a> and <a href="https://www.openstreetmap.org/way/996851056">OSM way 996851056</a>.</i>]]></description>
+    <styleUrl>#line-blue</styleUrl>
+    <MultiGeometry>
+      <LineString><tessellate>1</tessellate><coordinates>9.059966,60.532437,0 9.061527,60.532249,0 9.060995,60.532395,0 9.061802,60.532409,0 9.060776,60.532600,0 9.060961,60.532670,0 9.060478,60.533037,0 9.061229,60.532806,0 9.061723,60.532939,0 9.061398,60.533789,0 9.061150,60.533843,0 9.060921,60.534325,0 9.061893,60.534306,0 9.061946,60.533874,0 9.062179,60.533733,0 9.063478,60.533788,0 9.064242,60.533627,0 9.064901,60.533148,0 9.066325,60.533288,0 9.066979,60.533478,0 9.065753,60.533892,0 9.067856,60.534014,0 9.067674,60.534319,0 9.068171,60.534461,0 9.067816,60.534527,0 9.068574,60.534692,0 9.067980,60.534751,0 9.068117,60.534881,0 9.069091,60.534763,0 9.069567,60.534355,0 9.070605,60.534248,0 9.070480,60.534122,0 9.070769,60.534205,0 9.070997,60.533905,0 9.071086,60.534292,0 9.069750,60.535010,0 9.069171,60.535729,0 9.069171,60.535860,0 9.069764,60.536012,0</coordinates></LineString>
+      <LineString><tessellate>1</tessellate><coordinates>9.069810,60.536041,0 9.070052,60.536486,0 9.069836,60.536956,0 9.070560,60.537442,0 9.071025,60.537549,0 9.071141,60.537700,0 9.070368,60.537569,0 9.071433,60.538244,0 9.070925,60.538105,0 9.071324,60.538923,0 9.070668,60.539111,0 9.071158,60.539552,0 9.070801,60.540566,0 9.071117,60.540832,0 9.071569,60.540647,0 9.072555,60.540709,0 9.073570,60.540409,0 9.073586,60.540795,0 9.072904,60.541605,0 9.073719,60.541956,0 9.073877,60.541891,0 9.073602,60.541678,0 9.073875,60.541267,0 9.075007,60.540396,0 9.074866,60.540672,0 9.075192,60.540526,0 9.076936,60.540489,0 9.077424,60.540287,0 9.077086,60.540591,0 9.077778,60.540612,0 9.077892,60.540991,0 9.078495,60.540938,0 9.078436,60.541131,0 9.079121,60.541508,0 9.079899,60.541537,0 9.080494,60.542275,0 9.081011,60.542357,0 9.080569,60.542852,0 9.081136,60.542885,0 9.081500,60.543195,0 9.081824,60.543142,0 9.082249,60.542620,0 9.082667,60.542561,0 9.083640,60.542673,0 9.084160,60.543097,0 9.085256,60.542704,0 9.085582,60.543117,0 9.087070,60.542014,0 9.088771,60.541458,0 9.089273,60.541462,0 9.090185,60.541180,0 9.090620,60.541412,0 9.089982,60.541584,0 9.090471,60.541717,0 9.090744,60.542255,0 9.092647,60.542035,0 9.093482,60.542100,0 9.094154,60.541958,0 9.094284,60.542108,0 9.093796,60.542992,0 9.094685,60.542582,0 9.095239,60.542532,0 9.095685,60.542103,0 9.097668,60.541810,0 9.099027,60.542225,0 9.098816,60.542391,0 9.099253,60.542580,0 9.101332,60.542475,0 9.101924,60.542624,0 9.101905,60.542430,0 9.102095,60.542530,0 9.103268,60.542574,0 9.104452,60.542862,0 9.104989,60.542757,0 9.104881,60.542593,0 9.105623,60.542273,0 9.105966,60.542264,0 9.105708,60.541961,0 9.106787,60.541815,0 9.107045,60.541905,0 9.106464,60.542031,0 9.106397,60.542537,0 9.108485,60.542446,0 9.109967,60.542722,0 9.110961,60.542726,0 9.110199,60.542942,0 9.111284,60.542905,0 9.111545,60.543159,0 9.112101,60.543253,0 9.111810,60.543459,0 9.112450,60.543879,0 9.112238,60.544096,0 9.112386,60.544431,0 9.111733,60.545028,0 9.110878,60.545010,0 9.110713,60.544877,0 9.110700,60.545092,0 9.110455,60.545110,0 9.110214,60.544560,0 9.109924,60.544776,0 9.109050,60.544543,0 9.108057,60.544672,0 9.107453,60.545296,0 9.106737,60.545507,0 9.106065,60.546019,0 9.105724,60.546804,0 9.106299,60.547125,0 9.105829,60.547326,0 9.105971,60.547441,0 9.105665,60.547423,0 9.105786,60.547720,0 9.105332,60.547507,0 9.105154,60.547619,0 9.104586,60.547399,0 9.103344,60.547800,0 9.102847,60.548111,0 9.103288,60.548310,0 9.103188,60.548428,0 9.102187,60.548627,0 9.102038,60.548837,0 9.101513,60.548617,0 9.101215,60.548795,0 9.100150,60.549018,0 9.100271,60.549357,0 9.100675,60.549259,0 9.101265,60.549301,0 9.099561,60.549877,0 9.100413,60.549919,0 9.100271,60.549982,0 9.100484,60.550069,0 9.102237,60.550330,0 9.102599,60.550058,0 9.103387,60.549831,0</coordinates></LineString>
+    </MultiGeometry>
+    <ExtendedData><Data name="spot"><value>nesbyen-mtb</value></Data><Data name="tags"><value>beginner no-lift enduro flow</value></Data></ExtendedData>
   </Placemark>
 
   <Placemark>
@@ -16479,5 +16592,182 @@
     <ExtendedData><Data name="spot"><value>evo-bike-park</value></Data><Data name="tags"><value>beginner bike-park dh</value></Data></ExtendedData>
   </Placemark>
 
+  <Placemark>
+    <name>Sorata MTB (Bolivia) [no lift]</name>
+    <description><![CDATA[High-altitude mountain biking around Sorata, with steep valley roads, footpaths and downhill routes below the Cordillera Real. This is a local/backcountry riding area, not a managed bike park. Verify access and hire a local guide. <i>Sources: <a href="https://360.sorata.bo/">Sorata tourism</a> and <a href="https://www.lapaz.bo/wp-content/uploads/2025/08/La-Paz-en-el-Bicentenario-web.pdf">La Paz tourism publication</a>.</i>]]></description>
+    <styleUrl>#placemark-brown</styleUrl><Point><coordinates>-68.646000,-15.772000,0</coordinates></Point>
+    <ExtendedData xmlns:mwm="https://omaps.app"><Data name="spot"><value>bolivia-sorata</value></Data><Data name="tags"><value>expert natural enduro</value></Data><mwm:icon>Mountain</mwm:icon><mwm:visibility>1</mwm:visibility></ExtendedData>
+  </Placemark>
+  <Placemark>
+    <name>Aguavista MTB Circuit (Paraguay) [no lift]</name>
+    <description><![CDATA[Organized cross-country MTB circuit at Aguavista in San Juan del Parana, Itapua. The circuit is about 5.1 km and hosts UCI-level XCO events. The pin marks the official 2026 course start/finish beside the Aguavista tennis courts at about 120 m. <i>Sources: <a href="https://www.snd.gov.py/todo-listo-para-el-panamericano-mtb-2026-en-itapua/">Paraguay National Sports Secretariat</a>, the <a href="https://www.race.com.py/assets/img/comp/69a815a03c2b4_Gu%C3%ADa%20T%C3%A9cnica%20Campeonato%20Panamericano%20MTB%202026.pdf">official 2026 technical guide</a> and OpenStreetMap tennis-court ways <a href="https://www.openstreetmap.org/way/510311623">510311623</a>, <a href="https://www.openstreetmap.org/way/510311624">510311624</a> and <a href="https://www.openstreetmap.org/way/510311625">510311625</a> (ODbL).</i>]]></description>
+    <styleUrl>#placemark-brown</styleUrl><Point><coordinates>-55.987050,-27.313500,0</coordinates></Point>
+    <ExtendedData xmlns:mwm="https://omaps.app"><Data name="spot"><value>paraguay-aguavista</value></Data><Data name="tags"><value>beginner expert natural enduro</value></Data><mwm:icon>Mountain</mwm:icon><mwm:visibility>1</mwm:visibility></ExtendedData>
+  </Placemark>
+  <Placemark>
+    <name>Cerro Aspero MTB (Uruguay) [no lift]</name>
+    <description><![CDATA[Marked mountain-bike circuit in the Cerro Aspero area of Rocha, with a roughly 40 km adventure route and a hike-a-bike approach to the summit. Natural, rolling terrain with no lift. <i>Source: <a href="https://turismorocha.gub.uy/atractivos/deportes/ciclismo-y-mountain-bike">Rocha Tourism</a>.</i>]]></description>
+    <styleUrl>#placemark-brown</styleUrl><Point><coordinates>-54.380000,-34.080000,0</coordinates></Point>
+    <ExtendedData xmlns:mwm="https://omaps.app"><Data name="spot"><value>uruguay-cerro-aspero</value></Data><Data name="tags"><value>beginner expert natural enduro</value></Data><mwm:icon>Mountain</mwm:icon><mwm:visibility>1</mwm:visibility></ExtendedData>
+  </Placemark>
+  <Placemark>
+    <name>Santos Trailhead / Cross Florida Greenway [no lift]</name>
+    <description><![CDATA[IMBA Ride Center and extensive singletrack network around Santos, with more than 80 miles of mountain-bike trails, a pump track and skills park. Open year-round during park hours. <i>Sources: <a href="https://www.floridastateparks.org/learn/biking-cross-florida-greenway">Florida State Parks biking guide</a> and <a href="https://www.floridastateparks.org/parks-and-trails/santos-trailhead-campground/experiences-amenities">Santos Trailhead information</a>.</i>]]></description>
+    <styleUrl>#placemark-brown</styleUrl><Point><coordinates>-82.132000,29.166000,0</coordinates></Point>
+    <ExtendedData xmlns:mwm="https://omaps.app"><Data name="spot"><value>us-florida-santos</value></Data><Data name="tags"><value>beginner expert natural enduro</value></Data><mwm:icon>Mountain</mwm:icon><mwm:visibility>1</mwm:visibility></ExtendedData>
+  </Placemark>
+  <Placemark>
+    <name>Alafia River State Park MTB [no lift]</name>
+    <description><![CDATA[One of Florida's most varied mountain-bike areas, built through reclaimed phosphate-mining terrain with unusually steep elevation changes for the state. Park trails are maintained and conditions can change; check closures before riding. <i>Source: <a href="https://www.floridastateparks.org/Alafia">Florida State Parks - Alafia River</a>.</i>]]></description>
+    <styleUrl>#placemark-brown</styleUrl><Point><coordinates>-82.181000,27.805000,0</coordinates></Point>
+    <ExtendedData xmlns:mwm="https://omaps.app"><Data name="spot"><value>us-florida-alafia</value></Data><Data name="tags"><value>beginner expert natural enduro</value></Data><mwm:icon>Mountain</mwm:icon><mwm:visibility>1</mwm:visibility></ExtendedData>
+  </Placemark>
+  <Placemark>
+    <name>Markham Park MTB Trails (Florida) [no lift]</name>
+    <description><![CDATA[Managed mountain-bike trail network at Markham Park in Broward County, with purpose-built trails and riding facilities. Check the park page for current access, conditions and rules. <i>Source: <a href="https://markhampark.com/biking/">Markham Park mountain-bike trails</a>.</i>]]></description>
+    <styleUrl>#placemark-green</styleUrl><Point><coordinates>-80.360000,26.118000,0</coordinates></Point>
+    <ExtendedData xmlns:mwm="https://omaps.app"><Data name="spot"><value>us-florida-markham</value></Data><Data name="tags"><value>beginner expert natural enduro</value></Data><mwm:icon>Mountain</mwm:icon><mwm:visibility>1</mwm:visibility></ExtendedData>
+  </Placemark>
+
+  <Placemark>
+    <name>Fruita MTB - 18 Road and Kokopelli [no lift]</name>
+    <description><![CDATA[<b>Fruita / Grand Valley desert singletrack destination</b><br/><br/>
+    <b>Trails</b><br/>Two adjoining, world-known riding areas: the North Fruita Desert / 18 Road system for fast, playful desert singletrack, and the Kokopelli Trail system near Loma for exposed ledges, slickrock, technical loops and long views over the Colorado River. Classics include Joe's Ridge, Kessel Run, Mary's Loop, Horsethief Bench and Rustler's Loop.<br/><br/>
+    <b>Getting up / price</b><br/>No lift. Pedal-accessed trailheads and desert roads; check land-manager rules, parking requirements and closures before riding.<br/><br/>
+    <b>Open season</b><br/>Rideable year-round when trails are dry. Avoid muddy conditions because desert clay can be damaged easily; summer heat requires an early start and extra water.<br/><br/>
+    <i>Sources: <a href="https://gofruita.com/mountain-biking-trails/">Go Fruita trail overview</a>, <a href="https://www.recreation.gov/gateways/16583">BLM / Recreation.gov Kokopelli Trails</a> and <a href="https://cpw.state.co.us/state-parks/james-m-robb-colorado-river-state-park/james-m-robb-colorado-river-state-park-fruita">Colorado Parks and Wildlife - Fruita</a>.</i>]]></description>
+    <styleUrl>#placemark-brown</styleUrl>
+    <Point><coordinates>-108.706010,39.310380,0</coordinates></Point>
+    <ExtendedData xmlns:mwm="https://omaps.app"><Data name="spot"><value>us-fruita-mtb</value></Data><Data name="tags"><value>beginner expert natural no-lift enduro freeride</value></Data><Data name="open_from"><value>01-01</value></Data><Data name="closed_from"><value>01-01</value></Data><mwm:icon>Mountain</mwm:icon><mwm:visibility>1</mwm:visibility></ExtendedData>
+  </Placemark>
+  <Placemark>
+    <name>Flagstaff MTB Network (Arizona) [no lift]</name>
+    <description><![CDATA[<b>High-elevation ponderosa-pine riding around Flagstaff</b><br/><br/>
+    <b>Trails</b><br/>A broad network of singletrack and multi-use trails around Flagstaff, including the Arizona Trail, Schultz Creek, Elden and the urban trail system. The high-altitude pine forest provides varied cross-country and natural all-mountain riding, with volcanic terrain and long seasonal views.<br/><br/>
+    <b>Getting up / price</b><br/>No lift. Ride from signed trailheads and use the current forest and city maps. Some routes are shared-use and some Arizona Trail sections have local restrictions, so follow posted rules.<br/><br/>
+    <b>Open season</b><br/>Lower trails can ride much of the year, while snow and freeze-thaw affect higher routes in winter and spring. Check current closures and trail conditions before riding.<br/><br/>
+    <i>Sources: <a href="https://www.flagstaff.com/flagstaff-mountain-biking">Flagstaff mountain biking guide</a>, <a href="https://flagstaff.az.gov/1521/Flagstaff-Urban-Trails-Bikeways-Map">City of Flagstaff trail map</a> and <a href="https://flagstafftrails.com/">Flagstaff Biking Organization</a>.</i>]]></description>
+    <styleUrl>#placemark-brown</styleUrl>
+    <Point><coordinates>-111.650000,35.198000,0</coordinates></Point>
+    <ExtendedData xmlns:mwm="https://omaps.app"><Data name="spot"><value>us-flagstaff-mtb</value></Data><Data name="tags"><value>beginner expert natural no-lift enduro</value></Data><Data name="open_from"><value>01-01</value></Data><Data name="closed_from"><value>01-01</value></Data><mwm:icon>Mountain</mwm:icon><mwm:visibility>1</mwm:visibility></ExtendedData>
+  </Placemark>
+  <Placemark>
+    <name>Le Salève: La Longue</name>
+    <description><![CDATA[5.7 km marked MTB descent on Le Salève. Geometry simplified from <a href="https://www.openstreetmap.org/relation/1490529">OpenStreetMap relation 1490529</a> (ODbL); indicative only, follow local signs and restrictions.]]></description>
+    <styleUrl>#line-trail</styleUrl>
+    <LineString><tessellate>1</tessellate><coordinates>6.194292,46.154140,0 6.194416,46.154197,0 6.195129,46.153602,0 6.195757,46.152855,0 6.196107,46.152643,0 6.196743,46.152528,0 6.197290,46.152002,0 6.198237,46.150604,0 6.198927,46.149952,0 6.199654,46.150048,0 6.200528,46.150364,0 6.201664,46.150249,0 6.202957,46.149851,0 6.203783,46.149376,0 6.204029,46.148726,0 6.204940,46.148586,0 6.204842,46.147880,0 6.206126,46.148880,0 6.207397,46.149415,0 6.209093,46.150395,0 6.209535,46.150502,0 6.209693,46.149563,0 6.211487,46.150181,0 6.212915,46.151093,0 6.213134,46.151671,0 6.213863,46.151858,0 6.214522,46.152555,0 6.215758,46.153140,0 6.215810,46.153315,0 6.217017,46.153985,0 6.218163,46.155045,0 6.219031,46.155512,0 6.219344,46.155818,0 6.220882,46.156375,0 6.221043,46.156533,0 6.221035,46.156648,0 6.220596,46.156720,0 6.219830,46.157112,0 6.219478,46.157349,0 6.219437,46.157570,0 6.218650,46.157648,0 6.214322,46.158931,0 6.213614,46.159511,0 6.213566,46.159690,0 6.207942,46.160802,0 6.206852,46.160521,0 6.205055,46.161417,0 6.204541,46.161485,0 6.202730,46.162163,0 6.202065,46.162212,0 6.201165,46.162761,0 6.200558,46.162804,0 6.200778,46.163041,0 6.197791,46.162108,0 6.198316,46.162734,0 6.197515,46.162768,0 6.198231,46.163656,0 6.198762,46.164055,0 6.198275,46.164360,0 6.197062,46.164376,0 6.196828,46.164713,0</coordinates></LineString>
+    <ExtendedData><Data name="spot"><value>saleve</value></Data><Data name="tags"><value>expert dh enduro</value></Data></ExtendedData>
+  </Placemark>
+  <Placemark>
+    <name>Le Salève: L'Entre-deux</name>
+    <description><![CDATA[5.6 km marked MTB descent on Le Salève. Geometry simplified from <a href="https://www.openstreetmap.org/relation/1490556">OpenStreetMap relation 1490556</a> (ODbL); indicative only, follow local signs and restrictions.]]></description>
+    <styleUrl>#line-trail</styleUrl>
+    <LineString><tessellate>1</tessellate><coordinates>6.194292,46.154140,0 6.194416,46.154197,0 6.195129,46.153602,0 6.195757,46.152855,0 6.196107,46.152643,0 6.196743,46.152528,0 6.197290,46.152002,0 6.198237,46.150604,0 6.198927,46.149952,0 6.199654,46.150048,0 6.200528,46.150364,0 6.201664,46.150249,0 6.202521,46.149910,0 6.203015,46.150036,0 6.203807,46.149744,0 6.204321,46.149759,0 6.204806,46.149603,0 6.205686,46.149839,0 6.206518,46.150623,0 6.206907,46.150673,0 6.207521,46.150989,0 6.207583,46.151303,0 6.207786,46.151249,0 6.208268,46.151592,0 6.208480,46.151453,0 6.208787,46.152189,0 6.209562,46.152448,0 6.210248,46.152876,0 6.210105,46.153515,0 6.210731,46.153542,0 6.210918,46.153354,0 6.211439,46.153416,0 6.211721,46.152967,0 6.212894,46.152589,0 6.214193,46.152828,0 6.215655,46.153594,0 6.215932,46.153900,0 6.217017,46.153985,0 6.217738,46.154742,0 6.219344,46.155818,0 6.220882,46.156375,0 6.221043,46.156533,0 6.221035,46.156648,0 6.220596,46.156720,0 6.219830,46.157112,0 6.219478,46.157349,0 6.219437,46.157570,0 6.218650,46.157648,0 6.214322,46.158931,0 6.213614,46.159511,0 6.213566,46.159690,0 6.207942,46.160802,0 6.206852,46.160521,0 6.205055,46.161417,0 6.204541,46.161485,0 6.202730,46.162163,0 6.202065,46.162212,0 6.201165,46.162761,0 6.200558,46.162804,0 6.200778,46.163041,0 6.197791,46.162108,0 6.198316,46.162734,0 6.197515,46.162768,0 6.198231,46.163656,0 6.198762,46.164055,0 6.198275,46.164360,0 6.197062,46.164376,0 6.196828,46.164713,0</coordinates></LineString>
+    <ExtendedData><Data name="spot"><value>saleve</value></Data><Data name="tags"><value>expert dh enduro</value></Data></ExtendedData>
+  </Placemark>
+  <Placemark>
+    <name>Wentworth Bike Park (Nova Scotia, Canada) [chairlift]</name>
+    <description><![CDATA[<b>Blue Quad top station 283 m - Nova Scotia's only lift-accessible bike park</b><br/><br/>
+    <b>Trails</b><br/>More than 40 km of gravity riding is split between the chairlift-served Lift Zone and the pedal-access Climb Zone. The network includes progressive flow, jumps and technical downhill trails, plus cross-country riding near the summit. Rentals, lessons and a downhill race series are available.<br/><br/>
+    <b>Getting up / price</b><br/>The Blue Quad serves the Lift Zone. Published 2026 adult day tickets are CAD 55 in advance or CAD 60 on the day; separate lower-cost Climb Zone access is available.<br/><br/>
+    <b>Open season</b><br/>Tentative 2026 lift season: 13 June through late October, Friday-Sunday and selected holidays.<br/><small>Weather and trail work can change lift and trail availability; check the live status before travelling.</small><br/><br/>
+    <b>Access</b><table class="access"><tr><th>From</th><th>Transport</th><th>Duration</th></tr><tr><td>Truro</td><td>Car</td><td>~35 min</td></tr><tr><td>Halifax</td><td>Car</td><td>~1h45</td></tr></table><br/>
+    <i>Sources: <a href="https://www.bikewentworth.ca/">official Bike Wentworth</a>, <a href="https://www.bikewentworth.ca/wentworth-mbp-lift-zone">2026 Lift Zone information</a>, <a href="https://www.bikewentworth.ca/single-and-multi-day-passes">2026 tickets</a> and <a href="https://www.openstreetmap.org/way/257025775">OSM Blue Quad lift</a> (ODbL). Pin marks the OSM lift top, verified at 283 m.</i>]]></description>
+    <styleUrl>#placemark-blue</styleUrl><Point><coordinates>-63.547390,45.605890,0</coordinates></Point>
+    <ExtendedData xmlns:mwm="https://omaps.app"><Data name="spot"><value>ca-ns-wentworth</value></Data><Data name="tags"><value>beginner expert bike-park dh enduro freeride</value></Data><Data name="open_from"><value>06-13</value></Data><Data name="closed_from"><value>10-26</value></Data><mwm:icon>Transport</mwm:icon><mwm:visibility>1</mwm:visibility></ExtendedData>
+  </Placemark>
+  <Placemark>
+    <name>Keppoch Mountain (Nova Scotia, Canada) [shuttle]</name>
+    <description><![CDATA[<b>Weekend shuttle drop-off around 218 m above Antigonish</b><br/><br/>
+    <b>Trails</b><br/>Almost 30 km of purpose-built mountain-bike trails range from beginner flow to expert natural and technical descents. The community-operated park also has a skills area, bike wash and repair station, and hosts downhill and enduro events.<br/><br/>
+    <b>Getting up / price</b><br/>Weekend bike shuttles carry riders to the upper trail network; pedal access is also possible. Buy a day or season pass through Keppoch and check capacity before travelling.<br/><br/>
+    <b>Open season</b><br/>Published 2026 shuttle opening: 23 May. Standard service runs Saturday-Sunday, 10:00-17:00, generally through late October.<br/><small>Potential Friday evening services are announced separately.</small><br/><br/>
+    <b>Access</b><table class="access"><tr><th>From</th><th>Transport</th><th>Duration</th></tr><tr><td>Antigonish</td><td>Car</td><td>~15 min</td></tr><tr><td>Halifax</td><td>Car</td><td>~2h</td></tr></table><br/>
+    <i>Sources: <a href="https://www.thekeppoch.ca/events/bike-shuttle-opening-weekend">official 2026 shuttle opening</a> and <a href="https://novascotia.com/listing/keppoch-mountain/">Tourism Nova Scotia park information</a>. Pin marks the upper Summit West trailhead, elevation-checked at 218 m.</i>]]></description>
+    <styleUrl>#placemark-brown</styleUrl><Point><coordinates>-62.113390,45.538780,0</coordinates></Point>
+    <ExtendedData xmlns:mwm="https://omaps.app"><Data name="spot"><value>ca-ns-keppoch</value></Data><Data name="tags"><value>beginner expert natural no-lift dh enduro freeride</value></Data><Data name="open_from"><value>05-23</value></Data><Data name="closed_from"><value>10-26</value></Data><mwm:icon>Mountain</mwm:icon><mwm:visibility>1</mwm:visibility></ExtendedData>
+  </Placemark>
+  <Placemark>
+    <name>Sugarloaf Bike Park (New Brunswick, Canada) [chairlift]</name>
+    <description><![CDATA[<b>Chairlift top station 195 m - Atlantic Canada's original lift-access bike park</b><br/><br/>
+    <b>Trails</b><br/>About 49 km of riding and 36 listed trails combine Gravity Logic-built flow, jump lines, drops and wooden features with rocky expert downhill and year-round cross-country trails. The lower mountain includes a family skills park and pump track.<br/><br/>
+    <b>Getting up / price</b><br/>The chairlift serves the downhill network. Published 2026 full-day tickets are CAD 47.52 adult and CAD 39.60 youth/student/senior; rentals and one-ride tickets are available.<br/><br/>
+    <b>Open season</b><br/>Published 2026 bike-park season: 30 May-27 September. Weekends in spring and fall; Thursday-Sunday from late June through early September.<br/>Typical hours: 10:00-19:30 Thursday-Saturday and 10:00-16:30 Sunday in high summer.<br/><br/>
+    <b>Access</b><table class="access"><tr><th>From</th><th>Transport</th><th>Duration</th></tr><tr><td>Campbellton</td><td>Car / bike</td><td>~10 min</td></tr><tr><td>Bathurst</td><td>Car</td><td>~1h</td></tr></table><br/>
+    <i>Sources: <a href="https://sugarloafbikepark.ca/bike-park/">official bike-park overview and trail totals</a>, <a href="https://sugarloafbikepark.ca/tickets-passes/">2026 tickets and schedule</a> and the OSM-mapped chairlift (ODbL). Pin marks its upper endpoint, verified at 195 m.</i>]]></description>
+    <styleUrl>#placemark-blue</styleUrl><Point><coordinates>-66.687140,47.976650,0</coordinates></Point>
+    <ExtendedData xmlns:mwm="https://omaps.app"><Data name="spot"><value>ca-nb-sugarloaf</value></Data><Data name="tags"><value>beginner expert bike-park dh enduro freeride</value></Data><Data name="open_from"><value>05-30</value></Data><Data name="closed_from"><value>09-28</value></Data><mwm:icon>Transport</mwm:icon><mwm:visibility>1</mwm:visibility></ExtendedData>
+  </Placemark>
+  <Placemark>
+    <name>Poley Mountain Bike Park (New Brunswick, Canada) [chairlift]</name>
+    <description><![CDATA[<b>Quad Chair top station 278 m - lift-served riding in the Waterford hills</b><br/><br/>
+    <b>Trails</b><br/>A compact gravity park with beginner-friendly flow, natural intermediate and expert descents, jumps and technical forest sections. Riders can combine the lift-served network with pedal-access multi-use trails; bike rentals are available.<br/><br/>
+    <b>Getting up / price</b><br/>The Quad Chair carries bikes. Poley sells day access and 2026 summer passes with or without chairlift access; the published adult lift-included season pass is CAD 300.<br/><br/>
+    <b>Open season</b><br/>Published 2026 summer bike season runs June-October, with regular Friday-Sunday operations.<br/><small>Daily hours, lift choice and trail status vary; consult the current report before travelling.</small><br/><br/>
+    <b>Access</b><table class="access"><tr><th>From</th><th>Transport</th><th>Duration</th></tr><tr><td>Sussex</td><td>Car</td><td>~15 min</td></tr><tr><td>Saint John / Moncton</td><td>Car</td><td>~1h</td></tr></table><br/>
+    <i>Sources: <a href="https://www.poleymountain.com/">official 2026 summer bike information</a> and <a href="https://www.openstreetmap.org/way/257027285">OSM Quad Chair way 257027285</a> (ODbL). Pin marks the upper lift endpoint, verified at 278 m.</i>]]></description>
+    <styleUrl>#placemark-blue</styleUrl><Point><coordinates>-65.376522,45.675925,0</coordinates></Point>
+    <ExtendedData xmlns:mwm="https://omaps.app"><Data name="spot"><value>ca-nb-poley</value></Data><Data name="tags"><value>beginner expert bike-park dh enduro freeride</value></Data><Data name="open_from"><value>06-01</value></Data><Data name="closed_from"><value>11-01</value></Data><mwm:icon>Transport</mwm:icon><mwm:visibility>1</mwm:visibility></ExtendedData>
+  </Placemark>
+  <Placemark><name>Family Bike Park Zieleniec (PL) [cable car]</name><description><![CDATA[<b>Gryglowka and Nartorama - nearly 10 km of lift-served trails</b><br/><br/>Five signed routes range from gentle beginner flow to the steep natural Crazy Dad line. Cable cars carry bikes to the route starts; rentals and instruction are available.<br/><br/><i>Source: <a href="https://zieleniec.pl/en/lato/family-bike-park-zieleniec">official Family Bike Park Zieleniec</a>.</i>]]></description><styleUrl>#placemark-blue</styleUrl><Point><coordinates>16.395700,50.336900,0</coordinates></Point><ExtendedData xmlns:mwm="https://omaps.app"><Data name="spot"><value>zieleniec</value></Data><Data name="tags"><value>beginner expert bike-park dh enduro</value></Data><Data name="open_from"><value>05-01</value></Data><Data name="closed_from"><value>10-31</value></Data><mwm:icon>Transport</mwm:icon><mwm:visibility>1</mwm:visibility></ExtendedData></Placemark>
+  <Placemark><name>Wierchomla Bike Park (PL) [chairlift]</name><description><![CDATA[<b>Dwie Doliny Wierchomla Mala - lift-served downhill and enduro</b><br/><br/>A Beskid gravity park with marked downhill and freeride lines, plus pedal-access forest routes. Expect natural roots and rocks between shaped sections.<br/><br/><i>Sources: <a href="https://www.polska.travel/park-rowerowy-wierchomla/">Poland Travel park profile</a> and <a href="https://www.wierchomla.com.pl/">Wierchomla resort</a>.</i>]]></description><styleUrl>#placemark-blue</styleUrl><Point><coordinates>20.755500,49.365800,0</coordinates></Point><ExtendedData xmlns:mwm="https://omaps.app"><Data name="spot"><value>wierchomla</value></Data><Data name="tags"><value>expert bike-park dh enduro freeride</value></Data><Data name="open_from"><value>06-01</value></Data><Data name="closed_from"><value>09-30</value></Data><mwm:icon>Transport</mwm:icon><mwm:visibility>1</mwm:visibility></ExtendedData></Placemark>
+  <Placemark><name>Bike Park Kluszkowce (PL) [chairlift]</name><description><![CDATA[<b>Wdjar mountain above Kluszkowce - compact gravity riding</b><br/><br/>A purpose-built park on the Wdjar ski slope with downhill, flow and jump lines including the A-line. The chairlift serves bike routes during summer operations.<br/><br/><i>Source: <a href="https://czorsztyn.pl/">Czorsztyn municipality and resort information</a>; confirm current schedules locally.</i>]]></description><styleUrl>#placemark-blue</styleUrl><Point><coordinates>20.300900,49.443500,0</coordinates></Point><ExtendedData xmlns:mwm="https://omaps.app"><Data name="spot"><value>kluszkowce</value></Data><Data name="tags"><value>beginner expert bike-park dh enduro freeride</value></Data><Data name="open_from"><value>06-01</value></Data><Data name="closed_from"><value>09-30</value></Data><mwm:icon>Transport</mwm:icon><mwm:visibility>1</mwm:visibility></ExtendedData></Placemark>
+  <Placemark><name>Wadi Degla Protectorate MTB (Egypt) [no lift]</name><description><![CDATA[<b>Desert valley trail network on Cairo's southeastern edge</b><br/><br/>Wadi Degla is a protected 30 km limestone valley with rocky and sandy tracks used by Cairo mountain bikers. This is natural cross-country and all-mountain riding, not a formal lift park.<br/><br/><i>Sources: <a href="https://cairo.gov.eg/en/Tourism/Pages/Natural_Reserves_text.aspx">Cairo Governorate reserve information</a> and local MTB route documentation.</i>]]></description><styleUrl>#placemark-brown</styleUrl><Point><coordinates>31.340500,29.961500,0</coordinates></Point><ExtendedData xmlns:mwm="https://omaps.app"><Data name="spot"><value>egypt-wadi-degla</value></Data><Data name="tags"><value>beginner expert natural no-lift enduro</value></Data><Data name="open_from"><value>01-01</value></Data><Data name="closed_from"><value>01-01</value></Data><mwm:icon>Mountain</mwm:icon><mwm:visibility>1</mwm:visibility></ExtendedData></Placemark>
+  <Placemark>
+    <name>Weissenstein: Flowtrail</name>
+    <description><![CDATA[<b>1.8 km marked flow trail</b><br/><br/>Built MTB flow trail descending from the Weissenstein gondola area toward Oberdorf, with berms, rollers and intermediate features.<br/><br/><i>Geometry simplified from <a href="https://www.openstreetmap.org/way/1148325073">OpenStreetMap way 1148325073</a> (ODbL). Trail description and lift context: <a href="https://www.seilbahn-weissenstein.ch/">Seilbahn Weissenstein</a>. Indicative line; follow local signs and conditions.</i>]]></description>
+    <styleUrl>#line-trail</styleUrl>
+    <LineString><tessellate>1</tessellate><coordinates>7.508076,47.245373,0 7.506748,47.244962,0 7.505005,47.245061,0 7.504968,47.244842,0 7.503862,47.244872,0 7.503459,47.244727,0 7.503149,47.244798,0 7.503279,47.244703,0 7.502620,47.244674,0 7.502698,47.244559,0 7.501732,47.244621,0 7.501638,47.244555,0 7.501921,47.244448,0 7.501573,47.244380,0 7.501439,47.244139,0 7.501178,47.244175,0 7.500921,47.244009,0 7.500513,47.243948,0 7.499937,47.244066,0 7.500060,47.243832,0 7.498596,47.243884,0 7.499028,47.243627,0 7.497758,47.243693,0 7.496745,47.243635,0 7.496472,47.243515,0 7.496280,47.243669,0 7.495735,47.243325,0 7.494828,47.243351,0 7.494764,47.243245,0 7.494115,47.243197,0 7.492794,47.242824,0 7.492443,47.243039,0 7.492500,47.242579,0 7.492199,47.242244,0 7.491279,47.241744,0</coordinates></LineString>
+    <ExtendedData xmlns:mwm="https://omaps.app"><Data name="spot"><value>weissenstein</value></Data><Data name="tags"><value>intermediate flowtrail</value></Data></ExtendedData>
+  </Placemark>
+  <Placemark>
+    <name>Pilatus: Pilatustrail</name>
+    <description><![CDATA[<b>2.8 km technical natural trail</b><br/><br/>Named singletrack in the Pilatus area, with roots, tight turns and variable terrain. This is a natural mountain trail, not a maintained bike-park line.<br/><br/><i>Geometry simplified from <a href="https://www.openstreetmap.org/way/120875145">OpenStreetMap way 120875145</a> (ODbL). Lift and access context: <a href="https://www.pilatus.ch/en/">Pilatus Bahnen</a>. Confirm bike carriage and local trail restrictions before riding.</i>]]></description>
+    <styleUrl>#line-trail</styleUrl>
+    <LineString><tessellate>1</tessellate><coordinates>8.269690,46.970084,0 8.270117,46.969914,0 8.270130,46.970103,0 8.270411,46.969917,0 8.270489,46.970107,0 8.270919,46.969827,0 8.271050,46.970045,0 8.271298,46.969881,0 8.271344,46.970150,0 8.271606,46.969775,0 8.271704,46.970254,0 8.272343,46.969670,0 8.272454,46.970230,0 8.273095,46.969747,0 8.273177,46.969444,0 8.273391,46.969694,0 8.273506,46.969240,0 8.273784,46.969400,0 8.273688,46.969083,0 8.273981,46.969159,0 8.274152,46.969361,0 8.274318,46.968916,0 8.274614,46.968815,0 8.274775,46.969155,0 8.275039,46.968926,0 8.275117,46.969140,0 8.275933,46.968895,0 8.276656,46.968845,0 8.276955,46.968905,0 8.277170,46.969267,0 8.276267,46.969645,0 8.276209,46.969814,0 8.276873,46.969772,0 8.276715,46.969860,0 8.277258,46.969863,0 8.277063,46.970029,0 8.277630,46.970006,0 8.277354,46.970171,0 8.277829,46.970160,0 8.277623,46.970318,0 8.278185,46.970316,0 8.277943,46.970426,0 8.278507,46.970433,0 8.278790,46.970257,0 8.278670,46.970629,0 8.278279,46.970775,0 8.278579,46.970790,0 8.278406,46.970940,0 8.278863,46.970866,0 8.278643,46.971044,0 8.278985,46.970983,0 8.278854,46.971165,0 8.279598,46.970988,0 8.279878,46.970787,0 8.279829,46.971186,0 8.279647,46.971271,0 8.280114,46.971327,0 8.280556,46.970855,0 8.281662,46.970619,0 8.281954,46.969745,0 8.282306,46.969612,0 8.283155,46.969634,0 8.283137,46.969420,0 8.282928,46.969294,0 8.283027,46.968946,0 8.282009,46.967449,0 8.281992,46.967039,0</coordinates></LineString>
+    <ExtendedData xmlns:mwm="https://omaps.app"><Data name="spot"><value>pilatus</value></Data><Data name="tags"><value>expert natural enduro</value></Data></ExtendedData>
+  </Placemark>
+  <Placemark>
+    <name>Marbachegg: Clientis Flowtrail</name>
+    <description><![CDATA[<b>4.1 km flow trail</b><br/><br/>The main Marbachegg flow trail, descending through rollers, berms, jumps and technical features from the gondola station toward Marbach.<br/><br/><i>Geometry simplified from <a href="https://www.openstreetmap.org/relation/19994667">OpenStreetMap relation 19994667</a> (ODbL). Trail and lift context: <a href="https://www.marbachegg.ch/">Sportbahnen Marbachegg</a>. Follow local signs and current conditions.</i>]]></description>
+    <styleUrl>#line-trail</styleUrl>
+    <LineString><tessellate>1</tessellate><coordinates>7.903876,46.833698,0 7.902244,46.833417,0 7.901459,46.833000,0 7.901475,46.833140,0 7.901113,46.833104,0 7.901830,46.833816,0 7.901479,46.833791,0 7.901243,46.833641,0 7.901268,46.833843,0 7.900937,46.833692,0 7.901241,46.834148,0 7.902343,46.834491,0 7.902295,46.834993,0 7.902635,46.835634,0 7.902414,46.836097,0 7.902614,46.836245,0 7.902772,46.836194,0 7.902817,46.836416,0 7.902680,46.836474,0 7.903104,46.836443,0 7.903071,46.836688,0 7.903442,46.836712,0 7.903738,46.836981,0 7.904529,46.837258,0 7.905063,46.837603,0 7.905576,46.838256,0 7.905493,46.838702,0 7.905334,46.838887,0 7.905074,46.838767,0 7.904641,46.839014,0 7.904674,46.839454,0 7.904174,46.839487,0 7.904172,46.839968,0 7.903897,46.839936,0 7.903789,46.839798,0 7.903958,46.839283,0 7.903748,46.839497,0 7.903005,46.839596,0 7.902732,46.839445,0 7.902616,46.839549,0 7.902525,46.839422,0 7.902489,46.839820,0 7.902784,46.840042,0 7.902651,46.840207,0 7.901899,46.839880,0 7.901952,46.840174,0 7.902488,46.840726,0 7.901777,46.841073,0 7.900807,46.841087,0 7.901396,46.841391,0 7.901515,46.841748,0 7.900903,46.841852,0 7.900321,46.841693,0 7.899897,46.841709,0 7.899933,46.841975,0 7.900307,46.842094,0 7.900023,46.842193,0 7.899529,46.842075,0 7.899911,46.842554,0 7.899366,46.842369,0 7.899336,46.842747,0 7.899579,46.842976,0 7.899190,46.843019,0 7.898998,46.842902,0 7.898613,46.843303,0 7.898597,46.843594,0 7.898797,46.843759,0 7.898446,46.843889,0 7.898755,46.844059,0 7.897607,46.844612,0 7.896914,46.844725,0 7.896626,46.844885,0 7.896756,46.845107,0 7.897083,46.845186,0 7.897037,46.845331,0 7.897242,46.845489,0 7.896297,46.845298,0 7.896267,46.845435,0 7.895809,46.845498,0 7.895967,46.845659,0 7.895000,46.845697,0 7.895142,46.845883,0 7.894686,46.845954,0 7.894208,46.846835,0 7.894423,46.847150,0 7.894337,46.847345,0 7.894658,46.847772,0 7.894525,46.848185,0 7.894759,46.848547,0 7.894711,46.848941,0 7.895464,46.849537,0 7.895135,46.849978,0 7.895269,46.850081,0</coordinates></LineString>
+    <ExtendedData xmlns:mwm="https://omaps.app"><Data name="spot"><value>marbachegg</value></Data><Data name="tags"><value>intermediate flowtrail bike-park</value></Data></ExtendedData>
+  </Placemark>
+  <Placemark>
+    <name>Monte Tremezzo (Lake Como) [no lift]</name>
+    <description><![CDATA[<b>Monte Tremezzo MTB route</b><br/><br/>A long natural mountain-bike route on the western shore of Lake Como, linking the high slopes above Menaggio and Porlezza with broad lake and mountain views. This is a pedal-accessed enduro/XC route, not a lift-served bike park.<br/><br/><i>Source: <a href="https://www.openstreetmap.org/relation/12662560">OpenStreetMap relation 12662560</a> (ODbL) and <a href="https://www.visitcomo.eu/en/discovering-lake-como/">Visit Como</a>. Check local access, hiking traffic and trail conditions.</i>]]></description>
+    <styleUrl>#placemark-green</styleUrl>
+    <Point><coordinates>9.126114,45.958198,0</coordinates></Point>
+    <ExtendedData xmlns:mwm="https://omaps.app"><Data name="spot"><value>monte-tremezzo</value></Data><Data name="tags"><value>expert natural no-lift enduro</value></Data><mwm:icon>Mountain</mwm:icon><mwm:visibility>1</mwm:visibility></ExtendedData>
+  </Placemark>
+  <Placemark>
+    <name>Monte Tremezzo MTB route</name>
+    <description><![CDATA[<b>12.8 km natural MTB route</b><br/><br/>Long mountain-bike line across the Monte Tremezzo area above Lake Como. It includes forest paths, rough mountain tracks and exposed sections; ride only where cycling is permitted and yield to hikers.<br/><br/><i>Geometry simplified from <a href="https://www.openstreetmap.org/relation/12662560">OpenStreetMap relation 12662560</a> (ODbL). Indicative line; confirm the current route and local restrictions before riding.</i>]]></description>
+    <styleUrl>#line-trail</styleUrl>
+    <LineString><tessellate>1</tessellate><coordinates>9.126114,45.958198,0 9.126475,45.958771,0 9.126515,45.960253,0 9.126320,45.960810,0 9.125466,45.961767,0 9.124041,45.962312,0 9.122786,45.962394,0 9.123250,45.963270,0 9.122815,45.963886,0 9.122337,45.964124,0 9.121965,45.964146,0 9.121497,45.964458,0 9.119938,45.964679,0 9.119048,45.965131,0 9.119700,45.965591,0 9.119921,45.966043,0 9.119061,45.967394,0 9.118539,45.967868,0 9.118610,45.968253,0 9.119874,45.968522,0 9.119670,45.969337,0 9.120005,45.969933,0 9.119916,45.970236,0 9.118727,45.971452,0 9.118869,45.971643,0 9.119671,45.971899,0 9.120396,45.971832,0 9.121914,45.972096,0 9.122024,45.972566,0 9.122743,45.972547,0 9.123957,45.972290,0 9.124215,45.972856,0 9.124348,45.973938,0 9.124336,45.974164,0 9.123997,45.974425,0 9.124267,45.974826,0 9.124125,45.975424,0 9.124561,45.975720,0 9.124300,45.976509,0 9.124694,45.976663,0 9.124823,45.977243,0 9.124975,45.977334,0 9.127185,45.977219,0 9.128150,45.976959,0 9.128963,45.977804,0 9.129824,45.977987,0 9.130638,45.978841,0 9.132999,45.979444,0 9.133358,45.979692,0 9.133912,45.979531,0 9.135628,45.978496,0 9.136145,45.978448,0 9.136000,45.979817,0 9.136673,45.980250,0 9.137266,45.981954,0 9.138210,45.982794,0 9.138258,45.983154,0 9.138946,45.984258,0 9.139477,45.984570,0 9.140680,45.984879,0 9.141154,45.985279,0 9.142250,45.986733,0 9.143517,45.987450,0 9.144367,45.987733,0 9.146313,45.987754,0 9.146808,45.987878,0 9.150847,45.987626,0 9.151118,45.988002,0 9.150591,45.988889,0 9.150528,45.989570,0 9.151166,45.990697,0 9.152204,45.991342,0 9.152336,45.991639,0 9.151929,45.991720,0 9.150360,45.991605,0 9.149619,45.991692,0 9.147782,45.992315,0 9.147192,45.992722,0 9.149799,45.992799,0 9.150832,45.993155,0 9.151080,45.993356,0 9.151155,45.993862,0 9.150696,45.994641,0 9.150724,45.995041,0 9.150486,45.995714,0 9.151875,45.996827,0 9.152964,45.997380,0 9.151260,45.998247,0 9.150893,45.998836,0 9.151203,45.999068,0 9.151845,46.000043,0 9.152634,46.000649,0 9.152685,46.000865,0 9.151841,46.001960,0 9.151464,46.003028,0 9.151922,46.003658,0 9.152603,46.004081,0 9.153280,46.005370,0 9.154172,46.005727,0 9.155791,46.005838,0 9.156409,46.006044,0 9.156524,46.007149,0 9.157235,46.007883,0 9.158319,46.008700,0 9.159421,46.009106,0 9.160793,46.009055,0 9.161150,46.009171,0 9.161651,46.009944,0 9.162589,46.010185,0 9.163477,46.010230,0 9.166310,46.009177,0 9.167691,46.008410,0 9.168861,46.007209,0 9.169210,46.006419,0 9.170426,46.005232,0 9.172384,46.004873,0 9.175277,46.005394,0 9.177520,46.004805,0 9.179075,46.003890,0 9.180408,46.001956,0 9.180557,46.000839,0 9.180872,46.000407,0 9.181235,46.000326,0 9.182612,46.000377,0 9.183636,46.000234,0 9.184271,45.999963,0 9.185108,45.998723,0 9.185995,45.998073,0 9.186377,45.997123,0 9.187733,45.996175,0 9.188035,45.996088,0</coordinates></LineString>
+    <ExtendedData xmlns:mwm="https://omaps.app"><Data name="spot"><value>monte-tremezzo</value></Data><Data name="tags"><value>expert natural no-lift enduro</value></Data></ExtendedData>
+  </Placemark>
+  <Placemark>
+    <name>Les Karellis Bike Park (Maurienne) [lift access]</name>
+    <description><![CDATA[<b>Les Karellis bike park</b><br/><br/>A small Maurienne bike park with two official downhill lines: the blue Cool'Kar and red Déval'Kar. The resort is a good compact addition for riders looking for lift-served riding away from the larger Portes du Soleil parks.<br/><br/><i>Sources: <a href="https://www.karellis.com/activites-ete/location-vtt/">Les Karellis bike park information</a> and <a href="https://www.karellis.com/">Les Karellis resort</a>. Confirm lift operation and trail status before travelling.</i>]]></description>
+    <styleUrl>#placemark-blue</styleUrl>
+    <Point><coordinates>6.402090,45.212429,0</coordinates></Point>
+    <ExtendedData xmlns:mwm="https://omaps.app"><Data name="spot"><value>les-karellis</value></Data><Data name="tags"><value>beginner expert bike-park dh enduro</value></Data><mwm:icon>Mountain</mwm:icon><mwm:visibility>1</mwm:visibility></ExtendedData>
+  </Placemark>
+  <Placemark>
+    <name>Les Karellis: Cool'Kar</name>
+    <description><![CDATA[<b>5.4 km blue downhill line</b><br/><br/>The official Cool'Kar trail, the easier of the two Les Karellis bike-park descents.<br/><br/><i>Geometry simplified from <a href="https://www.openstreetmap.org/relation/14384502">OpenStreetMap relation 14384502</a> (ODbL). Trail classification and resort context: <a href="https://www.karellis.com/activites-ete/location-vtt/">Les Karellis official bike-park page</a>. Follow signs and current conditions.</i>]]></description>
+    <styleUrl>#line-trail</styleUrl>
+    <LineString><tessellate>1</tessellate><coordinates>6.402090,45.212429,0 6.401892,45.212595,0 6.401898,45.214461,0 6.401522,45.214686,0 6.400898,45.214514,0 6.399102,45.213563,0 6.397019,45.213178,0 6.396477,45.213189,0 6.396782,45.213574,0 6.396339,45.213946,0 6.396209,45.214264,0 6.396712,45.214880,0 6.396674,45.215556,0 6.396849,45.215565,0 6.396799,45.215758,0 6.396991,45.215662,0 6.397085,45.215855,0 6.397306,45.215791,0 6.397593,45.216575,0 6.398148,45.217312,0 6.398456,45.217158,0 6.398548,45.217325,0 6.398647,45.217213,0 6.398796,45.217297,0 6.399111,45.217021,0 6.401121,45.216652,0 6.401568,45.216689,0 6.402420,45.216939,0 6.403328,45.217409,0 6.403963,45.217988,0 6.404477,45.217970,0 6.405287,45.218163,0 6.406246,45.218060,0 6.406775,45.218417,0 6.408046,45.218822,0 6.408700,45.218411,0 6.410134,45.217911,0 6.410721,45.217192,0 6.411126,45.215985,0 6.411896,45.215102,0 6.411982,45.215199,0 6.412285,45.215063,0 6.412733,45.215599,0 6.412601,45.215894,0 6.412688,45.216125,0 6.412974,45.216265,0 6.413221,45.217312,0 6.413638,45.217065,0 6.413885,45.216654,0 6.414528,45.216394,0 6.414766,45.215086,0 6.414932,45.215213,0 6.415302,45.216383,0 6.414769,45.217943,0 6.413746,45.218991,0 6.413248,45.219735,0 6.412875,45.221050,0 6.412378,45.221922,0 6.412226,45.221938,0 6.412219,45.222146,0 6.412059,45.222214,0 6.412045,45.222460,0 6.411845,45.222405,0 6.411241,45.222563,0 6.410564,45.223130,0 6.409649,45.223507,0 6.408529,45.223717,0 6.406425,45.223891,0 6.406102,45.224048,0 6.405052,45.224759,0 6.404276,45.225506,0 6.404871,45.226335,0 6.404727,45.226793,0 6.404812,45.227351,0</coordinates></LineString>
+    <ExtendedData xmlns:mwm="https://omaps.app"><Data name="spot"><value>les-karellis</value></Data><Data name="tags"><value>beginner flowtrail bike-park</value></Data></ExtendedData>
+  </Placemark>
+  <Placemark>
+    <name>Chaumont: Mater-Haut</name>
+    <description><![CDATA[4 km expert freeride descent from Chaumont to Neuchatel, with a chicken line alongside the main line. Free access; return uphill by the Chaumont funicular. <i>Source: <a href="https://www.j3l.ch/en/V2342/things-to-do/sport-leisure/mountain-bike/bike-park">Neuchatel Tourism description</a> and <a href="https://www.j3l.ch/mycity/frontend/export/visit/en/2342.gpx">official GPX trace</a>.</i>]]></description>
+    <styleUrl>#line-black</styleUrl>
+    <LineString><tessellate>1</tessellate><coordinates>6.957298,47.026676,0 6.956811,47.026400,0 6.957386,47.026245,0 6.957197,47.025977,0 6.957028,47.025519,0 6.956780,47.025097,0 6.956504,47.024690,0 6.955912,47.024216,0 6.955234,47.023712,0 6.955053,47.023338,0 6.955706,47.023326,0 6.956520,47.023466,0 6.957116,47.023500,0 6.957604,47.023314,0 6.957097,47.022705,0 6.956953,47.022021,0 6.956908,47.021489,0 6.956534,47.021088,0 6.955959,47.020528,0 6.955664,47.019888,0 6.954831,47.019274,0 6.953722,47.018596,0 6.953158,47.018124,0 6.952588,47.017693,0 6.952165,47.017306,0 6.952575,47.017202,0 6.953412,47.017255,0 6.953701,47.017142,0 6.953742,47.016771,0 6.954099,47.016504,0 6.954281,47.016223,0 6.954488,47.015927,0 6.955108,47.015695,0 6.955163,47.015385,0 6.954741,47.014955,0 6.954921,47.014670,0 6.955998,47.014659,0 6.956639,47.014187,0 6.957178,47.013940,0 6.957893,47.013885,0 6.958549,47.013686,0 6.958839,47.013104,0 6.958331,47.012434,0 6.957962,47.011876,0 6.958438,47.011634,0 6.959347,47.011852,0 6.959859,47.012207,0 6.959998,47.011784,0 6.960049,47.011537,0 6.959684,47.011246,0 6.960376,47.011337,0 6.961101,47.011410,0</coordinates></LineString>
+    <ExtendedData><Data name="spot"><value>chaumont</value></Data><Data name="tags"><value>expert bike-park freeride tested-and-approved</value></Data></ExtendedData>
+  </Placemark>
 </Document>
 </kml>

@@ -558,52 +558,85 @@
     </div>
     <dialog id="about">
       <h2>About this map</h2>
+      <p>
+        A curated map of gravity mountain-biking spots worldwide: where to ride, what the lift
+        costs, and whether it will be dry. Pick a destination first, worry about individual trails
+        later.
+      </p>
+      <ul class="about-features">
+        <li>
+          <svg viewBox="0 0 16 16" aria-hidden="true">
+            <path d="M8 14.5s4.5-4.8 4.5-8.5a4.5 4.5 0 1 0-9 0c0 3.7 4.5 8.5 4.5 8.5Z" />
+            <circle cx="8" cy="6" r="1.7" />
+          </svg>
+          <span>
+            <b>Spot-first.</b> Each destination is one pin with a practical description of the
+            riding, the lift, prices and opening dates. Trail traces are added when reliable, as a
+            bonus rather than the foundation. On the ground, signs and local maps do the rest.
+          </span>
+        </li>
+        <li>
+          <svg viewBox="0 0 16 16" aria-hidden="true">
+            <path d="M2 3h12L9.5 8.2V13l-3 1.2V8.2L2 3Z" />
+          </svg>
+          <span>
+            <b>Filter to what you want.</b> Narrow by spot type, riding style, difficulty, trail
+            colour, or day-pass price, and search spots and traces by name.
+          </span>
+        </li>
+        <li>
+          <svg viewBox="0 0 18 16" aria-hidden="true">
+            <path d="M5.2 10.5h8a3 3 0 0 0 .3-6A4.6 4.6 0 0 0 4.8 5.8a2.4 2.4 0 0 0 .4 4.7Z" />
+            <path d="m6.5 12.2-.9 2.2m4-2.2-.9 2.2m4-2.2-.9 2.2" />
+          </svg>
+          <span>
+            <b>Plan around the weather.</b> Pick a date to see which spots are open and what the
+            forecast is. Spots likely to be wet get a rain badge, with the threshold adapted to how
+            well the terrain drains (<b>rain-sensitive</b> spots badge on light rain,
+            <b>rain-resilient</b> ones only on heavy rain).
+          </span>
+        </li>
+        <li>
+          <svg viewBox="0 0 16 16" aria-hidden="true">
+            <circle cx="8" cy="8" r="6.2" />
+            <path d="m5.2 8.2 2 2 3.6-4.2" />
+          </svg>
+          <span>
+            <b>Tested and approved.</b> Spots and trails carrying that mark were ridden in person by
+            a contributor and confirmed as worthwhile.
+          </span>
+        </li>
+        <li>
+          <svg viewBox="0 0 16 16" aria-hidden="true">
+            <path d="M8 2v8m0 0 3-3m-3 3L5 7" />
+            <path d="M2.5 11.5v1a1.5 1.5 0 0 0 1.5 1.5h8a1.5 1.5 0 0 0 1.5-1.5v-1" />
+          </svg>
+          <span>
+            <b>Take it offline.</b> Download the whole map as KML, GPX or GeoJSON and open it in
+            <a href="https://www.comaps.app/" target="_blank" rel="noopener">CoMaps</a>,
+            <a href="https://organicmaps.app/" target="_blank" rel="noopener">Organic Maps</a>
+            or OsmAnd. This site is just a convenient way to browse the same file.
+          </span>
+        </li>
+      </ul>
       <details class="about-details">
-        <summary><h3>Why?</h3></summary>
+        <summary><h3>Why another MTB map?</h3></summary>
         <p>
-          Finding a good mountain-bike spot means trawling a dozen resort sites, none of which tell
-          you what you actually need to know in one place: what the trails are like, how the lift
-          works, and the costs. And once you have found somewhere, there is rarely a KML or GPX to
-          drop into your GPS app.
+          Finding a good spot usually means trawling a dozen resort sites, none of which tell you in
+          one place what the trails are like, how the lift works and what it costs. And once you
+          have picked somewhere, there is rarely a KML or GPX to drop into your GPS app.
         </p>
         <p>
-          Websites like Trailforks are useful resources, but it can be difficult to find the riding
-          that matters: the filters do not always narrow the map enough, and the sheer number of
-          routes can obscure the good ones. Many are dirt roads or hiking trails that have somehow
-          been tagged for MTB despite being impractical to ride. In high alpine areas, some mapped
-          routes even approach alpinism rather than mountain biking.
+          Sites like Trailforks are useful, but the good riding gets lost in the noise: filters do
+          not narrow enough, and many mapped routes are dirt roads or hiking trails tagged for MTB
+          despite being impractical to ride, sometimes closer to alpinism than mountain biking.
         </p>
-        <hr />
+        <p>
+          Getting those trails onto your phone is its own chore: export them one by one, often
+          behind a login screen or a paywall, then import each file into your GPS app. Here the
+          whole map is a single download, no account needed.
+        </p>
       </details>
-      <p>
-        This map takes a <b>spot-first approach</b>. A typical MTB outing starts by choosing a
-        destination, ideally with a lift and a selection of worthwhile trails to ride throughout the
-        day. Each destination is first represented by a single point, with a practical description
-        of the riding available there. Once you arrive, the trails are often easy to find from
-        signs, local maps or the other riders around you.
-      </p>
-      <p>
-        When reliable trail traces are available, they are included as a useful bonus rather than
-        the foundation of the map. <b>Every spot lives in a single KML file</b> you can download and
-        load into <a href="https://www.comaps.app/" target="_blank" rel="noopener">CoMaps</a>,
-        <a href="https://organicmaps.app/" target="_blank" rel="noopener">Organic Maps</a> or
-        OsmAnd; this site is a convenient way to browse and filter the same data without installing
-        anything.
-      </p>
-      <p>
-        The website also provides live weather forecasts and marks spots expected to be wet, using
-        rain on the selected day and the preceding days to help you judge current and upcoming trail
-        conditions. How much rain it takes to flag a spot as wet depends on how its terrain drains:
-        spots tagged <b>rain-sensitive</b> (clay, dark forest soil, little sun) turn wet with a
-        small amount of rain or rain the day before; untagged spots use a slightly less sensitive
-        default; spots tagged <b>rain-resilient</b> (rocky, well-draining, sunny/exposed terrain)
-        only flag as wet after genuinely heavy rain on the day itself; no note means it is assumed
-        to behave like most spots.
-      </p>
-      <p>
-        Spots and lines marked <b>Tested and approved</b> have been ridden in person by a map
-        contributor and confirmed as worthwhile MTB riding.
-      </p>
       <details class="about-details">
         <summary><h3>Where the data comes from</h3></summary>
         <ul>
@@ -638,8 +671,9 @@
             <a href="https://open-meteo.com/" target="_blank" rel="noopener">Open-Meteo</a>. A blue
             rain badge means at least 1 mm of precipitation or a 50% probability is forecast, or at
             least 5 mm fell the previous day; these are the thresholds for
-            <b>rain-sensitive</b> spots. Untagged spots need a bit more rain, and
-            <b>rain-resilient</b> spots only badge on heavy same-day rain, as explained above.
+            <b>rain-sensitive</b> spots (clay, dark forest soil, little sun). Untagged spots need a
+            bit more rain, and <b>rain-resilient</b> spots (rocky, well-draining, sunny) only badge
+            on heavy same-day rain.
           </li>
         </ul>
         <p>

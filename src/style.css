@@ -201,6 +201,32 @@ body {
   padding-left: 18px;
 }
 
+/* Feature list with an icon instead of a bullet, one per feature. */
+#about ul.about-features {
+  padding-left: 0;
+  list-style: none;
+}
+
+#about ul.about-features li {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  margin: 0 0 12px;
+}
+
+#about ul.about-features svg {
+  flex: 0 0 auto;
+  width: 17px;
+  height: 17px;
+  margin-top: 1px;
+  color: var(--link);
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
 .grade-table {
   width: 100%;
   margin: 8px 0 12px;

@@ -962,6 +962,15 @@ const applyFilters = () => {
     required === 0 ? "Any" : `${required} active`;
   restoreHiddenTracesButton.hidden = hiddenTraceIds.size === 0;
   restoreHiddenTracesButton.textContent = `Restore hidden (${hiddenTraceIds.size})`;
+  const hiddenLabels = [
+    ...new Set(
+      lineLayers
+        .filter(({ place }) => hiddenTraceIds.has(traceId(place)))
+        .map(({ place }) => place.name),
+    ),
+  ];
+  if (hiddenLabels.length) restoreHiddenTracesButton.title = hiddenLabels.join("\n");
+  else restoreHiddenTracesButton.removeAttribute("title");
 };
 
 for (const chip of chips) {

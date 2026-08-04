@@ -4,6 +4,94 @@
     <name>Alpine MTB Map</name>
     <desc>Lift-served mountain-bike spots in the western Alps and Jura. Trail geometries from OpenStreetMap (ODbL).</desc>
   </metadata>
+  <wpt lat="43.656719" lon="40.268184">
+    <name>Krasnaya Polyana Bike Park (Sochi, Russia)</name>
+    <desc>Vodopad Polikarya chairlift 1375 m - top of the lift serving the upper bike-park trails
+
+    Trails
+About 30 km of purpose-built gravity trails between roughly 1,375 m and 540 m, graded green, blue, red and black. The network mixes long flow sections with berms and rhythm features, steep technical lines, drops, wooden features, a skills park and pump track. The lower K1 gondola carries bikes between Polyana 540 and Polyana 960; the Vodopad Polikarya chairlift serves the upper sector.
+
+    Getting up / price
+Bike-pass required from 09:00 to 17:00 and sold at Polyana 540 and 960. Bikes use the external racks on the Krasnaya Polyana K1 gondola and the designated carriers on the Vodopad Polikarya chairlift. Check the live lift and trail status and current tariff before travelling.
+
+    Open season
+Open from 01 May; closed from 01 November (typical summer operating window; snow and maintenance can shorten the upper sector season).
+Daily opening hours: 09:00-17:00
+The resort lies within Sochi National Park; access above 960 m may require a separate national-park permit.
+
+    Access
+From | Transport | Duration
+Sochi / Adler airport | Car / taxi | 50-70 min
+Esto-Sadok | Bus / taxi | 10 min
+
+    Sources: official live bike-park and lift status, official trail overview and official bike-park rules. Lift-top coordinate cross-checked against the published Vodopad Polikarya upper-station coordinate.</desc>
+  </wpt>
+  <wpt lat="43.564720" lon="41.189370">
+    <name>Arkhyz Bike Park (Russia)</name>
+    <desc>Mlechny Put gondola 2240 m - top station on the south side
+
+    Trails
+More than 30 km of prepared bike-park trails across the south and north sectors. Green progression trails occupy the south slope, with blue and red flow and jump trails plus black expert lines and rougher northern-slope riding. Descents start in alpine terrain and continue through conifer forest; the park also hosts downhill, enduro, dual-slalom and e-MTB events.
+
+    Getting up / price
+The Mlechny Put gondola serves the south side and carries bikes in marked cabins. The 2026 one-day bike pass is 3,350 RUB adult / 2,450 RUB child; multi-day and season passes are available. Rental, workshop, instruction and guiding are available at the resort.
+
+    Open season
+Open from 16 May; closed from 16 October (published 2026 period).
+Daily opening hours: 09:00-16:30
+The north sector may open later because of snow. Lift maintenance days and weather closures occur; check the official status before travelling.
+
+    Access
+From | Transport | Duration
+Mineralnye Vody airport | Car / shuttle | 3-3.5 h
+Arkhyz village | Car / taxi | 15-20 min
+
+    Sources: official bike-park site, published 2026 season and hours, official 2026 prices and trail information and the resort's published GPS coordinate for the Mlechny Put upper station.</desc>
+  </wpt>
+  <wpt lat="55.949087" lon="92.786265">
+    <name>Bobrovy Log Bike Park (Krasnoyarsk, Russia)</name>
+    <desc>K1 chairlift 514 m - top station above Krasnoyarsk
+
+    Trails
+Compact lift-served gravity riding on the steep, forested edge of the Eastern Sayan. The official bike park includes a skills zone and prepared downhill trails; DH trail 8 is the main advanced line, with fast berms, technical forest sections and race features. Blue and red training trails are used by the local MTB academy, and the park regularly hosts Fun Bike Race downhill events.
+
+    Getting up / price
+The K1 detachable chairlift carries mountain bikes on designated chairs. The published 2026 bike pass costs 1,000 RUB for four hours or 1,350 RUB for the day. Operation is conditional on trail inspection, weather and the K1 schedule.
+
+    Open season
+Open from 01 June; closed from 01 October (typical snow-free operating window; check the official schedule).
+Daily opening hours: according to K1 lift schedule
+DH trail 8 opens only after inspection. A suitable mountain bike, helmet and protective equipment are required.
+
+    Access
+From | Transport | Duration
+Central Krasnoyarsk | Car / taxi / bus | 15-30 min
+Krasnoyarsk airport | Car / taxi | 50-70 min
+
+    Sources: official bike-park information and 2026 prices, official bike-park rules and OSM K1 upper station node 1503587400 (ODbL).</desc>
+  </wpt>
+  <wpt lat="51.791035" lon="85.830386">
+    <name>Manzherok Bike Park (Altai, Russia)</name>
+    <desc>Vostok chairlift 1240 m - upper station on Malaya Sinyukha
+
+    Trails
+Lift-served downhill and enduro terrain on Malaya Sinyukha above Lake Manzherok. Published descriptions list green, blue, red and black gravity trails with berms, drops, steep turns and wooden skills features. The resort has expanded substantially, so published totals vary from about 7 km for the original downhill park to roughly 13 km for the wider bike-park network.
+
+    Getting up / price
+The Vostok chairlift reaches the 1,240 m upper station and connects to descending trails including mapped routes Argut, Maral and Velvet. Bike transport and the applicable downhill tariff should be confirmed with the resort before travelling; the older published bike-park information refers to a dedicated bike pass.
+
+    Open season
+Open from 01 June; closed from 01 October (typical summer window; current MTB operating dates not published clearly online).
+Daily opening hours: check with resort
+Manzherok has undergone major lift and trail redevelopment. Confirm which gravity trails and bike-carrying lifts are open before travel.
+
+    Access
+From | Transport | Duration
+Gorno-Altaysk airport | Car / taxi | 30-40 min
+Manzherok village | Car / taxi | 10-15 min
+
+    Sources: published Manzherok bike-park overview and OSM Vostok upper station node 9729515306 (ODbL), mapped at 1,240 m and operated by Manzherok.</desc>
+  </wpt>
   <wpt lat="37.490917" lon="71.548922">
     <name>Khorog - Pamir Highway and Wakhan (Tajikistan) [no lift]</name>
     <desc>Remote high-altitude mountain-bike expeditions through the Pamirs
@@ -17020,7 +17108,7 @@ Check the local club schedule before visiting.
 From | Transport | Duration
 Lausanne | Train | ~1h50
 
-    Source: local trail reports.
+    Sources: BikePark Valbirse, official hours and prices, Commune de Valbirse, Trailforks trail directory.
     Prices, schedules, trail status and access can change; verify before travel.</desc>
   </wpt>
   <wpt lat="46.853200" lon="7.904800">
@@ -28260,7 +28348,7 @@ Belo Horizonte | Car | ~5h30
 
     Sources: Brazil Ministry of Tourism and Delfinopolis tourism. Verify protected-area rules.</desc>
   </wpt>
-  <wpt lat="14.679600" lon="121.118100">
+  <wpt lat="14.680256" lon="121.165301">
     <name>Timberland Mountain Bike Park (Rizal, PH) [250-550 PHP]</name>
     <desc>Timberland Heights, San Mateo - purpose-built trail park
 
@@ -28281,7 +28369,7 @@ Metro Manila | Car | ~1h15
 
     Source: official Timberland rider information.</desc>
   </wpt>
-  <wpt lat="14.085000" lon="120.854000">
+  <wpt lat="14.068781" lon="120.856839">
     <name>Twin Lakes MTB Trail (Tagaytay, PH) [access status unverified]</name>
     <desc>Twin Lakes estate above Taal - compact scenic trail
 
@@ -29770,7 +29858,7 @@ Ponca | Car | Local
 21 miles of maintained downhill and gravity trails with purpose-built descending terrain. Check the current trail map for grades, closures and bike requirements.
 
     Getting up / price
-1 chairlift. Day-ticket pricing varies by date; check the operator before travel.
+1 chairlift. Day-ticket pricing varies by date; a season pass is available through the Mountain Bike Power Pass. Check the operator before travel.
 
     Open season
 June – September (directory indication; weather and maintenance can shorten the season).
@@ -31057,8 +31145,27 @@ Typical operating-day estimate; verify the operator calendar and hours.
 From | Transport | Duration
 Burnet | Car | Local
 
-    Sources: operator information and US downhill bike-park directory.
+    Sources: Spider Mountain Bike Park, Mountain Bike Power Pass and US downhill bike-park directory.
     Prices, schedules, trail status and access can change; verify before travel.</desc>
+  </wpt>
+  <wpt lat="36.303462" lon="-115.679692">
+    <name>Lee Canyon Bike Park [lift pass]</name>
+    <desc>Lift-served downhill bike park above Las Vegas
+
+    Trails
+Lee Canyon is Southern Nevada's lift-served downhill bike park, with green, blue and black trails including machine-built flow and technical natural terrain. Uphill travel is not permitted; riders must stay on designated trails.
+
+    Getting up / price
+The chairlift serves all bike-park trails. Day-ticket prices vary by demand. The 2026 Mountain Bike Power Pass includes unlimited access to Lee Canyon, Brian Head and Purgatory for the bike-park season, plus Spider Mountain access.
+
+    Open season
+Summer bike-park season, with dates and operating days subject to weather and conditions. Check the live calendar before travelling.
+
+    Access
+From | Transport | Duration
+Las Vegas | Car | ~45 min
+
+    Sources: Lee Canyon MTB lift tickets, Mountain Bike Power Pass and Lee Canyon mountain biking. Verify current lift operation and trail status.</desc>
   </wpt>
   <wpt lat="37.692755" lon="-112.850776">
     <name>Brian Head Bike Park [check operator]</name>
@@ -31068,7 +31175,7 @@ Burnet | Car | Local
 63 miles including backcountry singletrack of maintained downhill and gravity trails with purpose-built descending terrain. Check the current trail map for grades, closures and bike requirements.
 
     Getting up / price
-1 chairlift. Day-ticket pricing varies by date; check the operator before travel.
+1 chairlift. Day-ticket pricing varies by date; a season pass is available through the Mountain Bike Power Pass. Check the operator before travel.
 
     Open season
 June – September (directory indication; weather and maintenance can shorten the season).
@@ -31079,7 +31186,7 @@ Typical operating-day estimate; verify the operator calendar and hours.
 From | Transport | Duration
 Brian Head | Car | Local
 
-    Sources: operator information and US downhill bike-park directory.
+    Sources: operator information, Mountain Bike Power Pass and US downhill bike-park directory.
     Prices, schedules, trail status and access can change; verify before travel.</desc>
   </wpt>
   <wpt lat="40.637403" lon="-111.478251">
@@ -35814,6 +35921,118 @@ Bergen | Train | ~2h30
 
     Source: Geilo.
     Prices, schedules, trail status and access can change; verify before travel.</desc>
+  </wpt>
+  <wpt lat="60.848340" lon="8.511480">
+    <name>Hemsedal Rides (Norway) [chairlift]</name>
+    <desc>Lift-served flow and technical riding above Hemsedal
+
+    Trails
+Hollvin Express serves the Hemsedal Rides network, including the long blue Silverstone descent, green Broadway connector and the more technical red High Line. Tottelia Bike Park at the resort base adds compact progression trails and skills features.
+
+    Getting up / price
+Hollvin Express carries bikes to roughly 1,150 m. A SkiStar BikePass is required; rental and instruction are available at the resort.
+
+    Open season
+Published 2026 lift season: daily 27 June-16 August, plus selected September weekends and daily 26 September-4 October.
+Daily opening hours: 10:00-16:00
+Some autumn dates operate 11:00-15:00 or 11:00-16:00; check the live schedule and trail status.
+
+    Access
+From | Transport | Duration
+Hemsedal centre | Bike / bus / car | ~10 min
+Oslo | Car / bus | ~3h
+
+    Sources: SkiStar Hemsedal biking, official 2026 opening dates and Hemsedal's verified Silverstone listing. Pin marks the published Silverstone start near the lift top at 1,151 m.</desc>
+  </wpt>
+  <trk>
+    <name>Hemsedal Rides: Silverstone</name>
+    <desc>3.9 km mapped section of the blue Silverstone flow trail. Geometry simplified from OpenStreetMap way 1070148234 (ODbL) - indicative only; follow signs and current closures. Source: OSM way 1070148234.</desc>
+    <trkseg>
+      <trkpt lat="60.853333" lon="8.494781"/>
+      <trkpt lat="60.853749" lon="8.496209"/>
+      <trkpt lat="60.854372" lon="8.499748"/>
+      <trkpt lat="60.854432" lon="8.500785"/>
+      <trkpt lat="60.854518" lon="8.500864"/>
+      <trkpt lat="60.854559" lon="8.500646"/>
+      <trkpt lat="60.854632" lon="8.499367"/>
+      <trkpt lat="60.854765" lon="8.501208"/>
+      <trkpt lat="60.855027" lon="8.499517"/>
+      <trkpt lat="60.855108" lon="8.499556"/>
+      <trkpt lat="60.855124" lon="8.500383"/>
+      <trkpt lat="60.855236" lon="8.499778"/>
+      <trkpt lat="60.855267" lon="8.500845"/>
+      <trkpt lat="60.855546" lon="8.499912"/>
+      <trkpt lat="60.855737" lon="8.504034"/>
+      <trkpt lat="60.855859" lon="8.503882"/>
+      <trkpt lat="60.855901" lon="8.502999"/>
+      <trkpt lat="60.855918" lon="8.503943"/>
+      <trkpt lat="60.856055" lon="8.503413"/>
+      <trkpt lat="60.856048" lon="8.504215"/>
+      <trkpt lat="60.856222" lon="8.503301"/>
+      <trkpt lat="60.856257" lon="8.505257"/>
+      <trkpt lat="60.856408" lon="8.504121"/>
+      <trkpt lat="60.856490" lon="8.504371"/>
+      <trkpt lat="60.856569" lon="8.503958"/>
+      <trkpt lat="60.856614" lon="8.505340"/>
+      <trkpt lat="60.856724" lon="8.505451"/>
+      <trkpt lat="60.856988" lon="8.503499"/>
+      <trkpt lat="60.857097" lon="8.503570"/>
+      <trkpt lat="60.857122" lon="8.504772"/>
+      <trkpt lat="60.857160" lon="8.504134"/>
+      <trkpt lat="60.857264" lon="8.504651"/>
+      <trkpt lat="60.857325" lon="8.503881"/>
+      <trkpt lat="60.857392" lon="8.503569"/>
+      <trkpt lat="60.857474" lon="8.503657"/>
+      <trkpt lat="60.857440" lon="8.505079"/>
+      <trkpt lat="60.857491" lon="8.504325"/>
+      <trkpt lat="60.857558" lon="8.504938"/>
+      <trkpt lat="60.857665" lon="8.504184"/>
+      <trkpt lat="60.857829" lon="8.504798"/>
+      <trkpt lat="60.858091" lon="8.504259"/>
+      <trkpt lat="60.858515" lon="8.504318"/>
+      <trkpt lat="60.858461" lon="8.506013"/>
+      <trkpt lat="60.858616" lon="8.505980"/>
+      <trkpt lat="60.858660" lon="8.506274"/>
+      <trkpt lat="60.858070" lon="8.507567"/>
+      <trkpt lat="60.858272" lon="8.508494"/>
+      <trkpt lat="60.858230" lon="8.509041"/>
+      <trkpt lat="60.857940" lon="8.509892"/>
+      <trkpt lat="60.858148" lon="8.510301"/>
+      <trkpt lat="60.858253" lon="8.511222"/>
+      <trkpt lat="60.858179" lon="8.512838"/>
+      <trkpt lat="60.858280" lon="8.514392"/>
+      <trkpt lat="60.858982" lon="8.517758"/>
+      <trkpt lat="60.859237" lon="8.518223"/>
+      <trkpt lat="60.859115" lon="8.515035"/>
+      <trkpt lat="60.859292" lon="8.512534"/>
+      <trkpt lat="60.859550" lon="8.512113"/>
+      <trkpt lat="60.859409" lon="8.512839"/>
+      <trkpt lat="60.859653" lon="8.514371"/>
+      <trkpt lat="60.859842" lon="8.513765"/>
+      <trkpt lat="60.860187" lon="8.513698"/>
+    </trkseg>
+  </trk>
+  <wpt lat="60.532437" lon="9.059966">
+    <name>Nesbyen MTB (Norway) [shuttle]</name>
+    <desc>Norway's best-known shuttle-served gravity trail hub
+
+    Trails
+Nesbyen combines rough natural enduro descents around Trytetjern with purpose-built trails for several levels. HallingSpranget is the signature blue route: 17 km from Syningen on Nesfjellet to the town centre, losing about 1,000 vertical metres.
+
+    Getting up / price
+Trailhead Nesbyen runs fixed-route gravity shuttles between Blingsmovegen and Trytetjern. The separate FjellLinken bike bus serves the HallingSpranget start; advance booking is recommended.
+
+    Open season
+Typically May-October, depending on snow and trail conditions. HallingSpranget is aiming for an early June opening in 2026, with bookings available from 13 June and daily summer shuttle service.
+Daily opening hours: 10:00-16:30
+Typical gravity-shuttle window; HallingSpranget bus times and autumn operating days differ.
+
+    Access
+From | Transport | Duration
+Nesbyen centre | Bike shuttle | ~25-40 min to trailheads
+Oslo | Train / car | ~2h30-3h
+
+    Sources: Trailhead Nesbyen shuttle and official HallingSpranget site. Pin marks the OSM-mapped HallingSpranget start at Syningen, officially described as roughly 1,100 m.</desc>
   </wpt>
   <wpt lat="66.165000" lon="29.170000">
     <name>Ruka Bike Park (Finland) [gondola]</name>
@@ -41250,6 +41469,841 @@ Le Planard is generally suitable from spring through autumn. The higher Trient l
       <trkpt lat="44.107670" lon="6.269001"/>
       <trkpt lat="44.107647" lon="6.268711"/>
       <trkpt lat="44.108153" lon="6.268137"/>
+    </trkseg>
+  </trk>
+  <wpt lat="-15.772000" lon="-68.646000">
+    <name>Sorata MTB (Bolivia) [no lift]</name>
+    <desc>High-altitude mountain biking around Sorata, with steep valley roads, footpaths and downhill routes below the Cordillera Real. This is a local/backcountry riding area, not a managed bike park. Verify access and hire a local guide. Sources: Sorata tourism and La Paz tourism publication.</desc>
+  </wpt>
+  <wpt lat="-27.313500" lon="-55.987050">
+    <name>Aguavista MTB Circuit (Paraguay) [no lift]</name>
+    <desc>Organized cross-country MTB circuit at Aguavista in San Juan del Parana, Itapua. The circuit is about 5.1 km and hosts UCI-level XCO events. The pin marks the official 2026 course start/finish beside the Aguavista tennis courts at about 120 m. Sources: Paraguay National Sports Secretariat, the official 2026 technical guide and OpenStreetMap tennis-court ways 510311623, 510311624 and 510311625 (ODbL).</desc>
+  </wpt>
+  <wpt lat="-34.080000" lon="-54.380000">
+    <name>Cerro Aspero MTB (Uruguay) [no lift]</name>
+    <desc>Marked mountain-bike circuit in the Cerro Aspero area of Rocha, with a roughly 40 km adventure route and a hike-a-bike approach to the summit. Natural, rolling terrain with no lift. Source: Rocha Tourism.</desc>
+  </wpt>
+  <wpt lat="29.166000" lon="-82.132000">
+    <name>Santos Trailhead / Cross Florida Greenway [no lift]</name>
+    <desc>IMBA Ride Center and extensive singletrack network around Santos, with more than 80 miles of mountain-bike trails, a pump track and skills park. Open year-round during park hours. Sources: Florida State Parks biking guide and Santos Trailhead information.</desc>
+  </wpt>
+  <wpt lat="27.805000" lon="-82.181000">
+    <name>Alafia River State Park MTB [no lift]</name>
+    <desc>One of Florida's most varied mountain-bike areas, built through reclaimed phosphate-mining terrain with unusually steep elevation changes for the state. Park trails are maintained and conditions can change; check closures before riding. Source: Florida State Parks - Alafia River.</desc>
+  </wpt>
+  <wpt lat="26.118000" lon="-80.360000">
+    <name>Markham Park MTB Trails (Florida) [no lift]</name>
+    <desc>Managed mountain-bike trail network at Markham Park in Broward County, with purpose-built trails and riding facilities. Check the park page for current access, conditions and rules. Source: Markham Park mountain-bike trails.</desc>
+  </wpt>
+  <wpt lat="39.310380" lon="-108.706010">
+    <name>Fruita MTB - 18 Road and Kokopelli [no lift]</name>
+    <desc>Fruita / Grand Valley desert singletrack destination
+
+    Trails
+Two adjoining, world-known riding areas: the North Fruita Desert / 18 Road system for fast, playful desert singletrack, and the Kokopelli Trail system near Loma for exposed ledges, slickrock, technical loops and long views over the Colorado River. Classics include Joe's Ridge, Kessel Run, Mary's Loop, Horsethief Bench and Rustler's Loop.
+
+    Getting up / price
+No lift. Pedal-accessed trailheads and desert roads; check land-manager rules, parking requirements and closures before riding.
+
+    Open season
+Rideable year-round when trails are dry. Avoid muddy conditions because desert clay can be damaged easily; summer heat requires an early start and extra water.
+
+    Sources: Go Fruita trail overview, BLM / Recreation.gov Kokopelli Trails and Colorado Parks and Wildlife - Fruita.</desc>
+  </wpt>
+  <wpt lat="35.198000" lon="-111.650000">
+    <name>Flagstaff MTB Network (Arizona) [no lift]</name>
+    <desc>High-elevation ponderosa-pine riding around Flagstaff
+
+    Trails
+A broad network of singletrack and multi-use trails around Flagstaff, including the Arizona Trail, Schultz Creek, Elden and the urban trail system. The high-altitude pine forest provides varied cross-country and natural all-mountain riding, with volcanic terrain and long seasonal views.
+
+    Getting up / price
+No lift. Ride from signed trailheads and use the current forest and city maps. Some routes are shared-use and some Arizona Trail sections have local restrictions, so follow posted rules.
+
+    Open season
+Lower trails can ride much of the year, while snow and freeze-thaw affect higher routes in winter and spring. Check current closures and trail conditions before riding.
+
+    Sources: Flagstaff mountain biking guide, City of Flagstaff trail map and Flagstaff Biking Organization.</desc>
+  </wpt>
+  <trk>
+    <name>Le Salève: La Longue</name>
+    <desc>5.7 km marked MTB descent on Le Salève. Geometry simplified from OpenStreetMap relation 1490529 (ODbL); indicative only, follow local signs and restrictions.</desc>
+    <trkseg>
+      <trkpt lat="46.154140" lon="6.194292"/>
+      <trkpt lat="46.154197" lon="6.194416"/>
+      <trkpt lat="46.153602" lon="6.195129"/>
+      <trkpt lat="46.152855" lon="6.195757"/>
+      <trkpt lat="46.152643" lon="6.196107"/>
+      <trkpt lat="46.152528" lon="6.196743"/>
+      <trkpt lat="46.152002" lon="6.197290"/>
+      <trkpt lat="46.150604" lon="6.198237"/>
+      <trkpt lat="46.149952" lon="6.198927"/>
+      <trkpt lat="46.150048" lon="6.199654"/>
+      <trkpt lat="46.150364" lon="6.200528"/>
+      <trkpt lat="46.150249" lon="6.201664"/>
+      <trkpt lat="46.149851" lon="6.202957"/>
+      <trkpt lat="46.149376" lon="6.203783"/>
+      <trkpt lat="46.148726" lon="6.204029"/>
+      <trkpt lat="46.148586" lon="6.204940"/>
+      <trkpt lat="46.147880" lon="6.204842"/>
+      <trkpt lat="46.148880" lon="6.206126"/>
+      <trkpt lat="46.149415" lon="6.207397"/>
+      <trkpt lat="46.150395" lon="6.209093"/>
+      <trkpt lat="46.150502" lon="6.209535"/>
+      <trkpt lat="46.149563" lon="6.209693"/>
+      <trkpt lat="46.150181" lon="6.211487"/>
+      <trkpt lat="46.151093" lon="6.212915"/>
+      <trkpt lat="46.151671" lon="6.213134"/>
+      <trkpt lat="46.151858" lon="6.213863"/>
+      <trkpt lat="46.152555" lon="6.214522"/>
+      <trkpt lat="46.153140" lon="6.215758"/>
+      <trkpt lat="46.153315" lon="6.215810"/>
+      <trkpt lat="46.153985" lon="6.217017"/>
+      <trkpt lat="46.155045" lon="6.218163"/>
+      <trkpt lat="46.155512" lon="6.219031"/>
+      <trkpt lat="46.155818" lon="6.219344"/>
+      <trkpt lat="46.156375" lon="6.220882"/>
+      <trkpt lat="46.156533" lon="6.221043"/>
+      <trkpt lat="46.156648" lon="6.221035"/>
+      <trkpt lat="46.156720" lon="6.220596"/>
+      <trkpt lat="46.157112" lon="6.219830"/>
+      <trkpt lat="46.157349" lon="6.219478"/>
+      <trkpt lat="46.157570" lon="6.219437"/>
+      <trkpt lat="46.157648" lon="6.218650"/>
+      <trkpt lat="46.158931" lon="6.214322"/>
+      <trkpt lat="46.159511" lon="6.213614"/>
+      <trkpt lat="46.159690" lon="6.213566"/>
+      <trkpt lat="46.160802" lon="6.207942"/>
+      <trkpt lat="46.160521" lon="6.206852"/>
+      <trkpt lat="46.161417" lon="6.205055"/>
+      <trkpt lat="46.161485" lon="6.204541"/>
+      <trkpt lat="46.162163" lon="6.202730"/>
+      <trkpt lat="46.162212" lon="6.202065"/>
+      <trkpt lat="46.162761" lon="6.201165"/>
+      <trkpt lat="46.162804" lon="6.200558"/>
+      <trkpt lat="46.163041" lon="6.200778"/>
+      <trkpt lat="46.162108" lon="6.197791"/>
+      <trkpt lat="46.162734" lon="6.198316"/>
+      <trkpt lat="46.162768" lon="6.197515"/>
+      <trkpt lat="46.163656" lon="6.198231"/>
+      <trkpt lat="46.164055" lon="6.198762"/>
+      <trkpt lat="46.164360" lon="6.198275"/>
+      <trkpt lat="46.164376" lon="6.197062"/>
+      <trkpt lat="46.164713" lon="6.196828"/>
+    </trkseg>
+  </trk>
+  <trk>
+    <name>Le Salève: L'Entre-deux</name>
+    <desc>5.6 km marked MTB descent on Le Salève. Geometry simplified from OpenStreetMap relation 1490556 (ODbL); indicative only, follow local signs and restrictions.</desc>
+    <trkseg>
+      <trkpt lat="46.154140" lon="6.194292"/>
+      <trkpt lat="46.154197" lon="6.194416"/>
+      <trkpt lat="46.153602" lon="6.195129"/>
+      <trkpt lat="46.152855" lon="6.195757"/>
+      <trkpt lat="46.152643" lon="6.196107"/>
+      <trkpt lat="46.152528" lon="6.196743"/>
+      <trkpt lat="46.152002" lon="6.197290"/>
+      <trkpt lat="46.150604" lon="6.198237"/>
+      <trkpt lat="46.149952" lon="6.198927"/>
+      <trkpt lat="46.150048" lon="6.199654"/>
+      <trkpt lat="46.150364" lon="6.200528"/>
+      <trkpt lat="46.150249" lon="6.201664"/>
+      <trkpt lat="46.149910" lon="6.202521"/>
+      <trkpt lat="46.150036" lon="6.203015"/>
+      <trkpt lat="46.149744" lon="6.203807"/>
+      <trkpt lat="46.149759" lon="6.204321"/>
+      <trkpt lat="46.149603" lon="6.204806"/>
+      <trkpt lat="46.149839" lon="6.205686"/>
+      <trkpt lat="46.150623" lon="6.206518"/>
+      <trkpt lat="46.150673" lon="6.206907"/>
+      <trkpt lat="46.150989" lon="6.207521"/>
+      <trkpt lat="46.151303" lon="6.207583"/>
+      <trkpt lat="46.151249" lon="6.207786"/>
+      <trkpt lat="46.151592" lon="6.208268"/>
+      <trkpt lat="46.151453" lon="6.208480"/>
+      <trkpt lat="46.152189" lon="6.208787"/>
+      <trkpt lat="46.152448" lon="6.209562"/>
+      <trkpt lat="46.152876" lon="6.210248"/>
+      <trkpt lat="46.153515" lon="6.210105"/>
+      <trkpt lat="46.153542" lon="6.210731"/>
+      <trkpt lat="46.153354" lon="6.210918"/>
+      <trkpt lat="46.153416" lon="6.211439"/>
+      <trkpt lat="46.152967" lon="6.211721"/>
+      <trkpt lat="46.152589" lon="6.212894"/>
+      <trkpt lat="46.152828" lon="6.214193"/>
+      <trkpt lat="46.153594" lon="6.215655"/>
+      <trkpt lat="46.153900" lon="6.215932"/>
+      <trkpt lat="46.153985" lon="6.217017"/>
+      <trkpt lat="46.154742" lon="6.217738"/>
+      <trkpt lat="46.155818" lon="6.219344"/>
+      <trkpt lat="46.156375" lon="6.220882"/>
+      <trkpt lat="46.156533" lon="6.221043"/>
+      <trkpt lat="46.156648" lon="6.221035"/>
+      <trkpt lat="46.156720" lon="6.220596"/>
+      <trkpt lat="46.157112" lon="6.219830"/>
+      <trkpt lat="46.157349" lon="6.219478"/>
+      <trkpt lat="46.157570" lon="6.219437"/>
+      <trkpt lat="46.157648" lon="6.218650"/>
+      <trkpt lat="46.158931" lon="6.214322"/>
+      <trkpt lat="46.159511" lon="6.213614"/>
+      <trkpt lat="46.159690" lon="6.213566"/>
+      <trkpt lat="46.160802" lon="6.207942"/>
+      <trkpt lat="46.160521" lon="6.206852"/>
+      <trkpt lat="46.161417" lon="6.205055"/>
+      <trkpt lat="46.161485" lon="6.204541"/>
+      <trkpt lat="46.162163" lon="6.202730"/>
+      <trkpt lat="46.162212" lon="6.202065"/>
+      <trkpt lat="46.162761" lon="6.201165"/>
+      <trkpt lat="46.162804" lon="6.200558"/>
+      <trkpt lat="46.163041" lon="6.200778"/>
+      <trkpt lat="46.162108" lon="6.197791"/>
+      <trkpt lat="46.162734" lon="6.198316"/>
+      <trkpt lat="46.162768" lon="6.197515"/>
+      <trkpt lat="46.163656" lon="6.198231"/>
+      <trkpt lat="46.164055" lon="6.198762"/>
+      <trkpt lat="46.164360" lon="6.198275"/>
+      <trkpt lat="46.164376" lon="6.197062"/>
+      <trkpt lat="46.164713" lon="6.196828"/>
+    </trkseg>
+  </trk>
+  <wpt lat="45.605890" lon="-63.547390">
+    <name>Wentworth Bike Park (Nova Scotia, Canada) [chairlift]</name>
+    <desc>Blue Quad top station 283 m - Nova Scotia's only lift-accessible bike park
+
+    Trails
+More than 40 km of gravity riding is split between the chairlift-served Lift Zone and the pedal-access Climb Zone. The network includes progressive flow, jumps and technical downhill trails, plus cross-country riding near the summit. Rentals, lessons and a downhill race series are available.
+
+    Getting up / price
+The Blue Quad serves the Lift Zone. Published 2026 adult day tickets are CAD 55 in advance or CAD 60 on the day; separate lower-cost Climb Zone access is available.
+
+    Open season
+Tentative 2026 lift season: 13 June through late October, Friday-Sunday and selected holidays.
+Weather and trail work can change lift and trail availability; check the live status before travelling.
+
+    Access
+From | Transport | Duration
+Truro | Car | ~35 min
+Halifax | Car | ~1h45
+
+    Sources: official Bike Wentworth, 2026 Lift Zone information, 2026 tickets and OSM Blue Quad lift (ODbL). Pin marks the OSM lift top, verified at 283 m.</desc>
+  </wpt>
+  <wpt lat="45.538780" lon="-62.113390">
+    <name>Keppoch Mountain (Nova Scotia, Canada) [shuttle]</name>
+    <desc>Weekend shuttle drop-off around 218 m above Antigonish
+
+    Trails
+Almost 30 km of purpose-built mountain-bike trails range from beginner flow to expert natural and technical descents. The community-operated park also has a skills area, bike wash and repair station, and hosts downhill and enduro events.
+
+    Getting up / price
+Weekend bike shuttles carry riders to the upper trail network; pedal access is also possible. Buy a day or season pass through Keppoch and check capacity before travelling.
+
+    Open season
+Published 2026 shuttle opening: 23 May. Standard service runs Saturday-Sunday, 10:00-17:00, generally through late October.
+Potential Friday evening services are announced separately.
+
+    Access
+From | Transport | Duration
+Antigonish | Car | ~15 min
+Halifax | Car | ~2h
+
+    Sources: official 2026 shuttle opening and Tourism Nova Scotia park information. Pin marks the upper Summit West trailhead, elevation-checked at 218 m.</desc>
+  </wpt>
+  <wpt lat="47.976650" lon="-66.687140">
+    <name>Sugarloaf Bike Park (New Brunswick, Canada) [chairlift]</name>
+    <desc>Chairlift top station 195 m - Atlantic Canada's original lift-access bike park
+
+    Trails
+About 49 km of riding and 36 listed trails combine Gravity Logic-built flow, jump lines, drops and wooden features with rocky expert downhill and year-round cross-country trails. The lower mountain includes a family skills park and pump track.
+
+    Getting up / price
+The chairlift serves the downhill network. Published 2026 full-day tickets are CAD 47.52 adult and CAD 39.60 youth/student/senior; rentals and one-ride tickets are available.
+
+    Open season
+Published 2026 bike-park season: 30 May-27 September. Weekends in spring and fall; Thursday-Sunday from late June through early September.
+Typical hours: 10:00-19:30 Thursday-Saturday and 10:00-16:30 Sunday in high summer.
+
+    Access
+From | Transport | Duration
+Campbellton | Car / bike | ~10 min
+Bathurst | Car | ~1h
+
+    Sources: official bike-park overview and trail totals, 2026 tickets and schedule and the OSM-mapped chairlift (ODbL). Pin marks its upper endpoint, verified at 195 m.</desc>
+  </wpt>
+  <wpt lat="45.675925" lon="-65.376522">
+    <name>Poley Mountain Bike Park (New Brunswick, Canada) [chairlift]</name>
+    <desc>Quad Chair top station 278 m - lift-served riding in the Waterford hills
+
+    Trails
+A compact gravity park with beginner-friendly flow, natural intermediate and expert descents, jumps and technical forest sections. Riders can combine the lift-served network with pedal-access multi-use trails; bike rentals are available.
+
+    Getting up / price
+The Quad Chair carries bikes. Poley sells day access and 2026 summer passes with or without chairlift access; the published adult lift-included season pass is CAD 300.
+
+    Open season
+Published 2026 summer bike season runs June-October, with regular Friday-Sunday operations.
+Daily hours, lift choice and trail status vary; consult the current report before travelling.
+
+    Access
+From | Transport | Duration
+Sussex | Car | ~15 min
+Saint John / Moncton | Car | ~1h
+
+    Sources: official 2026 summer bike information and OSM Quad Chair way 257027285 (ODbL). Pin marks the upper lift endpoint, verified at 278 m.</desc>
+  </wpt>
+  <wpt lat="50.336900" lon="16.395700">
+    <name>Family Bike Park Zieleniec (PL) [cable car]</name>
+    <desc>Gryglowka and Nartorama - nearly 10 km of lift-served trails
+
+Five signed routes range from gentle beginner flow to the steep natural Crazy Dad line. Cable cars carry bikes to the route starts; rentals and instruction are available.
+
+Source: official Family Bike Park Zieleniec.</desc>
+  </wpt>
+  <wpt lat="49.365800" lon="20.755500">
+    <name>Wierchomla Bike Park (PL) [chairlift]</name>
+    <desc>Dwie Doliny Wierchomla Mala - lift-served downhill and enduro
+
+A Beskid gravity park with marked downhill and freeride lines, plus pedal-access forest routes. Expect natural roots and rocks between shaped sections.
+
+Sources: Poland Travel park profile and Wierchomla resort.</desc>
+  </wpt>
+  <wpt lat="49.443500" lon="20.300900">
+    <name>Bike Park Kluszkowce (PL) [chairlift]</name>
+    <desc>Wdjar mountain above Kluszkowce - compact gravity riding
+
+A purpose-built park on the Wdjar ski slope with downhill, flow and jump lines including the A-line. The chairlift serves bike routes during summer operations.
+
+Source: Czorsztyn municipality and resort information; confirm current schedules locally.</desc>
+  </wpt>
+  <wpt lat="29.961500" lon="31.340500">
+    <name>Wadi Degla Protectorate MTB (Egypt) [no lift]</name>
+    <desc>Desert valley trail network on Cairo's southeastern edge
+
+Wadi Degla is a protected 30 km limestone valley with rocky and sandy tracks used by Cairo mountain bikers. This is natural cross-country and all-mountain riding, not a formal lift park.
+
+Sources: Cairo Governorate reserve information and local MTB route documentation.</desc>
+  </wpt>
+  <trk>
+    <name>Weissenstein: Flowtrail</name>
+    <desc>1.8 km marked flow trail
+
+Built MTB flow trail descending from the Weissenstein gondola area toward Oberdorf, with berms, rollers and intermediate features.
+
+Geometry simplified from OpenStreetMap way 1148325073 (ODbL). Trail description and lift context: Seilbahn Weissenstein. Indicative line; follow local signs and conditions.</desc>
+    <trkseg>
+      <trkpt lat="47.245373" lon="7.508076"/>
+      <trkpt lat="47.244962" lon="7.506748"/>
+      <trkpt lat="47.245061" lon="7.505005"/>
+      <trkpt lat="47.244842" lon="7.504968"/>
+      <trkpt lat="47.244872" lon="7.503862"/>
+      <trkpt lat="47.244727" lon="7.503459"/>
+      <trkpt lat="47.244798" lon="7.503149"/>
+      <trkpt lat="47.244703" lon="7.503279"/>
+      <trkpt lat="47.244674" lon="7.502620"/>
+      <trkpt lat="47.244559" lon="7.502698"/>
+      <trkpt lat="47.244621" lon="7.501732"/>
+      <trkpt lat="47.244555" lon="7.501638"/>
+      <trkpt lat="47.244448" lon="7.501921"/>
+      <trkpt lat="47.244380" lon="7.501573"/>
+      <trkpt lat="47.244139" lon="7.501439"/>
+      <trkpt lat="47.244175" lon="7.501178"/>
+      <trkpt lat="47.244009" lon="7.500921"/>
+      <trkpt lat="47.243948" lon="7.500513"/>
+      <trkpt lat="47.244066" lon="7.499937"/>
+      <trkpt lat="47.243832" lon="7.500060"/>
+      <trkpt lat="47.243884" lon="7.498596"/>
+      <trkpt lat="47.243627" lon="7.499028"/>
+      <trkpt lat="47.243693" lon="7.497758"/>
+      <trkpt lat="47.243635" lon="7.496745"/>
+      <trkpt lat="47.243515" lon="7.496472"/>
+      <trkpt lat="47.243669" lon="7.496280"/>
+      <trkpt lat="47.243325" lon="7.495735"/>
+      <trkpt lat="47.243351" lon="7.494828"/>
+      <trkpt lat="47.243245" lon="7.494764"/>
+      <trkpt lat="47.243197" lon="7.494115"/>
+      <trkpt lat="47.242824" lon="7.492794"/>
+      <trkpt lat="47.243039" lon="7.492443"/>
+      <trkpt lat="47.242579" lon="7.492500"/>
+      <trkpt lat="47.242244" lon="7.492199"/>
+      <trkpt lat="47.241744" lon="7.491279"/>
+    </trkseg>
+  </trk>
+  <trk>
+    <name>Pilatus: Pilatustrail</name>
+    <desc>2.8 km technical natural trail
+
+Named singletrack in the Pilatus area, with roots, tight turns and variable terrain. This is a natural mountain trail, not a maintained bike-park line.
+
+Geometry simplified from OpenStreetMap way 120875145 (ODbL). Lift and access context: Pilatus Bahnen. Confirm bike carriage and local trail restrictions before riding.</desc>
+    <trkseg>
+      <trkpt lat="46.970084" lon="8.269690"/>
+      <trkpt lat="46.969914" lon="8.270117"/>
+      <trkpt lat="46.970103" lon="8.270130"/>
+      <trkpt lat="46.969917" lon="8.270411"/>
+      <trkpt lat="46.970107" lon="8.270489"/>
+      <trkpt lat="46.969827" lon="8.270919"/>
+      <trkpt lat="46.970045" lon="8.271050"/>
+      <trkpt lat="46.969881" lon="8.271298"/>
+      <trkpt lat="46.970150" lon="8.271344"/>
+      <trkpt lat="46.969775" lon="8.271606"/>
+      <trkpt lat="46.970254" lon="8.271704"/>
+      <trkpt lat="46.969670" lon="8.272343"/>
+      <trkpt lat="46.970230" lon="8.272454"/>
+      <trkpt lat="46.969747" lon="8.273095"/>
+      <trkpt lat="46.969444" lon="8.273177"/>
+      <trkpt lat="46.969694" lon="8.273391"/>
+      <trkpt lat="46.969240" lon="8.273506"/>
+      <trkpt lat="46.969400" lon="8.273784"/>
+      <trkpt lat="46.969083" lon="8.273688"/>
+      <trkpt lat="46.969159" lon="8.273981"/>
+      <trkpt lat="46.969361" lon="8.274152"/>
+      <trkpt lat="46.968916" lon="8.274318"/>
+      <trkpt lat="46.968815" lon="8.274614"/>
+      <trkpt lat="46.969155" lon="8.274775"/>
+      <trkpt lat="46.968926" lon="8.275039"/>
+      <trkpt lat="46.969140" lon="8.275117"/>
+      <trkpt lat="46.968895" lon="8.275933"/>
+      <trkpt lat="46.968845" lon="8.276656"/>
+      <trkpt lat="46.968905" lon="8.276955"/>
+      <trkpt lat="46.969267" lon="8.277170"/>
+      <trkpt lat="46.969645" lon="8.276267"/>
+      <trkpt lat="46.969814" lon="8.276209"/>
+      <trkpt lat="46.969772" lon="8.276873"/>
+      <trkpt lat="46.969860" lon="8.276715"/>
+      <trkpt lat="46.969863" lon="8.277258"/>
+      <trkpt lat="46.970029" lon="8.277063"/>
+      <trkpt lat="46.970006" lon="8.277630"/>
+      <trkpt lat="46.970171" lon="8.277354"/>
+      <trkpt lat="46.970160" lon="8.277829"/>
+      <trkpt lat="46.970318" lon="8.277623"/>
+      <trkpt lat="46.970316" lon="8.278185"/>
+      <trkpt lat="46.970426" lon="8.277943"/>
+      <trkpt lat="46.970433" lon="8.278507"/>
+      <trkpt lat="46.970257" lon="8.278790"/>
+      <trkpt lat="46.970629" lon="8.278670"/>
+      <trkpt lat="46.970775" lon="8.278279"/>
+      <trkpt lat="46.970790" lon="8.278579"/>
+      <trkpt lat="46.970940" lon="8.278406"/>
+      <trkpt lat="46.970866" lon="8.278863"/>
+      <trkpt lat="46.971044" lon="8.278643"/>
+      <trkpt lat="46.970983" lon="8.278985"/>
+      <trkpt lat="46.971165" lon="8.278854"/>
+      <trkpt lat="46.970988" lon="8.279598"/>
+      <trkpt lat="46.970787" lon="8.279878"/>
+      <trkpt lat="46.971186" lon="8.279829"/>
+      <trkpt lat="46.971271" lon="8.279647"/>
+      <trkpt lat="46.971327" lon="8.280114"/>
+      <trkpt lat="46.970855" lon="8.280556"/>
+      <trkpt lat="46.970619" lon="8.281662"/>
+      <trkpt lat="46.969745" lon="8.281954"/>
+      <trkpt lat="46.969612" lon="8.282306"/>
+      <trkpt lat="46.969634" lon="8.283155"/>
+      <trkpt lat="46.969420" lon="8.283137"/>
+      <trkpt lat="46.969294" lon="8.282928"/>
+      <trkpt lat="46.968946" lon="8.283027"/>
+      <trkpt lat="46.967449" lon="8.282009"/>
+      <trkpt lat="46.967039" lon="8.281992"/>
+    </trkseg>
+  </trk>
+  <trk>
+    <name>Marbachegg: Clientis Flowtrail</name>
+    <desc>4.1 km flow trail
+
+The main Marbachegg flow trail, descending through rollers, berms, jumps and technical features from the gondola station toward Marbach.
+
+Geometry simplified from OpenStreetMap relation 19994667 (ODbL). Trail and lift context: Sportbahnen Marbachegg. Follow local signs and current conditions.</desc>
+    <trkseg>
+      <trkpt lat="46.833698" lon="7.903876"/>
+      <trkpt lat="46.833417" lon="7.902244"/>
+      <trkpt lat="46.833000" lon="7.901459"/>
+      <trkpt lat="46.833140" lon="7.901475"/>
+      <trkpt lat="46.833104" lon="7.901113"/>
+      <trkpt lat="46.833816" lon="7.901830"/>
+      <trkpt lat="46.833791" lon="7.901479"/>
+      <trkpt lat="46.833641" lon="7.901243"/>
+      <trkpt lat="46.833843" lon="7.901268"/>
+      <trkpt lat="46.833692" lon="7.900937"/>
+      <trkpt lat="46.834148" lon="7.901241"/>
+      <trkpt lat="46.834491" lon="7.902343"/>
+      <trkpt lat="46.834993" lon="7.902295"/>
+      <trkpt lat="46.835634" lon="7.902635"/>
+      <trkpt lat="46.836097" lon="7.902414"/>
+      <trkpt lat="46.836245" lon="7.902614"/>
+      <trkpt lat="46.836194" lon="7.902772"/>
+      <trkpt lat="46.836416" lon="7.902817"/>
+      <trkpt lat="46.836474" lon="7.902680"/>
+      <trkpt lat="46.836443" lon="7.903104"/>
+      <trkpt lat="46.836688" lon="7.903071"/>
+      <trkpt lat="46.836712" lon="7.903442"/>
+      <trkpt lat="46.836981" lon="7.903738"/>
+      <trkpt lat="46.837258" lon="7.904529"/>
+      <trkpt lat="46.837603" lon="7.905063"/>
+      <trkpt lat="46.838256" lon="7.905576"/>
+      <trkpt lat="46.838702" lon="7.905493"/>
+      <trkpt lat="46.838887" lon="7.905334"/>
+      <trkpt lat="46.838767" lon="7.905074"/>
+      <trkpt lat="46.839014" lon="7.904641"/>
+      <trkpt lat="46.839454" lon="7.904674"/>
+      <trkpt lat="46.839487" lon="7.904174"/>
+      <trkpt lat="46.839968" lon="7.904172"/>
+      <trkpt lat="46.839936" lon="7.903897"/>
+      <trkpt lat="46.839798" lon="7.903789"/>
+      <trkpt lat="46.839283" lon="7.903958"/>
+      <trkpt lat="46.839497" lon="7.903748"/>
+      <trkpt lat="46.839596" lon="7.903005"/>
+      <trkpt lat="46.839445" lon="7.902732"/>
+      <trkpt lat="46.839549" lon="7.902616"/>
+      <trkpt lat="46.839422" lon="7.902525"/>
+      <trkpt lat="46.839820" lon="7.902489"/>
+      <trkpt lat="46.840042" lon="7.902784"/>
+      <trkpt lat="46.840207" lon="7.902651"/>
+      <trkpt lat="46.839880" lon="7.901899"/>
+      <trkpt lat="46.840174" lon="7.901952"/>
+      <trkpt lat="46.840726" lon="7.902488"/>
+      <trkpt lat="46.841073" lon="7.901777"/>
+      <trkpt lat="46.841087" lon="7.900807"/>
+      <trkpt lat="46.841391" lon="7.901396"/>
+      <trkpt lat="46.841748" lon="7.901515"/>
+      <trkpt lat="46.841852" lon="7.900903"/>
+      <trkpt lat="46.841693" lon="7.900321"/>
+      <trkpt lat="46.841709" lon="7.899897"/>
+      <trkpt lat="46.841975" lon="7.899933"/>
+      <trkpt lat="46.842094" lon="7.900307"/>
+      <trkpt lat="46.842193" lon="7.900023"/>
+      <trkpt lat="46.842075" lon="7.899529"/>
+      <trkpt lat="46.842554" lon="7.899911"/>
+      <trkpt lat="46.842369" lon="7.899366"/>
+      <trkpt lat="46.842747" lon="7.899336"/>
+      <trkpt lat="46.842976" lon="7.899579"/>
+      <trkpt lat="46.843019" lon="7.899190"/>
+      <trkpt lat="46.842902" lon="7.898998"/>
+      <trkpt lat="46.843303" lon="7.898613"/>
+      <trkpt lat="46.843594" lon="7.898597"/>
+      <trkpt lat="46.843759" lon="7.898797"/>
+      <trkpt lat="46.843889" lon="7.898446"/>
+      <trkpt lat="46.844059" lon="7.898755"/>
+      <trkpt lat="46.844612" lon="7.897607"/>
+      <trkpt lat="46.844725" lon="7.896914"/>
+      <trkpt lat="46.844885" lon="7.896626"/>
+      <trkpt lat="46.845107" lon="7.896756"/>
+      <trkpt lat="46.845186" lon="7.897083"/>
+      <trkpt lat="46.845331" lon="7.897037"/>
+      <trkpt lat="46.845489" lon="7.897242"/>
+      <trkpt lat="46.845298" lon="7.896297"/>
+      <trkpt lat="46.845435" lon="7.896267"/>
+      <trkpt lat="46.845498" lon="7.895809"/>
+      <trkpt lat="46.845659" lon="7.895967"/>
+      <trkpt lat="46.845697" lon="7.895000"/>
+      <trkpt lat="46.845883" lon="7.895142"/>
+      <trkpt lat="46.845954" lon="7.894686"/>
+      <trkpt lat="46.846835" lon="7.894208"/>
+      <trkpt lat="46.847150" lon="7.894423"/>
+      <trkpt lat="46.847345" lon="7.894337"/>
+      <trkpt lat="46.847772" lon="7.894658"/>
+      <trkpt lat="46.848185" lon="7.894525"/>
+      <trkpt lat="46.848547" lon="7.894759"/>
+      <trkpt lat="46.848941" lon="7.894711"/>
+      <trkpt lat="46.849537" lon="7.895464"/>
+      <trkpt lat="46.849978" lon="7.895135"/>
+      <trkpt lat="46.850081" lon="7.895269"/>
+    </trkseg>
+  </trk>
+  <wpt lat="45.958198" lon="9.126114">
+    <name>Monte Tremezzo (Lake Como) [no lift]</name>
+    <desc>Monte Tremezzo MTB route
+
+A long natural mountain-bike route on the western shore of Lake Como, linking the high slopes above Menaggio and Porlezza with broad lake and mountain views. This is a pedal-accessed enduro/XC route, not a lift-served bike park.
+
+Source: OpenStreetMap relation 12662560 (ODbL) and Visit Como. Check local access, hiking traffic and trail conditions.</desc>
+  </wpt>
+  <trk>
+    <name>Monte Tremezzo MTB route</name>
+    <desc>12.8 km natural MTB route
+
+Long mountain-bike line across the Monte Tremezzo area above Lake Como. It includes forest paths, rough mountain tracks and exposed sections; ride only where cycling is permitted and yield to hikers.
+
+Geometry simplified from OpenStreetMap relation 12662560 (ODbL). Indicative line; confirm the current route and local restrictions before riding.</desc>
+    <trkseg>
+      <trkpt lat="45.958198" lon="9.126114"/>
+      <trkpt lat="45.958771" lon="9.126475"/>
+      <trkpt lat="45.960253" lon="9.126515"/>
+      <trkpt lat="45.960810" lon="9.126320"/>
+      <trkpt lat="45.961767" lon="9.125466"/>
+      <trkpt lat="45.962312" lon="9.124041"/>
+      <trkpt lat="45.962394" lon="9.122786"/>
+      <trkpt lat="45.963270" lon="9.123250"/>
+      <trkpt lat="45.963886" lon="9.122815"/>
+      <trkpt lat="45.964124" lon="9.122337"/>
+      <trkpt lat="45.964146" lon="9.121965"/>
+      <trkpt lat="45.964458" lon="9.121497"/>
+      <trkpt lat="45.964679" lon="9.119938"/>
+      <trkpt lat="45.965131" lon="9.119048"/>
+      <trkpt lat="45.965591" lon="9.119700"/>
+      <trkpt lat="45.966043" lon="9.119921"/>
+      <trkpt lat="45.967394" lon="9.119061"/>
+      <trkpt lat="45.967868" lon="9.118539"/>
+      <trkpt lat="45.968253" lon="9.118610"/>
+      <trkpt lat="45.968522" lon="9.119874"/>
+      <trkpt lat="45.969337" lon="9.119670"/>
+      <trkpt lat="45.969933" lon="9.120005"/>
+      <trkpt lat="45.970236" lon="9.119916"/>
+      <trkpt lat="45.971452" lon="9.118727"/>
+      <trkpt lat="45.971643" lon="9.118869"/>
+      <trkpt lat="45.971899" lon="9.119671"/>
+      <trkpt lat="45.971832" lon="9.120396"/>
+      <trkpt lat="45.972096" lon="9.121914"/>
+      <trkpt lat="45.972566" lon="9.122024"/>
+      <trkpt lat="45.972547" lon="9.122743"/>
+      <trkpt lat="45.972290" lon="9.123957"/>
+      <trkpt lat="45.972856" lon="9.124215"/>
+      <trkpt lat="45.973938" lon="9.124348"/>
+      <trkpt lat="45.974164" lon="9.124336"/>
+      <trkpt lat="45.974425" lon="9.123997"/>
+      <trkpt lat="45.974826" lon="9.124267"/>
+      <trkpt lat="45.975424" lon="9.124125"/>
+      <trkpt lat="45.975720" lon="9.124561"/>
+      <trkpt lat="45.976509" lon="9.124300"/>
+      <trkpt lat="45.976663" lon="9.124694"/>
+      <trkpt lat="45.977243" lon="9.124823"/>
+      <trkpt lat="45.977334" lon="9.124975"/>
+      <trkpt lat="45.977219" lon="9.127185"/>
+      <trkpt lat="45.976959" lon="9.128150"/>
+      <trkpt lat="45.977804" lon="9.128963"/>
+      <trkpt lat="45.977987" lon="9.129824"/>
+      <trkpt lat="45.978841" lon="9.130638"/>
+      <trkpt lat="45.979444" lon="9.132999"/>
+      <trkpt lat="45.979692" lon="9.133358"/>
+      <trkpt lat="45.979531" lon="9.133912"/>
+      <trkpt lat="45.978496" lon="9.135628"/>
+      <trkpt lat="45.978448" lon="9.136145"/>
+      <trkpt lat="45.979817" lon="9.136000"/>
+      <trkpt lat="45.980250" lon="9.136673"/>
+      <trkpt lat="45.981954" lon="9.137266"/>
+      <trkpt lat="45.982794" lon="9.138210"/>
+      <trkpt lat="45.983154" lon="9.138258"/>
+      <trkpt lat="45.984258" lon="9.138946"/>
+      <trkpt lat="45.984570" lon="9.139477"/>
+      <trkpt lat="45.984879" lon="9.140680"/>
+      <trkpt lat="45.985279" lon="9.141154"/>
+      <trkpt lat="45.986733" lon="9.142250"/>
+      <trkpt lat="45.987450" lon="9.143517"/>
+      <trkpt lat="45.987733" lon="9.144367"/>
+      <trkpt lat="45.987754" lon="9.146313"/>
+      <trkpt lat="45.987878" lon="9.146808"/>
+      <trkpt lat="45.987626" lon="9.150847"/>
+      <trkpt lat="45.988002" lon="9.151118"/>
+      <trkpt lat="45.988889" lon="9.150591"/>
+      <trkpt lat="45.989570" lon="9.150528"/>
+      <trkpt lat="45.990697" lon="9.151166"/>
+      <trkpt lat="45.991342" lon="9.152204"/>
+      <trkpt lat="45.991639" lon="9.152336"/>
+      <trkpt lat="45.991720" lon="9.151929"/>
+      <trkpt lat="45.991605" lon="9.150360"/>
+      <trkpt lat="45.991692" lon="9.149619"/>
+      <trkpt lat="45.992315" lon="9.147782"/>
+      <trkpt lat="45.992722" lon="9.147192"/>
+      <trkpt lat="45.992799" lon="9.149799"/>
+      <trkpt lat="45.993155" lon="9.150832"/>
+      <trkpt lat="45.993356" lon="9.151080"/>
+      <trkpt lat="45.993862" lon="9.151155"/>
+      <trkpt lat="45.994641" lon="9.150696"/>
+      <trkpt lat="45.995041" lon="9.150724"/>
+      <trkpt lat="45.995714" lon="9.150486"/>
+      <trkpt lat="45.996827" lon="9.151875"/>
+      <trkpt lat="45.997380" lon="9.152964"/>
+      <trkpt lat="45.998247" lon="9.151260"/>
+      <trkpt lat="45.998836" lon="9.150893"/>
+      <trkpt lat="45.999068" lon="9.151203"/>
+      <trkpt lat="46.000043" lon="9.151845"/>
+      <trkpt lat="46.000649" lon="9.152634"/>
+      <trkpt lat="46.000865" lon="9.152685"/>
+      <trkpt lat="46.001960" lon="9.151841"/>
+      <trkpt lat="46.003028" lon="9.151464"/>
+      <trkpt lat="46.003658" lon="9.151922"/>
+      <trkpt lat="46.004081" lon="9.152603"/>
+      <trkpt lat="46.005370" lon="9.153280"/>
+      <trkpt lat="46.005727" lon="9.154172"/>
+      <trkpt lat="46.005838" lon="9.155791"/>
+      <trkpt lat="46.006044" lon="9.156409"/>
+      <trkpt lat="46.007149" lon="9.156524"/>
+      <trkpt lat="46.007883" lon="9.157235"/>
+      <trkpt lat="46.008700" lon="9.158319"/>
+      <trkpt lat="46.009106" lon="9.159421"/>
+      <trkpt lat="46.009055" lon="9.160793"/>
+      <trkpt lat="46.009171" lon="9.161150"/>
+      <trkpt lat="46.009944" lon="9.161651"/>
+      <trkpt lat="46.010185" lon="9.162589"/>
+      <trkpt lat="46.010230" lon="9.163477"/>
+      <trkpt lat="46.009177" lon="9.166310"/>
+      <trkpt lat="46.008410" lon="9.167691"/>
+      <trkpt lat="46.007209" lon="9.168861"/>
+      <trkpt lat="46.006419" lon="9.169210"/>
+      <trkpt lat="46.005232" lon="9.170426"/>
+      <trkpt lat="46.004873" lon="9.172384"/>
+      <trkpt lat="46.005394" lon="9.175277"/>
+      <trkpt lat="46.004805" lon="9.177520"/>
+      <trkpt lat="46.003890" lon="9.179075"/>
+      <trkpt lat="46.001956" lon="9.180408"/>
+      <trkpt lat="46.000839" lon="9.180557"/>
+      <trkpt lat="46.000407" lon="9.180872"/>
+      <trkpt lat="46.000326" lon="9.181235"/>
+      <trkpt lat="46.000377" lon="9.182612"/>
+      <trkpt lat="46.000234" lon="9.183636"/>
+      <trkpt lat="45.999963" lon="9.184271"/>
+      <trkpt lat="45.998723" lon="9.185108"/>
+      <trkpt lat="45.998073" lon="9.185995"/>
+      <trkpt lat="45.997123" lon="9.186377"/>
+      <trkpt lat="45.996175" lon="9.187733"/>
+      <trkpt lat="45.996088" lon="9.188035"/>
+    </trkseg>
+  </trk>
+  <wpt lat="45.212429" lon="6.402090">
+    <name>Les Karellis Bike Park (Maurienne) [lift access]</name>
+    <desc>Les Karellis bike park
+
+A small Maurienne bike park with two official downhill lines: the blue Cool'Kar and red Déval'Kar. The resort is a good compact addition for riders looking for lift-served riding away from the larger Portes du Soleil parks.
+
+Sources: Les Karellis bike park information and Les Karellis resort. Confirm lift operation and trail status before travelling.</desc>
+  </wpt>
+  <trk>
+    <name>Les Karellis: Cool'Kar</name>
+    <desc>5.4 km blue downhill line
+
+The official Cool'Kar trail, the easier of the two Les Karellis bike-park descents.
+
+Geometry simplified from OpenStreetMap relation 14384502 (ODbL). Trail classification and resort context: Les Karellis official bike-park page. Follow signs and current conditions.</desc>
+    <trkseg>
+      <trkpt lat="45.212429" lon="6.402090"/>
+      <trkpt lat="45.212595" lon="6.401892"/>
+      <trkpt lat="45.214461" lon="6.401898"/>
+      <trkpt lat="45.214686" lon="6.401522"/>
+      <trkpt lat="45.214514" lon="6.400898"/>
+      <trkpt lat="45.213563" lon="6.399102"/>
+      <trkpt lat="45.213178" lon="6.397019"/>
+      <trkpt lat="45.213189" lon="6.396477"/>
+      <trkpt lat="45.213574" lon="6.396782"/>
+      <trkpt lat="45.213946" lon="6.396339"/>
+      <trkpt lat="45.214264" lon="6.396209"/>
+      <trkpt lat="45.214880" lon="6.396712"/>
+      <trkpt lat="45.215556" lon="6.396674"/>
+      <trkpt lat="45.215565" lon="6.396849"/>
+      <trkpt lat="45.215758" lon="6.396799"/>
+      <trkpt lat="45.215662" lon="6.396991"/>
+      <trkpt lat="45.215855" lon="6.397085"/>
+      <trkpt lat="45.215791" lon="6.397306"/>
+      <trkpt lat="45.216575" lon="6.397593"/>
+      <trkpt lat="45.217312" lon="6.398148"/>
+      <trkpt lat="45.217158" lon="6.398456"/>
+      <trkpt lat="45.217325" lon="6.398548"/>
+      <trkpt lat="45.217213" lon="6.398647"/>
+      <trkpt lat="45.217297" lon="6.398796"/>
+      <trkpt lat="45.217021" lon="6.399111"/>
+      <trkpt lat="45.216652" lon="6.401121"/>
+      <trkpt lat="45.216689" lon="6.401568"/>
+      <trkpt lat="45.216939" lon="6.402420"/>
+      <trkpt lat="45.217409" lon="6.403328"/>
+      <trkpt lat="45.217988" lon="6.403963"/>
+      <trkpt lat="45.217970" lon="6.404477"/>
+      <trkpt lat="45.218163" lon="6.405287"/>
+      <trkpt lat="45.218060" lon="6.406246"/>
+      <trkpt lat="45.218417" lon="6.406775"/>
+      <trkpt lat="45.218822" lon="6.408046"/>
+      <trkpt lat="45.218411" lon="6.408700"/>
+      <trkpt lat="45.217911" lon="6.410134"/>
+      <trkpt lat="45.217192" lon="6.410721"/>
+      <trkpt lat="45.215985" lon="6.411126"/>
+      <trkpt lat="45.215102" lon="6.411896"/>
+      <trkpt lat="45.215199" lon="6.411982"/>
+      <trkpt lat="45.215063" lon="6.412285"/>
+      <trkpt lat="45.215599" lon="6.412733"/>
+      <trkpt lat="45.215894" lon="6.412601"/>
+      <trkpt lat="45.216125" lon="6.412688"/>
+      <trkpt lat="45.216265" lon="6.412974"/>
+      <trkpt lat="45.217312" lon="6.413221"/>
+      <trkpt lat="45.217065" lon="6.413638"/>
+      <trkpt lat="45.216654" lon="6.413885"/>
+      <trkpt lat="45.216394" lon="6.414528"/>
+      <trkpt lat="45.215086" lon="6.414766"/>
+      <trkpt lat="45.215213" lon="6.414932"/>
+      <trkpt lat="45.216383" lon="6.415302"/>
+      <trkpt lat="45.217943" lon="6.414769"/>
+      <trkpt lat="45.218991" lon="6.413746"/>
+      <trkpt lat="45.219735" lon="6.413248"/>
+      <trkpt lat="45.221050" lon="6.412875"/>
+      <trkpt lat="45.221922" lon="6.412378"/>
+      <trkpt lat="45.221938" lon="6.412226"/>
+      <trkpt lat="45.222146" lon="6.412219"/>
+      <trkpt lat="45.222214" lon="6.412059"/>
+      <trkpt lat="45.222460" lon="6.412045"/>
+      <trkpt lat="45.222405" lon="6.411845"/>
+      <trkpt lat="45.222563" lon="6.411241"/>
+      <trkpt lat="45.223130" lon="6.410564"/>
+      <trkpt lat="45.223507" lon="6.409649"/>
+      <trkpt lat="45.223717" lon="6.408529"/>
+      <trkpt lat="45.223891" lon="6.406425"/>
+      <trkpt lat="45.224048" lon="6.406102"/>
+      <trkpt lat="45.224759" lon="6.405052"/>
+      <trkpt lat="45.225506" lon="6.404276"/>
+      <trkpt lat="45.226335" lon="6.404871"/>
+      <trkpt lat="45.226793" lon="6.404727"/>
+      <trkpt lat="45.227351" lon="6.404812"/>
+    </trkseg>
+  </trk>
+  <trk>
+    <name>Chaumont: Mater-Haut</name>
+    <desc>4 km expert freeride descent from Chaumont to Neuchatel, with a chicken line alongside the main line. Free access; return uphill by the Chaumont funicular. Source: Neuchatel Tourism description and official GPX trace.</desc>
+    <trkseg>
+      <trkpt lat="47.026676" lon="6.957298"/>
+      <trkpt lat="47.026400" lon="6.956811"/>
+      <trkpt lat="47.026245" lon="6.957386"/>
+      <trkpt lat="47.025977" lon="6.957197"/>
+      <trkpt lat="47.025519" lon="6.957028"/>
+      <trkpt lat="47.025097" lon="6.956780"/>
+      <trkpt lat="47.024690" lon="6.956504"/>
+      <trkpt lat="47.024216" lon="6.955912"/>
+      <trkpt lat="47.023712" lon="6.955234"/>
+      <trkpt lat="47.023338" lon="6.955053"/>
+      <trkpt lat="47.023326" lon="6.955706"/>
+      <trkpt lat="47.023466" lon="6.956520"/>
+      <trkpt lat="47.023500" lon="6.957116"/>
+      <trkpt lat="47.023314" lon="6.957604"/>
+      <trkpt lat="47.022705" lon="6.957097"/>
+      <trkpt lat="47.022021" lon="6.956953"/>
+      <trkpt lat="47.021489" lon="6.956908"/>
+      <trkpt lat="47.021088" lon="6.956534"/>
+      <trkpt lat="47.020528" lon="6.955959"/>
+      <trkpt lat="47.019888" lon="6.955664"/>
+      <trkpt lat="47.019274" lon="6.954831"/>
+      <trkpt lat="47.018596" lon="6.953722"/>
+      <trkpt lat="47.018124" lon="6.953158"/>
+      <trkpt lat="47.017693" lon="6.952588"/>
+      <trkpt lat="47.017306" lon="6.952165"/>
+      <trkpt lat="47.017202" lon="6.952575"/>
+      <trkpt lat="47.017255" lon="6.953412"/>
+      <trkpt lat="47.017142" lon="6.953701"/>
+      <trkpt lat="47.016771" lon="6.953742"/>
+      <trkpt lat="47.016504" lon="6.954099"/>
+      <trkpt lat="47.016223" lon="6.954281"/>
+      <trkpt lat="47.015927" lon="6.954488"/>
+      <trkpt lat="47.015695" lon="6.955108"/>
+      <trkpt lat="47.015385" lon="6.955163"/>
+      <trkpt lat="47.014955" lon="6.954741"/>
+      <trkpt lat="47.014670" lon="6.954921"/>
+      <trkpt lat="47.014659" lon="6.955998"/>
+      <trkpt lat="47.014187" lon="6.956639"/>
+      <trkpt lat="47.013940" lon="6.957178"/>
+      <trkpt lat="47.013885" lon="6.957893"/>
+      <trkpt lat="47.013686" lon="6.958549"/>
+      <trkpt lat="47.013104" lon="6.958839"/>
+      <trkpt lat="47.012434" lon="6.958331"/>
+      <trkpt lat="47.011876" lon="6.957962"/>
+      <trkpt lat="47.011634" lon="6.958438"/>
+      <trkpt lat="47.011852" lon="6.959347"/>
+      <trkpt lat="47.012207" lon="6.959859"/>
+      <trkpt lat="47.011784" lon="6.959998"/>
+      <trkpt lat="47.011537" lon="6.960049"/>
+      <trkpt lat="47.011246" lon="6.959684"/>
+      <trkpt lat="47.011337" lon="6.960376"/>
+      <trkpt lat="47.011410" lon="6.961101"/>
     </trkseg>
   </trk>
 </gpx>
