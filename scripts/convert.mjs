@@ -92,8 +92,9 @@ const plain = (d) => {
     .trim();
 };
 
-const pt = (tag, [lon, lat], name, desc) =>
+const pt = (tag, [lon, lat, ele], name, desc) =>
   `  <${tag} lat="${lat.toFixed(6)}" lon="${lon.toFixed(6)}">\n` +
+  (ele ? `    <ele>${Math.round(ele)}</ele>\n` : "") +
   `    <name>${esc(name)}</name>\n` +
   (desc ? `    <desc>${esc(desc)}</desc>\n` : "") +
   `  </${tag}>`;

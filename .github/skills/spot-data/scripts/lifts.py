@@ -3,8 +3,9 @@
     python3 lifts.py 46.79,9.19,46.90,9.32            # bbox: S,W,N,E
     python3 lifts.py 46.79,9.19,46.90,9.32 --ele      # add elevations (slower)
 
-The higher endpoint is the top station, which is where a main spot pin goes.
-Never guess which end that is from the map: query it.
+The lower endpoint is the valley station, which is where a main spot pin goes;
+the higher one becomes a grey waypoint. Never guess which end is which from the
+map: query it.
 """
 
 import sys

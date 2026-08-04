@@ -76,7 +76,7 @@ Right-click the spot on [openstreetmap.org](https://www.openstreetmap.org/) and 
 ```xml
 <Placemark>
   <name>Somewhere Nice [30 CHF]</name>
-  <description><![CDATA[<b>Top station 1800 m</b><br/><br/>
+  <description><![CDATA[<b>Somewhere 1200 m - valley station of the gondola</b><br/><br/>
     <b>Trails</b><br/>Two red descents and a blue flow line.<br/><br/>
     <b>Getting up / price</b><br/>Day pass 30 CHF, free with the Magic
     Pass.<br/><br/>
@@ -112,7 +112,7 @@ Drop the brackets and the pin still appears on the map, but it will not get a si
 
 Keep the five sections in this order. It is HTML inside `<![CDATA[ ... ]]>`, so write `&gt;` rather than a bare `>` if you want an arrow.
 
-1. **Bold first line** - what the pin actually marks (`Berneuse 2048 m - top of the gondola`).
+1. **Bold first line** - what the pin actually marks. The main pin sits at the bottom of the main lift, so it reads `Leysin 1263 m - valley station of the Berneuse gondola`; the grey waypoint at the other end reads `Berneuse 2048 m - top of the gondola`.
 2. **Trails** - what the riding is like. This comes first because it is the reason to go; it is the part worth writing well.
 3. **Getting up / price** - the pass, what it costs, season dates, whether the Magic Pass covers it.
 4. **Open season** - explicitly state when the spot opens and the first date it is closed. Say whether these are published dates or a typical estimate. For every bike park or mechanical uplift, add a non-bold `Daily opening hours: 09:00-17:00` line followed by a small note saying whether the hours are published or estimated.
@@ -212,7 +212,7 @@ python3 trails.py 46.14,6.65,46.18,6.71         # mapped MTB descents
 python3 trails.py 46.14,6.65,46.18,6.71 --id 220753196   # one, as KML
 ```
 
-`lifts.py --ele` is what tells you which end of a lift is the top station - that is where a main pin goes, and it is not guessable from the map. `trails.py` pulls geometry from OpenStreetMap, simplifies it and refuses to emit a relation that is a circuit rather than one descent.
+`lifts.py --ele` is what tells you which end of a lift is the valley station - that is where the main pin goes. Top stations, mid-stations and secondary lift stations are grey waypoints. `trails.py` pulls geometry from OpenStreetMap, simplifies it and refuses to emit a relation that is a circuit rather than one descent.
 
 > [!TIP]
 >

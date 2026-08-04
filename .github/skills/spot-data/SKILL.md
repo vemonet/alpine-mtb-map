@@ -1,6 +1,6 @@
 ---
 name: spot-data
-description: Find the exact coordinates for a new spot in alpine-mtb-map.kml (lift top and valley stations, verified by altitude) and pull downhill trail geometry out of OpenStreetMap as ready-to-paste KML. Use when adding or correcting a spot, a waypoint or a trail line.
+description: Find the exact coordinates for a new spot in alpine-mtb-map.kml (lift valley and top stations, verified by altitude) and pull downhill trail geometry out of OpenStreetMap as ready-to-paste KML. Use when adding or correcting a spot, a waypoint or a trail line.
 ---
 
 # Getting spot coordinates and trail traces
@@ -17,7 +17,7 @@ python3 trails.py 46.14,6.65,46.18,6.71
 
 ## 1. Coordinates for a spot
 
-**The rule this map follows:** the main pin marks the **top station of the lift you ride up** - where the descent starts - not the resort, not the village, not the ticket office. Valley stations, mid-stations and the tops of secondary lifts become grey `#placemark-gray` waypoints on the same `spot` id.
+**The rule this map follows:** the main pin marks the **bottom of the lift you ride up** (main valley station). If no lift, then pin where the descent starts. Mid-stations and the tops of lifts become grey `#placemark-gray` waypoints on the same `spot` id.
 
 ### Step 1 - bounding box
 
@@ -33,7 +33,7 @@ python3 lifts.py 46.74,6.31,46.79,6.40 --ele
 chair_lift  Morond    A 46.76762,6.35656 (1021 m)  B 46.75137,6.35364 (1411 m)
 ```
 
-Each lift prints both endpoints. **The higher one is the top station.** This is the whole point of `--ele`: which end is the top is not guessable from the map, and getting it backwards is the single most common error. Gondolas built in sections appear as separate ways (`Asitzbahn I`, `Asitzbahn II`) - chain them mentally, the top of the last section is the summit.
+Each lift prints both endpoints. **The lower one is the valley station** - that is where the main pin goes, and the higher one becomes a grey waypoint. This is the whole point of `--ele`: which end is which is not guessable from the map, and getting it backwards is the single most common error. Gondolas built in sections appear as separate ways (`Asitzbahn I`, `Asitzbahn II`) - chain them mentally, the bottom of the first section is the valley station.
 
 Without `--ele` the query is much faster; use it to see what exists, then re-run with `--ele` once you know which lifts matter.
 
@@ -45,11 +45,11 @@ KML is **`longitude,latitude,0`** - the opposite order from everything the scrip
 <Point><coordinates>6.353640,46.751370,0</coordinates></Point>
 ```
 
-Quote the altitude you measured in the description's bold first line (`Morond 1410 m - top of the Morond chairlift`), rounded to 5 or 10 m. Do not copy an altitude off the resort's marketing page; they round up.
+Quote the altitude you measured in the description's bold first line (`Metabief 1021 m - valley station of the Morond chairlift`), rounded to 5 or 10 m. Use the same wording on the grey waypoint for the other end (`Morond 1410 m - top of the Morond chairlift`). Do not copy an altitude off the resort's marketing page; they round up.
 
 ### Step 4 - look at it
 
-Run `vp dev`, click the spot in the sidebar, and check the pin lands on the dashed aerialway line at the point where the lift ends. A pin floating in a blank hillside means you took a mid-cable node.
+Run `vp dev`, click the spot in the sidebar, and check the pin lands on the dashed aerialway line where the lift starts, next to the road or the parking. A pin floating in a blank hillside means you took a mid-cable node, and a pin on the ridge means you took the wrong endpoint.
 
 ### If the lift is not an aerialway
 

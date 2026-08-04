@@ -75,6 +75,8 @@ function parseKml(text) {
       closedFrom: facet(pm, "closed_from"),
       type: point ? "point" : "line",
       coords: geom ? parseCoords(text_(geom, "coordinates")) : [],
+      elevation:
+        geom && point ? Number.parseFloat(text_(geom, "coordinates").split(",")[2]) || 0 : 0,
     };
   });
 }
@@ -264,12 +266,16 @@ for (const p of places) {
       closedFrom: "",
       weather: null,
       places: [],
+      weatherPlace: null,
       group: L.layerGroup().addTo(map),
     };
     spots.set(key, spot);
   }
   spot.group.addLayer(layer);
   spot.places.push({ layer, place: p });
+  if (p.type === "point" && (!spot.weatherPlace || p.elevation > spot.weatherPlace.elevation)) {
+    spot.weatherPlace = p;
+  }
   if (p.type === "line") lineLayers.push({ layer, spot, place: p, color: lineColor });
   spot.searchText += ` ${p.name} ${p.description}`.toLocaleLowerCase();
   layer.bindPopup(() => weatherPopup(p, spot), { maxWidth: 360 });
@@ -469,7 +475,7 @@ const dateButton = document.getElementById("open-date-button");
 // window, leaving room to show three days on either side of the selected date.
 const WEATHER_API = "https://api.open-meteo.com/v1/forecast";
 const WEATHER_BATCH_SIZE = 40;
-const WEATHER_CACHE_KEY = "alpine-mtb-weather-v1";
+const WEATHER_CACHE_KEY = "alpine-mtb-weather-v2";
 const WEATHER_CACHE_TTL = 6 * 60 * 60 * 1000;
 const WEATHER_RAIN_MM = 1;
 const WEATHER_PREVIOUS_DAY_MM = 5;
@@ -664,8 +670,22 @@ const saveWeatherCache = () => {
 
 const fetchWeatherBatch = async (batch, request) => {
   const params = new URLSearchParams({
-    latitude: batch.map((entry) => entry.layer.getLatLng().lat.toFixed(5)).join(","),
-    longitude: batch.map((entry) => entry.layer.getLatLng().lng.toFixed(5)).join(","),
+    latitude: batch
+      .map((entry) =>
+        (entry.spot.weatherPlace
+          ? entry.spot.weatherPlace.coords[0][0]
+          : entry.layer.getLatLng().lat
+        ).toFixed(5),
+      )
+      .join(","),
+    longitude: batch
+      .map((entry) =>
+        (entry.spot.weatherPlace
+          ? entry.spot.weatherPlace.coords[0][1]
+          : entry.layer.getLatLng().lng
+        ).toFixed(5),
+      )
+      .join(","),
     daily:
       "weather_code,temperature_2m_max,temperature_2m_min,precipitation_sum,precipitation_probability_max",
     past_days: "3",
