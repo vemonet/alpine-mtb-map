@@ -219,8 +219,8 @@ python3 trails.py 46.14,6.65,46.18,6.71 --id 220753196   # one, as KML
 > To use them with other coding agents:
 >
 > ```sh
-> mkdir -p .agents/skills && ln -s ../../.github/skills/spot-data .agents/skills/spot-data
-> mkdir -p .claude/skills && ln -s ../../.github/skills/spot-data .claude/skills/spot-data
+> mkdir -p .agents/skills && ln -sfn ../../.github/skills/spot-data .agents/skills/spot-data
+> mkdir -p .claude/skills && ln -sfn ../../.github/skills/spot-data .claude/skills/spot-data
 > ```
 
 ### 7. Adding a trail line

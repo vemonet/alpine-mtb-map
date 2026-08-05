@@ -246,6 +246,10 @@ for (const p of places) {
       ? L.marker(p.coords[0], {
           icon: pinIcon(p.kind),
           title: p.name,
+          // Leaflet stacks markers by latitude, so a secondary grey pin can end
+          // up over its own spot's main pin. Push the grey ones far enough down
+          // that they always sit behind every main pin, at any zoom.
+          zIndexOffset: p.kind === "minor" ? -100000 : 0,
         })
       : L.polyline(p.coords, {
           color: TRAIL_COLORS[p.styleUrl] ?? TRAIL_COLOR,
