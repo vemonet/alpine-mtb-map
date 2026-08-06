@@ -560,8 +560,7 @@
       <h2>About this map</h2>
       <p>
         A curated map of gravity mountain-biking spots worldwide: where to ride, what the lift
-        costs, and whether it will be dry. Pick a destination first, worry about individual trails
-        later.
+        costs, and whether it will be dry.
       </p>
       <ul class="about-features">
         <li>
@@ -603,8 +602,8 @@
             <path d="M2.5 11.5v1a1.5 1.5 0 0 0 1.5 1.5h8a1.5 1.5 0 0 0 1.5-1.5v-1" />
           </svg>
           <span>
-            <b>Take it offline.</b> Download the whole map as KML, GPX or GeoJSON and open it in
-            <a href="https://www.comaps.app/" target="_blank" rel="noopener">CoMaps</a>,
+            <b>Take it offline.</b> Download the whole map as KML, GPX or GeoJSON in one click, and
+            open it in <a href="https://www.comaps.app/" target="_blank" rel="noopener">CoMaps</a>,
             <a href="https://organicmaps.app/" target="_blank" rel="noopener">Organic Maps</a>
             or OsmAnd. This site is just a convenient way to browse the same file.
           </span>
@@ -652,8 +651,8 @@
           Sites like Trailforks are useful, but the good riding gets lost in the noise: filters do
           not narrow enough, and many mapped routes are uninteresting dirt roads or impractical
           hiking trails tagged for MTB, sometimes closer to alpinism than mountain biking. And these
-          sites ask for a subscription to access their data (mostly pulled for free from OSM), which
-          is a barrier to sharing and offline use. This map is curated, free and open.
+          sites ask for a subscription to access their data, which is a barrier to sharing and
+          offline use. This map is curated, free and open.
         </p>
       </details>
       <details class="about-details">
@@ -666,7 +665,8 @@
             >
             MTB route relations, pulled via
             <a href="https://overpass-turbo.eu/" target="_blank" rel="noopener">Overpass</a> and
-            simplified. Indicative only: follow the signs on the ground, not the trace.
+            simplified, or from the operator's website. Indicative only: follow the signs on the
+            ground, not the trace.
           </li>
           <li>
             <b>Lift prices, opening dates, daily hours and travel times</b> compiled from the
@@ -704,13 +704,70 @@
         </p>
       </details>
       <details class="about-details">
-        <summary><h3>Natural trail grading: T and E</h3></summary>
+        <summary><h3>Trail grading</h3></summary>
         <p>
-          Ratings such as <b>T5 / E2</b> combine two independent VTTour scales. <b>T</b> describes
-          how technically difficult the riding is; <b>E</b> describes how serious the consequences
-          of a fall are. T5 / E2 therefore means extremely difficult riding on a narrow trail with
-          some obstacles, but without the severe cliff exposure of E3 or E4. Ratings assume dry
-          conditions and remain subjective.
+          Trail colours are set by each operator, and the same colour means different things in
+          different parts of the world. Europe uses four colours; North America splits the top end
+          into black and double black instead; Japanese resorts mostly carry over their three-colour
+          ski grading. Rough equivalences:
+        </p>
+        <table class="grade-table wide">
+          <caption>
+            Colour equivalences
+          </caption>
+          <thead>
+            <tr>
+              <th>Level</th>
+              <th>Europe</th>
+              <th>North America</th>
+              <th>Japan</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th>Easy</th>
+              <td>Green</td>
+              <td>Green circle</td>
+              <td>Green</td>
+            </tr>
+            <tr>
+              <th>Intermediate</th>
+              <td>Blue</td>
+              <td>Blue square</td>
+              <td>Red</td>
+            </tr>
+            <tr>
+              <th>Advanced</th>
+              <td>Red</td>
+              <td>Black diamond</td>
+              <td>Black</td>
+            </tr>
+            <tr>
+              <th>Very difficult</th>
+              <td>Black</td>
+              <td>Double black diamond</td>
+              <td>Black</td>
+            </tr>
+            <tr>
+              <th>Extreme</th>
+              <td>Double black or orange</td>
+              <td>Pro line, often orange</td>
+              <td>-</td>
+            </tr>
+          </tbody>
+        </table>
+        <p>
+          Treat this as indicative only: a red in one valley rides like a black in the next, and
+          bike parks grade against their own network rather than a national standard. New Zealand
+          uses numbered grades 1 to 6 instead of colours. The trail lines on this map keep the
+          colour of the source data.
+        </p>
+        <h4>Natural trails: T and E</h4>
+        <p>
+          Ratings such as <b>T5 / E2</b> combine two independent VTTour scales. <b>T</b> is how
+          technically difficult the riding is; <b>E</b> is how bad a fall would be. T5 / E2 is
+          therefore extremely difficult riding on a narrow trail with some obstacles, but without
+          the cliff exposure of E3 or E4. Both assume dry conditions and stay subjective.
         </p>
         <table class="grade-table">
           <caption>
@@ -789,10 +846,14 @@
       </details>
       <h3>Contributing</h3>
       <p>
-        Spots are missing, and prices go stale. Add yours to
-        <code>public/alpine-mtb-map.kml</code>, check it renders with
-        <code>vp i &amp;&amp; vp dev</code>, and send a pull request. The README has a template and
-        the tag reference.
+        Help improve the map by adding or updating spots:
+        <a href="https://github.com/vemonet/alpine-mtb-map/blob/main/public/alpine-mtb-map.kml"
+          ><code>public/alpine-mtb-map.kml</code></a
+        >, check it renders, and send a pull request. See
+        <a href="https://github.com/vemonet/alpine-mtb-map/blob/main/CONTRIBUTING.md"
+          ><code>CONTRIBUTING.md</code></a
+        >
+        for details.
       </p>
       <div class="about-buttons">
         <a

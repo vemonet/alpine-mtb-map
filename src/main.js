@@ -126,7 +126,24 @@ const DEFAULT_VIEW = [46.2, 8.0];
 const DEFAULT_ZOOM = 7;
 const DEFAULT_MAP_LAYER = "OpenStreetMap";
 const MAP_LAYER_STORAGE_KEY = "mapLayer";
-const map = L.map("map", { scrollWheelZoom: true }).setView(DEFAULT_VIEW, DEFAULT_ZOOM);
+
+// ?spot= / ?trace= are read before the map exists so the very first frame is
+// already over the requested place: opening on the default view and moving
+// afterwards costs a visible jump and a round of tile loads for the Alps.
+const requestedUrl = new URL(window.location.href);
+const requestedTrace = requestedUrl.searchParams.get("trace");
+const requestedSpot = requestedUrl.searchParams.get("spot");
+const requestedInitialPlace = requestedTrace
+  ? places.find((p) => p.type === "line" && p.name === requestedTrace)
+  : requestedSpot &&
+    places.find((p) => p.type === "point" && p.kind !== "minor" && p.spot === requestedSpot);
+const initialView = requestedInitialPlace
+  ? [
+      requestedInitialPlace.coords[Math.floor(requestedInitialPlace.coords.length / 2)],
+      requestedInitialPlace.type === "line" ? 14 : 12,
+    ]
+  : [DEFAULT_VIEW, DEFAULT_ZOOM];
+const map = L.map("map", { scrollWheelZoom: true }).setView(...initialView);
 
 const attribution =
   '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors';
@@ -419,7 +436,11 @@ map.on("popupclose", () => {
 });
 
 const showEntry = (entry, animate = true) => {
-  map.flyTo(entry.layer.getLatLng(), 12, { duration: animate ? 0.6 : 0 });
+  const latlng = entry.layer.getLatLng();
+  // flyTo treats duration 0 as "unset" and falls back to its own easing, so an
+  // unanimated jump has to go through setView.
+  if (animate) map.flyTo(latlng, 12, { duration: 0.6 });
+  else map.setView(latlng, 12, { animate: false });
   entry.layer.openPopup();
 };
 
@@ -432,6 +453,59 @@ const showTrace = ({ layer }, animate = true) => {
   });
   layer.openPopup();
 };
+
+// A trace is drawn in the order its LineString is stored, which for these is
+// the riding direction. One small chevron at the first vertex says which way
+// that is without turning the line itself into a dashed arrow pattern.
+//
+// Arrows are markers, so they are built only for the traces actually on screen
+// and only once zoomed in far enough to be riding a line rather than browsing
+// the map: at world zoom there would be hundreds of them and they would read as
+// noise. Everything is rebuilt on move, zoom and filter rather than kept in
+// sync, which is cheap at these counts and cannot drift.
+const ARROW_MIN_ZOOM = 12;
+// How far along the line to look for the heading. Shorter than this and a stray
+// first vertex points the arrow the wrong way on a switchback.
+const ARROW_HEADING_PX = 12;
+const traceArrows = L.layerGroup().addTo(map);
+
+const arrowIcon = (color, angle) =>
+  L.divIcon({
+    className: "",
+    html: `<div class="trace-arrow" style="transform:rotate(${angle}deg)"><svg viewBox="0 0 12 12" width="12" height="12" aria-hidden="true"><path d="M2.5 1.5 L9.5 6 L2.5 10.5 Z" fill="${color}" stroke="#fff" stroke-width="1.5" stroke-linejoin="round" paint-order="stroke"/></svg></div>`,
+    iconSize: [12, 12],
+    iconAnchor: [6, 6],
+  });
+
+const updateTraceArrows = () => {
+  traceArrows.clearLayers();
+  if (map.getZoom() < ARROW_MIN_ZOOM) return;
+  const view = map.getBounds();
+  for (const { layer, place } of lineLayers) {
+    if (!map.hasLayer(layer) || !view.intersects(layer.getBounds())) continue;
+    const pts = layer.getLatLngs();
+    if (pts.length < 2) continue;
+    const start = map.latLngToLayerPoint(pts[0]);
+    let heading = null;
+    for (let i = 1; i < pts.length; i++) {
+      const p = map.latLngToLayerPoint(pts[i]);
+      if (p.distanceTo(start) >= ARROW_HEADING_PX) {
+        heading = p;
+        break;
+      }
+    }
+    heading ??= map.latLngToLayerPoint(pts[pts.length - 1]);
+    const angle = (Math.atan2(heading.y - start.y, heading.x - start.x) * 180) / Math.PI;
+    L.marker(pts[0], {
+      icon: arrowIcon(TRAIL_COLORS[place.styleUrl] ?? TRAIL_COLOR, angle),
+      interactive: false, // never steal a click from the line it sits on
+      keyboard: false,
+      zIndexOffset: -200000, // decoration: below every pin, including the grey ones
+    }).addTo(traceArrows);
+  }
+};
+
+map.on("moveend zoomend", updateTraceArrows);
 
 const traceEntries = lineLayers.map(({ layer, spot, place, color }) => ({
   name: place.name,
@@ -456,14 +530,12 @@ const addResultRow = (entry, show) => {
 for (const entry of entries) addResultRow(entry, showEntry);
 for (const entry of traceEntries) addResultRow(entry, showTrace);
 
-const requestedUrl = new URL(window.location.href);
-const requestedTrace = requestedUrl.searchParams.get("trace");
-const requestedSpot = requestedUrl.searchParams.get("spot");
 const requestedEntry = requestedSpot && spots.get(requestedSpot)?.entry;
 if (requestedTrace) {
-  const trace = places.find((place) => place.type === "line" && place.name === requestedTrace);
-  const requestedPlace = trace
-    ? [...spots.values()].flatMap((spot) => spot.places).find(({ place }) => place === trace)
+  const requestedPlace = requestedInitialPlace
+    ? [...spots.values()]
+        .flatMap((spot) => spot.places)
+        .find(({ place }) => place === requestedInitialPlace)
     : null;
   if (requestedPlace) requestAnimationFrame(() => showTrace(requestedPlace, false));
 } else if (requestedEntry) requestAnimationFrame(() => showEntry(requestedEntry, false));
@@ -995,6 +1067,7 @@ const applyFilters = () => {
   ];
   if (hiddenLabels.length) restoreHiddenTracesButton.title = hiddenLabels.join("\n");
   else restoreHiddenTracesButton.removeAttribute("title");
+  updateTraceArrows();
 };
 
 for (const chip of chips) {

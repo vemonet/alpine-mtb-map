@@ -190,6 +190,12 @@ body {
   font-size: 14px;
 }
 
+/* Sub-heading inside an open <details>, one step quieter than its summary. */
+#about h4 {
+  margin: 16px 0 6px;
+  font-size: 13px;
+}
+
 #about p,
 #about li {
   margin: 0 0 8px;
@@ -253,6 +259,12 @@ body {
 .grade-table th {
   width: 28px;
   color: var(--fg);
+}
+
+/* The colour-equivalence table has a real header row and word labels in the
+   first column, so the narrow badge width the T/E tables want does not apply. */
+.grade-table.wide th {
+  width: auto;
 }
 
 /* The dialog sits on the themed sidebar background, not on map tiles, so
@@ -1145,6 +1157,15 @@ a.dl:hover {
 .weather-table tr.selected {
   background: rgb(7 89 133 / 10%);
   font-weight: 600;
+}
+
+/* Direction chevron at the first vertex of a trace. Decoration only: it must
+   never take a pointer event away from the line underneath it. */
+.trace-arrow {
+  width: 12px;
+  height: 12px;
+  opacity: 0.85;
+  pointer-events: none;
 }
 
 .pin {
