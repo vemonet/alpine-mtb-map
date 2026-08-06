@@ -1,11 +1,12 @@
 #!/usr/bin/env node
-// Regenerate public/alpine-mtb-map.geojson and public/alpine-mtb-map.gpx.
+// Regenerate public/alpine-mtb-map.geojson, public/alpine-mtb-map.gpx, and public/alpine-mtb-map.kmz.
 //   npm run convert
 // The KML stays the source of truth - never edit the generated files by hand.
 
 import { readFileSync, writeFileSync } from "node:fs";
 import { DOMParser } from "@xmldom/xmldom";
 import { kml } from "@tmcw/togeojson";
+import { zipSync, strToU8 } from "fflate";
 
 const SRC = "public/alpine-mtb-map.kml";
 const BASE = SRC.replace(/\.kml$/, "");
@@ -132,7 +133,13 @@ ${parts.join("\n")}
 `,
 );
 
+// ------------------------------------------------------------------- kmz ---
+// KMZ is a ZIP archive containing doc.kml. Garmin, Google Earth, etc. prefer
+// it over raw KML because it is a single smaller file.
+const kmlBytes = strToU8(readFileSync(SRC, "utf8"));
+writeFileSync(`${BASE}.kmz`, zipSync({ "doc.kml": kmlBytes }, { level: 6 }));
+
 const wpts = geojson.features.filter((f) => f.geometry?.type === "Point").length;
 console.log(
-  `${BASE}.geojson + ${BASE}.gpx: ${wpts} waypoints, ${geojson.features.length - wpts} tracks`,
+  `${BASE}.geojson + ${BASE}.gpx + ${BASE}.kmz: ${wpts} waypoints, ${geojson.features.length - wpts} tracks`,
 );
