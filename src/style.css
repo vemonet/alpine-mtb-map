@@ -1025,6 +1025,37 @@ a.dl:hover {
 .tag-badge.tag-shuttle {
   background: #b8d8f0;
 }
+.tag-badge.tag-chairlift {
+  background: #cfe0f5;
+}
+.tag-badge.tag-gondola {
+  background: #cfe0f5;
+}
+.tag-badge.tag-train {
+  background: #cfe0f5;
+}
+.tag-badge.tag-t-bar {
+  background: #cfe0f5;
+}
+/* Access badges carry the same icon as their filter checkbox. */
+.tag-badge.tag-no-lift::before {
+  content: "🚴 ";
+}
+.tag-badge.tag-chairlift::before {
+  content: "🚡 ";
+}
+.tag-badge.tag-gondola::before {
+  content: "🚠 ";
+}
+.tag-badge.tag-train::before {
+  content: "🚂 ";
+}
+.tag-badge.tag-shuttle::before {
+  content: "🛻 ";
+}
+.tag-badge.tag-t-bar::before {
+  content: "⚓ ";
+}
 .tag-badge.tag-season {
   background: #c0e8b8;
 }

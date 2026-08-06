@@ -455,8 +455,10 @@ const showTrace = ({ layer }, animate = true) => {
 };
 
 // A trace is drawn in the order its LineString is stored, which for these is
-// the riding direction. One small chevron at the first vertex says which way
-// that is without turning the line itself into a dashed arrow pattern.
+// the riding direction. Small chevrons at the first vertex and at the halfway
+// point say which way that is without turning the line itself into a dashed
+// arrow pattern. The middle one is what you see when you are zoomed in on the
+// body of a trail and its trailhead is off screen.
 //
 // Arrows are markers, so they are built only for the traces actually on screen
 // and only once zoomed in far enough to be riding a line rather than browsing
@@ -464,8 +466,7 @@ const showTrace = ({ layer }, animate = true) => {
 // noise. Everything is rebuilt on move, zoom and filter rather than kept in
 // sync, which is cheap at these counts and cannot drift.
 const ARROW_MIN_ZOOM = 12;
-// How far along the line to look for the heading. Shorter than this and a stray
-// first vertex points the arrow the wrong way on a switchback.
+// How far along the line to look before the bearing is trusted.
 const ARROW_HEADING_PX = 12;
 const traceArrows = L.layerGroup().addTo(map);
 
@@ -477,6 +478,25 @@ const arrowIcon = (color, angle) =>
     iconAnchor: [6, 6],
   });
 
+// Below this on-screen length the two arrows would sit on top of each other, so
+// a short trace keeps only the one at its start.
+const ARROW_MID_MIN_PX = 60;
+
+// Heading at a point on the line: look forward until the line has moved far
+// enough to trust the bearing, otherwise a stray vertex on a switchback points
+// the arrow the wrong way. Falls back to the last vertex on a stub.
+const headingAt = (pixels, from, at) => {
+  let ahead = null;
+  for (let i = at; i < pixels.length; i++) {
+    if (pixels[i].distanceTo(from) >= ARROW_HEADING_PX) {
+      ahead = pixels[i];
+      break;
+    }
+  }
+  ahead ??= pixels[pixels.length - 1];
+  return (Math.atan2(ahead.y - from.y, ahead.x - from.x) * 180) / Math.PI;
+};
+
 const updateTraceArrows = () => {
   traceArrows.clearLayers();
   if (map.getZoom() < ARROW_MIN_ZOOM) return;
@@ -485,23 +505,34 @@ const updateTraceArrows = () => {
     if (!map.hasLayer(layer) || !view.intersects(layer.getBounds())) continue;
     const pts = layer.getLatLngs();
     if (pts.length < 2) continue;
-    const start = map.latLngToLayerPoint(pts[0]);
-    let heading = null;
-    for (let i = 1; i < pts.length; i++) {
-      const p = map.latLngToLayerPoint(pts[i]);
-      if (p.distanceTo(start) >= ARROW_HEADING_PX) {
-        heading = p;
-        break;
-      }
-    }
-    heading ??= map.latLngToLayerPoint(pts[pts.length - 1]);
-    const angle = (Math.atan2(heading.y - start.y, heading.x - start.x) * 180) / Math.PI;
-    L.marker(pts[0], {
-      icon: arrowIcon(TRAIL_COLORS[place.styleUrl] ?? TRAIL_COLOR, angle),
-      interactive: false, // never steal a click from the line it sits on
-      keyboard: false,
-      zIndexOffset: -200000, // decoration: below every pin, including the grey ones
-    }).addTo(traceArrows);
+    const color = TRAIL_COLORS[place.styleUrl] ?? TRAIL_COLOR;
+    const pixels = pts.map((p) => map.latLngToLayerPoint(p));
+
+    const arrow = (latlng, angle) =>
+      L.marker(latlng, {
+        icon: arrowIcon(color, angle),
+        interactive: false, // never steal a click from the line it sits on
+        keyboard: false,
+        zIndexOffset: -200000, // decoration: below every pin, including the grey ones
+      }).addTo(traceArrows);
+
+    arrow(pts[0], headingAt(pixels, pixels[0], 1));
+
+    // Halfway by on-screen length, not by vertex count: the vertices of an
+    // imported trace bunch up in the corners and would drag the middle arrow
+    // towards whichever end was recorded in more detail.
+    const steps = pixels.slice(1).map((p, i) => p.distanceTo(pixels[i]));
+    const total = steps.reduce((a, b) => a + b, 0);
+    if (total < ARROW_MID_MIN_PX) continue;
+    let run = 0;
+    let seg = 0;
+    while (seg < steps.length - 1 && run + steps[seg] < total / 2) run += steps[seg++];
+    const t = steps[seg] ? (total / 2 - run) / steps[seg] : 0;
+    const mid = L.point(
+      pixels[seg].x + (pixels[seg + 1].x - pixels[seg].x) * t,
+      pixels[seg].y + (pixels[seg + 1].y - pixels[seg].y) * t,
+    );
+    arrow(map.layerPointToLatLng(mid), headingAt(pixels, mid, seg + 1));
   }
 };
 
@@ -527,8 +558,16 @@ const addResultRow = (entry, show) => {
   entry.row = li;
 };
 
-for (const entry of entries) addResultRow(entry, showEntry);
-for (const entry of traceEntries) addResultRow(entry, showTrace);
+// The KML lists placemarks grouped by spot, which puts the sidebar in an order
+// nobody can predict from the outside. Sort by name so a result can be found by
+// scanning, and fall back to the spot name so a trail name reused across resorts
+// still lands in a stable place.
+const byName = (a, b) =>
+  a.name.localeCompare(b.name, undefined, { sensitivity: "base", numeric: true }) ||
+  a.meta.localeCompare(b.meta, undefined, { sensitivity: "base" });
+
+for (const entry of [...entries].sort(byName)) addResultRow(entry, showEntry);
+for (const entry of [...traceEntries].sort(byName)) addResultRow(entry, showTrace);
 
 const requestedEntry = requestedSpot && spots.get(requestedSpot)?.entry;
 if (requestedTrace) {

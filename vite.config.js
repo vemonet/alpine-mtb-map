@@ -44,7 +44,7 @@ export default defineConfig({
         // The exports grow with every spot added; the GeoJSON passed Workbox's
         // 2 MiB default and failed the build. Raised so the data keeps being
         // precached rather than silently dropping out of the offline bundle.
-        maximumFileSizeToCacheInBytes: 8 * 1024 * 1024,
+        maximumFileSizeToCacheInBytes: 16 * 1024 * 1024,
         runtimeCaching: [
           {
             urlPattern: /^https:\/\/api\.open-meteo\.com\/v1\/forecast/,

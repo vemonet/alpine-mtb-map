@@ -17,6 +17,39 @@ A coordinate a few km off is still the single most common cause of an empty resu
 
 ---
 
+## Traces to add to OSM
+
+- [ ] Menton
+- [ ] Le Mouret
+- [ ] 1 in Biel ?
+
+## 0. Re-check pass, 2026-08-06
+
+**Nordic altitudes need `eudem25m`, not mapzen.** Near the Baltic, mapzen read Meri-Teijo's valley station at 24 m against EU-DEM's 10 m and its top at 62 m against 74 m - enough to make a 64 m hill look like a 38 m one. Cross-check any sub-100 m spot against a second dataset before quoting a figure.
+
+**Resolved as "do not add":**
+
+- **Bailey Mountain Bike Park** (NC) - **permanently closed**, announced as the end of a six-year run. It was the top-priced entry in the unplaced US list in section 1b; that entry is closed, not missing.
+- **Kungsbygget** (SE) - section 4 asked why its own lifts never came back. They never came back because it has none for biking: it is a natural-trail, flowtrail and pumptrack site, and the lift-served riding on Hallandsasen is **Vallasen, 6 km away and already on the map**.
+
+**Newly unblocked by this sweep, not yet checked for summer bike operation.** Each of these returned lifts once geocoded by name rather than by the directory's coordinate, so the "no lift returned" rows in section 3 are stale for them. This is the next batch of work:
+
+| Park | Lifts now found | Note |
+| --- | --- | --- |
+| Mount Abram (Maine) | 5, incl. the Skyline Double chairlift | Section 3 called it the best candidate for a third try; the third try worked |
+| Canaan Valley (West Virginia) | 10, incl. a 6-person chair |  |
+| bikeparkOE / Fahlenscheid (Olpe) | 3, Steinbrink I and II drag lifts | Section 1 could not tie the Sauerland trails to the park; the hill itself is now placed |
+| Bike park Bovec / Kanin (Slovenia) | 9, incl. the Kanin cable car | Section 1 noted the cable car was mapped as a closed loop; the endpoints resolve from Bovec |
+| Calabria Bike Resort / Lorica (Italy) | 4, incl. the Funivia Lorica | Section 1 found "1 feature, then nothing" - at the wrong place |
+| San Domenico (Italy) | 7, incl. the Ciamporino cable car |  |
+| Bygdsiljumbacken (Sweden) | 5 drag lifts |  |
+| Akersjon (Sweden) | 1 drag lift | Already on the map as `no-lift` with an explicit "unconfirmed" note - the lift exists |
+| Drozdovo (Slovakia) | 10 - but they are **Malino Brdo**, already on the map | The geocode resolves to a different Drozdovo; treat as unresolved, not as a match |
+
+Still returning nothing after a name-based geocode: **Kotecnik** (SI), **Taburno** (IT), **Muszyna** (PL), **Alfta** (SE). Nominatim has no entry at all for **Hanaslov**, **Kjerringasen**, **Bollekollen**, **Mount Shasta Ski Park** or **Murray Ridge** under those names, though Hanaslov is a real lift-served park with its own site (hanaslov.se) and is already on the map.
+
+---
+
 ## 1. Shuttle or pedal parks - IN SCOPE as of 2026-08-05, being worked through
 
 Genuine bike parks with no lift. These are no longer skipped; each needs an OSM-evidence pin via `verify_mtb.py` and then a `no-lift` spot.
@@ -125,9 +158,9 @@ Retried at least once with a corrected coordinate unless marked otherwise.
 
 | Park | Country | Why |
 | --- | --- | --- |
-| Trailpark Buková Hora | Czech Republic | Only nearby platters returned; the Čenkovice–Buková hora chairlift is absent from OSM. |
-| Pylypets Bike Park | Ukraine | Only t-bars returned; the Hymba chairlift the park actually uses is missing. |
-| Kungsbygget | Sweden | Query returned **Vallåsen's** lifts - the two resorts share Hallandsåsen. Vallåsen was added from that data; Kungsbygget's own lifts were never found. |
+| ~~Trailpark Buková Hora~~ | Czech Republic | **Resolved 2026-08-06 and added** - the Čenkovice–Buková hora chairlift is in OSM now. |
+| ~~Pylypets Bike Park~~ | Ukraine | **Resolved 2026-08-06 and added** - the Borzhava chairlift is in OSM now. |
+| ~~Kungsbygget~~ | Sweden | **Resolved 2026-08-06: it has no bike lift.** Natural trails, flowtrail and pumptrack only; the lift-served riding on Hallandsåsen is Vallåsen, already on the map. |
 | Gora Dolgaya (Гора Долгая) | Russia | 77 m chairlift found, but no confidence a bike park operates - the site is primarily a ski-jumping complex. |
 | Bike ToxoPark (Токсово) | Russia | Only three near-flat platters returned (~5 m of measured drop); Toksovo's real ski hill did not come back. |
 | Sender Bike Park (Aviemore) | United Kingdom | 2 tries. The Cairngorm funicular and pomas came back at the ski area; at the Aviemore geocode only one mtb way ("Jules's"). Cannot be placed either way. |
