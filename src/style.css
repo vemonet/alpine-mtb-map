@@ -869,20 +869,54 @@ a.dl:hover {
   border-top: 1px solid var(--line);
 }
 
-#map {
+/* The card is positioned against the map, not the window, so it stays in the
+   map's own corner whether or not the sidebar is open. */
+#map-area {
+  position: relative;
   flex: 1;
+  min-width: 0;
   height: 100%;
 }
 
-.leaflet-popup-content {
-  max-height: 55vh;
-  overflow-y: auto;
-  font-size: 13.5px;
+#map {
+  width: 100%;
+  height: 100%;
 }
 
-.leaflet-popup-content h3 {
+#place-card {
+  position: absolute;
+  /* Over the Leaflet controls, which sit at 800-1000. */
+  z-index: 1100;
+  top: 10px;
+  left: 10px;
+  width: 330px;
+  max-width: calc(100% - 20px);
+  /* Leave a strip of map below it: a full-height card reads as a second
+     sidebar rather than a detail panel. */
+  max-height: min(70%, calc(100% - 20px));
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--bg);
+  box-shadow: 0 6px 24px rgb(0 0 0 / 22%);
+}
+
+#place-card[hidden] {
+  display: none;
+}
+
+#place-card-body {
+  overflow-y: auto;
+  padding: 12px 14px;
+  font-size: 13.5px;
+  overscroll-behavior: contain;
+}
+
+#place-card-body h3 {
   margin: 0 0 6px;
-  padding-right: 46px;
+  /* Clear of the three tool buttons in the corner. */
+  padding-right: 74px;
   font-size: 15px;
 }
 
@@ -917,12 +951,16 @@ a.dl:hover {
   color: #ddd;
 }
 
-.leaflet-popup-share-button,
-.leaflet-popup-hide-button {
+.place-card-tools {
   position: absolute;
   z-index: 1;
-  top: 0;
-  right: 24px;
+  top: 8px;
+  right: 8px;
+  display: flex;
+  gap: 2px;
+}
+
+.place-card-tools button {
   width: 24px;
   height: 24px;
   padding: 0;
@@ -930,35 +968,32 @@ a.dl:hover {
   align-items: center;
   justify-content: center;
   border: 0;
+  border-radius: 4px;
   background: transparent;
   color: #757575;
   cursor: pointer;
 }
 
-.leaflet-popup-hide-button {
-  right: 48px;
+/* display:flex above would otherwise beat the user-agent rule for [hidden]. */
+.place-card-tools button[hidden] {
+  display: none;
 }
 
-.leaflet-popup-share-button:hover,
-.leaflet-popup-share-button:focus-visible,
-.leaflet-popup-hide-button:hover,
-.leaflet-popup-hide-button:focus-visible {
+.place-card-tools button:hover,
+.place-card-tools button:focus-visible {
   color: #333;
 }
 
-:root[data-theme="dark"] .leaflet-popup-share-button,
-:root[data-theme="dark"] .leaflet-popup-hide-button {
+:root[data-theme="dark"] .place-card-tools button {
   color: #aaa;
 }
 
-:root[data-theme="dark"] .leaflet-popup-share-button:hover,
-:root[data-theme="dark"] .leaflet-popup-share-button:focus-visible,
-:root[data-theme="dark"] .leaflet-popup-hide-button:hover,
-:root[data-theme="dark"] .leaflet-popup-hide-button:focus-visible {
+:root[data-theme="dark"] .place-card-tools button:hover,
+:root[data-theme="dark"] .place-card-tools button:focus-visible {
   color: #ddd;
 }
 
-.leaflet-popup-content hr {
+#place-card-body hr {
   border: 0;
   border-top: 1px solid #d4d4d4;
   margin: 10px 0;
@@ -1119,7 +1154,7 @@ a.dl:hover {
   opacity: 0.55;
 }
 
-.leaflet-popup-content .warn {
+#place-card-body .warn {
   margin: 0 0 12px;
   padding: 7px 9px;
   border-left: 3px solid #e8590c;
@@ -1127,20 +1162,20 @@ a.dl:hover {
   border-radius: 0 4px 4px 0;
 }
 
-.leaflet-popup-content table.access {
+#place-card-body table.access {
   border-collapse: collapse;
   margin: 6px 0 2px;
   font-size: 12.5px;
 }
 
-.leaflet-popup-content table.access th,
-.leaflet-popup-content table.access td {
+#place-card-body table.access th,
+#place-card-body table.access td {
   border: 1px solid #ccc;
   padding: 3px 8px;
   text-align: left;
 }
 
-.leaflet-popup-content table.access th {
+#place-card-body table.access th {
   background: rgba(0, 0, 0, 0.05);
   font-weight: 600;
 }
@@ -1294,7 +1329,34 @@ a.dl:hover {
     order: 2;
     overflow-y: visible;
   }
-  #map {
+  #map-area {
     flex: 1;
+  }
+  /* Not enough width for a corner card, and the top-left corner is where the
+     map is doing its work once the sidebar has taken 55% of the height. The
+     card becomes a sheet along the bottom edge instead. */
+  #place-card {
+    top: auto;
+    right: 8px;
+    bottom: 8px;
+    left: 8px;
+    width: auto;
+    max-height: min(60%, 320px);
+  }
+}
+
+/* Wide screens have map to spare, and the card's content is dense: access
+   tables, trail lists and a colour legend all read better with fewer line
+   breaks. The max-width above still caps it against the map, so this only
+   ever widens the card where there is room for it. */
+@media (min-width: 1280px) {
+  #place-card {
+    width: 400px;
+  }
+}
+
+@media (min-width: 1680px) {
+  #place-card {
+    width: 460px;
   }
 }

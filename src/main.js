@@ -143,7 +143,9 @@ const initialView = requestedInitialPlace
       requestedInitialPlace.type === "line" ? 14 : 12,
     ]
   : [DEFAULT_VIEW, DEFAULT_ZOOM];
-const map = L.map("map", { scrollWheelZoom: true }).setView(...initialView);
+// Zoom moves to the right: the top-left corner belongs to the details card.
+const map = L.map("map", { scrollWheelZoom: true, zoomControl: false }).setView(...initialView);
+L.control.zoom({ position: "topright" }).addTo(map);
 
 const attribution =
   '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors';
@@ -214,12 +216,6 @@ const tagBadges = (tags) => {
   return `<div class="tag-badges">${badges}</div>`;
 };
 
-const shareIcon = `<svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-  <circle cx="4" cy="8" r="1.5"/><circle cx="12" cy="3" r="1.5"/><circle cx="12" cy="13" r="1.5"/><path d="m5.3 7.2 5.4-3.4M5.3 8.8l5.4 3.4"/>
-</svg>`;
-const hideIcon = `<svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-  <path d="M1.5 8s2.4-4 6.5-4 6.5 4 6.5 4-2.4 4-6.5 4S1.5 8 1.5 8Z"/><circle cx="8" cy="8" r="2"/><path d="m2 2 12 12"/>
-</svg>`;
 const traceCountSummary = (spot) => {
   const counts = new Map();
   for (const { place } of spot.places) {
@@ -236,13 +232,11 @@ const traceCountSummary = (spot) => {
     .join('<span class="trace-count-separator"> · </span>');
 };
 
-const basePopup = (p, spot) => {
+// The share, hide and close buttons live in the card's own markup rather than
+// here: they must stay put while the description under them scrolls.
+const baseCard = (p, spot) => {
   const traceCounts = p.type === "point" ? traceCountSummary(spot) : "";
-  const hideButton =
-    p.type === "line"
-      ? `<button class="leaflet-popup-hide-button" type="button" title="Hide this trace" aria-label="Hide this trace">${hideIcon}</button>`
-      : "";
-  return `${hideButton}<button class="leaflet-popup-share-button" type="button" title="Share" aria-label="Share">${shareIcon}</button><h3>${p.name}</h3>${traceCounts ? `<div class="trace-counts">${traceCounts}</div>` : ""}${p.description || ""}`;
+  return `<h3>${p.name}</h3>${traceCounts ? `<div class="trace-counts">${traceCounts}</div>` : ""}${p.description || ""}`;
 };
 
 // A spot owns its main pin, its secondary pins and its trail lines: they are
@@ -299,15 +293,10 @@ for (const p of places) {
   }
   if (p.type === "line") lineLayers.push({ layer, spot, place: p, color: lineColor });
   spot.searchText += ` ${p.name} ${p.description}`.toLocaleLowerCase();
-  layer.bindPopup(() => weatherPopup(p, spot), { maxWidth: 360 });
-  layer.on("popupopen", () => {
-    activePopup = { place: p, spot };
-    setSelectedPlaceUrl(p, spot);
-    if (p.type === "line") selectLines([layer]);
-    else
-      selectLines(
-        spot.places.filter(({ place }) => place.type === "line").map(({ layer }) => layer),
-      );
+  layer.on("click", (event) => {
+    // Otherwise the same click reaches the map and closes the card again.
+    L.DomEvent.stopPropagation(event);
+    openPlaceCard(p, spot, layer);
   });
 
   // A spot's tag set is the union of its placemarks', plus two tags derived
@@ -325,7 +314,7 @@ for (const p of places) {
   // Main spot pins are the ones carrying a "[28 CHF]" summary in the name.
   const m = p.name.match(/^(.*?)\s*\[(.+)\]$/);
   if (p.type === "point" && m && p.kind !== "minor") {
-    const entry = { name: m[1], meta: m[2], kind: p.kind, layer, spot };
+    const entry = { name: m[1], meta: m[2], kind: p.kind, layer, spot, place: p };
     spot.entry = entry;
     entries.push(entry);
   }
@@ -339,7 +328,10 @@ requestAnimationFrame(() => {
 
 // -------------------------------------------------------------- sidebar ---
 const list = document.getElementById("spots");
-let activePopup = null;
+const placeCard = document.getElementById("place-card");
+const placeCardBody = document.getElementById("place-card-body");
+const placeCardHideButton = document.getElementById("place-card-hide");
+let activePlace = null;
 
 const placeUrl = (place, spot) => {
   const url = new URL(window.location.href);
@@ -383,18 +375,18 @@ const copyText = async (text) => {
   input.remove();
 };
 
-map.getContainer().addEventListener("click", async (event) => {
-  const hideButton = event.target.closest(".leaflet-popup-hide-button");
-  if (hideButton && activePopup?.place.type === "line") {
-    hiddenTraceIds.add(traceId(activePopup.place));
-    saveHiddenTraces();
-    map.closePopup();
-    applyFilters();
-    return;
-  }
-  const button = event.target.closest(".leaflet-popup-share-button");
-  if (!button || !activePopup) return;
-  const { place, spot } = activePopup;
+placeCardHideButton.addEventListener("click", () => {
+  if (activePlace?.place.type !== "line") return;
+  hiddenTraceIds.add(traceId(activePlace.place));
+  saveHiddenTraces();
+  closePlaceCard();
+  applyFilters();
+});
+
+document.getElementById("place-card-share").addEventListener("click", async (event) => {
+  if (!activePlace) return;
+  const button = event.currentTarget;
+  const { place, spot } = activePlace;
   const url = placeUrl(place, spot).toString();
   if (navigator.share) {
     try {
@@ -429,10 +421,31 @@ const clearSelectedLines = () => {
   selectedLines = [];
 };
 
-map.on("popupclose", () => {
-  activePopup = null;
+function openPlaceCard(place, spot, layer) {
+  activePlace = { place, spot, layer };
+  placeCardBody.innerHTML = cardContent(place, spot);
+  placeCardBody.scrollTop = 0;
+  placeCardHideButton.hidden = place.type !== "line";
+  placeCard.hidden = false;
+  setSelectedPlaceUrl(place, spot);
+  if (place.type === "line") selectLines([layer]);
+  else
+    selectLines(spot.places.filter(({ place }) => place.type === "line").map(({ layer }) => layer));
+}
+
+function closePlaceCard() {
+  if (!activePlace) return;
+  activePlace = null;
+  placeCard.hidden = true;
+  placeCardBody.innerHTML = "";
   clearSelectedPlaceUrl();
   clearSelectedLines();
+}
+
+document.getElementById("place-card-close").addEventListener("click", closePlaceCard);
+map.on("click", closePlaceCard);
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape") closePlaceCard();
 });
 
 const showEntry = (entry, animate = true) => {
@@ -441,17 +454,17 @@ const showEntry = (entry, animate = true) => {
   // unanimated jump has to go through setView.
   if (animate) map.flyTo(latlng, 12, { duration: 0.6 });
   else map.setView(latlng, 12, { animate: false });
-  entry.layer.openPopup();
+  openPlaceCard(entry.place, entry.spot, entry.layer);
 };
 
-const showTrace = ({ layer }, animate = true) => {
-  map.fitBounds(layer.getBounds(), {
+const showTrace = (entry, animate = true) => {
+  map.fitBounds(entry.layer.getBounds(), {
     animate,
     duration: animate ? 0.6 : 0,
     maxZoom: 15,
     padding: [30, 30],
   });
-  layer.openPopup();
+  openPlaceCard(entry.place, entry.spot, entry.layer);
 };
 
 // A trace is drawn in the order its LineString is stored, which for these is
@@ -572,9 +585,7 @@ for (const entry of [...traceEntries].sort(byName)) addResultRow(entry, showTrac
 const requestedEntry = requestedSpot && spots.get(requestedSpot)?.entry;
 if (requestedTrace) {
   const requestedPlace = requestedInitialPlace
-    ? [...spots.values()]
-        .flatMap((spot) => spot.places)
-        .find(({ place }) => place === requestedInitialPlace)
+    ? traceEntries.find((entry) => entry.place === requestedInitialPlace)
     : null;
   if (requestedPlace) requestAnimationFrame(() => showTrace(requestedPlace, false));
 } else if (requestedEntry) requestAnimationFrame(() => showEntry(requestedEntry, false));
@@ -592,6 +603,13 @@ const WEATHER_API = "https://api.open-meteo.com/v1/forecast";
 const WEATHER_BATCH_SIZE = 40;
 const WEATHER_CACHE_KEY = "alpine-mtb-weather-v2";
 const WEATHER_CACHE_TTL = 6 * 60 * 60 * 1000;
+// One uncached sweep is 20-odd requests. Firing them all at once means that by
+// the time the first 429 comes back the rest have already been spent, so the
+// sweep runs through a small pool instead and can be stopped mid-way.
+const WEATHER_CONCURRENCY = 4;
+// Remembered across reloads: without it a refresh spends the next allowance the
+// moment it is granted, which is how a minute-bucket 429 turns into a daily one.
+const WEATHER_LIMIT_KEY = "alpine-mtb-weather-retry-at";
 const WEATHER_RAIN_MM = 1;
 const WEATHER_PREVIOUS_DAY_MM = 5;
 const WEATHER_RAIN_PROBABILITY = 50;
@@ -618,6 +636,7 @@ const rainSensitivityOf = (spot) =>
 const weatherBtn = document.getElementById("weather");
 let weatherEnabled = true;
 let weatherRequest = 0;
+let weatherRetryAt = Number(localStorage.getItem(WEATHER_LIMIT_KEY)) || 0;
 
 const localDate = (date) => {
   const year = date.getFullYear();
@@ -695,14 +714,16 @@ const forecastRows = (weather) => {
     .join("");
 };
 
-function weatherPopup(place, spot) {
-  const content = basePopup(place, spot);
+function cardContent(place, spot) {
+  const content = baseCard(place, spot);
   const tags = tagBadges(new Set(place.tags));
   if (!weatherEnabled) return content;
   if (!spot.weather) {
     const status = weatherBtn.classList.contains("loading")
       ? "Loading forecast..."
-      : "Forecast unavailable.";
+      : Date.now() < weatherRetryAt
+        ? `Open-Meteo's request limit is reached, so this forecast was not fetched. Retrying ${retryLabel()}.`
+        : "Forecast unavailable.";
     return `${content}<section class="weather-forecast"><h4>Weather</h4><p>${status}</p><hr>${tags}</section>`;
   }
   const selectedDate = weatherDate();
@@ -728,10 +749,12 @@ const refreshWeatherPresentation = () => {
       pinIcon(entry.kind, weatherEnabled && Boolean(wetReason(entry.spot.weather, entry.spot))),
     );
   }
-  for (const spot of spots.values()) {
-    for (const { layer, place } of spot.places) {
-      if (layer.isPopupOpen()) layer.setPopupContent(weatherPopup(place, spot));
-    }
+  if (activePlace) {
+    // The forecast lands seconds after the card opens, so keep whatever the
+    // reader had scrolled to instead of snapping back to the title.
+    const scroll = placeCardBody.scrollTop;
+    placeCardBody.innerHTML = cardContent(activePlace.place, activePlace.spot);
+    placeCardBody.scrollTop = scroll;
   }
 };
 
@@ -761,6 +784,7 @@ const weatherCache = readWeatherCache();
 
 const loadCachedWeather = () => {
   const now = Date.now();
+  let pruned = false;
   for (const entry of entries) {
     const cached = weatherCache[entry.spot.id];
     if (
@@ -769,10 +793,14 @@ const loadCachedWeather = () => {
       now - cached.cachedAt < WEATHER_CACHE_TTL
     ) {
       entry.spot.weather = { days: new Map(Object.entries(cached.days)) };
-    } else {
+    } else if (cached) {
       delete weatherCache[entry.spot.id];
+      pruned = true;
     }
   }
+  // Expiring an entry in memory but leaving it on disk means the next reload
+  // reads it back and expires it again, forever.
+  if (pruned) saveWeatherCache();
 };
 
 const saveWeatherCache = () => {
@@ -781,6 +809,58 @@ const saveWeatherCache = () => {
   } catch {
     // Weather still works when storage is unavailable or full.
   }
+};
+
+// Open-Meteo meters per minute, per hour and per day. A 429 says which bucket
+// ran out only in its body, so the reason is what decides how long to wait when
+// there is no Retry-After to go on.
+class WeatherRateLimit extends Error {
+  constructor(retryAt, reason) {
+    super(reason || "Open-Meteo rate limit reached");
+    this.retryAt = retryAt;
+    this.reason = reason;
+  }
+}
+
+const nextUtcMidnight = () => {
+  const midnight = new Date();
+  midnight.setUTCHours(24, 0, 0, 0);
+  return midnight.getTime();
+};
+
+// Retry-After is only readable when the server allows it through CORS, which
+// Open-Meteo does not currently do, so treat it as a bonus rather than the plan.
+const retryAtFrom = (response, reason) => {
+  const header = response.headers.get("Retry-After");
+  const seconds = Number(header);
+  if (Number.isFinite(seconds) && seconds > 0) return Date.now() + seconds * 1000;
+  const date = Date.parse(header ?? "");
+  if (Number.isFinite(date)) return date;
+  if (/da(y|ily)/i.test(reason)) return nextUtcMidnight();
+  if (/hour/i.test(reason)) return Date.now() + 60 * 60 * 1000;
+  return Date.now() + 60 * 1000;
+};
+
+const blockWeather = (limit) => {
+  weatherRetryAt = limit.retryAt;
+  try {
+    localStorage.setItem(WEATHER_LIMIT_KEY, String(weatherRetryAt));
+  } catch {
+    // Weather still works when storage is unavailable or full.
+  }
+};
+
+const clearWeatherBlock = () => {
+  weatherRetryAt = 0;
+  localStorage.removeItem(WEATHER_LIMIT_KEY);
+};
+
+const retryLabel = () => {
+  const minutes = Math.ceil((weatherRetryAt - Date.now()) / 60000);
+  if (minutes <= 1) return "in a moment";
+  if (minutes < 90) return `in ${minutes} min`;
+  const hours = Math.round(minutes / 60);
+  return hours < 24 ? `in ${hours} h` : "tomorrow";
 };
 
 const fetchWeatherBatch = async (batch, request) => {
@@ -808,6 +888,13 @@ const fetchWeatherBatch = async (batch, request) => {
     timezone: "auto",
   });
   const response = await fetch(`${WEATHER_API}?${params}`);
+  if (response.status === 429) {
+    const reason = await response
+      .json()
+      .then((body) => body?.reason ?? "")
+      .catch(() => "");
+    throw new WeatherRateLimit(retryAtFrom(response, reason), reason);
+  }
   if (!response.ok) throw new Error(`Open-Meteo returned ${response.status}`);
   const result = await response.json();
   if (request !== weatherRequest || !weatherEnabled) return;
@@ -826,6 +913,11 @@ const fetchWeatherBatch = async (batch, request) => {
   refreshWeatherPresentation();
 };
 
+const setWeatherLabel = (label) => {
+  weatherBtn.title = label;
+  weatherBtn.setAttribute("aria-label", label);
+};
+
 const loadWeather = async () => {
   const request = ++weatherRequest;
   loadCachedWeather();
@@ -833,25 +925,58 @@ const loadWeather = async () => {
   const missingEntries = entries.filter((entry) => !entry.spot.weather);
   if (!missingEntries.length) {
     weatherBtn.classList.remove("loading");
-    weatherBtn.title = "Disable weather";
-    weatherBtn.setAttribute("aria-label", weatherBtn.title);
+    setWeatherLabel("Disable weather");
     return;
   }
-  weatherBtn.classList.add("loading");
-  weatherBtn.title = "Loading weather forecasts";
-  const batches = [];
-  for (let i = 0; i < missingEntries.length; i += WEATHER_BATCH_SIZE) {
-    batches.push(fetchWeatherBatch(missingEntries.slice(i, i + WEATHER_BATCH_SIZE), request));
+  if (Date.now() < weatherRetryAt) {
+    // Whatever is cached is already on screen. Asking again before the window
+    // opens only burns the allowance that is about to be handed back.
+    weatherBtn.classList.remove("loading");
+    setWeatherLabel(`Disable weather (forecast limit reached, retrying ${retryLabel()})`);
+    refreshWeatherPresentation();
+    return;
   }
-  const results = await Promise.allSettled(batches);
+  clearWeatherBlock();
+  weatherBtn.classList.add("loading");
+  setWeatherLabel("Loading weather forecasts");
+
+  const queue = [];
+  for (let i = 0; i < missingEntries.length; i += WEATHER_BATCH_SIZE) {
+    queue.push(missingEntries.slice(i, i + WEATHER_BATCH_SIZE));
+  }
+  let failed = 0;
+  let limit = null;
+  const worker = async () => {
+    while (queue.length && !limit) {
+      if (request !== weatherRequest || !weatherEnabled) return;
+      try {
+        await fetchWeatherBatch(queue.shift(), request);
+      } catch (error) {
+        // One 429 means the whole sweep is over: drain the queue so the other
+        // workers stop too rather than each collecting a refusal of its own.
+        if (error instanceof WeatherRateLimit) {
+          limit = error;
+          queue.length = 0;
+        } else {
+          failed++;
+        }
+      }
+    }
+  };
+  await Promise.all(Array.from({ length: WEATHER_CONCURRENCY }, worker));
   if (request !== weatherRequest || !weatherEnabled) return;
   weatherBtn.classList.remove("loading");
-  const failed = results.filter((result) => result.status === "rejected").length;
-  const label = failed
-    ? `Disable weather (${failed} forecast ${failed === 1 ? "request" : "requests"} failed)`
-    : "Disable weather";
-  weatherBtn.title = label;
-  weatherBtn.setAttribute("aria-label", label);
+  if (limit) {
+    blockWeather(limit);
+    console.warn(`Open-Meteo rate limit: ${limit.reason || "no reason given"}`);
+    setWeatherLabel(`Disable weather (forecast limit reached, retrying ${retryLabel()})`);
+  } else if (failed) {
+    setWeatherLabel(
+      `Disable weather (${failed} forecast ${failed === 1 ? "request" : "requests"} failed)`,
+    );
+  } else {
+    setWeatherLabel("Disable weather");
+  }
   refreshWeatherPresentation();
 };
 
