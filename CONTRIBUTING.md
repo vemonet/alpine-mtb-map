@@ -1,5 +1,7 @@
 # 🛠️ Contributing
 
+[![Deploy to GitHub Pages](https://github.com/vemonet/alpine-mtb-map/actions/workflows/deploy.yml/badge.svg)](https://github.com/vemonet/alpine-mtb-map/actions/workflows/deploy.yml) [![Release](https://github.com/vemonet/alpine-mtb-map/actions/workflows/release.yml/badge.svg)](https://github.com/vemonet/alpine-mtb-map/actions/workflows/release.yml)
+
 Contributions are very welcome, especially new spots and price corrections.
 
 Add yours to [`alpine-mtb-map.kml`](alpine-mtb-map.kml) following [Adding a point](#adding-a-point) below, check it renders:
