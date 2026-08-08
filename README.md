@@ -2,6 +2,7 @@
   <img src="public/icon.png" width="96" height="96" alt="Alpine MTB Map logo">
   <h1>Alpine MTB Map</h1>
   <p>A curated open map for gravity mountain biking. Discover top downhill bike parks, enduro trails, and freeride spots worldwide.</p>
+[![Deploy to GitHub Pages](https://github.com/vemonet/alpine-mtb-map/actions/workflows/deploy.yml/badge.svg)](https://github.com/vemonet/alpine-mtb-map/actions/workflows/deploy.yml) [![Release](https://github.com/vemonet/alpine-mtb-map/actions/workflows/release.yml/badge.svg)](https://github.com/vemonet/alpine-mtb-map/actions/workflows/release.yml)
 </div>
 
 - **Map:** [vemonet.github.io/alpine-mtb-map](https://vemonet.github.io/alpine-mtb-map)

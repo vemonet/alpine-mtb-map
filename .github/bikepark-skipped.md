@@ -20,6 +20,9 @@ A coordinate a few km off is still the single most common cause of an empty resu
 ## Traces to add to OSM
 
 - [ ] Menton
+- [ ] Mont Chauve
+- [ ] Sigale
+- [ ] Cousimbert
 - [ ] Le Mouret
 - [ ] 1 in Biel ?
 

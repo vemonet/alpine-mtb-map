@@ -87,7 +87,7 @@ export default defineConfig({
 
   lint: {
     env: { browser: true },
-    // The conversion and icon scripts run under Node, not in the page.
+    // The export and icon scripts run under Node, not in the page.
     overrides: [{ files: ["scripts/**"], env: { node: true } }],
   },
 
@@ -98,9 +98,9 @@ export default defineConfig({
       // the release attaches them instead. Declaring the inputs and outputs
       // lets Vite Task replay the 20 MB of exports from its cache when the KML
       // has not moved, so a retried release does not rebuild them.
-      convert: {
-        command: "node scripts/convert.mjs",
-        input: ["alpine-mtb-map.kml", "scripts/convert.mjs"],
+      export: {
+        command: "node scripts/export.mjs",
+        input: ["alpine-mtb-map.kml", "scripts/export.mjs"],
         output: ["alpine-mtb-map.geojson", "alpine-mtb-map.gpx", "alpine-mtb-map.kmz"],
       },
       // The PWA icons, derived from public/icon.png. Only needed when the mark
@@ -108,22 +108,22 @@ export default defineConfig({
       icons: { command: "python3 scripts/make-icons.py" },
       // What CI runs, and what to run before opening a pull request.
       ready: {
-        command: ["vp check", "vp run convert", "vp build"],
+        command: ["vp check", "vp run export", "vp build"],
         cache: false,
       },
-      // Cut a release, entirely from here: release-it prompts for the version,
-      // bumps package.json, writes CHANGELOG.md with git-cliff, tags, pushes,
-      // and creates the GitHub release with the four exports attached.
-      // `dependsOn` is what guarantees those exports exist and match the KML
-      // being released, so nothing has to remember to run convert first.
+      // Cut a release: release-it prompts for the version, bumps package.json,
+      // rewrites CHANGELOG.md with git-cliff, commits, tags and pushes. None of
+      // that needs a token. Pushing the tag is what triggers
+      // .github/workflows/release.yml, which publishes the GitHub release and
+      // attaches the exports.
       //   vp run release              # interactive
       //   vp run release minor
       //   vp run release --dry-run
-      // Needs GITHUB_TOKEN: release-it creates the release with it, and
-      // git-cliff reads the API through it to credit first-time contributors.
+      // `dependsOn` keeps the export honest during the dry run, so a broken KML
+      // is caught here rather than after the tag is already pushed.
       release: {
         command: "release-it",
-        dependsOn: ["convert"],
+        dependsOn: ["export"],
         cache: false,
       },
     },

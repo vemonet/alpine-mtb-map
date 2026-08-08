@@ -32,10 +32,10 @@ jobs:
         run: vp check
 
       # The exports are built at release time, not committed, so there is
-      # nothing to diff. Running the conversion still validates the KML: it
-      # throws when a spot is missing a required tag axis.
+      # nothing to diff. Running the export still validates the KML: it throws
+      # when a spot is missing a required tag axis.
       - name: Validate the map data
-        run: vp run convert
+        run: vp run export
 
   deploy:
     name: ⚡️ Deploy to GitHub Pages

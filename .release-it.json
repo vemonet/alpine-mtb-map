@@ -10,15 +10,7 @@
     "publish": false
   },
   "github": {
-    "release": true,
-    "releaseName": "v${version}",
-    "releaseNotes": "git-cliff --unreleased --tag v${version} --strip all",
-    "assets": [
-      "alpine-mtb-map.kml",
-      "alpine-mtb-map.kmz",
-      "alpine-mtb-map.gpx",
-      "alpine-mtb-map.geojson"
-    ]
+    "release": false
   },
   "hooks": {
     "after:bump": "git-cliff --tag v${version} --output CHANGELOG.md"

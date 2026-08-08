@@ -1,4 +1,4 @@
-# Contributing
+# 🛠️ Contributing
 
 Contributions are very welcome, especially new spots and price corrections.
 
@@ -8,9 +8,9 @@ Add yours to [`alpine-mtb-map.kml`](alpine-mtb-map.kml) following [Adding a poin
 vp i && vp dev
 ```
 
-Then open a pull request. The pre-commit hook regenerates the GPX and GeoJSON, so you only ever touch the KML. See [Development](#development) for the rest.
+Then open a pull request. The KML is the only data file in the repository - the GPX, GeoJSON and KMZ are generated at release time, so you only ever touch the KML. See [Development](#development) for the rest.
 
-## What is on the map
+## 🗺️ What is on the map
 
 Each main pin carries, in its description: what the trails are like, what it costs to get up, its open and closed dates, and an Access table giving the travel time from each origin.
 
@@ -63,7 +63,7 @@ Seasons that run across New Year work the same way: the four southern-hemisphere
 
 When the shared date is **Any**, weather uses today before 16:00 and tomorrow from 16:00 onward. Weather is enabled by default and can be turned off with the cloud-and-rain button left of the location button. A rain icon appears inside a spot's original coloured dot when at least 1 mm of precipitation or a 50% precipitation probability is forecast for the effective weather date, or at least 5 mm fell the day before. Clicking a spot shows that day, the three days before it and the three days after it. Dates outside Open-Meteo's available range show a clear unavailable message. Forecasts are cached in the browser for six hours to limit Open-Meteo requests.
 
-## Adding a point
+## 📍 Adding a point
 
 Everything lives in `alpine-mtb-map.kml`. It is plain XML, so edit it in any text editor - no build step is needed for the data itself. Paste a new `<Placemark>` anywhere between `<Document>` and `</Document>`.
 
@@ -252,17 +252,17 @@ vp dev
 
 Open the printed URL. If the map is blank, the KML is malformed and the browser console will say where. Then commit the KML - it is the only data file in the repository, and the GPX, GeoJSON and KMZ are generated at release time.
 
-## Other formats
+## 🗂️ Other formats
 
 ```bash
-vp run convert
+vp run export
 ```
 
 Regenerates `alpine-mtb-map.geojson`, `alpine-mtb-map.gpx` and `alpine-mtb-map.kmz` from `alpine-mtb-map.kml`. Points become GPX waypoints and GeoJSON `Point` features, trails become GPX tracks and `LineString` features; HTML descriptions are flattened to plain text for GPX. The `kind` (`bike-park` / `natural` / `no-lift` / `minor` / `trail`) plus every `<ExtendedData>` facet (`spot`, `tags`, `open_from`, `closed_from`, `price_day`, `price_season`) is carried into GeoJSON as a property.
 
-**Never edit the generated files by hand** - the KML is the source of truth and `vp run convert` overwrites them. The three exports are gitignored: [releasing](#releasing) rebuilds them and attaches them to the GitHub release, which is where the download links point.
+**Never edit the generated files by hand** - the KML is the source of truth and `vp run export` overwrites them. The three exports are gitignored: [releasing](#releasing) rebuilds them and attaches them to the GitHub release, which is where the download links point.
 
-## Development
+## 🔧 Development
 
 The toolchain is [Vite+](https://viteplus.dev/) (`vp`):
 
@@ -275,7 +275,7 @@ vp dev             # local dev server
 vp build           # static site into dist/
 vp preview         # serve the built site - use this to test the PWA, not dev
 vp check           # format + lint (add --fix to apply)
-vp run convert     # regenerate the GPX, GeoJSON and KMZ exports
+vp run export     # regenerate the GPX, GeoJSON and KMZ exports
 vp run icons       # regenerate the PWA icons from public/icon.png
 vp run ready       # everything CI runs, before you open a pull request
 vp run release     # cut a release (maintainers)
@@ -283,22 +283,22 @@ vp run release     # cut a release (maintainers)
 
 > Everything the tooling needs lives in [`vite.config.js`](vite.config.js).
 
-[`.github/workflows/deploy.yml`](.github/workflows/deploy.yml) runs `vp check` and `vp run convert`, which validates the KML: the conversion refuses a spot that is missing a required tag axis. On `main` it then builds and publishes to GitHub Pages; pull requests get the checks only.
+[`.github/workflows/deploy.yml`](.github/workflows/deploy.yml) runs `vp check` and `vp run export`, which validates the KML: the conversion refuses a spot that is missing a required tag axis. On `main` it then builds and publishes to GitHub Pages; pull requests get the checks only.
 
-## Releasing
+## 🏷️ Releasing
 
-Maintainers only, and it all happens locally - there is no release workflow.
+Maintainers only. Nothing on your machine needs a GitHub token: the local half only writes to git.
 
 ```bash
-GITHUB_TOKEN=... vp run release
+vp run release
 ```
 
-`release` [depends on](vite.config.js) `convert`, so the exports are always rebuilt from the KML being released before anything is uploaded. Then [release-it](https://github.com/release-it/release-it) prompts for the new version and takes it from there: bump `package.json`, rewrite `CHANGELOG.md`, commit, tag, push, and create the GitHub release with the KML, KMZ, GPX and GeoJSON attached. Add `--dry-run` to see every step without performing any of them, or pass a version to skip the prompt:
+[release-it](https://github.com/release-it/release-it) prompts for the new version, then bumps `package.json`, rewrites `CHANGELOG.md` with git-cliff, commits, tags `vX.Y.Z` and pushes. Add `--dry-run` to see every step without performing any of them, or pass a version to skip the prompt:
 
 ```bash
 vp run release minor --dry-run
 ```
 
-The token needs `repo` scope. Both tools use it: release-it to create the release, git-cliff to look up pull request titles and authors.
+Pushing the tag triggers [`.github/workflows/release.yml`](.github/workflows/release.yml), which does the half that needs credentials, using the workflow's own token: rebuild the exports from the tagged KML with `vp run export`, render the notes, and create the GitHub release with the KML, KMZ, GPX and GeoJSON attached. So the assets can never drift from the data they were tagged with, and the download links keep resolving to the newest release.
 
-The notes come from [git-cliff](https://git-cliff.org/) via [`cliff.toml`](cliff.toml), configured to reproduce GitHub's own format - a flat "What's Changed" list crediting each author, then a "New Contributors" section for anyone whose first pull request this is. That last part is only correct because `cliff.toml` names the GitHub remote; first-time status comes from the API, not from the git history.
+The notes come from [git-cliff](https://git-cliff.org/) via [`cliff.toml`](cliff.toml), configured to reproduce GitHub's own format - a flat "What's Changed" list crediting each author, then a "New Contributors" section for anyone whose first pull request this is. That last part is only correct because `cliff.toml` names the GitHub remote: first-time status comes from the API, not from the git history. The same config writes `CHANGELOG.md`, so the file and the release notes always say the same thing.

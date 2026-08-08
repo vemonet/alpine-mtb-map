@@ -1,0 +1,51 @@
+name: Release
+# `vp run release` bumps the version, tags and pushes from a laptop, which
+# needs no credentials. Publishing does, so it happens here instead.
+on:
+  push:
+    tags: ["v*"]
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    name: 📦 Publish release
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7.0.0
+        with:
+          # git-cliff renders the notes from the history, not from the tag alone.
+          fetch-depth: 0
+
+      - uses: voidzero-dev/setup-vp@v1
+        with:
+          node-version: "lts"
+
+      - name: Install dependencies
+        run: vp i
+
+      # The exports are gitignored, so they are rebuilt here from the tagged
+      # KML. That also keeps them honest: they cannot drift from the data.
+      - name: Build the exports
+        run: vp run export
+
+      # The same cliff.toml the local CHANGELOG.md is written with, so the
+      # release notes and the file always say the same thing. The token lets
+      # git-cliff read pull request titles and spot first-time contributors.
+      - name: Write the release notes
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: vp exec git-cliff --current --strip all --output RELEASE_NOTES.md
+
+      - name: Create the release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release create "${GITHUB_REF_NAME}" \
+            --title "${GITHUB_REF_NAME}" \
+            --notes-file RELEASE_NOTES.md \
+            alpine-mtb-map.kml \
+            alpine-mtb-map.kmz \
+            alpine-mtb-map.gpx \
+            alpine-mtb-map.geojson
