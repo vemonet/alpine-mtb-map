@@ -4,9 +4,11 @@ import "maplibre-gl/dist/maplibre-gl.css";
 import "@maplibre/maplibre-gl-leaflet";
 import "./style.css";
 
-// The KML is the single source of truth. It lives in public/ so the deployed
-// file is also directly downloadable from the GitHub Pages URL.
-const kmlUrl = `${import.meta.env.BASE_URL}alpine-mtb-map.kml`;
+// The KML is the single source of truth. Importing it as an asset lets the
+// bundler fingerprint and precache it; the downloadable copies are published as
+// GitHub release assets rather than served from here.
+import kmlUrl from "../alpine-mtb-map.kml?url";
+
 const kmlResponse = await fetch(kmlUrl);
 if (!kmlResponse.ok) throw new Error(`Could not load ${kmlUrl}: ${kmlResponse.status}`);
 const kmlText = await kmlResponse.text();

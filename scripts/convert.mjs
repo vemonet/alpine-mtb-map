@@ -1,14 +1,16 @@
 #!/usr/bin/env node
-// Regenerate public/alpine-mtb-map.geojson, public/alpine-mtb-map.gpx, and public/alpine-mtb-map.kmz.
-//   npm run convert
+// Regenerate alpine-mtb-map.geojson, alpine-mtb-map.gpx, and alpine-mtb-map.kmz.
+//   vp run convert
 // The KML stays the source of truth - never edit the generated files by hand.
+// The three exports are gitignored: the release workflow builds them from the
+// tagged KML and attaches them to the GitHub release.
 
 import { readFileSync, writeFileSync } from "node:fs";
 import { DOMParser } from "@xmldom/xmldom";
 import { kml } from "@tmcw/togeojson";
 import { zipSync, strToU8 } from "fflate";
 
-const SRC = "public/alpine-mtb-map.kml";
+const SRC = "alpine-mtb-map.kml";
 const BASE = SRC.replace(/\.kml$/, "");
 
 const doc = new DOMParser().parseFromString(readFileSync(SRC, "utf8"), "text/xml");

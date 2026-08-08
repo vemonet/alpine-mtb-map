@@ -1,0 +1,26 @@
+{
+  "$schema": "https://unpkg.com/release-it/schema/release-it.json",
+  "git": {
+    "commitMessage": "chore: release v${version}",
+    "tagName": "v${version}",
+    "tagAnnotation": "v${version}",
+    "changelog": "git-cliff --unreleased --strip all"
+  },
+  "npm": {
+    "publish": false
+  },
+  "github": {
+    "release": true,
+    "releaseName": "v${version}",
+    "releaseNotes": "git-cliff --unreleased --tag v${version} --strip all",
+    "assets": [
+      "alpine-mtb-map.kml",
+      "alpine-mtb-map.kmz",
+      "alpine-mtb-map.gpx",
+      "alpine-mtb-map.geojson"
+    ]
+  },
+  "hooks": {
+    "after:bump": "git-cliff --tag v${version} --output CHANGELOG.md"
+  }
+}

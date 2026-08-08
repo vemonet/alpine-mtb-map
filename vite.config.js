@@ -40,10 +40,11 @@ export default defineConfig({
       workbox: {
         // Precache the map data with the app shell so it remains available
         // offline and the KML can be loaded on startup without a network.
-        globPatterns: ["**/*.{js,css,html,png,kml,kmz,gpx,geojson}"],
-        // The exports grow with every spot added; the GeoJSON passed Workbox's
-        // 2 MiB default and failed the build. Raised so the data keeps being
-        // precached rather than silently dropping out of the offline bundle.
+        // Only the KML: the other exports are release assets, not site files.
+        globPatterns: ["**/*.{js,css,html,png,kml}"],
+        // The KML grows with every spot added and passed Workbox's 2 MiB
+        // default. Raised so the data keeps being precached rather than
+        // silently dropping out of the offline bundle.
         maximumFileSizeToCacheInBytes: 16 * 1024 * 1024,
         runtimeCaching: [
           {
@@ -81,7 +82,7 @@ export default defineConfig({
     proseWrap: "never",
     // The KML is hand-edited XML whose layout is part of how readable it is,
     // and the GPX and GeoJSON are generated. All three are data, not source.
-    ignorePatterns: ["public/alpine-mtb-map.*", ".claude/**"],
+    ignorePatterns: ["alpine-mtb-map.*", "CHANGELOG.md", ".claude/**"],
   },
 
   lint: {
@@ -93,16 +94,36 @@ export default defineConfig({
   run: {
     cache: true,
     tasks: {
-      // Regenerate the GPX and GeoJSON from the KML. The pre-commit hook runs
-      // this, so the three formats can never drift apart. Vite Task tracks the
-      // files it reads and writes on its own, so re-running it is free.
-      convert: { command: "node scripts/convert.mjs" },
+      // Regenerate the GPX, GeoJSON and KMZ from the KML. They are gitignored:
+      // the release attaches them instead. Declaring the inputs and outputs
+      // lets Vite Task replay the 20 MB of exports from its cache when the KML
+      // has not moved, so a retried release does not rebuild them.
+      convert: {
+        command: "node scripts/convert.mjs",
+        input: ["alpine-mtb-map.kml", "scripts/convert.mjs"],
+        output: ["alpine-mtb-map.geojson", "alpine-mtb-map.gpx", "alpine-mtb-map.kmz"],
+      },
       // The PWA icons, derived from public/icon.png. Only needed when the mark
       // itself changes, so it is not wired into the build.
       icons: { command: "python3 scripts/make-icons.py" },
       // What CI runs, and what to run before opening a pull request.
       ready: {
         command: ["vp check", "vp run convert", "vp build"],
+        cache: false,
+      },
+      // Cut a release, entirely from here: release-it prompts for the version,
+      // bumps package.json, writes CHANGELOG.md with git-cliff, tags, pushes,
+      // and creates the GitHub release with the four exports attached.
+      // `dependsOn` is what guarantees those exports exist and match the KML
+      // being released, so nothing has to remember to run convert first.
+      //   vp run release              # interactive
+      //   vp run release minor
+      //   vp run release --dry-run
+      // Needs GITHUB_TOKEN: release-it creates the release with it, and
+      // git-cliff reads the API through it to credit first-time contributors.
+      release: {
+        command: "release-it",
+        dependsOn: ["convert"],
         cache: false,
       },
     },

@@ -1,6 +1,6 @@
 {
   "name": "alpine-mtb-map",
-  "version": "1.0.0",
+  "version": "0.0.0",
   "private": true,
   "description": "Mountain biking spots across the Alps & beyond, with travel times, lift prices and what the trails are like",
   "type": "module",
@@ -19,6 +19,8 @@
     "@tmcw/togeojson": "^7.1.2",
     "@xmldom/xmldom": "^0.9.10",
     "fflate": "^0.8.3",
+    "git-cliff": "^2.13.1",
+    "release-it": "^21.0.1",
     "vite-plugin-pwa": "^1.3.0",
     "vite-plus": "0.2.6"
   },

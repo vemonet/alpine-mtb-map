@@ -1,5 +1,10 @@
 node_modules/
 dist/
+# Generated from alpine-mtb-map.kml by scripts/convert.mjs and published as
+# release assets, so they are never committed.
+alpine-mtb-map.geojson
+alpine-mtb-map.gpx
+alpine-mtb-map.kmz
 .DS_Store
 __pycache__/
 tmp/

@@ -5,8 +5,8 @@
 </div>
 
 - **Map:** [vemonet.github.io/alpine-mtb-map](https://vemonet.github.io/alpine-mtb-map)
-- **Data:** [`public/alpine-mtb-map.kml`](public/alpine-mtb-map.kml) · the single source of truth
-- **Direct downloads:** [KML](https://vemonet.github.io/alpine-mtb-map/alpine-mtb-map.kml) · [GPX](https://vemonet.github.io/alpine-mtb-map/alpine-mtb-map.gpx) · [GeoJSON](https://vemonet.github.io/alpine-mtb-map/alpine-mtb-map.geojson)
+- **Data:** [`alpine-mtb-map.kml`](alpine-mtb-map.kml) · the single source of truth
+- **Direct downloads:** [KML](https://github.com/vemonet/alpine-mtb-map/releases/latest/download/alpine-mtb-map.kml) · [GPX](https://github.com/vemonet/alpine-mtb-map/releases/latest/download/alpine-mtb-map.gpx) · [GeoJSON](https://github.com/vemonet/alpine-mtb-map/releases/latest/download/alpine-mtb-map.geojson)
 
 ## Why
 
@@ -27,7 +27,7 @@ A good spot here means at least one singletrack where mountain biking is allowed
 
 ## Contributing
 
-Contributions are very welcome, especially new spots and price corrections. See [CONTRIBUTING.md](CONTRIBUTING.md) to understand the map data, add a spot or trail, regenerate exports, and run the project checks.
+Contributions are very welcome, especially new spots and price corrections. See [CONTRIBUTING.md](CONTRIBUTING.md) to understand the map data, add a spot or trail, regenerate exports, run the project checks and cut a release.
 
 ## Install it on your phone
 
@@ -37,13 +37,14 @@ For real backcountry use, still put the KML into CoMaps, Organic Maps or OsmAnd:
 
 ## Using it offline
 
-Download [`public/alpine-mtb-map.kml`](public/alpine-mtb-map.kml) and open it on your phone. Organic Maps imports it as a new bookmark category (Bookmarks -> the import button -> pick the file). It works in OsmAnd, Google Earth and Maps.me too.
+Download [`alpine-mtb-map.kml`](alpine-mtb-map.kml) and open it on your phone. Organic Maps imports it as a new bookmark category (Bookmarks -> the import button -> pick the file). It works in OsmAnd, Google Earth and Maps.me too.
 
-The website has KML / GPX / GeoJSON buttons in the sidebar that use the deployed GitHub Pages files. The same stable URLs can be shared directly:
+The website has KML / GPX / GeoJSON buttons in the sidebar that point at the latest GitHub release. The same stable URLs always resolve to the newest published data and can be shared directly:
 
-- `https://vemonet.github.io/alpine-mtb-map/alpine-mtb-map.kml`
-- `https://vemonet.github.io/alpine-mtb-map/alpine-mtb-map.gpx`
-- `https://vemonet.github.io/alpine-mtb-map/alpine-mtb-map.geojson`
+- `https://github.com/vemonet/alpine-mtb-map/releases/latest/download/alpine-mtb-map.kml`
+- `https://github.com/vemonet/alpine-mtb-map/releases/latest/download/alpine-mtb-map.kmz`
+- `https://github.com/vemonet/alpine-mtb-map/releases/latest/download/alpine-mtb-map.gpx`
+- `https://github.com/vemonet/alpine-mtb-map/releases/latest/download/alpine-mtb-map.geojson`
 
 ## Privacy
 

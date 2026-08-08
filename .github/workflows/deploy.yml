@@ -28,14 +28,14 @@ jobs:
       - name: Install dependencies
         run: vp i
 
-      # Formatting, linting, and that the exports still match the KML.
       - name: Check
         run: vp check
 
-      - name: Verify exports are up to date
-        run: |
-          vp run convert
-          git diff --exit-code public/alpine-mtb-map.gpx public/alpine-mtb-map.geojson public/alpine-mtb-map.kmz
+      # The exports are built at release time, not committed, so there is
+      # nothing to diff. Running the conversion still validates the KML: it
+      # throws when a spot is missing a required tag axis.
+      - name: Validate the map data
+        run: vp run convert
 
   deploy:
     name: ⚡️ Deploy to GitHub Pages
