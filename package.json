@@ -1,6 +1,6 @@
 {
   "name": "alpine-mtb-map",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "private": true,
   "description": "Mountain biking spots across the Alps & beyond, with travel times, lift prices and what the trails are like",
   "type": "module",
