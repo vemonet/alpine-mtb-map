@@ -15,6 +15,7 @@ python3 lifts.py  46.74,6.31,46.79,6.40 --ele
 python3 trails.py 46.14,6.65,46.18,6.71
 python3 find_named.py candidates.json      # rung 1: what is OSM calling it, near here?
 python3 verify_mtb.py candidates.json      # rung 2: is there riding near this coordinate?
+python3 gpstraces.py 47.815,7.94,47.83,7.96   # public GPS traces, when nothing is mapped
 ```
 
 ## 1. Coordinates for a spot
@@ -211,6 +212,100 @@ relation 7648377 ("Piste des Biquettes") does not chain into one line:
 Relation members arrive in no order and no consistent direction. The script chains them nearest-end-first and tries both orientations of the first segment, but a **circuit or a branching network cannot become one line** - forcing it draws a straight bar across the mountain. That is what the refusal prevents.
 
 When you hit it: pick a single `way` instead, find a relation that is one genuine descent (`Alpages Respect`, relation 17656035, chains cleanly), or pass `--force` and delete the bad segment by hand. Always re-check the drawn line in `vp dev` afterwards.
+
+### The public GPS trace archive - use it at natural spots, skip it at bike parks
+
+`trails.py` queries tagged **map objects**. OSM also holds a second, quite separate database - the **GPS traces** people upload, raw and uncurated. `gpstraces.py` reads it.
+
+**The verdict, from testing five spots, is a clean split:**
+
+- **Natural, pedal-access, locally-built terrain: try it.** At Cousimbert two traces between them covered **Sur Martou, La Joux de Treyvaux and Belle Cierne** - three of the five lines on that spot - to within 25 m. Everything this map wants was sitting in the archive.
+- **Lift-served bike parks: do not bother.** Todtnau, Les Gets, Morzine-Pleney and Châtel returned nothing usable between them. Gravity riders upload to Strava and to the platforms this project does not cite; they have not uploaded to OSM in fifteen years.
+
+The reason is who uses the archive. It skews old, and towards hikers, ski-tourers, trail runners and cyclotourists - exactly the people who also walk and ride the unsigned local trails that no park operator publishes a GPX for. So it fills in precisely the gap the Sugarloaf precedent otherwise leaves bare.
+
+```bash
+python3 gpstraces.py 47.815,7.940,47.832,7.960                     # what has been ridden here
+python3 gpstraces.py 47.815,7.940,47.832,7.960 --near 7.952,47.821 # sort by distance from the lift top
+python3 gpstraces.py --trace 12004364                              # length and profile
+python3 gpstraces.py --trace 12004364 --emit                       # <coordinates> block
+```
+
+**Two endpoints, and the difference is the whole trick.**
+
+`api/0.6/trackpoints?bbox=W,S,E,N&page=N` is the search. Public, no auth, 5000 points per page - keep paging until a page repeats. It hands back `lat`/`lon`/`time` and **strips the elevation**, so it is only ever a way to find out _which_ traces exist.
+
+`https://www.openstreetmap.org/trace/<id>/data` is the download, and it returns the **original uploaded file**: full precision, every point, and `<ele>` on all of them. Note the host - this is the website, not the API. The documented `api/0.6/gpx/<id>/data` returns **401 Couldn't authenticate you** without OAuth, so use the `/trace/` URL.
+
+"Original uploaded file" is literal: much of the archive predates the web form, so a large share of it arrives **bzip2, gzip or zip compressed** - 9 of 16 downloads at Les Gets were bzip2, regardless of the `.gpx` in the URL. An XML parser reports those as `not well-formed: line 1, column 7`, which reads like a corrupt trace rather than a compressed one. `gpstraces.decompress()` sniffs the magic bytes and handles all three.
+
+Bounding boxes go in as `S,W,N,E` like every other script here; the API wants `W,S,E,N` and `gpstraces.py` converts. The API caps a bbox at 0.25 square degrees.
+
+**Read the privacy level before you read the geometry.** A trace's usefulness is decided entirely by what its owner chose on upload:
+
+| Level | In the bbox response | Usable? |
+| --- | --- | --- |
+| identifiable / trackable | its own `<trk>`, with `<name>`, `<url>` and timestamps | yes - and `<url>` gives you the id to download in full |
+| trackable, anonymised | its own `<trk>`, timestamps, but no name or url | geometry only, and no elevation, ever |
+| public / private | dumped into shared anonymous `<trk>` blocks of 5000 points **in no order at all**, with no timestamps | no |
+
+That last row is the trap. Those blocks look exactly like the others in the XML, and chaining one produces a plausible-looking `<coordinates>` list that is actually a scribble across the whole valley - at Todtnau it measured **1861 km inside a 2 km box**. `gpstraces.py` detects them (no `<time>` on any point), reports them as "unordered pool (unusable)" and hides them from the listing. Do not undo that.
+
+#### How to pick the right trace: sort by distance, then read the filenames
+
+**This is the whole method, and it is embarrassingly simple.** Point `--near` at the top of the descent, and read the first ten filenames.
+
+```bash
+python3 gpstraces.py 46.670,7.130,46.730,7.220 --near 7.1872,46.6971
+```
+
+```
+    5 m     4.24 km    644 pts     2808981 x_fma_x     2018_09_20_Cousimbert.gpx
+   14 m    11.44 km   1737 pts     3897510 fangly      2021_10_30_09_31_Sat_sur_martoux.gpx
+   15 m     9.43 km   3237 pts     3320863 ch_de_75    20200530_Trail_Torryboden_LaBerra.gpx
+```
+
+`sur_martoux` is **Sur Martou**. Download those two and check them against what is already drawn:
+
+```
+trace 2808981:  covers 100% of  La Joux de Treyvaux
+                covers  92% of  Belle Cierne
+trace 3897510:  covers 100% of  Sur Martou
+```
+
+Filename and proximity did all the work. A person who names a file after a trail rode that trail.
+
+#### Do not build a physics filter. It was tried, and it finds skiers.
+
+The tempting idea is that a gravity run has a signature - big drop, steep gradient, riding speed - so `tracefilter.py` was built to look inside each **downloaded** trace for a descent window of **250 m or more of drop, at 6 % or steeper, over at least 1 km, at 8-45 km/h**, closing the window as soon as the rider climbs 30 m back above their low point.
+
+It works mechanically and it is useless. **It fails in both directions.**
+
+_False positives at bike parks_, because a skier and a downhill rider have the same signature - same lift, same 500-700 m drop, same 12-25 km/h, same gradient:
+
+| Park | segments in bbox | downloadable near the lift top | passed the filter | actually MTB |
+| --- | --- | --- | --- | --- |
+| Todtnau | 80 | 18 | 0 | 0 |
+| Les Gets | 62 | 16 | 3 | 0 |
+| Morzine-Pleney | 75 | 13 | 5 | 0 |
+| Châtel | 61 | 5 | 1 | 0 |
+
+Every hit was February or March - `morzine20100314a1`, `2012_02_23 Skiing Portes du Soleil`, `2013_03_28_Chatel_ski`. The one summer hit was a road ride in from Lake Geneva. Add a month test to kill the skiing and all four parks return **nothing at all**.
+
+_False negatives at natural spots_, which is worse, because that is where the archive actually delivers. **The filter rejects the Cousimbert traces that hold all three trails.** They average 7.5 km/h, well under the 8 km/h floor - because at a pedal-access spot the climb is in the same file as the descent. Filter on mean speed and you throw away the only good data in the archive.
+
+Two more traps from the same experiment:
+
+- **Speed does not identify riding.** At Todtnau 56 of 80 segments sustain over 15 km/h, because the B317 runs up the valley and cars are in the archive too.
+- **Concatenated archives.** `alle_Wandertracks.gpx`, `Alle_Biketracks.gpx`, `activities.zip` - somebody's entire history in one upload, 170 km, jumping between valleys. Length is not a quality signal.
+
+`tracefilter.py` is kept as the record of this, guarded under `__main__`; re-running it takes about fifteen minutes. Judge by **what the trace is**, the same test rung 2 uses, and verify by hand before anything becomes a line.
+
+`--trace` prints `(STORED UPHILL - reverse it)` when the net drop is negative. Believe it - the renderer draws direction arrows from point order, and at natural spots this fires often: the Cousimbert file holding La Joux de Treyvaux and Belle Cierne is stored as the climb.
+
+A trace that covers a descent usually contains the climb to it as well, so **slice before you simplify**. Cut at the high point, keep the descending half, and only then run it through the 8 m simplification.
+
+Credit these as **`Geometry simplified from OpenStreetMap GPS trace <id> (ODbL)`**. They are ODbL like the rest of OSM. Never credit an anonymised trace to a user.
 
 ## 3. Additional information
 

@@ -100,7 +100,7 @@ export default defineConfig({
       // has not moved, so a retried release does not rebuild them.
       export: {
         command: "node scripts/export.mjs",
-        input: ["alpine-mtb-map.kml", "scripts/export.mjs"],
+        input: ["alpine-mtb-map.kml", "scripts/export.mjs", "src/lib/kml-export.js"],
         output: ["alpine-mtb-map.geojson", "alpine-mtb-map.gpx", "alpine-mtb-map.kmz"],
       },
       // The PWA icons, derived from public/icon.png. Only needed when the mark

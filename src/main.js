@@ -3,6 +3,8 @@ import "leaflet/dist/leaflet.css";
 import "maplibre-gl/dist/maplibre-gl.css";
 import "@maplibre/maplibre-gl-leaflet";
 import "./style.css";
+import { KINDS } from "./lib/kml-export.js";
+import { buildFile, saveBlob, slug } from "./lib/downloads.js";
 
 // The KML is the single source of truth. Importing it as an asset lets the
 // bundler fingerprint and precache it; the downloadable copies are published as
@@ -14,15 +16,6 @@ if (!kmlResponse.ok) throw new Error(`Could not load ${kmlUrl}: ${kmlResponse.st
 const kmlText = await kmlResponse.text();
 
 const KML_NS = "http://www.opengis.net/kml/2.2";
-
-// styleUrl -> how it is drawn. Pin colour encodes the displayed spot category.
-const KINDS = {
-  "placemark-blue": "bike-park",
-  "placemark-green": "natural",
-  "placemark-brown": "no-lift",
-  "placemark-gray": "minor",
-  "line-trail": "trail",
-};
 
 // Trail line styleUrl -> stroke colour, mirrors the KML's own <Style> defs
 // so the web map and Organic Maps (which reads the KML style directly) match.
@@ -59,12 +52,15 @@ function parseKml(text) {
     return "";
   };
 
-  return [...doc.getElementsByTagNameNS(KML_NS, "Placemark")].map((pm) => {
+  return [...doc.getElementsByTagNameNS(KML_NS, "Placemark")].map((pm, index) => {
     const styleUrl = text_(pm, "styleUrl").replace(/^#/, "");
     const point = pm.getElementsByTagNameNS(KML_NS, "Point")[0];
     const line = pm.getElementsByTagNameNS(KML_NS, "LineString")[0];
     const geom = point || line;
     return {
+      // Position in the source document, so a download can prune the KML itself
+      // rather than being rebuilt from these objects and losing what they drop.
+      index,
       name: text_(pm, "name"),
       description: text_(pm, "description"),
       kind: KINDS[styleUrl] ?? "minor",
@@ -112,16 +108,30 @@ function chf(price) {
 }
 
 const places = parseKml(kmlText).filter((p) => p.coords.length);
+
+// What the reader has taken off their map. Hiding is deliberate and sticky,
+// unlike the filters: it survives reloads and it is what the downloads honour,
+// so the file you save is the map you built.
 const HIDDEN_TRACES_STORAGE_KEY = "hiddenTraces";
+const HIDDEN_SPOTS_STORAGE_KEY = "hiddenSpots";
 const traceId = (place) => `${place.spot}\n${place.name}`;
-let hiddenTraceIds;
-try {
-  hiddenTraceIds = new Set(JSON.parse(localStorage.getItem(HIDDEN_TRACES_STORAGE_KEY) ?? "[]"));
-} catch {
-  hiddenTraceIds = new Set();
-}
-const saveHiddenTraces = () =>
-  localStorage.setItem(HIDDEN_TRACES_STORAGE_KEY, JSON.stringify([...hiddenTraceIds]));
+const readHidden = (key) => {
+  try {
+    return new Set(JSON.parse(localStorage.getItem(key) ?? "[]"));
+  } catch {
+    return new Set();
+  }
+};
+const hiddenTraceIds = readHidden(HIDDEN_TRACES_STORAGE_KEY);
+const hiddenSpotIds = readHidden(HIDDEN_SPOTS_STORAGE_KEY);
+const saveHidden = () => {
+  try {
+    localStorage.setItem(HIDDEN_TRACES_STORAGE_KEY, JSON.stringify([...hiddenTraceIds]));
+    localStorage.setItem(HIDDEN_SPOTS_STORAGE_KEY, JSON.stringify([...hiddenSpotIds]));
+  } catch {
+    // Hiding still works for this session when storage is unavailable or full.
+  }
+};
 
 // ------------------------------------------------------------------ map ---
 const DEFAULT_VIEW = [46.2, 8.0];
@@ -333,6 +343,7 @@ const list = document.getElementById("spots");
 const placeCard = document.getElementById("place-card");
 const placeCardBody = document.getElementById("place-card-body");
 const placeCardHideButton = document.getElementById("place-card-hide");
+const placeCardDownloadMenu = document.getElementById("place-card-download");
 let activePlace = null;
 
 const placeUrl = (place, spot) => {
@@ -377,10 +388,15 @@ const copyText = async (text) => {
   input.remove();
 };
 
+// Hiding a trace takes that one line off the map; hiding anything else takes
+// the whole spot, pins and trails together, which is what a reader clicking a
+// spot's own pin means by "not this one".
 placeCardHideButton.addEventListener("click", () => {
-  if (activePlace?.place.type !== "line") return;
-  hiddenTraceIds.add(traceId(activePlace.place));
-  saveHiddenTraces();
+  if (!activePlace) return;
+  const { place, spot } = activePlace;
+  if (place.type === "line") hiddenTraceIds.add(traceId(place));
+  else hiddenSpotIds.add(spot.id);
+  saveHidden();
   closePlaceCard();
   applyFilters();
 });
@@ -427,7 +443,11 @@ function openPlaceCard(place, spot, layer) {
   activePlace = { place, spot, layer };
   placeCardBody.innerHTML = cardContent(place, spot);
   placeCardBody.scrollTop = 0;
-  placeCardHideButton.hidden = place.type !== "line";
+  const hideLabel = `Hide this ${place.type === "line" ? "trace" : "spot"}`;
+  placeCardHideButton.hidden = false;
+  placeCardHideButton.title = hideLabel;
+  placeCardHideButton.setAttribute("aria-label", hideLabel);
+  placeCardDownloadMenu.removeAttribute("open");
   placeCard.hidden = false;
   setSelectedPlaceUrl(place, spot);
   if (place.type === "line") selectLines([layer]);
@@ -439,6 +459,7 @@ function closePlaceCard() {
   if (!activePlace) return;
   activePlace = null;
   placeCard.hidden = true;
+  placeCardDownloadMenu.removeAttribute("open");
   placeCardBody.innerHTML = "";
   clearSelectedPlaceUrl();
   clearSelectedLines();
@@ -553,9 +574,16 @@ const updateTraceArrows = () => {
 
 map.on("moveend zoomend", updateTraceArrows);
 
+// A trace can exist without a spot pin of its own: nothing requires a spot to
+// have a main placemark, only that its traces carry the tags the filters need.
+// Such a trace labels itself from its own name ("Taney: ..." -> "Taney") rather
+// than showing the raw spot id.
+const traceMeta = (spot, place) =>
+  spot.entry?.name ?? (place.name.includes(":") ? place.name.split(":")[0].trim() : spot.id);
+
 const traceEntries = lineLayers.map(({ layer, spot, place, color }) => ({
   name: place.name,
-  meta: spot.entry?.name ?? spot.id,
+  meta: traceMeta(spot, place),
   searchText: `${place.name} ${place.description}`.toLocaleLowerCase(),
   layer,
   spot,
@@ -719,7 +747,9 @@ const forecastRows = (weather) => {
 function cardContent(place, spot) {
   const content = baseCard(place, spot);
   const tags = tagBadges(new Set(place.tags));
-  if (!weatherEnabled) return content;
+  // Forecasts are fetched per main pin, so a spot without one has none to show.
+  // Saying "unavailable" would read as a failure rather than as by design.
+  if (!weatherEnabled || !spot.entry) return content;
   if (!spot.weather) {
     const status = weatherBtn.classList.contains("loading")
       ? "Loading forecast..."
@@ -1053,30 +1083,86 @@ locateBtn.addEventListener("click", () => {
 });
 
 // ------------------------------------------------------------- downloads ---
-// The links work on their own; this makes browsers save the file instead of
-// opening it.
-for (const a of document.querySelectorAll("a.dl")) {
-  a.addEventListener("click", async (ev) => {
-    ev.preventDefault();
-    const label = a.querySelector(".dl-text");
-    const text = label.textContent;
-    label.textContent = "Downloading...";
-    try {
-      const res = await fetch(a.href);
-      if (!res.ok) throw new Error(res.status);
-      const url = URL.createObjectURL(await res.blob());
-      const tmp = Object.assign(document.createElement("a"), {
-        href: url,
-        download: a.getAttribute("download"),
-      });
-      tmp.click();
-      URL.revokeObjectURL(url);
-    } catch {
-      window.open(a.href, "_blank", "noopener"); // repo not public yet, or offline
-    } finally {
-      label.textContent = text;
-      a.closest("details")?.removeAttribute("open");
+// Every file is built here from the KML the page already loaded, rather than
+// fetched from the release, so it contains exactly the map the reader has left
+// standing and works offline.
+//
+// Only the explicit hides are applied. The filters - search, date, price, the
+// chips - are how you look around the map, not how you choose what to keep, and
+// a download that silently followed the search box would surprise.
+const visiblePlacemarkIndices = () => {
+  const keep = new Set();
+  for (const spot of spots.values()) {
+    if (hiddenSpotIds.has(spot.id)) continue;
+    for (const { place } of spot.places) {
+      if (place.type === "line" && hiddenTraceIds.has(traceId(place))) continue;
+      keep.add(place.index);
     }
+  }
+  return keep;
+};
+
+const wait = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+
+// Pruning and serialising several MB of XML blocks the frame it runs in, so the
+// button is put into its pending state and given a tick to repaint first.
+// Otherwise the click looks ignored for as long as the work takes.
+const runDownload = async (button, build) => {
+  if (button.disabled) return;
+  const label = button.querySelector(".dl-text");
+  const original = label?.textContent;
+  button.disabled = true;
+  if (label) label.textContent = "Preparing...";
+  try {
+    await wait(0);
+    const { blob, filename } = build();
+    saveBlob(blob, filename);
+  } catch (error) {
+    console.error("Could not build the download", error);
+    if (label) label.textContent = "Failed";
+    await wait(1500);
+  } finally {
+    button.disabled = false;
+    if (label) label.textContent = original;
+    button.closest("details")?.removeAttribute("open");
+  }
+};
+
+for (const button of document.querySelectorAll("[data-download-map]")) {
+  button.addEventListener("click", () => {
+    runDownload(button, () =>
+      buildFile(button.dataset.downloadMap, {
+        kmlText,
+        keep: visiblePlacemarkIndices(),
+        basename: "alpine-mtb-map",
+      }),
+    );
+  });
+}
+
+// The card's own menu: one trace on its own, or a whole spot with its pins and
+// its trails, minus any trail of that spot the reader has already hidden.
+for (const button of document.querySelectorAll("[data-download-place]")) {
+  button.addEventListener("click", () => {
+    if (!activePlace) return;
+    const { place, spot } = activePlace;
+    const single = place.type === "line";
+    const name = single ? place.name : (spot.entry?.name ?? spot.id);
+    const keep = new Set(
+      single
+        ? [place.index]
+        : spot.places
+            .filter(({ place: p }) => p.type !== "line" || !hiddenTraceIds.has(traceId(p)))
+            .map(({ place: p }) => p.index),
+    );
+    runDownload(button, () =>
+      buildFile(button.dataset.downloadPlace, {
+        kmlText,
+        keep,
+        name,
+        basename: slug(name),
+      }),
+    );
   });
 }
 
@@ -1093,7 +1179,7 @@ for (const a of document.querySelectorAll("a.dl")) {
 const chips = [...document.querySelectorAll(".filter[data-tag]")];
 const categoryChips = [...document.querySelectorAll(".filter[data-category]")];
 const lineColorChips = [...document.querySelectorAll(".filter[data-line-color]")];
-const restoreHiddenTracesButton = document.getElementById("restore-hidden-traces");
+const restoreHiddenButton = document.getElementById("restore-hidden");
 const on = (chip) => chip.checked;
 const modeOf = (chip) => chip.dataset.mode ?? "exclude";
 
@@ -1170,6 +1256,7 @@ const applyFilters = () => {
     const chip = lineColorChips.find((candidate) => candidate.dataset.lineColor === entry.color);
     const visible =
       showingTraces &&
+      !hiddenSpotIds.has(entry.spot.id) &&
       !hiddenTraceIds.has(traceId(entry.place)) &&
       matchesFilters(entry.spot) &&
       (!chip || on(chip)) &&
@@ -1182,7 +1269,7 @@ const applyFilters = () => {
   }
 
   for (const spot of spots.values()) {
-    const filterMatch = matchesFilters(spot);
+    const filterMatch = !hiddenSpotIds.has(spot.id) && matchesFilters(spot);
     const spotSearchMatch = !query || spot.searchText.includes(query);
     let hasVisibleLayer = false;
 
@@ -1222,17 +1309,19 @@ const applyFilters = () => {
   const required = [...document.querySelectorAll("#only-filter-menu .filter")].filter(on).length;
   document.getElementById("only-filter-summary").textContent =
     required === 0 ? "Any" : `${required} active`;
-  restoreHiddenTracesButton.hidden = hiddenTraceIds.size === 0;
-  restoreHiddenTracesButton.textContent = `Restore hidden (${hiddenTraceIds.size})`;
+  const hiddenCount = hiddenTraceIds.size + hiddenSpotIds.size;
+  restoreHiddenButton.hidden = hiddenCount === 0;
+  restoreHiddenButton.textContent = `Restore hidden (${hiddenCount})`;
   const hiddenLabels = [
-    ...new Set(
-      lineLayers
+    ...new Set([
+      ...[...hiddenSpotIds].map((id) => spots.get(id)?.entry?.name ?? id),
+      ...lineLayers
         .filter(({ place }) => hiddenTraceIds.has(traceId(place)))
         .map(({ place }) => place.name),
-    ),
+    ]),
   ];
-  if (hiddenLabels.length) restoreHiddenTracesButton.title = hiddenLabels.join("\n");
-  else restoreHiddenTracesButton.removeAttribute("title");
+  if (hiddenLabels.length) restoreHiddenButton.title = hiddenLabels.join("\n");
+  else restoreHiddenButton.removeAttribute("title");
   updateTraceArrows();
 };
 
@@ -1254,9 +1343,10 @@ for (const button of document.querySelectorAll("[data-filter-set]")) {
     applyFilters();
   });
 }
-restoreHiddenTracesButton.addEventListener("click", () => {
+restoreHiddenButton.addEventListener("click", () => {
   hiddenTraceIds.clear();
-  saveHiddenTraces();
+  hiddenSpotIds.clear();
+  saveHidden();
   applyFilters();
 });
 for (const menu of document.querySelectorAll(".filter-menu")) {
@@ -1268,7 +1358,8 @@ for (const menu of document.querySelectorAll(".filter-menu")) {
   });
 }
 document.addEventListener("click", (event) => {
-  for (const menu of document.querySelectorAll(".filter-menu[open]")) {
+  const open = ".filter-menu[open], .download-menu[open], .place-card-menu[open]";
+  for (const menu of document.querySelectorAll(open)) {
     if (!menu.contains(event.target)) menu.removeAttribute("open");
   }
 });
