@@ -5,13 +5,15 @@
 // The three exports are gitignored: the release workflow builds them from the
 // tagged KML and attaches them to the GitHub release.
 //
-// The GeoJSON and GPX generation itself lives in src/lib/kml-export.js, shared
+// The GeoJSON and GPX generation itself lives in src/lib/kml-export.ts, shared
 // with the page so a download built in the browser matches the released file.
+//
+// Node 22.18+ strips the types on the fly, so this runs as a plain `node` script.
 
 import { readFileSync, writeFileSync } from "node:fs";
 import { DOMParser } from "@xmldom/xmldom";
 import { zipSync, strToU8 } from "fflate";
-import { kindOf, toGeoJson, toGpx } from "../src/lib/kml-export.js";
+import { kindOf, toGeoJson, toGpx } from "../src/lib/kml-export.ts";
 
 const SRC = "alpine-mtb-map.kml";
 const BASE = SRC.replace(/\.kml$/, "");
@@ -29,13 +31,13 @@ const spotTypes = ["bike-park", "natural"];
 // The pin colours that mark a spot in its own right, as opposed to a secondary
 // grey waypoint or a trail line.
 const mainKinds = new Set(["bike-park", "natural", "no-lift"]);
-const spotTags = new Map();
-const mainSpots = new Map();
+const spotTags = new Map<string, Set<string>>();
+const mainSpots = new Map<string, string>();
 for (const pm of doc.getElementsByTagName("Placemark")) {
   const data = [...pm.getElementsByTagName("Data")];
-  const facet = (name) =>
-    data.find((item) => item.getAttribute("name") === name)?.textContent.trim() ?? "";
-  const name = pm.getElementsByTagName("name")[0]?.textContent.trim() ?? "";
+  const facet = (name: string) =>
+    data.find((item) => item.getAttribute("name") === name)?.textContent?.trim() ?? "";
+  const name = pm.getElementsByTagName("name")[0]?.textContent?.trim() ?? "";
   const kind = kindOf(pm.getElementsByTagName("styleUrl")[0]?.textContent ?? "");
   const spot = facet("spot") || name;
   const tags = spotTags.get(spot) ?? new Set();
@@ -66,7 +68,7 @@ const kmlBytes = strToU8(readFileSync(SRC, "utf8"));
 writeFileSync(`${BASE}.kmz`, zipSync({ "doc.kml": kmlBytes }, { level: 6 }));
 
 const wpts = geojson.features.filter((f) => f.geometry?.type === "Point").length;
-const trails = geojson.features.filter((f) => f.properties.kind === "trail").length;
+const trails = geojson.features.filter((f) => f.properties?.kind === "trail").length;
 console.log(
   `${BASE}.geojson + ${BASE}.gpx + ${BASE}.kmz: ${wpts} waypoints, ` +
     `${geojson.features.length - wpts} tracks (${trails} tagged as trails)`,

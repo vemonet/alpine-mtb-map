@@ -1,6 +1,6 @@
 node_modules/
 dist/
-# Generated from alpine-mtb-map.kml by scripts/convert.mjs and published as
+# Generated from alpine-mtb-map.kml by scripts/export.ts and published as
 # release assets, so they are never committed.
 alpine-mtb-map.geojson
 alpine-mtb-map.gpx

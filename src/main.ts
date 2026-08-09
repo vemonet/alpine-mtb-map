@@ -3,8 +3,8 @@ import "leaflet/dist/leaflet.css";
 import "maplibre-gl/dist/maplibre-gl.css";
 import "@maplibre/maplibre-gl-leaflet";
 import "./style.css";
-import { KINDS } from "./lib/kml-export.js";
-import { buildFile, saveBlob, slug } from "./lib/downloads.js";
+import { KINDS, type Kind } from "./lib/kml-export.ts";
+import { buildFile, saveBlob, slug, type DownloadFormat } from "./lib/downloads.ts";
 
 // The KML is the single source of truth. Importing it as an asset lets the
 // bundler fingerprint and precache it; the downloadable copies are published as
@@ -17,9 +17,88 @@ const kmlText = await kmlResponse.text();
 
 const KML_NS = "http://www.opengis.net/kml/2.2";
 
+/** A placemark, as the page uses it: one pin or one trail line. */
+interface Place {
+  /**
+   * Position in the source document, so a download can prune the KML itself
+   * rather than being rebuilt from these objects and losing what they drop.
+   */
+  index: number;
+  name: string;
+  description: string;
+  kind: Kind;
+  styleUrl: string;
+  spot: string;
+  tags: string[];
+  priceDay: string;
+  priceSeason: string;
+  openFrom: string;
+  closedFrom: string;
+  type: "point" | "line";
+  coords: L.LatLngTuple[];
+  elevation: number;
+}
+
+/** One day of an Open-Meteo forecast, as this page reads it. */
+interface WeatherDay {
+  code: number;
+  min: number;
+  max: number;
+  precipitation: number;
+  probability: number;
+}
+
+interface Weather {
+  days: Map<string, WeatherDay>;
+}
+
+/** A spot: its main pin, its secondary pins and its trail lines, shown together. */
+interface Spot {
+  id: string;
+  tags: Set<string>;
+  searchText: string;
+  priceDay: number | null;
+  openFrom: string;
+  closedFrom: string;
+  weather: Weather | null;
+  places: { layer: L.Marker | L.Polyline; place: Place }[];
+  weatherPlace: Place | null;
+  group: L.LayerGroup;
+  entry?: SpotEntry;
+}
+
+/** A sidebar row. The <li> is attached once the sorted list is built. */
+interface ResultRow {
+  name: string;
+  meta: string;
+  row?: HTMLLIElement;
+}
+
+interface SpotEntry extends ResultRow {
+  kind: Kind;
+  layer: L.Marker;
+  spot: Spot;
+  place: Place;
+}
+
+interface TraceEntry extends ResultRow {
+  searchText: string;
+  layer: L.Polyline;
+  spot: Spot;
+  place: Place;
+  color: string;
+}
+
+/** The element behind an id in index.html, or a loud failure if the markup moved. */
+const el = <T extends HTMLElement>(id: string): T => {
+  const node = document.getElementById(id);
+  if (!node) throw new Error(`index.html is missing #${id}`);
+  return node as T;
+};
+
 // Trail line styleUrl -> stroke colour, mirrors the KML's own <Style> defs
 // so the web map and Organic Maps (which reads the KML style directly) match.
-const TRAIL_COLORS = {
+const TRAIL_COLORS: Record<string, string> = {
   "line-green": "#2b8a3e",
   "line-blue": "#1864ab",
   "line-red": "#c92a2a",
@@ -31,21 +110,22 @@ const TRAIL_COLOR = TRAIL_COLORS["line-trail"];
 const LOCATE_COLOR = "#7048e8";
 
 /** Parse the KML into a flat list of {name, description, band, type, coords}. */
-function parseKml(text) {
+function parseKml(text: string): Place[] {
   const doc = new DOMParser().parseFromString(text, "application/xml");
   if (doc.querySelector("parsererror")) throw new Error("alpine-mtb-map.kml is not valid XML");
 
-  const text_ = (el, tag) => el.getElementsByTagNameNS(KML_NS, tag)[0]?.textContent?.trim() ?? "";
-  const parseCoords = (s) =>
+  const text_ = (node: Element, tag: string) =>
+    node.getElementsByTagNameNS(KML_NS, tag)[0]?.textContent?.trim() ?? "";
+  const parseCoords = (s: string): L.LatLngTuple[] =>
     s
       .trim()
       .split(/\s+/)
       .map((t) => t.split(",").map(Number))
       .filter((c) => c.length >= 2 && Number.isFinite(c[0]) && Number.isFinite(c[1]))
-      .map(([lon, lat]) => [lat, lon]); // Leaflet wants lat,lon
+      .map(([lon, lat]): L.LatLngTuple => [lat, lon]); // Leaflet wants lat,lon
 
   // <Data name="..."><value>...</value></Data> facets, ignored by Organic Maps.
-  const facet = (pm, key) => {
+  const facet = (pm: Element, key: string) => {
     for (const d of pm.getElementsByTagNameNS(KML_NS, "Data")) {
       if (d.getAttribute("name") === key) return text_(d, "value");
     }
@@ -58,8 +138,6 @@ function parseKml(text) {
     const line = pm.getElementsByTagNameNS(KML_NS, "LineString")[0];
     const geom = point || line;
     return {
-      // Position in the source document, so a download can prune the KML itself
-      // rather than being rebuilt from these objects and losing what they drop.
       index,
       name: text_(pm, "name"),
       description: text_(pm, "description"),
@@ -75,7 +153,7 @@ function parseKml(text) {
       coords: geom ? parseCoords(text_(geom, "coordinates")) : [],
       elevation:
         geom && point ? Number.parseFloat(text_(geom, "coordinates").split(",")[2]) || 0 : 0,
-    };
+    } satisfies Place;
   });
 }
 
@@ -84,7 +162,7 @@ function parseKml(text) {
 // rates: this sorts spots into the right bracket, it is not a quote. A
 // currency missing from the table reads as "no price", so the slider ignores
 // the spot rather than bracketing it wrongly.
-const CHF_PER = {
+const CHF_PER: Record<string, number> = {
   CHF: 1,
   EUR: 0.95,
   GBP: 1.1,
@@ -101,7 +179,7 @@ const CHF_PER = {
   PHP: 0.014,
   MUR: 0.017,
 };
-function chf(price) {
+function chf(price: string) {
   const m = /([\d.]+)\s*([A-Z]{3})/i.exec(price);
   const rate = m && CHF_PER[m[2].toUpperCase()];
   return rate ? +m[1] * rate : null;
@@ -114,10 +192,10 @@ const places = parseKml(kmlText).filter((p) => p.coords.length);
 // so the file you save is the map you built.
 const HIDDEN_TRACES_STORAGE_KEY = "hiddenTraces";
 const HIDDEN_SPOTS_STORAGE_KEY = "hiddenSpots";
-const traceId = (place) => `${place.spot}\n${place.name}`;
-const readHidden = (key) => {
+const traceId = (place: Place) => `${place.spot}\n${place.name}`;
+const readHidden = (key: string): Set<string> => {
   try {
-    return new Set(JSON.parse(localStorage.getItem(key) ?? "[]"));
+    return new Set(JSON.parse(localStorage.getItem(key) ?? "[]") as string[]);
   } catch {
     return new Set();
   }
@@ -134,7 +212,7 @@ const saveHidden = () => {
 };
 
 // ------------------------------------------------------------------ map ---
-const DEFAULT_VIEW = [46.2, 8.0];
+const DEFAULT_VIEW: L.LatLngTuple = [46.2, 8.0];
 const DEFAULT_ZOOM = 7;
 const DEFAULT_MAP_LAYER = "OpenStreetMap";
 const MAP_LAYER_STORAGE_KEY = "mapLayer";
@@ -147,9 +225,10 @@ const requestedTrace = requestedUrl.searchParams.get("trace");
 const requestedSpot = requestedUrl.searchParams.get("spot");
 const requestedInitialPlace = requestedTrace
   ? places.find((p) => p.type === "line" && p.name === requestedTrace)
-  : requestedSpot &&
-    places.find((p) => p.type === "point" && p.kind !== "minor" && p.spot === requestedSpot);
-const initialView = requestedInitialPlace
+  : requestedSpot
+    ? places.find((p) => p.type === "point" && p.kind !== "minor" && p.spot === requestedSpot)
+    : undefined;
+const initialView: [L.LatLngExpression, number] = requestedInitialPlace
   ? [
       requestedInitialPlace.coords[Math.floor(requestedInitialPlace.coords.length / 2)],
       requestedInitialPlace.type === "line" ? 14 : 12,
@@ -164,7 +243,14 @@ const attribution =
 const cartoAttribution = `${attribution}, &copy; <a href="https://carto.com/attributions">CARTO</a>`;
 const openFreeMapAttribution = `${attribution}, <a href="https://openfreemap.org/">OpenFreeMap</a>`;
 
-const layers = {
+// The plugin forwards Leaflet's own layer options to the layer it builds, but
+// its types only declare MapLibre's map options.
+const openFreeMapOptions = {
+  style: "https://tiles.openfreemap.org/styles/liberty",
+  attribution: openFreeMapAttribution,
+} as Parameters<typeof L.maplibreGL>[0];
+
+const layers: Record<string, L.Layer> = {
   OpenStreetMap: L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
     maxZoom: 19,
     attribution,
@@ -177,10 +263,7 @@ const layers = {
     maxZoom: 19,
     attribution: `${attribution}, <a href="https://www.cyclosm.org">CyclOSM</a>`,
   }),
-  "OpenFreeMap Liberty": L.maplibreGL({
-    style: "https://tiles.openfreemap.org/styles/liberty",
-    attribution: openFreeMapAttribution,
-  }),
+  "OpenFreeMap Liberty": L.maplibreGL(openFreeMapOptions),
   "CARTO Voyager": L.tileLayer(
     "https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png",
     {
@@ -190,14 +273,14 @@ const layers = {
     },
   ),
 };
-const savedMapLayer = localStorage.getItem(MAP_LAYER_STORAGE_KEY);
+const savedMapLayer = localStorage.getItem(MAP_LAYER_STORAGE_KEY) ?? "";
 const initialMapLayer = Object.hasOwn(layers, savedMapLayer) ? savedMapLayer : DEFAULT_MAP_LAYER;
 layers[initialMapLayer].addTo(map);
 L.control.layers(layers).addTo(map);
 L.control.scale({ imperial: false, maxWidth: 140 }).addTo(map);
 map.on("baselayerchange", ({ name }) => localStorage.setItem(MAP_LAYER_STORAGE_KEY, name));
 
-const pinIcon = (kind, wet = false) =>
+const pinIcon = (kind: Kind, wet = false) =>
   L.divIcon({
     className: "",
     html: `<div class="pin ${kind}">${
@@ -210,14 +293,14 @@ const pinIcon = (kind, wet = false) =>
   });
 
 // Display labels for compound tags: keep the rest as-is.
-const TAG_DISPLAY = {
+const TAG_DISPLAY: Record<string, string> = {
   dh: "DH",
 };
 
-const displayTag = (tag) => TAG_DISPLAY[tag] ?? tag;
+const displayTag = (tag: string) => TAG_DISPLAY[tag] ?? tag;
 
-const tagBadges = (tags) => {
-  if (!tags?.size) return "";
+const tagBadges = (tags: Set<string>) => {
+  if (!tags.size) return "";
   const badges = [...tags]
     .sort()
     .map((tag) => {
@@ -228,8 +311,8 @@ const tagBadges = (tags) => {
   return `<div class="tag-badges">${badges}</div>`;
 };
 
-const traceCountSummary = (spot) => {
-  const counts = new Map();
+const traceCountSummary = (spot: Spot) => {
+  const counts = new Map<string, number>();
   for (const { place } of spot.places) {
     if (place.type !== "line") continue;
     const color = place.styleUrl === "line-trail" ? "red" : place.styleUrl.replace(/^line-/, "");
@@ -246,16 +329,17 @@ const traceCountSummary = (spot) => {
 
 // The share, hide and close buttons live in the card's own markup rather than
 // here: they must stay put while the description under them scrolls.
-const baseCard = (p, spot) => {
+const baseCard = (p: Place, spot: Spot) => {
   const traceCounts = p.type === "point" ? traceCountSummary(spot) : "";
   return `<h3>${p.name}</h3>${traceCounts ? `<div class="trace-counts">${traceCounts}</div>` : ""}${p.description || ""}`;
 };
 
 // A spot owns its main pin, its secondary pins and its trail lines: they are
 // shown and hidden together, so the filters operate on whole spots.
-const spots = new Map(); // key -> {tags: Set, searchText, priceDay, group, entry}
-const entries = []; // sidebar rows, one per main pin
-const lineLayers = []; // {layer, spot, color} - lets the Lines filter toggle trails independently of their spot
+const spots = new Map<string, Spot>();
+const entries: SpotEntry[] = []; // sidebar rows, one per main pin
+// Lets the Lines filter toggle trails independently of their spot.
+const lineLayers: { layer: L.Polyline; spot: Spot; place: Place; color: string }[] = [];
 // Canvas click tolerance grows the invisible hit area without changing the
 // visible stroke. Touch pointers get extra room for less precise input.
 const trailRenderer = L.canvas({
@@ -263,8 +347,8 @@ const trailRenderer = L.canvas({
 });
 
 for (const p of places) {
-  const lineColor = p.styleUrl?.replace(/^line-/, "") ?? "trail";
-  const layer =
+  const lineColor = p.styleUrl.replace(/^line-/, "") || "trail";
+  const layer: L.Marker | L.Polyline =
     p.type === "point"
       ? L.marker(p.coords[0], {
           icon: pinIcon(p.kind),
@@ -303,12 +387,15 @@ for (const p of places) {
   if (p.type === "point" && (!spot.weatherPlace || p.elevation > spot.weatherPlace.elevation)) {
     spot.weatherPlace = p;
   }
-  if (p.type === "line") lineLayers.push({ layer, spot, place: p, color: lineColor });
+  if (p.type === "line") {
+    lineLayers.push({ layer: layer as L.Polyline, spot, place: p, color: lineColor });
+  }
   spot.searchText += ` ${p.name} ${p.description}`.toLocaleLowerCase();
-  layer.on("click", (event) => {
+  const clicked = spot;
+  layer.on("click", (event: L.LeafletMouseEvent) => {
     // Otherwise the same click reaches the map and closes the card again.
-    L.DomEvent.stopPropagation(event);
-    openPlaceCard(p, spot, layer);
+    L.DomEvent.stopPropagation(event as unknown as Event);
+    openPlaceCard(p, clicked, layer);
   });
 
   // A spot's tag set is the union of its placemarks', plus two tags derived
@@ -324,9 +411,16 @@ for (const p of places) {
   }
 
   // Main spot pins are the ones carrying a "[28 CHF]" summary in the name.
-  const m = p.name.match(/^(.*?)\s*\[(.+)\]$/);
+  const m = /^(.*?)\s*\[(.+)\]$/.exec(p.name);
   if (p.type === "point" && m && p.kind !== "minor") {
-    const entry = { name: m[1], meta: m[2], kind: p.kind, layer, spot, place: p };
+    const entry: SpotEntry = {
+      name: m[1],
+      meta: m[2],
+      kind: p.kind,
+      layer: layer as L.Marker,
+      spot,
+      place: p,
+    };
     spot.entry = entry;
     entries.push(entry);
   }
@@ -339,14 +433,14 @@ requestAnimationFrame(() => {
 });
 
 // -------------------------------------------------------------- sidebar ---
-const list = document.getElementById("spots");
-const placeCard = document.getElementById("place-card");
-const placeCardBody = document.getElementById("place-card-body");
-const placeCardHideButton = document.getElementById("place-card-hide");
-const placeCardDownloadMenu = document.getElementById("place-card-download");
-let activePlace = null;
+const list = el<HTMLUListElement>("spots");
+const placeCard = el("place-card");
+const placeCardBody = el("place-card-body");
+const placeCardHideButton = el<HTMLButtonElement>("place-card-hide");
+const placeCardDownloadMenu = el<HTMLDetailsElement>("place-card-download");
+let activePlace: { place: Place; spot: Spot; layer: L.Marker | L.Polyline } | null = null;
 
-const placeUrl = (place, spot) => {
+const placeUrl = (place: Place, spot: Spot) => {
   const url = new URL(window.location.href);
   url.searchParams.delete("spot");
   url.searchParams.delete("trace");
@@ -355,7 +449,7 @@ const placeUrl = (place, spot) => {
   return url;
 };
 
-const setSelectedPlaceUrl = (place, spot) => {
+const setSelectedPlaceUrl = (place: Place, spot: Spot) => {
   const url = placeUrl(place, spot);
   history.replaceState(place.type === "line" ? { trace: place.name } : { spot: spot.id }, "", url);
 };
@@ -367,7 +461,7 @@ const clearSelectedPlaceUrl = () => {
   history.replaceState(null, "", url);
 };
 
-const copyText = async (text) => {
+const copyText = async (text: string) => {
   if (navigator.clipboard?.writeText) {
     try {
       await navigator.clipboard.writeText(text);
@@ -401,9 +495,9 @@ placeCardHideButton.addEventListener("click", () => {
   applyFilters();
 });
 
-document.getElementById("place-card-share").addEventListener("click", async (event) => {
+el("place-card-share").addEventListener("click", async (event) => {
   if (!activePlace) return;
-  const button = event.currentTarget;
+  const button = event.currentTarget as HTMLButtonElement;
   const { place, spot } = activePlace;
   const url = placeUrl(place, spot).toString();
   if (navigator.share) {
@@ -411,7 +505,7 @@ document.getElementById("place-card-share").addEventListener("click", async (eve
       await navigator.share({ title: place.name, url });
       return;
     } catch (error) {
-      if (error.name === "AbortError") return;
+      if (error instanceof Error && error.name === "AbortError") return;
     }
   }
   try {
@@ -428,18 +522,18 @@ document.getElementById("place-card-share").addEventListener("click", async (eve
 });
 
 // Dim a clicked trail, or every trail linked to a clicked spot, with the same style.
-let selectedLines = [];
-const selectLines = (layers) => {
+let selectedLines: L.Polyline[] = [];
+const selectLines = (lines: L.Polyline[]) => {
   for (const layer of selectedLines) layer.setStyle({ opacity: 0.85 });
-  for (const layer of layers) layer.setStyle({ opacity: 0.45 });
-  selectedLines = layers;
+  for (const layer of lines) layer.setStyle({ opacity: 0.45 });
+  selectedLines = lines;
 };
 const clearSelectedLines = () => {
   for (const layer of selectedLines) layer.setStyle({ opacity: 0.85 });
   selectedLines = [];
 };
 
-function openPlaceCard(place, spot, layer) {
+function openPlaceCard(place: Place, spot: Spot, layer: L.Marker | L.Polyline) {
   activePlace = { place, spot, layer };
   placeCardBody.innerHTML = cardContent(place, spot);
   placeCardBody.scrollTop = 0;
@@ -450,9 +544,14 @@ function openPlaceCard(place, spot, layer) {
   placeCardDownloadMenu.removeAttribute("open");
   placeCard.hidden = false;
   setSelectedPlaceUrl(place, spot);
-  if (place.type === "line") selectLines([layer]);
-  else
-    selectLines(spot.places.filter(({ place }) => place.type === "line").map(({ layer }) => layer));
+  if (place.type === "line") selectLines([layer as L.Polyline]);
+  else {
+    selectLines(
+      spot.places
+        .filter(({ place }) => place.type === "line")
+        .map(({ layer }) => layer as L.Polyline),
+    );
+  }
 }
 
 function closePlaceCard() {
@@ -465,13 +564,13 @@ function closePlaceCard() {
   clearSelectedLines();
 }
 
-document.getElementById("place-card-close").addEventListener("click", closePlaceCard);
+el("place-card-close").addEventListener("click", closePlaceCard);
 map.on("click", closePlaceCard);
 document.addEventListener("keydown", (event) => {
   if (event.key === "Escape") closePlaceCard();
 });
 
-const showEntry = (entry, animate = true) => {
+const showEntry = (entry: SpotEntry, animate = true) => {
   const latlng = entry.layer.getLatLng();
   // flyTo treats duration 0 as "unset" and falls back to its own easing, so an
   // unanimated jump has to go through setView.
@@ -480,7 +579,7 @@ const showEntry = (entry, animate = true) => {
   openPlaceCard(entry.place, entry.spot, entry.layer);
 };
 
-const showTrace = (entry, animate = true) => {
+const showTrace = (entry: TraceEntry, animate = true) => {
   map.fitBounds(entry.layer.getBounds(), {
     animate,
     duration: animate ? 0.6 : 0,
@@ -506,7 +605,7 @@ const ARROW_MIN_ZOOM = 12;
 const ARROW_HEADING_PX = 12;
 const traceArrows = L.layerGroup().addTo(map);
 
-const arrowIcon = (color, angle) =>
+const arrowIcon = (color: string, angle: number) =>
   L.divIcon({
     className: "",
     html: `<div class="trace-arrow" style="transform:rotate(${angle}deg)"><svg viewBox="0 0 12 12" width="12" height="12" aria-hidden="true"><path d="M2.5 1.5 L9.5 6 L2.5 10.5 Z" fill="${color}" stroke="#fff" stroke-width="1.5" stroke-linejoin="round" paint-order="stroke"/></svg></div>`,
@@ -521,8 +620,8 @@ const ARROW_MID_MIN_PX = 60;
 // Heading at a point on the line: look forward until the line has moved far
 // enough to trust the bearing, otherwise a stray vertex on a switchback points
 // the arrow the wrong way. Falls back to the last vertex on a stub.
-const headingAt = (pixels, from, at) => {
-  let ahead = null;
+const headingAt = (pixels: L.Point[], from: L.Point, at: number) => {
+  let ahead: L.Point | null = null;
   for (let i = at; i < pixels.length; i++) {
     if (pixels[i].distanceTo(from) >= ARROW_HEADING_PX) {
       ahead = pixels[i];
@@ -539,12 +638,12 @@ const updateTraceArrows = () => {
   const view = map.getBounds();
   for (const { layer, place } of lineLayers) {
     if (!map.hasLayer(layer) || !view.intersects(layer.getBounds())) continue;
-    const pts = layer.getLatLngs();
+    const pts = layer.getLatLngs() as L.LatLng[];
     if (pts.length < 2) continue;
     const color = TRAIL_COLORS[place.styleUrl] ?? TRAIL_COLOR;
     const pixels = pts.map((p) => map.latLngToLayerPoint(p));
 
-    const arrow = (latlng, angle) =>
+    const arrow = (latlng: L.LatLng, angle: number) =>
       L.marker(latlng, {
         icon: arrowIcon(color, angle),
         interactive: false, // never steal a click from the line it sits on
@@ -578,10 +677,10 @@ map.on("moveend zoomend", updateTraceArrows);
 // have a main placemark, only that its traces carry the tags the filters need.
 // Such a trace labels itself from its own name ("Taney: ..." -> "Taney") rather
 // than showing the raw spot id.
-const traceMeta = (spot, place) =>
+const traceMeta = (spot: Spot, place: Place) =>
   spot.entry?.name ?? (place.name.includes(":") ? place.name.split(":")[0].trim() : spot.id);
 
-const traceEntries = lineLayers.map(({ layer, spot, place, color }) => ({
+const traceEntries: TraceEntry[] = lineLayers.map(({ layer, spot, place, color }) => ({
   name: place.name,
   meta: traceMeta(spot, place),
   searchText: `${place.name} ${place.description}`.toLocaleLowerCase(),
@@ -591,7 +690,7 @@ const traceEntries = lineLayers.map(({ layer, spot, place, color }) => ({
   color,
 }));
 
-const addResultRow = (entry, show) => {
+const addResultRow = <T extends ResultRow>(entry: T, show: (entry: T) => void) => {
   const li = document.createElement("li");
   const btn = document.createElement("button");
   btn.innerHTML = `<span class="name">${entry.name}</span><span class="meta">${entry.meta}</span>`;
@@ -605,14 +704,14 @@ const addResultRow = (entry, show) => {
 // nobody can predict from the outside. Sort by name so a result can be found by
 // scanning, and fall back to the spot name so a trail name reused across resorts
 // still lands in a stable place.
-const byName = (a, b) =>
+const byName = (a: ResultRow, b: ResultRow) =>
   a.name.localeCompare(b.name, undefined, { sensitivity: "base", numeric: true }) ||
   a.meta.localeCompare(b.meta, undefined, { sensitivity: "base" });
 
 for (const entry of [...entries].sort(byName)) addResultRow(entry, showEntry);
 for (const entry of [...traceEntries].sort(byName)) addResultRow(entry, showTrace);
 
-const requestedEntry = requestedSpot && spots.get(requestedSpot)?.entry;
+const requestedEntry = requestedSpot ? spots.get(requestedSpot)?.entry : undefined;
 if (requestedTrace) {
   const requestedPlace = requestedInitialPlace
     ? traceEntries.find((entry) => entry.place === requestedInitialPlace)
@@ -620,9 +719,9 @@ if (requestedTrace) {
   if (requestedPlace) requestAnimationFrame(() => showTrace(requestedPlace, false));
 } else if (requestedEntry) requestAnimationFrame(() => showEntry(requestedEntry, false));
 
-const dateInput = document.getElementById("open-date");
-const dateDisplay = document.getElementById("open-date-display");
-const dateButton = document.getElementById("open-date-button");
+const dateInput = el<HTMLInputElement>("open-date");
+const dateDisplay = el("open-date-display");
+const dateButton = el<HTMLButtonElement>("open-date-button");
 
 // --------------------------------------------------------------- weather ---
 // Open-Meteo accepts comma-separated coordinate lists. Fetching the main pins
@@ -644,11 +743,24 @@ const WEATHER_RAIN_MM = 1;
 const WEATHER_PREVIOUS_DAY_MM = 5;
 const WEATHER_RAIN_PROBABILITY = 50;
 
+/** The slice of an Open-Meteo response this page reads. */
+interface DailyForecast {
+  time: string[];
+  weather_code: number[];
+  temperature_2m_max: number[];
+  temperature_2m_min: number[];
+  precipitation_sum: (number | null)[];
+  precipitation_probability_max: (number | null)[];
+}
+
 // A spot's "rain-sensitive"/"rain-resilient" tag scales how easily it reads as
 // wet: impacted spots keep the sensitive defaults above, untagged ("normal")
 // spots need a bit more rain to flag, and resilient ones only flag on a
 // genuinely wet day itself (no probability or previous-day carry-over).
-const RAIN_SENSITIVITY = {
+const RAIN_SENSITIVITY: Record<
+  string,
+  { rain: number; previous: number | null; probability: number | null }
+> = {
   impacted: {
     rain: WEATHER_RAIN_MM,
     previous: WEATHER_PREVIOUS_DAY_MM,
@@ -657,28 +769,28 @@ const RAIN_SENSITIVITY = {
   normal: { rain: 3, previous: 10, probability: 65 },
   resilient: { rain: 15, previous: null, probability: null },
 };
-const rainSensitivityOf = (spot) =>
+const rainSensitivityOf = (spot: Spot) =>
   spot.tags.has("rain-resilient")
     ? "resilient"
     : spot.tags.has("rain-sensitive")
       ? "impacted"
       : "normal";
-const weatherBtn = document.getElementById("weather");
+const weatherBtn = el<HTMLButtonElement>("weather");
 let weatherEnabled = true;
 let weatherRequest = 0;
 let weatherRetryAt = Number(localStorage.getItem(WEATHER_LIMIT_KEY)) || 0;
 
-const localDate = (date) => {
+const localDate = (date: Date) => {
   const year = date.getFullYear();
   const month = String(date.getMonth() + 1).padStart(2, "0");
   const day = String(date.getDate()).padStart(2, "0");
   return `${year}-${month}-${day}`;
 };
-const shiftedDate = (iso, days) => {
+const shiftedDate = (iso: string, days: number) => {
   const [year, month, day] = iso.split("-").map(Number);
   return localDate(new Date(year, month - 1, day + days));
 };
-const europeanDate = (iso, short = false) => {
+const europeanDate = (iso: string, short = false) => {
   const [year, month, day] = iso.split("-");
   return short ? `${day}.${month}` : `${day}.${month}.${year}`;
 };
@@ -691,14 +803,14 @@ const weatherDate = () => dateInput.value || defaultWeatherDate;
 const weatherDateLabel = () =>
   `${europeanDate(weatherDate())}${!dateInput.value && defaultWeatherDate !== forecastStart ? " (tomorrow)" : ""}`;
 
-const openDatePicker = (input) => {
+const openDatePicker = (input: HTMLInputElement) => {
   if (input.showPicker) input.showPicker();
   else {
     input.focus();
     input.click();
   }
 };
-const weatherCode = (code) => {
+const weatherCode = (code: number) => {
   if (code === 0) return "Clear";
   if (code <= 3) return "Cloudy";
   if (code === 45 || code === 48) return "Fog";
@@ -710,30 +822,30 @@ const weatherCode = (code) => {
   return "Variable";
 };
 
-const wetReason = (weather, spot, date = weatherDate()) => {
-  if (!weather?.days?.has(date)) return "";
+const wetReason = (weather: Weather | null, spot: Spot, date = weatherDate()) => {
+  const day = weather?.days.get(date);
+  if (!day) return "";
   const { rain, previous: previousMm, probability } = RAIN_SENSITIVITY[rainSensitivityOf(spot)];
-  const day = weather.days.get(date);
-  const previous = weather.days.get(shiftedDate(date, -1));
+  const previous = weather?.days.get(shiftedDate(date, -1));
   if (day.precipitation >= rain) {
     return `${day.precipitation.toFixed(1)} mm precipitation forecast`;
   }
   if (probability !== null && day.probability >= probability) {
     return `${day.probability}% chance of precipitation`;
   }
-  if (previousMm !== null && previous?.precipitation >= previousMm) {
+  if (previousMm !== null && previous && previous.precipitation >= previousMm) {
     return `${previous.precipitation.toFixed(1)} mm precipitation the previous day`;
   }
   return "";
 };
 
-const forecastRows = (weather) => {
+const forecastRows = (weather: Weather) => {
   const selectedDate = weatherDate();
   const dates = [-3, -2, -1, 0, 1, 2, 3].map((days) => shiftedDate(selectedDate, days));
   return dates
-    .filter((date) => weather.days.has(date))
-    .map((date) => {
-      const day = weather.days.get(date);
+    .map((date) => ({ date, day: weather.days.get(date) }))
+    .filter((row): row is { date: string; day: WeatherDay } => Boolean(row.day))
+    .map(({ date, day }) => {
       const selected = date === selectedDate ? ' class="selected"' : "";
       return `<tr${selected}><td>${europeanDate(date, true)}</td><td>${weatherCode(
         day.code,
@@ -744,7 +856,7 @@ const forecastRows = (weather) => {
     .join("");
 };
 
-function cardContent(place, spot) {
+function cardContent(place: Place, spot: Spot) {
   const content = baseCard(place, spot);
   const tags = tagBadges(new Set(place.tags));
   // Forecasts are fetched per main pin, so a spot without one has none to show.
@@ -790,8 +902,8 @@ const refreshWeatherPresentation = () => {
   }
 };
 
-const parseWeather = (data) => {
-  const days = new Map();
+const parseWeather = (data: { daily: DailyForecast }): Weather => {
+  const days = new Map<string, WeatherDay>();
   for (let i = 0; i < data.daily.time.length; i++) {
     days.set(data.daily.time[i], {
       code: data.daily.weather_code[i],
@@ -804,9 +916,19 @@ const parseWeather = (data) => {
   return { days };
 };
 
-const readWeatherCache = () => {
+interface CachedWeather {
+  cachedAt: number;
+  days: Record<string, WeatherDay>;
+}
+
+const readWeatherCache = (): Record<string, CachedWeather> => {
   try {
-    return JSON.parse(localStorage.getItem(WEATHER_CACHE_KEY)) || {};
+    return (
+      (JSON.parse(localStorage.getItem(WEATHER_CACHE_KEY) ?? "null") as Record<
+        string,
+        CachedWeather
+      > | null) ?? {}
+    );
   } catch {
     return {};
   }
@@ -847,7 +969,10 @@ const saveWeatherCache = () => {
 // ran out only in its body, so the reason is what decides how long to wait when
 // there is no Retry-After to go on.
 class WeatherRateLimit extends Error {
-  constructor(retryAt, reason) {
+  retryAt: number;
+  reason: string;
+
+  constructor(retryAt: number, reason: string) {
     super(reason || "Open-Meteo rate limit reached");
     this.retryAt = retryAt;
     this.reason = reason;
@@ -862,7 +987,7 @@ const nextUtcMidnight = () => {
 
 // Retry-After is only readable when the server allows it through CORS, which
 // Open-Meteo does not currently do, so treat it as a bonus rather than the plan.
-const retryAtFrom = (response, reason) => {
+const retryAtFrom = (response: Response, reason: string) => {
   const header = response.headers.get("Retry-After");
   const seconds = Number(header);
   if (Number.isFinite(seconds) && seconds > 0) return Date.now() + seconds * 1000;
@@ -873,7 +998,7 @@ const retryAtFrom = (response, reason) => {
   return Date.now() + 60 * 1000;
 };
 
-const blockWeather = (limit) => {
+const blockWeather = (limit: WeatherRateLimit) => {
   weatherRetryAt = limit.retryAt;
   try {
     localStorage.setItem(WEATHER_LIMIT_KEY, String(weatherRetryAt));
@@ -895,7 +1020,7 @@ const retryLabel = () => {
   return hours < 24 ? `in ${hours} h` : "tomorrow";
 };
 
-const fetchWeatherBatch = async (batch, request) => {
+const fetchWeatherBatch = async (batch: SpotEntry[], request: number) => {
   const params = new URLSearchParams({
     latitude: batch
       .map((entry) =>
@@ -923,17 +1048,18 @@ const fetchWeatherBatch = async (batch, request) => {
   if (response.status === 429) {
     const reason = await response
       .json()
-      .then((body) => body?.reason ?? "")
+      .then((body: { reason?: string }) => body?.reason ?? "")
       .catch(() => "");
     throw new WeatherRateLimit(retryAtFrom(response, reason), reason);
   }
   if (!response.ok) throw new Error(`Open-Meteo returned ${response.status}`);
-  const result = await response.json();
+  const result = (await response.json()) as { daily?: DailyForecast } | { daily?: DailyForecast }[];
   if (request !== weatherRequest || !weatherEnabled) return;
   const forecasts = Array.isArray(result) ? result : [result];
   for (let i = 0; i < batch.length; i++) {
-    if (forecasts[i]?.daily) {
-      const weather = parseWeather(forecasts[i]);
+    const forecast = forecasts[i];
+    if (forecast?.daily) {
+      const weather = parseWeather({ daily: forecast.daily });
       batch[i].spot.weather = weather;
       weatherCache[batch[i].spot.id] = {
         cachedAt: Date.now(),
@@ -945,7 +1071,7 @@ const fetchWeatherBatch = async (batch, request) => {
   refreshWeatherPresentation();
 };
 
-const setWeatherLabel = (label) => {
+const setWeatherLabel = (label: string) => {
   weatherBtn.title = label;
   weatherBtn.setAttribute("aria-label", label);
 };
@@ -972,17 +1098,19 @@ const loadWeather = async () => {
   weatherBtn.classList.add("loading");
   setWeatherLabel("Loading weather forecasts");
 
-  const queue = [];
+  const queue: SpotEntry[][] = [];
   for (let i = 0; i < missingEntries.length; i += WEATHER_BATCH_SIZE) {
     queue.push(missingEntries.slice(i, i + WEATHER_BATCH_SIZE));
   }
   let failed = 0;
-  let limit = null;
+  let limit: WeatherRateLimit | null = null;
   const worker = async () => {
     while (queue.length && !limit) {
       if (request !== weatherRequest || !weatherEnabled) return;
+      const batch = queue.shift();
+      if (!batch) return;
       try {
-        await fetchWeatherBatch(queue.shift(), request);
+        await fetchWeatherBatch(batch, request);
       } catch (error) {
         // One 429 means the whole sweep is over: drain the queue so the other
         // workers stop too rather than each collecting a refusal of its own.
@@ -998,9 +1126,11 @@ const loadWeather = async () => {
   await Promise.all(Array.from({ length: WEATHER_CONCURRENCY }, worker));
   if (request !== weatherRequest || !weatherEnabled) return;
   weatherBtn.classList.remove("loading");
-  if (limit) {
-    blockWeather(limit);
-    console.warn(`Open-Meteo rate limit: ${limit.reason || "no reason given"}`);
+  // Assigned inside the workers above, which the narrowing from `= null` misses.
+  const rateLimit = limit as WeatherRateLimit | null;
+  if (rateLimit) {
+    blockWeather(rateLimit);
+    console.warn(`Open-Meteo rate limit: ${rateLimit.reason || "no reason given"}`);
     setWeatherLabel(`Disable weather (forecast limit reached, retrying ${retryLabel()})`);
   } else if (failed) {
     setWeatherLabel(
@@ -1019,20 +1149,20 @@ weatherBtn.addEventListener("click", () => {
   weatherBtn.title = weatherEnabled ? "Disable weather" : "Enable weather";
   weatherBtn.setAttribute("aria-label", weatherBtn.title);
   refreshWeatherPresentation();
-  if (weatherEnabled && entries.some((entry) => !entry.spot.weather)) loadWeather();
+  if (weatherEnabled && entries.some((entry) => !entry.spot.weather)) void loadWeather();
   else if (!weatherEnabled) weatherRequest++;
 });
 
-loadWeather();
+void loadWeather();
 
 // ----------------------------------------------------------- geolocation ---
 // Opt-in only: nothing touches the Geolocation API until this button is
 // clicked, so no permission prompt on page load.
-const locateBtn = document.getElementById("locate");
+const locateBtn = el<HTMLButtonElement>("locate");
 const me = L.layerGroup();
 let watching = false;
 
-const setLocateLabel = (label) => {
+const setLocateLabel = (label: string) => {
   locateBtn.title = label;
   locateBtn.setAttribute("aria-label", label);
 };
@@ -1091,7 +1221,7 @@ locateBtn.addEventListener("click", () => {
 // chips - are how you look around the map, not how you choose what to keep, and
 // a download that silently followed the search box would surprise.
 const visiblePlacemarkIndices = () => {
-  const keep = new Set();
+  const keep = new Set<number>();
   for (const spot of spots.values()) {
     if (hiddenSpotIds.has(spot.id)) continue;
     for (const { place } of spot.places) {
@@ -1102,15 +1232,18 @@ const visiblePlacemarkIndices = () => {
   return keep;
 };
 
-const wait = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+const wait = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
 
 // Pruning and serialising several MB of XML blocks the frame it runs in, so the
 // button is put into its pending state and given a tick to repaint first.
 // Otherwise the click looks ignored for as long as the work takes.
-const runDownload = async (button, build) => {
+const runDownload = async (
+  button: HTMLButtonElement,
+  build: () => { blob: Blob; filename: string },
+) => {
   if (button.disabled) return;
   const label = button.querySelector(".dl-text");
-  const original = label?.textContent;
+  const original = label?.textContent ?? "";
   button.disabled = true;
   if (label) label.textContent = "Preparing...";
   try {
@@ -1128,10 +1261,10 @@ const runDownload = async (button, build) => {
   }
 };
 
-for (const button of document.querySelectorAll("[data-download-map]")) {
+for (const button of document.querySelectorAll<HTMLButtonElement>("[data-download-map]")) {
   button.addEventListener("click", () => {
-    runDownload(button, () =>
-      buildFile(button.dataset.downloadMap, {
+    void runDownload(button, () =>
+      buildFile(button.dataset.downloadMap as DownloadFormat, {
         kmlText,
         keep: visiblePlacemarkIndices(),
         basename: "alpine-mtb-map",
@@ -1142,7 +1275,7 @@ for (const button of document.querySelectorAll("[data-download-map]")) {
 
 // The card's own menu: one trace on its own, or a whole spot with its pins and
 // its trails, minus any trail of that spot the reader has already hidden.
-for (const button of document.querySelectorAll("[data-download-place]")) {
+for (const button of document.querySelectorAll<HTMLButtonElement>("[data-download-place]")) {
   button.addEventListener("click", () => {
     if (!activePlace) return;
     const { place, spot } = activePlace;
@@ -1155,8 +1288,8 @@ for (const button of document.querySelectorAll("[data-download-place]")) {
             .filter(({ place: p }) => p.type !== "line" || !hiddenTraceIds.has(traceId(p)))
             .map(({ place: p }) => p.index),
     );
-    runDownload(button, () =>
-      buildFile(button.dataset.downloadPlace, {
+    void runDownload(button, () =>
+      buildFile(button.dataset.downloadPlace as DownloadFormat, {
         kmlText,
         keep,
         name,
@@ -1176,25 +1309,26 @@ for (const button of document.querySelectorAll("[data-download-place]")) {
 //
 // "any" lets multi-tag spots survive while any matching chip remains on. It
 // drives both the difficulty group and the DH/enduro/freeride discipline group.
-const chips = [...document.querySelectorAll(".filter[data-tag]")];
-const categoryChips = [...document.querySelectorAll(".filter[data-category]")];
-const lineColorChips = [...document.querySelectorAll(".filter[data-line-color]")];
-const restoreHiddenButton = document.getElementById("restore-hidden");
-const on = (chip) => chip.checked;
-const modeOf = (chip) => chip.dataset.mode ?? "exclude";
+const chips = [...document.querySelectorAll<HTMLInputElement>(".filter[data-tag]")];
+const categoryChips = [...document.querySelectorAll<HTMLInputElement>(".filter[data-category]")];
+const lineColorChips = [...document.querySelectorAll<HTMLInputElement>(".filter[data-line-color]")];
+const restoreHiddenButton = el<HTMLButtonElement>("restore-hidden");
+const on = (chip: HTMLInputElement) => chip.checked;
+const modeOf = (chip: HTMLInputElement) => chip.dataset.mode ?? "exclude";
 
-const anyGroups = new Map(); // group name -> chips
+const anyGroups = new Map<string, HTMLInputElement[]>();
 for (const chip of chips) {
   if (modeOf(chip) !== "any") continue;
-  const g = anyGroups.get(chip.dataset.group) ?? [];
+  const name = chip.dataset.group ?? "";
+  const g = anyGroups.get(name) ?? [];
   g.push(chip);
-  anyGroups.set(chip.dataset.group, g);
+  anyGroups.set(name, g);
 }
 
 // Numeric filter. Its max value means "any", so an unset slider never hides
 // anything, and neither does a spot whose price we could not verify.
-const priceInput = document.getElementById("price-day");
-const priceOut = document.getElementById("price-day-out");
+const priceInput = el<HTMLInputElement>("price-day");
+const priceOut = el("price-day-out");
 const priceCap = () => {
   const v = +priceInput.value;
   return v >= +priceInput.max ? Infinity : v;
@@ -1202,10 +1336,10 @@ const priceCap = () => {
 
 // Seasons recur each year, so only the month and day are compared. closed_from
 // is exclusive; matching dates mean the spot is normally open year-round.
-const searchInput = document.getElementById("spot-search");
-const clearSearchButton = document.getElementById("clear-search");
-const searchModeButtons = [...document.querySelectorAll("[data-search-mode]")];
-let searchMode = "spots";
+const searchInput = el<HTMLInputElement>("spot-search");
+const clearSearchButton = el<HTMLButtonElement>("clear-search");
+const searchModeButtons = [...document.querySelectorAll<HTMLButtonElement>("[data-search-mode]")];
+let searchMode: "spots" | "traces" = "spots";
 const updateDateDisplay = () => {
   const [year, month, day] = dateInput.value.split("-");
   dateDisplay.textContent = year
@@ -1217,7 +1351,7 @@ dateButton.addEventListener("click", () => {
   openDatePicker(dateInput);
 });
 const selectedDay = () => dateInput.value.slice(5);
-const isOpen = (spot) => {
+const isOpen = (spot: Spot) => {
   const day = selectedDay();
   const { openFrom, closedFrom } = spot;
   if (!day) return true;
@@ -1227,18 +1361,18 @@ const isOpen = (spot) => {
   return day >= openFrom || day < closedFrom;
 };
 
-const matchesFilters = (spot) => {
+const matchesFilters = (spot: Spot) => {
   const category = spot.tags.has("bike-park") ? "bike-park" : "natural";
   if (!categoryChips.some((chip) => on(chip) && chip.dataset.category === category)) return false;
 
   for (const chip of chips) {
-    const has = spot.tags.has(chip.dataset.tag);
+    const has = spot.tags.has(chip.dataset.tag ?? "");
     const mode = modeOf(chip);
     if (mode === "exclude" && has && !on(chip)) return false;
     if (mode === "only" && on(chip) && !has) return false;
   }
   for (const group of anyGroups.values()) {
-    if (!group.some((c) => on(c) && spot.tags.has(c.dataset.tag))) return false;
+    if (!group.some((c) => on(c) && spot.tags.has(c.dataset.tag ?? ""))) return false;
   }
   if (spot.priceDay !== null && spot.priceDay > priceCap()) return false;
   return isOpen(spot);
@@ -1248,7 +1382,7 @@ const applyFilters = () => {
   const cap = priceCap();
   const query = searchInput.value.trim().toLocaleLowerCase();
   const showingTraces = searchMode === "traces";
-  const visibleTraceLayers = new Set();
+  const visibleTraceLayers = new Set<L.Layer>();
   let visibleCount = 0;
   priceOut.textContent = cap === Infinity ? "any" : `${cap} CHF`;
 
@@ -1261,7 +1395,7 @@ const applyFilters = () => {
       matchesFilters(entry.spot) &&
       (!chip || on(chip)) &&
       (!query || entry.searchText.includes(query));
-    entry.row.hidden = !visible;
+    if (entry.row) entry.row.hidden = !visible;
     if (visible) {
       visibleTraceLayers.add(entry.layer);
       visibleCount++;
@@ -1274,7 +1408,7 @@ const applyFilters = () => {
     let hasVisibleLayer = false;
 
     for (const { layer, place } of spot.places) {
-      const color = place.styleUrl?.replace(/^line-/, "") ?? "trail";
+      const color = place.styleUrl.replace(/^line-/, "") || "trail";
       const colorChip = lineColorChips.find((chip) => chip.dataset.lineColor === color);
       const lineEnabled = place.type !== "line" || !colorChip || on(colorChip);
       const visible = showingTraces
@@ -1295,20 +1429,20 @@ const applyFilters = () => {
     else map.removeLayer(spot.group);
     if (spot.entry) {
       const visible = !showingTraces && filterMatch && spotSearchMatch;
-      spot.entry.row.hidden = !visible;
+      if (spot.entry.row) spot.entry.row.hidden = !visible;
       if (visible) visibleCount++;
     }
   }
   const resultName = showingTraces ? "trace" : "spot";
-  document.querySelector("#spot-count").textContent =
-    `${visibleCount} ${resultName}${visibleCount === 1 ? "" : "s"}`;
-  const showFilters = [...document.querySelectorAll("#show-filter-menu .filter")];
+  el("spot-count").textContent = `${visibleCount} ${resultName}${visibleCount === 1 ? "" : "s"}`;
+  const showFilters = [...document.querySelectorAll<HTMLInputElement>("#show-filter-menu .filter")];
   const shown = showFilters.filter(on).length;
-  document.getElementById("show-filter-summary").textContent =
+  el("show-filter-summary").textContent =
     shown === showFilters.length ? "All" : shown ? `${shown}/${showFilters.length}` : "None";
-  const required = [...document.querySelectorAll("#only-filter-menu .filter")].filter(on).length;
-  document.getElementById("only-filter-summary").textContent =
-    required === 0 ? "Any" : `${required} active`;
+  const required = [
+    ...document.querySelectorAll<HTMLInputElement>("#only-filter-menu .filter"),
+  ].filter(on).length;
+  el("only-filter-summary").textContent = required === 0 ? "Any" : `${required} active`;
   const hiddenCount = hiddenTraceIds.size + hiddenSpotIds.size;
   restoreHiddenButton.hidden = hiddenCount === 0;
   restoreHiddenButton.textContent = `Restore hidden (${hiddenCount})`;
@@ -1334,10 +1468,10 @@ for (const chip of lineColorChips) {
 for (const chip of categoryChips) {
   chip.addEventListener("change", applyFilters);
 }
-for (const button of document.querySelectorAll("[data-filter-set]")) {
+for (const button of document.querySelectorAll<HTMLButtonElement>("[data-filter-set]")) {
   button.addEventListener("click", () => {
     const checked = button.dataset.filterSet === "all";
-    for (const input of document.querySelectorAll("#show-filter-menu .filter")) {
+    for (const input of document.querySelectorAll<HTMLInputElement>("#show-filter-menu .filter")) {
       input.checked = checked;
     }
     applyFilters();
@@ -1349,7 +1483,7 @@ restoreHiddenButton.addEventListener("click", () => {
   saveHidden();
   applyFilters();
 });
-for (const menu of document.querySelectorAll(".filter-menu")) {
+for (const menu of document.querySelectorAll<HTMLDetailsElement>(".filter-menu")) {
   menu.addEventListener("toggle", () => {
     if (!menu.open) return;
     for (const other of document.querySelectorAll(".filter-menu")) {
@@ -1360,7 +1494,7 @@ for (const menu of document.querySelectorAll(".filter-menu")) {
 document.addEventListener("click", (event) => {
   const open = ".filter-menu[open], .download-menu[open], .place-card-menu[open]";
   for (const menu of document.querySelectorAll(open)) {
-    if (!menu.contains(event.target)) menu.removeAttribute("open");
+    if (!menu.contains(event.target as Node)) menu.removeAttribute("open");
   }
 });
 priceInput.addEventListener("input", applyFilters);
@@ -1376,7 +1510,7 @@ clearSearchButton.addEventListener("click", () => {
 });
 for (const button of searchModeButtons) {
   button.addEventListener("click", () => {
-    searchMode = button.dataset.searchMode;
+    searchMode = button.dataset.searchMode === "traces" ? "traces" : "spots";
     for (const candidate of searchModeButtons) {
       candidate.setAttribute("aria-pressed", String(candidate === button));
     }
@@ -1400,7 +1534,7 @@ applyFilters();
 // ----------------------------------------------------------------- theme ---
 // The initial value is set by the inline script in index.html; clicking here
 // pins a choice, which then survives reloads and stops following the OS.
-document.getElementById("theme").addEventListener("click", () => {
+el("theme").addEventListener("click", () => {
   const next = document.documentElement.dataset.theme === "dark" ? "light" : "dark";
   document.documentElement.dataset.theme = next;
   localStorage.setItem("theme", next);
@@ -1409,9 +1543,9 @@ document.getElementById("theme").addEventListener("click", () => {
 // --------------------------------------------------------------- sidebar ---
 // Collapse the sidebar for a full-width map. The handle stays put, so there is
 // always something to click to bring it back.
-const app = document.getElementById("app");
-const sidebar = document.getElementById("sidebar");
-const toggle = document.getElementById("toggle-sidebar");
+const app = el("app");
+const sidebar = el("sidebar");
+const toggle = el<HTMLButtonElement>("toggle-sidebar");
 
 sidebar.addEventListener("transitionend", (ev) => {
   // Leaflet sizes itself from the container, which only settles once the
@@ -1428,8 +1562,8 @@ toggle.addEventListener("click", () => {
 });
 
 // ----------------------------------------------------------------- about ---
-const about = document.getElementById("about");
-document.getElementById("info").addEventListener("click", () => about.showModal());
+const about = el<HTMLDialogElement>("about");
+el("info").addEventListener("click", () => about.showModal());
 about.addEventListener("click", (ev) => {
   // Clicking the backdrop reports the <dialog> itself as the target.
   if (ev.target === about) about.close();

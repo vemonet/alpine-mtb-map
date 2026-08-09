@@ -60,7 +60,7 @@ Three different things live in this repo, so three licences. All three are in [`
 | What | Licence | Why |
 | --- | --- | --- |
 | Map data (`.kml`, `.gpx`, `.geojson`) | ODbL 1.0 | Contains geometry derived from OpenStreetMap |
-| Website and tooling (`src/`, `scripts/`, `index.html`, `vite.config.js`, `.github/`) | MIT | Ordinary code, no OSM data in it |
+| Website and tooling (`src/`, `scripts/`, `index.html`, `vite.config.ts`, `.github/`) | MIT | Ordinary code, no OSM data in it |
 
 **The data files are ODbL, not Creative Commons, and that is not a free choice.** The trail lines were extracted from OpenStreetMap relations, which makes the file a derivative database. ODbL is share-alike, so the whole database inherits it - and ODbL and CC BY-SA are not compatible in either direction, so mixing them in one file would be a licence conflict rather than a dual licence. Individual contents (the descriptions, prices, travel times) are additionally available under [DbCL 1.0](https://opendatacommons.org/licenses/dbcl/1-0/), which is the same split OpenStreetMap itself uses.
 

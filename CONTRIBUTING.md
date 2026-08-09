@@ -197,7 +197,7 @@ For backward compatibility, `no-lift` is also derived from a `#placemark-brown` 
 <Data name="price_season"><value>320 EUR</value></Data>
 ```
 
-The price slider knows `CHF`, `EUR`, `CAD` and `JPY` (the rates live in `CHF_PER` in [`src/main.js`](src/main.js)). Any other currency still displays, it just never gets filtered.
+The price slider knows `CHF`, `EUR`, `CAD` and `JPY` (the rates live in `CHF_PER` in [`src/main.ts`](src/main.ts)). Any other currency still displays, it just never gets filtered.
 
 **Leave them out rather than guess.** An omitted price is never hidden by the price slider, which is the right outcome for a spot we could not verify; an invented one sends someone to a resort on a number that was never real. Say so in the description instead ("price not verified here, check operator.ch").
 
@@ -283,7 +283,7 @@ vp run ready       # everything CI runs, before you open a pull request
 vp run release     # cut a release (maintainers)
 ```
 
-> Everything the tooling needs lives in [`vite.config.js`](vite.config.js).
+> Everything the tooling needs lives in [`vite.config.ts`](vite.config.ts).
 
 [`.github/workflows/deploy.yml`](.github/workflows/deploy.yml) runs `vp check` and `vp run export`, which validates the KML: the conversion refuses a spot that is missing a required tag axis. On `main` it then builds and publishes to GitHub Pages; pull requests get the checks only.
 

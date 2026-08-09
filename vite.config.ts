@@ -86,6 +86,7 @@ export default defineConfig({
   },
 
   lint: {
+    options: { typeAware: true, typeCheck: true },
     env: { browser: true },
     // The export and icon scripts run under Node, not in the page.
     overrides: [{ files: ["scripts/**"], env: { node: true } }],
@@ -99,8 +100,8 @@ export default defineConfig({
       // lets Vite Task replay the 20 MB of exports from its cache when the KML
       // has not moved, so a retried release does not rebuild them.
       export: {
-        command: "node scripts/export.mjs",
-        input: ["alpine-mtb-map.kml", "scripts/export.mjs", "src/lib/kml-export.js"],
+        command: "node scripts/export.ts",
+        input: ["alpine-mtb-map.kml", "scripts/export.ts", "src/lib/kml-export.ts"],
         output: ["alpine-mtb-map.geojson", "alpine-mtb-map.gpx", "alpine-mtb-map.kmz"],
       },
       // The PWA icons, derived from public/icon.png. Only needed when the mark
@@ -130,6 +131,6 @@ export default defineConfig({
   },
 
   staged: {
-    "*.{js,mjs,css,html,json,md}": "vp check --fix",
+    "*.{ts,js,mjs,css,html,json,md}": "vp check --fix",
   },
 });

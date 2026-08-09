@@ -9,7 +9,7 @@
 // the release build uses.
 
 import { strToU8, zipSync } from "fflate";
-import { toGeoJson, toGpx } from "./kml-export.js";
+import { toGeoJson, toGpx } from "./kml-export.ts";
 
 const KML_NS = "http://www.opengis.net/kml/2.2";
 
@@ -20,10 +20,12 @@ const FORMATS = {
   geojson: { ext: "geojson", type: "application/geo+json" },
 };
 
-export const DOWNLOAD_FORMATS = Object.keys(FORMATS);
+export type DownloadFormat = keyof typeof FORMATS;
+
+export const DOWNLOAD_FORMATS = Object.keys(FORMATS) as DownloadFormat[];
 
 /** The source KML with every placemark whose index is not kept removed. */
-function prunedDoc(kmlText, keep, title) {
+function prunedDoc(kmlText: string, keep: Set<number>, title?: string) {
   const doc = new DOMParser().parseFromString(kmlText, "application/xml");
   if (doc.querySelector("parsererror")) throw new Error("alpine-mtb-map.kml is not valid XML");
 
@@ -32,7 +34,7 @@ function prunedDoc(kmlText, keep, title) {
     // Take the indentation in front of it too, otherwise a pruned file is a
     // ladder of blank lines.
     const before = placemark.previousSibling;
-    if (before?.nodeType === Node.TEXT_NODE && !before.nodeValue.trim()) before.remove();
+    if (before?.nodeType === Node.TEXT_NODE && !before.nodeValue?.trim()) before.remove();
     placemark.remove();
   }
 
@@ -49,26 +51,32 @@ function prunedDoc(kmlText, keep, title) {
 
 // Whether XMLSerializer keeps the prolog is engine-dependent, and Organic Maps
 // wants the encoding declared, so put one back only when it is missing.
-const serialize = (doc) => {
+const serialize = (doc: Document) => {
   const xml = new XMLSerializer().serializeToString(doc);
   return `${xml.startsWith("<?xml") ? "" : '<?xml version="1.0" encoding="UTF-8"?>\n'}${xml}\n`;
 };
 
-/**
- * Build one downloadable file.
- *
- * @param format    one of DOWNLOAD_FORMATS
- * @param kmlText   the source KML, unmodified
- * @param keep      Set of placemark indices, in source document order
- * @param name      human title for the file's metadata
- * @param basename  filename without extension
- */
-export function buildFile(format, { kmlText, keep, name, basename }) {
+export interface BuildFileOptions {
+  /** The source KML, unmodified. */
+  kmlText: string;
+  /** Placemark indices to keep, in source document order. */
+  keep: Set<number>;
+  /** Human title for the file's metadata. */
+  name?: string;
+  /** Filename without extension. */
+  basename: string;
+}
+
+/** Build one downloadable file. */
+export function buildFile(
+  format: DownloadFormat,
+  { kmlText, keep, name, basename }: BuildFileOptions,
+) {
   const spec = FORMATS[format];
   if (!spec) throw new Error(`Unknown download format: ${format}`);
   const doc = prunedDoc(kmlText, keep, name);
 
-  let body;
+  let body: string | Uint8Array;
   if (format === "kml") {
     body = serialize(doc);
   } else if (format === "kmz") {
@@ -80,13 +88,15 @@ export function buildFile(format, { kmlText, keep, name, basename }) {
   }
 
   return {
-    blob: new Blob([body], { type: spec.type }),
+    // fflate hands back a Uint8Array over a plain ArrayBuffer, which is a valid
+    // BlobPart; only the SharedArrayBuffer half of the union TS infers is not.
+    blob: new Blob([body as BlobPart], { type: spec.type }),
     filename: `${basename}.${spec.ext}`,
   };
 }
 
 /** Hand a built file to the browser's downloader. */
-export function saveBlob(blob, filename) {
+export function saveBlob(blob: Blob, filename: string) {
   const url = URL.createObjectURL(blob);
   const link = Object.assign(document.createElement("a"), { href: url, download: filename });
   link.click();
@@ -95,7 +105,7 @@ export function saveBlob(blob, filename) {
 }
 
 /** A filename-safe stem for a trail or spot name. */
-export const slug = (text) =>
+export const slug = (text: string) =>
   text
     .normalize("NFD")
     .replaceAll(/[\u0300-\u036f]/g, "")
