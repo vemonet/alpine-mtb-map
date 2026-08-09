@@ -6,9 +6,7 @@ Copyright (c) 2026 Vincent Emonet and contributors
 This repository holds three different kinds of thing, and they cannot all carry
 the same licence. Which one applies depends on the file:
 
-    public/alpine-mtb-map.kml                ODbL 1.0        (section 1)
-    public/alpine-mtb-map.gpx
-    public/alpine-mtb-map.geojson
+    alpine-mtb-map.kml                       ODbL 1.0        (section 1)
 
     src/, scripts/, index.html,              MIT             (section 2)
     vite.config.js, package.json, .github/
@@ -21,8 +19,7 @@ property of, OpenStreetMap, OpenTopoMap (CC BY-SA) and CyclOSM.
 1. MAP DATA - Open Database License (ODbL) v1.0
 -------------------------------------------------------------------------------
 
-Covers public/alpine-mtb-map.kml, public/alpine-mtb-map.gpx and
-public/alpine-mtb-map.geojson.
+Covers alpine-mtb-map.kml
 
 These files contain information derived from OpenStreetMap. The trail
 geometries (the <LineString> / LineString coordinates) were extracted from

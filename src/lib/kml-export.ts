@@ -27,6 +27,7 @@ export const KINDS: Record<string, Kind> = {
   "line-blue": "trail",
   "line-red": "trail",
   "line-black": "trail",
+  "line-orange": "trail",
   "line-trail": "trail",
 };
 

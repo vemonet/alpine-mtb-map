@@ -37,6 +37,7 @@ interface Place {
   type: "point" | "line";
   coords: L.LatLngTuple[];
   elevation: number;
+  lengthKm: number;
 }
 
 /** One day of an Open-Meteo forecast, as this page reads it. */
@@ -103,6 +104,9 @@ const TRAIL_COLORS: Record<string, string> = {
   "line-blue": "#1864ab",
   "line-red": "#c92a2a",
   "line-black": "#000000",
+  // Harder than black: the "extreme" / pro-line grade some parks sign in orange.
+  // Amber rather than a true orange, which at line width reads as another red.
+  "line-orange": "#f59f00",
   "line-trail": "#c92a2a",
 };
 const TRAIL_COLOR = TRAIL_COLORS["line-trail"];
@@ -132,11 +136,20 @@ function parseKml(text: string): Place[] {
     return "";
   };
 
+  // Ground distance along a trace, in kilometres. Leaflet measures on a sphere
+  // without needing a map, which is close enough for a filter.
+  const lengthOf = (coords: L.LatLngTuple[]) => {
+    let metres = 0;
+    for (let i = 1; i < coords.length; i++) metres += L.latLng(coords[i - 1]).distanceTo(coords[i]);
+    return metres / 1000;
+  };
+
   return [...doc.getElementsByTagNameNS(KML_NS, "Placemark")].map((pm, index) => {
     const styleUrl = text_(pm, "styleUrl").replace(/^#/, "");
     const point = pm.getElementsByTagNameNS(KML_NS, "Point")[0];
     const line = pm.getElementsByTagNameNS(KML_NS, "LineString")[0];
     const geom = point || line;
+    const coords = geom ? parseCoords(text_(geom, "coordinates")) : [];
     return {
       index,
       name: text_(pm, "name"),
@@ -150,9 +163,10 @@ function parseKml(text: string): Place[] {
       openFrom: facet(pm, "open_from"),
       closedFrom: facet(pm, "closed_from"),
       type: point ? "point" : "line",
-      coords: geom ? parseCoords(text_(geom, "coordinates")) : [],
+      coords,
       elevation:
         geom && point ? Number.parseFloat(text_(geom, "coordinates").split(",")[2]) || 0 : 0,
+      lengthKm: point ? 0 : lengthOf(coords),
     } satisfies Place;
   });
 }
@@ -292,6 +306,30 @@ const pinIcon = (kind: Kind, wet = false) =>
     iconAnchor: [7, 7],
   });
 
+// The selected spot trades its dot for a teardrop in the same colour, tip on
+// the exact coordinate the dot marked. Drawn rather than an emoji so it keeps
+// the per-category colour and looks the same on every platform.
+const SELECTED_PIN_SIZE = 26;
+// Marker z-index is derived from latitude, so an offset this large clears every
+// other pin, including a northern one that would otherwise stack on top.
+const SELECTED_PIN_Z = 100000;
+// Leaflet stacks markers by latitude, so a secondary grey pin can end up over
+// its own spot's main pin. Push the grey ones far enough down that they always
+// sit behind every main pin, at any zoom.
+const MINOR_PIN_Z = -100000;
+
+const selectedPinIcon = (kind: Kind) =>
+  L.divIcon({
+    className: "",
+    html:
+      `<div class="pin-selected ${kind}"><svg viewBox="0 0 24 24" width="${SELECTED_PIN_SIZE}" height="${SELECTED_PIN_SIZE}" aria-hidden="true">` +
+      '<path d="M12 24C12 24 4 14.5 4 9a8 8 0 1 1 16 0c0 5.5-8 15-8 15Z" fill="currentColor" stroke="#fff" stroke-width="2" stroke-linejoin="round" paint-order="stroke"/>' +
+      '<circle cx="12" cy="9" r="3" fill="#fff"/></svg></div>',
+    iconSize: [SELECTED_PIN_SIZE, SELECTED_PIN_SIZE],
+    // The tip, so the pin points at the coordinate instead of covering it.
+    iconAnchor: [SELECTED_PIN_SIZE / 2, SELECTED_PIN_SIZE],
+  });
+
 // Display labels for compound tags: keep the rest as-is.
 const TAG_DISPLAY: Record<string, string> = {
   dh: "DH",
@@ -318,7 +356,7 @@ const traceCountSummary = (spot: Spot) => {
     const color = place.styleUrl === "line-trail" ? "red" : place.styleUrl.replace(/^line-/, "");
     counts.set(color, (counts.get(color) ?? 0) + 1);
   }
-  return ["green", "blue", "red", "black"]
+  return ["green", "blue", "red", "black", "orange"]
     .filter((color) => counts.has(color))
     .map(
       (color) =>
@@ -353,10 +391,7 @@ for (const p of places) {
       ? L.marker(p.coords[0], {
           icon: pinIcon(p.kind),
           title: p.name,
-          // Leaflet stacks markers by latitude, so a secondary grey pin can end
-          // up over its own spot's main pin. Push the grey ones far enough down
-          // that they always sit behind every main pin, at any zoom.
-          zIndexOffset: p.kind === "minor" ? -100000 : 0,
+          zIndexOffset: p.kind === "minor" ? MINOR_PIN_Z : 0,
         })
       : L.polyline(p.coords, {
           color: TRAIL_COLORS[p.styleUrl] ?? TRAIL_COLOR,
@@ -522,15 +557,42 @@ el("place-card-share").addEventListener("click", async (event) => {
 });
 
 // Dim a clicked trail, or every trail linked to a clicked spot, with the same style.
+const SELECTED_LINE_OPACITY = 0.45;
+const IDLE_LINE_OPACITY = 0.85;
+
 let selectedLines: L.Polyline[] = [];
 const selectLines = (lines: L.Polyline[]) => {
-  for (const layer of selectedLines) layer.setStyle({ opacity: 0.85 });
-  for (const layer of lines) layer.setStyle({ opacity: 0.45 });
+  for (const layer of selectedLines) layer.setStyle({ opacity: IDLE_LINE_OPACITY });
+  for (const layer of lines) layer.setStyle({ opacity: SELECTED_LINE_OPACITY });
   selectedLines = lines;
 };
 const clearSelectedLines = () => {
-  for (const layer of selectedLines) layer.setStyle({ opacity: 0.85 });
+  for (const layer of selectedLines) layer.setStyle({ opacity: IDLE_LINE_OPACITY });
   selectedLines = [];
+};
+
+// Whether a spot's forecast currently earns the rain badge on its pin.
+const isWet = (spot: Spot) => weatherEnabled && Boolean(wetReason(spot.weather, spot));
+
+// One spot at a time wears the teardrop. Its place and spot are kept so the dot
+// can be restored with the rain badge the forecast last gave it.
+interface SelectedPin {
+  layer: L.Marker;
+  place: Place;
+  spot: Spot;
+}
+let selectedPin: SelectedPin | null = null;
+
+const selectPin = (next: SelectedPin | null) => {
+  if (selectedPin) {
+    selectedPin.layer.setIcon(pinIcon(selectedPin.place.kind, isWet(selectedPin.spot)));
+    selectedPin.layer.setZIndexOffset(selectedPin.place.kind === "minor" ? MINOR_PIN_Z : 0);
+  }
+  selectedPin = next;
+  if (next) {
+    next.layer.setIcon(selectedPinIcon(next.place.kind));
+    next.layer.setZIndexOffset(SELECTED_PIN_Z);
+  }
 };
 
 function openPlaceCard(place: Place, spot: Spot, layer: L.Marker | L.Polyline) {
@@ -544,13 +606,16 @@ function openPlaceCard(place: Place, spot: Spot, layer: L.Marker | L.Polyline) {
   placeCardDownloadMenu.removeAttribute("open");
   placeCard.hidden = false;
   setSelectedPlaceUrl(place, spot);
-  if (place.type === "line") selectLines([layer as L.Polyline]);
-  else {
+  if (place.type === "line") {
+    selectLines([layer as L.Polyline]);
+    selectPin(null);
+  } else {
     selectLines(
       spot.places
         .filter(({ place }) => place.type === "line")
         .map(({ layer }) => layer as L.Polyline),
     );
+    selectPin({ layer: layer as L.Marker, place, spot });
   }
 }
 
@@ -562,6 +627,7 @@ function closePlaceCard() {
   placeCardBody.innerHTML = "";
   clearSelectedPlaceUrl();
   clearSelectedLines();
+  selectPin(null);
 }
 
 el("place-card-close").addEventListener("click", closePlaceCard);
@@ -889,9 +955,10 @@ function cardContent(place: Place, spot: Spot) {
 
 const refreshWeatherPresentation = () => {
   for (const entry of entries) {
-    entry.layer.setIcon(
-      pinIcon(entry.kind, weatherEnabled && Boolean(wetReason(entry.spot.weather, entry.spot))),
-    );
+    // The selected pin keeps its teardrop: a forecast landing mid-selection
+    // must not put the dot back.
+    if (selectedPin?.layer === entry.layer) continue;
+    entry.layer.setIcon(pinIcon(entry.kind, isWet(entry.spot)));
   }
   if (activePlace) {
     // The forecast lands seconds after the card opens, so keep whatever the
@@ -1334,6 +1401,49 @@ const priceCap = () => {
   return v >= +priceInput.max ? Infinity : v;
 };
 
+// Trace length, in kilometres. The two thumbs walk a hand-picked ladder rather
+// than an even scale: half the traces are under 1.2 km and nine in ten under
+// 4 km, so even spacing would crowd almost everything into the first eighth of
+// the track. The top stop means "any", so an untouched maximum hides nothing.
+const LENGTH_STOPS = [0, 0.5, 1, 1.5, 2, 2.5, 3, 4, 5, 6, 8, 10, 15, 20, 30, 50, Infinity];
+const LENGTH_MAX_STOP = LENGTH_STOPS.length - 1;
+const lengthMinInput = el<HTMLInputElement>("trace-length-min");
+const lengthMaxInput = el<HTMLInputElement>("trace-length-max");
+const lengthTrack = el("trace-length-range");
+const lengthOut = el("trace-length-out");
+// The minimum stops one rung short of "any": a minimum of infinity would hide
+// every trace, which reads as a broken filter rather than a choice.
+const lengthMinIndex = () => Math.min(+lengthMinInput.value, LENGTH_MAX_STOP - 1);
+const lengthRange = () =>
+  [LENGTH_STOPS[lengthMinIndex()], LENGTH_STOPS[+lengthMaxInput.value]] as const;
+const km = (value: number) => (Number.isInteger(value) ? `${value}` : value.toFixed(1));
+const updateLengthDisplay = () => {
+  const minIndex = lengthMinIndex();
+  const maxIndex = +lengthMaxInput.value;
+  const [min, max] = lengthRange();
+  lengthOut.textContent =
+    minIndex === 0 && max === Infinity
+      ? "any"
+      : max === Infinity
+        ? `from ${km(min)} km`
+        : minIndex === 0
+          ? `up to ${km(max)} km`
+          : `${km(min)}-${km(max)} km`;
+  // Fractions, not percentages: the stylesheet mixes them with the thumb width
+  // to land the filled span on the thumb centres.
+  lengthTrack.style.setProperty("--from", String(minIndex / LENGTH_MAX_STOP));
+  lengthTrack.style.setProperty("--to", String(maxIndex / LENGTH_MAX_STOP));
+  // Once both thumbs sit at the right-hand end the maximum would cover the
+  // minimum, so hand the top layer to whichever one would otherwise be stuck.
+  lengthTrack.classList.toggle("min-on-top", minIndex > LENGTH_MAX_STOP / 2);
+};
+
+const withinLength = (place: Place) => {
+  if (place.type !== "line") return true;
+  const [min, max] = lengthRange();
+  return place.lengthKm >= min && place.lengthKm <= max;
+};
+
 // Seasons recur each year, so only the month and day are compared. closed_from
 // is exclusive; matching dates mean the spot is normally open year-round.
 const searchInput = el<HTMLInputElement>("spot-search");
@@ -1385,6 +1495,7 @@ const applyFilters = () => {
   const visibleTraceLayers = new Set<L.Layer>();
   let visibleCount = 0;
   priceOut.textContent = cap === Infinity ? "any" : `${cap} CHF`;
+  updateLengthDisplay();
 
   for (const entry of traceEntries) {
     const chip = lineColorChips.find((candidate) => candidate.dataset.lineColor === entry.color);
@@ -1393,6 +1504,7 @@ const applyFilters = () => {
       !hiddenSpotIds.has(entry.spot.id) &&
       !hiddenTraceIds.has(traceId(entry.place)) &&
       matchesFilters(entry.spot) &&
+      withinLength(entry.place) &&
       (!chip || on(chip)) &&
       (!query || entry.searchText.includes(query));
     if (entry.row) entry.row.hidden = !visible;
@@ -1410,7 +1522,8 @@ const applyFilters = () => {
     for (const { layer, place } of spot.places) {
       const color = place.styleUrl.replace(/^line-/, "") || "trail";
       const colorChip = lineColorChips.find((chip) => chip.dataset.lineColor === color);
-      const lineEnabled = place.type !== "line" || !colorChip || on(colorChip);
+      const lineEnabled =
+        place.type !== "line" || ((!colorChip || on(colorChip)) && withinLength(place));
       const visible = showingTraces
         ? visibleTraceLayers.has(layer)
         : filterMatch &&
@@ -1498,6 +1611,16 @@ document.addEventListener("click", (event) => {
   }
 });
 priceInput.addEventListener("input", applyFilters);
+// The thumbs push rather than cross, so the range is never inverted.
+lengthMinInput.addEventListener("input", () => {
+  lengthMinInput.value = String(lengthMinIndex());
+  if (+lengthMinInput.value > +lengthMaxInput.value) lengthMaxInput.value = lengthMinInput.value;
+  applyFilters();
+});
+lengthMaxInput.addEventListener("input", () => {
+  if (+lengthMaxInput.value < +lengthMinInput.value) lengthMinInput.value = lengthMaxInput.value;
+  applyFilters();
+});
 searchInput.addEventListener("input", () => {
   clearSearchButton.hidden = !searchInput.value;
   applyFilters();

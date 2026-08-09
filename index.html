@@ -333,6 +333,12 @@
                     ></span
                     >Black</label
                   >
+                  <label
+                    ><input class="filter" type="checkbox" data-line-color="orange" checked /><span
+                      class="dot line-orange"
+                    ></span
+                    >Orange</label
+                  >
                 </fieldset>
               </div>
             </details>
@@ -357,6 +363,29 @@
                 <label class="range" for="price-day">
                   <span>💰 Day pass up to <output id="price-day-out">any</output></span>
                   <input id="price-day" type="range" min="0" max="75" step="5" value="75" />
+                </label>
+                <label class="range stacked">
+                  <span>📏 Trace length <output id="trace-length-out">any</output></span>
+                  <span class="dual-range" id="trace-length-range">
+                    <input
+                      id="trace-length-min"
+                      type="range"
+                      min="0"
+                      max="16"
+                      step="1"
+                      value="0"
+                      aria-label="Shortest trace length to show"
+                    />
+                    <input
+                      id="trace-length-max"
+                      type="range"
+                      min="0"
+                      max="16"
+                      step="1"
+                      value="16"
+                      aria-label="Longest trace length to show"
+                    />
+                  </span>
                 </label>
                 <fieldset>
                   <!-- <legend>Optional requirements</legend> -->
@@ -706,10 +735,11 @@
             <path d="M2.5 11.5v1a1.5 1.5 0 0 0 1.5 1.5h8a1.5 1.5 0 0 0 1.5-1.5v-1" />
           </svg>
           <span>
-            <b>Take it offline.</b> Download the whole map as KML, GPX or GeoJSON in one click, and
-            open it in <a href="https://www.comaps.app/" target="_blank" rel="noopener">CoMaps</a>,
+            <b>Take it offline.</b> One click downloads the whole map, every trace of one spot, or a
+            single trace, as KML, GPX or GeoJSON. Open it in
+            <a href="https://www.comaps.app/" target="_blank" rel="noopener">CoMaps</a>,
             <a href="https://organicmaps.app/" target="_blank" rel="noopener">Organic Maps</a>
-            or OsmAnd. This site is just a convenient way to browse the same file.
+            or OsmAnd. Whatever you have hidden is left out, so the file is the map you built.
           </span>
         </li>
         <li>
@@ -743,20 +773,21 @@
         <summary><h3>Why another MTB map?</h3></summary>
         <p>
           Finding a good spot usually means trawling a dozen resort sites, none of which tell you in
-          one place what the trails are like, how the lift works and what it costs. And once you
-          have picked somewhere, there is rarely a KML or GPX to drop into your GPS app.
+          one place what the trails are like, how the lift works and what it costs.
         </p>
+        <p>Trailforks has the coverage, but getting a weekend onto your phone runs into:</p>
+        <ul>
+          <li>GPX and KML downloads sit behind a subscription, around 2.50 a month.</li>
+          <li>Traces come one at a time, so a trip means a dozen exports and a dozen imports.</li>
+          <li>Trails carry no description of the riding, the lift or the price.</li>
+          <li>
+            Every discipline shares one map, so the gravity lines sit among XC and other riding you
+            have to sift through.
+          </li>
+        </ul>
         <p>
-          Then getting those trails onto your phone is its own chore: export them one by one, often
-          behind a login screen or a paywall, then import each file into your GPS app. Here the
-          whole map is a single download, no account needed.
-        </p>
-        <p>
-          Sites like Trailforks are useful, but the good riding gets lost in the noise: filters do
-          not narrow enough, and many mapped routes are uninteresting dirt roads or impractical
-          hiking trails tagged for MTB, sometimes closer to alpinism than mountain biking. And these
-          sites ask for a subscription to access their data, which is a barrier to sharing and
-          offline use. This map is curated, free and open.
+          Here the traces are curated for gravity riding, described in plain words, and free to
+          download whole, per spot or one at a time, with no account.
         </p>
       </details>
       <details class="about-details">
