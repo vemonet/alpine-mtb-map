@@ -138,6 +138,38 @@ Photon and Nominatim resolve a park name to _a_ place with that name, which is v
 
 So: **a geocode is a search hint, never a pin.** Every coordinate that reaches the KML must be traceable to an OSM object you looked at - a lift endpoint, a named feature, or a trail cluster.
 
+### The Overpass-free path - when every mirror is down
+
+Every rung above needs Overpass. Some days it is simply not available: on 2026-08-17 a 17-box worldwide sweep returned **2 boxes in 15 minutes**, everything else 504/429/timeout, and `find_named.py` was managing about one candidate every five minutes. Do not sit and retry. Switch to this pipeline, which touches Overpass **not at all**:
+
+**1. Web-search the park first.** This replaces rung 2 - it is what establishes the place is real, is gravity or trail-centre riding rather than XC, and is still operating. Do this _before_ geocoding, so you never spend a lookup on a park that does not qualify. It is also the step that does the most work: it killed **Meran 2000** (the resort states downhill riding is not possible), **Filthy Trails** (closed by the Flemish nature agency), **Snowbird** (no lift-served bike operation that season) and **Berkshire East** (which _is_ the already-present Thunder Mountain Bike Park). Keep the source URL - it becomes the `<i>Source:</i>` line in the description.
+
+**2. Nominatim for the coordinate.**
+
+```bash
+curl -s -H 'User-Agent: alpine-mtb-map/1.0' \
+  'https://nominatim.openstreetmap.org/search?q=Birches+Valley+Forest+Centre&format=jsonv2&countrycodes=gb&limit=3'
+```
+
+`jsonv2` returns **`osm_type` and `osm_id`**, so the result is a real OSM object - which is what keeps the "traceable to an OSM object" rule intact even though no Overpass query ran. Rate-limit yourself to one request per second; it is a free service with a strict policy.
+
+**3. `api.opentopodata.org` for the altitude**, which is a separate service and stays up when Overpass does not. The `mapzen` dataset takes **90 points per request** when you pipe-join them, far more than the 25 the elevation helper uses:
+
+```
+https://api.opentopodata.org/v1/mapzen?locations=52.7522,-1.9738|54.2785,-0.6883|...
+```
+
+#### Reading the Nominatim result, because it fails silently
+
+The warning above still applies in full - **Nominatim returns the wrong place rather than nothing.** Two checks catch it, and both are mandatory:
+
+- **Read `display_name`.** `Mechi Chal` resolved to a Varna suburb 300 km from Chepelare; `Woodys Bike Park, Lanivet` resolved to the **Lanivet Inn**, a pub. That one was dropped rather than pinned.
+- **Read the altitude from step 3.** It is the same sanity check the lift queries get. A Scottish trail centre at 9 m or an Australian park at 22 m means the geocoder found a car park in the wrong valley.
+
+When the query misses, retry with a **nearby named feature instead of the park name** - the village, the trailhead, the visitor centre, the access road. `Aston Hill Bike Park` missed three times and `Wendover Woods` hit; `Mystic Mountain Bike Park` missed and `Bright, Victoria` hit. A village-centre or resort-centre proxy is acceptable, but then say so: give the spot the same `<small>` caveat the gazetteer-sourced spots carry, rather than implying you pinned the trailhead.
+
+Finally, **write each batch to its own file.** A geocode script that overwrites one output path will silently destroy the previous batch when you re-run it for the misses; a 31-row batch had to be re-fetched for exactly this reason.
+
 #### What the pin means when there is no lift
 
 Pin where the descent starts, and say so in the bold first line rather than implying a lift:
