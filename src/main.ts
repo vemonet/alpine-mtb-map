@@ -472,6 +472,7 @@ const list = el<HTMLUListElement>("spots");
 const placeCard = el("place-card");
 const placeCardBody = el("place-card-body");
 const placeCardHideButton = el<HTMLButtonElement>("place-card-hide");
+const placeCardGoogleMapsButton = el<HTMLButtonElement>("place-card-google-maps");
 const placeCardDownloadMenu = el<HTMLDetailsElement>("place-card-download");
 let activePlace: { place: Place; spot: Spot; layer: L.Marker | L.Polyline } | null = null;
 
@@ -556,6 +557,15 @@ el("place-card-share").addEventListener("click", async (event) => {
   }
 });
 
+placeCardGoogleMapsButton.addEventListener("click", () => {
+  if (!activePlace || activePlace.place.type !== "point") return;
+  const [lat, lon] = activePlace.place.coords[0];
+  const url = new URL("https://www.google.com/maps/search/");
+  url.searchParams.set("api", "1");
+  url.searchParams.set("query", `${lat},${lon}`);
+  window.open(url, "_blank", "noopener,noreferrer");
+});
+
 // Dim a clicked trail, or every trail linked to a clicked spot, with the same style.
 const SELECTED_LINE_OPACITY = 0.45;
 const IDLE_LINE_OPACITY = 0.85;
@@ -600,6 +610,7 @@ function openPlaceCard(place: Place, spot: Spot, layer: L.Marker | L.Polyline) {
   placeCardBody.innerHTML = cardContent(place, spot);
   placeCardBody.scrollTop = 0;
   const hideLabel = `Hide this ${place.type === "line" ? "trace" : "spot"}`;
+  placeCardGoogleMapsButton.hidden = place.type !== "point";
   placeCardHideButton.hidden = false;
   placeCardHideButton.title = hideLabel;
   placeCardHideButton.setAttribute("aria-label", hideLabel);

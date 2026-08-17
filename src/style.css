@@ -1038,9 +1038,9 @@ body {
 
 #place-card-body h3 {
   margin: 0 0 6px;
-  /* Clear of the four tool buttons in the corner: 4 x 24px plus their 2px gaps,
+  /* Clear of the five tool buttons in the corner: 5 x 24px plus their 2px gaps,
      less the 6px the tools row is inset from the body's own padding edge. */
-  padding-right: 100px;
+  padding-right: 126px;
   font-size: 15px;
 }
 
