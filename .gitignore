@@ -8,3 +8,4 @@ alpine-mtb-map.kmz
 .DS_Store
 __pycache__/
 tmp/
+ele-cache-*.json

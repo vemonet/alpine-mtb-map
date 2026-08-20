@@ -221,7 +221,7 @@ python3 trails.py 46.14,6.65,46.18,6.71 --id 220753196   # one, as KML
 > To use them with claude code:
 >
 > ```sh
-> mkdir -p .claude/skills && ln -sfn ../../.github/skills/spot-data .claude/skills/spot-data
+> mkdir -p .claude/skills && ln -sfn ../../.agents/skills/spot-data .claude/skills/spot-data
 > ```
 
 ### 7. Adding a trail line
