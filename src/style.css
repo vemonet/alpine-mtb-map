@@ -13,6 +13,23 @@
   --muted: #666;
   --line: #e0e0e0;
   --link: #1064d4;
+  /* Panel geometry. The gutter is what keeps the panel off the window edge:
+     it reads as a floating card rather than a wall the map is bolted to. */
+  --panel-w: 340px;
+  --gutter: 10px;
+  /* Which way the panel sits before anyone touches it. Read back by main.ts
+     for the button's label, so the default lives in exactly one place. */
+  --sidebar-default: open;
+  /* Centre of the toggle button: on the seam when the panel is open, tucked
+     against the window edge when it is not. */
+  --handle-x: calc(var(--panel-w) + var(--gutter) * 1.5);
+  /* How far in from the left the map is unusable, measured to the far side of
+     the toggle button. The map runs full-bleed underneath the panel, so
+     anything that must stay readable - the place card, Leaflet's scale bar -
+     is pushed clear by this instead of by a layout that reserves the space. */
+  --map-inset: calc(var(--handle-x) + var(--handle) / 2 + var(--gutter));
+  --handle: 30px;
+  --shadow: 0 2px 10px rgb(0 0 0 / 12%);
 }
 
 /* Pin and location colours are deliberately not themed: they are drawn on map
@@ -24,6 +41,7 @@
   --muted: #9aa0a6;
   --line: #2c2f36;
   --link: #7aa8f0;
+  --shadow: 0 2px 10px rgb(0 0 0 / 45%);
 }
 
 * {
@@ -45,71 +63,95 @@ body {
 
 #app {
   position: relative;
-  display: flex;
   height: 100%;
 }
 
+[data-sidebar="closed"] {
+  --handle-x: calc(var(--gutter) + var(--handle) / 2);
+}
+
+/* A card floating over the map, not a column beside it: the map runs
+   edge-to-edge underneath, so the gutter around the panel shows terrain
+   rather than page background. It costs the centring offsets in main.ts,
+   because a spot centred in the map container would land under the panel. */
 #sidebar {
-  width: 340px;
-  flex: 0 0 340px;
+  position: absolute;
+  /* Over Leaflet's own controls, which sit at 800-1000: now that the map runs
+     underneath, the zoom buttons would otherwise punch through the panel. */
+  z-index: 1050;
+  top: var(--gutter);
+  bottom: var(--gutter);
+  left: var(--gutter);
+  width: var(--panel-w);
   display: flex;
   flex-direction: column;
-  border-right: 1px solid var(--line);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: var(--bg);
+  box-shadow: var(--shadow);
   overflow: hidden;
-  transition: flex-basis 0.2s ease;
+  transition:
+    transform 0.22s ease,
+    visibility 0s;
 }
 
-#app.collapsed #sidebar {
-  flex-basis: 0;
-  border-right-width: 0;
+/* Slides out rather than shrinking: nothing reflows, so the map never needs
+   resizing. Hidden only once it is gone, to keep it out of the tab order. */
+[data-sidebar="closed"] #sidebar {
+  transform: translateX(calc(-100% - var(--gutter) - 2px));
+  visibility: hidden;
+  transition:
+    transform 0.22s ease,
+    visibility 0s linear 0.22s;
 }
 
-/* A drawer handle on the sidebar's edge. Vertically centred so it never
-   collides with Leaflet's zoom buttons or the layer control. */
+/* A round icon button straddling the seam between panel and map. Vertically
+   centred so it never collides with Leaflet's zoom buttons or the layer
+   control. */
 #toggle-sidebar {
   position: absolute;
-  z-index: 1000;
+  /* One above the panel it is attached to. */
+  z-index: 1060;
   top: 50%;
-  left: 340px;
-  /* Only 10px of it sticks out over the map: enough to grab, small enough to
-     read as part of the sidebar edge rather than a control floating on it. */
-  width: 10px;
-  height: 52px;
+  left: var(--handle-x);
+  width: var(--handle);
+  height: var(--handle);
   padding: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  display: grid;
+  place-items: center;
   border: 1px solid var(--line);
-  border-left: 0;
-  border-radius: 0 4px 4px 0;
+  border-radius: 50%;
   background: var(--bg);
   color: var(--muted);
   cursor: pointer;
-  transform: translateY(-50%);
-  transition: left 0.2s ease;
+  box-shadow: var(--shadow);
+  transform: translate(-50%, -50%);
+  transition:
+    left 0.2s ease,
+    top 0.2s ease,
+    color 0.15s ease,
+    border-color 0.15s ease;
 }
 
 #toggle-sidebar:hover {
   color: var(--lift);
+  border-color: var(--lift);
 }
 
-/* Enlarge the handle's invisible hit target into the map without changing its
-   narrow visual footprint. */
+/* A little more grabbable than it looks, which matters most on a touch screen
+   where the button sits between two scrollable surfaces. */
 #toggle-sidebar::before {
   content: "";
   position: absolute;
-  inset: -6px -18px -6px 0;
+  inset: -7px;
+  border-radius: 50%;
 }
 
 #toggle-sidebar svg {
   transition: transform 0.2s ease;
 }
 
-#app.collapsed #toggle-sidebar {
-  left: 0;
-}
-
-#app.collapsed #toggle-sidebar svg {
+[data-sidebar="closed"] #toggle-sidebar svg {
   transform: rotate(180deg);
 }
 
@@ -992,13 +1034,10 @@ body {
   border-top: 1px solid var(--line);
 }
 
-/* The card is positioned against the map, not the window, so it stays in the
-   map's own corner whether or not the sidebar is open. */
+/* Full-bleed under the floating panel. */
 #map-area {
-  position: relative;
-  flex: 1;
-  min-width: 0;
-  height: 100%;
+  position: absolute;
+  inset: 0;
 }
 
 #map {
@@ -1010,8 +1049,10 @@ body {
   position: absolute;
   /* Over the Leaflet controls, which sit at 800-1000. */
   z-index: 1100;
-  top: 10px;
-  left: 10px;
+  top: var(--gutter);
+  /* Beside the panel when it is open, in its place when it is not. */
+  left: var(--map-inset);
+  transition: left 0.22s ease;
   width: 330px;
   max-width: calc(100% - 20px);
   /* Leave a strip of map below it: a full-height card reads as a second
@@ -1027,6 +1068,13 @@ body {
 
 #place-card[hidden] {
   display: none;
+}
+
+/* Leaflet's bottom-left corner holds the scale bar, which the panel would
+   otherwise cover. */
+.leaflet-bottom.leaflet-left {
+  left: var(--map-inset);
+  transition: left 0.22s ease;
 }
 
 #place-card-body {
@@ -1490,47 +1538,53 @@ body {
 }
 
 @media (max-width: 720px) {
-  #app {
-    flex-direction: column;
+  :root {
+    --gutter: 8px;
+    --handle: 34px;
+    --sidebar-default: closed;
+  }
+  /* The panel spans the width and the button is centred under it, so nothing
+     is inset from the left any more. */
+  :root {
+    --map-inset: var(--gutter);
   }
   /* Too little height to give the list its own scroller once the filters are
-     stacked, so the whole sidebar scrolls as one instead. A fixed 55% rather
-     than a max: it keeps the drawer handle below on the sidebar's edge however
-     many spots the filters leave. */
+     stacked, so the whole sidebar scrolls as one instead. A fixed 80% rather
+     than a max: the panel is closed by default here, so when it is opened it
+     is what you came for, and the strip of map left below is only a reminder
+     of what is underneath. */
   #sidebar {
-    width: 100%;
-    flex: 0 0 55%;
+    right: var(--gutter);
+    bottom: auto;
+    width: auto;
+    height: 80%;
     overflow-y: auto;
-    border-right: 0;
-    border-bottom: 1px solid var(--line);
-    transition: flex-basis 0.2s ease;
   }
-  #app.collapsed #sidebar {
-    border-bottom-width: 0;
+  /* Closed unless the reader has opened it: a phone should land on the map,
+     not on a wall of filters. Matching :not([open]) rather than [closed] is
+     what makes that the default without any JS deciding it - a media query in
+     an inline head script cannot be trusted, the layout viewport is not always
+     established that early. */
+  :root:not([data-sidebar="open"]) #sidebar {
+    transform: translateY(calc(-100% - var(--gutter) - 2px));
+    visibility: hidden;
+    transition:
+      transform 0.22s ease,
+      visibility 0s linear 0.22s;
   }
-  /* The handle turns into a horizontal tab under the sidebar. */
+  /* The button drops to the panel's bottom edge, still straddling the seam. */
   #toggle-sidebar {
-    top: 55%;
+    top: calc(80% + var(--gutter) * 1.5);
     left: 50%;
-    width: 52px;
-    height: 10px;
-    border: 1px solid var(--line);
-    border-top: 0;
-    border-radius: 0 0 4px 4px;
-    transform: translateX(-50%);
-    transition: top 0.2s ease;
-  }
-  #toggle-sidebar::before {
-    inset: 0 -6px -18px;
   }
   #toggle-sidebar svg {
     transform: rotate(90deg);
   }
-  #app.collapsed #toggle-sidebar {
-    top: 0;
+  :root:not([data-sidebar="open"]) #toggle-sidebar {
+    top: calc(var(--gutter) + var(--handle) / 2);
     left: 50%;
   }
-  #app.collapsed #toggle-sidebar svg {
+  :root:not([data-sidebar="open"]) #toggle-sidebar svg {
     transform: rotate(270deg);
   }
   /* ...which would bury the download buttons under 40-odd spots, so they move
@@ -1543,9 +1597,6 @@ body {
   #spots {
     order: 2;
     overflow-y: visible;
-  }
-  #map-area {
-    flex: 1;
   }
   /* The sidebar already owns the top 55% of a phone screen, so a card inside
      the map area squeezes the map from both ends. Pinned to the top of the

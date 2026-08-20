@@ -648,20 +648,32 @@ document.addEventListener("keydown", (event) => {
 });
 
 const showEntry = (entry: SpotEntry, animate = true) => {
+  revealMap();
+  const zoom = 12;
+  // The panel floats over the map, so the map's own centre is behind it. Shift
+  // the view centre left by half the covered width and the spot lands in the
+  // middle of what is actually visible.
+  const inset = panelInset();
   const latlng = entry.layer.getLatLng();
+  const target = inset
+    ? map.unproject(map.project(latlng, zoom).subtract([inset / 2, 0]), zoom)
+    : latlng;
   // flyTo treats duration 0 as "unset" and falls back to its own easing, so an
   // unanimated jump has to go through setView.
-  if (animate) map.flyTo(latlng, 12, { duration: 0.6 });
-  else map.setView(latlng, 12, { animate: false });
+  if (animate) map.flyTo(target, zoom, { duration: 0.6 });
+  else map.setView(target, zoom, { animate: false });
   openPlaceCard(entry.place, entry.spot, entry.layer);
 };
 
 const showTrace = (entry: TraceEntry, animate = true) => {
+  revealMap();
+  // Asymmetric padding for the same reason: the covered strip is on the left.
   map.fitBounds(entry.layer.getBounds(), {
     animate,
     duration: animate ? 0.6 : 0,
     maxZoom: 15,
-    padding: [30, 30],
+    paddingTopLeft: [panelInset() + 30, 30],
+    paddingBottomRight: [30, 30],
   });
   openPlaceCard(entry.place, entry.spot, entry.layer);
 };
@@ -1677,23 +1689,62 @@ el("theme").addEventListener("click", () => {
 // --------------------------------------------------------------- sidebar ---
 // Collapse the sidebar for a full-width map. The handle stays put, so there is
 // always something to click to bring it back.
-const app = el("app");
 const sidebar = el("sidebar");
 const toggle = el<HTMLButtonElement>("toggle-sidebar");
 
-sidebar.addEventListener("transitionend", (ev) => {
-  // Leaflet sizes itself from the container, which only settles once the
-  // sidebar has finished sliding.
-  if (ev.propertyName === "flex-basis") map.invalidateSize();
-});
+// The open/closed state lives on <html>. Until the reader clicks, there is no
+// attribute at all and the stylesheet's own default applies - open on a
+// desktop, closed on a phone - which it reports back through
+// --sidebar-default. Deciding it in CSS rather than here is deliberate: an
+// inline head script cannot read a media query reliably, because the layout
+// viewport is not always established that early.
+const root = document.documentElement;
 
-toggle.addEventListener("click", () => {
-  const collapsed = app.classList.toggle("collapsed");
-  const label = collapsed ? "Show the sidebar" : "Hide the sidebar";
-  toggle.setAttribute("aria-expanded", String(!collapsed));
+const sidebarOpen = () =>
+  (root.dataset.sidebar ?? getComputedStyle(root).getPropertyValue("--sidebar-default").trim()) !==
+  "closed";
+
+const syncToggle = () => {
+  const open = sidebarOpen();
+  const label = open ? "Hide the sidebar" : "Show the sidebar";
+  toggle.setAttribute("aria-expanded", String(open));
   toggle.setAttribute("aria-label", label);
   toggle.title = label;
+};
+
+syncToggle();
+
+toggle.addEventListener("click", () => {
+  root.dataset.sidebar = sidebarOpen() ? "closed" : "open";
+  syncToggle();
 });
+
+// How many pixels of the map's left edge the panel is sitting on. Declared as
+// a function so showEntry and showTrace, defined further up, can call it.
+function panelInset() {
+  if (!sidebarOpen()) return 0;
+  const panel = sidebar.getBoundingClientRect();
+  const container = map.getContainer().getBoundingClientRect();
+  // On a narrow screen the panel spans the width and covers the map from the
+  // top instead, and revealMap has just closed it - nothing to offset by.
+  if (panel.width > container.width * 0.9) return 0;
+  return Math.max(0, panel.right - container.left);
+}
+
+// Selecting a spot on a phone means you are done with the list: the panel is
+// covering four fifths of the map, and the place card that is about to open
+// floats over it anyway. Get out of the way.
+function revealMap() {
+  if (!sidebarOpen()) return;
+  const panel = sidebar.getBoundingClientRect();
+  if (panel.width <= map.getContainer().getBoundingClientRect().width * 0.9) return;
+  root.dataset.sidebar = "closed";
+  syncToggle();
+}
+
+// Crossing the breakpoint changes the default, and with it the label, for as
+// long as the reader has not overridden it.
+matchMedia("(max-width: 720px)").addEventListener("change", syncToggle);
 
 // ----------------------------------------------------------------- about ---
 const about = el<HTMLDialogElement>("about");
