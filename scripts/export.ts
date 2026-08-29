@@ -32,7 +32,11 @@ const spotTypes = ["bike-park", "natural"];
 // grey waypoint or a trail line.
 const mainKinds = new Set(["bike-park", "natural", "no-lift"]);
 const spotTags = new Map<string, Set<string>>();
-const mainSpots = new Map<string, string>();
+// The spot type is read from the main placemark when it declares one: a bike
+// park can hold a natural trace (a backcountry line off the same lift) without
+// stopping being a bike park. Only a main pin that declares neither falls back
+// to the union of the spot's tags, which then has to be unambiguous.
+const mainSpots = new Map<string, { name: string; tags: Set<string> }>();
 for (const pm of doc.getElementsByTagName("Placemark")) {
   const data = [...pm.getElementsByTagName("Data")];
   const facet = (name: string) =>
@@ -43,16 +47,25 @@ for (const pm of doc.getElementsByTagName("Placemark")) {
   const tags = spotTags.get(spot) ?? new Set();
   for (const tag of facet("tags").split(/\s+/).filter(Boolean)) tags.add(tag);
   spotTags.set(spot, tags);
-  if (mainKinds.has(kind) && /\[.+\]$/.test(name)) mainSpots.set(spot, name);
+  if (mainKinds.has(kind) && /\[.+\]$/.test(name)) {
+    mainSpots.set(spot, {
+      name,
+      tags: new Set(facet("tags").split(/\s+/).filter(Boolean)),
+    });
+  }
 }
-for (const [spot, name] of mainSpots) {
+for (const [spot, main] of mainSpots) {
   const tags = spotTags.get(spot);
-  if (spotTypes.filter((tag) => tags?.has(tag)).length !== 1) {
-    throw new Error(`${name} needs exactly one of: ${spotTypes.join(", ")}`);
+  const declared = spotTypes.filter((tag) => main.tags.has(tag));
+  if (
+    declared.length > 1 ||
+    (!declared.length && spotTypes.filter((tag) => tags?.has(tag)).length !== 1)
+  ) {
+    throw new Error(`${main.name} needs exactly one of: ${spotTypes.join(", ")}`);
   }
   for (const group of requiredGroups) {
     if (!group.some((tag) => tags?.has(tag))) {
-      throw new Error(`${name} needs at least one of: ${group.join(", ")}`);
+      throw new Error(`${main.name} needs at least one of: ${group.join(", ")}`);
     }
   }
 }

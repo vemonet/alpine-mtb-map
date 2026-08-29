@@ -6248,7 +6248,7 @@
     <b>Access</b><table class="access"><tr><th>From</th><th>Transport</th><th>Duration</th></tr><tr><td>Modane</td><td>Bus / car</td><td>~15 min</td></tr><tr><td>Chambery</td><td>Car</td><td>~1h40</td></tr></table><br/>
     <i>Source: <a href="https://guide-ski.fr/valfrejus-ete-2026/">Valfrejus summer 2026 guide</a>. Verify prices, lift and trail status.</i>]]></description>
     <styleUrl>#placemark-blue</styleUrl><Point><coordinates>6.652290,45.172610,1560</coordinates></Point>
-    <ExtendedData xmlns:mwm="https://omaps.app"><Data name="spot"><value>valfrejus</value></Data><Data name="tags"><value>beginner expert enduro dh chairlift gondola</value></Data><Data name="open_from"><value>07-04</value></Data><Data name="closed_from"><value>08-30</value></Data><mwm:icon>Mountain</mwm:icon><mwm:visibility>1</mwm:visibility></ExtendedData>
+    <ExtendedData xmlns:mwm="https://omaps.app"><Data name="spot"><value>valfrejus</value></Data><Data name="tags"><value>beginner expert natural enduro dh chairlift gondola</value></Data><Data name="open_from"><value>07-04</value></Data><Data name="closed_from"><value>08-30</value></Data><mwm:icon>Mountain</mwm:icon><mwm:visibility>1</mwm:visibility></ExtendedData>
   </Placemark>
   <Placemark>
     <name>Valfrejus: Arrondaz gondola top</name>
@@ -6311,7 +6311,7 @@
     <b>Access</b><table class="access"><tr><th>From</th><th>Transport</th><th>Duration</th></tr><tr><td>Albertville</td><td>Bus / car</td><td>~40 min</td></tr><tr><td>Chambery</td><td>Car</td><td>~1h25</td></tr></table><br/>
     <i>Source: <a href="https://en.areches-beaufort.com/a-faire/vtt-cyclo/">Areches-Beaufort official tourism - mountain biking</a>. Verify prices, lift days and trail status.</i>]]></description>
     <styleUrl>#placemark-blue</styleUrl><Point><coordinates>6.565900,45.685290,1023</coordinates></Point>
-    <ExtendedData xmlns:mwm="https://omaps.app"><Data name="spot"><value>areches-beaufort</value></Data><Data name="tags"><value>beginner expert enduro dh freeride no-lift chairlift</value></Data><Data name="open_from"><value>07-04</value></Data><Data name="closed_from"><value>08-30</value></Data><mwm:icon>Mountain</mwm:icon><mwm:visibility>1</mwm:visibility></ExtendedData>
+    <ExtendedData xmlns:mwm="https://omaps.app"><Data name="spot"><value>areches-beaufort</value></Data><Data name="tags"><value>beginner expert natural enduro dh freeride no-lift chairlift</value></Data><Data name="open_from"><value>07-04</value></Data><Data name="closed_from"><value>08-30</value></Data><mwm:icon>Mountain</mwm:icon><mwm:visibility>1</mwm:visibility></ExtendedData>
   </Placemark>
   <Placemark>
     <name>Areches-Beaufort: Grand Mont chairlift top</name>
@@ -6478,7 +6478,7 @@
     <b>Access</b><table class="access"><tr><th>From</th><th>Transport</th><th>Duration</th></tr><tr><td>St. Anton (railway station)</td><td>Walk</td><td>~10 min</td></tr><tr><td>Innsbruck</td><td>Train / car</td><td>~1h20</td></tr></table><br/>
     <i>Source: <a href="https://www.skiarlberg.at/en/st-anton/summer/mountain-bike">Ski Arlberg - St. Anton mountain biking</a>. Verify prices, lift and trail status.</i>]]></description>
     <styleUrl>#placemark-blue</styleUrl><Point><coordinates>10.263180,47.126660,1305</coordinates></Point>
-    <ExtendedData xmlns:mwm="https://omaps.app"><Data name="spot"><value>st-anton</value></Data><Data name="tags"><value>intermediate expert enduro dh freeride gondola cable-car</value></Data><Data name="open_from"><value>06-13</value></Data><Data name="closed_from"><value>10-04</value></Data><mwm:icon>Mountain</mwm:icon><mwm:visibility>1</mwm:visibility></ExtendedData>
+    <ExtendedData xmlns:mwm="https://omaps.app"><Data name="spot"><value>st-anton</value></Data><Data name="tags"><value>intermediate expert natural enduro dh freeride gondola cable-car</value></Data><Data name="open_from"><value>06-13</value></Data><Data name="closed_from"><value>10-04</value></Data><mwm:icon>Mountain</mwm:icon><mwm:visibility>1</mwm:visibility></ExtendedData>
   </Placemark>
   <Placemark>
     <name>St. Anton: Rendlbahn top</name>
@@ -24050,7 +24050,7 @@
     <b>Access</b><table class="access"><tr><th>From</th><th>Transport</th><th>Duration</th></tr><tr><td>Varallo</td><td>Bus / car</td><td>~45 min</td></tr><tr><td>Milan</td><td>Car</td><td>~2h00</td></tr></table><br/>
     <i>Source: <a href="https://monterosaski.eu/en/experiences/lift-timetables-and-prices-alagna-valsesia-summer-2026-21492">Monterosa Ski - Alagna Valsesia summer 2026 timetables</a> and <a href="https://www.alagna.it/en/experiences/bike-valsesia-monterosa/">Alagna - Bike Valsesia Monterosa</a>. Verify prices, lift and trail status.</i>]]></description>
     <styleUrl>#placemark-blue</styleUrl><Point><coordinates>7.935130,45.853290,1214</coordinates></Point>
-    <ExtendedData xmlns:mwm="https://omaps.app"><Data name="spot"><value>alagna-valsesia</value></Data><Data name="tags"><value>beginner expert enduro dh freeride gondola cable-car</value></Data><Data name="open_from"><value>05-30</value></Data><Data name="closed_from"><value>09-13</value></Data><mwm:icon>Mountain</mwm:icon><mwm:visibility>1</mwm:visibility></ExtendedData>
+    <ExtendedData xmlns:mwm="https://omaps.app"><Data name="spot"><value>alagna-valsesia</value></Data><Data name="tags"><value>beginner expert natural enduro dh freeride gondola cable-car</value></Data><Data name="open_from"><value>05-30</value></Data><Data name="closed_from"><value>09-13</value></Data><mwm:icon>Mountain</mwm:icon><mwm:visibility>1</mwm:visibility></ExtendedData>
   </Placemark>
   <Placemark>
     <name>Alagna Valsesia: Pianalunga mid-station</name>
