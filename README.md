@@ -1,7 +1,7 @@
 <div align="center">
   <img src="public/icon.png" width="96" height="96" alt="Alpine MTB Map logo">
   <h1>Alpine MTB Map</h1>
-  <p>A curated open map for gravity mountain biking. Discover top downhill bike parks, enduro trails, and freeride spots worldwide.</p>
+  <p>An open map for gravity mountain biking: downhill bike parks, enduro trails and freeride spots worldwide.</p>
 <a href="https://github.com/vemonet/alpine-mtb-map/actions/workflows/deploy.yml"><img src="https://github.com/vemonet/alpine-mtb-map/actions/workflows/deploy.yml/badge.svg" alt="Deploy to GitHub Pages"></a> <a href="https://github.com/vemonet/alpine-mtb-map/actions/workflows/release.yml"><img src="https://github.com/vemonet/alpine-mtb-map/actions/workflows/release.yml/badge.svg" alt="Release"></a>
 </div>
 
@@ -11,26 +11,26 @@
 
 ## Why
 
-This project comes out of the frustration of trying to find a good mountain biking spot. You end up going through a dozen different sites, and none of them give you the whole picture: what the trails are like, how the lift works and what it costs. And once you have finally settled on a spot, finding a KML or GPX to load into your GPS app is its own hunt.
+Picking a mountain biking spot means opening a dozen sites, and no single one of them tells you what the trails are like, how the lift works and what a day costs. Then, once you have picked one, hunting down a KML or GPX to load into your GPS app is a second evening gone.
 
-Alpine MTB Map fixes that. The spots live in one KML you download and open in [CoMaps](https://www.comaps.app/), [Organic Maps](https://organicmaps.app/) or OsmAnd, and the website is a convenience layer on top: browse and filter the same file from the web, no app required.
+So everything here is in one KML. Download it, open it in [CoMaps](https://www.comaps.app/), [Organic Maps](https://organicmaps.app/) or OsmAnd, and you are done. The website reads the same file, which is handy for browsing and filtering from a laptop, but it is not required.
 
-For each spot you get:
+What a spot entry contains:
 
 - what the **trails** are like, and how many there are
 - how you **get up** and what the day pass costs, plus season dates and whether the [Magic Pass](https://www.magicpass.ch) covers it
 - an **Access** table: travel time from the city a rider would realistically start from
 - **tags** you can filter on: difficulty, style, opening season, Magic Pass, price
-- **trail lines** from [OpenStreetMap](https://openstreetmap.org), official spots website, or contributor submitted traces, and **extra waypoints** where they help: valley stations, mid-stations, trailheads, lift hubs
+- **trail lines** from [OpenStreetMap](https://openstreetmap.org), the operator's own site, or traces sent in by contributors, plus **extra waypoints** where they help: valley stations, mid-stations, trailheads, lift hubs
 - a 16-day **[Open-Meteo](https://open-meteo.com/) weather forecast**, with wet-condition warning based on predicted rain, the previous day's precipitation, and known spot resilience to rain.
 
-A good spot here means at least one singletrack where mountain biking is allowed. Many also have a way to get from the bottom to the top that is not your legs (funicular, cog railway, gondola, cable car, train). Purpose-built bike parks are blue, natural lift-served spots are dark green, and no-lift spots are in brown.
+To be on the map, a spot needs at least one singletrack where mountain biking is actually allowed. Most also have some way up that is not your legs: funicular, cog railway, gondola, cable car, train. Purpose-built bike parks are blue, lift-served natural spots dark green, pedal-up spots brown.
 
 ## Install it on your phone
 
-The site is a PWA: open it in your phone browser and use "Add to Home Screen" (Share menu on iOS, the three-dot menu on Android). It then launches full screen and works offline, the spot data ships inside the app bundle, and map tiles you have already looked at are cached (up to 800 of them, for 30 days). Tiles for places you have never opened will be blank until you are back online.
+The site is a PWA: open it in your phone browser and use "Add to Home Screen" (Share menu on iOS, three-dot menu on Android). It then launches full screen and works offline. The spot data ships inside the app bundle, and tiles you have already looked at are cached, up to 800 of them for 30 days. Tiles for places you never opened stay blank until you are back online.
 
-For real backcountry use, still put the KML into CoMaps, Organic Maps or OsmAnd: they hold whole-country offline maps, which a browser cache cannot match.
+For actual backcountry use, put the KML into CoMaps, Organic Maps or OsmAnd anyway. They hold whole-country offline maps, which a browser cache will never match.
 
 ## Using it offline
 
@@ -38,9 +38,9 @@ Download [`alpine-mtb-map.kml`](alpine-mtb-map.kml) and open it on your phone. O
 
 ## Privacy
 
-The site loads map tiles from OpenStreetMap, OpenTopoMap and CyclOSM, and weather forecasts from Open-Meteo when weather is enabled. Those servers see your IP, as with any web map. Forecast requests contain the public coordinates of the map's spots, never your location. Nothing is collected by this project: no analytics, no cookies, no accounts. Your light/dark choice and a six-hour cache of public spot forecasts are stored in `localStorage`.
+Map tiles come from OpenStreetMap, OpenTopoMap and CyclOSM, and forecasts from Open-Meteo when weather is on. Those servers see your IP, like any web map. Forecast requests carry the public coordinates of the map's spots, never yours. This project itself collects nothing: no analytics, no cookies, no accounts. `localStorage` holds your light/dark choice and a six-hour cache of spot forecasts, and that is all.
 
-**Geolocation is strictly opt-in.** The page never touches the Geolocation API on load, so you get no browser permission prompt unless you press "Show my location" in the sidebar. Press it again to stop. Your position stays in the browser - it is drawn on the map and sent nowhere.
+**Geolocation is opt-in.** The page never touches the Geolocation API on load, so no permission prompt appears unless you press "Show my location" in the sidebar. Press it again to stop. Your position stays in the browser: drawn on the map, sent nowhere.
 
 ## Credits and licence
 
@@ -51,16 +51,16 @@ Three different things live in this repo, so three licences. All three are in [`
 | Map data (`.kml`) | ODbL 1.0 | Contains geometry derived from OpenStreetMap |
 | Website and tooling (`src/`, `scripts/`, `index.html`, `vite.config.ts`, `.github/`) | MIT | Ordinary code, no OSM data in it |
 
-**The data files are ODbL, not Creative Commons, and that is not a free choice.** The trail lines were extracted from OpenStreetMap relations, which makes the file a derivative database. ODbL is share-alike, so the whole database inherits it - and ODbL and CC BY-SA are not compatible in either direction, so mixing them in one file would be a licence conflict rather than a dual licence. Individual contents (the descriptions, prices, travel times) are additionally available under [DbCL 1.0](https://opendatacommons.org/licenses/dbcl/1-0/), which is the same split OpenStreetMap itself uses.
+The data files are ODbL rather than Creative Commons, and that is not really a choice. The trail lines come out of OpenStreetMap relations, which makes the file a derivative database, and ODbL is share-alike, so the whole database inherits it. ODbL and CC BY-SA are incompatible in both directions, so mixing them in one file would be a conflict, not a dual licence. The individual contents (descriptions, prices, travel times) are also available under [DbCL 1.0](https://opendatacommons.org/licenses/dbcl/1-0/), the same split OpenStreetMap uses.
 
-If you redistribute the KML, GPX or GeoJSON - or anything built from them - keep this notice:
+If you redistribute the KML, GPX or GeoJSON, or anything built from them, keep this notice:
 
 > Data: OpenStreetMap contributors, available under the [ODbL](https://www.openstreetmap.org/copyright).
 
 Base map tiles are served by [OpenStreetMap](https://www.openstreetmap.org/copyright), [OpenTopoMap](https://opentopomap.org/) (CC BY-SA) and [CyclOSM](https://www.cyclosm.org/); they are not redistributed here.
 
-Prices and timetables were compiled in July 2026 from the operators' own sites and are indications, not quotes. Check before you travel.
+Prices and timetables were compiled in July 2026 from the operators' own sites. They are indications, not quotes. Check before you travel.
 
 ## Contributing
 
-Contributions are very welcome, especially new spots and price corrections. See [CONTRIBUTING.md](CONTRIBUTING.md) to understand the map data, add a spot or trail, regenerate exports, run the project checks and cut a release.
+Contributions are welcome, especially new spots and price corrections. See [CONTRIBUTING.md](CONTRIBUTING.md) to understand the map data, add a spot or trail, regenerate exports, and run the project checks.

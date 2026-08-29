@@ -6,7 +6,7 @@
     <title>Alpine MTB Map · Downhill, Enduro and Freeride Spots Worldwide</title>
     <meta
       name="description"
-      content="A curated open map for gravity mountain biking. Discover top downhill bike parks, enduro trails, and freeride spots worldwide."
+      content="An open map for gravity mountain biking: downhill bike parks, enduro trails and freeride spots worldwide."
     />
     <meta name="robots" content="index, follow" />
     <meta name="author" content="Alpine MTB Map contributors" />
@@ -31,7 +31,7 @@
     />
     <meta
       property="og:description"
-      content="A curated open map for gravity mountain biking. Discover top downhill bike parks, enduro trails, and freeride spots worldwide."
+      content="An open map for gravity mountain biking: downhill bike parks, enduro trails and freeride spots worldwide."
     />
     <meta property="og:url" content="https://vemonet.github.io/alpine-mtb-map/" />
     <meta property="og:image" content="https://vemonet.github.io/alpine-mtb-map/icon-512.png" />
@@ -43,7 +43,7 @@
     />
     <meta
       name="twitter:description"
-      content="A curated open map for gravity mountain biking. Discover top downhill bike parks, enduro trails, and freeride spots worldwide."
+      content="An open map for gravity mountain biking: downhill bike parks, enduro trails and freeride spots worldwide."
     />
     <meta name="twitter:image" content="https://vemonet.github.io/alpine-mtb-map/icon-512.png" />
     <!-- The icon's own background, so the PWA chrome matches the mark.
@@ -57,7 +57,7 @@
         "@type": "WebApplication",
         "name": "Alpine MTB Map",
         "url": "https://vemonet.github.io/alpine-mtb-map/",
-        "description": "A curated open map for gravity mountain biking. Discover top downhill bike parks, enduro trails, and freeride spots worldwide.",
+        "description": "An open map for gravity mountain biking: downhill bike parks, enduro trails and freeride spots worldwide.",
         "applicationCategory": "TravelApplication",
         "operatingSystem": "Any",
         "isAccessibleForFree": true,
@@ -95,8 +95,8 @@
         <header>
           <h1><img class="logo" src="./icon.png" alt="" width="24" height="24" />Alpine MTB Map</h1>
           <p>
-            A curated open map for gravity mountain biking. Discover top downhill bike parks, enduro
-            trails, and freeride spots worldwide.
+            An open map for gravity mountain biking: downhill bike parks, enduro trails and freeride
+            spots worldwide.
           </p>
           <div class="header-actions">
             <button
@@ -712,8 +712,11 @@
     <dialog id="about">
       <h2>About this map</h2>
       <p>
-        A curated map of gravity mountain-biking spots worldwide: where to ride, what the lift
-        costs, and whether it will be dry.
+        Gravity mountain-biking spots worldwide, with the practical details you need before driving
+        somewhere: what the riding is like, what the uplift costs, and whether it is going to be
+        wet.
+        <!-- A curated map of gravity mountain-biking spots worldwide: where to ride, what the lift
+        costs, and whether it will be dry. -->
       </p>
       <ul class="about-features">
         <li>
@@ -722,9 +725,10 @@
             <circle cx="8" cy="6" r="1.7" />
           </svg>
           <span>
-            <b>Spot-first.</b> Each destination is one pin with a practical description of the
-            riding, the lift, prices and opening dates. Trail traces are added when reliable, as a
-            bonus rather than the foundation. On the ground, signs and local maps do the rest.
+            <b>One pin per destination.</b> The pin carries a written description of the riding, the
+            lift, the prices and the opening dates. Trail traces are added where there is a source
+            worth trusting, but they are a bonus: once you are there, the signs and the local map do
+            the work.
           </span>
         </li>
         <li>
@@ -732,8 +736,8 @@
             <path d="M2 3h12L9.5 8.2V13l-3 1.2V8.2L2 3Z" />
           </svg>
           <span>
-            <b>Filter to what you want.</b> Narrow by spot type, riding style, difficulty, trail
-            colour, or day-pass price, and search spots and traces by description.
+            <b>Filters.</b> Narrow by spot type, riding style, difficulty, trail colour or day-pass
+            price. The search box matches descriptions, not just names.
           </span>
         </li>
         <li>
@@ -742,11 +746,10 @@
             <path d="m6.5 12.2-.9 2.2m4-2.2-.9 2.2m4-2.2-.9 2.2" />
           </svg>
           <span>
-            <b>Plan around the weather.</b> Pick a date to see which spots are open and what the
-            forecast is. Spots likely to be wet get a rain drop badge right on the map, so you can
-            see at a glance where it is dry, with the threshold adapted to how well the terrain
-            drains (<b>rain-sensitive</b> spots badge on light rain, <b>rain-resilient</b> ones only
-            on heavy rain).
+            <b>Weather and opening dates.</b> Pick a date and the map keeps only what is open, with
+            the forecast for that day. Spots that will probably be wet get a rain drop badge on the
+            map itself. How much rain it takes depends on the ground: <b>rain-sensitive</b> spots
+            badge on a light shower, <b>rain-resilient</b> ones only when it really pours.
           </span>
         </li>
         <li>
@@ -755,11 +758,12 @@
             <path d="M2.5 11.5v1a1.5 1.5 0 0 0 1.5 1.5h8a1.5 1.5 0 0 0 1.5-1.5v-1" />
           </svg>
           <span>
-            <b>Take it offline.</b> One click downloads the whole map, every trace of one spot, or a
-            single trace, as KML, GPX or GeoJSON. Open it in
+            <b>Downloads.</b> Export the whole map, one spot's traces or a single trace, as KML, GPX
+            or GeoJSON, and open it in
             <a href="https://www.comaps.app/" target="_blank" rel="noopener">CoMaps</a>,
             <a href="https://organicmaps.app/" target="_blank" rel="noopener">Organic Maps</a>
-            or OsmAnd. Whatever you have hidden is left out, so the file is the map you built.
+            or OsmAnd. Whatever you have filtered out stays out of the file, so you get the map you
+            were looking at.
           </span>
         </li>
         <li>
@@ -770,32 +774,35 @@
             <path d="M4.5 5.3v1.4a1.5 1.5 0 0 0 1.5 1.5h4a1.5 1.5 0 0 0 1.5-1.5V5.3M8 8.2v2.5" />
           </svg>
           <span>
-            <b>Make it yours.</b> Fork the
+            <b>Fork it.</b> The
             <a href="https://github.com/vemonet/alpine-mtb-map" target="_blank" rel="noopener"
               >repository</a
             >
-            and change whatever you like, easily done with coding agents. Send a pull request back
-            to the main map, or just keep your own.
+            is small and plain enough that a coding agent can rework it for you. Send a pull request
+            if the change belongs on the main map, otherwise keep your own copy.
           </span>
         </li>
-        <li>
+        <!-- <li>
           <svg viewBox="0 0 16 16" aria-hidden="true">
             <circle cx="8" cy="8" r="6.2" />
             <path d="m5.2 8.2 2 2 3.6-4.2" />
           </svg>
           <span>
-            <b>Tested and approved.</b> Spots and trails carrying that mark were ridden in person by
-            a contributor and confirmed as worthwhile.
+            <b>Ridden in person.</b> A check mark on a spot or a trace means a contributor has been
+            there and thought it was worth the trip.
           </span>
-        </li>
+        </li> -->
       </ul>
       <details class="about-details">
         <summary><h3>Why another MTB map?</h3></summary>
         <p>
-          Finding a good spot usually means trawling a dozen resort sites, none of which tell you in
-          one place what the trails are like, how the lift works and what it costs.
+          Finding a good spot usually means opening a dozen resort sites, and none of them tells you
+          in one place what the trails are like, how the lift works and what a day costs.
         </p>
-        <p>Trailforks has the coverage, but getting a weekend onto your phone runs into:</p>
+        <p>
+          Trailforks has the coverage, but getting a weekend out of it onto your phone is the
+          problem:
+        </p>
         <ul>
           <li>GPX and KML downloads sit behind a subscription, around 2.50 a month.</li>
           <li>Traces come one at a time, so a trip means a dozen exports and a dozen imports.</li>
@@ -806,8 +813,8 @@
           </li>
         </ul>
         <p>
-          Here the traces are curated for gravity riding, described in plain words, and free to
-          download whole, per spot or one at a time, with no account.
+          This map proposes only gravity riding, descriptions written in plain words, and downloads
+          that need no account, whole map or single trace.
         </p>
       </details>
       <details class="about-details">
@@ -831,13 +838,12 @@
             regional estimate and says so explicitly.
           </li>
           <li>
-            <b>Trail descriptions</b> written by humans often assisted by an LLM, from riding and
-            from operator trail maps.
+            <b>Trail descriptions</b> written from riding and from operator trail maps, by humans,
+            often with an LLM helping.
           </li>
           <li>
-            <b>Sources are linked per feature:</b> each spot description and each trail trace
-            includes links to the sources used for its description or geometry, so you can check the
-            underlying information yourself.
+            <b>Sources, per feature.</b> Every spot and every trace links the sources behind its
+            description and its geometry, so you can go and check them.
           </li>
           <li><b>Base map tiles</b> from OpenStreetMap, OpenTopoMap (CC BY-SA) and CyclOSM.</li>
           <li>
@@ -1001,14 +1007,14 @@
       </details>
       <h3>Contributing</h3>
       <p>
-        Help improve the map by adding or updating spots:
+        Help improve the map by adding or updating spots. Everything lives in one file,
         <a href="https://github.com/vemonet/alpine-mtb-map/blob/main/alpine-mtb-map.kml"
           ><code>alpine-mtb-map.kml</code></a
-        >, check it renders, and send a pull request. See
+        >: edit it, check it renders, open a pull request.
         <a href="https://github.com/vemonet/alpine-mtb-map/blob/main/CONTRIBUTING.md"
           ><code>CONTRIBUTING.md</code></a
         >
-        for details.
+        has the template and the rules.
       </p>
       <div class="about-buttons">
         <a

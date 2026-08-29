@@ -96,30 +96,48 @@ def _key(p):
     return "%.5f,%.5f" % (round(p["lat"], 5), round(p["lon"], 5))
 
 
+SHARED_CACHE = "ele-cache-shared.json"
+
+
 def elevations(ways, bbox):
-    """DEM elevation for every node, cached on disk - this is the slow step."""
-    cache_path = os.path.join(CACHE_DIR, "ele-cache-%s.json" % bbox.replace(",", "_"))
+    """DEM elevation for every node, cached on disk - this is the slow step.
+
+    The cache is **shared across bboxes**, not per-bbox. Neighbouring resorts
+    overlap heavily (Valloire and Valmeinier share a ridge; La Norma, Valfrejus
+    and Aussois sit in one 20 km stretch of the Maurienne), and a per-bbox cache
+    re-paid opentopodata's rate limit for points it had already measured. Legacy
+    `ele-cache-<bbox>.json` files are still read so old sweeps stay warm.
+
+    It also flushes after every chunk. The public endpoint 429s under load, and
+    writing only at the end meant a run that died at chunk 120 threw away all
+    120 chunks - which is how a 10-minute sweep became a 30-minute one.
+    """
+    shared_path = os.path.join(CACHE_DIR, SHARED_CACHE)
+    legacy_path = os.path.join(CACHE_DIR, "ele-cache-%s.json" % bbox.replace(",", "_"))
     cache = {}
-    if os.path.exists(cache_path):
-        cache = json.load(open(cache_path))
+    for path in (shared_path, legacy_path):
+        if os.path.exists(path):
+            cache.update(json.load(open(path)))
     wanted = {_key(p) for w in ways for p in w["geometry"]}
     missing = sorted(wanted - set(cache))
     for i in range(0, len(missing), 100):
         chunk = missing[i : i + 100]
         url = "https://api.opentopodata.org/v1/mapzen?locations=" + urllib.parse.quote("|".join(chunk))
-        for attempt in range(4):
+        for attempt in range(6):
             try:
                 results = json.load(urllib.request.urlopen(url, timeout=90))["results"]
                 break
             except Exception as exc:
-                print("  elevation retry at %d: %s" % (i, exc), file=sys.stderr)
-                time.sleep(4)
+                print("  elevation retry at %d/%d: %s" % (i, len(missing), exc), file=sys.stderr)
+                time.sleep(4 * (attempt + 1))
         else:
-            raise RuntimeError("elevation fetch failed at offset %d" % i)
+            json.dump(cache, open(shared_path, "w"))
+            raise RuntimeError("elevation fetch failed at offset %d - %d points cached, rerun to resume"
+                               % (i, len(cache)))
         for k, res in zip(chunk, results):
             cache[k] = res["elevation"]
+        json.dump(cache, open(shared_path, "w"))
         time.sleep(1.1)
-    json.dump(cache, open(cache_path, "w"))
     return cache
 
 

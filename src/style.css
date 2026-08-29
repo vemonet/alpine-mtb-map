@@ -1458,6 +1458,13 @@ body {
   pointer-events: none;
 }
 
+.trace-finish {
+  font-size: 14px;
+  line-height: 1;
+  pointer-events: none;
+  text-shadow: 0 0 3px #fff;
+}
+
 .pin {
   position: relative;
   width: 15px;

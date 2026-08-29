@@ -65,13 +65,28 @@ def fetch(query, tries=None, timeout=TIMEOUT):
 
 
 def elevations(points):
-    """[(label, lat, lon)] -> [(label, lat, lon, metres)], 25 at a time."""
+    """[(label, lat, lon)] -> [(label, lat, lon, metres)], 25 at a time.
+
+    Retries and paces itself. opentopodata's public endpoint rate-limits, and a
+    bare 429 here used to abort `lifts.py --ele` outright with a traceback - a
+    wide bbox (Megeve plus Saint-Gervais, ~50 lifts, 100 endpoints) is enough to
+    trigger it. Same fix as `descents.elevations`.
+    """
     out = []
     for i in range(0, len(points), 25):
         chunk = points[i : i + 25]
         locs = "|".join(f"{lat},{lon}" for _, lat, lon in chunk)
         url = f"https://api.opentopodata.org/v1/mapzen?locations={locs}"
         req = urllib.request.Request(url, headers={"User-Agent": UA})
-        res = json.load(urllib.request.urlopen(req, timeout=90))["results"]
+        for attempt in range(6):
+            try:
+                res = json.load(urllib.request.urlopen(req, timeout=90))["results"]
+                break
+            except Exception as exc:
+                print(f"  elevation retry at {i}/{len(points)}: {exc}", file=sys.stderr)
+                time.sleep(4 * (attempt + 1))
+        else:
+            raise SystemExit(f"elevation fetch failed at offset {i} - narrow the bbox")
         out += [(p[0], p[1], p[2], r["elevation"]) for p, r in zip(chunk, res)]
+        time.sleep(1.1)
     return out

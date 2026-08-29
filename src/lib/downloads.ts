@@ -39,12 +39,22 @@ function prunedDoc(kmlText: string, keep: Set<number>, title?: string) {
   }
 
   // A single-trail file that says which trail it is, rather than "Document",
-  // in whatever app opens it.
+  // in whatever app opens it. The source KML already carries a <name> and the
+  // ODbL <description> next to it, so retitle that element rather than
+  // prepending a second one - two <name> children is invalid KML and readers
+  // disagree about which of them wins.
   const document_ = doc.getElementsByTagNameNS(KML_NS, "Document")[0];
   if (title && document_) {
-    const name = doc.createElementNS(KML_NS, "name");
-    name.textContent = title;
-    document_.prepend(doc.createTextNode("\n  "), name);
+    const existing = [...document_.children].find(
+      (child) => child.namespaceURI === KML_NS && child.localName === "name",
+    );
+    if (existing) {
+      existing.textContent = title;
+    } else {
+      const name = doc.createElementNS(KML_NS, "name");
+      name.textContent = title;
+      document_.prepend(doc.createTextNode("\n  "), name);
+    }
   }
   return doc;
 }

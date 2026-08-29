@@ -573,12 +573,19 @@ const IDLE_LINE_OPACITY = 0.85;
 let selectedLines: L.Polyline[] = [];
 const selectLines = (lines: L.Polyline[]) => {
   for (const layer of selectedLines) layer.setStyle({ opacity: IDLE_LINE_OPACITY });
-  for (const layer of lines) layer.setStyle({ opacity: SELECTED_LINE_OPACITY });
+  for (const layer of lines) {
+    layer.setStyle({ opacity: SELECTED_LINE_OPACITY });
+    // Traces overlap constantly (shared start, parallel runs). Raising the
+    // selected ones puts them above the rest so the highlight is actually seen.
+    layer.bringToFront();
+  }
   selectedLines = lines;
+  updateTraceArrows();
 };
 const clearSelectedLines = () => {
   for (const layer of selectedLines) layer.setStyle({ opacity: IDLE_LINE_OPACITY });
   selectedLines = [];
+  updateTraceArrows();
 };
 
 // Whether a spot's forecast currently earns the rain badge on its pin.
@@ -679,19 +686,19 @@ const showTrace = (entry: TraceEntry, animate = true) => {
 };
 
 // A trace is drawn in the order its LineString is stored, which for these is
-// the riding direction. Small chevrons at the first vertex and at the halfway
-// point say which way that is without turning the line itself into a dashed
-// arrow pattern. The middle one is what you see when you are zoomed in on the
-// body of a trail and its trailhead is off screen.
+// the riding direction. Only the selected trace says which way that is: chevrons
+// at its start and at a regular on-screen spacing along it, and a chequered flag
+// at the finish. Showing them on every trace at once turned the map into noise,
+// and the direction only matters for the line you are actually looking at.
 //
-// Arrows are markers, so they are built only for the traces actually on screen
-// and only once zoomed in far enough to be riding a line rather than browsing
-// the map: at world zoom there would be hundreds of them and they would read as
-// noise. Everything is rebuilt on move, zoom and filter rather than kept in
-// sync, which is cheap at these counts and cannot drift.
-const ARROW_MIN_ZOOM = 12;
+// Arrows are markers, so they are rebuilt on move, zoom, filter and selection
+// rather than kept in sync, which is cheap at these counts and cannot drift.
 // How far along the line to look before the bearing is trusted.
 const ARROW_HEADING_PX = 12;
+// On-screen gap between two chevrons on the same trace.
+const ARROW_SPACING_PX = 70;
+// Nearer than this to the finish flag a chevron would just collide with it.
+const ARROW_END_GAP_PX = 24;
 const traceArrows = L.layerGroup().addTo(map);
 
 const arrowIcon = (color: string, angle: number) =>
@@ -702,9 +709,13 @@ const arrowIcon = (color: string, angle: number) =>
     iconAnchor: [6, 6],
   });
 
-// Below this on-screen length the two arrows would sit on top of each other, so
-// a short trace keeps only the one at its start.
-const ARROW_MID_MIN_PX = 60;
+const finishIcon = () =>
+  L.divIcon({
+    className: "",
+    html: `<div class="trace-finish" aria-hidden="true">\u{1F3C1}</div>`,
+    iconSize: [16, 16],
+    iconAnchor: [3, 16], // the flagpole, so the flag stands on the last vertex
+  });
 
 // Heading at a point on the line: look forward until the line has moved far
 // enough to trust the bearing, otherwise a stray vertex on a switchback points
@@ -723,40 +734,47 @@ const headingAt = (pixels: L.Point[], from: L.Point, at: number) => {
 
 const updateTraceArrows = () => {
   traceArrows.clearLayers();
-  if (map.getZoom() < ARROW_MIN_ZOOM) return;
+  if (!selectedLines.length) return;
   const view = map.getBounds();
-  for (const { layer, place } of lineLayers) {
+  for (const layer of selectedLines) {
     if (!map.hasLayer(layer) || !view.intersects(layer.getBounds())) continue;
     const pts = layer.getLatLngs() as L.LatLng[];
     if (pts.length < 2) continue;
-    const color = TRAIL_COLORS[place.styleUrl] ?? TRAIL_COLOR;
+    const place = lineLayers.find((candidate) => candidate.layer === layer)?.place;
+    const color = (place && TRAIL_COLORS[place.styleUrl]) ?? TRAIL_COLOR;
     const pixels = pts.map((p) => map.latLngToLayerPoint(p));
 
-    const arrow = (latlng: L.LatLng, angle: number) =>
+    const decoration = (latlng: L.LatLng, icon: L.DivIcon) =>
       L.marker(latlng, {
-        icon: arrowIcon(color, angle),
+        icon,
         interactive: false, // never steal a click from the line it sits on
         keyboard: false,
         zIndexOffset: -200000, // decoration: below every pin, including the grey ones
       }).addTo(traceArrows);
 
-    arrow(pts[0], headingAt(pixels, pixels[0], 1));
+    decoration(pts[0], arrowIcon(color, headingAt(pixels, pixels[0], 1)));
+    decoration(pts[pts.length - 1], finishIcon());
 
-    // Halfway by on-screen length, not by vertex count: the vertices of an
-    // imported trace bunch up in the corners and would drag the middle arrow
+    // Spaced by on-screen length, not by vertex count: the vertices of an
+    // imported trace bunch up in the corners and would crowd the chevrons
     // towards whichever end was recorded in more detail.
     const steps = pixels.slice(1).map((p, i) => p.distanceTo(pixels[i]));
     const total = steps.reduce((a, b) => a + b, 0);
-    if (total < ARROW_MID_MIN_PX) continue;
     let run = 0;
     let seg = 0;
-    while (seg < steps.length - 1 && run + steps[seg] < total / 2) run += steps[seg++];
-    const t = steps[seg] ? (total / 2 - run) / steps[seg] : 0;
-    const mid = L.point(
-      pixels[seg].x + (pixels[seg + 1].x - pixels[seg].x) * t,
-      pixels[seg].y + (pixels[seg + 1].y - pixels[seg].y) * t,
-    );
-    arrow(map.layerPointToLatLng(mid), headingAt(pixels, mid, seg + 1));
+    for (
+      let along = ARROW_SPACING_PX;
+      along < total - ARROW_END_GAP_PX;
+      along += ARROW_SPACING_PX
+    ) {
+      while (seg < steps.length - 1 && run + steps[seg] < along) run += steps[seg++];
+      const t = steps[seg] ? (along - run) / steps[seg] : 0;
+      const at = L.point(
+        pixels[seg].x + (pixels[seg + 1].x - pixels[seg].x) * t,
+        pixels[seg].y + (pixels[seg + 1].y - pixels[seg].y) * t,
+      );
+      decoration(map.layerPointToLatLng(at), arrowIcon(color, headingAt(pixels, at, seg + 1)));
+    }
   }
 };
 

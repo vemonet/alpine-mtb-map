@@ -52,8 +52,20 @@ from overpass import fetch
 from trails import haversine, length, simplify
 
 CLUSTER_GAP_M = 150.0
-STYLE = {"green": "#line-green", "blue": "#line-blue", "red": "#line-red", "black": "#line-black"}
-LEVEL = {"green": "beginner", "blue": "beginner", "red": "intermediate", "black": "expert"}
+STYLE = {
+    "green": "#line-green",
+    "blue": "#line-blue",
+    "red": "#line-red",
+    "black": "#line-black",
+    "orange": "#line-orange",
+}
+LEVEL = {
+    "green": "beginner",
+    "blue": "beginner",
+    "red": "intermediate",
+    "black": "expert",
+    "orange": "expert",
+}
 
 
 def norm(name):
@@ -198,13 +210,25 @@ def source(ids):
     return "<i>Source: ways %s.</i>" % links
 
 
+
+def xml_escape(text):
+    """Escape a trail name for a KML text node.
+
+    OSM names contain `&` (`Nani & Mariedl MTB Trail` at Hochkonig) and the odd
+    `<`. Emitted raw they make the whole KML fail to parse, which is a silent
+    trap: the file looks fine until the app refuses to load it.
+    """
+    return text.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
+
 def placemark(run, spot, prefix, tags):
     colour = run["colour"]
     kind = "%s trail" % colour if colour else "trail"
     desc = "%.1f km %s, dropping %d m from %d m to %d m at an average %d%%." % (
         run["len"] / 1000.0, kind, run["drop"], run["top"], run["bot"], round(run["pct"])
     )
-    if not colour:
+    if run.get("grade_note"):
+        desc += " " + run["grade_note"]
+    elif not colour:
         extra = " (mtb:scale %s)" % run["scale"] if run["scale"] else ""
         desc += " OpenStreetMap records no grade for it%s." % extra
     if "(section" in run["label"]:
@@ -225,8 +249,8 @@ def placemark(run, spot, prefix, tags):
     <LineString><tessellate>1</tessellate><coordinates>%s</coordinates></LineString>
     <ExtendedData><Data name="spot"><value>%s</value></Data><Data name="tags"><value>%s</value></Data></ExtendedData>
   </Placemark>""" % (
-        prefix,
-        run["label"],
+        xml_escape(prefix),
+        xml_escape(run["label"]),
         desc,
         STYLE.get(colour, "#line-trail"),
         coords,

@@ -11,6 +11,47 @@ import type { FeatureCollection, Geometry, Position } from "geojson";
 /** Either DOM implementation togeojson accepts: the browser's or @xmldom/xmldom's. */
 export type KmlDocument = Parameters<typeof kml>[0];
 
+const KML_NS = "http://www.opengis.net/kml/2.2";
+
+// The KML says all of this in its own <Document>, so a downloaded .kml is
+// self-describing. GPX and GeoJSON each have their own slot for it and this is
+// where those get filled, so that no export can be redistributed without the
+// notice ODbL section 4.2 requires. Keep in step with LICENSE section 1.
+export const LICENCE = {
+  id: "ODbL-1.0",
+  url: "https://opendatacommons.org/licenses/odbl/1-0/",
+  attribution: "Data (c) OpenStreetMap contributors and Vincent Emonet, ODbL 1.0",
+  holder: "OpenStreetMap contributors and Vincent Emonet",
+  source: "https://github.com/vemonet/alpine-mtb-map",
+  author: "Vincent Emonet and contributors",
+  year: "2026",
+} as const;
+
+/** A feature collection carrying the licence as GeoJSON foreign members. */
+export type LicensedFeatureCollection = FeatureCollection<Geometry | null> & {
+  name?: string;
+  license: string;
+  licenseUrl: string;
+  attribution: string;
+  source: string;
+};
+
+/**
+ * The <name> of the KML <Document>, which the in-page download rewrites when a
+ * reader takes a single trail. Walks direct children rather than using
+ * getElementsByTagName, so a Placemark name can never be picked up by mistake.
+ */
+function documentTitle(doc: KmlDocument): string | undefined {
+  const document_ = (doc as Document).getElementsByTagNameNS(KML_NS, "Document")[0];
+  for (const child of [...(document_?.childNodes ?? [])]) {
+    const el = child as Element;
+    if (el.nodeType === 1 && el.localName === "name" && el.namespaceURI === KML_NS) {
+      return el.textContent?.trim() || undefined;
+    }
+  }
+  return undefined;
+}
+
 /** The readable category carried into the exports. */
 export type Kind = "bike-park" | "natural" | "no-lift" | "minor" | "trail";
 
@@ -39,7 +80,7 @@ export const kindOf = (styleUrl = ""): Kind => KINDS[styleUrl.trim().replace(/^#
  * togeojson emits one feature per placemark in document order, which is what
  * lets the two lists be zipped by index.
  */
-export function toGeoJson(doc: KmlDocument): FeatureCollection<Geometry | null> {
+export function toGeoJson(doc: KmlDocument): LicensedFeatureCollection {
   const geojson = kml(doc);
   // The two DOM implementations declare incompatible Element types, but only
   // the shared getElementsByTagName/textContent surface is used here.
@@ -49,7 +90,19 @@ export function toGeoJson(doc: KmlDocument): FeatureCollection<Geometry | null> 
     feature.properties ??= {};
     feature.properties.kind = kindOf(style?.textContent ?? "");
   });
-  return geojson;
+  // Foreign members, which RFC 7946 section 6.1 allows on a FeatureCollection.
+  // Rebuilt rather than assigned so they serialise before the huge features
+  // array and a reader meets the licence at the top of the file.
+  const { features, ...rest } = geojson;
+  return {
+    ...rest,
+    name: documentTitle(doc),
+    license: LICENCE.id,
+    licenseUrl: LICENCE.url,
+    attribution: LICENCE.attribution,
+    source: LICENCE.source,
+    features,
+  };
 }
 
 // --------------------------------------------------------------------- gpx ---
@@ -86,12 +139,30 @@ const pt = (tag: string, [lon, lat, ele]: Position, name: string, desc: string) 
   `  </${tag}>`;
 
 const GPX_DESC =
-  "Lift-served mountain-bike spots in the western Alps and Jura. Trail geometries from OpenStreetMap (ODbL).";
+  "Mountain-bike spots worldwide: downhill bike parks, enduro trails and freeride spots, " +
+  "with lift prices, season dates and travel times. Trail geometries from OpenStreetMap (ODbL).";
+
+// GPX 1.1 fixes the order of <metadata>'s children (name, desc, author,
+// copyright, link), and a validator rejects any other arrangement - so this
+// block is a literal rather than something assembled per field.
+const GPX_METADATA =
+  `    <author>\n` +
+  `      <name>${esc(LICENCE.author)}</name>\n` +
+  `      <link href="${esc(LICENCE.source)}"><text>Alpine MTB Map</text></link>\n` +
+  `    </author>\n` +
+  `    <copyright author="${esc(LICENCE.holder)}">\n` +
+  `      <year>${esc(LICENCE.year)}</year>\n` +
+  `      <license>${esc(LICENCE.url)}</license>\n` +
+  `    </copyright>\n` +
+  `    <link href="${esc(LICENCE.source)}"><text>Alpine MTB Map</text></link>\n`;
 
 /** GPX 1.1 for a GeoJSON feature collection: points as waypoints, lines as tracks. */
 export function toGpx(
-  geojson: FeatureCollection<Geometry | null>,
-  { name = "Alpine MTB Map", desc = GPX_DESC }: { name?: string; desc?: string } = {},
+  geojson: FeatureCollection<Geometry | null> & { name?: string },
+  {
+    name = geojson.name ?? "Alpine MTB Map",
+    desc = GPX_DESC,
+  }: { name?: string; desc?: string } = {},
 ) {
   const parts = [];
   for (const f of geojson.features) {
@@ -117,7 +188,7 @@ export function toGpx(
   <metadata>
     <name>${esc(name)}</name>
     <desc>${esc(desc)}</desc>
-  </metadata>
+${GPX_METADATA}  </metadata>
 ${parts.join("\n")}
 </gpx>
 `;

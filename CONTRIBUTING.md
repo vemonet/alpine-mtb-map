@@ -2,21 +2,21 @@
 
 [![Deploy to GitHub Pages](https://github.com/vemonet/alpine-mtb-map/actions/workflows/deploy.yml/badge.svg)](https://github.com/vemonet/alpine-mtb-map/actions/workflows/deploy.yml) [![Release](https://github.com/vemonet/alpine-mtb-map/actions/workflows/release.yml/badge.svg)](https://github.com/vemonet/alpine-mtb-map/actions/workflows/release.yml)
 
-Contributions are very welcome, especially new spots and price corrections.
+Contributions are welcome, especially new spots and price corrections.
 
-Add yours to [`alpine-mtb-map.kml`](alpine-mtb-map.kml) following [Adding a point](#adding-a-point) below, check it renders:
+Add yours to [`alpine-mtb-map.kml`](alpine-mtb-map.kml) following [Adding a point](#adding-a-point) below, then check it renders:
 
 ```bash
 vp i && vp dev
 ```
 
-Then open a pull request. The KML is the only data file in the repository - the GPX, GeoJSON and KMZ are generated at release time, so you only ever touch the KML. See [Development](#development) for the rest.
+Then open a pull request. The KML is the only data file in the repository; the GPX, GeoJSON and KMZ are generated at release time, so the KML is the only thing you ever edit. [Development](#development) covers the rest.
 
 ## 🗺️ What is on the map
 
-Each main pin carries, in its description: what the trails are like, what it costs to get up, its open and closed dates, and an Access table giving the travel time from each origin.
+A main pin's description says what the trails are like, what it costs to get up, when the spot opens and closes, and how long it takes to get there from each origin in the Access table.
 
-Travel times are given from reference cities that actually makes sense for each spot: **Lausanne by train** for the Swiss, **Nice by car** for the Mercantour, and the obvious local city everywhere.
+Origins are whichever city a rider would realistically leave from: **Lausanne by train** for Switzerland, **Nice by car** for the Mercantour, the obvious local city elsewhere.
 
 | Colour       | Meaning                                             |
 | ------------ | --------------------------------------------------- |
@@ -28,9 +28,9 @@ Travel times are given from reference cities that actually makes sense for each 
 
 ### Filters
 
-Every filter combines with the others. See [the tags](#6-the-tags) for how to classify a spot.
+Filters combine. See [the tags](#6-the-tags) for how to classify a spot.
 
-The **Show** menu contains spot type, access, riding style and difficulty checkboxes. They start checked, use OR matching inside each applicable section and can be reset together with **Show all** or **Hide all**. Spot type and lift access are independent:
+The **Show** menu holds the spot type, access, riding style and difficulty checkboxes. They start checked, match with OR inside each section, and can be flipped all at once with **Show all** or **Hide all**. Spot type and lift access are independent of each other:
 
 | Filter        | Shows                                         |
 | ------------- | --------------------------------------------- |
@@ -38,9 +38,9 @@ The **Show** menu contains spot type, access, riding style and difficulty checkb
 | **Natural**   | natural or lightly developed riding           |
 | **No lift**   | spots where the climb is under your own power |
 
-Every spot must carry exactly one of `bike-park` or `natural`. Add `no-lift` independently whenever there is no mechanical uplift. A purpose-built bike park can therefore be `bike-park no-lift`. No-lift takes visual priority, so both `bike-park no-lift` and `natural no-lift` use a brown pin. A bike park with uplift uses blue, while a natural spot with uplift uses dark green.
+Every spot carries exactly one of `bike-park` or `natural`, and `no-lift` on top of that whenever there is no mechanical uplift, so `bike-park no-lift` is a legitimate combination. For the pin colour, no-lift wins: both `bike-park no-lift` and `natural no-lift` are brown. With uplift, a bike park is blue and a natural spot dark green.
 
-The **Only show** menu contains optional requirements. They start unchecked, and selecting one hides everything that does _not_ carry its tag:
+The **Only show** menu holds optional requirements. They start unchecked; checking one hides everything that does _not_ carry its tag:
 
 | Filter | On means |
 | --- | --- |
@@ -48,30 +48,30 @@ The **Only show** menu contains optional requirements. They start unchecked, and
 | 🎟️ **Season pass** | only spots with a published season pass price (13 today) |
 | **Mass start venue** | only venues that host a documented mass-start gravity race |
 
-Riding style and difficulty match on _any_: a spot shows while at least one of its tags in each section remains checked. A spot may carry several difficulty and riding-style tags.
+Riding style and difficulty match on _any_, so a spot stays visible as long as one of its tags in each section is still checked. Spots often carry several of both.
 
 | Group        | Filters                          |
 | ------------ | -------------------------------- |
 | Difficulty   | 🟢 **Beginner**, 💀 **Expert**   |
 | Riding style | **DH**, **Enduro**, **Freeride** |
 
-That is why somewhere tagged both beginner and expert survives turning either one off, and a park tagged `dh freeride` survives while either riding-style chip remains on. Turning every chip in a group off empties the map.
+A spot tagged both beginner and expert therefore survives turning either one off, and a `dh freeride` park survives while either chip is on. Turn every chip in a group off and the map goes empty.
 
-**Day pass up to** is the one numeric filter: a slider that hides spots whose day price is above the cap. At its far right it reads _any_ and hides nothing. Prices are compared in Swiss francs, with the other currencies converted at fixed rough rates (CHF, EUR, CAD, JPY are recognised), so it sorts spots into brackets rather than quoting you a figure. **Spots with no verified price are never hidden by it** - we do not filter on data we do not have, and a currency the table does not know reads the same way.
+**Day pass up to** is the only numeric filter: a slider that hides spots priced above the cap. At its far right it reads _any_ and hides nothing. Comparison happens in Swiss francs, with EUR, CAD and JPY converted at fixed rough rates, so treat it as sorting spots into brackets rather than quoting a figure. Spots with no verified price are **never** hidden by it, because filtering on data we do not have would be worse than showing them, and a currency the table does not know is treated the same way.
 
-**Open & weather on** is one shared date picker that defaults to **Any date**. Choosing a date hides every spot whose recurring season does not include the selected month and day and uses that date for weather when it is inside the available forecast window. Published 2026 dates are used where available; otherwise the KML description labels the regional average as a typical window. Weather, maintenance and partial-season lift schedules can still change actual access, so always check the operator.
+**Open & weather on** is a single date picker, defaulting to **Any date**. Pick a date and it hides every spot whose recurring season does not cover that month and day, and uses the same date for the forecast when it falls inside the available window. Published 2026 dates are used where the operator has them; otherwise the description labels a regional average as a typical window. Maintenance days and partial lift schedules can still close a spot that the filter says is open, so check the operator.
 
-Seasons that run across New Year work the same way: the four southern-hemisphere spots (Thredbo, Nevados de Chillan, Cerro Catedral, La Parva) are open from December to April, so on a July date they are correctly hidden and on a January one they are most of what is left.
+Seasons crossing New Year need no special handling: the southern-hemisphere spots (Thredbo, Nevados de Chillan, Cerro Catedral, La Parva) run December to April, so a July date hides them and a January one leaves little else.
 
-When the shared date is **Any**, weather uses today before 16:00 and tomorrow from 16:00 onward. Weather is enabled by default and can be turned off with the cloud-and-rain button left of the location button. A rain icon appears inside a spot's original coloured dot when at least 1 mm of precipitation or a 50% precipitation probability is forecast for the effective weather date, or at least 5 mm fell the day before. Clicking a spot shows that day, the three days before it and the three days after it. Dates outside Open-Meteo's available range show a clear unavailable message. Forecasts are cached in the browser for six hours to limit Open-Meteo requests.
+With the date on **Any**, weather uses today before 16:00 and tomorrow after. It is on by default and can be turned off with the cloud-and-rain button left of the location button. A rain icon appears inside a spot's coloured dot when the forecast for the effective date gives at least 1 mm of precipitation or a 50% probability, or when at least 5 mm fell the day before. Click a spot and you get that day plus three days either side. Dates outside Open-Meteo's range say so instead of guessing. Forecasts are cached in the browser for six hours to keep the request count down.
 
 ## 📍 Adding a point
 
-Everything lives in `alpine-mtb-map.kml`. It is plain XML, so edit it in any text editor - no build step is needed for the data itself. Paste a new `<Placemark>` anywhere between `<Document>` and `</Document>`.
+Everything lives in `alpine-mtb-map.kml`. It is plain XML, so any text editor will do and the data needs no build step. Paste a new `<Placemark>` anywhere between `<Document>` and `</Document>`.
 
 ### 1. Get the coordinates
 
-Right-click the spot on [openstreetmap.org](https://www.openstreetmap.org/) and choose "Show address", or long-press it in Organic Maps and copy the coordinates. Careful: **KML is `longitude,latitude`**, the opposite order from what almost every tool shows you. Getting this wrong drops your pin in Somalia.
+Right-click the spot on [openstreetmap.org](https://www.openstreetmap.org/) and choose "Show address", or long-press it in Organic Maps and copy the coordinates. Careful: **KML is `longitude,latitude`**, the opposite order to what almost every tool shows you. Getting it wrong drops your pin in Somalia.
 
 ### 2. Copy this template
 
@@ -106,19 +106,19 @@ Right-click the spot on [openstreetmap.org](https://www.openstreetmap.org/) and 
 
 ### 3. The name
 
-`Somewhere Nice [30 CHF]` - the part in square brackets is what the sidebar shows underneath the name, and it is how the website recognises a main spot pin in the first place. Put the **price** there, never the travel time (that lives in the Access table). Use `no lift` for a pedal-up spot, or something like `train fare only` where there is no pass to buy.
+`Somewhere Nice [30 CHF]`. The square brackets are what the sidebar shows under the name, and they are also how the website recognises a main spot pin at all. Put the **price** in there, never the travel time (that belongs in the Access table). Write `no lift` for a pedal-up spot, or something like `train fare only` where there is no pass to buy.
 
-Drop the brackets and the pin still appears on the map, but it will not get a sidebar row and it will not be filterable.
+Without the brackets the pin still shows on the map, but it gets no sidebar row and no filtering.
 
 ### 4. The description
 
-Keep the five sections in this order. It is HTML inside `<![CDATA[ ... ]]>`, so write `&gt;` rather than a bare `>` if you want an arrow.
+Keep the five sections in this order. The content is HTML inside `<![CDATA[ ... ]]>`, so write `&gt;` rather than a bare `>` for an arrow.
 
-1. **Bold first line** - what the pin actually marks. The main pin sits at the bottom of the main lift, so it reads `Leysin 1263 m - valley station of the Berneuse gondola`; the grey waypoint at the other end reads `Berneuse 2048 m - top of the gondola`.
-2. **Trails** - what the riding is like. This comes first because it is the reason to go; it is the part worth writing well.
-3. **Getting up / price** - the pass, what it costs, season dates, whether the Magic Pass covers it.
-4. **Open season** - explicitly state when the spot opens and the first date it is closed. Say whether these are published dates or a typical estimate. For every bike park or mechanical uplift, add a non-bold `Daily opening hours: 09:00-17:00` line followed by a small note saying whether the hours are published or estimated.
-5. **Access** - the table, and nothing else. One row per origin city, nearest first. Use whichever origin a rider would actually start from: Lausanne by train for Switzerland and the Chablais, Grenoble by car for the Isère. Add a second row when both are useful. The Transport column is free text: `Train`, `Train + bus`, `Train + funicular`, `Boat + bus`, `Car`.
+1. **Bold first line**: what the pin actually marks. The main pin sits at the bottom of the main lift, so it reads `Leysin 1263 m - valley station of the Berneuse gondola`, while the grey waypoint at the other end reads `Berneuse 2048 m - top of the gondola`.
+2. **Trails**: what the riding is like. It comes first because it is the reason to go, and it is the part worth writing well.
+3. **Getting up / price**: the pass, what it costs, season dates, whether the Magic Pass covers it.
+4. **Open season**: when the spot opens and the first day it is closed, and whether those are published dates or an estimate. For every bike park and every mechanical uplift, add a non-bold `Daily opening hours: 09:00-17:00` line, then a small note saying whether the hours are published or estimated.
+5. **Access**: the table, and nothing else. One row per origin city, nearest first. Use whichever origin a rider would actually start from: Lausanne by train for Switzerland and the Chablais, Grenoble by car for the Isère. Add a second row when both are useful. The Transport column is free text: `Train`, `Train + bus`, `Train + funicular`, `Boat + bus`, `Car`.
 
 To flag a local access rule or a hazard, add a warning box between "Getting up / price" and Access:
 
@@ -138,11 +138,11 @@ It renders as a highlighted box on the site and as its own line in the GPX expor
 | `#placemark-gray`  | a secondary point: station, mid-station, lift hub, trailhead |
 | `#line-trail`      | a trail line                                                 |
 
-Pin colour encodes lift access first, then spot category. No lift always takes visual priority and uses brown. Among spots with uplift, bike parks use blue and natural spots use dark green. Nothing else is colour coded, so do not invent new styles.
+Pin colour reads lift access first, category second: no lift is always brown, and among lift-served spots, bike parks are blue and natural spots dark green. Nothing else is colour coded, so do not invent new styles.
 
 ### 6. The tags
 
-This is the `<ExtendedData>` block. Organic Maps ignores it entirely; it exists to drive the website's filters and grouping.
+This is the `<ExtendedData>` block. Organic Maps ignores it completely: it exists to drive the website's filters and grouping.
 
 | Field | Required? | Value |
 | --- | --- | --- |
@@ -153,9 +153,9 @@ This is the `<ExtendedData>` block. Organic Maps ignores it entirely; it exists 
 | `price_day` | optional | Day access to the resort or mandatory lift, as `30 CHF`, `25 EUR`, `5500 JPY`. Main pin only. |
 | `price_season` | optional | Season pass for the same, same format. Main pin only. |
 
-Season fields are recurring month-day values because the picker is for trip planning across years. Prefer the operator's published dates. When those are not available, use a conservative regional average and label it as a typical window in the description. Put daily opening hours directly in the Open season description for every bike park and every spot relying on a gondola, cable car, chairlift or funicular. Prefer published hours; otherwise use a conservative regional estimate and say so in the following small-text note. Do not put season fields on secondary pins or trail lines; they inherit visibility from the main spot through the shared `spot` id.
+Season fields are month-day values with no year, because the picker is for planning trips across years. Use the operator's published dates when they exist, and a conservative regional average labelled as a typical window when they do not. Daily opening hours go in the Open season description of every bike park and every spot that depends on a gondola, cable car, chairlift or funicular, again published if possible and flagged as an estimate otherwise. Leave season fields off secondary pins and trail lines: they inherit visibility from the main spot through the shared `spot` id.
 
-The `tags` value is a union across a spot's placemarks, so in practice put the same tags on the pin and its trail lines. Available tags:
+Tags are unioned across a spot's placemarks, so in practice give the pin and its trail lines the same set. Available tags:
 
 | Tag | Meaning |
 | --- | --- |
@@ -171,7 +171,7 @@ The `tags` value is a union across a spot's placemarks, so in practice put the s
 | `magicpass` | The resort is in the [Magic Pass](https://www.magicpass.ch/) network. |
 | `mass-start` | The spot hosts a documented mass-start gravity race. Mention the race by name in the description and link its source. |
 
-Plenty of spots deserve both `beginner` and `expert`; a spot with neither will never show, since the difficulty filters have nothing to match. A spot must also be either `bike-park` or `natural`, never both. Lift access and riding styles are independent: a pedal-up park can be `bike-park no-lift dh freeride`, a natural pedal-up network might be `natural no-lift enduro`, and a lift-served big-mountain zone might be `natural freeride`.
+Plenty of spots deserve both `beginner` and `expert`. A spot with neither never shows at all, since the difficulty filters have nothing to match on. It must be `bike-park` or `natural`, never both. Lift access and riding style are independent of that: a pedal-up park can be `bike-park no-lift dh freeride`, a pedal-up natural network `natural no-lift enduro`, a lift-served big-mountain zone `natural freeride`.
 
 Tagging examples:
 
@@ -184,11 +184,11 @@ Tagging examples:
 <Data name="tags"><value>beginner expert bike-park dh enduro freeride magicpass</value></Data>
 ```
 
-For backward compatibility, `no-lift` is also derived from a `#placemark-brown` style, but contributors should write it explicitly. The `season` tag is derived from the presence of `price_season` and is never written by hand.
+`no-lift` is also inferred from a `#placemark-brown` style, for older entries, but write it explicitly. The `season` tag comes from the presence of `price_season` and is never written by hand.
 
 #### Prices
 
-`price_day` is the cost of a day's access to the resort, or of the lift you cannot avoid. It is not the travel cost: a train fare belongs in the Access table, a mandatory funicular belongs here. Write the currency the operator actually charges in.
+`price_day` is a day's access to the resort, or the lift you cannot avoid. It is not the travel cost: a train fare belongs in the Access table, a mandatory funicular belongs here. Use whatever currency the operator actually charges in.
 
 ```xml
 <Data name="price_day"><value>36 CHF</value></Data>
@@ -197,24 +197,24 @@ For backward compatibility, `no-lift` is also derived from a `#placemark-brown` 
 <Data name="price_season"><value>320 EUR</value></Data>
 ```
 
-The price slider knows `CHF`, `EUR`, `CAD` and `JPY` (the rates live in `CHF_PER` in [`src/main.ts`](src/main.ts)). Any other currency still displays, it just never gets filtered.
+The price slider knows `CHF`, `EUR`, `CAD` and `JPY` (rates live in `CHF_PER` in [`src/main.ts`](src/main.ts)). Any other currency still displays, it just never gets filtered.
 
-**Leave them out rather than guess.** An omitted price is never hidden by the price slider, which is the right outcome for a spot we could not verify; an invented one sends someone to a resort on a number that was never real. Say so in the description instead ("price not verified here, check operator.ch").
+**Leave the field out rather than guess.** An omitted price is never hidden by the slider, which is what you want for a spot nobody could verify. An invented one sends someone to a resort on a number that was never real. Say so in the description instead: "price not verified, check operator.ch".
 
-Adding a whole new filter is two steps and no new filtering logic: put the tag in the KML, and add a chip to `<nav id="filters">` in [`index.html`](index.html) with `data-tag` plus `data-mode="only"` (inclusion) or no mode at all (exclusion).
+Adding a whole new filter takes two steps and no new filtering logic: put the tag in the KML, and add a chip to `<nav id="filters">` in [`index.html`](index.html) with `data-tag`, plus `data-mode="only"` for an inclusion filter or no mode at all for an exclusion one.
 
 ### Finding coordinates and traces
 
-There is a skill for this: [`.github/skills/spot-data/`](.github/skills/spot-data/SKILL.md). It has two dependency-free scripts and the rules they encode.
+There is a skill for this: [`.agents/skills/spot-data/`](.agents/skills/spot-data/SKILL.md). It carries the rules plus a set of dependency-free scripts.
 
 ```bash
-cd .claude/skills/spot-data/scripts
+cd .agents/skills/spot-data/scripts
 python3 lifts.py  46.74,6.31,46.79,6.40 --ele   # every lift, both ends, altitudes
 python3 trails.py 46.14,6.65,46.18,6.71         # mapped MTB descents
 python3 trails.py 46.14,6.65,46.18,6.71 --id 220753196   # one, as KML
 ```
 
-`lifts.py --ele` is what tells you which end of a lift is the valley station - that is where the main pin goes. Top stations, mid-stations and secondary lift stations are grey waypoints. `trails.py` pulls geometry from OpenStreetMap, simplifies it and refuses to emit a relation that is a circuit rather than one descent.
+`lifts.py --ele` is what tells you which end of a lift is the valley station, and that is where the main pin goes. Top stations, mid-stations and secondary lift stations become grey waypoints. `trails.py` pulls geometry from OpenStreetMap, simplifies it, and refuses to emit a relation that turns out to be a circuit rather than a single descent.
 
 > [!TIP]
 >
@@ -226,7 +226,7 @@ python3 trails.py 46.14,6.65,46.18,6.71 --id 220753196   # one, as KML
 
 ### 7. Adding a trail line
 
-Same idea with a `<LineString>` instead of a `<Point>`. Coordinates are `lon,lat,0` triples separated by spaces. Give it the same `spot` and `tags` as the pin it belongs to, so it hides and shows with it.
+Same idea with a `<LineString>` instead of a `<Point>`. Coordinates are space-separated `lon,lat,0` triples. Give the line the same `spot` and `tags` as the pin it belongs to and it will hide and show with it.
 
 ```xml
 <Placemark>
@@ -243,7 +243,7 @@ Same idea with a `<LineString>` instead of a `<Point>`. Coordinates are `lon,lat
 </Placemark>
 ```
 
-To trace a real trail rather than typing coordinates, draw it on [umap.openstreetmap.fr](https://umap.openstreetmap.fr/), export as KML and paste the `<coordinates>` across. The existing lines were pulled from OpenStreetMap relations via [Overpass](https://overpass-turbo.eu/) - if you do the same, the result stays ODbL, which the data files already are.
+Rather than typing coordinates, draw the trail on [umap.openstreetmap.fr](https://umap.openstreetmap.fr/), export as KML and paste the `<coordinates>` across. The existing lines were pulled from OpenStreetMap relations via [Overpass](https://overpass-turbo.eu/); do the same and the result stays ODbL, which the data files already are.
 
 ### 8. Check it
 
@@ -251,7 +251,7 @@ To trace a real trail rather than typing coordinates, draw it on [umap.openstree
 vp dev
 ```
 
-Open the printed URL. If the map is blank, the KML is malformed and the browser console will say where. Then commit the KML - it is the only data file in the repository, and the GPX, GeoJSON and KMZ are generated at release time.
+Open the printed URL. A blank map means malformed KML, and the browser console will say where. Then commit the KML, and only the KML: the GPX, GeoJSON and KMZ are generated at release time.
 
 ## 🗂️ Other formats
 
@@ -259,9 +259,9 @@ Open the printed URL. If the map is blank, the KML is malformed and the browser 
 vp run export
 ```
 
-Regenerates `alpine-mtb-map.geojson`, `alpine-mtb-map.gpx` and `alpine-mtb-map.kmz` from `alpine-mtb-map.kml`. Points become GPX waypoints and GeoJSON `Point` features, trails become GPX tracks and `LineString` features; HTML descriptions are flattened to plain text for GPX. The `kind` (`bike-park` / `natural` / `no-lift` / `minor` / `trail`) plus every `<ExtendedData>` facet (`spot`, `tags`, `open_from`, `closed_from`, `price_day`, `price_season`) is carried into GeoJSON as a property.
+Regenerates `alpine-mtb-map.geojson`, `alpine-mtb-map.gpx` and `alpine-mtb-map.kmz` from `alpine-mtb-map.kml`. Points become GPX waypoints and GeoJSON `Point` features, trails become GPX tracks and `LineString` features, and HTML descriptions are flattened to plain text for GPX. The `kind` (`bike-park` / `natural` / `no-lift` / `minor` / `trail`) and every `<ExtendedData>` facet (`spot`, `tags`, `open_from`, `closed_from`, `price_day`, `price_season`) become GeoJSON properties.
 
-**Never edit the generated files by hand** - the KML is the source of truth and `vp run export` overwrites them. The three exports are gitignored: [releasing](#releasing) rebuilds them and attaches them to the GitHub release, which is where the download links point.
+**Never edit the generated files by hand.** The KML is the source of truth and `vp run export` overwrites them. All three exports are gitignored; [releasing](#releasing) rebuilds them and attaches them to the GitHub release, which is where the download links point.
 
 ## 🔧 Development
 
@@ -284,11 +284,11 @@ vp run release     # cut a release (maintainers)
 
 > Everything the tooling needs lives in [`vite.config.ts`](vite.config.ts).
 
-[`.github/workflows/deploy.yml`](.github/workflows/deploy.yml) runs `vp check` and `vp run export`, which validates the KML: the conversion refuses a spot that is missing a required tag axis. On `main` it then builds and publishes to GitHub Pages; pull requests get the checks only.
+[`.github/workflows/deploy.yml`](.github/workflows/deploy.yml) runs `vp check` and `vp run export`. The export doubles as KML validation, since the conversion refuses a spot that is missing a required tag axis. On `main` it then builds and publishes to GitHub Pages. Pull requests get the checks only.
 
 ## 🏷️ Releasing
 
-Maintainers only. Nothing on your machine needs a GitHub token: the local half only writes to git.
+Maintainers only. No GitHub token is needed locally, because the local half only writes to git.
 
 ```bash
 vp run release
@@ -300,6 +300,6 @@ vp run release
 vp run release minor --dry-run
 ```
 
-Pushing the tag triggers [`.github/workflows/release.yml`](.github/workflows/release.yml), which does the half that needs credentials, using the workflow's own token: rebuild the exports from the tagged KML with `vp run export`, render the notes, and create the GitHub release with the KML, KMZ, GPX and GeoJSON attached. So the assets can never drift from the data they were tagged with, and the download links keep resolving to the newest release.
+Pushing the tag triggers [`.github/workflows/release.yml`](.github/workflows/release.yml), which does the half that needs credentials with the workflow's own token: rebuild the exports from the tagged KML with `vp run export`, render the notes, and create the GitHub release with the KML, KMZ, GPX and GeoJSON attached. That way the assets cannot drift from the data they were tagged with, and the download links keep resolving to the newest release.
 
-The notes come from [git-cliff](https://git-cliff.org/) via [`cliff.toml`](cliff.toml), configured to reproduce GitHub's own format - a flat "What's Changed" list crediting each author, then a "New Contributors" section for anyone whose first pull request this is. That last part is only correct because `cliff.toml` names the GitHub remote: first-time status comes from the API, not from the git history. The same config writes `CHANGELOG.md`, so the file and the release notes always say the same thing.
+The notes come from [git-cliff](https://git-cliff.org/) via [`cliff.toml`](cliff.toml), configured to reproduce GitHub's own format: a flat "What's Changed" list crediting each author, then a "New Contributors" section for first pull requests. That last part only works because `cliff.toml` names the GitHub remote, as first-time status comes from the API rather than the git history. The same config writes `CHANGELOG.md`, so the file and the release notes never disagree.
