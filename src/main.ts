@@ -3,7 +3,7 @@ import "leaflet/dist/leaflet.css";
 import "maplibre-gl/dist/maplibre-gl.css";
 import "@maplibre/maplibre-gl-leaflet";
 import "./style.css";
-import { KINDS, type Kind } from "./lib/kml-export.ts";
+import { facets, KINDS, type Kind } from "./lib/kml-export.ts";
 import { buildFile, saveBlob, slug, type DownloadFormat } from "./lib/downloads.ts";
 
 // The KML is the single source of truth. Importing it as an asset lets the
@@ -128,14 +128,6 @@ function parseKml(text: string): Place[] {
       .filter((c) => c.length >= 2 && Number.isFinite(c[0]) && Number.isFinite(c[1]))
       .map(([lon, lat]): L.LatLngTuple => [lat, lon]); // Leaflet wants lat,lon
 
-  // <Data name="..."><value>...</value></Data> facets, ignored by Organic Maps.
-  const facet = (pm: Element, key: string) => {
-    for (const d of pm.getElementsByTagNameNS(KML_NS, "Data")) {
-      if (d.getAttribute("name") === key) return text_(d, "value");
-    }
-    return "";
-  };
-
   // Ground distance along a trace, in kilometres. Leaflet measures on a sphere
   // without needing a map, which is close enough for a filter.
   const lengthOf = (coords: L.LatLngTuple[]) => {
@@ -150,18 +142,20 @@ function parseKml(text: string): Place[] {
     const line = pm.getElementsByTagNameNS(KML_NS, "LineString")[0];
     const geom = point || line;
     const coords = geom ? parseCoords(text_(geom, "coordinates")) : [];
+    // mwm:properties facets: the form CoMaps reads and round-trips.
+    const facet = facets(pm);
     return {
       index,
       name: text_(pm, "name"),
       description: text_(pm, "description"),
       kind: KINDS[styleUrl] ?? "minor",
       styleUrl,
-      spot: facet(pm, "spot"),
-      tags: facet(pm, "tags").split(/\s+/).filter(Boolean),
-      priceDay: facet(pm, "price_day"),
-      priceSeason: facet(pm, "price_season"),
-      openFrom: facet(pm, "open_from"),
-      closedFrom: facet(pm, "closed_from"),
+      spot: facet.spot ?? "",
+      tags: (facet.tags ?? "").split(/\s+/).filter(Boolean),
+      priceDay: facet.price_day ?? "",
+      priceSeason: facet.price_season ?? "",
+      openFrom: facet.open_from ?? "",
+      closedFrom: facet.closed_from ?? "",
       type: point ? "point" : "line",
       coords,
       elevation:

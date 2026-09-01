@@ -13,7 +13,7 @@
 import { readFileSync, writeFileSync } from "node:fs";
 import { DOMParser } from "@xmldom/xmldom";
 import { zipSync, strToU8 } from "fflate";
-import { kindOf, toGeoJson, toGpx } from "../src/lib/kml-export.ts";
+import { facets, kindOf, toGeoJson, toGpx } from "../src/lib/kml-export.ts";
 
 const SRC = "alpine-mtb-map.kml";
 const BASE = SRC.replace(/\.kml$/, "");
@@ -38,20 +38,16 @@ const spotTags = new Map<string, Set<string>>();
 // to the union of the spot's tags, which then has to be unambiguous.
 const mainSpots = new Map<string, { name: string; tags: Set<string> }>();
 for (const pm of doc.getElementsByTagName("Placemark")) {
-  const data = [...pm.getElementsByTagName("Data")];
-  const facet = (name: string) =>
-    data.find((item) => item.getAttribute("name") === name)?.textContent?.trim() ?? "";
+  const facet = facets(pm as unknown as Element);
   const name = pm.getElementsByTagName("name")[0]?.textContent?.trim() ?? "";
   const kind = kindOf(pm.getElementsByTagName("styleUrl")[0]?.textContent ?? "");
-  const spot = facet("spot") || name;
+  const spot = facet.spot || name;
+  const own = new Set((facet.tags ?? "").split(/\s+/).filter(Boolean));
   const tags = spotTags.get(spot) ?? new Set();
-  for (const tag of facet("tags").split(/\s+/).filter(Boolean)) tags.add(tag);
+  for (const tag of own) tags.add(tag);
   spotTags.set(spot, tags);
   if (mainKinds.has(kind) && /\[.+\]$/.test(name)) {
-    mainSpots.set(spot, {
-      name,
-      tags: new Set(facet("tags").split(/\s+/).filter(Boolean)),
-    });
+    mainSpots.set(spot, { name, tags: own });
   }
 }
 for (const [spot, main] of mainSpots) {

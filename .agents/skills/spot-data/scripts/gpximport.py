@@ -115,7 +115,7 @@ def placemark(name, colour, geom, pr, metres, a):
     <description><![CDATA[%s]]></description>
     <styleUrl>%s</styleUrl>
     <LineString><tessellate>1</tessellate><coordinates>%s</coordinates></LineString>
-    <ExtendedData><Data name="spot"><value>%s</value></Data><Data name="tags"><value>%s</value></Data></ExtendedData>
+    <ExtendedData xmlns:mwm="https://comaps.app"><mwm:properties><mwm:value key="spot">%s</mwm:value><mwm:value key="tags">%s</mwm:value></mwm:properties></ExtendedData>
   </Placemark>""" % (xml_escape(a.prefix), xml_escape(name), desc, STYLE[colour], coords, a.spot, tags)
 
 

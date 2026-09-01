@@ -171,7 +171,7 @@ def placemark(run, spot, prefix, tags):
     <description><![CDATA[%s]]></description>
     <styleUrl>%s</styleUrl>
     <LineString><tessellate>1</tessellate><coordinates>%s</coordinates></LineString>
-    <ExtendedData><Data name="spot"><value>%s</value></Data><Data name="tags"><value>%s</value></Data></ExtendedData>
+    <ExtendedData xmlns:mwm="https://comaps.app"><mwm:properties><mwm:value key="spot">%s</mwm:value><mwm:value key="tags">%s</mwm:value></mwm:properties></ExtendedData>
   </Placemark>""" % (
         xml_escape(prefix), xml_escape(run["label"]), desc, STYLE.get(colour, "#line-trail"), coords, spot,
         (level + " " if level else "") + tags)

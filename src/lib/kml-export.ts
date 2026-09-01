@@ -13,6 +13,35 @@ export type KmlDocument = Parameters<typeof kml>[0];
 
 const KML_NS = "http://www.opengis.net/kml/2.2";
 
+/**
+ * CoMaps' bookmark extension namespace, declared on every <ExtendedData>.
+ *
+ * The site's own facets (spot, tags, prices, season dates) live in this
+ * namespace rather than in plain KML <Data> elements. CoMaps' parser has no
+ * handler for <Data>/<value> - its only match is mwm:value inside
+ * Placemark > ExtendedData > mwm:properties (libs/kml/serdes.cpp) - so facets
+ * written as <Data> were silently dropped whenever a reader imported the file
+ * into CoMaps or Organic Maps and exported it again.
+ */
+export const MWM_NS = "https://comaps.app";
+
+/**
+ * The mwm:properties of one Placemark, as a plain key/value record.
+ *
+ * togeojson understands <Data name="..."> and lifts it into feature properties
+ * for free; it knows nothing about mwm:properties, so toGeoJson below has to put
+ * these back by hand. Namespace lookup rather than the "mwm:value" qualified
+ * name, so a file that binds the namespace to a different prefix still reads.
+ */
+export function facets(placemark: Element): Record<string, string> {
+  const out: Record<string, string> = {};
+  for (const value of placemark.getElementsByTagNameNS(MWM_NS, "value")) {
+    const key = value.getAttribute("key");
+    if (key) out[key] = value.textContent?.trim() ?? "";
+  }
+  return out;
+}
+
 // The KML says all of this in its own <Document>, so a downloaded .kml is
 // self-describing. GPX and GeoJSON each have their own slot for it and this is
 // where those get filled, so that no export can be redistributed without the
@@ -76,18 +105,27 @@ export const KINDS: Record<string, Kind> = {
 export const kindOf = (styleUrl = ""): Kind => KINDS[styleUrl.trim().replace(/^#/, "")] ?? "minor";
 
 /**
- * GeoJSON for a KML document, with each styleUrl resolved into properties.kind.
- * togeojson emits one feature per placemark in document order, which is what
- * lets the two lists be zipped by index.
+ * GeoJSON for a KML document, with each styleUrl resolved into properties.kind
+ * and the mwm:properties facets lifted into feature properties. togeojson emits
+ * one feature per placemark in document order, which is what lets the two lists
+ * be zipped by index.
  */
 export function toGeoJson(doc: KmlDocument): LicensedFeatureCollection {
   const geojson = kml(doc);
-  // The two DOM implementations declare incompatible Element types, but only
-  // the shared getElementsByTagName/textContent surface is used here.
+  // The two DOM implementations declare incompatible Element types, but both
+  // implement the getElementsByTagName(NS)/textContent surface used here.
   const placemarks = [...(doc as Document).getElementsByTagName("Placemark")];
   geojson.features.forEach((feature, index) => {
-    const style = placemarks[index]?.getElementsByTagName("styleUrl")[0];
+    const placemark = placemarks[index];
+    const style = placemark?.getElementsByTagName("styleUrl")[0];
     feature.properties ??= {};
+    // Filled in rather than assigned over, so a facet can never shadow one of
+    // togeojson's own keys (name, description, styleUrl, the icon/stroke pair).
+    if (placemark) {
+      for (const [key, value] of Object.entries(facets(placemark))) {
+        feature.properties[key] ??= value;
+      }
+    }
     feature.properties.kind = kindOf(style?.textContent ?? "");
   });
   // Foreign members, which RFC 7946 section 6.1 allows on a FeatureCollection.

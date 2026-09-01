@@ -94,12 +94,14 @@ Right-click the spot on [openstreetmap.org](https://www.openstreetmap.org/) and 
     change; verify before travel.</i>]]></description>
   <styleUrl>#placemark-blue</styleUrl>
   <Point><coordinates>6.912345,46.512345,0</coordinates></Point>
-  <ExtendedData>
-    <Data name="spot"><value>somewhere</value></Data>
-    <Data name="tags"><value>beginner expert bike-park dh enduro freeride magicpass</value></Data>
-    <Data name="open_from"><value>06-20</value></Data>
-    <Data name="closed_from"><value>08-24</value></Data>
-    <Data name="price_day"><value>30 CHF</value></Data>
+  <ExtendedData xmlns:mwm="https://comaps.app">
+    <mwm:properties>
+      <mwm:value key="spot">somewhere</mwm:value>
+      <mwm:value key="tags">beginner expert bike-park dh enduro freeride magicpass</mwm:value>
+      <mwm:value key="open_from">06-20</mwm:value>
+      <mwm:value key="closed_from">08-24</mwm:value>
+      <mwm:value key="price_day">30 CHF</mwm:value>
+    </mwm:properties>
   </ExtendedData>
 </Placemark>
 ```
@@ -142,7 +144,19 @@ Pin colour reads lift access first, category second: no lift is always brown, an
 
 ### 6. The tags
 
-This is the `<ExtendedData>` block. Organic Maps ignores it completely: it exists to drive the website's filters and grouping.
+This is the `<ExtendedData>` block. It exists to drive the website's filters and grouping; CoMaps and Organic Maps carry it through an import and export untouched but do not act on it.
+
+Facets go in as `mwm:properties`, never as plain KML `<Data name="...">`:
+
+```xml
+<ExtendedData xmlns:mwm="https://comaps.app">
+  <mwm:properties>
+    <mwm:value key="spot">somewhere</mwm:value>
+  </mwm:properties>
+</ExtendedData>
+```
+
+CoMaps' parser has no handler for `<Data>` at all - its only match is `mwm:value` with a `key` attribute, nested exactly `Placemark > ExtendedData > mwm:properties` ([`libs/kml/serdes.cpp`](https://github.com/comaps/comaps/blob/main/libs/kml/serdes.cpp)). Written as `<Data>`, every facet was silently dropped the moment a reader imported the file into CoMaps and exported it again. So `<ExtendedData>` always declares `xmlns:mwm="https://comaps.app"`, on trail lines as well as pins.
 
 | Field | Required? | Value |
 | --- | --- | --- |
@@ -176,12 +190,12 @@ Plenty of spots deserve both `beginner` and `expert`. A spot with neither never 
 Tagging examples:
 
 ```xml
-<Data name="tags"><value>beginner natural enduro</value></Data>
-<Data name="tags"><value>expert bike-park dh</value></Data>
-<Data name="tags"><value>beginner expert bike-park no-lift enduro freeride</value></Data>
-<Data name="tags"><value>beginner expert bike-park dh freeride</value></Data>
-<Data name="tags"><value>expert natural enduro freeride winter</value></Data>
-<Data name="tags"><value>beginner expert bike-park dh enduro freeride magicpass</value></Data>
+<mwm:value key="tags">beginner natural enduro</mwm:value>
+<mwm:value key="tags">expert bike-park dh</mwm:value>
+<mwm:value key="tags">beginner expert bike-park no-lift enduro freeride</mwm:value>
+<mwm:value key="tags">beginner expert bike-park dh freeride</mwm:value>
+<mwm:value key="tags">expert natural enduro freeride winter</mwm:value>
+<mwm:value key="tags">beginner expert bike-park dh enduro freeride magicpass</mwm:value>
 ```
 
 `no-lift` is also inferred from a `#placemark-brown` style, for older entries, but write it explicitly. The `season` tag comes from the presence of `price_season` and is never written by hand.
@@ -191,10 +205,10 @@ Tagging examples:
 `price_day` is a day's access to the resort, or the lift you cannot avoid. It is not the travel cost: a train fare belongs in the Access table, a mandatory funicular belongs here. Use whatever currency the operator actually charges in.
 
 ```xml
-<Data name="price_day"><value>36 CHF</value></Data>
-<Data name="price_day"><value>23.50 EUR</value></Data>
-<Data name="price_day"><value>5500 JPY</value></Data>
-<Data name="price_season"><value>320 EUR</value></Data>
+<mwm:value key="price_day">36 CHF</mwm:value>
+<mwm:value key="price_day">23.50 EUR</mwm:value>
+<mwm:value key="price_day">5500 JPY</mwm:value>
+<mwm:value key="price_season">320 EUR</mwm:value>
 ```
 
 The price slider knows `CHF`, `EUR`, `CAD` and `JPY` (rates live in `CHF_PER` in [`src/main.ts`](src/main.ts)). Any other currency still displays, it just never gets filtered.
@@ -236,9 +250,11 @@ Same idea with a `<LineString>` instead of a `<Point>`. Coordinates are space-se
   <LineString><tessellate>1</tessellate>
     <coordinates>6.9123,46.5123,0 6.9130,46.5110,0 6.9145,46.5098,0</coordinates>
   </LineString>
-  <ExtendedData>
-    <Data name="spot"><value>somewhere</value></Data>
-    <Data name="tags"><value>expert natural enduro</value></Data>
+  <ExtendedData xmlns:mwm="https://comaps.app">
+    <mwm:properties>
+      <mwm:value key="spot">somewhere</mwm:value>
+      <mwm:value key="tags">expert natural enduro</mwm:value>
+    </mwm:properties>
   </ExtendedData>
 </Placemark>
 ```

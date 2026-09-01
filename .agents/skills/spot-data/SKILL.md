@@ -243,14 +243,18 @@ Give the line the **same `spot` and `tags`** as the pin it belongs to, so the fi
   <LineString><tessellate>1</tessellate>
     <coordinates>...</coordinates>
   </LineString>
-  <ExtendedData>
-    <Data name="spot"><value>somewhere</value></Data>
-    <Data name="tags"><value>expert</value></Data>
+  <ExtendedData xmlns:mwm="https://comaps.app">
+    <mwm:properties>
+      <mwm:value key="spot">somewhere</mwm:value>
+      <mwm:value key="tags">expert</mwm:value>
+    </mwm:properties>
   </ExtendedData>
 </Placemark>
 ```
 
 Trail lines get no `mwm:icon` block - only points do.
+
+**The facets are `mwm:properties`, never plain KML `<Data>`.** CoMaps' parser has no handler for `<Data name="...">` at all - its only match is `mwm:value` with a `key` attribute, nested exactly `Placemark > ExtendedData > mwm:properties` (`libs/kml/serdes.cpp`). A facet written as `<Data>` is silently dropped the moment a reader imports the file into CoMaps or Organic Maps and exports it again. `<ExtendedData>` therefore always carries `xmlns:mwm="https://comaps.app"`, including on trail lines. `togeojson` is the other way round - it understands `<Data>` and not `mwm:properties` - so `toGeoJson` in `src/lib/kml-export.ts` lifts the facets into the GeoJSON by hand.
 
 ### When it refuses
 
