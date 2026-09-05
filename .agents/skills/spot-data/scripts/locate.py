@@ -28,6 +28,9 @@ import urllib.parse
 import urllib.request
 
 HERE = os.path.dirname(os.path.abspath(__file__))
+sys.path.insert(0, HERE)
+from overpass import cache_path  # noqa: E402
+
 UA = "alpine-mtb-map/1.0 (https://github.com/vemonet/alpine-mtb-map)"
 
 ISO = {
@@ -119,5 +122,5 @@ for country, group in by_country.items():
         out[c["slug"]] = hits[:14]
     time.sleep(5)
 
-json.dump(out, open(f"{HERE}/located.json", "w"), indent=1, ensure_ascii=False)
+json.dump(out, open(cache_path("located.json"), "w"), indent=1, ensure_ascii=False)
 print(f"\nwrote located.json ({len(out)} parks)")

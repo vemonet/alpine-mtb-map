@@ -37,7 +37,12 @@ model via `descents.elevations`, cached per bbox on disk.
 Colour handling follows the map's convention: green/blue -> beginner,
 red -> intermediate, black -> expert, no colour -> `#line-trail` and no level
 tag. `mtb:scale` is NEVER read as a colour - it is a technical scale, not a
-signed grade.
+signed grade. **`mtb:scale:imba` IS one** and is used when `colour` is absent:
+it is the difficulty scale North American trail systems actually carry, and
+without it Brown County, Carvins Cove, Allegrippis, Buffalo Creek, Cady Hill and
+Raccoon Mountain all emit as ungraded `#line-trail` when OSM knows the grade
+perfectly well. A line coloured this way says so in its text instead of claiming
+OpenStreetMap records no grade.
 
 Licence: ODbL, credited per line as the KML already does.
 """
@@ -46,6 +51,11 @@ import argparse
 import collections
 import json
 import unicodedata
+
+# mtb:scale:imba -> this map's colour. 1/2/3 are the mapping SKILL.md records
+# from Coldwater Mountain; 0 is easier than 1, and 4 (double black) is the
+# "harder than black" slot this map paints orange.
+IMBA_COLOUR = {"0": "green", "1": "green", "2": "blue", "3": "black", "4": "orange"}
 
 from descents import elevations
 from overpass import fetch
@@ -166,7 +176,8 @@ def build(bbox, skip):
         name = sorted((el["tags"]["name"] for el in els), key=len)[-1]
         tags = {}
         for el in els:
-            tags.update({k: v for k, v in el["tags"].items() if k in ("colour", "mtb:scale")})
+            tags.update({k: v for k, v in el["tags"].items()
+                         if k in ("colour", "mtb:scale", "mtb:scale:imba")})
         by_geom = {id(el["geometry"]): el["id"] for el in els}
         for cluster in clusters([el["geometry"] for el in els]):
             ids = sorted(by_geom[id(s)] for s in cluster)
@@ -187,8 +198,9 @@ def build(bbox, skip):
                     "bot": round(z(geom[-1])),
                     "drop": round(drop),
                     "pct": round(100 * drop / max(metres, 1), 1),
-                    "colour": tags.get("colour"),
+                    "colour": tags.get("colour") or IMBA_COLOUR.get(tags.get("mtb:scale:imba")),
                     "scale": tags.get("mtb:scale"),
+                    "imba": tags.get("mtb:scale:imba") if not tags.get("colour") else None,
                 }
             )
     # Sections of the same name are numbered from the top down.
@@ -228,6 +240,9 @@ def placemark(run, spot, prefix, tags):
     )
     if run.get("grade_note"):
         desc += " " + run["grade_note"]
+    elif run.get("imba"):
+        desc += (" OpenStreetMap grades it mtb:scale:imba %s, which is the trail system's own"
+                 " signed difficulty." % run["imba"])
     elif not colour:
         extra = " (mtb:scale %s)" % run["scale"] if run["scale"] else ""
         desc += " OpenStreetMap records no grade for it%s." % extra

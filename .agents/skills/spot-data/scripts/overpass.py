@@ -8,10 +8,24 @@ backoff grows - a 429 from one server says nothing about the others.
 
 import itertools
 import json
+import os
 import sys
 import time
 import urllib.parse
 import urllib.request
+
+# Every cache and dump this skill writes goes in ONE directory, one level up
+# from the scripts. It used to be scripts/ itself, where 34 json files ended up
+# outnumbering the 13 scripts and buried them - and ele-cache-shared.json alone
+# reaches 7 MB, so this is scratch that grows without bound. Keeping it out of
+# scripts/ also means one .gitignore line covers the lot.
+CACHE_DIR = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), ".cache")
+
+
+def cache_path(name):
+    """Path for one cache or dump file, creating .cache/ on first use."""
+    os.makedirs(CACHE_DIR, exist_ok=True)
+    return os.path.join(CACHE_DIR, name)
 
 # Full-planet public instances, fastest first as measured 2026-08-05 on a small
 # bbox query: de 1.0 s, mail.ru 8.7 s, private.coffee 33 s, kumi timed out at 45 s.

@@ -680,9 +680,9 @@ const showTrace = (entry: TraceEntry, animate = true) => {
 };
 
 // A trace is drawn in the order its LineString is stored, which for these is
-// the riding direction. Only the selected trace says which way that is: chevrons
-// at its start and at a regular on-screen spacing along it, and a chequered flag
-// at the finish. Showing them on every trace at once turned the map into noise,
+// the riding direction. Only the selected trace says which way that is: a pin
+// at its start, chevrons at a regular on-screen spacing, and a chequered flag at
+// the finish. Showing them on every trace at once turned the map into noise,
 // and the direction only matters for the line you are actually looking at.
 //
 // Arrows are markers, so they are rebuilt on move, zoom, filter and selection
@@ -701,6 +701,14 @@ const arrowIcon = (color: string, angle: number) =>
     html: `<div class="trace-arrow" style="transform:rotate(${angle}deg)"><svg viewBox="0 0 12 12" width="12" height="12" aria-hidden="true"><path d="M2.5 1.5 L9.5 6 L2.5 10.5 Z" fill="${color}" stroke="#fff" stroke-width="1.5" stroke-linejoin="round" paint-order="stroke"/></svg></div>`,
     iconSize: [12, 12],
     iconAnchor: [6, 6],
+  });
+
+const startIcon = () =>
+  L.divIcon({
+    className: "",
+    html: `<div class="trace-start" aria-hidden="true">\u{1F4CD}</div>`,
+    iconSize: [18, 18],
+    iconAnchor: [9, 18], // the point of the pin sits on the first vertex
   });
 
 const finishIcon = () =>
@@ -746,7 +754,7 @@ const updateTraceArrows = () => {
         zIndexOffset: -200000, // decoration: below every pin, including the grey ones
       }).addTo(traceArrows);
 
-    decoration(pts[0], arrowIcon(color, headingAt(pixels, pixels[0], 1)));
+    decoration(pts[0], startIcon());
     decoration(pts[pts.length - 1], finishIcon());
 
     // Spaced by on-screen length, not by vertex count: the vertices of an

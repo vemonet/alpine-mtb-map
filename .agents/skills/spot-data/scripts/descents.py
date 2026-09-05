@@ -12,7 +12,7 @@ nothing more. Nobody has recorded riding what this returns. Anything it produces
 labelled as inferred - see SKILL.md for the wording, which is not optional.
 
 Bounding boxes are S,W,N,E like the other scripts here. Elevations come from opentopodata's
-mapzen model, 100 points per request at ~1.1 s apart, cached in ele-cache-<bbox>.json because
+mapzen model, 100 points per request at ~1.1 s apart, cached in .cache/ele-cache-shared.json because
 that is by far the slow step - a 5000-point region takes about a minute of pure waiting.
 
 Licence: path geometry is ODbL like the rest of OSM. Credit it as
@@ -27,7 +27,7 @@ import time
 import urllib.parse
 import urllib.request
 
-from overpass import fetch
+from overpass import cache_path, fetch
 from trails import simplify
 
 # Surfaces that mean "street", not "mountain path". The old towns these regions are famous for
@@ -47,8 +47,6 @@ GRADIENT_BAND = (10.0, 22.0)
 EXTREME_STEP_FRACTION = 0.30
 MAX_WINDOW_GRADIENT = 35.0
 MAX_CHAIN_DEPTH = 7
-
-CACHE_DIR = os.path.dirname(os.path.abspath(__file__))
 
 
 def haversine(a, b):
@@ -112,8 +110,8 @@ def elevations(ways, bbox):
     writing only at the end meant a run that died at chunk 120 threw away all
     120 chunks - which is how a 10-minute sweep became a 30-minute one.
     """
-    shared_path = os.path.join(CACHE_DIR, SHARED_CACHE)
-    legacy_path = os.path.join(CACHE_DIR, "ele-cache-%s.json" % bbox.replace(",", "_"))
+    shared_path = cache_path(SHARED_CACHE)
+    legacy_path = cache_path("ele-cache-%s.json" % bbox.replace(",", "_"))
     cache = {}
     for path in (shared_path, legacy_path):
         if os.path.exists(path):

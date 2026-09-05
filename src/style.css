@@ -1449,8 +1449,7 @@ body {
   font-weight: 600;
 }
 
-/* Direction chevron at the first vertex of a trace. Decoration only: it must
-   never take a pointer event away from the line underneath it. */
+/* Trace decorations never take a pointer event away from the line underneath. */
 .trace-arrow {
   width: 12px;
   height: 12px;
@@ -1458,6 +1457,7 @@ body {
   pointer-events: none;
 }
 
+.trace-start,
 .trace-finish {
   font-size: 14px;
   line-height: 1;

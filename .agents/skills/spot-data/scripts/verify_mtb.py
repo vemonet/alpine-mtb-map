@@ -29,14 +29,14 @@ import urllib.request
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
 try:
-    from overpass import elevations, fetch as _ovp
+    from overpass import cache_path, elevations, fetch as _ovp
 except ImportError:
     sys.path.insert(0, "/Users/vemonet/dev/perso/alpine-mtb-map/.github/skills/spot-data/scripts")
-    from overpass import elevations, fetch as _ovp
+    from overpass import cache_path, elevations, fetch as _ovp
 
 UA = "alpine-mtb-map/1.0 (https://github.com/vemonet/alpine-mtb-map)"
 HALF = 0.020  # degrees; ~2.2 km - keeps dense networks (UK, Sauerland) inside the timeout
-ELE_CACHE = f"{HERE}/ele-cache.json"
+ELE_CACHE = cache_path("ele-cache.json")
 
 places = json.load(open(sys.argv[1]))
 ele = json.load(open(ELE_CACHE)) if os.path.exists(ELE_CACHE) else {}
@@ -119,4 +119,4 @@ for p in places:
     loc = f"{c[0]:.5f},{c[1]:.5f} ({round(alt)} m)" if c and alt is not None else "-"
     print(f"{p['slug']:24s} {r['count']:>4}  {loc}")
 
-json.dump(report, open(f"{HERE}/mtb_evidence.json", "w"), indent=1, ensure_ascii=False)
+json.dump(report, open(cache_path("mtb_evidence.json"), "w"), indent=1, ensure_ascii=False)

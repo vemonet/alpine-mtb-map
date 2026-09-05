@@ -23,10 +23,10 @@ import time
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
-from overpass import elevations, fetch  # noqa: E402
+from overpass import cache_path, elevations, fetch  # noqa: E402
 
 HALF = 0.14  # degrees; about 15 km north-south
-ELE_CACHE = f"{HERE}/ele-cache.json"
+ELE_CACHE = cache_path("ele-cache.json")
 
 NOISE = re.compile(
     r"\b(bike|bikepark|park|parc|mtb|trail|trails|area|arena|center|centre|"
@@ -109,4 +109,4 @@ for p in places:
     alt = f"{round(m)} m" if m is not None else "?"
     print(f"{p['slug']:24s} {nm[:34]:36s} {la:.5f},{lo:.5f}  {alt:>7s}  {kind}")
 
-json.dump(out, open(f"{HERE}/named_hits.json", "w"), indent=1, ensure_ascii=False)
+json.dump(out, open(cache_path("named_hits.json"), "w"), indent=1, ensure_ascii=False)
