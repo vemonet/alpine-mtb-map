@@ -2281,7 +2281,7 @@
   <Placemark>
     <name>Verbier - 4 Vallées [47 CHF]</name>
     <description><![CDATA[<b>Verbier: La Chaux lower station</b><br/><br/>
-    <b>Trails</b><br/>Verbier Bike Park by Commencal: the most serious lift-served downhill within two hours of Lausanne. Long, steep, properly rough World-Cup-adjacent lines off Les Ruinettes and La Chaux, plus a huge natural enduro network reaching down 1500 m to Le Chable. Savoleyres is the quieter side with more natural, flowy trails, and Bruson - across the valley on its own gondola from Le Chable - is quieter still: no built lines at all, just pasture, larch and ridge traverses carrying the long Enduro 14 and 19 routes. Bring a real bike and pads.<br/><br/>
+    <b>Trails</b><br/>Verbier Bike Park by Commencal has long, steep, properly rough World-Cup-adjacent lines off Les Ruinettes and La Chaux, plus a huge natural enduro network reaching down 1500 m to Le Chable. Savoleyres is the quieter side with more natural, flowy trails, and Bruson (across the valley on its own gondola from Le Chable) is quieter still: no built lines at all, just pasture, larch and ridge traverses carrying the long Enduro 14 and 19 routes. Bring a real bike and pads.<br/><br/><p class="warn">The enduro routes are not signposted on the ground. Download the GPS traces before riding.</p>
     <b>Getting up / price</b><br/>Verbier bike day pass 47 CHF; the full 4 Vallees bike day pass 57 CHF. Season: Verbier 229 CHF, 4 Vallees 329 CHF. Le Chable > Verbier return is 12.80 CHF and Verbier > Les Ruinettes return 25 CHF if you only want one lap. 10% off online 10+ days ahead. Main summer season 4 July - 21 September 2026.<br/><br/>
     <b>Open season</b><br/>Open from 4 July; closed from 22 September (published 2026 dates).<br/>Daily opening hours: 09:00-17:00<br/><small>Typical daily estimate; check the operator schedule.</small><br/><br/>
     <b>Access</b><table class="access"><tr><th>From</th><th>Transport</th><th>Duration</th></tr><tr><td>Lausanne</td><td>Train</td><td>~1h50</td></tr></table><br/>
@@ -2376,7 +2376,7 @@
   <Placemark>
     <name>Verbier-Savoleyres: Verbier lower station</name>
     <description><![CDATA[<b>Les Ruinettes 2200 m - bike park top</b><br/><br/>
-    <b>Trails</b><br/>Verbier Bike Park by Commencal: the most serious lift-served downhill within two hours of Lausanne. Long, steep, properly rough World-Cup-adjacent lines off Les Ruinettes and La Chaux, plus a huge natural enduro network reaching down 1500 m to Le Chable. Savoleyres is the quieter side with more natural, flowy trails. Bring a real bike and pads.<br/><br/>
+    <b>Trails</b><br/>Verbier Bike Park by Commencal has long, steep, properly rough World-Cup-adjacent lines off Les Ruinettes and La Chaux, plus a huge natural enduro network reaching down 1500 m to Le Chable. Savoleyres is the quieter side with more natural, flowy trails. Bring a real bike and pads.<br/><br/>
     <b>Getting up / price</b><br/>Verbier bike day pass 47 CHF; the full 4 Vallees bike day pass 57 CHF. Season: Verbier 229 CHF, 4 Vallees 329 CHF. Le Chable > Verbier return is 12.80 CHF and Verbier > Les Ruinettes return 25 CHF if you only want one lap. 10% off online 10+ days ahead. Main summer season 4 July - 21 September 2026.<br/><br/>
     <b>Open season</b><br/>Open from 4 July; closed from 22 September (published 2026 dates).<br/>Daily opening hours: 09:00-17:00<br/><small>Typical daily estimate; check the operator schedule.</small><br/><br/>
     <b>Access</b><table class="access"><tr><th>From</th><th>Transport</th><th>Duration</th></tr><tr><td>Lausanne</td><td>Train</td><td>~1h50</td></tr></table><br/>
@@ -2614,8 +2614,8 @@
     </ExtendedData>
   </Placemark>
   <Placemark>
-    <name>Verbier: Enduro 11 - La Chaux - Lourtier</name>
-    <description><![CDATA[5.7 km, +107/-1,218 m expert enduro route. Very steep, technical and sustained expert descent. A demanding traverse reaches the Mintzet pasture before the trail enters an exposed no-fall forest ridge, drops roughly 1,000 m, and finishes along the torrent embankment into Lourtier. <i>Source: <a href="https://www.verbier.ch/decouvrir/explore-activites/activites-sportives/balades-et-randonnees-pedestres/tous-les-itineraires-de-randonnee-et-les-balades/enduro-11-expert-la-chaux-lourtier-verbier-fr-2794060/">Verbier - Enduro 11</a>. Official GPX geometry, simplified to 8 m.</i>]]></description>
+    <name>Verbier: Enduro 11 - Vertigo</name>
+    <description><![CDATA[5.7 km, +107/-1,218 m expert natural enduro route, unofficially known as Vertigo. Very steep, technical and sustained expert descent. A demanding traverse with beautiful views of the glacier reaches the Mintzet pasture before the trail enters an exposed no-fall forest ridge, drops roughly 1,000 m, and finishes along the torrent embankment into Lourtier. <i>Source: <a href="https://www.verbier.ch/decouvrir/explore-activites/activites-sportives/balades-et-randonnees-pedestres/tous-les-itineraires-de-randonnee-et-les-balades/enduro-11-expert-la-chaux-lourtier-verbier-fr-2794060/">Verbier - Enduro 11</a>. Official GPX geometry, simplified to 8 m.</i>]]></description>
     <styleUrl>#line-black</styleUrl>
     <LineString><tessellate>1</tessellate>
       <coordinates>7.265490,46.079879,0 7.265590,46.079780,0 7.265990,46.079790,0 7.266930,46.079960,0 7.267590,46.079830,0 7.268250,46.079590,0 7.269110,46.078840,0 7.270230,46.078730,0 7.270790,46.078500,0 7.272450,46.078820,0 7.272940,46.078810,0 7.273090,46.078710,0 7.272990,46.078280,0 7.273620,46.078210,0 7.273830,46.077650,0 7.274650,46.076610,0 7.274970,46.075920,0 7.274660,46.075540,0 7.274250,46.075320,0 7.274080,46.074660,0 7.273900,46.074620,0 7.273700,46.074320,0 7.273990,46.073980,0 7.273240,46.072940,0 7.273180,46.072300,0 7.273300,46.072100,0 7.272560,46.071430,0 7.272290,46.070430,0 7.271610,46.069240,0 7.271780,46.068690,0 7.270810,46.064680,0 7.270960,46.064110,0 7.271160,46.063970,0 7.271270,46.063480,0 7.271650,46.063060,0 7.271700,46.062770,0 7.271950,46.062520,0 7.272330,46.062760,0 7.272590,46.062750,0 7.272400,46.061930,0 7.271810,46.061740,0 7.271790,46.061510,0 7.271590,46.061440,0 7.271050,46.061610,0 7.271100,46.061310,0 7.270670,46.061490,0 7.271320,46.060380,0 7.271020,46.060050,0 7.271650,46.059600,0 7.271930,46.059560,0 7.272180,46.059150,0 7.272130,46.058620,0 7.271590,46.057950,0 7.271800,46.057830,0 7.271750,46.057690,0 7.272190,46.057650,0 7.272050,46.056830,0 7.272580,46.057050,0 7.272730,46.057000,0 7.272650,46.056850,0 7.272980,46.056890,0 7.272780,46.056510,0 7.272800,46.056430,0 7.273060,46.056520,0 7.273040,46.056210,0 7.273540,46.056470,0 7.273870,46.056420,0 7.273800,46.056200,0 7.274000,46.056190,0 7.273980,46.056070,0 7.274170,46.056160,0 7.274010,46.055160,0 7.273550,46.054830,0 7.273830,46.054800,0 7.273780,46.054710,0 7.272510,46.053890,0 7.272880,46.053870,0 7.272500,46.053660,0 7.272710,46.053630,0 7.272610,46.053540,0 7.272300,46.053410,0 7.272810,46.053220,0 7.272790,46.053120,0 7.272070,46.053000,0 7.271960,46.052760,0 7.270650,46.052360,0 7.267210,46.052430,0 7.267220,46.052270,0 7.267480,46.052140,0 7.266990,46.051640,0 7.267170,46.050880,0 7.264646,46.050219,0</coordinates>
@@ -2623,7 +2623,7 @@
     <ExtendedData xmlns:mwm="https://comaps.app">
       <mwm:properties>
         <mwm:value key="spot">verbier</mwm:value>
-        <mwm:value key="tags">expert enduro</mwm:value>
+        <mwm:value key="tags">expert natural enduro</mwm:value>
       </mwm:properties>
     </ExtendedData>
   </Placemark>
@@ -2791,7 +2791,7 @@
     <ExtendedData xmlns:mwm="https://comaps.app">
       <mwm:properties>
         <mwm:value key="spot">verbier</mwm:value>
-        <mwm:value key="tags">expert enduro tested-and-approved</mwm:value>
+        <mwm:value key="tags">expert natural enduro tested-and-approved</mwm:value>
       </mwm:properties>
     </ExtendedData>
   </Placemark>

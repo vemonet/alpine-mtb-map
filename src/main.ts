@@ -1271,6 +1271,7 @@ void loadWeather();
 const locateBtn = el<HTMLButtonElement>("locate");
 const me = L.layerGroup();
 let watching = false;
+let awaitingFirstLocation = false;
 
 const setLocateLabel = (label: string) => {
   locateBtn.title = label;
@@ -1279,6 +1280,7 @@ const setLocateLabel = (label: string) => {
 
 const stopLocating = (label = "Show my location") => {
   watching = false;
+  awaitingFirstLocation = false;
   map.stopLocate();
   me.clearLayers().remove();
   locateBtn.setAttribute("aria-pressed", "false");
@@ -1286,6 +1288,11 @@ const stopLocating = (label = "Show my location") => {
 };
 
 map.on("locationfound", (e) => {
+  if (!watching) return;
+  if (awaitingFirstLocation) {
+    awaitingFirstLocation = false;
+    map.setView(e.latlng, Math.min(map.getBoundsZoom(e.bounds), 14));
+  }
   me.clearLayers().addTo(map);
   L.circle(e.latlng, {
     radius: e.accuracy,
@@ -1300,7 +1307,7 @@ map.on("locationfound", (e) => {
     fillColor: LOCATE_COLOR,
     fillOpacity: 1,
   }).addTo(me);
-  setLocateLabel("Stop following me");
+  setLocateLabel("Hide my location");
 });
 
 map.on("locationerror", (e) => {
@@ -1317,9 +1324,10 @@ locateBtn.addEventListener("click", () => {
     return;
   }
   watching = true;
+  awaitingFirstLocation = true;
   locateBtn.setAttribute("aria-pressed", "true");
   setLocateLabel("Locating...");
-  map.locate({ setView: true, maxZoom: 14, watch: true, enableHighAccuracy: true });
+  map.locate({ watch: true, enableHighAccuracy: true });
 });
 
 // ------------------------------------------------------------- downloads ---
