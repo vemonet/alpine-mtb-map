@@ -222,6 +222,7 @@ const saveHidden = () => {
 // ------------------------------------------------------------------ map ---
 const DEFAULT_VIEW: L.LatLngTuple = [46.2, 8.0];
 const DEFAULT_ZOOM = 7;
+const TRACE_MIN_ZOOM = 8;
 const DEFAULT_MAP_LAYER = "OpenStreetMap";
 const MAP_LAYER_STORAGE_KEY = "mapLayer";
 
@@ -290,7 +291,7 @@ map.on("baselayerchange", ({ name }) => localStorage.setItem(MAP_LAYER_STORAGE_K
 
 const pinIcon = (kind: Kind, wet = false) =>
   L.divIcon({
-    className: "",
+    className: "spot-marker",
     html: `<div class="pin ${kind}">${
       wet
         ? '<span class="wet-badge" aria-hidden="true"><svg viewBox="0 0 8 10" width="6" height="8" fill="currentColor"><path d="M4 0C3 2 1 4.2 1 6.2a3 3 0 0 0 6 0C7 4.2 5 2 4 0Z"/></svg></span>'
@@ -314,7 +315,7 @@ const MINOR_PIN_Z = -100000;
 
 const selectedPinIcon = (kind: Kind) =>
   L.divIcon({
-    className: "",
+    className: "spot-marker",
     html:
       `<div class="pin-selected ${kind}"><svg viewBox="0 0 24 24" width="${SELECTED_PIN_SIZE}" height="${SELECTED_PIN_SIZE}" aria-hidden="true">` +
       '<path d="M12 24C12 24 4 14.5 4 9a8 8 0 1 1 16 0c0 5.5-8 15-8 15Z" fill="currentColor" stroke="#fff" stroke-width="2" stroke-linejoin="round" paint-order="stroke"/>' +
@@ -411,7 +412,7 @@ for (const p of places) {
     };
     spots.set(key, spot);
   }
-  spot.group.addLayer(layer);
+  // Attach layers only after filters and the initial viewport are known.
   spot.places.push({ layer, place: p });
   if (p.type === "point" && (!spot.weatherPlace || p.elevation > spot.weatherPlace.elevation)) {
     spot.weatherPlace = p;
@@ -574,12 +575,12 @@ const selectLines = (lines: L.Polyline[]) => {
     layer.bringToFront();
   }
   selectedLines = lines;
-  updateTraceArrows();
+  updateMapTraces();
 };
 const clearSelectedLines = () => {
   for (const layer of selectedLines) layer.setStyle({ opacity: IDLE_LINE_OPACITY });
   selectedLines = [];
-  updateTraceArrows();
+  updateMapTraces();
 };
 
 // Whether a spot's forecast currently earns the rain badge on its pin.
@@ -746,13 +747,15 @@ const updateTraceArrows = () => {
     const color = (place && TRAIL_COLORS[place.styleUrl]) ?? TRAIL_COLOR;
     const pixels = pts.map((p) => map.latLngToLayerPoint(p));
 
-    const decoration = (latlng: L.LatLng, icon: L.DivIcon) =>
+    const decoration = (latlng: L.LatLng, icon: L.DivIcon) => {
+      if (!view.contains(latlng)) return;
       L.marker(latlng, {
         icon,
         interactive: false, // never steal a click from the line it sits on
         keyboard: false,
         zIndexOffset: -200000, // decoration: below every pin, including the grey ones
       }).addTo(traceArrows);
+    };
 
     decoration(pts[0], startIcon());
     decoration(pts[pts.length - 1], finishIcon());
@@ -780,7 +783,29 @@ const updateTraceArrows = () => {
   }
 };
 
-map.on("moveend zoomend", updateTraceArrows);
+// Filtering decides which traces qualify; moving the map only checks cached
+// eligibility and bounds, without rebuilding the sidebar or rerunning filters.
+const eligibleTraceLayers = new Set<L.Layer>();
+const updateMapTraces = () => {
+  const showTraces = map.getZoom() >= TRACE_MIN_ZOOM;
+  // Keep nearby lines attached while panning across the edge of the viewport.
+  const view = map.getBounds().pad(0.2);
+  for (const { layer, spot } of lineLayers) {
+    const selected = activePlace?.place.type === "line" && activePlace.layer === layer;
+    const visible =
+      eligibleTraceLayers.has(layer) &&
+      (showTraces || selected) &&
+      view.intersects(layer.getBounds());
+    if (visible === spot.group.hasLayer(layer)) continue;
+    if (visible) spot.group.addLayer(layer);
+    else spot.group.removeLayer(layer);
+  }
+  el("trace-zoom-hint").hidden = showTraces;
+  updateTraceArrows();
+};
+
+// Leaflet also emits moveend after zooming, so one handler covers both.
+map.on("moveend", updateMapTraces);
 
 // A trace can exist without a spot pin of its own: nothing requires a spot to
 // have a main placemark, only that its traces carry the tags the filters need.
@@ -1544,6 +1569,7 @@ const applyFilters = () => {
   const query = searchInput.value.trim().toLocaleLowerCase();
   const showingTraces = searchMode === "traces";
   const visibleTraceLayers = new Set<L.Layer>();
+  eligibleTraceLayers.clear();
   let visibleCount = 0;
   priceOut.textContent = cap === Infinity ? "any" : `${cap} CHF`;
   updateLengthDisplay();
@@ -1581,10 +1607,12 @@ const applyFilters = () => {
           lineEnabled &&
           spotSearchMatch &&
           (place.type !== "line" || !hiddenTraceIds.has(traceId(place)));
-      if (visible) {
-        spot.group.addLayer(layer);
-        hasVisibleLayer = true;
-      } else {
+      if (visible) hasVisibleLayer = true;
+      if (place.type === "line") {
+        if (visible) eligibleTraceLayers.add(layer);
+      } else if (visible) {
+        if (!spot.group.hasLayer(layer)) spot.group.addLayer(layer);
+      } else if (spot.group.hasLayer(layer)) {
         spot.group.removeLayer(layer);
       }
     }
@@ -1620,7 +1648,7 @@ const applyFilters = () => {
   ];
   if (hiddenLabels.length) restoreHiddenButton.title = hiddenLabels.join("\n");
   else restoreHiddenButton.removeAttribute("title");
-  updateTraceArrows();
+  updateMapTraces();
 };
 
 for (const chip of chips) {

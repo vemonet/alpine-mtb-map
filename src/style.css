@@ -931,7 +931,8 @@ body {
   text-align: center;
 }
 
-#spot-count {
+#spot-count,
+#trace-zoom-hint {
   padding: 0 16px 7px;
   color: var(--muted);
   font-size: 12px;
@@ -1463,6 +1464,25 @@ body {
   line-height: 1;
   pointer-events: none;
   text-shadow: 0 0 3px #fff;
+}
+
+/* Expand the clickable marker without moving its anchor or enlarging the dot.
+   Events on this invisible area bubble to Leaflet's existing marker handler. */
+.spot-marker::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 32px;
+  height: 32px;
+  transform: translate(-50%, -50%);
+}
+
+@media (any-pointer: coarse) {
+  .spot-marker::before {
+    width: 44px;
+    height: 44px;
+  }
 }
 
 .pin {
