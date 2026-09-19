@@ -88,6 +88,12 @@
         localStorage.getItem("theme") ??
         (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
     </script>
+    <!-- GoatCounter: page-view counts only. No cookies, no cross-site identifier. -->
+    <script
+      data-goatcounter="https://vemonet.goatcounter.com/count"
+      async
+      src="//gc.zgo.at/count.js"
+    ></script>
   </head>
   <body>
     <div id="app">
@@ -862,6 +868,26 @@
             >ODbL 1.0</a
           >, because it derives from OpenStreetMap. Website code under MIT. Keep the attribution if
           you redistribute the files.
+        </p>
+      </details>
+      <details class="about-details">
+        <summary><h3>Privacy</h3></summary>
+        <p>
+          No accounts, no cookies, no ad or social trackers. Page views are counted with
+          <a href="https://www.goatcounter.com/" target="_blank" rel="noopener">GoatCounter</a>,
+          which records the page, the referrer, the browser, the screen size and the country. It
+          sets no cookie and stores no IP address: repeat visits are recognised only through a hash
+          that is salted and thrown away daily, so it cannot follow you across sites or from one day
+          to the next.
+        </p>
+        <p>
+          Everything else happens in your browser. Map tiles come from OpenStreetMap, OpenTopoMap
+          and CyclOSM, and forecasts from
+          <a href="https://open-meteo.com/" target="_blank" rel="noopener">Open-Meteo</a> when
+          weather is on; those servers see your IP, as they would on any web map. Forecast requests
+          carry the public coordinates of the map's spots, never yours.
+          <code>localStorage</code> holds your light/dark choice, your base-map choice, the spots
+          and traces you have hidden, and a six-hour cache of spot forecasts.
         </p>
       </details>
       <details class="about-details">

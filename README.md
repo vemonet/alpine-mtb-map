@@ -38,7 +38,9 @@ Download [`alpine-mtb-map.kml`](alpine-mtb-map.kml) and open it on your phone. O
 
 ## Privacy
 
-Map tiles come from OpenStreetMap, OpenTopoMap and CyclOSM, and forecasts from Open-Meteo when weather is on. Those servers see your IP, like any web map. Forecast requests carry the public coordinates of the map's spots, never yours. This project itself collects nothing: no analytics, no cookies, no accounts. `localStorage` holds your light/dark choice and a six-hour cache of spot forecasts, and that is all.
+Map tiles come from OpenStreetMap, OpenTopoMap and CyclOSM, and forecasts from Open-Meteo when weather is on. Those servers see your IP, like any web map. Forecast requests carry the public coordinates of the map's spots, never yours. `localStorage` holds your light/dark choice, your base-map choice, the spots and traces you have hidden, and a six-hour cache of spot forecasts, and that is all.
+
+No accounts, no cookies, no ad or social trackers. Page views are counted with [GoatCounter](https://www.goatcounter.com/), which records the page, the referrer, the browser, the screen size and the country, and nothing else. It sets no cookie and stores no IP address: repeat visits are recognised only through a hash that is salted and thrown away daily, so it cannot follow you across sites or from one day to the next.
 
 **Geolocation is opt-in.** The page never touches the Geolocation API on load, so no permission prompt appears unless you press "Show my location" in the sidebar. Press it again to stop. Your position stays in the browser: drawn on the map, sent nowhere.
 
