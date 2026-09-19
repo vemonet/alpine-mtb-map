@@ -59825,5 +59825,68 @@
       <mwm:visibility>1</mwm:visibility>
     </ExtendedData>
   </Placemark>
+  <Placemark>
+    <name>Lugo di Grezzana - Teste di Marmo (Veneto, Italy) [shuttle 10 EUR/run]</name>
+    <description><![CDATA[<b>Lugo di Grezzana 310 m - the Teste di Marmo trail area, "capitale dell'enduro veronese"</b><br/><br/>
+    <b>Trails</b><br/>A volunteer-built natural enduro area in the Lessini foothills 20 minutes north of Verona, dug and maintained since 2008 by the ASD Teste di Marmo collective. More than 30 km of trail on three hillsides - <b>Mericani</b>, <b>Portello</b> and <b>Corrubio</b> - through terraced chestnut woods and limestone outcrops, from beginner lines up to steep technical descents, with the trails crossing each other constantly so you pick your variant on the way down. Named lines include Garsen (the first one, cut in 2008), Pistin, Vajoi, Zack Line, Sentiero del Mulin, Spelughe, Cavraroi, Trugolo, Bruno Trail, Coston, Sentiero dei Castagni, Sentiero delle Rie, Stefano Trail, Bigonsole, Terrazze Trail and Barbana-J. The Pistin doubles as the club's training ground, and there is a pump track in the village. The E Ben Sa Ghe enduro race has run here since 2013.<br/><small>Vertical is modest - the traces drawn here drop 60 to 350 m, from tops between 520 and 780 m down to the valley around 305-420 m - so the riding is about linking runs, not one big descent.</small><br/><br/>
+    <b>Getting up / price</b><br/>No lift. Pedal or push up, or book the TDM Bike Shuttle: the whole vehicle is hired, 300 EUR for a half day (4 h) or 420 EUR for a full day (8 h) in the 8-seat van, 250/350 EUR in the 4-seat pickup, with 10 EUR (van) or 5 EUR (pickup) of that going to the trail builders. Single runs cannot be booked ahead but can be bought on the spot for 10 EUR a head if there is a seat free. The trails themselves are free; the club runs on donations, membership and its courses.<br/><br/><p class="warn">&#9888;&#65039; Natural trails on private land, ridden by permission. Stay on the marked lines, keep the noise down and give way to walkers, who have priority on several trails.</p>
+    <b>Open season</b><br/>Rideable year-round at this altitude; spring and autumn are the good seasons, and the valley gets hot in midsummer.<br/>Daily opening hours: dawn to dusk<br/><small>Shuttle runs on request, seven days a week, booked through the club. Printed trail maps are at Mr Willy Cafe in Lugo di Grezzana, and the map is downloadable from the club site.</small><br/><br/>
+    <b>Access</b><table class="access"><tr><th>From</th><th>Transport</th><th>Duration</th></tr><tr><td>Verona</td><td>Car</td><td>~25 min</td></tr><tr><td>Milan</td><td>Car</td><td>~2h00</td></tr><tr><td>Venice</td><td>Car</td><td>~1h40</td></tr></table><br/>
+    <i>Sources: <a href="https://www.testedimarmo.com/trail-area">Teste di Marmo trail area</a> and <a href="https://www.testedimarmo.com/tdm-bike-shuttle">TDM Bike Shuttle</a> (info@testedimarmo.com, +39 377 356 1850). Pin is Lugo di Grezzana village. Prices, schedules, trail status and access can change; verify before travel.</i>]]></description>
+    <styleUrl>#placemark-green</styleUrl>
+    <Point><coordinates>10.991822,45.575631,313</coordinates></Point>
+    <ExtendedData xmlns:mwm="https://comaps.app">
+      <mwm:properties>
+        <mwm:value key="spot">lugo-di-grezzana</mwm:value>
+        <mwm:value key="tags">beginner intermediate expert natural no-lift shuttle dh enduro freeride</mwm:value>
+        <mwm:value key="open_from">01-01</mwm:value>
+        <mwm:value key="closed_from">01-01</mwm:value>
+      </mwm:properties>
+      <mwm:icon>Mountain</mwm:icon>
+      <mwm:visibility>1</mwm:visibility>
+    </ExtendedData>
+  </Placemark>
+  <Placemark>
+    <name>Lugo di Grezzana: Flowsnake-Vajoi</name>
+    <description><![CDATA[2.8 km blue, moderate route in the Teste di Marmo trail area, dropping 350 m from 694 m to 344 m at an average 13%. <i>Trace drawn in gpx.studio and supplied for this map, simplified to ~8 m - indicative only. Trails are built and maintained by the Teste di Marmo volunteers on land they have permission to cross: stay on the marked lines, and pedestrians have priority on several of them.</i>]]></description>
+    <styleUrl>#line-blue</styleUrl>
+    <LineString><tessellate>1</tessellate><coordinates>11.009891,45.586706,0 11.009541,45.586632,0 11.009429,45.586324,0 11.009565,45.585888,0 11.008566,45.585642,0 11.007948,45.586170,0 11.006991,45.586517,0 11.006682,45.586357,0 11.005337,45.586842,0 11.004891,45.586793,0 11.003701,45.586934,0 11.003035,45.586846,0 11.002459,45.586481,0 11.001999,45.585533,0 11.001966,45.585146,0 11.001697,45.586042,0 11.001925,45.587040,0 11.002499,45.587311,0 11.002262,45.587840,0 11.002051,45.587824,0 11.001821,45.588054,0 11.001338,45.588063,0 11.001188,45.587930,0 11.000392,45.588063,0 10.998867,45.587855,0 10.997747,45.586924,0 10.997046,45.585838,0 10.997006,45.585189,0 10.997466,45.584369,0 10.996698,45.584183,0 10.996527,45.584449,0 10.996393,45.584347,0 10.996341,45.584568,0 10.995498,45.584627,0 10.995304,45.584300,0 10.994615,45.584327,0 10.993950,45.583948,0 10.993918,45.584505,0 10.994096,45.584871,0 10.993775,45.584630,0 10.993937,45.584837,0 10.993769,45.584992,0 10.993816,45.585207,0 10.993186,45.585433,0 10.993166,45.585731,0 10.992641,45.585990,0</coordinates></LineString>
+    <ExtendedData xmlns:mwm="https://comaps.app"><mwm:properties><mwm:value key="spot">lugo-di-grezzana</mwm:value><mwm:value key="tags">beginner natural no-lift shuttle dh enduro</mwm:value></mwm:properties></ExtendedData>
+  </Placemark>
+  <Placemark>
+    <name>Lugo di Grezzana: Gioa Trail</name>
+    <description><![CDATA[2.7 km green, easy route in the Teste di Marmo trail area, dropping 219 m from 524 m to 305 m at an average 8%. <i>Trace drawn in gpx.studio and supplied for this map, simplified to ~8 m - indicative only. Trails are built and maintained by the Teste di Marmo volunteers on land they have permission to cross: stay on the marked lines, and pedestrians have priority on several of them.</i>]]></description>
+    <styleUrl>#line-green</styleUrl>
+    <LineString><tessellate>1</tessellate><coordinates>11.011198,45.572354,0 11.011099,45.571678,0 11.011546,45.569751,0 11.010619,45.569768,0 11.010496,45.569676,0 11.010573,45.569168,0 11.010349,45.568643,0 11.010048,45.568503,0 11.009677,45.568518,0 11.009050,45.568181,0 11.008376,45.567242,0 11.007099,45.566365,0 11.006001,45.565904,0 11.005375,45.565830,0 11.004798,45.565523,0 11.003904,45.565654,0 11.003261,45.566024,0 11.002822,45.566781,0 11.002109,45.566674,0 11.001580,45.566829,0 11.000420,45.566792,0 11.000281,45.566927,0 10.999643,45.566489,0 10.999314,45.566681,0 10.999479,45.566312,0 10.999381,45.566226,0 10.999080,45.566553,0 10.999039,45.566960,0 10.998767,45.566880,0 10.998058,45.567028,0 10.997787,45.567502,0 10.997590,45.566728,0 10.997283,45.566523,0 10.997348,45.566746,0 10.996930,45.566600,0 10.996419,45.566978,0 10.996335,45.567581,0 10.995766,45.568167,0 10.995461,45.568291,0 10.994499,45.568234,0 10.993290,45.569124,0 10.992870,45.569925,0</coordinates></LineString>
+    <ExtendedData xmlns:mwm="https://comaps.app"><mwm:properties><mwm:value key="spot">lugo-di-grezzana</mwm:value><mwm:value key="tags">beginner natural no-lift shuttle dh enduro</mwm:value></mwm:properties></ExtendedData>
+  </Placemark>
+  <Placemark>
+    <name>Lugo di Grezzana: Maiconi</name>
+    <description><![CDATA[0.5 km blue, moderate route in the Teste di Marmo trail area, dropping 62 m from 782 m to 720 m at an average 12%. <i>Trace drawn in gpx.studio and supplied for this map, simplified to ~8 m - indicative only. Trails are built and maintained by the Teste di Marmo volunteers on land they have permission to cross: stay on the marked lines, and pedestrians have priority on several of them.</i>]]></description>
+    <styleUrl>#line-blue</styleUrl>
+    <LineString><tessellate>1</tessellate><coordinates>10.994657,45.605932,0 10.995063,45.605299,0 10.994620,45.605119,0 10.993845,45.604349,0 10.993456,45.603752,0 10.993537,45.603120,0 10.992931,45.602497,0 10.992806,45.601928,0</coordinates></LineString>
+    <ExtendedData xmlns:mwm="https://comaps.app"><mwm:properties><mwm:value key="spot">lugo-di-grezzana</mwm:value><mwm:value key="tags">beginner natural no-lift shuttle dh enduro</mwm:value></mwm:properties></ExtendedData>
+  </Placemark>
+  <Placemark>
+    <name>Lugo di Grezzana: Portello-Trugolo-Cavraroi</name>
+    <description><![CDATA[1.6 km red, difficult route in the Teste di Marmo trail area, dropping 320 m from 719 m to 399 m at an average 20%. <i>Trace drawn in gpx.studio and supplied for this map, simplified to ~8 m - indicative only. Trails are built and maintained by the Teste di Marmo volunteers on land they have permission to cross: stay on the marked lines, and pedestrians have priority on several of them.</i>]]></description>
+    <styleUrl>#line-red</styleUrl>
+    <LineString><tessellate>1</tessellate><coordinates>10.992811,45.601831,0 10.993211,45.600131,0 10.993973,45.599270,0 10.993900,45.599148,0 10.993093,45.599110,0 10.992412,45.599275,0 10.992540,45.598979,0 10.991966,45.598399,0 10.991540,45.598254,0 10.991652,45.597975,0 10.991307,45.597402,0 10.990754,45.597204,0 10.990641,45.596817,0 10.990954,45.596275,0 10.991049,45.595045,0 10.992465,45.596513,0 10.994032,45.596102,0 10.995743,45.596440,0 10.995542,45.595998,0 10.995816,45.595801,0</coordinates></LineString>
+    <ExtendedData xmlns:mwm="https://comaps.app"><mwm:properties><mwm:value key="spot">lugo-di-grezzana</mwm:value><mwm:value key="tags">intermediate natural no-lift shuttle dh enduro</mwm:value></mwm:properties></ExtendedData>
+  </Placemark>
+  <Placemark>
+    <name>Lugo di Grezzana: Rocca - Madonnina</name>
+    <description><![CDATA[2.0 km blue, moderate route in the Teste di Marmo trail area, dropping 207 m from 622 m to 415 m at an average 10%. <i>Trace drawn in gpx.studio and supplied for this map, simplified to ~8 m - indicative only. Trails are built and maintained by the Teste di Marmo volunteers on land they have permission to cross: stay on the marked lines, and pedestrians have priority on several of them.</i>]]></description>
+    <styleUrl>#line-blue</styleUrl>
+    <LineString><tessellate>1</tessellate><coordinates>10.981937,45.610600,0 10.981371,45.610688,0 10.980518,45.610243,0 10.980022,45.609406,0 10.980412,45.608888,0 10.979552,45.609072,0 10.979277,45.609345,0 10.978893,45.609276,0 10.978858,45.609960,0 10.978654,45.610032,0 10.978026,45.609583,0 10.977976,45.609135,0 10.977474,45.608872,0 10.977456,45.608616,0 10.977657,45.608137,0 10.979757,45.607380,0 10.980324,45.606953,0 10.981998,45.604055,0 10.981974,45.602881,0 10.982143,45.602690,0 10.982790,45.602438,0 10.983174,45.602015,0 10.983221,45.601687,0 10.983038,45.601300,0 10.983713,45.600441,0 10.983681,45.599220,0 10.984030,45.598870,0</coordinates></LineString>
+    <ExtendedData xmlns:mwm="https://comaps.app"><mwm:properties><mwm:value key="spot">lugo-di-grezzana</mwm:value><mwm:value key="tags">beginner natural no-lift shuttle dh enduro</mwm:value></mwm:properties></ExtendedData>
+  </Placemark>
+  <Placemark>
+    <name>Lugo di Grezzana: Zack Line</name>
+    <description><![CDATA[1.4 km blue, moderate route in the Teste di Marmo trail area, dropping 211 m from 564 m to 352 m at an average 15%. <i>Trace drawn in gpx.studio and supplied for this map, simplified to ~8 m - indicative only. Trails are built and maintained by the Teste di Marmo volunteers on land they have permission to cross: stay on the marked lines, and pedestrians have priority on several of them.</i>]]></description>
+    <styleUrl>#line-blue</styleUrl>
+    <LineString><tessellate>1</tessellate><coordinates>11.000682,45.582098,0 11.000502,45.581750,0 11.000572,45.581426,0 11.001576,45.581388,0 11.000338,45.581197,0 11.000007,45.580955,0 10.999381,45.580793,0 10.998423,45.580258,0 10.998095,45.579776,0 10.997726,45.579599,0 10.997518,45.579676,0 10.997380,45.580056,0 10.997121,45.580236,0 10.996517,45.580038,0 10.996509,45.579851,0 10.996053,45.580050,0 10.995861,45.580204,0 10.995904,45.580336,0 10.995409,45.580305,0 10.995055,45.580495,0 10.994717,45.580390,0 10.994596,45.580266,0 10.994812,45.579355,0 10.994731,45.578084,0 10.994574,45.577989,0 10.994253,45.578122,0 10.994048,45.577722,0 10.993241,45.577375,0 10.993086,45.577163,0</coordinates></LineString>
+    <ExtendedData xmlns:mwm="https://comaps.app"><mwm:properties><mwm:value key="spot">lugo-di-grezzana</mwm:value><mwm:value key="tags">beginner natural no-lift shuttle dh enduro</mwm:value></mwm:properties></ExtendedData>
+  </Placemark>
 </Document>
 </kml>
