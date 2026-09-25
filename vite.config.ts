@@ -8,7 +8,7 @@ export default defineConfig({
     VitePWA({
       registerType: "autoUpdate",
       includeAssets: [
-        "icon.png",
+        "icon-64.png",
         "icon-192.png",
         "icon-512.png",
         "icon-maskable-512.png",
@@ -42,6 +42,9 @@ export default defineConfig({
         // offline and the KML can be loaded on startup without a network.
         // Only the KML: the other exports are release assets, not site files.
         globPatterns: ["**/*.{js,css,html,png,kml}"],
+        // The 1.3 MB master artwork is only the source of the other icons: the
+        // page never shows it, so a first visit should not download it.
+        globIgnores: ["icon.png"],
         // The KML grows with every spot added and passed Workbox's 2 MiB
         // default. Raised so the data keeps being precached rather than
         // silently dropping out of the offline bundle.

@@ -50,7 +50,7 @@
          scripts/make-icons.py prints this colour when it runs. -->
     <meta name="theme-color" content="#073354" />
     <link rel="apple-touch-icon" href="./apple-touch-icon.png" />
-    <link rel="icon" type="image/png" href="./icon.png" />
+    <link rel="icon" type="image/png" href="./icon-64.png" />
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -99,7 +99,9 @@
     <div id="app">
       <aside id="sidebar">
         <header>
-          <h1><img class="logo" src="./icon.png" alt="" width="24" height="24" />Alpine MTB Map</h1>
+          <h1>
+            <img class="logo" src="./icon-64.png" alt="" width="24" height="24" />Alpine MTB Map
+          </h1>
           <p>
             An open map for gravity mountain biking: downhill bike parks, enduro trails and freeride
             spots worldwide.
@@ -754,9 +756,9 @@
           </svg>
           <span>
             <b>Weather and opening dates.</b> Pick a date and the map keeps only what is open, with
-            the forecast for that day. Spots that will probably be wet get a rain drop badge on the
+            the forecast for that day. Spots that will probably be wet get a light blue ring on the
             map itself. How much rain it takes depends on the ground: <b>rain-sensitive</b> spots
-            badge on a light shower, <b>rain-resilient</b> ones only when it really pours.
+            get it on a light shower, <b>rain-resilient</b> ones only when it really pours.
           </span>
         </li>
         <li>
@@ -855,11 +857,11 @@
           <li><b>Base map tiles</b> from OpenStreetMap, OpenTopoMap (CC BY-SA) and CyclOSM.</li>
           <li>
             <b>Weather forecasts</b> from
-            <a href="https://open-meteo.com/" target="_blank" rel="noopener">Open-Meteo</a>. A blue
-            rain badge means at least 1 mm of precipitation or a 50% probability is forecast, or at
-            least 5 mm fell the previous day; these are the thresholds for
+            <a href="https://open-meteo.com/" target="_blank" rel="noopener">Open-Meteo</a>. A light
+            blue ring around a pin means at least 1 mm of precipitation or a 50% probability is
+            forecast, or at least 5 mm fell the previous day; these are the thresholds for
             <b>rain-sensitive</b> spots (clay, dark forest soil, little sun). Untagged spots need a
-            bit more rain, and <b>rain-resilient</b> spots (rocky, well-draining, sunny) only badge
+            bit more rain, and <b>rain-resilient</b> spots (rocky, well-draining, sunny) only get it
             on heavy same-day rain.
           </li>
         </ul>

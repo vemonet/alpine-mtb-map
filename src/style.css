@@ -1466,50 +1466,6 @@ body {
   text-shadow: 0 0 3px #fff;
 }
 
-/* Expand the clickable marker without moving its anchor or enlarging the dot.
-   Events on this invisible area bubble to Leaflet's existing marker handler. */
-.spot-marker::before {
-  content: "";
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  width: 32px;
-  height: 32px;
-  transform: translate(-50%, -50%);
-}
-
-@media (any-pointer: coarse) {
-  .spot-marker::before {
-    width: 44px;
-    height: 44px;
-  }
-}
-
-.pin {
-  position: relative;
-  width: 15px;
-  height: 15px;
-  border-radius: 50%;
-  border: 2.5px solid #fff;
-  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.4);
-}
-
-.pin.bike-park {
-  background: var(--lift);
-}
-.pin.natural {
-  background: var(--natural);
-}
-.pin.no-lift {
-  background: var(--brown);
-}
-.pin.minor {
-  background: #737373;
-  width: 10px;
-  height: 10px;
-  border-width: 2px;
-}
-
 /* The selected spot. The colour drives the SVG through currentColor, so the
    teardrop stays in the same category colour as the dot it replaces. */
 .pin-selected {
@@ -1547,21 +1503,6 @@ body {
   .pin-selected {
     animation: none;
   }
-}
-
-.wet-badge {
-  position: absolute;
-  inset: 0;
-  display: grid;
-  place-items: center;
-  color: #fff;
-  pointer-events: none;
-}
-
-.wet-badge svg {
-  width: 6px;
-  height: 8px;
-  filter: drop-shadow(0 0 1px rgb(0 0 0 / 55%));
 }
 
 @media (max-width: 720px) {

@@ -1,7 +1,5 @@
 import L from "leaflet";
 import "leaflet/dist/leaflet.css";
-import "maplibre-gl/dist/maplibre-gl.css";
-import "@maplibre/maplibre-gl-leaflet";
 import "./style.css";
 import { facets, KINDS, type Kind } from "./lib/kml-export.ts";
 import { buildFile, saveBlob, slug, type DownloadFormat } from "./lib/downloads.ts";
@@ -62,7 +60,7 @@ interface Spot {
   openFrom: string;
   closedFrom: string;
   weather: Weather | null;
-  places: { layer: L.Marker | L.Polyline; place: Place }[];
+  places: { layer: Pin | L.Polyline; place: Place }[];
   weatherPlace: Place | null;
   group: L.LayerGroup;
   entry?: SpotEntry;
@@ -77,7 +75,7 @@ interface ResultRow {
 
 interface SpotEntry extends ResultRow {
   kind: Kind;
-  layer: L.Marker;
+  layer: Pin;
   spot: Spot;
   place: Place;
 }
@@ -259,6 +257,24 @@ const openFreeMapOptions = {
   attribution: openFreeMapAttribution,
 } as Parameters<typeof L.maplibreGL>[0];
 
+// MapLibre is two thirds of the bundle and only this basemap uses it, so it is
+// fetched the first time the layer is shown rather than on every visit.
+const openFreeMap = L.layerGroup();
+let openFreeMapLoading: Promise<void> | null = null;
+openFreeMap.on("add", () => {
+  openFreeMapLoading ??= Promise.all([
+    import("maplibre-gl/dist/maplibre-gl.css"),
+    import("@maplibre/maplibre-gl-leaflet"),
+  ])
+    .then(() => {
+      openFreeMap.addLayer(L.maplibreGL(openFreeMapOptions));
+    })
+    .catch((error: unknown) => {
+      openFreeMapLoading = null; // let the next selection try again
+      console.error("Could not load the OpenFreeMap basemap", error);
+    });
+});
+
 const layers: Record<string, L.Layer> = {
   OpenStreetMap: L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
     maxZoom: 19,
@@ -272,7 +288,7 @@ const layers: Record<string, L.Layer> = {
     maxZoom: 19,
     attribution: `${attribution}, <a href="https://www.cyclosm.org">CyclOSM</a>`,
   }),
-  "OpenFreeMap Liberty": L.maplibreGL(openFreeMapOptions),
+  "OpenFreeMap Liberty": openFreeMap,
   "CARTO Voyager": L.tileLayer(
     "https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png",
     {
@@ -289,33 +305,93 @@ L.control.layers(layers).addTo(map);
 L.control.scale({ imperial: false, maxWidth: 140 }).addTo(map);
 map.on("baselayerchange", ({ name }) => localStorage.setItem(MAP_LAYER_STORAGE_KEY, name));
 
-const pinIcon = (kind: Kind, wet = false) =>
-  L.divIcon({
-    className: "spot-marker",
-    html: `<div class="pin ${kind}">${
-      wet
-        ? '<span class="wet-badge" aria-hidden="true"><svg viewBox="0 0 8 10" width="6" height="8" fill="currentColor"><path d="M4 0C3 2 1 4.2 1 6.2a3 3 0 0 0 6 0C7 4.2 5 2 4 0Z"/></svg></span>'
-        : ""
-    }</div>`,
-    iconSize: [15, 15],
-    iconAnchor: [7, 7],
-  });
+// Trails and spot pins share one canvas. Canvas click tolerance grows the
+// invisible hit area without changing what is drawn, and touch pointers get
+// extra room for less precise input. A second canvas for the pins would sit on
+// top of this one and swallow every click meant for a trail under it.
+const trailRenderer = L.canvas({
+  tolerance: window.matchMedia("(pointer: coarse)").matches ? 14 : 8,
+});
+
+const cssVar = (name: string) =>
+  getComputedStyle(document.documentElement).getPropertyValue(name).trim();
+const PIN_COLORS: Record<Kind, string> = {
+  "bike-park": cssVar("--lift"),
+  natural: cssVar("--natural"),
+  "no-lift": cssVar("--brown"),
+  minor: "#737373",
+  trail: "#737373",
+};
+// A spot whose forecast reads wet trades its thin dark outline for this ring.
+const WET_RING_COLOR = "#38bdf8";
+
+/** The Leaflet 1.9 canvas internals the pin drawing below relies on. */
+interface PinInternals {
+  _renderer: { _drawing: boolean; _ctx: CanvasRenderingContext2D };
+  _point: L.Point;
+  _empty(): boolean;
+}
+
+/**
+ * A spot pin, painted on the canvas instead of being one DOM element each.
+ * With ~1,500 DOM pins Leaflet repositioned every one of them on every frame of
+ * a pinch-zoom, which froze older phones; a canvas is only scaled meanwhile.
+ */
+class Pin extends L.CircleMarker {
+  kind: Kind;
+  wet = false;
+  // The selected pin is shown as a DOM teardrop instead (see selectPin), but it
+  // stays hit-testable so clicking it again still opens its card.
+  selected = false;
+
+  constructor(latlng: L.LatLngExpression, kind: Kind) {
+    // The radius is the visible edge, white border included.
+    super(latlng, { radius: kind === "minor" ? 5 : 7.5, stroke: false, renderer: trailRenderer });
+    this.kind = kind;
+  }
+
+  setWet(wet: boolean) {
+    if (wet === this.wet) return;
+    this.wet = wet;
+    this.redraw();
+  }
+
+  setSelected(selected: boolean) {
+    this.selected = selected;
+    this.redraw();
+  }
+
+  // Replaces Leaflet's plain circle with the pin look: a dark outline (or the
+  // wet ring), a white border, then the category colour.
+  _updatePath() {
+    const internals = this as unknown as PinInternals;
+    const { _drawing, _ctx: ctx } = internals._renderer;
+    if (!_drawing || internals._empty() || this.selected) return;
+    const { x, y } = internals._point;
+    const outer = this.getRadius();
+    const disc = (radius: number, color: string) => {
+      ctx.beginPath();
+      ctx.arc(x, y, radius, 0, Math.PI * 2);
+      ctx.fillStyle = color;
+      ctx.fill();
+    };
+    // Trails leave their own opacity on the shared context.
+    ctx.globalAlpha = 1;
+    if (this.wet) disc(outer + 2.5, WET_RING_COLOR);
+    else disc(outer + 1, "rgba(0, 0, 0, 0.4)");
+    disc(outer, "#fff");
+    disc(outer - (this.kind === "minor" ? 2 : 2.5), PIN_COLORS[this.kind]);
+  }
+}
 
 // The selected spot trades its dot for a teardrop in the same colour, tip on
 // the exact coordinate the dot marked. Drawn rather than an emoji so it keeps
 // the per-category colour and looks the same on every platform.
 const SELECTED_PIN_SIZE = 26;
-// Marker z-index is derived from latitude, so an offset this large clears every
-// other pin, including a northern one that would otherwise stack on top.
-const SELECTED_PIN_Z = 100000;
-// Leaflet stacks markers by latitude, so a secondary grey pin can end up over
-// its own spot's main pin. Push the grey ones far enough down that they always
-// sit behind every main pin, at any zoom.
-const MINOR_PIN_Z = -100000;
 
 const selectedPinIcon = (kind: Kind) =>
   L.divIcon({
-    className: "spot-marker",
+    className: "",
     html:
       `<div class="pin-selected ${kind}"><svg viewBox="0 0 24 24" width="${SELECTED_PIN_SIZE}" height="${SELECTED_PIN_SIZE}" aria-hidden="true">` +
       '<path d="M12 24C12 24 4 14.5 4 9a8 8 0 1 1 16 0c0 5.5-8 15-8 15Z" fill="currentColor" stroke="#fff" stroke-width="2" stroke-linejoin="round" paint-order="stroke"/>' +
@@ -373,21 +449,22 @@ const spots = new Map<string, Spot>();
 const entries: SpotEntry[] = []; // sidebar rows, one per main pin
 // Lets the Lines filter toggle trails independently of their spot.
 const lineLayers: { layer: L.Polyline; spot: Spot; place: Place; color: string }[] = [];
-// Canvas click tolerance grows the invisible hit area without changing the
-// visible stroke. Touch pointers get extra room for less precise input.
-const trailRenderer = L.canvas({
-  tolerance: window.matchMedia("(pointer: coarse)").matches ? 14 : 8,
-});
+const minorPins: Pin[] = [];
+const mainPins: Pin[] = [];
+const hoverPointer = window.matchMedia("(hover: hover)").matches;
 
+// The shared canvas paints in the order layers were attached, so a trail
+// attached after the pins would cover them. Re-stack the grey secondary pins,
+// then the main ones, over the trails. Detached pins are skipped by Leaflet.
+const raisePins = () => {
+  for (const pin of minorPins) pin.bringToFront();
+  for (const pin of mainPins) pin.bringToFront();
+};
 for (const p of places) {
   const lineColor = p.styleUrl.replace(/^line-/, "") || "trail";
-  const layer: L.Marker | L.Polyline =
+  const layer: Pin | L.Polyline =
     p.type === "point"
-      ? L.marker(p.coords[0], {
-          icon: pinIcon(p.kind),
-          title: p.name,
-          zIndexOffset: p.kind === "minor" ? MINOR_PIN_Z : 0,
-        })
+      ? new Pin(p.coords[0], p.kind)
       : L.polyline(p.coords, {
           color: TRAIL_COLORS[p.styleUrl] ?? TRAIL_COLOR,
           weight: 4,
@@ -419,6 +496,10 @@ for (const p of places) {
   }
   if (p.type === "line") {
     lineLayers.push({ layer: layer as L.Polyline, spot, place: p, color: lineColor });
+  } else {
+    (p.kind === "minor" ? minorPins : mainPins).push(layer as Pin);
+    // Canvas pins have no title attribute, so mouse users get the name on hover.
+    if (hoverPointer) layer.bindTooltip(p.name, { direction: "top", offset: [0, -8] });
   }
   spot.searchText += ` ${p.name} ${p.description}`.toLocaleLowerCase();
   const clicked = spot;
@@ -447,7 +528,7 @@ for (const p of places) {
       name: m[1],
       meta: m[2],
       kind: p.kind,
-      layer: layer as L.Marker,
+      layer: layer as Pin,
       spot,
       place: p,
     };
@@ -469,7 +550,7 @@ const placeCardBody = el("place-card-body");
 const placeCardHideButton = el<HTMLButtonElement>("place-card-hide");
 const placeCardGoogleMapsButton = el<HTMLButtonElement>("place-card-google-maps");
 const placeCardDownloadMenu = el<HTMLDetailsElement>("place-card-download");
-let activePlace: { place: Place; spot: Spot; layer: L.Marker | L.Polyline } | null = null;
+let activePlace: { place: Place; spot: Spot; layer: Pin | L.Polyline } | null = null;
 
 const placeUrl = (place: Place, spot: Spot) => {
   const url = new URL(window.location.href);
@@ -575,7 +656,7 @@ const selectLines = (lines: L.Polyline[]) => {
     layer.bringToFront();
   }
   selectedLines = lines;
-  updateMapTraces();
+  updateMapTraces(true);
 };
 const clearSelectedLines = () => {
   for (const layer of selectedLines) layer.setStyle({ opacity: IDLE_LINE_OPACITY });
@@ -589,25 +670,29 @@ const isWet = (spot: Spot) => weatherEnabled && Boolean(wetReason(spot.weather, 
 // One spot at a time wears the teardrop. Its place and spot are kept so the dot
 // can be restored with the rain badge the forecast last gave it.
 interface SelectedPin {
-  layer: L.Marker;
+  layer: Pin;
   place: Place;
   spot: Spot;
 }
 let selectedPin: SelectedPin | null = null;
+// The one DOM pin left. It lives in the spot's group so a filter that hides
+// the spot hides it too, and it lets clicks through to the canvas pin under it.
+const selectedPinMarker = L.marker([0, 0], { interactive: false, keyboard: false });
 
 const selectPin = (next: SelectedPin | null) => {
   if (selectedPin) {
-    selectedPin.layer.setIcon(pinIcon(selectedPin.place.kind, isWet(selectedPin.spot)));
-    selectedPin.layer.setZIndexOffset(selectedPin.place.kind === "minor" ? MINOR_PIN_Z : 0);
+    selectedPin.layer.setSelected(false);
+    selectedPin.spot.group.removeLayer(selectedPinMarker);
   }
   selectedPin = next;
   if (next) {
-    next.layer.setIcon(selectedPinIcon(next.place.kind));
-    next.layer.setZIndexOffset(SELECTED_PIN_Z);
+    next.layer.setSelected(true);
+    selectedPinMarker.setIcon(selectedPinIcon(next.place.kind)).setLatLng(next.layer.getLatLng());
+    next.spot.group.addLayer(selectedPinMarker);
   }
 };
 
-function openPlaceCard(place: Place, spot: Spot, layer: L.Marker | L.Polyline) {
+function openPlaceCard(place: Place, spot: Spot, layer: Pin | L.Polyline) {
   activePlace = { place, spot, layer };
   placeCardBody.innerHTML = cardContent(place, spot);
   placeCardBody.scrollTop = 0;
@@ -628,7 +713,7 @@ function openPlaceCard(place: Place, spot: Spot, layer: L.Marker | L.Polyline) {
         .filter(({ place }) => place.type === "line")
         .map(({ layer }) => layer as L.Polyline),
     );
-    selectPin({ layer: layer as L.Marker, place, spot });
+    selectPin({ layer: layer as Pin, place, spot });
   }
 }
 
@@ -786,8 +871,11 @@ const updateTraceArrows = () => {
 // Filtering decides which traces qualify; moving the map only checks cached
 // eligibility and bounds, without rebuilding the sidebar or rerunning filters.
 const eligibleTraceLayers = new Set<L.Layer>();
-const updateMapTraces = () => {
+// `raise` re-stacks the pins even when no trail was attached, for callers that
+// just attached pins or raised trails themselves.
+const updateMapTraces = (raise = false) => {
   const showTraces = map.getZoom() >= TRACE_MIN_ZOOM;
+  let attached = false;
   // Keep nearby lines attached while panning across the edge of the viewport.
   const view = map.getBounds().pad(0.2);
   for (const { layer, spot } of lineLayers) {
@@ -797,15 +885,18 @@ const updateMapTraces = () => {
       (showTraces || selected) &&
       view.intersects(layer.getBounds());
     if (visible === spot.group.hasLayer(layer)) continue;
-    if (visible) spot.group.addLayer(layer);
-    else spot.group.removeLayer(layer);
+    if (visible) {
+      spot.group.addLayer(layer);
+      attached = true;
+    } else spot.group.removeLayer(layer);
   }
+  if (attached || raise) raisePins();
   el("trace-zoom-hint").hidden = showTraces;
   updateTraceArrows();
 };
 
 // Leaflet also emits moveend after zooming, so one handler covers both.
-map.on("moveend", updateMapTraces);
+map.on("moveend", () => updateMapTraces());
 
 // A trace can exist without a spot pin of its own: nothing requires a spot to
 // have a main placemark, only that its traces carry the tags the filters need.
@@ -843,7 +934,14 @@ const byName = (a: ResultRow, b: ResultRow) =>
   a.meta.localeCompare(b.meta, undefined, { sensitivity: "base" });
 
 for (const entry of [...entries].sort(byName)) addResultRow(entry, showEntry);
-for (const entry of [...traceEntries].sort(byName)) addResultRow(entry, showTrace);
+// Trace rows are four in five of all rows and only show in Traces mode, so
+// they are built the first time that mode is opened rather than on load.
+let traceRowsBuilt = false;
+const buildTraceRows = () => {
+  if (traceRowsBuilt) return;
+  traceRowsBuilt = true;
+  for (const entry of [...traceEntries].sort(byName)) addResultRow(entry, showTrace);
+};
 
 const requestedEntry = requestedSpot ? spots.get(requestedSpot)?.entry : undefined;
 if (requestedTrace) {
@@ -1022,12 +1120,9 @@ function cardContent(place: Place, spot: Spot) {
 }
 
 const refreshWeatherPresentation = () => {
-  for (const entry of entries) {
-    // The selected pin keeps its teardrop: a forecast landing mid-selection
-    // must not put the dot back.
-    if (selectedPin?.layer === entry.layer) continue;
-    entry.layer.setIcon(pinIcon(entry.kind, isWet(entry.spot)));
-  }
+  // Only pins whose wet state changed are redrawn: this runs once per forecast
+  // batch, and repainting all of them every time kept older phones busy.
+  for (const entry of entries) entry.layer.setWet(isWet(entry.spot));
   if (activePlace) {
     // The forecast lands seconds after the card opens, so keep whatever the
     // reader had scrolled to instead of snapping back to the title.
@@ -1202,7 +1297,6 @@ const fetchWeatherBatch = async (batch: SpotEntry[], request: number) => {
       };
     }
   }
-  saveWeatherCache();
   refreshWeatherPresentation();
 };
 
@@ -1259,6 +1353,9 @@ const loadWeather = async () => {
     }
   };
   await Promise.all(Array.from({ length: WEATHER_CONCURRENCY }, worker));
+  // Written once per sweep: the cache is about 1 MB of JSON, and rewriting it
+  // after each of the ~27 batches blocked the page on every one.
+  saveWeatherCache();
   if (request !== weatherRequest || !weatherEnabled) return;
   weatherBtn.classList.remove("loading");
   // Assigned inside the workers above, which the narrowing from `= null` misses.
@@ -1476,6 +1573,10 @@ const priceCap = () => {
   const v = +priceInput.value;
   return v >= +priceInput.max ? Infinity : v;
 };
+const updatePriceDisplay = () => {
+  const cap = priceCap();
+  priceOut.textContent = cap === Infinity ? "any" : `${cap} CHF`;
+};
 
 // Trace length, in kilometres. The two thumbs walk a hand-picked ladder rather
 // than an even scale: half the traces are under 1.2 km and nine in ten under
@@ -1565,24 +1666,31 @@ const matchesFilters = (spot: Spot) => {
 };
 
 const applyFilters = () => {
-  const cap = priceCap();
   const query = searchInput.value.trim().toLocaleLowerCase();
   const showingTraces = searchMode === "traces";
   const visibleTraceLayers = new Set<L.Layer>();
   eligibleTraceLayers.clear();
   let visibleCount = 0;
-  priceOut.textContent = cap === Infinity ? "any" : `${cap} CHF`;
+  updatePriceDisplay();
   updateLengthDisplay();
+  // Both loops below ask per trace; the answers only change per spot and per
+  // colour, so they are worked out once each.
+  const spotMatches = new Map<Spot, boolean>();
+  const spotMatch = (spot: Spot) => {
+    let match = spotMatches.get(spot);
+    if (match === undefined) spotMatches.set(spot, (match = matchesFilters(spot)));
+    return match;
+  };
+  const colorOn = new Map(lineColorChips.map((chip) => [chip.dataset.lineColor, on(chip)]));
 
   for (const entry of traceEntries) {
-    const chip = lineColorChips.find((candidate) => candidate.dataset.lineColor === entry.color);
     const visible =
       showingTraces &&
       !hiddenSpotIds.has(entry.spot.id) &&
       !hiddenTraceIds.has(traceId(entry.place)) &&
-      matchesFilters(entry.spot) &&
+      spotMatch(entry.spot) &&
       withinLength(entry.place) &&
-      (!chip || on(chip)) &&
+      colorOn.get(entry.color) !== false &&
       (!query || entry.searchText.includes(query));
     if (entry.row) entry.row.hidden = !visible;
     if (visible) {
@@ -1592,15 +1700,14 @@ const applyFilters = () => {
   }
 
   for (const spot of spots.values()) {
-    const filterMatch = !hiddenSpotIds.has(spot.id) && matchesFilters(spot);
+    const filterMatch = !hiddenSpotIds.has(spot.id) && spotMatch(spot);
     const spotSearchMatch = !query || spot.searchText.includes(query);
     let hasVisibleLayer = false;
 
     for (const { layer, place } of spot.places) {
       const color = place.styleUrl.replace(/^line-/, "") || "trail";
-      const colorChip = lineColorChips.find((chip) => chip.dataset.lineColor === color);
       const lineEnabled =
-        place.type !== "line" || ((!colorChip || on(colorChip)) && withinLength(place));
+        place.type !== "line" || (colorOn.get(color) !== false && withinLength(place));
       const visible = showingTraces
         ? visibleTraceLayers.has(layer)
         : filterMatch &&
@@ -1648,7 +1755,7 @@ const applyFilters = () => {
   ];
   if (hiddenLabels.length) restoreHiddenButton.title = hiddenLabels.join("\n");
   else restoreHiddenButton.removeAttribute("title");
-  updateMapTraces();
+  updateMapTraces(true);
 };
 
 for (const chip of chips) {
@@ -1689,20 +1796,33 @@ document.addEventListener("click", (event) => {
     if (!menu.contains(event.target as Node)) menu.removeAttribute("open");
   }
 });
-priceInput.addEventListener("input", applyFilters);
+// Typing and dragging fire far faster than a slow phone can refilter every
+// placemark, so those inputs wait for a short pause. The slider readouts still
+// follow the thumb immediately.
+let filterTimer = 0;
+const scheduleFilters = () => {
+  clearTimeout(filterTimer);
+  filterTimer = window.setTimeout(applyFilters, 150);
+};
+priceInput.addEventListener("input", () => {
+  updatePriceDisplay();
+  scheduleFilters();
+});
 // The thumbs push rather than cross, so the range is never inverted.
 lengthMinInput.addEventListener("input", () => {
   lengthMinInput.value = String(lengthMinIndex());
   if (+lengthMinInput.value > +lengthMaxInput.value) lengthMaxInput.value = lengthMinInput.value;
-  applyFilters();
+  updateLengthDisplay();
+  scheduleFilters();
 });
 lengthMaxInput.addEventListener("input", () => {
   if (+lengthMaxInput.value < +lengthMinInput.value) lengthMinInput.value = lengthMaxInput.value;
-  applyFilters();
+  updateLengthDisplay();
+  scheduleFilters();
 });
 searchInput.addEventListener("input", () => {
   clearSearchButton.hidden = !searchInput.value;
-  applyFilters();
+  scheduleFilters();
 });
 clearSearchButton.addEventListener("click", () => {
   searchInput.value = "";
@@ -1717,6 +1837,7 @@ for (const button of searchModeButtons) {
       candidate.setAttribute("aria-pressed", String(candidate === button));
     }
     const traces = searchMode === "traces";
+    if (traces) buildTraceRows();
     searchInput.placeholder = traces ? "Search traces..." : "Search spots...";
     searchInput.setAttribute(
       "aria-label",

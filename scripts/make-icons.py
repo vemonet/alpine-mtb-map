@@ -5,6 +5,7 @@
 
 Reads the master artwork and writes:
 
+    icon-64.png             transparent, the header logo and favicon
     icon-192.png            transparent, as-is
     icon-512.png            transparent, as-is
     icon-maskable-512.png   opaque, inset into the maskable safe zone
@@ -188,6 +189,8 @@ print("master %dx%d, background #%02x%02x%02x" % ((w, h) + BG))
 print("(use that colour for theme_color in vite.config.js and the theme-color")
 print(" meta in index.html, so the PWA chrome matches the mark)")
 
+# The master is 1.3 MB: far too heavy for a 24px logo on every page load.
+write_png(os.path.join(PUBLIC, "icon-64.png"), box_resize(src, w, h, 64, 64))
 write_png(os.path.join(PUBLIC, "icon-192.png"), box_resize(src, w, h, 192, 192))
 write_png(os.path.join(PUBLIC, "icon-512.png"), box_resize(src, w, h, 512, 512))
 # Maskable icons get cropped to a circle or squircle: keep the art inside the
