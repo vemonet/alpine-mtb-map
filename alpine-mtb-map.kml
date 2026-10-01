@@ -17349,6 +17349,160 @@
     <ExtendedData xmlns:mwm="https://comaps.app"><mwm:properties><mwm:value key="spot">raccoon-mountain</mwm:value><mwm:value key="tags">beginner natural no-lift dh enduro freeride</mwm:value></mwm:properties></ExtendedData>
   </Placemark>
   <Placemark>
+    <name>Jakes Rocks (Warren, Pennsylvania) [free, no lift]</name>
+    <description><![CDATA[<b>Jakes Rocks trailhead 600 m - car park by the Jakes Rocks picnic area, above the Kinzua Dam</b><br/><br/>
+    <b>Trails</b><br/>A 30+ mile stacked-loop singletrack system in the Allegheny National Forest, built with Trail Solutions (IMBA's trail-building arm) on the plateau above the Allegheny Reservoir, and named Pennsylvania Trail of the Year in 2024. Hard-packed shale with rock-mosaic sections and wooden crossings on every stream. The loops step up from the green Tuttletown and Coal Knob circuits at the trailhead, through the long blue descents to the reservoir - Bent Run, Elijah, Dew Drop, Deerfoot, Seneca, Ohi:Yo Way - to the black Bald Eagle, Ursus and Devil's Drop and the double-black, one-way Blacksnake gravity line with its jumps, doubles and rock features. 12 lines are drawn here: 1 double black (orange), 3 black, 6 blue and 2 green, graded from the trail system's own IMBA ratings in OpenStreetMap.<br/><br/>
+    <b>Getting up / price</b><br/>No lift and no fee. Park at the Jakes Rocks trailhead and ride down; Blacksnake and Devil's Drop end at a lower lot near Kinzua Point, about 175 m below, and the long blues reach the reservoir at the Elijah Run boat launch and Dewdrop. Class 1 e-bikes are allowed on the whole system, and fat bikes are welcome.<br/><br/><p class="warn">&#9888;&#65039; Blacksnake is signed one-way downhill. Ride it in the marked direction.</p>
+    <b>Open season</b><br/>Rideable roughly April to November; snow covers the plateau in winter. Volunteers from the Northern Allegheny Mountain Bike Association hold regular work days, so check for trail closures before travelling.<br/><br/>
+    <b>Access</b><table class="access"><tr><th>From</th><th>Transport</th><th>Duration</th></tr><tr><td>Warren</td><td>Car, US 6 and PA 59</td><td>~25 min</td></tr><tr><td>Erie</td><td>Car</td><td>~1h40</td></tr><tr><td>Buffalo</td><td>Car</td><td>~2h15</td></tr><tr><td>Pittsburgh</td><td>Car</td><td>~2h50</td></tr></table><br/>
+    <i>Sources: <a href="https://pawilds.com/asset/trails-jakes-rocks/">Pennsylvania Wilds</a>, <a href="https://www.singletracks.com/bike-trails/jakes-rocks/">Singletracks</a>, <a href="https://www.fs.usda.gov/r09/allegheny/recreation/trails/jakes-rocks-mountain-bike-system">Allegheny National Forest</a> and OpenStreetMap. Trail status changes; verify before travelling.</i>
+    <br/><small>The pin is on OSM way 514010165 (car park, 600 m), where Coal Knob, Tuttletown and Seneca start. Not drawn: Tuttletown, Longhouse, Laurel, Laurel Extension, Three Sisters, Vulpes, Cornplanter Loop, Kinzua Point and the upper Elijah section, which roll on the plateau or along the shore with too little drop to read as descents; Coal Knob is drawn anyway as the system's beginner loop. The Rimrock and Morrison trails east of the reservoir are a separate network and are left out.</small>]]></description>
+    <styleUrl>#placemark-brown</styleUrl>
+    <Point><coordinates>-78.981287,41.847153,600</coordinates></Point>
+    <ExtendedData xmlns:mwm="https://comaps.app"><mwm:properties><mwm:value key="spot">jakes-rocks</mwm:value><mwm:value key="tags">beginner intermediate expert natural no-lift enduro freeride</mwm:value><mwm:value key="open_from">04-01</mwm:value><mwm:value key="closed_from">12-01</mwm:value></mwm:properties><mwm:icon>Sport</mwm:icon><mwm:visibility>1</mwm:visibility></ExtendedData>
+  </Placemark>
+  <Placemark>
+    <name>Jakes Rocks: lower car park</name>
+    <description><![CDATA[<b>Jakes Rocks lower car park 425 m - bottom of Blacksnake and Devil's Drop</b><br/><br/>
+    The car park (OSM way 901722352) where the gravity lines end, near Kinzua Point, about 175 m below the trailhead. See the main Jakes Rocks pin for trails and access.]]></description>
+    <styleUrl>#placemark-gray</styleUrl>
+    <Point><coordinates>-78.975958,41.854653,425</coordinates></Point>
+    <ExtendedData xmlns:mwm="https://comaps.app"><mwm:properties><mwm:value key="spot">jakes-rocks</mwm:value><mwm:value key="tags"></mwm:value></mwm:properties><mwm:icon>None</mwm:icon><mwm:visibility>1</mwm:visibility></ExtendedData>
+  </Placemark>
+  <Placemark>
+    <name>Jakes Rocks: Elijah</name>
+    <description><![CDATA[5.0 km blue trail, dropping 174 m from 607 m to 433 m at an average 4%. OpenStreetMap grades it mtb:scale:imba 2, which is the trail system's own signed difficulty. Geometry simplified from OpenStreetMap (ODbL) to approximately 8 m - indicative only, follow the signs on the ground. <i>Source: <a href="https://www.openstreetmap.org/way/901801472">way 901801472</a>.</i>]]></description>
+    <styleUrl>#line-blue</styleUrl>
+    <LineString><tessellate>1</tessellate><coordinates>-78.967946,41.804648,0 -78.967719,41.805287,0 -78.967755,41.805624,0 -78.968207,41.805846,0 -78.969360,41.807006,0 -78.970358,41.807636,0 -78.970584,41.807999,0 -78.970733,41.808703,0 -78.970008,41.809722,0 -78.969948,41.810520,0 -78.971090,41.812345,0 -78.971214,41.813581,0 -78.968944,41.815650,0 -78.968771,41.816634,0 -78.967761,41.817874,0 -78.966828,41.818587,0 -78.965395,41.820363,0 -78.965051,41.820465,0 -78.964652,41.820399,0 -78.963238,41.819473,0 -78.962946,41.818591,0 -78.962738,41.818676,0 -78.962631,41.818902,0 -78.962720,41.819562,0 -78.962370,41.819172,0 -78.961781,41.818884,0 -78.960967,41.818791,0 -78.960194,41.819030,0 -78.959754,41.819469,0 -78.959487,41.820075,0 -78.959558,41.821161,0 -78.958542,41.822866,0 -78.958584,41.823003,0 -78.958875,41.822919,0 -78.958821,41.824177,0 -78.958447,41.824496,0 -78.957989,41.824580,0 -78.957525,41.824430,0 -78.956230,41.823375,0 -78.954613,41.821178,0 -78.952396,41.819708,0 -78.951344,41.819190,0 -78.950131,41.818259,0 -78.950030,41.818321,0 -78.950280,41.818809,0 -78.951439,41.820381,0 -78.950880,41.820089,0 -78.951136,41.820483,0 -78.949953,41.819672,0 -78.949902,41.819941,0</coordinates></LineString>
+    <ExtendedData xmlns:mwm="https://comaps.app"><mwm:properties><mwm:value key="spot">jakes-rocks</mwm:value><mwm:value key="tags">beginner natural no-lift enduro</mwm:value></mwm:properties></ExtendedData>
+  </Placemark>
+  <Placemark>
+    <name>Jakes Rocks: Coal Knob</name>
+    <description><![CDATA[3.4 km green trail, a rolling beginner loop out of the Jakes Rocks trailhead between 603 and 623 m - not a descent. Drawn because it is, with Tuttletown, the system's entry-level loop. OpenStreetMap grades it mtb:scale:imba 1, which is the trail system's own signed difficulty. Geometry simplified from OpenStreetMap (ODbL) to approximately 8 m - indicative only, follow the signs on the ground. <i>Source: ways <a href="https://www.openstreetmap.org/way/918452800">918452800</a>, <a href="https://www.openstreetmap.org/way/918453608">918453608</a>.</i>]]></description>
+    <styleUrl>#line-green</styleUrl>
+    <LineString><tessellate>1</tessellate><coordinates>-78.979537,41.831663,0 -78.978770,41.831631,0 -78.978070,41.831418,0 -78.977474,41.831025,0 -78.975943,41.830610,0 -78.975354,41.830523,0 -78.974948,41.830751,0 -78.975218,41.833154,0 -78.975040,41.833963,0 -78.975277,41.833998,0 -78.976213,41.833545,0 -78.976406,41.833773,0 -78.976537,41.834652,0 -78.976466,41.836021,0 -78.975766,41.836540,0 -78.975671,41.836768,0 -78.976217,41.836804,0 -78.976444,41.836600,0 -78.976866,41.836528,0 -78.977055,41.836275,0 -78.977519,41.836751,0 -78.977561,41.836979,0 -78.977443,41.837178,0 -78.977131,41.837280,0 -78.976116,41.837277,0 -78.975042,41.836994,0 -78.975030,41.838105,0 -78.974840,41.838420,0 -78.974591,41.838543,0 -78.974236,41.839170,0 -78.974681,41.840055,0 -78.974269,41.840339,0 -78.974223,41.840814,0 -78.974639,41.841670,0 -78.975654,41.842311,0 -78.975858,41.842723,0 -78.975867,41.843243,0 -78.976222,41.843720,0 -78.975924,41.843952,0 -78.976358,41.844684,0 -78.976087,41.845736,0 -78.976257,41.846054,0 -78.977188,41.846396,0 -78.977588,41.846421,0 -78.978631,41.846268,0 -78.979610,41.845967,0 -78.980349,41.846338,0 -78.980784,41.846370,0</coordinates></LineString>
+    <ExtendedData xmlns:mwm="https://comaps.app"><mwm:properties><mwm:value key="spot">jakes-rocks</mwm:value><mwm:value key="tags">beginner natural no-lift enduro</mwm:value></mwm:properties></ExtendedData>
+  </Placemark>
+  <Placemark>
+    <name>Jakes Rocks: Bald Eagle</name>
+    <description><![CDATA[2.9 km black trail, dropping 108 m from 609 m to 501 m at an average 4%. OpenStreetMap grades it mtb:scale:imba 3, which is the trail system's own signed difficulty. Geometry simplified from OpenStreetMap (ODbL) to approximately 8 m - indicative only, follow the signs on the ground. <i>Source: <a href="https://www.openstreetmap.org/way/901801473">way 901801473</a>.</i>]]></description>
+    <styleUrl>#line-black</styleUrl>
+    <LineString><tessellate>1</tessellate><coordinates>-78.963036,41.818636,0 -78.962922,41.818395,0 -78.961968,41.817762,0 -78.961129,41.816685,0 -78.960749,41.816435,0 -78.960126,41.816492,0 -78.958201,41.817434,0 -78.955531,41.817614,0 -78.954947,41.816953,0 -78.954539,41.815724,0 -78.954577,41.815481,0 -78.955041,41.815156,0 -78.955184,41.814782,0 -78.955079,41.814141,0 -78.955201,41.813117,0 -78.954660,41.814330,0 -78.954208,41.814877,0 -78.954048,41.814938,0 -78.954015,41.814704,0 -78.953248,41.815411,0 -78.953198,41.814194,0 -78.952493,41.814951,0 -78.952310,41.816870,0 -78.952382,41.817873,0 -78.952206,41.817894,0 -78.951577,41.817544,0 -78.951472,41.817043,0 -78.951108,41.816484,0 -78.950959,41.816468,0 -78.951152,41.818206,0 -78.952396,41.819708,0</coordinates></LineString>
+    <ExtendedData xmlns:mwm="https://comaps.app"><mwm:properties><mwm:value key="spot">jakes-rocks</mwm:value><mwm:value key="tags">expert natural no-lift enduro</mwm:value></mwm:properties></ExtendedData>
+  </Placemark>
+  <Placemark>
+    <name>Jakes Rocks: Bent Run</name>
+    <description><![CDATA[2.7 km blue trail, dropping 192 m from 617 m to 425 m at an average 7%. OpenStreetMap grades it mtb:scale:imba 2, which is the trail system's own signed difficulty. Geometry simplified from OpenStreetMap (ODbL) to approximately 8 m - indicative only, follow the signs on the ground. <i>Source: <a href="https://www.openstreetmap.org/way/901732803">way 901732803</a>.</i>]]></description>
+    <styleUrl>#line-blue</styleUrl>
+    <LineString><tessellate>1</tessellate><coordinates>-78.988672,41.834677,0 -78.989386,41.834541,0 -78.989437,41.834685,0 -78.989616,41.834674,0 -78.990864,41.834105,0 -78.990605,41.834437,0 -78.990105,41.834715,0 -78.990120,41.834833,0 -78.991219,41.834275,0 -78.992267,41.833491,0 -78.992421,41.833520,0 -78.991351,41.834534,0 -78.989440,41.835707,0 -78.987579,41.837759,0 -78.986829,41.837926,0 -78.987452,41.838033,0 -78.988108,41.837830,0 -78.987642,41.838353,0 -78.986831,41.838394,0 -78.987271,41.838586,0 -78.987793,41.838567,0 -78.988257,41.838383,0 -78.988932,41.837713,0 -78.990849,41.836480,0 -78.993325,41.835539,0 -78.994664,41.834901,0 -78.994827,41.834933,0 -78.994026,41.835676,0 -78.994041,41.835796,0 -78.995679,41.835276,0 -78.995838,41.835292,0 -78.995783,41.835398,0 -78.996087,41.835366,0 -78.996323,41.835474,0</coordinates></LineString>
+    <ExtendedData xmlns:mwm="https://comaps.app"><mwm:properties><mwm:value key="spot">jakes-rocks</mwm:value><mwm:value key="tags">beginner natural no-lift enduro</mwm:value></mwm:properties></ExtendedData>
+  </Placemark>
+  <Placemark>
+    <name>Jakes Rocks: Dew Drop</name>
+    <description><![CDATA[2.5 km blue trail, dropping 118 m from 568 m to 450 m at an average 5%. OpenStreetMap grades it mtb:scale:imba 2, which is the trail system's own signed difficulty. Geometry simplified from OpenStreetMap (ODbL) to approximately 8 m - indicative only, follow the signs on the ground. <i>Source: <a href="https://www.openstreetmap.org/way/901730800">way 901730800</a>.</i>]]></description>
+    <styleUrl>#line-blue</styleUrl>
+    <LineString><tessellate>1</tessellate><coordinates>-78.963759,41.839709,0 -78.963543,41.839207,0 -78.963767,41.838815,0 -78.964528,41.838332,0 -78.965633,41.837289,0 -78.965752,41.837271,0 -78.965752,41.837506,0 -78.965880,41.837563,0 -78.966205,41.837041,0 -78.966563,41.837105,0 -78.966862,41.836876,0 -78.966768,41.836647,0 -78.966017,41.836164,0 -78.964967,41.834860,0 -78.965257,41.833862,0 -78.965590,41.833137,0 -78.965863,41.832864,0 -78.965812,41.832654,0 -78.964165,41.833805,0 -78.963533,41.834523,0 -78.963380,41.834110,0 -78.963542,41.833461,0 -78.964148,41.832755,0 -78.964566,41.831662,0 -78.965257,41.830778,0 -78.965778,41.830281,0 -78.967417,41.829340,0 -78.967886,41.828857,0 -78.969081,41.828164,0 -78.968612,41.828106,0 -78.968659,41.827837,0 -78.968474,41.827818,0 -78.967383,41.827960,0 -78.966746,41.828187,0</coordinates></LineString>
+    <ExtendedData xmlns:mwm="https://comaps.app"><mwm:properties><mwm:value key="spot">jakes-rocks</mwm:value><mwm:value key="tags">beginner natural no-lift enduro</mwm:value></mwm:properties></ExtendedData>
+  </Placemark>
+  <Placemark>
+    <name>Jakes Rocks: Deerfoot</name>
+    <description><![CDATA[2.1 km blue trail, dropping 140 m from 564 m to 424 m at an average 7%. OpenStreetMap grades it mtb:scale:imba 2, which is the trail system's own signed difficulty. Geometry simplified from OpenStreetMap (ODbL) to approximately 8 m - indicative only, follow the signs on the ground. <i>Source: <a href="https://www.openstreetmap.org/way/901719239">way 901719239</a>.</i>]]></description>
+    <styleUrl>#line-blue</styleUrl>
+    <LineString><tessellate>1</tessellate><coordinates>-78.980343,41.851351,0 -78.981095,41.852439,0 -78.980604,41.852855,0 -78.980119,41.852047,0 -78.979856,41.852778,0 -78.979146,41.851772,0 -78.979108,41.851941,0 -78.978752,41.851698,0 -78.978409,41.851689,0 -78.978194,41.851482,0 -78.976783,41.851991,0 -78.976734,41.852095,0 -78.978025,41.851997,0 -78.978545,41.852872,0 -78.978597,41.853370,0 -78.977946,41.854635,0 -78.977945,41.854875,0 -78.977816,41.854759,0 -78.977962,41.854177,0 -78.977838,41.853655,0 -78.977795,41.853937,0 -78.976973,41.855097,0 -78.976715,41.855703,0 -78.976712,41.855228,0 -78.976959,41.854522,0 -78.976382,41.855294,0 -78.976529,41.854418,0 -78.976053,41.854788,0</coordinates></LineString>
+    <ExtendedData xmlns:mwm="https://comaps.app"><mwm:properties><mwm:value key="spot">jakes-rocks</mwm:value><mwm:value key="tags">beginner natural no-lift enduro</mwm:value></mwm:properties></ExtendedData>
+  </Placemark>
+  <Placemark>
+    <name>Jakes Rocks: Ursus</name>
+    <description><![CDATA[1.8 km black trail, dropping 128 m from 588 m to 460 m at an average 7%. OpenStreetMap grades it mtb:scale:imba 3, which is the trail system's own signed difficulty. Geometry simplified from OpenStreetMap (ODbL) to approximately 8 m - indicative only, follow the signs on the ground. <i>Source: <a href="https://www.openstreetmap.org/way/901801470">way 901801470</a>.</i>]]></description>
+    <styleUrl>#line-black</styleUrl>
+    <LineString><tessellate>1</tessellate><coordinates>-78.975131,41.822528,0 -78.975109,41.822315,0 -78.974648,41.822518,0 -78.974304,41.822968,0 -78.974452,41.822252,0 -78.974079,41.822682,0 -78.973868,41.822607,0 -78.973678,41.822722,0 -78.973348,41.823756,0 -78.972749,41.824882,0 -78.972330,41.823158,0 -78.972594,41.822311,0 -78.972440,41.822249,0 -78.971929,41.822768,0 -78.971414,41.823871,0 -78.971242,41.824649,0 -78.970969,41.824941,0 -78.970696,41.824573,0 -78.970484,41.824646,0 -78.970237,41.825506,0 -78.970546,41.826110,0 -78.969788,41.826304,0 -78.969480,41.826501,0 -78.969092,41.827167,0 -78.969103,41.827820,0 -78.968659,41.827837,0</coordinates></LineString>
+    <ExtendedData xmlns:mwm="https://comaps.app"><mwm:properties><mwm:value key="spot">jakes-rocks</mwm:value><mwm:value key="tags">expert natural no-lift enduro</mwm:value></mwm:properties></ExtendedData>
+  </Placemark>
+  <Placemark>
+    <name>Jakes Rocks: Seneca</name>
+    <description><![CDATA[1.5 km blue trail, dropping 71 m from 603 m to 532 m at an average 5%. OpenStreetMap grades it mtb:scale:imba 2, which is the trail system's own signed difficulty. Geometry simplified from OpenStreetMap (ODbL) to approximately 8 m - indicative only, follow the signs on the ground. <i>Source: <a href="https://www.openstreetmap.org/way/901719240">way 901719240</a>.</i>]]></description>
+    <styleUrl>#line-blue</styleUrl>
+    <LineString><tessellate>1</tessellate><coordinates>-78.980784,41.846370,0 -78.980500,41.846607,0 -78.980374,41.847436,0 -78.980723,41.848556,0 -78.980388,41.849618,0 -78.980306,41.851596,0 -78.980088,41.851577,0 -78.979881,41.851308,0 -78.979564,41.850476,0 -78.979122,41.850034,0 -78.978601,41.850471,0 -78.977497,41.850749,0 -78.976018,41.851888,0 -78.974953,41.852201,0 -78.973541,41.853034,0 -78.972612,41.853816,0</coordinates></LineString>
+    <ExtendedData xmlns:mwm="https://comaps.app"><mwm:properties><mwm:value key="spot">jakes-rocks</mwm:value><mwm:value key="tags">beginner natural no-lift enduro</mwm:value></mwm:properties></ExtendedData>
+  </Placemark>
+  <Placemark>
+    <name>Jakes Rocks: Devil's Drop</name>
+    <description><![CDATA[1.3 km black trail, dropping 106 m from 532 m to 426 m at an average 8%. OpenStreetMap grades it mtb:scale:imba 3, which is the trail system's own signed difficulty. Geometry simplified from OpenStreetMap (ODbL) to approximately 8 m - indicative only, follow the signs on the ground. <i>Source: <a href="https://www.openstreetmap.org/way/901722351">way 901722351</a>.</i>]]></description>
+    <styleUrl>#line-black</styleUrl>
+    <LineString><tessellate>1</tessellate><coordinates>-78.972612,41.853816,0 -78.972407,41.854271,0 -78.972502,41.854322,0 -78.973805,41.853248,0 -78.975369,41.852862,0 -78.975720,41.852879,0 -78.975569,41.853038,0 -78.974206,41.853595,0 -78.973418,41.854774,0 -78.973500,41.854853,0 -78.974449,41.853977,0 -78.975405,41.853688,0 -78.974636,41.854268,0 -78.973963,41.855229,0 -78.974108,41.855273,0 -78.974718,41.854816,0 -78.974446,41.855271,0 -78.974553,41.855444,0</coordinates></LineString>
+    <ExtendedData xmlns:mwm="https://comaps.app"><mwm:properties><mwm:value key="spot">jakes-rocks</mwm:value><mwm:value key="tags">expert natural no-lift enduro</mwm:value></mwm:properties></ExtendedData>
+  </Placemark>
+  <Placemark>
+    <name>Jakes Rocks: Ohi:Yo Way</name>
+    <description><![CDATA[1.0 km blue trail, dropping 68 m from 562 m to 494 m at an average 7%. OpenStreetMap grades it mtb:scale:imba 2, which is the trail system's own signed difficulty. Geometry simplified from OpenStreetMap (ODbL) to approximately 8 m - indicative only, follow the signs on the ground. <i>Source: <a href="https://www.openstreetmap.org/way/901722347">way 901722347</a>.</i>]]></description>
+    <styleUrl>#line-blue</styleUrl>
+    <LineString><tessellate>1</tessellate><coordinates>-78.968130,41.857356,0 -78.967822,41.857498,0 -78.967962,41.857684,0 -78.967778,41.857728,0 -78.966555,41.857630,0 -78.965545,41.857245,0 -78.965388,41.857001,0 -78.965479,41.856653,0 -78.965985,41.855887,0 -78.966863,41.855066,0 -78.968574,41.853908,0 -78.970666,41.852833,0 -78.970747,41.852647,0</coordinates></LineString>
+    <ExtendedData xmlns:mwm="https://comaps.app"><mwm:properties><mwm:value key="spot">jakes-rocks</mwm:value><mwm:value key="tags">beginner natural no-lift enduro</mwm:value></mwm:properties></ExtendedData>
+  </Placemark>
+  <Placemark>
+    <name>Jakes Rocks: Blacksnake</name>
+    <description><![CDATA[0.9 km orange trail, dropping 117 m from 543 m to 426 m at an average 12%. OpenStreetMap grades it mtb:scale:imba 4, which is the trail system's own signed difficulty. Geometry simplified from OpenStreetMap (ODbL) to approximately 8 m - indicative only, follow the signs on the ground. <i>Source: <a href="https://www.openstreetmap.org/way/901722350">way 901722350</a>.</i>]]></description>
+    <styleUrl>#line-orange</styleUrl>
+    <LineString><tessellate>1</tessellate><coordinates>-78.970108,41.856075,0 -78.970158,41.856291,0 -78.969709,41.856828,0 -78.970028,41.856987,0 -78.969817,41.857409,0 -78.970249,41.857233,0 -78.970270,41.857563,0 -78.971782,41.856838,0 -78.972967,41.855754,0 -78.973060,41.855820,0 -78.972855,41.856333,0 -78.972848,41.856925,0 -78.973767,41.855903,0 -78.974553,41.855444,0</coordinates></LineString>
+    <ExtendedData xmlns:mwm="https://comaps.app"><mwm:properties><mwm:value key="spot">jakes-rocks</mwm:value><mwm:value key="tags">expert natural no-lift enduro</mwm:value></mwm:properties></ExtendedData>
+  </Placemark>
+  <Placemark>
+    <name>Jakes Rocks: Grouse</name>
+    <description><![CDATA[0.6 km green trail, dropping 26 m from 467 m to 441 m at an average 5%. OpenStreetMap grades it mtb:scale:imba 1, which is the trail system's own signed difficulty. Geometry simplified from OpenStreetMap (ODbL) to approximately 8 m - indicative only, follow the signs on the ground. <i>Source: <a href="https://www.openstreetmap.org/way/901730804">way 901730804</a>.</i>]]></description>
+    <styleUrl>#line-green</styleUrl>
+    <LineString><tessellate>1</tessellate><coordinates>-78.960495,41.834798,0 -78.960290,41.834653,0 -78.960157,41.834004,0 -78.960640,41.832054,0 -78.961777,41.830635,0 -78.962443,41.830445,0</coordinates></LineString>
+    <ExtendedData xmlns:mwm="https://comaps.app"><mwm:properties><mwm:value key="spot">jakes-rocks</mwm:value><mwm:value key="tags">beginner natural no-lift enduro</mwm:value></mwm:properties></ExtendedData>
+  </Placemark>
+  <Placemark>
+    <name>Massif du Sud (Saint-Philemon, Quebec) [24 CAD, no lift]</name>
+    <description><![CDATA[<b>Massif du Sud 520 m - base chalet of the ski station, where the bike trails start</b><br/><br/>
+    <b>Trails</b><br/>A ski hill in the Notre-Dame Mountains of Chaudiere-Appalaches that became a four-season mountain bike hub, with two networks on the same mountain. The <b>Station touristique</b> opened its first trails, built by Sentiers de l'Est, in 2025: 19 numbered descents plus 4 signed climbing trails (18, 27, 34, 40), a pump track and a skills park. Its live trail report grades 3 easy, 10 difficult, 2 very difficult and 4 extreme trails; 39 is the long one, 1.2 km down from the top of climb 40, and 21, 22, 35 and 36 are the extreme lines. The terrain mixes technical, rocky "old school" singletrack with flowy lines and jumps. Next door, the <b>Parc regional du Massif du Sud</b> has about 20 km of older, more rolling singletrack (Le Chauffe-Moteur, La Trail du Buck, La Serpentine, L'Erabliere, Les Grandes Manoeuvres, La Rebelle, Le Long Jeu, La Manitou...) and 30 km of gravel multi-use tracks to the two summits. Together that is roughly 25 km of singletrack.<br/><br/>
+    <b>Getting up / price</b><br/>No bike uplift is advertised: the station's live trail report showed 0 of 2 lifts running while all 25 bike trails were open, and the map signs four climbing trails. Station day ticket 24 CAD, season pass 198 CAD. The regional park charges its own entry, 12 CAD per adult per day.<br/><br/>
+    <b>Open season</b><br/>2026 season from 26 June to 11 October, Friday to Sunday only. The regional park is open daily and keeps 24 km of multi-use tracks for fat bikes in winter.<br/><br/>
+    <b>Access</b><table class="access"><tr><th>From</th><th>Transport</th><th>Duration</th></tr><tr><td>Levis</td><td>Car, via Saint-Damien</td><td>~1h00</td></tr><tr><td>Quebec City</td><td>Car</td><td>~1h15</td></tr><tr><td>Montreal</td><td>Car</td><td>~3h30</td></tr></table><br/>
+    <i>Sources: <a href="https://massifdusud.net/fr/ouvertures">Massif du Sud - trail map and conditions</a>, <a href="https://massifdusud.net/fr/billets-et-abonnements">Massif du Sud - tickets</a>, <a href="https://massifdusud.net/fr/evenements/ouverture-officielle-velo-de-montagne">Massif du Sud - 2026 season opening</a>, <a href="https://www.lequebecavelo.ca/parcours-et-sentiers/station-touristique-massif-du-sud">Le Quebec a velo</a>, <a href="https://www.onyva.quebec/espace-decouverte/activites/sentiers-de-velo-parc-du-massif-du-sud/">On y va - Parc du Massif du Sud</a>, <a href="https://chaudiereappalaches.com/en/lived-for-real-our-recommendations/blog/mountain-biking-in-the-mountains/">Chaudiere-Appalaches tourism</a> and OpenStreetMap. Prices, schedules and trail status change; verify before travelling.</i>
+    <br/><small>The pin is on OSM node 7217226371 (Station touristique du Massif du Sud), 150 m from the base of the Chaise Quadruple chairlift (529 m). None of the station's numbered bike trails is in OpenStreetMap yet, only its ski pistes, so no station line is drawn. The four lines drawn are regional park trails whose OSM direction is their signed one-way direction and which descend: Le Long Jeu, La Froc d'etoffe, La Robineuse and La Transit Express. The rest of the park network rolls with too little net drop. Le Chauffe-Moteur is left out as the warm-up climb (+45 m over 0.9 km per the regional tourism board), and La cote a Ti-Pere as a probable climb.</small>]]></description>
+    <styleUrl>#placemark-brown</styleUrl>
+    <Point><coordinates>-70.489656,46.621461,520</coordinates></Point>
+    <ExtendedData xmlns:mwm="https://comaps.app"><mwm:properties><mwm:value key="spot">massif-du-sud</mwm:value><mwm:value key="tags">beginner intermediate expert natural no-lift enduro</mwm:value><mwm:value key="open_from">06-26</mwm:value><mwm:value key="closed_from">10-12</mwm:value><mwm:value key="price_day">24 CAD</mwm:value><mwm:value key="price_season">198 CAD</mwm:value></mwm:properties><mwm:icon>Sport</mwm:icon><mwm:visibility>1</mwm:visibility></ExtendedData>
+  </Placemark>
+  <Placemark>
+    <name>Massif du Sud: Parc regional reception</name>
+    <description><![CDATA[<b>Parc du Massif du Sud reception 450 m - trailhead of the regional park singletrack</b><br/><br/>
+    The regional park's reception and bike wash (OSM node 7209512555), 2 km east of the ski station, where Le Chauffe-Moteur and the park's numbered singletrack start. Entry 12 CAD per adult per day. See the main Massif du Sud pin for trails and access.]]></description>
+    <styleUrl>#placemark-gray</styleUrl>
+    <Point><coordinates>-70.465880,46.629240,450</coordinates></Point>
+    <ExtendedData xmlns:mwm="https://comaps.app"><mwm:properties><mwm:value key="spot">massif-du-sud</mwm:value><mwm:value key="tags"></mwm:value></mwm:properties><mwm:icon>None</mwm:icon><mwm:visibility>1</mwm:visibility></ExtendedData>
+  </Placemark>
+  <Placemark>
+    <name>Massif du Sud: Le Long Jeu</name>
+    <description><![CDATA[1.8 km blue trail, dropping 66 m from 530 m to 464 m at an average 4%. OpenStreetMap grades it mtb:scale:imba 2, which is the trail system's own signed difficulty. Geometry simplified from OpenStreetMap (ODbL) to approximately 8 m - indicative only, follow the signs on the ground. <i>Source: <a href="https://www.openstreetmap.org/way/772225527">way 772225527</a>.</i>]]></description>
+    <styleUrl>#line-blue</styleUrl>
+    <LineString><tessellate>1</tessellate><coordinates>-70.465138,46.614462,0 -70.465626,46.614792,0 -70.465697,46.615033,0 -70.465186,46.615765,0 -70.464669,46.617111,0 -70.464082,46.617723,0 -70.463552,46.619151,0 -70.464006,46.619811,0 -70.464622,46.621974,0 -70.465323,46.622546,0 -70.465309,46.622780,0 -70.464676,46.622871,0 -70.464898,46.623527,0 -70.465602,46.623619,0 -70.465981,46.623996,0 -70.466544,46.624061,0 -70.467113,46.624507,0 -70.466838,46.624699,0 -70.466038,46.624549,0 -70.466412,46.625040,0 -70.465915,46.625066,0 -70.465796,46.625359,0 -70.466616,46.626022,0 -70.466862,46.626383,0 -70.466923,46.626647,0 -70.466742,46.627038,0</coordinates></LineString>
+    <ExtendedData xmlns:mwm="https://comaps.app"><mwm:properties><mwm:value key="spot">massif-du-sud</mwm:value><mwm:value key="tags">beginner natural no-lift enduro</mwm:value></mwm:properties></ExtendedData>
+  </Placemark>
+  <Placemark>
+    <name>Massif du Sud: La Froc d'étoffe</name>
+    <description><![CDATA[1.3 km black trail, dropping 51 m from 561 m to 510 m at an average 4%. OpenStreetMap grades it mtb:scale:imba 3, which is the trail system's own signed difficulty. Geometry simplified from OpenStreetMap (ODbL) to approximately 8 m - indicative only, follow the signs on the ground. <i>Source: <a href="https://www.openstreetmap.org/way/1120205387">way 1120205387</a>.</i>]]></description>
+    <styleUrl>#line-black</styleUrl>
+    <LineString><tessellate>1</tessellate><coordinates>-70.450317,46.619387,0 -70.450741,46.619763,0 -70.451311,46.619786,0 -70.451547,46.620231,0 -70.451351,46.620269,0 -70.451142,46.619909,0 -70.451155,46.620703,0 -70.451530,46.620979,0 -70.451779,46.621392,0 -70.452247,46.621469,0 -70.452221,46.621996,0 -70.452652,46.622427,0 -70.452486,46.623045,0 -70.452988,46.623391,0 -70.453087,46.623880,0 -70.453496,46.624051,0 -70.453853,46.624574,0 -70.453783,46.624684,0 -70.453604,46.624535,0 -70.453533,46.625002,0 -70.453380,46.624733,0 -70.453405,46.625129,0 -70.453995,46.624813,0 -70.454309,46.625302,0 -70.454264,46.625431,0 -70.454055,46.625453,0 -70.454703,46.625732,0</coordinates></LineString>
+    <ExtendedData xmlns:mwm="https://comaps.app"><mwm:properties><mwm:value key="spot">massif-du-sud</mwm:value><mwm:value key="tags">expert natural no-lift enduro</mwm:value></mwm:properties></ExtendedData>
+  </Placemark>
+  <Placemark>
+    <name>Massif du Sud: La Robineuse</name>
+    <description><![CDATA[0.6 km green trail, dropping 25 m from 525 m to 500 m at an average 4%. OpenStreetMap grades it mtb:scale:imba 1, which is the trail system's own signed difficulty. Geometry simplified from OpenStreetMap (ODbL) to approximately 8 m - indicative only, follow the signs on the ground. <i>Source: <a href="https://www.openstreetmap.org/way/772225535">way 772225535</a>.</i>]]></description>
+    <styleUrl>#line-green</styleUrl>
+    <LineString><tessellate>1</tessellate><coordinates>-70.457552,46.622554,0 -70.457821,46.622545,0 -70.458156,46.622900,0 -70.458585,46.622998,0 -70.458925,46.623386,0 -70.459194,46.623337,0 -70.459430,46.622862,0 -70.459628,46.622839,0 -70.459397,46.623741,0 -70.459381,46.624088,0 -70.459546,46.624156,0 -70.460013,46.623280,0 -70.459791,46.622236,0</coordinates></LineString>
+    <ExtendedData xmlns:mwm="https://comaps.app"><mwm:properties><mwm:value key="spot">massif-du-sud</mwm:value><mwm:value key="tags">beginner natural no-lift enduro</mwm:value></mwm:properties></ExtendedData>
+  </Placemark>
+  <Placemark>
+    <name>Massif du Sud: La Transit Express</name>
+    <description><![CDATA[0.3 km blue trail, dropping 32 m from 584 m to 552 m at an average 10%. OpenStreetMap grades it mtb:scale:imba 2, which is the trail system's own signed difficulty. Geometry simplified from OpenStreetMap (ODbL) to approximately 8 m - indicative only, follow the signs on the ground. <i>Source: <a href="https://www.openstreetmap.org/way/772225532">way 772225532</a>.</i>]]></description>
+    <styleUrl>#line-blue</styleUrl>
+    <LineString><tessellate>1</tessellate><coordinates>-70.453090,46.617781,0 -70.452918,46.619288,0 -70.453372,46.619575,0 -70.453442,46.619787,0 -70.453147,46.620556,0</coordinates></LineString>
+    <ExtendedData xmlns:mwm="https://comaps.app"><mwm:properties><mwm:value key="spot">massif-du-sud</mwm:value><mwm:value key="tags">beginner natural no-lift enduro</mwm:value></mwm:properties></ExtendedData>
+  </Placemark>
+  <Placemark>
     <name>Bolton Valley Bike Park (Vermont) [40 USD]</name>
     <description><![CDATA[<b>Bolton Valley 656 m - valley station of the Vista Quad, Vermont</b><br/><br/>
     <b>Trails</b><br/>Around two dozen downhill trails plus several climbing routes, over 900 ft of descent from Vista Peak, half an hour from Burlington. The park reopened in 2021 after a ten-year hiatus and the rebuild covers the whole range - beginner flow, intermediate jump and flow lines, and steep fall-line New England tech for experienced riders.<br/><br/>
@@ -18017,6 +18171,27 @@
         <mwm:value key="tags">expert natural dh freeride</mwm:value>
         <mwm:value key="open_from">02-15</mwm:value>
         <mwm:value key="closed_from">02-16</mwm:value>
+      </mwm:properties>
+      <mwm:icon>Mountain</mwm:icon><mwm:visibility>1</mwm:visibility>
+    </ExtendedData>
+  </Placemark>
+  <Placemark>
+    <name>Roca Park (Antofagasta, Chile) [booking required, shuttle]</name>
+    <description><![CDATA[<b>Roca Park 75 m - Playa Escondida turn-off on Route B-510, south of Antofagasta</b><br/><br/>
+    <b>Trails</b><br/>A private freeride park in the coastal hills of the Atacama Desert, built over more than 12 years by Bastian Araya and his crew. Fourteen official trails cover a range of levels, including jump lines built with Nico Vink's Vink Creations, but the focus is advanced freeride: natural drops, big-mountain lines down sandy scree faces and the shuttled "slasher" lines through deep, loose desert sand. The ground has no vegetation and no organic soil, so it rides closer to loose sand and gravel than to dirt. The site hosts the Roca Park Jam, known locally as the "Chilean Rampage".<br/><br/>
+    <b>Getting up / price</b><br/>No lift. Shuttle runs to the top of the lines. Riding is by booking only, through Bastian Araya; there is no published walk-up rate.<br/><br/><p class="warn">&#9888;&#65039; Expert freeride terrain on private ground. Do not ride without booking, and do not drop into features you have not inspected.</p>
+    <b>Open season</b><br/>Year round: the Atacama is the driest non-polar desert, so rain almost never stops riding. Wind is the real constraint - crews ride in the morning and stop when the afternoon wind rises.<br/><br/>
+    <b>Access</b><table class="access"><tr><th>From</th><th>Transport</th><th>Duration</th></tr><tr><td>Antofagasta centre</td><td>Car, Route 1 south then B-510</td><td>~25 min</td></tr></table><br/>
+    <i>Sources: <a href="https://www.redbull.com/cl-es/roca-park-jam-2022">Red Bull Chile - Roca Park Jam 2022</a>, <a href="https://reverse-components.com/en/content/roca-park">Reverse Components - Roca Park</a>, <a href="https://nsmb.com/articles/freeriding-in-chile/">NSMB - Freeriding in Chile</a> and <a href="https://www.youtube.com/watch?v=SSbgGXlkXrY">Red Bull Bike - Inside the World's Most Intense Freeride Camp</a>. Prices, schedules, trail status and access can change; verify before travel.</i><br/>
+    <small>Roca Park is not mapped in OpenStreetMap and its operator publishes no address. The pin is on OSM node 5358960216, the junction of Route B-510 and the Camino a Playa Escondida (way 555446799), measured at 75 m: the published directions are to follow B-510 to the Playa Escondida turn-off, and a rider's GPS log titled "Roca park" runs from 137 m down to within 200 m of this junction. Treat it as the access point, not a trailhead.</small>]]></description>
+    <styleUrl>#placemark-brown</styleUrl>
+    <Point><coordinates>-70.437492,-23.760451,75</coordinates></Point>
+    <ExtendedData xmlns:mwm="https://comaps.app">
+      <mwm:properties>
+        <mwm:value key="spot">roca-park-antofagasta</mwm:value>
+        <mwm:value key="tags">expert bike-park dh freeride shuttle rain-resilient</mwm:value>
+        <mwm:value key="open_from">01-01</mwm:value>
+        <mwm:value key="closed_from">01-01</mwm:value>
       </mwm:properties>
       <mwm:icon>Mountain</mwm:icon><mwm:visibility>1</mwm:visibility>
     </ExtendedData>
