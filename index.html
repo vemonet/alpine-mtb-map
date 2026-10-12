@@ -522,6 +522,19 @@
                 </svg>
               </button>
             </span>
+            <button
+              id="favorites-only"
+              type="button"
+              aria-pressed="false"
+              title="Show only starred"
+              aria-label="Show only starred"
+            >
+              <svg viewBox="0 0 16 16" aria-hidden="true">
+                <path
+                  d="M8 2 9.6 6.4 14.3 6.6 10.6 9.4 11.9 13.9 8 11.3 4.1 13.9 5.4 9.4 1.7 6.6 6.4 6.4Z"
+                />
+              </svg>
+            </button>
           </span>
         </div>
         <div id="spot-count" aria-live="polite"></div>
@@ -680,6 +693,22 @@
                 <circle cx="12" cy="3" r="1.5" />
                 <circle cx="12" cy="13" r="1.5" />
                 <path d="m5.3 7.2 5.4-3.4M5.3 8.8l5.4 3.4" />
+              </svg>
+            </button>
+            <button id="place-card-star" type="button" title="Star" aria-pressed="false">
+              <svg
+                viewBox="0 0 16 16"
+                width="14"
+                height="14"
+                aria-hidden="true"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linejoin="round"
+              >
+                <path
+                  d="M8 2 9.6 6.4 14.3 6.6 10.6 9.4 11.9 13.9 8 11.3 4.1 13.9 5.4 9.4 1.7 6.6 6.4 6.4Z"
+                />
               </svg>
             </button>
             <button id="place-card-hide" type="button" title="Hide this trace" hidden>
@@ -890,7 +919,7 @@
           weather is on; those servers see your IP, as they would on any web map. Forecast requests
           carry the public coordinates of the map's spots, never yours.
           <code>localStorage</code> holds your light/dark choice, your base-map choice, the spots
-          and traces you have hidden, and a six-hour cache of spot forecasts.
+          and traces you have starred or hidden, and a six-hour cache of spot forecasts.
         </p>
       </details>
       <details class="about-details">

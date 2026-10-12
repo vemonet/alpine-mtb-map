@@ -217,6 +217,21 @@ const saveHidden = () => {
   }
 };
 
+// What the reader has starred, kept the same way. Starring only feeds the
+// favorites toggle next to the search box; it never changes the downloads.
+const STARRED_TRACES_STORAGE_KEY = "starredTraces";
+const STARRED_SPOTS_STORAGE_KEY = "starredSpots";
+const starredTraceIds = readHidden(STARRED_TRACES_STORAGE_KEY);
+const starredSpotIds = readHidden(STARRED_SPOTS_STORAGE_KEY);
+const saveStarred = () => {
+  try {
+    localStorage.setItem(STARRED_TRACES_STORAGE_KEY, JSON.stringify([...starredTraceIds]));
+    localStorage.setItem(STARRED_SPOTS_STORAGE_KEY, JSON.stringify([...starredSpotIds]));
+  } catch {
+    // Same as hiding: stars last for this session when storage fails.
+  }
+};
+
 // ------------------------------------------------------------------ map ---
 const DEFAULT_VIEW: L.LatLngTuple = [46.2, 8.0];
 const DEFAULT_ZOOM = 7;
@@ -548,6 +563,7 @@ const list = el<HTMLUListElement>("spots");
 const placeCard = el("place-card");
 const placeCardBody = el("place-card-body");
 const placeCardHideButton = el<HTMLButtonElement>("place-card-hide");
+const placeCardStarButton = el<HTMLButtonElement>("place-card-star");
 const placeCardGoogleMapsButton = el<HTMLButtonElement>("place-card-google-maps");
 const placeCardDownloadMenu = el<HTMLDetailsElement>("place-card-download");
 let activePlace: { place: Place; spot: Spot; layer: Pin | L.Polyline } | null = null;
@@ -605,6 +621,32 @@ placeCardHideButton.addEventListener("click", () => {
   saveHidden();
   closePlaceCard();
   applyFilters();
+});
+
+// A trace is starred on its own; any other place stars its whole spot, the
+// same split as hiding.
+const starSetOf = (place: Place, spot: Spot) =>
+  place.type === "line"
+    ? { ids: starredTraceIds, id: traceId(place) }
+    : { ids: starredSpotIds, id: spot.id };
+const syncStarButton = (place: Place, spot: Spot) => {
+  const { ids, id } = starSetOf(place, spot);
+  const starred = ids.has(id);
+  const label = `${starred ? "Unstar" : "Star"} this ${place.type === "line" ? "trace" : "spot"}`;
+  placeCardStarButton.setAttribute("aria-pressed", String(starred));
+  placeCardStarButton.title = label;
+  placeCardStarButton.setAttribute("aria-label", label);
+};
+placeCardStarButton.addEventListener("click", () => {
+  if (!activePlace) return;
+  const { place, spot } = activePlace;
+  const { ids, id } = starSetOf(place, spot);
+  if (ids.has(id)) ids.delete(id);
+  else ids.add(id);
+  saveStarred();
+  syncStarButton(place, spot);
+  // Unstarring while the favorites filter is on takes the place off the list.
+  if (favoritesOnly) applyFilters();
 });
 
 el("place-card-share").addEventListener("click", async (event) => {
@@ -701,6 +743,7 @@ function openPlaceCard(place: Place, spot: Spot, layer: Pin | L.Polyline) {
   placeCardHideButton.hidden = false;
   placeCardHideButton.title = hideLabel;
   placeCardHideButton.setAttribute("aria-label", hideLabel);
+  syncStarButton(place, spot);
   placeCardDownloadMenu.removeAttribute("open");
   placeCard.hidden = false;
   setSelectedPlaceUrl(place, spot);
@@ -1627,6 +1670,8 @@ const searchInput = el<HTMLInputElement>("spot-search");
 const clearSearchButton = el<HTMLButtonElement>("clear-search");
 const searchModeButtons = [...document.querySelectorAll<HTMLButtonElement>("[data-search-mode]")];
 let searchMode: "spots" | "traces" = "spots";
+const favoritesButton = el<HTMLButtonElement>("favorites-only");
+let favoritesOnly = false;
 const updateDateDisplay = () => {
   const [year, month, day] = dateInput.value.split("-");
   dateDisplay.textContent = year
@@ -1691,6 +1736,7 @@ const applyFilters = () => {
       spotMatch(entry.spot) &&
       withinLength(entry.place) &&
       colorOn.get(entry.color) !== false &&
+      (!favoritesOnly || starredTraceIds.has(traceId(entry.place))) &&
       (!query || entry.searchText.includes(query));
     if (entry.row) entry.row.hidden = !visible;
     if (visible) {
@@ -1700,7 +1746,10 @@ const applyFilters = () => {
   }
 
   for (const spot of spots.values()) {
-    const filterMatch = !hiddenSpotIds.has(spot.id) && spotMatch(spot);
+    const filterMatch =
+      !hiddenSpotIds.has(spot.id) &&
+      (!favoritesOnly || starredSpotIds.has(spot.id)) &&
+      spotMatch(spot);
     const spotSearchMatch = !query || spot.searchText.includes(query);
     let hasVisibleLayer = false;
 
@@ -1732,7 +1781,7 @@ const applyFilters = () => {
       if (visible) visibleCount++;
     }
   }
-  const resultName = showingTraces ? "trace" : "spot";
+  const resultName = `${favoritesOnly ? "starred " : ""}${showingTraces ? "trace" : "spot"}`;
   el("spot-count").textContent = `${visibleCount} ${resultName}${visibleCount === 1 ? "" : "s"}`;
   const showFilters = [...document.querySelectorAll<HTMLInputElement>("#show-filter-menu .filter")];
   const shown = showFilters.filter(on).length;
@@ -1847,6 +1896,11 @@ for (const button of searchModeButtons) {
     searchInput.focus();
   });
 }
+favoritesButton.addEventListener("click", () => {
+  favoritesOnly = !favoritesOnly;
+  favoritesButton.setAttribute("aria-pressed", String(favoritesOnly));
+  applyFilters();
+});
 dateInput.addEventListener("input", () => {
   updateDateDisplay();
   applyFilters();
